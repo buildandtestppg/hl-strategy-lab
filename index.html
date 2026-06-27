@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HL Strategy Lab — Build Roadmap</title>
+<style>
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --surface2: #1a1a25;
+  --border: #2a2a3a;
+  --text: #e4e4e7;
+  --muted: #6b6b80;
+  --accent: #00d9a3;
+  --accent-dim: #00d9a322;
+  --gold: #ffb800;
+  --gold-dim: #ffb80022;
+  --red: #ff4757;
+  --blue: #4d8eff;
+  --purple: #a855f7;
+  --cyan: #06b6d4;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.hero {
+  background: linear-gradient(135deg, #0a0a0f 0%, #0d1a14 40%, #0a0a0f 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 20px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, var(--accent-dim) 0%, transparent 50%);
+  opacity: 0.15;
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity:0.1; } 50% { opacity:0.2; } }
+.hero-content { position: relative; z-index: 1; }
+.badge {
+  display: inline-block;
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  border: 1px solid var(--accent);
+}
+h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+.hero p { color: var(--muted); font-size: 15px; max-width: 600px; margin: 0 auto 24px; }
+.hero-stats { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+.hero-stat { text-align: center; }
+.hero-stat .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+.hero-stat .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title .icon { font-size: 24px; }
+
+/* Model Banner */
+.model-banner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.model-badge {
+  background: var(--gold-dim);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.model-info { flex: 1; min-width: 200px; }
+.model-info .title { font-weight: 600; font-size: 15px; }
+.model-info .desc { color: var(--muted); font-size: 13px; }
+.model-specs { display: flex; gap: 16px; flex-wrap: wrap; }
+.model-spec { text-align: center; padding: 4px 12px; background: var(--surface2); border-radius: 6px; }
+.model-spec .v { font-weight: 700; color: var(--accent); font-size: 14px; }
+.model-spec .k { font-size: 11px; color: var(--muted); }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 0; }
+.phase {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.phase:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,217,163,0.08); }
+.phase.completed { border-left: 4px solid var(--accent); }
+.phase.active { border-left: 4px solid var(--gold); box-shadow: 0 0 20px rgba(255,184,0,0.1); }
+.phase.pending { border-left: 4px solid var(--border); opacity: 0.85; }
+.phase-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+.phase-left { display: flex; align-items: center; gap: 16px; }
+.phase-num {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 18px;
+  flex-shrink: 0;
+}
+.phase.completed .phase-num { background: var(--accent-dim); color: var(--accent); }
+.phase.active .phase-num { background: var(--gold-dim); color: var(--gold); }
+.phase.pending .phase-num { background: var(--surface2); color: var(--muted); }
+.phase-title { font-size: 18px; font-weight: 700; }
+.phase-week { font-size: 12px; color: var(--muted); }
+.phase-status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.status-completed { background: var(--accent-dim); color: var(--accent); }
+.status-active { background: var(--gold-dim); color: var(--gold); }
+.status-pending { background: var(--surface2); color: var(--muted); }
+
+.phase-body { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 700px) { .phase-body { grid-template-columns: 1fr; } }
+
+.phase-tasks { }
+.phase-task {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.phase-task:last-child { border-bottom: none; }
+.task-check {
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  margin-top: 1px;
+}
+.task-done { background: var(--accent); border-color: var(--accent); color: #000; }
+.task-progress { background: var(--gold-dim); border-color: var(--gold); }
+.phase-tasks .task-text { flex: 1; }
+.phase-tasks .task-text.done { color: var(--muted); text-decoration: line-through; }
+
+.phase-deliverables {
+  background: var(--surface2);
+  border-radius: 10px;
+  padding: 16px;
+}
+.deliverable-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.deliverable-item { font-size: 13px; padding: 4px 0; display: flex; gap: 8px; }
+.deliverable-item::before { content: '→'; color: var(--accent); font-weight: 700; }
+
+.phase-tools {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-top: 16px;
+}
+.tool-chip {
+  padding: 4px 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.tool-chip.model { color: var(--gold); border-color: var(--gold); }
+.tool-chip.tech { color: var(--blue); border-color: var(--blue); }
+
+/* Architecture */
+.arch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.arch-node {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+}
+.arch-node:hover { border-color: var(--accent); transform: translateY(-2px); }
+.arch-node .arch-icon { font-size: 28px; margin-bottom: 8px; }
+.arch-node .arch-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.arch-node .arch-desc { font-size: 12px; color: var(--muted); }
+.arch-arrow { text-align: center; color: var(--muted); font-size: 20px; }
+
+/* Moat */
+.moat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.moat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s;
+}
+.moat-card:hover { border-color: var(--purple); }
+.moat-card .moat-num { font-size: 32px; font-weight: 800; color: var(--purple); opacity: 0.4; }
+.moat-card .moat-title { font-weight: 700; font-size: 15px; margin: 4px 0; }
+.moat-card .moat-desc { font-size: 13px; color: var(--muted); }
+
+/* Revenue */
+.revenue-table {
+  width: 100%;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+.revenue-table th {
+  background: var(--surface2);
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+.revenue-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.revenue-table tr:last-child td { border-bottom: none; }
+.revenue-table .highlight { color: var(--accent); font-weight: 700; }
+.revenue-table .total-row { background: var(--surface2); font-weight: 700; }
+
+/* Progress Bar */
+.progress-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 40px;
+}
+.overall-progress {
+  height: 12px;
+  background: var(--surface2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 100%);
+  border-radius: 10px;
+  transition: width 1s ease;
+  position: relative;
+}
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 20px; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer { 0% { opacity:0; } 50% { opacity:1; } 100% { opacity:0; } }
+.progress-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
+
+/* Pricing */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.price-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  transition: all 0.3s;
+  position: relative;
+}
+.price-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.price-card.featured { border-color: var(--accent); box-shadow: 0 0 30px rgba(0,217,163,0.1); }
+.price-card .tier { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+.price-card .price { font-size: 36px; font-weight: 800; margin-bottom: 4px; }
+.price-card .price .per { font-size: 14px; color: var(--muted); font-weight: 400; }
+.price-card ul { list-style: none; margin-top: 16px; }
+.price-card li { font-size: 14px; padding: 6px 0; color: var(--text); display: flex; gap: 8px; }
+.price-card li::before { content: '✓'; color: var(--accent); font-weight: 700; }
+.price-card.featured::after {
+  content: 'POPULAR';
+  position: absolute; top: -10px; right: 20px;
+  background: var(--accent);
+  color: #000;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+.footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="badge">🧪 HL STRATEGY LAB</div>
+    <h1>AI Trading Bot Marketplace for Hyperliquid</h1>
+    <p>Natural language → working trading bot code. Backtested. Risk-managed. One-click deploy. Built by GLM-5.2, deployed on Hyperliquid.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">$0</div><div class="label">Infra Cost</div></div>
+      <div class="hero-stat"><div class="num">624K</div><div class="label">3Commas Users</div></div>
+      <div class="hero-stat"><div class="num">$4.8B</div><div class="label">Bot Market</div></div>
+      <div class="hero-stat"><div class="num">0</div><div class="label">HL Competitors</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Model Banner -->
+  <div class="model-banner">
+    <div class="model-badge">⚡ POWERED BY GLM-5.2</div>
+    <div class="model-info">
+      <div class="title">Build Engine: Z.AI GLM-5.2</div>
+      <div class="desc">1M context window · SOTA open-source coding · Same quota cost as 5.1 · Off-peak 1× promo through September</div>
+    </div>
+    <div class="model-specs">
+      <div class="model-spec"><div class="v">1M</div><div class="k">Context</div></div>
+      <div class="model-spec"><div class="v">SOTA</div><div class="k">Coding</div></div>
+      <div class="model-spec"><div class="v">MIT</div><div class="k">License</div></div>
+    </div>
+  </div>
+
+  <!-- Progress Overview -->
+  <div class="section-title"><span class="icon">📊</span> Build Progress</div>
+  <div class="progress-section">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-weight:700; font-size:16px;">Overall Completion</div>
+      <div style="font-size:28px; font-weight:800; color:var(--accent);">5%</div>
+    </div>
+    <div class="overall-progress">
+      <div class="progress-fill" style="width: 5%;"></div>
+    </div>
+    <div class="progress-labels">
+      <span>Phase 1: Strategy Engine</span>
+      <span>Phase 6: Scale & Launch</span>
+    </div>
+  </div>
+
+  <!-- Architecture -->
+  <div class="section-title"><span class="icon">🏗️</span> System Architecture</div>
+  <div class="arch-grid">
+    <div class="arch-node">
+      <div class="arch-icon">💬</div>
+      <div class="arch-name">User Input</div>
+      <div class="arch-desc">NL strategy description</div>
+    </div>
+    <div class="arch-node">
+      <div class="arch-icon">🧠</div>
+      <div class="arch-name">GLM-5.2 Engine</div>
+      <div class="arch-desc">NL → Python bot code</div>
+    </div>
+    <div class="arch-node">
+      <div class="arch-icon">🔬</div>
+      <div class="arch-name">Backtester</div>
+      <div class="arch-desc">Historical HL data validation</div>
+    </div>
+    <div class="arch-node">
+      <div class="arch-icon">🏪</div>
+      <div class="arch-name">Marketplace</div>
+      <div class="arch-desc">Browse, share, sell strategies</div>
+    </div>
+    <div class="arch-node">
+      <div class="arch-icon">🚀</div>
+      <div class="arch-name">Live Execution</div>
+      <div class="arch-desc">One-click HL deployment</div>
+    </div>
+  </div>
+
+  <!-- Phases / Timeline -->
+  <div class="section-title"><span class="icon">🗺️</span> 6-Week Build Roadmap</div>
+  <div class="timeline">
+
+    <!-- Phase 1 -->
+    <div class="phase active">
+      <div class="phase-header">
+        <div class="phase-left">
+          <div class="phase-num">1</div>
+          <div>
+            <div class="phase-title">K2.7/GLM-5.2 Strategy Engine</div>
+            <div class="phase-week">Week 1 · Core foundation</div>
+          </div>
+        </div>
+        <div class="phase-status status-active">In Progress</div>
+      </div>
+      <div class="phase-body">
+        <div class="phase-tasks">
+          <div class="phase-task">
+            <div class="task-check task-progress">◐</div>
+            <div class="task-text">Design prompt architecture for NL→code generation</div>
+          </div>
+          <div class="phase-task">
+            <div class="task-check">○</div>
+            <div class="task-text">Build GLM-5.2 API wrapper with retry + streaming</div>
+          </div>
+          <div class="phase-task">
+            <div class="task-check">○</div>
+            <div class="task-text">Create strategy template system (RSI, MACD, grid, DCA)</div>
+          </div>
+          <div class="phase-task">
+            <div class="task-check">○</div>
+            <div class="task-text">Code validator — syntax check + safety rules</div>
+          </div>
+          <div class="phase-task">
+            <div class="task-check">○</div>
+            <div class="task-text">Output working HL Python SDK bot from text input</div>
+          </div>
+        </div>
+        <div>
+          <div class="phase-deliverables">
+            <div class="deliverable-label">Deliverables</div>
+            <div class="deliverable-item">Working `generate_strategy(prompt)` → Python file</div>
+            <div class="deliverable-item">5 template strategies tested</div>
+            <div class="deliverable-item">Code safety validator</div>
+          </div>
+          <div class="phase-tools">
+            <div class="tool-chip model">GLM-5.2</div>
+            <div class="tool-chip tech">Python</div>
+            <div class="tool-chip tech">HL SDK</div>
+            <div class="tool-chip">Hyperliquid API</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase pending">
+      <div class="phase-header">
+        <div class="phase-left">
+          <div class="phase-num">2</div>
+          <div>
+            <div class="phase-title">Backtest Engine</div>
+            <div class="phase-week">Week 2 · Validate before deploy</div>
+          </div>
+        </div>
+        <div class="phase-status status-pending">Pending</div>
+      </div>
+      <div class="phase-body">
+        <div class="phase-tasks">
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Pull historical HL candle/OI/funding data</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Build event-driven backtest runner</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Risk metrics: Sharpe, max drawdown, win rate</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Equity curve + trade log visualization</div></div>
+        </div>
+        <div>
+          <div class="phase-deliverables">
+            <div class="deliverable-label">Deliverables</div>
+            <div class="deliverable-item">Backtest any generated strategy in <5s</div>
+            <div class="deliverable-item">Performance report with risk metrics</div>
+          </div>
+          <div class="phase-tools">
+            <div class="tool-chip tech">Python</div>
+            <div class="tool-chip tech">Pandas</div>
+            <div class="tool-chip">HL API</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase pending">
+      <div class="phase-header">
+        <div class="phase-left">
+          <div class="phase-num">3</div>
+          <div>
+            <div class="phase-title">Web UI + Landing</div>
+            <div class="phase-week">Week 3 · User-facing frontend</div>
+          </div>
+        </div>
+        <div class="phase-status status-pending">Pending</div>
+      </div>
+      <div class="phase-body">
+        <div class="phase-tasks">
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Strategy builder interface (NL input → code preview)</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Backtest results dashboard (charts, metrics)</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Strategy library browser</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">User auth + portfolio view</div></div>
+        </div>
+        <div>
+          <div class="phase-deliverables">
+            <div class="deliverable-label">Deliverables</div>
+            <div class="deliverable-item">Public web app deployed</div>
+            <div class="deliverable-item">Strategy builder + backtest viewer</div>
+          </div>
+          <div class="phase-tools">
+            <div class="tool-chip tech">Next.js</div>
+            <div class="tool-chip tech">TailwindCSS</div>
+            <div class="tool-chip tech">Chart.js</div>
+            <div class="tool-chip">Vercel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="phase pending">
+      <div class="phase-header">
+        <div class="phase-left">
+          <div class="phase-num">4</div>
+          <div>
+            <div class="phase-title">Paper Trading + Risk Engine</div>
+            <div class="phase-week">Week 4 · Safe execution layer</div>
+          </div>
+        </div>
+        <div class="phase-status status-pending">Pending</div>
+      </div>
+      <div class="phase-body">
+        <div class="phase-tasks">
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Paper trading sandbox on live HL data</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Risk manager: position sizing, stop-loss, max drawdown kill switch</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Real-time P&L tracking + alerts</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Strategy performance leaderboard</div></div>
+        </div>
+        <div>
+          <div class="phase-deliverables">
+            <div class="deliverable-label">Deliverables</div>
+            <div class="deliverable-item">Live paper trading with risk guardrails</div>
+            <div class="deliverable-item">Performance tracking dashboard</div>
+          </div>
+          <div class="phase-tools">
+            <div class="tool-chip tech">Python</div>
+            <div class="tool-chip tech">WebSocket</div>
+            <div class="tool-chip">HL API</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="phase pending">
+      <div class="phase-header">
+        <div class="phase-left">
+          <div class="phase-num">5</div>
+          <div>
+            <div class="phase-title">Marketplace + Live Deploy</div>
+            <div class="phase-week">Week 5 · Monetization layer</div>
+          </div>
+        </div>
+        <div class="phase-status status-pending">Pending</div>
+      </div>
+      <div class="phase-body">
+        <div class="phase-tasks">
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Strategy marketplace (free + paid templates)</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">One-click live deployment to HL mainnet</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Stripe/HYPE payment integration</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Creator revenue share system</div></div>
+        </div>
+        <div>
+          <div class="phase-deliverables">
+            <div class="deliverable-label">Deliverables</div>
+            <div class="deliverable-item">Public marketplace with paid strategies</div>
+            <div class="deliverable-item">Live trading deployment pipeline</div>
+          </div>
+          <div class="phase-tools">
+            <div class="tool-chip tech">Stripe</div>
+            <div class="tool-chip">HYPE Payments</div>
+            <div class="tool-chip tech">Postgres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 6 -->
+    <div class="phase pending">
+      <div class="phase-header">
+        <div class="phase-left">
+          <div class="phase-num">6</div>
+          <div>
+            <div class="phase-title">Scale + Launch</div>
+            <div class="phase-week">Week 6 · Go to market</div>
+          </div>
+        </div>
+        <div class="phase-status status-pending">Pending</div>
+      </div>
+      <div class="phase-body">
+        <div class="phase-tasks">
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Performance optimization + caching</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Community launch (HL Discord, X, Reddit)</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Documentation + video tutorials</div></div>
+          <div class="phase-task"><div class="task-check">○</div><div class="task-text">Influencer outreach + content strategy</div></div>
+        </div>
+        <div>
+          <div class="phase-deliverables">
+            <div class="deliverable-label">Deliverables</div>
+            <div class="deliverable-item">Public launch with marketing push</div>
+            <div class="deliverable-item">10+ template strategies live</div>
+            <div class="deliverable-item">First paying users</div>
+          </div>
+          <div class="phase-tools">
+            <div class="tool-chip">HL Discord</div>
+            <div class="tool-chip">X/Twitter</div>
+            <div class="tool-chip">SEO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Competitive Moat -->
+  <div class="section-title"><span class="icon">🏰</span> Competitive Moat</div>
+  <div class="moat-grid">
+    <div class="moat-card">
+      <div class="moat-num">01</div>
+      <div class="moat-title">HL Infrastructure</div>
+      <div class="moat-desc">Already running paper trader, whale monitor, API pipelines on Hyperliquid. Nobody else has this.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-num">02</div>
+      <div class="moat-title">GLM-5.2 Codegen</div>
+      <div class="moat-desc">1M context = entire strategy + market context in one pass. Outputs production Python.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-num">03</div>
+      <div class="moat-title">Community Trust</div>
+      <div class="moat-desc">Active in HL Discord, proven track record with trading infrastructure. Users trust the brand.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-num">04</div>
+      <div class="moat-title">On-Chain Native</div>
+      <div class="moat-desc">Built for DEX perps from day one. No CEX bridge, no custody risk, fully on Hyperliquid.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-num">05</div>
+      <div class="moat-title">Speed to Ship</div>
+      <div class="moat-desc">6 weeks to MVP. Competition needs 6 months. First-mover advantage on HL is massive.</div>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="section-title"><span class="icon">💰</span> Pricing Tiers</div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="tier">STARTER</div>
+      <div class="price">$0<span class="per">/mo</span></div>
+      <ul>
+        <li>3 strategy generations / month</li>
+        <li>Basic backtesting</li>
+        <li>Community templates</li>
+        <li>Paper trading</li>
+      </ul>
+    </div>
+    <div class="price-card featured">
+      <div class="tier">PRO</div>
+      <div class="price">$29<span class="per">/mo</span></div>
+      <ul>
+        <li>Unlimited strategy generation</li>
+        <li>Full backtesting suite</li>
+        <li>Risk management engine</li>
+        <li>Live deployment</li>
+        <li>Priority GLM-5.2 compute</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <div class="tier">INSTITUTION</div>
+      <div class="price">$99<span class="per">/mo</span></div>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Custom strategy templates</li>
+        <li>API access</li>
+        <li>Multi-account management</li>
+        <li>Sell strategies on marketplace</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Revenue Model -->
+  <div class="section-title"><span class="icon">📈</span> Revenue Projections</div>
+  <table class="revenue-table">
+    <thead>
+      <tr>
+        <th>Milestone</th>
+        <th>Users</th>
+        <th>Paying %</th>
+        <th>ARPU</th>
+        <th>MRR</th>
+        <th>Annual Run Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Month 2 (Launch)</td>
+        <td>50</td>
+        <td>10%</td>
+        <td>$29</td>
+        <td class="highlight">$145</td>
+        <td>$1,740</td>
+      </tr>
+      <tr>
+        <td>Month 4</td>
+        <td>200</td>
+        <td>15%</td>
+        <td>$35</td>
+        <td class="highlight">$1,050</td>
+        <td>$12,600</td>
+      </tr>
+      <tr>
+        <td>Month 6</td>
+        <td>500</td>
+        <td>20%</td>
+        <td>$40</td>
+        <td class="highlight">$4,000</td>
+        <td>$48,000</td>
+      </tr>
+      <tr>
+        <td>Month 12</td>
+        <td>2,000</td>
+        <td>25%</td>
+        <td>$45</td>
+        <td class="highlight">$22,500</td>
+        <td class="highlight">$270,000</td>
+      </tr>
+      <tr class="total-row">
+        <td>Year 1 Total (blended)</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td class="highlight">~$46,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="text-align:center; margin: 30px 0;">
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display:inline-block;">
+      <div style="font-size:14px; color:var(--muted); margin-bottom:8px;">🎮 This page was built and deployed by</div>
+      <div style="font-size:20px; font-weight:800;">GLM-5.2 ⚡ via Z.AI</div>
+      <div style="font-size:13px; color:var(--muted); margin-top:4px;">Model: glm-5.2 · Provider: zai · 1M context · SOTA coding</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>HL Strategy Lab — Built by Bubbles for Mojo 🫧</p>
+  <p>Powered by <a href="#">GLM-5.2</a> · Hyperliquid · Vercel</p>
+</div>
+
+</body>
+</html>
