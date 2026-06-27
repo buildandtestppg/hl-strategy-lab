@@ -381,6 +381,9 @@ class PaperTrader:
         if size * price > max_notional:
             size = max_notional / price
 
+        # CRITICAL: size must always be positive (direction is tracked separately)
+        size = abs(size)
+
         direction = "LONG" if result.signal == Signal.LONG else "SHORT"
         if direction == "LONG":
             stop_loss = price - current_atr * STOP_LOSS_ATR
