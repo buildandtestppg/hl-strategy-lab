@@ -12,7 +12,8 @@ import numpy as np
 from datetime import datetime, timezone
 from strategy_engine import (
     Signal, HLData, RSIStrategy, MACDStrategy, BollingerStrategy,
-    TrendFollowStrategy, calc_atr,
+    TrendFollowStrategy, StochasticStrategy, VWAPStrategy,
+    SupertrendStrategy, BreakoutStrategy, EMACrossStrategy, calc_atr,
 )
 
 # ─── Config (loaded from strategy_config.json — AI can rewrite this) ───
@@ -55,6 +56,11 @@ STRATEGY_MAP = {
     "macd": MACDStrategy,
     "bollinger": BollingerStrategy,
     "trend": TrendFollowStrategy,
+    "stochastic": StochasticStrategy,
+    "vwap": VWAPStrategy,
+    "supertrend": SupertrendStrategy,
+    "breakout": BreakoutStrategy,
+    "emacross": EMACrossStrategy,
 }
 
 def get_strategy(pair):

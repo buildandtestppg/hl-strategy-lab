@@ -102,6 +102,30 @@ def calc_atr(highs, lows, closes, period=14):
         result[i] = np.mean(trs[i - period:i])
     return result
 
+def calc_stochastic(highs, lows, closes, k_period=14, d_period=3):
+    """Stochastic Oscillator: %K = (close - lowest_low) / (highest_high - lowest_low) * 100."""
+    k = np.full(len(closes), np.nan)
+    for i in range(k_period - 1, len(closes)):
+        low_min = np.min(lows[i - k_period + 1:i + 1])
+        high_max = np.max(highs[i - k_period + 1:i + 1])
+        denom = high_max - low_min
+        k[i] = (closes[i] - low_min) / denom * 100 if denom > 0 else 50
+    # %D = SMA of %K
+    d = np.full(len(closes), np.nan)
+    for i in range(k_period + d_period - 2, len(closes)):
+        d[i] = np.mean(k[i - d_period + 1:i + 1])
+    return k, d
+
+def calc_vwap(highs, lows, closes, volumes, period=20):
+    """VWAP rolling: sum(price * vol) / sum(vol) over a rolling window."""
+    typical = (highs + lows + closes) / 3
+    result = np.full(len(closes), np.nan)
+    for i in range(period - 1, len(closes)):
+        pv = np.sum(typical[i - period + 1:i + 1] * volumes[i - period + 1:i + 1])
+        total_v = np.sum(volumes[i - period + 1:i + 1])
+        result[i] = pv / total_v if total_v > 0 else closes[i]
+    return result
+
 # ─── Data Fetcher ───
 
 class HLData:
@@ -298,6 +322,212 @@ class TrendFollowStrategy:
             return StrategyResult(Signal.FLAT, 0, indicators,
                 f"Mixed signals — no clear trend")
 
+# ─── More Strategies ───
+
+class StochasticStrategy:
+    """Stochastic Oscillator — buy when %K crosses above %D in oversold zone, sell when crosses below in overbought."""
+    name = "Stochastic Oscillator"
+
+    def __init__(self, k_period=14, d_period=3, oversold=20, overbought=80):
+        self.k_period = k_period
+        self.d_period = d_period
+        self.oversold = oversold
+        self.overbought = overbought
+
+    def compute(self, candles):
+        o, h, l, c, v = HLData.candles_to_arrays(candles)
+        k, d = calc_stochastic(h, l, c, self.k_period, self.d_period)
+
+        idx = len(c) - 1
+        if np.isnan(k[idx]) or np.isnan(d[idx]) or np.isnan(k[idx - 1]):
+            return StrategyResult(Signal.FLAT, 0, {}, "Not enough data")
+
+        current_k = k[idx]
+        current_d = d[idx]
+        prev_k = k[idx - 1]
+        prev_d = d[idx - 1]
+        indicators = {"%K": round(current_k, 2), "%D": round(current_d, 2)}
+
+        # Bullish cross in oversold zone
+        if prev_k <= prev_d and current_k > current_d and current_k < self.overbought:
+            conf = min(1.0, (50 - current_k) / 50) if current_k < 50 else 0.6
+            return StrategyResult(Signal.LONG, max(0.5, conf), indicators,
+                f"Stochastic bullish cross %K {current_k:.1f} > %D {current_d:.1f}")
+        # Bearish cross in overbought zone
+        elif prev_k >= prev_d and current_k < current_d and current_k > self.oversold:
+            conf = min(1.0, (current_k - 50) / 50) if current_k > 50 else 0.6
+            return StrategyResult(Signal.SHORT, max(0.5, conf), indicators,
+                f"Stochastic bearish cross %K {current_k:.1f} < %D {current_d:.1f}")
+        elif current_k < self.oversold:
+            return StrategyResult(Signal.LONG, 0.3, indicators,
+                f"Stochastic oversold %K {current_k:.1f} < {self.oversold}")
+        elif current_k > self.overbought:
+            return StrategyResult(Signal.SHORT, 0.3, indicators,
+                f"Stochastic overbought %K {current_k:.1f} > {self.overbought}")
+        else:
+            return StrategyResult(Signal.FLAT, 0, indicators,
+                f"Stochastic neutral %K {current_k:.1f}")
+
+class VWAPStrategy:
+    """VWAP reversion — buy below VWAP (discount), sell above (premium)."""
+    name = "VWAP Reversion"
+
+    def __init__(self, period=20, threshold=0.5):
+        self.period = period
+        self.threshold = threshold  # % deviation from VWAP to trigger
+
+    def compute(self, candles):
+        o, h, l, c, v = HLData.candles_to_arrays(candles)
+        vwap = calc_vwap(h, l, c, v, self.period)
+
+        idx = len(c) - 1
+        if np.isnan(vwap[idx]):
+            return StrategyResult(Signal.FLAT, 0, {}, "Not enough data")
+
+        price = c[idx]
+        deviation = (price - vwap[idx]) / vwap[idx] * 100
+        indicators = {"price": round(price, 2), "vwap": round(vwap[idx], 2), "dev_pct": round(deviation, 2)}
+
+        if deviation < -self.threshold:
+            conf = min(1.0, abs(deviation) / 3)
+            return StrategyResult(Signal.LONG, conf, indicators,
+                f"Price {price:.2f} below VWAP {vwap[idx]:.2f} by {deviation:.2f}%")
+        elif deviation > self.threshold:
+            conf = min(1.0, deviation / 3)
+            return StrategyResult(Signal.SHORT, conf, indicators,
+                f"Price {price:.2f} above VWAP {vwap[idx]:.2f} by {deviation:.2f}%")
+        else:
+            return StrategyResult(Signal.FLAT, 0, indicators,
+                f"Price near VWAP (dev {deviation:.2f}%)")
+
+class SupertrendStrategy:
+    """Supertrend — ATR-based trend following. Buy when price flips above supertrend line."""
+    name = "Supertrend"
+
+    def __init__(self, atr_period=10, multiplier=3.0):
+        self.atr_period = atr_period
+        self.multiplier = multiplier
+
+    def compute(self, candles):
+        o, h, l, c, v = HLData.candles_to_arrays(candles)
+        atr = calc_atr(h, l, c, self.atr_period)
+
+        idx = len(c) - 1
+        if np.isnan(atr[idx]):
+            return StrategyResult(Signal.FLAT, 0, {}, "Not enough data")
+
+        # Supertrend = hl2 ± multiplier * ATR
+        hl2 = (h + l) / 2
+        basic_upper = hl2 + self.multiplier * atr
+        basic_lower = hl2 - self.multiplier * atr
+
+        # Final supertrend line: carry forward upper/lower based on price action
+        final_upper = np.copy(basic_upper)
+        final_lower = np.copy(basic_lower)
+        supertrend = np.full(len(c), np.nan)
+        direction = np.ones(len(c))  # 1 = uptrend, -1 = downtrend
+
+        for i in range(self.atr_period, len(c)):
+            if c[i] > final_upper[i - 1]:
+                direction[i] = 1
+            elif c[i] < final_lower[i - 1]:
+                direction[i] = -1
+            else:
+                direction[i] = direction[i - 1]
+                if direction[i] == 1 and final_lower[i] < final_lower[i - 1]:
+                    final_lower[i] = final_lower[i - 1]
+                if direction[i] == -1 and final_upper[i] > final_upper[i - 1]:
+                    final_upper[i] = final_upper[i - 1]
+
+            supertrend[i] = final_lower[i] if direction[i] == 1 else final_upper[i]
+
+        st_value = supertrend[idx]
+        indicators = {"supertrend": round(st_value, 2), "atr": round(atr[idx], 2), "direction": int(direction[idx])}
+
+        if direction[idx] == 1 and direction[idx - 1] == -1:
+            return StrategyResult(Signal.LONG, 0.85, indicators,
+                f"Supertrend bullish flip: price {c[idx]:.2f} above {st_value:.2f}")
+        elif direction[idx] == -1 and direction[idx - 1] == 1:
+            return StrategyResult(Signal.SHORT, 0.85, indicators,
+                f"Supertrend bearish flip: price {c[idx]:.2f} below {st_value:.2f}")
+        elif direction[idx] == 1:
+            return StrategyResult(Signal.LONG, 0.5, indicators,
+                f"Supertrend uptrend: price {c[idx]:.2f} above {st_value:.2f}")
+        else:
+            return StrategyResult(Signal.SHORT, 0.5, indicators,
+                f"Supertrend downtrend: price {c[idx]:.2f} below {st_value:.2f}")
+
+class BreakoutStrategy:
+    """Donchian-style breakout — buy at N-bar high, sell at N-bar low."""
+    name = "Breakout"
+
+    def __init__(self, lookback=20):
+        self.lookback = lookback
+
+    def compute(self, candles):
+        o, h, l, c, v = HLData.candles_to_arrays(candles)
+        idx = len(c) - 1
+        if idx < self.lookback:
+            return StrategyResult(Signal.FLAT, 0, {}, "Not enough data")
+
+        # Lookback window excludes current bar
+        high = np.max(h[idx - self.lookback:idx])
+        low = np.min(l[idx - self.lookback:idx])
+        price = c[idx]
+        indicators = {"price": round(price, 2), "high": round(high, 2), "low": round(low, 2)}
+
+        if price > high:
+            conf = min(1.0, (price - high) / high * 20)
+            return StrategyResult(Signal.LONG, max(0.7, conf), indicators,
+                f"Breakout above {self.lookback}-bar high {high:.2f}")
+        elif price < low:
+            conf = min(1.0, (low - price) / low * 20)
+            return StrategyResult(Signal.SHORT, max(0.7, conf), indicators,
+                f"Breakdown below {self.lookback}-bar low {low:.2f}")
+        else:
+            return StrategyResult(Signal.FLAT, 0, indicators,
+                f"Inside range [{low:.2f}, {high:.2f}]")
+
+class EMACrossStrategy:
+    """EMA crossover — fast EMA crosses slow EMA."""
+    name = "EMA Crossover"
+
+    def __init__(self, fast=9, slow=21):
+        self.fast = fast
+        self.slow = slow
+
+    def compute(self, candles):
+        o, h, l, c, v = HLData.candles_to_arrays(candles)
+        ema_fast = ema(c, self.fast)
+        ema_slow = ema(c, self.slow)
+
+        idx = len(c) - 1
+        if np.isnan(ema_slow[idx]) or np.isnan(ema_slow[idx - 1]):
+            return StrategyResult(Signal.FLAT, 0, {}, "Not enough data")
+
+        current_spread = ema_fast[idx] - ema_slow[idx]
+        prev_spread = ema_fast[idx - 1] - ema_slow[idx - 1]
+        indicators = {
+            "ema_fast": round(ema_fast[idx], 2),
+            "ema_slow": round(ema_slow[idx], 2),
+            "spread": round(current_spread, 2),
+        }
+
+        # Bullish cross
+        if prev_spread < 0 and current_spread >= 0:
+            return StrategyResult(Signal.LONG, 0.8, indicators,
+                f"EMA bullish cross: fast {ema_fast[idx]:.2f} > slow {ema_slow[idx]:.2f}")
+        # Bearish cross
+        elif prev_spread > 0 and current_spread <= 0:
+            return StrategyResult(Signal.SHORT, 0.8, indicators,
+                f"EMA bearish cross: fast {ema_fast[idx]:.2f} < slow {ema_slow[idx]:.2f}")
+        elif current_spread > 0:
+            return StrategyResult(Signal.LONG, 0.5, indicators,
+                f"EMA bullish: fast above slow by {current_spread:.2f}")
+        else:
+            return StrategyResult(Signal.SHORT, 0.5, indicators,
+                f"EMA bearish: fast below slow by {abs(current_spread):.2f}")
+
 # ─── Strategy Registry ───
 
 STRATEGIES = {
@@ -305,6 +535,11 @@ STRATEGIES = {
     "macd": MACDStrategy,
     "bollinger": BollingerStrategy,
     "trend": TrendFollowStrategy,
+    "stochastic": StochasticStrategy,
+    "vwap": VWAPStrategy,
+    "supertrend": SupertrendStrategy,
+    "breakout": BreakoutStrategy,
+    "emacross": EMACrossStrategy,
 }
 
 def create_strategy(name, **params):
@@ -356,7 +591,7 @@ if __name__ == "__main__":
     # Quick test
     print("=== Testing HL Strategy Engine ===\n")
 
-    pairs = ["BTC", "ETH", "SOL", "HYPE", "AVAX", "DOGE"]
+    pairs = ["BTC", "ETH", "SOL", "HYPE"]
 
     for pair in pairs:
         candles = HLData.get_candles(pair, interval="1h", days=30)
@@ -366,7 +601,12 @@ if __name__ == "__main__":
         macd_s = MACDStrategy()
         bb_s = BollingerStrategy()
         trend_s = TrendFollowStrategy()
+        stoch_s = StochasticStrategy()
+        vwap_s = VWAPStrategy()
+        super_s = SupertrendStrategy()
+        break_s = BreakoutStrategy()
+        ema_s = EMACrossStrategy()
 
-        for s in [rsi_s, macd_s, bb_s, trend_s]:
+        for s in [rsi_s, macd_s, bb_s, trend_s, stoch_s, vwap_s, super_s, break_s, ema_s]:
             result = s.compute(candles)
             print(f"  {s.name:30s} → {result.signal.value:5s} (conf: {result.confidence:.2f}) — {result.reason}")

@@ -23,7 +23,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from strategy_engine import (
     Signal, HLData, RSIStrategy, MACDStrategy, BollingerStrategy,
-    TrendFollowStrategy,
+    TrendFollowStrategy, StochasticStrategy, VWAPStrategy,
+    SupertrendStrategy, BreakoutStrategy, EMACrossStrategy,
 )
 from backtester import Backtester
 from paper_trader import load_strategy_config, save_strategy_config, CONFIG_FILE
@@ -44,6 +45,11 @@ STRATEGIES_TO_TEST = [
     ("macd", MACDStrategy()),
     ("bollinger", BollingerStrategy()),
     ("trend", TrendFollowStrategy()),
+    ("stochastic", StochasticStrategy()),
+    ("vwap", VWAPStrategy()),
+    ("supertrend", SupertrendStrategy()),
+    ("breakout", BreakoutStrategy()),
+    ("emacross", EMACrossStrategy()),
 ]
 
 # ─── Discord ───

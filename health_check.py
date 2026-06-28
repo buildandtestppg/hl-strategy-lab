@@ -117,7 +117,7 @@ try:
         cfg = json.load(f)
     ok("Config parses")
     
-    valid_strats = ["rsi", "macd", "bollinger", "trend"]
+    valid_strats = ["rsi", "macd", "bollinger", "trend", "stochastic", "vwap", "supertrend", "breakout", "emacross"]
     pairs_found = 0
     for key, val in cfg.items():
         if key.startswith("_"):
@@ -128,8 +128,8 @@ try:
         elif val["strategy"] not in valid_strats:
             fail(f"Config[{key}] strategy valid", val["strategy"])
     
-    if pairs_found != 6:
-        fail("Config pair count", f"expected 6, got {pairs_found}")
+    if pairs_found != 4:
+        fail("Config pair count", f"expected 4, got {pairs_found}")
     else:
         ok("Config pairs", f"{pairs_found} pairs configured")
     
@@ -283,7 +283,7 @@ try:
     r = requests.post("https://api.hyperliquid.xyz/info", json={"type": "allMids"}, timeout=10)
     prices = r.json()
     
-    required_pairs = ["BTC", "ETH", "SOL", "HYPE", "AVAX", "DOGE"]
+    required_pairs = ["BTC", "ETH", "SOL", "HYPE"]
     for pair in required_pairs:
         if pair not in prices:
             fail(f"HL API has {pair}", "missing")
@@ -291,7 +291,7 @@ try:
             fail(f"HL API {pair} price", prices[pair])
     
     if all(p in prices and float(prices[p]) > 0 for p in required_pairs):
-        ok("All 6 pairs live on HL API", ", ".join(f"{p}=${float(prices[p]):.2f}" for p in required_pairs))
+        ok("All 4 pairs live on HL API", ", ".join(f"{p}=${float(prices[p]):.2f}" for p in required_pairs))
         
 except Exception as e:
     fail("HL API", str(e))

@@ -11,6 +11,7 @@ from dataclasses import dataclass, field, asdict
 from typing import Optional
 from strategy_engine import (
     Signal, HLData, RSIStrategy, MACDStrategy, BollingerStrategy, TrendFollowStrategy,
+    StochasticStrategy, VWAPStrategy, SupertrendStrategy, BreakoutStrategy, EMACrossStrategy,
     MultiStrategyVoter, create_strategy, STRATEGIES,
     sma, ema, calc_rsi, calc_macd, calc_bollinger, calc_atr
 )
@@ -302,7 +303,7 @@ class Backtester:
 # ─── Multi-asset Backtest Runner ───
 
 def run_backtest_matrix(
-    pairs=["BTC", "ETH", "SOL", "HYPE", "AVAX", "DOGE"],
+    pairs=["BTC", "ETH", "SOL", "HYPE"],
     strategies=None,
     interval="1h",
     days=90,
@@ -315,6 +316,11 @@ def run_backtest_matrix(
             ("MACD", MACDStrategy()),
             ("Bollinger", BollingerStrategy()),
             ("Trend", TrendFollowStrategy()),
+            ("Stochastic", StochasticStrategy()),
+            ("VWAP", VWAPStrategy()),
+            ("Supertrend", SupertrendStrategy()),
+            ("Breakout", BreakoutStrategy()),
+            ("EMACross", EMACrossStrategy()),
         ]
 
     bt = Backtester(**backtest_kwargs)
@@ -340,11 +346,11 @@ if __name__ == "__main__":
     print("║  HL Strategy Lab — BACKTEST ENGINE v1.0                     ║")
     print("║  6 Pairs × 4 Strategies × 90 Days Historical Data           ║")
     print("╚══════════════════════════════HL STRATEGY LAB — BACKTEST ENGINE v1.0 ===")
-    print("6 Pairs × 4 Strategies × 90 Days Historical Data\n")
+    print("4 Pairs × 9 Strategies × 90 Days Historical Data\n")
 
     # Run backtests
     results = run_backtest_matrix(
-        pairs=["BTC", "ETH", "SOL", "HYPE", "AVAX", "DOGE"],
+        pairs=["BTC", "ETH", "SOL", "HYPE"],
         interval="1h",
         days=90,
         initial_capital=1000,
