@@ -172,8 +172,21 @@ def optimize():
 
     # Score each strategy per pair
     swaps = []
+    # Load open positions to skip swaps on pairs with active trades
+    open_pairs = set()
+    if os.path.exists(state_file):
+        with open(state_file) as f:
+            s = json.load(f)
+        open_pairs = set(s.get("positions", {}).keys())
+    
     for pair in pairs:
         current_strat = current_config[pair]["strategy"]
+        
+        # Skip optimization for pairs with open positions (changing strategy mid-trade is dangerous)
+        if pair in open_pairs:
+            print(f"\n--- {pair} (current: {current_strat}) --- ⏸️ OPEN POSITION — SKIPPING")
+            continue
+        	
         print(f"\n--- {pair} (current: {current_strat}) ---")
 
         if pair not in backtest_results or not backtest_results[pair]:

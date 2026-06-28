@@ -88,7 +88,11 @@ DASHBOARD_DATA = os.path.join(os.path.dirname(__file__), "dashboard_data.json")
 def load_state():
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE) as f:
-            return json.load(f)
+            state = json.load(f)
+        # Sanitize: fix any corrupted sizes from older bugs
+        for pair, pos in state.get("positions", {}).items():
+            pos["size"] = abs(pos["size"])  # size must always be positive
+        return state
     return {
         "capital": INITIAL_CAPITAL,
         "initial_capital": INITIAL_CAPITAL,
@@ -102,8 +106,11 @@ def load_state():
 
 def save_state(state):
     state["last_update"] = datetime.now(timezone.utc).isoformat()
-    with open(STATE_FILE, "w") as f:
+    # Atomic write: write to temp then rename (prevents corruption from concurrent cron runs)
+    tmp_file = STATE_FILE + ".tmp"
+    with open(tmp_file, "w") as f:
         json.dump(state, f, indent=2)
+    os.replace(tmp_file, STATE_FILE)
 
 # ─── Helpers ───
 
@@ -184,14 +191,26 @@ class PaperTrader:
                     exit_price = pos["take_profit"]
 
             # Check signal exit (if strategy says flip or go flat)
+            # CRITICAL: Use the strategy that opened the position, not current config
+            # (optimizer may have changed it mid-position)
             if not exit_reason:
-                strat = get_strategy(pair)
-                if strat:
-                    result = strat.compute(candles)
-                    if (pos["direction"] == "LONG" and result.signal == Signal.SHORT) or \
-                       (pos["direction"] == "SHORT" and result.signal == Signal.LONG):
-                        exit_reason = "signal_exit"
-                        exit_price = current_price
+                entry_strat_name = pos.get("strategy", "unknown")
+                cfg = load_strategy_config().get(pair, {})
+                current_strat_name = cfg.get("strategy", "unknown")
+                
+                if entry_strat_name == current_strat_name:
+                    # Config hasn't changed since entry — safe to check signal exit
+                    strat = get_strategy(pair)
+                    if strat:
+                        result = strat.compute(candles)
+                        if (pos["direction"] == "LONG" and result.signal == Signal.SHORT) or \
+                           (pos["direction"] == "SHORT" and result.signal == Signal.LONG):
+                            exit_reason = "signal_exit"
+                            exit_price = current_price
+                else:
+                    # Strategy was swapped by optimizer while position is open.
+                    # Only exit on SL/TP, not signal (avoids premature exit from new strategy).
+                    pass
 
             if exit_reason:
                 self._close_position(pair, exit_price, exit_reason, results)
@@ -366,18 +385,27 @@ class PaperTrader:
 
     def _open_position(self, pair, result, price, candles, results):
         """Open a new simulated position."""
+        # CRITICAL: Use actual per-pair prices for portfolio valuation
+        portfolio_value = self._portfolio_value(results["prices"])
+        
+        # Guard: stop trading if portfolio is in the red
+        if portfolio_value <= 0:
+            results["actions"].append(f"⚠️ {pair}: Skipping — portfolio value negative (${portfolio_value:.2f})")
+            return
+
         o, h, l, c, v = HLData.candles_to_arrays(candles)
         atr = calc_atr(h, l, c, 14)
         current_atr = atr[-1] if not np.isnan(atr[-1]) else price * 0.02
 
-        portfolio_value = self._portfolio_value(price)
         risk_amount = portfolio_value * RISK_PER_TRADE
         stop_distance = current_atr * STOP_LOSS_ATR
         if stop_distance <= 0:
             return
 
         size = risk_amount / stop_distance
-        max_notional = portfolio_value * MAX_LEVERAGE
+        
+        # CRITICAL: Cap notional at INITIAL_CAPITAL * leverage (not inflated portfolio value)
+        max_notional = INITIAL_CAPITAL * MAX_LEVERAGE
         if size * price > max_notional:
             size = max_notional / price
 
@@ -392,10 +420,10 @@ class PaperTrader:
             stop_loss = price + current_atr * STOP_LOSS_ATR
             take_profit = price - current_atr * TAKE_PROFIT_ATR
 
-        # Deduct entry fees from capital
-        cost = trade_cost(size, price, price)  # approximate entry cost
-        self.state["capital"] -= cost / 2  # half cost for entry, half on exit
-        self.state["total_fees_paid"] += cost / 2
+        # Deduct entry fees from capital (entry fee only)
+        entry_cost = size * price * (HL_FEE + SLIPPAGE)
+        self.state["capital"] -= entry_cost
+        self.state["total_fees_paid"] += entry_cost
 
         self.state["positions"][pair] = {
             "direction": direction,
@@ -428,9 +456,10 @@ class PaperTrader:
             raw_pnl = (entry - exit_price) * size
 
         cost = trade_cost(size, entry, exit_price)
-        net_pnl = raw_pnl - cost / 2  # other half was deducted at entry
+        exit_cost = size * exit_price * (HL_FEE + SLIPPAGE)  # exit fee only (entry already paid)
+        net_pnl = raw_pnl - exit_cost
         self.state["capital"] += net_pnl
-        self.state["total_fees_paid"] += cost / 2
+        self.state["total_fees_paid"] += exit_cost
 
         trade_record = {
             "pair": pair,
@@ -457,11 +486,19 @@ class PaperTrader:
             f"Reason: {reason}"
         )
 
-    def _portfolio_value(self, current_price=0):
+    def _portfolio_value(self, prices=None):
+        """Calculate portfolio value using per-pair prices.
+        
+        Args:
+            prices: dict of {pair: price} for accurate valuation,
+                    or None to use entry prices (conservative).
+        """
         val = self.state["capital"]
         for pair, pos in self.state["positions"].items():
-            # Use entry price as conservative estimate if we don't have live price
-            cp = current_price if current_price else pos["entry_price"]
+            if prices and pair in prices:
+                cp = prices[pair]
+            else:
+                cp = pos["entry_price"]
             if pos["direction"] == "LONG":
                 val += (cp - pos["entry_price"]) * pos["size"]
             else:

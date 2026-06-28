@@ -62,11 +62,22 @@ def calc_macd(data, fast=12, slow=26, signal=9):
     ema_fast = ema(data, fast)
     ema_slow = ema(data, slow)
     macd_line = ema_fast - ema_slow
-    signal_line = ema(macd_line[~np.isnan(macd_line)], signal)
-    # Pad signal to match length
+    # Compute signal line: EMA of the MACD line
+    # Find first non-NaN index in macd_line
+    first_valid = slow - 1  # EMA(slow) needs at least `slow` data points
+    if len(data) - first_valid < signal:
+        # Not enough data for signal line
+        full_signal = np.full(len(data), np.nan)
+        histogram = macd_line - full_signal
+        return macd_line, full_signal, histogram
+    # Compute EMA of macd_line starting from first_valid
+    valid_macd = macd_line[first_valid:]
+    signal_line = ema(valid_macd, signal)
+    # Pad signal to match full length
     full_signal = np.full(len(data), np.nan)
-    offset = len(data) - len(signal_line)
-    full_signal[offset:] = signal_line
+    offset = first_valid  # signal_line[i] corresponds to macd_line[first_valid + i]
+    valid_signal_start = offset + (signal - 1)  # first valid signal
+    full_signal[valid_signal_start:] = signal_line[signal - 1:]
     histogram = macd_line - full_signal
     return macd_line, full_signal, histogram
 
