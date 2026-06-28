@@ -7,7 +7,7 @@ PROJECT_DIR = "/Users/mojoai/Projects/hl-strategy-lab"
 STATE_FILE = os.path.join(PROJECT_DIR, "paper_trader_state.json")
 CONFIG_FILE = os.path.join(PROJECT_DIR, "strategy_config.json")
 DATA_FILE = os.path.join(PROJECT_DIR, "dashboard_data.json")
-SCRIPTS_DIR = os.path.mojoaihermes_scripts = os.path.expanduser("~/.hermes/scripts")
+SCRIPTS_DIR = os.path.expanduser("~/.hermes/scripts")
 CHANNEL_ID = "1520303679125721118"
 
 errors = []

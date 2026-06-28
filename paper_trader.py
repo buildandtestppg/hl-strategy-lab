@@ -455,7 +455,6 @@ class PaperTrader:
         else:
             raw_pnl = (entry - exit_price) * size
 
-        cost = trade_cost(size, entry, exit_price)
         exit_cost = size * exit_price * (HL_FEE + SLIPPAGE)  # exit fee only (entry already paid)
         net_pnl = raw_pnl - exit_cost
         self.state["capital"] += net_pnl
