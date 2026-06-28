@@ -78,8 +78,8 @@ RISK_PER_TRADE = 0.02       # 2% of portfolio per position
 MAX_LEVERAGE = 3
 STOP_LOSS_ATR = 2.5
 TAKE_PROFIT_ATR = 5.0
-HL_FEE = 0.00035
-SLIPPAGE = 0.0005
+HL_FEE = 0.00045          # Real taker fee 0.045% (conservative — we'll use market orders)
+SLIPPAGE = 0.0005         # 0.05% slippage on taker fills
 MIN_CONFIDENCE = 0.3
 MAX_POSITIONS = 6           # one per pair max
 CANDLE_INTERVAL = "1h"
@@ -130,6 +130,37 @@ def get_current_prices():
     r.raise_for_status()
     return r.json()
 
+def get_funding_rates():
+    """Fetch live funding rates from HL. Returns {pair: rate_per_hour}.
+    Positive = longs pay shorts, Negative = shorts pay longs."""
+    r = requests.post("https://api.hyperliquid.xyz/info", json={
+        "type": "metaAndAssetCtxs"
+    }, timeout=15)
+    r.raise_for_status()
+    data = r.json()
+    meta, ctxs = data[0], data[1]
+    rates = {}
+    for i, asset in enumerate(meta["universe"]):
+        name = asset["name"]
+        ctx = ctxs[i]
+        funding = ctx.get("funding")
+        if funding is not None:
+            rates[name] = float(funding)
+    return rates
+
+def calc_funding_cost(pair, direction, notional, hold_hours, funding_rates):
+    """Calculate funding cost for a position.
+    Returns the cost (positive = we pay, negative = we earn)."""
+    rate = funding_rates.get(pair)
+    if rate is None:
+        return 0.0
+    # Funding charged per hour. Positive rate = longs pay shorts.
+    # If we're LONG and rate is positive, we pay. If SHORT and rate negative, we pay.
+    if direction == "LONG":
+        return notional * rate * hold_hours
+    else:  # SHORT — opposite sign
+        return -notional * rate * hold_hours
+
 # ─── Paper Trader Core ───
 
 class PaperTrader:
@@ -148,6 +179,12 @@ class PaperTrader:
 
         prices = get_current_prices()
         candles_cache = {}
+
+        # Fetch live funding rates for accurate cost tracking
+        try:
+            funding_rates = get_funding_rates()
+        except Exception:
+            funding_rates = {}  # Don't fail the cycle if funding API hiccups
 
         # Reload config fresh each cycle (AI may have changed it)
         active_pairs = load_strategy_config()
@@ -219,7 +256,7 @@ class PaperTrader:
                     pass
 
             if exit_reason:
-                self._close_position(pair, exit_price, exit_reason, results)
+                self._close_position(pair, exit_price, exit_reason, results, funding_rates)
 
         # 2. Check for new entries
         open_count = len(self.state["positions"])
@@ -242,7 +279,7 @@ class PaperTrader:
                 self._open_position(pair, result, results["prices"][pair], candles, results)
                 open_count += 1
 
-        # 3. Calculate portfolio value
+        # 3. Calculate portfolio value (with unrealized funding cost estimate)
         portfolio_value = self.state["capital"]
         for pair, pos in self.state["positions"].items():
             current_price = results["prices"].get(pair, pos["entry_price"])
@@ -250,6 +287,11 @@ class PaperTrader:
                 unrealized = (current_price - pos["entry_price"]) * pos["size"]
             else:
                 unrealized = (pos["entry_price"] - current_price) * pos["size"]
+            # Subtract unrealized funding cost for honest portfolio valuation
+            hold_hours = (time.time() - pos["entry_ts"]) / 3600
+            current_notional = pos["size"] * current_price
+            unrealized_funding = calc_funding_cost(pair, pos["direction"], current_notional, hold_hours, funding_rates)
+            unrealized -= unrealized_funding
             portfolio_value += unrealized
             results["positions"][pair] = {
                 "direction": pos["direction"],
@@ -262,7 +304,9 @@ class PaperTrader:
                 "take_profit": pos["take_profit"],
                 "strategy": pos["strategy"],
                 "entry_time": pos["entry_time"],
-                "duration_hours": round((time.time() - pos["entry_ts"]) / 3600, 1),
+                "duration_hours": round(hold_hours, 1),
+                "funding_rate": round(funding_rates.get(pair, 0) * 100, 6),
+                "unrealized_funding": round(unrealized_funding, 4),
             }
 
         results["portfolio_value"] = round(portfolio_value, 2)
@@ -450,25 +494,34 @@ class PaperTrader:
             f"Strategy: {load_strategy_config().get(pair, {}).get('strategy', 'unknown')} | {result.reason}"
         )
 
-    def _close_position(self, pair, exit_price, reason, results):
+    def _close_position(self, pair, exit_price, reason, results, funding_rates=None):
         """Close a position and record the trade."""
+        if funding_rates is None:
+            funding_rates = {}
         pos = self.state["positions"][pair]
         entry = pos["entry_price"]
         size = pos["size"]
+        direction = pos["direction"]
 
-        if pos["direction"] == "LONG":
+        if direction == "LONG":
             raw_pnl = (exit_price - entry) * size
         else:
             raw_pnl = (entry - exit_price) * size
 
         exit_cost = size * exit_price * (HL_FEE + SLIPPAGE)  # exit fee only (entry already paid)
-        net_pnl = raw_pnl - exit_cost
+
+        # Funding cost: based on hold time, direction, and live funding rate
+        hold_hours = (time.time() - pos["entry_ts"]) / 3600
+        exit_notional = size * exit_price
+        funding_cost = calc_funding_cost(pair, direction, exit_notional, hold_hours, funding_rates)
+
+        net_pnl = raw_pnl - exit_cost - funding_cost
         self.state["capital"] += net_pnl
-        self.state["total_fees_paid"] += exit_cost
+        self.state["total_fees_paid"] += exit_cost + max(0, funding_cost)  # only count positive costs
 
         trade_record = {
             "pair": pair,
-            "direction": pos["direction"],
+            "direction": direction,
             "entry_price": entry,
             "exit_price": exit_price,
             "size": size,
@@ -476,9 +529,12 @@ class PaperTrader:
             "pnl_pct": round(net_pnl / (entry * size) * 100, 2),
             "entry_time": pos["entry_time"],
             "exit_time": datetime.now(timezone.utc).isoformat(),
-            "duration_hours": round((time.time() - pos["entry_ts"]) / 3600, 1),
+            "duration_hours": round(hold_hours, 1),
             "exit_reason": reason,
             "strategy": pos["strategy"],
+            "fees_paid": round(exit_cost, 4),
+            "funding_cost": round(funding_cost, 4),
+            "total_cost": round(exit_cost + funding_cost, 4),
         }
 
         self.state["closed_trades"].append(trade_record)
@@ -486,7 +542,7 @@ class PaperTrader:
 
         emoji = "✅" if net_pnl > 0 else "❌"
         results["actions"].append(
-            f"{emoji} CLOSED {pos['direction']} {pair} @ ${exit_price:.4f} | "
+            f"{emoji} CLOSED {direction} {pair} @ ${exit_price:.4f} | "
             f"P&L: ${net_pnl:+.2f} ({net_pnl/(entry*size)*100:+.1f}%) | "
             f"Reason: {reason}"
         )

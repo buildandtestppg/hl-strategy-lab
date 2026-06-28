@@ -18,8 +18,8 @@ from strategy_engine import (
 
 # ─── Config ───
 
-HL_FEE = 0.00035       # 0.035% taker fee on Hyperliquid
-SLIPPAGE = 0.0005      # 0.05% assumed slippage
+HL_FEE = 0.00045       # Real taker fee 0.045% on Hyperliquid
+SLIPPAGE = 0.0005      # 0.05% assumed slippage on taker fills
 FUNDING_COST = 0.0001  # 0.01% per 8h (conservative avg for shorts)
 
 # ─── Trade & Position ───
@@ -123,11 +123,14 @@ class Backtester:
                 if result:
                     direction, entry, exit_price, reason = result
                     cost = self._trade_cost(position["size"], entry, exit_price)
+                    # Funding cost: estimate hold time from candle indices
+                    hold_hours = (i - position["entry_idx"]) * 1.0  # 1h candles
+                    funding_cost = self._funding_cost(direction, position["size"] * exit_price, hold_hours)
                     if direction == "LONG":
                         raw_pnl = (exit_price - entry) * position["size"]
                     else:
                         raw_pnl = (entry - exit_price) * position["size"]
-                    pnl = raw_pnl - cost
+                    pnl = raw_pnl - cost - funding_cost
                     equity += pnl
                     trade = Trade(
                         entry_time=candles[position["entry_idx"]]["t"],
@@ -202,7 +205,9 @@ class Backtester:
             else:
                 raw_pnl = (entry - last_price) * position["size"]
             cost = self._trade_cost(position["size"], entry, last_price)
-            pnl = raw_pnl - cost
+            hold_hours = (len(candles) - 1 - position["entry_idx"]) * 1.0  # 1h candles
+            funding_cost = self._funding_cost(position["direction"], position["size"] * last_price, hold_hours)
+            pnl = raw_pnl - cost - funding_cost
             equity += pnl
             equity_curve.append(round(equity, 2))
             trades.append(asdict(Trade(
@@ -298,6 +303,15 @@ class Backtester:
         fees = (notional_entry + notional_exit) * HL_FEE
         slip = (notional_entry + notional_exit) * SLIPPAGE
         return fees + slip
+
+    def _funding_cost(self, direction, notional, hold_hours):
+        """Estimate funding cost over the holding period.
+        Uses FUNDING_COST per 8h. LONGs pay when funding > 0 (default assumption)."""
+        funding_periods = hold_hours / 8.0
+        if direction == "LONG":
+            return notional * FUNDING_COST * funding_periods
+        else:  # SHORT — earns when funding positive (simplification for backtest)
+            return -notional * FUNDING_COST * funding_periods
 
 
 # ─── Multi-asset Backtest Runner ───
