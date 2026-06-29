@@ -80,10 +80,12 @@ STOP_LOSS_ATR = 2.5
 TAKE_PROFIT_ATR = 5.0
 HL_FEE = 0.00045          # Real taker fee 0.045% (conservative — we'll use market orders)
 SLIPPAGE = 0.0005         # 0.05% slippage on taker fills
-MIN_CONFIDENCE = 0.3
+MIN_CONFIDENCE = 0.6       # Raised from 0.3 — only strong signals enter
 MAX_POSITIONS = 6           # one per pair max
 CANDLE_INTERVAL = "1h"
 CANDLE_DAYS = 30            # lookback for indicator calculation
+MIN_HOLD_HOURS = 3          # minimum hold time before signal exit allowed
+REENTRY_COOLDOWN_HOURS = 4  # cooldown after closing before re-entering same pair
 
 STATE_FILE = os.path.join(os.path.dirname(__file__), "paper_trader_state.json")
 TRADE_LOG_FILE = os.path.join(os.path.dirname(__file__), "paper_trades.json")
@@ -108,6 +110,7 @@ def load_state():
         "created_at": datetime.now(timezone.utc).isoformat(),
         "last_update": None,
         "total_fees_paid": 0,
+        "last_close_times": {},  # {pair: timestamp} for re-entry cooldown
     }
 
 def save_state(state):
@@ -193,6 +196,10 @@ class PaperTrader:
         for pair in active_pairs:
             try:
                 candles = HLData.get_candles(pair, interval=CANDLE_INTERVAL, days=CANDLE_DAYS)
+                # CRITICAL: Drop the last (forming/unclosed) candle.
+                # Without this, every 5-min cron run re-evaluates a shifting candle → whipsaw.
+                if candles and len(candles) > 30:
+                    candles = candles[:-1]
                 candles_cache[pair] = candles
                 price = float(prices.get(pair, candles[-1]["c"]))
                 results["prices"][pair] = price
@@ -236,13 +243,18 @@ class PaperTrader:
             # Check signal exit (if strategy says flip or go flat)
             # CRITICAL: Use the strategy that opened the position, not current config
             # (optimizer may have changed it mid-position)
+            # CRITICAL: Enforce minimum hold time to prevent whipsaw churning
             if not exit_reason:
                 entry_strat_name = pos.get("strategy", "unknown")
                 cfg = load_strategy_config().get(pair, {})
                 current_strat_name = cfg.get("strategy", "unknown")
+                hold_hours = (time.time() - pos["entry_ts"]) / 3600
                 
-                if entry_strat_name == current_strat_name:
-                    # Config hasn't changed since entry — safe to check signal exit
+                if hold_hours < MIN_HOLD_HOURS:
+                    # Too soon — let SL/TP work, don't exit on signal
+                    pass
+                elif entry_strat_name == current_strat_name:
+                    # Config hasn't changed and held long enough — safe to check signal exit
                     strat = get_strategy(pair)
                     if strat:
                         result = strat.compute(candles)
@@ -259,13 +271,27 @@ class PaperTrader:
                 self._close_position(pair, exit_price, exit_reason, results, funding_rates)
 
         # 2. Check for new entries
+        # Track pairs closed THIS CYCLE to prevent same-cycle re-entry (whipsaw fix)
+        _now = time.time()
+        pairs_closed_this_cycle = set()
+        for p, close_ts in self.state.get("last_close_times", {}).items():
+            if _now - close_ts < 120:  # closed in last 2 minutes = this cycle
+                pairs_closed_this_cycle.add(p)
+
         open_count = len(self.state["positions"])
         for pair in active_pairs:
             if pair in self.state["positions"]:
                 continue  # already in position
+            if pair in pairs_closed_this_cycle:
+                continue  # closed this cycle — no re-entry
             if open_count >= MAX_POSITIONS:
                 break
             if pair not in candles_cache:
+                continue
+
+            # Re-entry cooldown: skip if we closed this pair recently
+            last_close_ts = self.state.get("last_close_times", {}).get(pair)
+            if last_close_ts and (time.time() - last_close_ts) / 3600 < REENTRY_COOLDOWN_HOURS:
                 continue
 
             strat = get_strategy(pair)
@@ -539,6 +565,11 @@ class PaperTrader:
 
         self.state["closed_trades"].append(trade_record)
         del self.state["positions"][pair]
+        
+        # Record close time for re-entry cooldown
+        if "last_close_times" not in self.state:
+            self.state["last_close_times"] = {}
+        self.state["last_close_times"][pair] = time.time()
 
         emoji = "✅" if net_pnl > 0 else "❌"
         results["actions"].append(

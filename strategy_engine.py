@@ -223,23 +223,17 @@ class MACDStrategy:
             "histogram": round(current_hist, 4),
         }
 
-        # Bullish cross: histogram crosses from negative to positive
+        # Only signal on actual crossovers — NOT on trend continuation.
+        # This prevents the always-in-market whipsaw death loop.
         if prev_hist < 0 and current_hist >= 0:
             return StrategyResult(Signal.LONG, 0.8, indicators,
                 f"MACD bullish cross (hist {prev_hist:.4f} → {current_hist:.4f})")
-        # Bearish cross
         elif prev_hist > 0 and current_hist <= 0:
             return StrategyResult(Signal.SHORT, 0.8, indicators,
                 f"MACD bearish cross (hist {prev_hist:.4f} → {current_hist:.4f})")
-        # Trend continuation
-        elif current_hist > 0:
-            return StrategyResult(Signal.LONG, 0.4, indicators,
-                f"MACD bullish (hist {current_hist:.4f})")
-        elif current_hist < 0:
-            return StrategyResult(Signal.SHORT, 0.4, indicators,
-                f"MACD bearish (hist {current_hist:.4f})")
         else:
-            return StrategyResult(Signal.FLAT, 0, indicators, "MACD flat")
+            return StrategyResult(Signal.FLAT, 0, indicators,
+                f"MACD no cross (hist {current_hist:.4f}) — staying flat")
 
 class BollingerStrategy:
     """Bollinger Band bounce — buy at lower band, sell at upper."""
@@ -444,18 +438,17 @@ class SupertrendStrategy:
         st_value = supertrend[idx]
         indicators = {"supertrend": round(st_value, 2), "atr": round(atr[idx], 2), "direction": int(direction[idx])}
 
+        # Only signal on actual trend flips — NOT on continuation.
+        # Prevents always-in-market whipsaw.
         if direction[idx] == 1 and direction[idx - 1] == -1:
             return StrategyResult(Signal.LONG, 0.85, indicators,
                 f"Supertrend bullish flip: price {c[idx]:.2f} above {st_value:.2f}")
         elif direction[idx] == -1 and direction[idx - 1] == 1:
             return StrategyResult(Signal.SHORT, 0.85, indicators,
                 f"Supertrend bearish flip: price {c[idx]:.2f} below {st_value:.2f}")
-        elif direction[idx] == 1:
-            return StrategyResult(Signal.LONG, 0.5, indicators,
-                f"Supertrend uptrend: price {c[idx]:.2f} above {st_value:.2f}")
         else:
-            return StrategyResult(Signal.SHORT, 0.5, indicators,
-                f"Supertrend downtrend: price {c[idx]:.2f} below {st_value:.2f}")
+            return StrategyResult(Signal.FLAT, 0, indicators,
+                f"Supertrend no flip (dir={int(direction[idx])}) — staying flat")
 
 class BreakoutStrategy:
     """Donchian-style breakout — buy at N-bar high, sell at N-bar low."""
@@ -513,20 +506,17 @@ class EMACrossStrategy:
             "spread": round(current_spread, 2),
         }
 
-        # Bullish cross
+        # Only signal on actual crossovers — NOT on trend continuation.
+        # Prevents always-in-market whipsaw death loop.
         if prev_spread < 0 and current_spread >= 0:
             return StrategyResult(Signal.LONG, 0.8, indicators,
                 f"EMA bullish cross: fast {ema_fast[idx]:.2f} > slow {ema_slow[idx]:.2f}")
-        # Bearish cross
         elif prev_spread > 0 and current_spread <= 0:
             return StrategyResult(Signal.SHORT, 0.8, indicators,
                 f"EMA bearish cross: fast {ema_fast[idx]:.2f} < slow {ema_slow[idx]:.2f}")
-        elif current_spread > 0:
-            return StrategyResult(Signal.LONG, 0.5, indicators,
-                f"EMA bullish: fast above slow by {current_spread:.2f}")
         else:
-            return StrategyResult(Signal.SHORT, 0.5, indicators,
-                f"EMA bearish: fast below slow by {abs(current_spread):.2f}")
+            return StrategyResult(Signal.FLAT, 0, indicators,
+                f"EMA no cross (spread {current_spread:.2f}) — staying flat")
 
 # ─── Strategy Registry ───
 
