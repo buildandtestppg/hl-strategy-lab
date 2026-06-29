@@ -11,7 +11,7 @@ import requests
 import numpy as np
 from datetime import datetime, timezone
 from strategy_engine import (
-    Signal, HLData, RSIStrategy, MACDStrategy, BollingerStrategy,
+    Signal, StrategyResult, HLData, RSIStrategy, MACDStrategy, BollingerStrategy,
     TrendFollowStrategy, StochasticStrategy, VWAPStrategy,
     SupertrendStrategy, BreakoutStrategy, EMACrossStrategy, calc_atr,
 )
@@ -180,6 +180,61 @@ def apply_sentiment_overlay(signal, confidence, pair, sentiment):
         return Signal.FLAT, 0, f"BLOCKED by sentiment ({score:+.2f} vs {signal.value})"
     else:
         return signal, confidence, ""
+
+# Threshold for sentiment to trigger its own entry (higher than gate threshold)
+SENTIMENT_ENTRY_THRESHOLD = 0.7   # min |score| to trigger entry without TA signal
+SENTIMENT_ENTRY_MOMENTUM = 3      # price must be above/below MA this many candles
+
+def check_sentiment_entry(pair, candles, sentiment):
+    """Check if sentiment alone is strong enough to trigger an entry.
+    
+    Requires BOTH:
+    1. Extreme sentiment score (|score| >= 0.7) with high confidence (>= 0.5)
+    2. Price momentum confirmation (recent candles moving in sentiment direction)
+    
+    This lets the bot catch strong moves that TA hasn't signaled yet.
+    Returns a StrategyResult if entry triggered, None otherwise.
+    """
+    pair_data = sentiment.get(pair)
+    if not pair_data:
+        return None
+    
+    score = pair_data.get("score", 0)
+    confidence = pair_data.get("confidence", 0)
+    
+    # Need extreme sentiment AND decent confidence
+    if abs(score) < SENTIMENT_ENTRY_THRESHOLD or confidence < 0.5:
+        return None
+    
+    if len(candles) < SENTIMENT_ENTRY_MOMENTUM + 1:
+        return None
+    
+    # Price momentum confirmation: recent candles should be trending in sentiment direction
+    recent = candles[-SENTIMENT_ENTRY_MOMENTUM:]
+    prices = [c["close"] for c in recent]
+    
+    if score > SENTIMENT_ENTRY_THRESHOLD:
+        # Bullish sentiment — check price is rising (at least 2 of last 3 candles up)
+        up_candles = sum(1 for i in range(1, len(prices)) if prices[i] > prices[i-1])
+        if up_candles >= 2 and prices[-1] >= prices[0]:
+            return StrategyResult(
+                signal=Signal.LONG,
+                confidence=min(0.75, 0.55 + abs(score) * 0.2),
+                indicators={},
+                reason=f"Sentiment-driven LONG (score {score:+.2f}, conf {confidence:.1f}, momentum confirmed)"
+            )
+    elif score < -SENTIMENT_ENTRY_THRESHOLD:
+        # Bearish sentiment — check price is falling
+        down_candles = sum(1 for i in range(1, len(prices)) if prices[i] < prices[i-1])
+        if down_candles >= 2 and prices[-1] <= prices[0]:
+            return StrategyResult(
+                signal=Signal.SHORT,
+                confidence=min(0.75, 0.55 + abs(score) * 0.2),
+                indicators={},
+                reason=f"Sentiment-driven SHORT (score {score:+.2f}, conf {confidence:.1f}, momentum confirmed)"
+            )
+    
+    return None
 
 
 def trade_cost(size, entry_price, exit_price):
@@ -363,6 +418,8 @@ class PaperTrader:
             candles = candles_cache[pair]
             result = strat.compute(candles)
 
+            entered = False
+
             if result.signal in (Signal.LONG, Signal.SHORT) and result.confidence > MIN_CONFIDENCE:
                 # Apply AI sentiment overlay — fleet intelligence gate
                 adj_signal, adj_conf, sent_note = apply_sentiment_overlay(
@@ -376,10 +433,18 @@ class PaperTrader:
                     result.confidence = adj_conf
                     self._open_position(pair, result, results["prices"][pair], candles, results)
                     open_count += 1
+                    entered = True
                 elif result.signal in (Signal.LONG, Signal.SHORT):
                     results["actions"].append(
                         f"🧠 {pair}: TA signal {result.signal.value} blocked by sentiment overlay"
                     )
+
+            # Sentiment-driven entry: extremely strong sentiment + price momentum confirmation
+            if not entered:
+                sent_entry = check_sentiment_entry(pair, candles, sentiment)
+                if sent_entry:
+                    self._open_position(pair, sent_entry, results["prices"][pair], candles, results)
+                    open_count += 1
 
         # 3. Calculate portfolio value (with unrealized funding cost estimate)
         portfolio_value = self.state["capital"]
