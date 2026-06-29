@@ -87,6 +87,11 @@ CANDLE_DAYS = 30            # lookback for indicator calculation
 MIN_HOLD_HOURS = 3          # minimum hold time before signal exit allowed
 REENTRY_COOLDOWN_HOURS = 4  # cooldown after closing before re-entering same pair
 
+# ─── AI Sentiment Overlay ───
+SENTIMENT_FILE = os.path.join(os.path.dirname(__file__), "sentiment_scores.json")
+SENTIMENT_THRESHOLD = 0.3   # min |score| to override TA signal
+SENTIMENT_MIN_CONFIDENCE = 0.4  # min aggregator confidence to trust sentiment
+
 STATE_FILE = os.path.join(os.path.dirname(__file__), "paper_trader_state.json")
 TRADE_LOG_FILE = os.path.join(os.path.dirname(__file__), "paper_trades.json")
 DASHBOARD_DATA = os.path.join(os.path.dirname(__file__), "dashboard_data.json")
@@ -122,6 +127,60 @@ def save_state(state):
     os.replace(tmp_file, STATE_FILE)
 
 # ─── Helpers ───
+
+def load_sentiment():
+    """Load fleet sentiment scores. Returns {pair: {score, confidence, sources}}."""
+    if not os.path.exists(SENTIMENT_FILE):
+        return {}
+    try:
+        with open(SENTIMENT_FILE) as f:
+            data = json.load(f)
+        # Check freshness — staleness guard at 4 hours
+        for pair, info in data.items():
+            ts = info.get("timestamp", "")
+            if ts:
+                age_h = (datetime.now(timezone.utc) - datetime.fromisoformat(ts)).total_seconds() / 3600
+                if age_h > 4:
+                    return {}  # stale — don't use
+        return data
+    except Exception:
+        return {}
+
+def apply_sentiment_overlay(signal, confidence, pair, sentiment):
+    """Apply AI sentiment overlay to a TA signal.
+    
+    Rules:
+    - If sentiment strongly contradicts TA (score > threshold, opposite direction): BLOCK the trade
+    - If sentiment strongly agrees with TA: BOOST confidence (trade bigger)
+    - If sentiment is neutral or weak: no change
+    
+    Returns (adjusted_signal, adjusted_confidence, sentiment_note)
+    """
+    pair_data = sentiment.get(pair)
+    if not pair_data or pair_data.get("confidence", 0) < SENTIMENT_MIN_CONFIDENCE:
+        return signal, confidence, ""
+    
+    score = pair_data["score"]
+    
+    # Determine sentiment direction
+    if score > SENTIMENT_THRESHOLD:
+        sent_dir = Signal.LONG
+    elif score < -SENTIMENT_THRESHOLD:
+        sent_dir = Signal.SHORT
+    else:
+        return signal, confidence, "sentiment neutral"
+    
+    # Check agreement
+    if signal == sent_dir:
+        # Aligned — boost confidence
+        boost = min(0.2, abs(score) * 0.15)
+        return signal, min(1.0, confidence + boost), f"sentiment aligned ({score:+.2f}), conf boosted"
+    elif signal in (Signal.LONG, Signal.SHORT):
+        # Contradiction — block the trade
+        return Signal.FLAT, 0, f"BLOCKED by sentiment ({score:+.2f} vs {signal.value})"
+    else:
+        return signal, confidence, ""
+
 
 def trade_cost(size, entry_price, exit_price):
     notional = size * entry_price + size * exit_price
@@ -182,6 +241,9 @@ class PaperTrader:
 
         prices = get_current_prices()
         candles_cache = {}
+
+        # Load fleet sentiment for AI overlay
+        sentiment = load_sentiment()
 
         # Fetch live funding rates for accurate cost tracking
         try:
@@ -302,8 +364,22 @@ class PaperTrader:
             result = strat.compute(candles)
 
             if result.signal in (Signal.LONG, Signal.SHORT) and result.confidence > MIN_CONFIDENCE:
-                self._open_position(pair, result, results["prices"][pair], candles, results)
-                open_count += 1
+                # Apply AI sentiment overlay — fleet intelligence gate
+                adj_signal, adj_conf, sent_note = apply_sentiment_overlay(
+                    result.signal, result.confidence, pair, sentiment
+                )
+                if sent_note:
+                    result.reason = f"{result.reason} | sentiment: {sent_note}"
+                
+                if adj_signal in (Signal.LONG, Signal.SHORT) and adj_conf > MIN_CONFIDENCE:
+                    # Update confidence (may be boosted by aligned sentiment)
+                    result.confidence = adj_conf
+                    self._open_position(pair, result, results["prices"][pair], candles, results)
+                    open_count += 1
+                elif result.signal in (Signal.LONG, Signal.SHORT):
+                    results["actions"].append(
+                        f"🧠 {pair}: TA signal {result.signal.value} blocked by sentiment overlay"
+                    )
 
         # 3. Calculate portfolio value (with unrealized funding cost estimate)
         portfolio_value = self.state["capital"]
@@ -447,6 +523,7 @@ class PaperTrader:
             "pair_stats": pair_stats,
             "equity_curve": self.state["equity_curve"][-200:],
             "ai_history": ai_history,
+            "sentiment": sentiment,
             "config": {
                 "risk_per_trade": f"{RISK_PER_TRADE*100}%",
                 "max_leverage": f"{MAX_LEVERAGE}x",
