@@ -158,6 +158,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-he
         <div class="nav-tab" onclick="showPage('trades',this)">Trades</div>
         <div class="nav-tab" onclick="showPage('fleet',this)">Fleet Intel</div>
         <div class="nav-tab" onclick="showPage('analytics',this)">Analytics</div>
+        <div class="nav-tab" onclick="showPage('harness',this)">Harness</div>
       </div>
     </div>
     <div class="header-right">
@@ -208,12 +209,26 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-he
     </div>
     <div class="panel"><div class="panel-header"><span class="panel-title">📋 Detailed Stats</span></div><div class="panel-body" id="detailedStats"></div></div>
   </div>
+  <div id="page-harness" class="page">
+    <div class="kpi-bar" style="grid-template-columns:repeat(auto-fit,minmax(155px,1fr))">
+      <div class="kpi-card"><div class="kpi-label">Backtests Run</div><div class="kpi-value" id="kpiBacktests">--</div><div class="kpi-sub" id="kpiBacktestsSub"></div></div>
+      <div class="kpi-card"><div class="kpi-label">Best Score</div><div class="kpi-value green" id="kpiBestScore">--</div><div class="kpi-sub" id="kpiBestScoreSub"></div></div>
+      <div class="kpi-card"><div class="kpi-label">Tests Passed</div><div class="kpi-value" id="kpiTests">--</div><div class="kpi-sub" id="kpiTestsSub"></div></div>
+      <div class="kpi-card"><div class="kpi-label">Audit Entries</div><div class="kpi-value blue" id="kpiAudits">--</div><div class="kpi-sub" id="kpiAuditsSub"></div></div>
+    </div>
+    <div class="panel"><div class="panel-header"><span class="panel-title">🏆 Strategy Leaderboard</span><span class="panel-badge" style="background:var(--gold-dim);color:var(--gold)">Backtest Rankings</span></div><div class="panel-body" style="padding:0"><div style="overflow-x:auto"><table class="matrix-table"><thead><tr><th>#</th><th>Pair</th><th>Strategy</th><th>Score</th><th>Win Rate</th><th>Sharpe</th><th>P&L %</th><th>Buy&Hold</th><th>PF</th><th>DD</th></tr></thead><tbody id="leaderboardBody"></tbody></table></div></div></div>
+    <div class="grid-2">
+      <div class="panel"><div class="panel-header"><span class="panel-title">🔍 Decision Audit Trail</span><span class="panel-badge" style="background:var(--blue-dim);color:var(--blue)" id="auditBadge">0</span></div><div class="panel-body" style="max-height:400px;overflow-y:auto;padding:0"><table class="matrix-table" style="font-size:.72rem"><thead><tr><th>Time</th><th>Pair</th><th>Signal</th><th>Conf</th><th>Gate</th><th>Action</th><th>Reason</th></tr></thead><tbody id="auditBody"></tbody></table></div></div>
+      <div class="panel"><div class="panel-header"><span class="panel-title">📊 Gate Statistics</span></div><div class="panel-body" id="gateStats"></div></div>
+    </div>
+  </div>
 </div>
 <div class="footer">HL Strategy Lab — Command Center · Built by Bubbles 🫧</div>
 <script>
-var D=null,FLEET=null,lastFetch=0;
+var D=null,FLEET=null,HARNESS=null,lastFetch=0;
 var DATA_URL='https://raw.githubusercontent.com/buildandtestppg/hl-strategy-lab/gh-pages/dashboard_data.json';
 var FLEET_URL='https://raw.githubusercontent.com/buildandtestppg/hl-strategy-lab/gh-pages/fleet_feed.json';
+var HARNESS_URL='https://raw.githubusercontent.com/buildandtestppg/hl-strategy-lab/gh-pages/harness_data.json';
 
 function fmt(n,d){d=d||2;return n!=null&&!isNaN(n)?Number(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}):'--'}
 function fmtUSD(n){if(n==null||isNaN(n))return'--';return(n<0?'-$':'$')+fmt(Math.abs(n),n<1?4:n<100?2:0)}
@@ -255,6 +270,8 @@ async function fetchData(){
   try{var r=await fetch(DATA_URL+'?t='+Date.now());if(!r.ok)throw 0;D=await r.json();lastFetch=Date.now();document.getElementById('loading').style.display='none';document.getElementById('lastUpdate').textContent='Updated: '+new Date().toLocaleTimeString('en-US',{hour12:false});renderAll()}
   catch(e){console.error('Data fail:',e)}
   try{var r2=await fetch(FLEET_URL+'?t='+Date.now());if(r2.ok){FLEET=await r2.json();renderFleet()}}
+  catch(e){}
+  try{var r3=await fetch(HARNESS_URL+'?t='+Date.now());if(r3.ok){HARNESS=await r3.json();renderHarness()}}
   catch(e){}
 }
 function renderAll(){if(!D)return;renderKPIs();renderHeatmap();renderEquity();renderMatrix();renderFeed();renderPairs();renderPositions();renderTrades();renderAnalytics()}
@@ -437,6 +454,49 @@ fetchData();
 setInterval(fetchData,30000);
 var resizeTimer;
 window.addEventListener('resize',function(){clearTimeout(resizeTimer);resizeTimer=setTimeout(function(){if(D)renderEquity()},200)});
+
+function renderHarness(){
+  if(!HARNESS)return;
+  var lb=HARNESS.leaderboard||[];
+  var audits=HARNESS.audit||{recent:[],stats:{}};
+  var tests=HARNESS.tests||{pass:0,fail:0};
+  // KPIs
+  document.getElementById('kpiBacktests').textContent=lb.length||'--';
+  var best=lb.length?lb.reduce(function(a,b){return(b.score||0)>(a.score||0)?b:a}):{};
+  document.getElementById('kpiBestScore').textContent=best.score!=null?fmt(best.score,1):'--';
+  document.getElementById('kpiBestScoreSub').textContent=(best.pair||'')+' / '+(best.strategy||'');
+  document.getElementById('kpiTests').textContent=(tests.pass||0)+'/'+((tests.pass||0)+(tests.fail||0));
+  document.getElementById('kpiTestsSub').textContent=(tests.fail||0)>0?(tests.fail||0)+' failed':'All passing';
+  document.getElementById('kpiAudits').textContent=audits.stats.total_evaluated||0;
+  document.getElementById('kpiAuditsSub').textContent='Last 24h';
+  // Leaderboard
+  var tbody=document.getElementById('leaderboardBody');
+  tbody.innerHTML=lb.length?lb.map(function(r,i){
+    var scoreC=r.score>=60?'green':r.score>=40?'gold':'red';
+    var pnlC=(r.pnl_pct||0)>=0?'green':'red';
+    var beatBH=(r.pnl_pct||0)>(r.buy_hold||0);
+    return'<tr><td style="color:var(--text-dim)">'+(i+1)+'</td><td><strong>'+r.pair+'</strong></td><td><span class="tag tag-'+r.strategy+'">'+r.strategy+'</span></td><td class="'+scoreC+'"><strong>'+fmt(r.score,1)+'</strong></td><td>'+fmt(r.win_rate,1)+'%</td><td>'+fmt(r.sharpe,2)+'</td><td class="'+pnlC+'">'+fmtPct(r.pnl_pct)+'</td><td style="color:'+(beatBH?'var(--green)':'var(--red)')+'">'+fmtPct(r.buy_hold)+'</td><td>'+fmt(r.profit_factor,2)+'</td><td style="color:var(--red)">'+fmt(r.max_drawdown,1)+'%</td></tr>'
+  }).join(''):'<tr><td colspan="10" style="text-align:center;padding:30px;color:var(--text-dim)">No backtest data yet — run evaluator</td></tr>';
+  // Audit trail
+  var recent=audits.recent||[];
+  document.getElementById('auditBadge').textContent=recent.length;
+  var abody=document.getElementById('auditBody');
+  abody.innerHTML=recent.length?recent.map(function(d){
+    var gateC=d.gate==='PASSED'?'green':d.gate==='PASSED_SENTIMENT'?'green':d.gate.indexOf('BLOCKED')===0?'red':'';
+    var actionC=d.action==='opened'?'green':d.action==='held'?'blue':'';
+    var conf=d.confidence>0?fmt(d.confidence,3):'--';
+    return'<tr><td style="color:var(--text-dim);white-space:nowrap">'+(d.ts||'').slice(11,19)+'</td><td><strong>'+d.pair+'</strong></td><td>'+(d.signal||'')+'</td><td>'+conf+'</td><td class="'+gateC+'">'+d.gate+'</td><td class="'+actionC+'">'+d.action+'</td><td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+(d.reason||'')+'">'+(d.reason||'')+'</td></tr>'
+  }).join(''):'<tr><td colspan="7" style="text-align:center;padding:30px;color:var(--text-dim)">No audit data yet</td></tr>';
+  // Gate stats
+  var gs=audits.stats||{};
+  var gateCounts=gs.gate_counts||{};
+  var total=gs.total_evaluated||1;
+  document.getElementById('gateStats').innerHTML=Object.keys(gateCounts).length?Object.entries(gateCounts).map(function(e){
+    var gate=e[0],count=e[1],pct=count/total*100;
+    var c=gate==='PASSED'||gate==='PASSED_SENTIMENT'?'var(--green)':gate.indexOf('BLOCKED')===0?'var(--red)':'var(--blue)';
+    return'<div class="stats-row"><span class="stats-label">'+gate.replace(/_/g,' ')+'</span><div style="display:flex;align-items:center;gap:8px"><div style="flex:1;max-width:200px;height:6px;background:var(--surface2);border-radius:3px;overflow:hidden"><div style="width:'+pct+'%;height:100%;background:'+c+';border-radius:3px"></div></div><span class="stats-value" style="color:'+c+'">'+count+' ('+fmt(pct,0)+'%)</span></div></div>'
+  }).join(''):'<div style="color:var(--text-dim);padding:20px;text-align:center">No gate data yet</div>';
+}
 </script>
 </body>
 </html>

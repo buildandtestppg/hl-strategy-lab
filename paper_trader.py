@@ -15,6 +15,7 @@ from strategy_engine import (
     TrendFollowStrategy, StochasticStrategy, VWAPStrategy,
     SupertrendStrategy, BreakoutStrategy, EMACrossStrategy, calc_atr,
 )
+from audit_logger import log_decision, log_cycle_summary, rotate_log_if_needed
 
 # ─── Config (loaded from strategy_config.json — AI can rewrite this) ───
 
@@ -80,7 +81,7 @@ STOP_LOSS_ATR = 2.5
 TAKE_PROFIT_ATR = 5.0
 HL_FEE = 0.00045          # Real taker fee 0.045% (conservative — we'll use market orders)
 SLIPPAGE = 0.0005         # 0.05% slippage on taker fills
-MIN_CONFIDENCE = 0.6       # Raised from 0.3 — only strong signals enter
+MIN_CONFIDENCE = 0.5       # Lowered from 0.6 — was filtering out real trends (HYPE at 0.57 got blocked)
 MAX_POSITIONS = 6           # one per pair max
 CANDLE_INTERVAL = "1h"
 CANDLE_DAYS = 30            # lookback for indicator calculation
@@ -211,7 +212,7 @@ def check_sentiment_entry(pair, candles, sentiment):
     
     # Price momentum confirmation: recent candles should be trending in sentiment direction
     recent = candles[-SENTIMENT_ENTRY_MOMENTUM:]
-    prices = [c["close"] for c in recent]
+    prices = [float(c["c"]) for c in recent]
     
     if score > SENTIMENT_ENTRY_THRESHOLD:
         # Bullish sentiment — check price is rising (at least 2 of last 3 candles up)
@@ -396,12 +397,20 @@ class PaperTrader:
                 pairs_closed_this_cycle.add(p)
 
         open_count = len(self.state["positions"])
+        cycle_id = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
         for pair in active_pairs:
             if pair in self.state["positions"]:
+                log_decision(pair, self.state["positions"][pair]["direction"], 0,
+                             "Already in position", "BLOCKED_ALREADY_OPEN",
+                             action="held", price=results["prices"].get(pair),
+                             cycle_id=cycle_id)
                 continue  # already in position
             if pair in pairs_closed_this_cycle:
                 continue  # closed this cycle — no re-entry
             if open_count >= MAX_POSITIONS:
+                log_decision(pair, "FLAT", 0, "Max positions reached",
+                             "BLOCKED_MAX_POSITIONS", action="evaluated",
+                             price=results["prices"].get(pair), cycle_id=cycle_id)
                 break
             if pair not in candles_cache:
                 continue
@@ -409,6 +418,10 @@ class PaperTrader:
             # Re-entry cooldown: skip if we closed this pair recently
             last_close_ts = self.state.get("last_close_times", {}).get(pair)
             if last_close_ts and (time.time() - last_close_ts) / 3600 < REENTRY_COOLDOWN_HOURS:
+                remaining = REENTRY_COOLDOWN_HOURS - (time.time() - last_close_ts) / 3600
+                log_decision(pair, "FLAT", 0, f"Cooldown ({remaining:.1f}h left)",
+                             "BLOCKED_COOLDOWN", action="evaluated",
+                             price=results["prices"].get(pair), cycle_id=cycle_id)
                 continue
 
             strat = get_strategy(pair)
@@ -420,24 +433,43 @@ class PaperTrader:
 
             entered = False
 
-            if result.signal in (Signal.LONG, Signal.SHORT) and result.confidence > MIN_CONFIDENCE:
-                # Apply AI sentiment overlay — fleet intelligence gate
+            # Apply sentiment overlay BEFORE confidence gate —
+            # fleet intelligence should boost weak-but-valid signals, not just
+            # rubber-stamp ones that already passed.
+            if result.signal in (Signal.LONG, Signal.SHORT):
                 adj_signal, adj_conf, sent_note = apply_sentiment_overlay(
                     result.signal, result.confidence, pair, sentiment
                 )
                 if sent_note:
                     result.reason = f"{result.reason} | sentiment: {sent_note}"
-                
-                if adj_signal in (Signal.LONG, Signal.SHORT) and adj_conf > MIN_CONFIDENCE:
-                    # Update confidence (may be boosted by aligned sentiment)
-                    result.confidence = adj_conf
-                    self._open_position(pair, result, results["prices"][pair], candles, results)
-                    open_count += 1
-                    entered = True
-                elif result.signal in (Signal.LONG, Signal.SHORT):
-                    results["actions"].append(
-                        f"🧠 {pair}: TA signal {result.signal.value} blocked by sentiment overlay"
-                    )
+            else:
+                adj_signal = result.signal
+                adj_conf = result.confidence
+
+            if adj_signal in (Signal.LONG, Signal.SHORT) and adj_conf > MIN_CONFIDENCE:
+                result.signal = adj_signal
+                result.confidence = adj_conf
+                self._open_position(pair, result, results["prices"][pair], candles, results)
+                open_count += 1
+                entered = True
+                log_decision(pair, result.signal.value, result.confidence, result.reason,
+                             "PASSED", sentiment=sentiment.get(pair, {}) if sentiment else None,
+                             action="opened", price=results["prices"][pair], cycle_id=cycle_id)
+            elif result.signal in (Signal.LONG, Signal.SHORT) and sent_note and "BLOCKED" in sent_note:
+                results["actions"].append(
+                    f"🧠 {pair}: TA signal {result.signal.value} blocked by sentiment overlay"
+                )
+                log_decision(pair, result.signal.value, result.confidence, result.reason,
+                             "BLOCKED_SENTIMENT", sentiment=sentiment.get(pair, {}) if sentiment else None,
+                             action="evaluated", price=results["prices"][pair], cycle_id=cycle_id)
+            elif result.signal in (Signal.LONG, Signal.SHORT):
+                log_decision(pair, result.signal.value, adj_conf, result.reason,
+                             "BLOCKED_CONFIDENCE", action="evaluated",
+                             price=results["prices"][pair], cycle_id=cycle_id)
+            else:
+                log_decision(pair, "FLAT", 0, result.reason,
+                             "SKIPPED_FLAT", action="evaluated",
+                             price=results["prices"][pair], cycle_id=cycle_id)
 
             # Sentiment-driven entry: extremely strong sentiment + price momentum confirmation
             if not entered:
@@ -445,6 +477,10 @@ class PaperTrader:
                 if sent_entry:
                     self._open_position(pair, sent_entry, results["prices"][pair], candles, results)
                     open_count += 1
+                    log_decision(pair, sent_entry.signal.value, sent_entry.confidence,
+                                 sent_entry.reason, "PASSED_SENTIMENT",
+                                 sentiment=sentiment.get(pair, {}) if sentiment else None,
+                                 action="opened", price=results["prices"][pair], cycle_id=cycle_id)
 
         # 3. Calculate portfolio value (with unrealized funding cost estimate)
         portfolio_value = self.state["capital"]
@@ -784,3 +820,13 @@ if __name__ == "__main__":
 
     print(f"\n📊 Dashboard data → {DASHBOARD_DATA}")
     print(f"💾 State → {STATE_FILE}")
+
+    # Log cycle summary for audit trail
+    log_cycle_summary(
+        cycle_id=results.get("timestamp", ""),
+        actions=results.get("actions", []),
+        positions_count=results.get("open_positions", 0),
+        portfolio_value=results.get("portfolio_value", 0),
+        pnl=results.get("pnl", 0),
+    )
+    rotate_log_if_needed()
