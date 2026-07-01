@@ -1,0 +1,78 @@
+{
+  "generated": "2026-07-01T13:05:00+08:00",
+  "phases": [
+    {
+      "name": "Phase 1: Initial (Old Params)",
+      "period": "Jun 28 - Jul 1, 2026",
+      "initial_capital": 5000.0,
+      "final_capital": 4694.53,
+      "realized_pnl": -277.82,
+      "pnl_pct": -5.56,
+      "total_trades": 4,
+      "wins": 1,
+      "losses": 3,
+      "win_rate": 25.0,
+      "avg_win": 2.23,
+      "avg_loss": -93.35,
+      "best_trade": 2.23,
+      "worst_trade": -104.98,
+      "params": {
+        "risk_per_trade": "2%",
+        "max_leverage": "3x",
+        "stop_loss_atr": "2.5",
+        "take_profit_atr": "5.0",
+        "min_confidence": "0.5",
+        "sentiment_threshold": "0.3",
+        "sentiment_min_sources": "1"
+      },
+      "trades": [
+        {"pair": "BTC", "direction": "SHORT", "strategy": "emacross", "pnl": -72.26, "pnl_pct": -1.67, "exit_reason": "signal_exit", "duration_hours": 3.9},
+        {"pair": "ETH", "direction": "SHORT", "strategy": "trend", "pnl": 2.23, "pnl_pct": 0.06, "exit_reason": "signal_exit", "duration_hours": 3.1},
+        {"pair": "HYPE", "direction": "LONG", "strategy": "trend", "pnl": -102.81, "pnl_pct": -4.83, "exit_reason": "stop_loss", "duration_hours": 24.8},
+        {"pair": "ETH", "direction": "SHORT", "strategy": "trend", "pnl": -104.98, "pnl_pct": -1.78, "exit_reason": "stop_loss", "duration_hours": 13.0}
+      ],
+      "lessons": [
+        "Inverted R:R (avg loss 42x avg win)",
+        "Stops too tight for leverage (BTC SL at 1.27%)",
+        "Sentiment overlay with single source caused bad entries",
+        "Optimizer whipsaw (ETH flipped 4x in 2h)",
+        "Kelly criterion = -31% (negative edge)"
+      ]
+    },
+    {
+      "name": "Phase 2: Post-Overhaul (New Params)",
+      "period": "Jul 1, 2026 - ongoing",
+      "initial_capital": 5000.0,
+      "current_capital": 4994.18,
+      "current_portfolio_value": 5027.54,
+      "unrealized_pnl": 33.36,
+      "pnl_pct": 0.55,
+      "total_trades": 0,
+      "open_positions": 4,
+      "params": {
+        "risk_per_trade": "1%",
+        "max_leverage": "1.5x",
+        "stop_loss_atr": "3.5",
+        "take_profit_atr": "7.0",
+        "min_confidence": "0.65",
+        "sentiment_threshold": "0.5",
+        "sentiment_min_sources": "2",
+        "max_drawdown_pct": "10%",
+        "circuit_breaker": true,
+        "optimizer": "paused"
+      }
+    }
+  ],
+  "all_time": {
+    "initial_capital": 5000.0,
+    "total_realized_pnl": -277.82,
+    "total_unrealized_pnl": 33.36,
+    "all_time_pnl": -244.46,
+    "all_time_pct": -4.89,
+    "total_trades_closed": 4,
+    "total_positions_open": 4,
+    "days_active": 3,
+    "resets": 1,
+    "multi_model_reviews": 1
+  }
+}

@@ -75,23 +75,29 @@ def get_strategy(pair):
     return cls(**cfg.get("params", {}))
 
 INITIAL_CAPITAL = 5000.0
-RISK_PER_TRADE = 0.02       # 2% of portfolio per position
-MAX_LEVERAGE = 3
-STOP_LOSS_ATR = 2.5
-TAKE_PROFIT_ATR = 5.0
+RISK_PER_TRADE = 0.01       # 1% of portfolio per position (was 2% — Kelly says less)
+MAX_LEVERAGE = 1.5          # capped from 3 — 2.63x was reckless at 25% WR
+STOP_LOSS_ATR = 3.5         # widened from 2.5 — stops were too tight, killing on noise
+TAKE_PROFIT_ATR = 7.0       # widened from 5.0 — let winners run, fix inverted R:R
 HL_FEE = 0.00045          # Real taker fee 0.045% (conservative — we'll use market orders)
 SLIPPAGE = 0.0005         # 0.05% slippage on taker fills
-MIN_CONFIDENCE = 0.5       # Lowered from 0.6 — was filtering out real trends (HYPE at 0.57 got blocked)
-MAX_POSITIONS = 6           # one per pair max
+MIN_CONFIDENCE = 0.65      # raised from 0.5 — too many bad entries at 0.5
+MAX_POSITIONS = 4           # reduced from 6 — limit correlated exposure
 CANDLE_INTERVAL = "1h"
 CANDLE_DAYS = 30            # lookback for indicator calculation
-MIN_HOLD_HOURS = 3          # minimum hold time before signal exit allowed
-REENTRY_COOLDOWN_HOURS = 4  # cooldown after closing before re-entering same pair
+MIN_HOLD_HOURS = 6          # increased from 3 — let trades breathe
+REENTRY_COOLDOWN_HOURS = 8  # doubled from 4 — less overtrading
+MAX_DRAWDOWN_PCT = 10.0     # NEW: halt all trading if drawdown exceeds 10%
 
 # ─── AI Sentiment Overlay ───
 SENTIMENT_FILE = os.path.join(os.path.dirname(__file__), "sentiment_scores.json")
-SENTIMENT_THRESHOLD = 0.3   # min |score| to override TA signal
-SENTIMENT_MIN_CONFIDENCE = 0.4  # min aggregator confidence to trust sentiment
+SENTIMENT_THRESHOLD = 0.5   # raised from 0.3 — only strong sentiment overrides
+SENTIMENT_MIN_CONFIDENCE = 0.6  # raised from 0.4 — require high confidence
+SENTIMENT_MIN_SOURCES = 2   # NEW: require ≥2 sources before sentiment can override
+
+# ─── Exclusion List ───
+# Pairs where buy-and-hold crushes all strategies — don't actively trade
+EXCLUDE_PAIRS = []  # Populated dynamically by check_buy_hold()
 
 STATE_FILE = os.path.join(os.path.dirname(__file__), "paper_trader_state.json")
 TRADE_LOG_FILE = os.path.join(os.path.dirname(__file__), "paper_trades.json")
@@ -160,6 +166,17 @@ def apply_sentiment_overlay(signal, confidence, pair, sentiment):
     pair_data = sentiment.get(pair)
     if not pair_data or pair_data.get("confidence", 0) < SENTIMENT_MIN_CONFIDENCE:
         return signal, confidence, ""
+    
+    # Source diversity gate: require ≥SENTIMENT_MIN_SOURCES before sentiment can override
+    sources = pair_data.get("sources", {})
+    if isinstance(sources, dict):
+        active_sources = [s for s, v in sources.items() if v and abs(v.get("score", 0)) > 0.1]
+    elif isinstance(sources, list):
+        active_sources = sources
+    else:
+        active_sources = []
+    if len(active_sources) < SENTIMENT_MIN_SOURCES:
+        return signal, confidence, f"sentiment skipped (only {len(active_sources)} sources, need {SENTIMENT_MIN_SOURCES})"
     
     score = pair_data["score"]
     
@@ -294,6 +311,26 @@ class PaperTrader:
             "portfolio_value": 0,
             "prices": {},
         }
+
+        # ─── Drawdown circuit breaker ───
+        peak = self.state.get("peak_equity", self.state.get("initial_capital", INITIAL_CAPITAL))
+        equity = self.state["capital"]
+        self.state["peak_equity"] = max(peak, equity)
+        dd_pct = ((self.state["peak_equity"] - equity) / self.state["peak_equity"]) * 100
+        if dd_pct >= MAX_DRAWDOWN_PCT:
+            results["actions"].append(
+                f"🛑 CIRCUIT BREAKER: drawdown {dd_pct:.1f}% exceeds {MAX_DRAWDOWN_PCT}% — "
+                f"closing all positions and halting new entries"
+            )
+            # Close all open positions
+            prices = get_current_prices()
+            for pair in list(self.state["positions"].keys()):
+                pos = self.state["positions"][pair]
+                current_price = float(prices.get(pair, 0))
+                if current_price > 0:
+                    self._close_position(pair, current_price, "circuit_breaker", results)
+            self._save_dashboard(results, prices)
+            return results
 
         prices = get_current_prices()
         candles_cache = {}

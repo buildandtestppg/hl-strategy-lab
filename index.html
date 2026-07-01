@@ -159,6 +159,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-he
         <div class="nav-tab" onclick="showPage('fleet',this)">Fleet Intel</div>
         <div class="nav-tab" onclick="showPage('analytics',this)">Analytics</div>
         <div class="nav-tab" onclick="showPage('harness',this)">Harness</div>
+        <div class="nav-tab" onclick="showPage('alltime',this)">All-Time</div>
       </div>
     </div>
     <div class="header-right">
@@ -222,9 +223,22 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-he
       <div class="panel"><div class="panel-header"><span class="panel-title">📊 Gate Statistics</span></div><div class="panel-body" id="gateStats"></div></div>
     </div>
   </div>
+  <div id="page-alltime" class="page">
+    <div class="kpi-bar" id="allTimeKpis"></div>
+    <div class="grid-main">
+      <div class="panel"><div class="panel-header"><span class="panel-title">📋 Phase 1: Old Params (Jun 28 - Jul 1)</span><span class="panel-badge" style="background:var(--red-dim);color:var(--red)">ARCHIVED</span></div><div class="panel-body" style="padding:0"><table class="matrix-table"><thead><tr><th>Pair</th><th>Dir</th><th>Strategy</th><th>P&L</th><th>%</th><th>Exit</th><th>Hrs</th></tr></thead><tbody id="phase1Trades"></tbody></table></div></div>
+      <div class="panel"><div class="panel-header"><span class="panel-title">📋 Phase 2: New Params (Jul 1 - ongoing)</span><span class="panel-badge" style="background:var(--green-dim);color:var(--green)">LIVE</span></div><div class="panel-body" style="padding:0"><table class="matrix-table"><thead><tr><th>Pair</th><th>Dir</th><th>Strategy</th><th>Unrealized</th><th>%</th><th>SL%</th><th>TP%</th></tr></thead><tbody id="phase2Positions"></tbody></table></div></div>
+    </div>
+    <div class="grid-main">
+      <div class="panel"><div class="panel-header"><span class="panel-title">⚙️ Old vs New Params</span></div><div class="panel-body" id="paramComparison"></div></div>
+      <div class="panel"><div class="panel-header"><span class="panel-title">🎓 Lessons Learned</span></div><div class="panel-body" id="lessonsLearned"></div></div>
+    </div>
+  </div>
 </div>
 <div class="footer">HL Strategy Lab — Command Center · Built by Bubbles 🫧</div>
 <script>
+var ALLTIME=null;
+var ALLTIME_URL='https://raw.githubusercontent.com/buildandtestppg/hl-strategy-lab/gh-pages/all_time_stats.json';
 var D=null,FLEET=null,HARNESS=null,lastFetch=0;
 var DATA_URL='https://raw.githubusercontent.com/buildandtestppg/hl-strategy-lab/gh-pages/dashboard_data.json';
 var FLEET_URL='https://raw.githubusercontent.com/buildandtestppg/hl-strategy-lab/gh-pages/fleet_feed.json';
@@ -272,6 +286,8 @@ async function fetchData(){
   try{var r2=await fetch(FLEET_URL+'?t='+Date.now());if(r2.ok){FLEET=await r2.json();renderFleet()}}
   catch(e){}
   try{var r3=await fetch(HARNESS_URL+'?t='+Date.now());if(r3.ok){HARNESS=await r3.json();renderHarness()}}
+  catch(e){}
+  try{var r4=await fetch(ALLTIME_URL+'?t='+Date.now());if(r4.ok){ALLTIME=await r4.json();renderAllTime()}}
   catch(e){}
 }
 function renderAll(){if(!D)return;renderKPIs();renderHeatmap();renderEquity();renderMatrix();renderFeed();renderPairs();renderPositions();renderTrades();renderAnalytics()}
@@ -496,6 +512,53 @@ function renderHarness(){
     var c=gate==='PASSED'||gate==='PASSED_SENTIMENT'?'var(--green)':gate.indexOf('BLOCKED')===0?'var(--red)':'var(--blue)';
     return'<div class="stats-row"><span class="stats-label">'+gate.replace(/_/g,' ')+'</span><div style="display:flex;align-items:center;gap:8px"><div style="flex:1;max-width:200px;height:6px;background:var(--surface2);border-radius:3px;overflow:hidden"><div style="width:'+pct+'%;height:100%;background:'+c+';border-radius:3px"></div></div><span class="stats-value" style="color:'+c+'">'+count+' ('+fmt(pct,0)+'%)</span></div></div>'
   }).join(''):'<div style="color:var(--text-dim);padding:20px;text-align:center">No gate data yet</div>';
+}
+function renderAllTime(){
+  if(!ALLTIME)return;
+  var at=ALLTIME.all_time||{};
+  // KPIs
+  var kpis=document.getElementById('allTimeKpis');
+  var realizedC=at.total_realized_pnl>=0?'green':'red';
+  var unrealC=(at.total_unrealized_pnl||0)>=0?'green':'red';
+  var allC=(at.all_time_pnl||0)>=0?'green':'red';
+  kpis.innerHTML=[
+    {l:'All-Time P&L',v:(at.all_time_pnl>=0?'+':'')+'$'+fmt(at.all_time_pnl),c:allC,s:fmtPct(at.all_time_pct)},
+    {l:'Realized (closed)',v:(at.total_realized_pnl>=0?'+':'')+'$'+fmt(at.total_realized_pnl),c:realizedC,s:at.total_trades_closed+' trades'},
+    {l:'Unrealized (open)',v:(at.total_unrealized_pnl>=0?'+':'')+'$'+fmt(at.total_unrealized_pnl),c:unrealC,s:(at.total_positions_open||0)+' positions'},
+    {l:'Days Active',v:at.days_active||0,c:'blue',s:'since Jun 28'},
+    {l:'Resets',v:at.resets||0,c:'gold',s:'param overhauls'},
+    {l:'Model Reviews',v:at.multi_model_reviews||0,c:'purple',s:'3-model audits'}
+  ].map(function(k){return'<div class="kpi-card"><div class="kpi-label">'+k.l+'</div><div class="kpi-value '+k.c+'">'+k.v+'</div><div class="kpi-sub">'+k.s+'</div></div>'}).join('');
+  // Phase 1 trades
+  var p1=(ALLTIME.phases||[]).find(function(p){return p.name.indexOf('Phase 1')>=0})||{};
+  var p1t=p1.trades||[];
+  document.getElementById('phase1Trades').innerHTML=p1t.length?p1t.map(function(t){
+    var c=pnlC(t.pnl);
+    return'<tr><td><strong>'+t.pair+'</strong></td><td><span class="signal-tag '+(t.direction==='SHORT'?'signal-short':'signal-long')+'">'+t.direction+'</span></td><td>'+t.strategy+'</td><td class="'+c+'">$'+fmt(t.pnl)+'</td><td class="'+c+'">'+fmtPct(t.pnl_pct)+'</td><td>'+t.exit_reason+'</td><td>'+t.duration_hours+'h</td></tr>'
+  }).join(''):'<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--text-dim)">No archived trades</td></tr>';
+  // Phase 2 - use live data if available
+  var p2body=document.getElementById('phase2Positions');
+  if(D&&D.positions){
+    var pos=D.positions,prices=D.prices||{};
+    p2body.innerHTML=Object.keys(pos).length?Object.entries(pos).map(function(e){
+      var pair=e[0],p=e[1],c=pnlC(p.unrealized_pnl||0);
+      var slDist=p.entry_price?Math.abs(p.entry_price-(p.stop_loss||0))/p.entry_price*100:0;
+      var tpDist=p.entry_price?Math.abs((p.take_profit||0)-p.entry_price)/p.entry_price*100:0;
+      return'<tr><td><strong>'+pair+'</strong></td><td><span class="signal-tag '+(p.direction==='SHORT'?'signal-short':'signal-long')+'">'+p.direction+'</span></td><td>'+p.strategy+'</td><td class="'+c+'">$'+fmt(p.unrealized_pnl)+'</td><td class="'+c+'">'+fmtPct(p.unrealized_pnl_pct)+'</td><td>'+fmt(slDist,1)+'%</td><td>'+fmt(tpDist,1)+'%</td></tr>'
+    }).join(''):'<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--text-dim)">No open positions</td></tr>'
+  }else{
+    p2body.innerHTML='<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--text-dim)">Loading live data...</td></tr>'
+  }
+  // Param comparison
+  var oldP=(p1.params||{}),newP=((ALLTIME.phases||[]).find(function(p){return p.name.indexOf('Phase 2')>=0})||{}).params||{};
+  var allKeys=Object.keys(Object.assign({},oldP,newP));
+  document.getElementById('paramComparison').innerHTML='<table class="matrix-table"><thead><tr><th>Parameter</th><th style="color:var(--red)">Old</th><th style="color:var(--green)">New</th><th>Change</th></tr></thead><tbody>'+allKeys.map(function(k){
+    var o=oldP[k]||'--',n=newP[k]||'--',changed=o!==n;
+    return'<tr><td>'+k.replace(/_/g,' ')+'</td><td>'+o+'</td><td style="color:var(--green)">'+n+'</td><td>'+(changed?'<span style="color:var(--gold)">CHANGED</span>':'same')+'</td></tr>'
+  }).join('')+'</tbody></table>';
+  // Lessons
+  var lessons=p1.lessons||[];
+  document.getElementById('lessonsLearned').innerHTML=lessons.length?'<ul style="list-style:none;padding:0">'+lessons.map(function(l){return'<li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.03);font-size:.78rem"><span style="color:var(--red)">⚠</span> '+l+'</li>'}).join('')+'</ul>':'<div style="color:var(--text-dim);padding:20px;text-align:center">No lessons recorded</div>';
 }
 </script>
 </body>
