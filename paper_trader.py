@@ -95,6 +95,13 @@ SENTIMENT_THRESHOLD = 0.5   # raised from 0.3 — only strong sentiment override
 SENTIMENT_MIN_CONFIDENCE = 0.6  # raised from 0.4 — require high confidence
 SENTIMENT_MIN_SOURCES = 2   # NEW: require ≥2 sources before sentiment can override
 
+# ─── Regime Override ───
+# If sentiment flips hard against an open position AND position is losing,
+# exit early to avoid bleeding against the trend.
+REGIME_OVERRIDE_ENABLED = True
+REGIME_OVERRIDE_THRESHOLD = 0.6   # sentiment must cross this to trigger override
+REGIME_OVERRIDE_MIN_HOLD = 2      # don't override in first 2 hours (let trade breathe)
+
 # ─── Exclusion List ───
 # Pairs where buy-and-hold crushes all strategies — don't actively trade
 EXCLUDE_PAIRS = []  # Populated dynamically by check_buy_hold()
@@ -400,6 +407,28 @@ class PaperTrader:
             # (optimizer may have changed it mid-position)
             # CRITICAL: Enforce minimum hold time to prevent whipsaw churning
             if not exit_reason:
+                # ─── Regime Override ───
+                # If sentiment has flipped strongly against this position AND we're losing,
+                # exit early to avoid bleeding against the market trend.
+                if REGIME_OVERRIDE_ENABLED:
+                    pair_data = sentiment.get(pair) if sentiment else None
+                    if pair_data:
+                        sent_score = pair_data.get("score", 0)
+                        sent_conf = pair_data.get("confidence", 0)
+                        hold_hours = (time.time() - pos["entry_ts"]) / 3600
+
+                        # Check if sentiment has flipped against us significantly
+                        override_triggered = False
+                        if pos["direction"] == "LONG" and sent_score < -REGIME_OVERRIDE_THRESHOLD:
+                            override_triggered = True
+                        elif pos["direction"] == "SHORT" and sent_score > REGIME_OVERRIDE_THRESHOLD:
+                            override_triggered = True
+
+                        if override_triggered and sent_conf >= SENTIMENT_MIN_CONFIDENCE and hold_hours >= REGIME_OVERRIDE_MIN_HOLD:
+                            exit_reason = "regime_override"
+                            exit_price = current_price
+
+                # ─── Signal Exit ───
                 entry_strat_name = pos.get("strategy", "unknown")
                 cfg = load_strategy_config().get(pair, {})
                 current_strat_name = cfg.get("strategy", "unknown")
