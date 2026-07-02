@@ -1,63 +1,51 @@
 {
-  "last_update": "2026-07-02T02:15:42.343463+00:00",
+  "last_update": "2026-07-02T02:20:42.994383+00:00",
   "portfolio": {
-    "value": 4931.83,
-    "capital": 4959.77,
+    "value": 4931.2,
+    "capital": 4948.33,
     "initial": 5000.0,
-    "pnl": -68.17,
-    "pnl_pct": -1.36,
-    "open_positions": 2
+    "pnl": -68.8,
+    "pnl_pct": -1.38,
+    "open_positions": 1
   },
   "prices": {
-    "BTC": 60221.5,
-    "ETH": 1619.35,
-    "SOL": 78.1745,
-    "HYPE": 62.6915
+    "BTC": 60209.5,
+    "ETH": 1618.15,
+    "SOL": 78.1205,
+    "HYPE": 62.7825
   },
   "positions": {
     "BTC": {
       "direction": "LONG",
       "entry_price": 60815.5,
-      "current_price": 60221.5,
+      "current_price": 60209.5,
       "size": 0.028125167431261647,
-      "unrealized_pnl": -16.79,
-      "unrealized_pnl_pct": -0.98,
+      "unrealized_pnl": -17.13,
+      "unrealized_pnl_pct": -1.0,
       "stop_loss": 59051.0,
       "take_profit": 64344.5,
       "strategy": "trend",
       "entry_time": "2026-07-01T22:20:16.373010+00:00",
-      "duration_hours": 3.9,
+      "duration_hours": 4.0,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0831
-    },
-    "ETH": {
-      "direction": "SHORT",
-      "entry_price": 1606.15,
-      "current_price": 1619.35,
-      "size": 0.8474642872270001,
-      "unrealized_pnl": -11.15,
-      "unrealized_pnl_pct": -0.82,
-      "stop_loss": 1664.4,
-      "take_profit": 1489.65,
-      "strategy": "trend",
-      "entry_time": "2026-07-02T00:15:30.418830+00:00",
-      "duration_hours": 2.0,
-      "funding_rate": 0.00125,
-      "unrealized_funding": -0.0344
+      "unrealized_funding": 0.0848
     }
   },
   "stats": {
-    "total_trades": 4,
+    "total_trades": 5,
     "wins": 2,
-    "losses": 2,
-    "win_rate": 50.0,
+    "losses": 3,
+    "win_rate": 40.0,
     "avg_win": 16.81,
-    "avg_loss": -32.56,
+    "avg_loss": -25.52,
     "best_trade": 31.25,
     "worst_trade": -40.05,
-    "total_realized_pnl": -31.49
+    "total_realized_pnl": -42.93
   },
-  "actions": [],
+  "actions": [
+    "\u274c CLOSED SHORT ETH @ $1618.1500 | P&L: $-11.44 (-0.8%) | Reason: regime_override",
+    "\ud83e\udde0 HYPE: TA signal SHORT blocked by sentiment overlay"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -126,6 +114,23 @@
       "fees_paid": 0.9965,
       "funding_cost": -0.0792,
       "total_cost": 0.9173
+    },
+    {
+      "pair": "ETH",
+      "direction": "SHORT",
+      "entry_price": 1606.15,
+      "exit_price": 1618.15,
+      "size": 0.8474642872270001,
+      "pnl": -11.4366,
+      "pnl_pct": -0.84,
+      "entry_time": "2026-07-02T00:15:30.418830+00:00",
+      "exit_time": "2026-07-02T02:20:44.522071+00:00",
+      "duration_hours": 2.1,
+      "exit_reason": "regime_override",
+      "strategy": "trend",
+      "fees_paid": 1.3028,
+      "funding_cost": -0.0358,
+      "total_cost": 1.267
     }
   ],
   "pair_strategies": {
@@ -136,11 +141,11 @@
   },
   "strategy_stats": {
     "trend": {
-      "trades": 3,
+      "trades": 4,
       "wins": 2,
-      "losses": 1,
-      "pnl": 8.56,
-      "win_rate": 66.7
+      "losses": 2,
+      "pnl": -2.88,
+      "win_rate": 50.0
     },
     "stochastic": {
       "trades": 1,
@@ -159,10 +164,10 @@
       "win_rate": 100.0
     },
     "ETH": {
-      "trades": 1,
+      "trades": 2,
       "wins": 0,
-      "losses": 1,
-      "pnl": -25.06,
+      "losses": 2,
+      "pnl": -36.5,
       "win_rate": 0.0
     },
     "SOL": {
@@ -181,11 +186,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-01T10:45:51.024159+00:00",
-      "v": 5011.11,
-      "p": 0.22
-    },
     {
       "t": "2026-07-01T10:50:51.601217+00:00",
       "v": 5013.37,
@@ -1180,6 +1180,11 @@
       "t": "2026-07-02T02:15:42.343463+00:00",
       "v": 4931.83,
       "p": -1.36
+    },
+    {
+      "t": "2026-07-02T02:20:42.994383+00:00",
+      "v": 4931.2,
+      "p": -1.38
     }
   ],
   "ai_history": [
@@ -1230,52 +1235,57 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.2,
-      "confidence": 0.35,
+      "score": 0.6,
+      "confidence": 0.7,
       "sources": [
+        "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 1,
-      "timestamp": "2026-07-02T02:15:42.265412+00:00"
+      "signal_count": 2,
+      "timestamp": "2026-07-02T02:20:42.914084+00:00"
     },
     "ETH": {
-      "score": 0.5,
-      "confidence": 0.35,
+      "score": 0.79,
+      "confidence": 0.85,
       "sources": [
+        "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 1,
-      "timestamp": "2026-07-02T02:15:42.265417+00:00"
+      "signal_count": 3,
+      "timestamp": "2026-07-02T02:20:42.914090+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "timestamp": "2026-07-02T02:15:42.265418+00:00"
-    },
-    "HYPE": {
-      "score": -0.2,
+      "score": 1.0,
       "confidence": 0.35,
       "sources": [
-        "whale_monitor"
+        "x_scanner"
       ],
       "signal_count": 1,
-      "timestamp": "2026-07-02T02:15:42.265420+00:00"
+      "timestamp": "2026-07-02T02:20:42.914095+00:00"
+    },
+    "HYPE": {
+      "score": 0.83,
+      "confidence": 1.0,
+      "sources": [
+        "x_scanner",
+        "whale_monitor"
+      ],
+      "signal_count": 4,
+      "timestamp": "2026-07-02T02:20:42.914098+00:00"
     },
     "AVAX": {
       "score": 0.0,
       "confidence": 0.0,
       "sources": [],
       "signal_count": 0,
-      "timestamp": "2026-07-02T02:15:42.265423+00:00"
+      "timestamp": "2026-07-02T02:20:42.914099+00:00"
     },
     "DOGE": {
       "score": 0.0,
       "confidence": 0.0,
       "sources": [],
       "signal_count": 0,
-      "timestamp": "2026-07-02T02:15:42.265424+00:00"
+      "timestamp": "2026-07-02T02:20:42.914100+00:00"
     }
   },
   "config": {
