@@ -445,8 +445,17 @@ function renderFeeds(){
   var ff=D.fleet_feed||{};
   function renderFeedList(items){
     if(!items||items.length==0)return'<div style="color:var(--dim);padding:10px;font-size:.7rem">No recent items</div>';
-    return items.slice(0,15).map(i=>{
-      var text=(i.text||'').substring(0,120);
+    // Filter out prompt/metadata lines — only show actual signal content
+    var filtered=items.filter(i=>{
+      var t=(i.text||'').trim();
+      if(!t||t.length<10)return false;
+      // Skip cron prompt boilerplate
+      if(t.startsWith('[IMPORTANT')||t.startsWith('[SYSTEM')||t.startsWith('You are')||t.startsWith('**Job')||t.startsWith('**Run')||t.startsWith('**Schedule')||t.startsWith('```')||t.startsWith('1. Run')||t.startsWith('Spawn'))return false;
+      return true;
+    });
+    if(filtered.length==0)return'<div style="color:var(--dim);padding:10px;font-size:.7rem">No signal items (feed contains only metadata)</div>';
+    return filtered.slice(0,15).map(i=>{
+      var text=escapeHtml((i.text||'').substring(0,120));
       return'<div class="feed-item">'+text+'</div>';
     }).join('');
   }
@@ -503,8 +512,10 @@ function renderHarness(){
 
 function renderConfig(){
   var c=D.config||{};
+  var riskVal=c.risk_per_trade;
+  var riskDisplay=(typeof riskVal==='number'&&riskVal>0)?(riskVal*100).toFixed(0)+'%':riskVal||'—';
   var html='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px">'+
-    cfgItem('Risk/Trade',c.risk_per_trade?c.risk_per_trade*100+'%':'—')+
+    cfgItem('Risk/Trade',riskDisplay)+
     cfgItem('Max Leverage',c.max_leverage||c.leverage||'—')+
     cfgItem('Stop Loss',c.stop_loss||'—')+
     cfgItem('Take Profit',c.take_profit||'—')+
@@ -514,6 +525,7 @@ function renderConfig(){
 function cfgItem(label,val){
   return'<div style="background:var(--surface2);padding:8px 10px;border-radius:6px"><div class="kpi-l">'+label+'</div><div class="kpi-v" style="font-size:.9rem">'+val+'</div></div>'
 }
+function escapeHtml(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 
 // Init
 updateClock();
