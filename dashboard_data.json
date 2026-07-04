@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-04T06:50:00.949591+00:00",
+  "last_update": "2026-07-04T06:55:01.488583+00:00",
   "portfolio": {
-    "value": 5053.96,
+    "value": 5054.15,
     "capital": 5053.87,
     "initial": 5000.0,
-    "pnl": 53.96,
+    "pnl": 54.15,
     "pnl_pct": 1.08,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 62502.5,
-    "ETH": 1755.25,
-    "SOL": 82.6415,
-    "HYPE": 71.2135
+    "BTC": 62506.5,
+    "ETH": 1755.85,
+    "SOL": 82.5875,
+    "HYPE": 71.2625
   },
   "positions": {
     "BTC": {
       "direction": "LONG",
       "entry_price": 62499.5,
-      "current_price": 62502.5,
+      "current_price": 62506.5,
       "size": 0.04849014898943423,
-      "unrealized_pnl": 0.09,
-      "unrealized_pnl_pct": 0.0,
+      "unrealized_pnl": 0.28,
+      "unrealized_pnl_pct": 0.01,
       "stop_loss": 61456.5,
       "take_profit": 64585.5,
       "strategy": "trend",
       "entry_time": "2026-07-04T05:25:52.611826+00:00",
-      "duration_hours": 1.4,
+      "duration_hours": 1.5,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0531
+      "unrealized_funding": 0.0563
     }
   },
   "stats": {
@@ -42,9 +42,7 @@
     "worst_trade": -40.05,
     "total_realized_pnl": 84.2
   },
-  "actions": [
-    "\u274c CLOSED LONG HYPE @ $71.2135 | P&L: $-11.53 (-1.0%) | Reason: regime_override"
-  ],
+  "actions": [],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -413,11 +411,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-03T15:50:16.294761+00:00",
-      "v": 5043.43,
-      "p": 0.87
-    },
     {
       "t": "2026-07-03T15:55:16.777271+00:00",
       "v": 5043.43,
@@ -1412,6 +1405,11 @@
       "t": "2026-07-04T06:50:00.949591+00:00",
       "v": 5053.96,
       "p": 1.08
+    },
+    {
+      "t": "2026-07-04T06:55:01.488583+00:00",
+      "v": 5054.15,
+      "p": 1.08
     }
   ],
   "ai_history": [
@@ -1491,16 +1489,17 @@
   "sentiment": {
     "BTC": {
       "score": -1.0,
-      "confidence": 0.74,
+      "confidence": 1.0,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -54.0% 1h",
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [$BTC ETFs] @FratelliDCrypto (\ud83d\udc4d1 \ud83d\udd041) US BTC spot ETFs: 8th | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -54.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -1508,12 +1507,17 @@
           "weight": 1.44
         },
         {
+          "source": "x_scanner",
+          "signal": "\u2022 [$BTC ETFs] @FratelliDCrypto (\ud83d\udc4d1 \ud83d\udd041) US BTC spot ETFs: 8th consecutive week of net outflows [score: 1.6]",
+          "weight": 1.28
+        },
+        {
           "source": "whale_monitor",
           "signal": "Orderbook 39% bid (ask-heavy, bearish)",
           "weight": 0.44
         }
       ],
-      "timestamp": "2026-07-04T06:50:00.868184+00:00"
+      "timestamp": "2026-07-04T06:55:01.410111+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -1526,7 +1530,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$ETH] @RoronoaZoroShin (\ud83d\udc4d1) ETH outperforming BTC by 4,33 | oi_funding: OI -14.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$ETH Liquidations] @CW8900 69,721 traders liquidated in 2 | oi_funding: OI -14.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -1535,25 +1539,31 @@
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [$ETH] @RoronoaZoroShin (\ud83d\udc4d1) ETH outperforming BTC by 4,336.70B, 7th neg outflow week slowing [1.6]",
-          "weight": 0.65
+          "signal": "\u2022 [$ETH Liquidations] @CW8900 69,721 traders liquidated in 24h, $248.46M total \u2014 largest $ETH $10.09M on Binance [score:",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-04T06:50:00.868198+00:00"
+      "timestamp": "2026-07-04T06:55:01.410126+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.74,
+      "score": -0.11,
+      "confidence": 0.84,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI -9.0% 1h",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$SOL Meme] @fray_floor $WhiteWhale target $15.4M per iSca | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI -9.0% 1h",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$SOL Meme] @fray_floor $WhiteWhale target $15.4M per iScan_AI, buy signal [score: 2.5]",
+          "weight": 1.62
+        },
         {
           "source": "oi_funding",
           "signal": "OI -9.0% 1h",
@@ -1565,20 +1575,21 @@
           "weight": 0.52
         }
       ],
-      "timestamp": "2026-07-04T06:50:00.868207+00:00"
+      "timestamp": "2026-07-04T06:55:01.410137+00:00"
     },
     "HYPE": {
-      "score": -1.0,
-      "confidence": 0.74,
+      "score": -0.44,
+      "confidence": 0.94,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 6,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI -79.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE Liquidation] @ItsBitcoinWorld Whale 0x50b closed ET | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI -79.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -1586,12 +1597,17 @@
           "weight": 1.44
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 32% bid (ask-heavy, bearish)",
-          "weight": 0.72
+          "source": "x_scanner",
+          "signal": "\u2022 [$HYPE Liquidation] @ItsBitcoinWorld Whale 0x50b closed ETH short at $9.386M loss on Hyperliquid, PnL flipped to -$2.3",
+          "weight": 1.2
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$HYPE ETF] @rafal_jakobsen Grayscale filed 8-K for Hyperliquid Staking ETF (HYPG) with SEC [score: 1.5]",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-04T06:50:00.868213+00:00"
+      "timestamp": "2026-07-04T06:55:01.410148+00:00"
     }
   },
   "config": {
