@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": -0.45,
+    "score": -0.47,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -11,7 +11,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @0xPepesso (\ud83d\udc4d12 \ud83d\udd043) $BTC IS RUNNING THE EXACT SA | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI +26.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @0xPepesso (\ud83d\udc4d12 \ud83d\udd043) $BTC IS RUNNING THE EXACT SA | whale_monitor: Orderbook 26% bid (ask-heavy, bearish) | oi_funding: OI +56.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,19 +20,65 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +26.0% 1h, funding 0.0013%",
+        "signal": "OI +56.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 29% bid (ask-heavy, bearish)",
-        "weight": 0.84
+        "signal": "Orderbook 26% bid (ask-heavy, bearish)",
+        "weight": 0.96
       }
     ],
-    "timestamp": "2026-07-04T17:00:12.928267+00:00"
+    "timestamp": "2026-07-04T17:05:13.591064+00:00"
   },
   "ETH": {
-    "score": 1.0,
+    "score": 0.26,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @CryptoGerla (\ud83d\udc4d64 \ud83d\udd045) Ethereum Is Quietly Buildi | oi_funding: OI -19.0% 1h",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @CryptoGerla (\ud83d\udc4d64 \ud83d\udd045) Ethereum Is Quietly Building a Macro Base! $ETH entering bottoming phase, no fresh low",
+        "weight": 2.47
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -19.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-04T17:05:13.591076+00:00"
+  },
+  "SOL": {
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -19.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -19.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-04T17:05:13.591083+00:00"
+  },
+  "HYPE": {
+    "score": -1.0,
     "confidence": 1.0,
     "sources": [
       "x_scanner",
@@ -43,76 +89,24 @@
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @CryptoGerla (\ud83d\udc4d64 \ud83d\udd045) Ethereum Is Quietly Buildi | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +13.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $HYPE] @wilsondad77 (\ud83d\udc4d0 \ud83d\udd041) SCAM ALERT \u2014 prevented fro | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | oi_funding: OI -32.0% 1h",
     "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @CryptoGerla (\ud83d\udc4d64 \ud83d\udd045) Ethereum Is Quietly Building a Macro Base! $ETH entering bottoming phase, no fresh low",
-        "weight": 2.47
-      },
       {
         "source": "oi_funding",
-        "signal": "OI +13.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 67% bid-weighted (bullish)",
-        "weight": 0.68
-      }
-    ],
-    "timestamp": "2026-07-04T17:00:12.928283+00:00"
-  },
-  "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 29% bid (ask-heavy, bearish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 29% bid (ask-heavy, bearish)",
-        "weight": 0.84
-      }
-    ],
-    "timestamp": "2026-07-04T17:00:12.928291+00:00"
-  },
-  "HYPE": {
-    "score": -0.37,
-    "confidence": 0.84,
-    "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $HYPE] @wilsondad77 (\ud83d\udc4d0 \ud83d\udd041) SCAM ALERT \u2014 prevented fro | whale_monitor: Orderbook 86% bid-weighted (bullish) | oi_funding: OI -34.0% 1h",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 86% bid-weighted (bullish)",
-        "weight": 1.44
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -34.0% 1h",
+        "signal": "OI -32.0% 1h",
         "weight": 1.44
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a0\ufe0f $HYPE] @wilsondad77 (\ud83d\udc4d0 \ud83d\udd041) SCAM ALERT \u2014 prevented from shorting $HMSTR on Hyperliquid due to \"open interest cap\",",
         "weight": 1.37
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 31% bid (ask-heavy, bearish)",
+        "weight": 0.76
       }
     ],
-    "timestamp": "2026-07-04T17:00:12.928301+00:00"
+    "timestamp": "2026-07-04T17:05:13.591091+00:00"
   }
 }
