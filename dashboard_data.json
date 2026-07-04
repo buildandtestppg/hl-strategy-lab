@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-04T12:00:35.922104+00:00",
+  "last_update": "2026-07-04T12:05:36.445812+00:00",
   "portfolio": {
     "value": 5052.9,
     "capital": 5052.9,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62486.5,
-    "ETH": 1758.85,
-    "SOL": 81.7865,
-    "HYPE": 70.5915
+    "BTC": 62540.5,
+    "ETH": 1761.85,
+    "SOL": 81.8875,
+    "HYPE": 70.8365
   },
   "positions": {},
   "stats": {
@@ -412,11 +412,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-03T21:02:58.863408+00:00",
-      "v": 5085.97,
-      "p": 1.72
-    },
     {
       "t": "2026-07-03T21:05:53.689381+00:00",
       "v": 5085.99,
@@ -1411,6 +1406,11 @@
       "t": "2026-07-04T12:00:35.922104+00:00",
       "v": 5052.9,
       "p": 1.06
+    },
+    {
+      "t": "2026-07-04T12:05:36.445812+00:00",
+      "v": 5052.9,
+      "p": 1.06
     }
   ],
   "ai_history": [
@@ -1489,16 +1489,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.47,
-      "confidence": 0.3,
+      "score": -0.29,
+      "confidence": 0.84,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$BTC] @crypto_banter (\ud83d\udc4d8 \ud83d\udd044) Bitcoin deposits hit ~49K $B",
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC] @crypto_banter (\ud83d\udc4d8 \ud83d\udd044) Bitcoin deposits hit ~49K $B | whale_monitor: Orderbook 77% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1506,12 +1508,17 @@
           "weight": 2.73
         },
         {
+          "source": "whale_monitor",
+          "signal": "Orderbook 77% bid-weighted (bullish)",
+          "weight": 1.08
+        },
+        {
           "source": "x_scanner",
           "signal": "\u2022 [$BTC] @Kyra_Bloom0 (\ud83d\udc4d1 \ud83d\udd040) $BTC breakout \u2014 smashed falling wedge with strong volume, above Ichimoku Cloud [score: 1.5",
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-04T12:00:35.837999+00:00"
+      "timestamp": "2026-07-04T12:05:36.366111+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -1523,51 +1530,50 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 69% bid-weighted (bullish)",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 67% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 69% bid-weighted (bullish)",
-          "weight": 0.76
+          "signal": "Orderbook 67% bid-weighted (bullish)",
+          "weight": 0.68
         }
       ],
-      "timestamp": "2026-07-04T12:00:35.838011+00:00"
+      "timestamp": "2026-07-04T12:05:36.366122+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 1.0,
+      "score": 0.25,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$SOL] @rektfencer (\ud83d\udc4d13 \ud83d\udd040) WINTERMUTE sending huge $SOL t | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI +8.0% 1h, funding 0.0013%",
+      "signal_count": 3,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$SOL] @rektfencer (\ud83d\udc4d13 \ud83d\udd040) WINTERMUTE sending huge $SOL t | oi_funding: OI -7.0% 1h",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +8.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [$SOL] @rektfencer (\ud83d\udc4d13 \ud83d\udd040) WINTERMUTE sending huge $SOL to Binance \u2014 potential coordinated long shakeout [score: 2.0]",
           "weight": 1.3
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 79% bid-weighted (bullish)",
-          "weight": 1.16
+          "source": "oi_funding",
+          "signal": "OI -7.0% 1h",
+          "weight": 1.26
+        },
+        {
+          "source": "x_scanner",
+          "signal": "BTC showing bullish breakout from $58K lows to ~$62K, but on-chain data shows massive exchange deposits (49K BTC) sugges",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-04T12:00:35.838024+00:00"
+      "timestamp": "2026-07-04T12:05:36.366131+00:00"
     },
     "HYPE": {
-      "score": 1.0,
-      "confidence": 1.0,
+      "score": 0.43,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1575,9 +1581,9 @@
       ],
       "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$HYPE] @SerHodlGoblin (\ud83d\udc4d0 \ud83d\udd040) Building on @FireFliesMarke | whale_monitor: Orderbook 82% bid-weighted (bullish) | oi_funding: OI +36.0% 1h, funding 0.0013%",
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE] @SerHodlGoblin (\ud83d\udc4d0 \ud83d\udd040) Building on @FireFliesMarke | whale_monitor: Orderbook 88% bid-weighted (bullish) | oi_funding: OI -10.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1585,17 +1591,17 @@
           "weight": 1.62
         },
         {
-          "source": "oi_funding",
-          "signal": "OI +36.0% 1h, funding 0.0013%",
-          "weight": 1.44
+          "source": "whale_monitor",
+          "signal": "Orderbook 88% bid-weighted (bullish)",
+          "weight": 1.52
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 82% bid-weighted (bullish)",
-          "weight": 1.28
+          "source": "oi_funding",
+          "signal": "OI -10.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-04T12:00:35.838033+00:00"
+      "timestamp": "2026-07-04T12:05:36.366140+00:00"
     }
   },
   "config": {
