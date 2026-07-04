@@ -118,6 +118,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <div class="tab" onclick="showPage('positions',this)">Positions</div>
       <div class="tab" onclick="showPage('fleet',this)">Fleet</div>
       <div class="tab" onclick="showPage('strategy',this)">Strategy</div>
+      <div class="tab" onclick="showPage('lessons',this)">🧠 Lessons</div>
     </div>
     <div class="hdr-r">
       <span class="clock" id="clock">--:--:--</span>
@@ -216,6 +217,24 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <div class="pnl-b" id="configBody"></div>
     </div>
   </div>
+
+  <!-- Lessons -->
+  <div class="page" id="page-lessons">
+    <div class="pnl">
+      <div class="pnl-h"><span class="pnl-t">🧠 Self-Review — What the system learned</span></div>
+      <div class="pnl-b">
+        <p style="font-size:.7rem;color:var(--dim);margin-bottom:10px">
+          Every closed trade is automatically reviewed. Lessons are stored in Obsidian and fed back into the trader.
+          Patterns with ≥3 occurrences and ≤40% or ≥65% win rate actively adjust entry confidence.
+        </p>
+        <div id="lessonsPairs"></div>
+      </div>
+    </div>
+    <div class="pnl">
+      <div class="pnl-h"><span class="pnl-t">📚 Recent Reviews</span></div>
+      <div class="pnl-b"><div id="lessonsRecent"></div></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -282,6 +301,7 @@ function renderAll(){
   renderEval();
   renderHarness();
   renderConfig();
+  renderLessons();
 }
 
 function renderOverviewKPIs(){
@@ -542,6 +562,63 @@ function cfgItem(label,val){
   return'<div style="background:var(--surface2);padding:8px 10px;border-radius:6px"><div class="kpi-l">'+label+'</div><div class="kpi-v" style="font-size:.9rem">'+val+'</div></div>'
 }
 function escapeHtml(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function renderLessons(){
+  var l=D.lessons||{};
+  var pairs=l.pairs||{};
+  var html='';
+  ['BTC','ETH','SOL','HYPE'].forEach(pair=>{
+    var p=pairs[pair];
+    if(!p)return;
+    var wr=p.win_rate||0;
+    var wrCls=wr>=60?'g':wr<=40?'r':'';
+    var pnlCls2=(p.total_pnl||0)>=0?'g':'r';
+    html+='<div class="heat-card" style="margin-bottom:8px">'+
+      '<div style="display:flex;justify-content:space-between;align-items:center">'+
+      '<span class="heat-pair">'+pair+'</span>'+
+      '<span style="font-size:.7rem;font-weight:700" class="'+wrCls+'">'+wr.toFixed(0)+'% WR</span>'+
+      '</div>'+
+      '<div style="margin-top:4px;font-size:.65rem;color:var(--dim)">'+
+      'Trades: '+p.total_trades+' · P&L: <span class="'+pnlCls2+'">'+(p.total_pnl>=0?'+':'')+(p.total_pnl||0).toFixed(0)+' USD</span> · Trust: '+(p.avg_trust||0).toFixed(2)+'</div>';
+    // Pattern breakdown
+    var pats=p.top_patterns||[];
+    if(pats.length>0){
+      html+='<div style="margin-top:6px;display:flex;flex-direction:column;gap:3px">';
+      pats.forEach(pat=>{
+        var pWr=pat.win_rate||0;
+        var pCls=pWr>=60?'g':pWr<=40?'r':'';
+        var vColor=pat.verdict==='profitable'?'var(--green)':pat.verdict==='unprofitable'?'var(--red)':'var(--gold)';
+        html+='<div style="font-size:.62rem;padding:3px 6px;border-radius:4px;background:rgba(255,255,255,.03)">'+
+          '<span style="font-weight:600">'+escapeHtml(pat.pattern)+'</span> · '+
+          '<span class="'+pCls+'">'+pWr.toFixed(0)+'% WR</span> ('+pat.count+'x) · '+
+          '<span style="color:'+vColor+'">'+escapeHtml(pat.verdict)+'</span></div>';
+      });
+      html+='</div>';
+    }
+    html+='</div>';
+  });
+  if(!html)html='<div style="color:var(--dim);padding:20px;text-align:center">No lessons learned yet</div>';
+  document.getElementById('lessonsPairs').innerHTML=html;
+
+  // Recent reviews
+  var tr=D.trade_review_output||{};
+  var reviews=tr.new_lesson_texts||[];
+  var rHtml='';
+  if(reviews.length>0){
+    rHtml=reviews.slice(0,10).map(t=>{
+      return'<div class="feed-item">'+escapeHtml(t.substring(0,150))+'</div>';
+    }).join('');
+  }else{
+    // Show accumulated stats
+    rHtml='<div style="font-size:.7rem;color:var(--dim);padding:10px">'+
+      'Total lessons: '+(l.stats&&l.stats.total_lessons||0)+' · '+
+      'Verified: '+(l.stats&&l.stats.verified_correct||0)+'/'+(l.stats&&l.stats.verified_wrong||0)+' · '+
+      'Pending: '+(l.stats&&l.stats.pending_review||0)+
+      '</div>'+
+      '<div style="font-size:.7rem;color:var(--dim);padding:10px">Last updated: '+(l.last_updated||'—')+'</div>';
+  }
+  document.getElementById('lessonsRecent').innerHTML=rHtml;
+}
 
 // Init
 updateClock();

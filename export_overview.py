@@ -144,6 +144,10 @@ def export():
 
         # Config
         "config": dashboard.get("config", {}),
+
+        # Trading Lessons (self-review loop)
+        "lessons": load_json(PROJECT_DIR / "trading_lessons.json") or {"pairs": {}, "active_lessons": []},
+        "trade_review_output": load_json(PROJECT_DIR / "trade_review_output.json") or {},
     }
 
     # Write
@@ -162,3 +166,19 @@ def export():
 
 if __name__ == "__main__":
     export()
+    # Auto-deploy to GitHub Pages
+    import subprocess
+    try:
+        subprocess.run(["git", "add", "overview_data.json"], cwd=str(PROJECT_DIR),
+                       capture_output=True, timeout=10)
+        result = subprocess.run(["git", "diff", "--cached", "--quiet"],
+                               cwd=str(PROJECT_DIR), capture_output=True, timeout=10)
+        if result.returncode != 0:
+            subprocess.run(["git", "commit", "-m",
+                           f"auto: overview dashboard {datetime.now().strftime('%H:%M UTC')}"],
+                           cwd=str(PROJECT_DIR), capture_output=True, text=True, timeout=10)
+            subprocess.run(["git", "push", "origin", "gh-pages"],
+                           cwd=str(PROJECT_DIR), capture_output=True, text=True, timeout=30)
+            print("✅ Pushed to GitHub Pages")
+    except Exception as e:
+        print(f"⚠️ Git push failed: {e}")
