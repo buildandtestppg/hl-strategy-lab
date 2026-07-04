@@ -17,19 +17,20 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-07-04T11:40:33.400908+00:00"
+    "timestamp": "2026-07-04T11:45:33.926081+00:00"
   },
   "ETH": {
-    "score": -0.3,
-    "confidence": 0.3,
+    "score": -0.12,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH] @Aquaforge_X $BTC ripped near $62K \u2014 short squeeze ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @Aquaforge_X $BTC ripped near $62K \u2014 short squeeze  | whale_monitor: Orderbook 69% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -47,31 +48,37 @@
         "weight": 1.3
       }
     ],
-    "timestamp": "2026-07-04T11:40:33.400923+00:00"
+    "timestamp": "2026-07-04T11:45:33.926097+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 77% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI +8.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI +8.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 77% bid-weighted (bullish)",
-        "weight": 1.08
+        "signal": "Orderbook 79% bid-weighted (bullish)",
+        "weight": 1.16
       }
     ],
-    "timestamp": "2026-07-04T11:40:33.400931+00:00"
+    "timestamp": "2026-07-04T11:45:33.926108+00:00"
   },
   "HYPE": {
-    "score": 0.55,
-    "confidence": 0.84,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -79,9 +86,9 @@
     ],
     "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE] @SerHodlGoblin Building @FireFliesMarket \u2014 almost  | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -7.0% 1h",
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$HYPE] @SerHodlGoblin Building @FireFliesMarket \u2014 almost  | whale_monitor: Orderbook 82% bid-weighted (bullish) | oi_funding: OI +36.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -90,15 +97,15 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -7.0% 1h",
-        "weight": 1.26
+        "signal": "OI +36.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [$HYPE] @lin_btc (\ud83d\udc4d5) Polymarket, Hyperliquid, Pump still top of on-chain revenue. Most profitable = betting/leverage/",
-        "weight": 1.17
+        "source": "whale_monitor",
+        "signal": "Orderbook 82% bid-weighted (bullish)",
+        "weight": 1.28
       }
     ],
-    "timestamp": "2026-07-04T11:40:33.400946+00:00"
+    "timestamp": "2026-07-04T11:45:33.926118+00:00"
   }
 }
