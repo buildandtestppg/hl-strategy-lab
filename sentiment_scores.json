@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.59,
-    "confidence": 0.5,
+    "score": 0.28,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @cryptorover (\ud83d\udc4d60 \ud83d\udd045) Big profits on $BTC long. E | whale_monitor: Orderbook 39% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @cryptorover (\ud83d\udc4d60 \ud83d\udd045) Big profits on $BTC long. E | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI -14.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -18,49 +19,69 @@
         "weight": 3.28
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $BTC] @TedPillows (\ud83d\udc4d37 \ud83d\udd043) BTC at key resistance $62,800 \u2014 breakout could push to $65K. [score: 1.9]",
-        "weight": 1.23
+        "source": "oi_funding",
+        "signal": "OI -14.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $BTC] @Summitt___ (\ud83d\udc4d0) Spot ETFs bled record $4.06B in June \u2014 whales added 270K+ BTC ($16.7B) same window. [score: ",
-        "weight": 0.98
+        "signal": "\u2022 [\ud83d\udcc8 $BTC] @TedPillows (\ud83d\udc4d37 \ud83d\udd043) BTC at key resistance $62,800 \u2014 breakout could push to $65K. [score: 1.9]",
+        "weight": 1.23
       }
     ],
-    "timestamp": "2026-07-04T09:00:15.494057+00:00"
+    "timestamp": "2026-07-04T09:05:16.202520+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-04T09:00:15.494061+00:00"
-  },
-  "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 34% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI +173.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI +173.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 34% bid (ask-heavy, bearish)",
-        "weight": 0.64
+        "signal": "Orderbook 65% bid-weighted (bullish)",
+        "weight": 0.6
       }
     ],
-    "timestamp": "2026-07-04T09:00:15.494070+00:00"
+    "timestamp": "2026-07-04T09:05:16.202534+00:00"
+  },
+  "SOL": {
+    "score": -0.53,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI -39.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -39.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 61% bid-weighted (bullish)",
+        "weight": 0.44
+      }
+    ],
+    "timestamp": "2026-07-04T09:05:16.202543+00:00"
   },
   "HYPE": {
     "score": -0.43,
@@ -74,7 +95,7 @@
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @CW8900 (\ud83d\udc4d4 \ud83d\udd041) Hyperliquid Smart Tracking: 54%  | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI -22.0% 1h",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @CW8900 (\ud83d\udc4d4 \ud83d\udd041) Hyperliquid Smart Tracking: 54%  | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | oi_funding: OI -21.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -83,7 +104,7 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -22.0% 1h",
+        "signal": "OI -21.0% 1h",
         "weight": 1.44
       },
       {
@@ -92,6 +113,6 @@
         "weight": 1.2
       }
     ],
-    "timestamp": "2026-07-04T09:00:15.494083+00:00"
+    "timestamp": "2026-07-04T09:05:16.202553+00:00"
   }
 }
