@@ -259,7 +259,13 @@ async function fetchData(){
     fe.className='fresh '+(age.includes('h')?'stale':'');
     renderAll();
   }catch(e){
-    document.getElementById('loading').textContent='⚠️ Failed to load data. Will retry...';
+    var loading=document.getElementById('loading');
+    loading.textContent='⚠️ Refresh failed — showing last cached data';
+    loading.style.display='block';
+    loading.style.color='var(--gold)';
+    var fe=document.getElementById('freshness');
+    fe.textContent='⚠️ refresh failed';
+    fe.className='fresh stale';
   }
 }
 
@@ -302,14 +308,14 @@ function renderEquity(){
   ctx.clearRect(0,0,w,h);
   var ec=D.equity_curve||[];
   if(ec.length<2){ctx.fillStyle='#7a7a8e';ctx.font='12px sans-serif';ctx.fillText('No equity data',w/2-40,h/2);return}
-  var vals=ec.map(e=>e.value||e.pnl_pct);
+  var vals=ec.map(e=>e.v||e.p||0);
   var min=Math.min.apply(null,vals),max=Math.max.apply(null,vals);
   if(max==min){max=min+1}
   var pad=10;
   ctx.beginPath();
   ec.forEach((e,i)=>{
     var x=pad+(i/(ec.length-1))*(w-2*pad);
-    var v=e.value||e.pnl_pct;
+    var v=e.v||e.p||0;
     var y=h-pad-((v-min)/(max-min))*(h-2*pad);
     if(i==0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
   });
@@ -319,18 +325,19 @@ function renderEquity(){
   ctx.closePath();
   var grad=ctx.createLinearGradient(0,0,0,h);
   var lastVal=vals[vals.length-1];
-  if(lastVal>=0){grad.addColorStop(0,'rgba(0,217,163,.25)');grad.addColorStop(1,'rgba(0,217,163,0)')}
+  var initial=D.portfolio?D.portfolio.initial:5000;
+  if(lastVal>=initial){grad.addColorStop(0,'rgba(0,217,163,.25)');grad.addColorStop(1,'rgba(0,217,163,0)')}
   else{grad.addColorStop(0,'rgba(255,71,87,.25)');grad.addColorStop(1,'rgba(255,71,87,0)')}
   ctx.fillStyle=grad;ctx.fill();
   // Line
   ctx.beginPath();
   ec.forEach((e,i)=>{
     var x=pad+(i/(ec.length-1))*(w-2*pad);
-    var v=e.value||e.pnl_pct;
+    var v=e.v||e.p||0;
     var y=h-pad-((v-min)/(max-min))*(h-2*pad);
     if(i==0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
   });
-  ctx.strokeStyle=lastVal>=0?'#00d9a3':'#ff4757';
+  ctx.strokeStyle=lastVal>=initial?'#00d9a3':'#ff4757';
   ctx.lineWidth=2;ctx.stroke();
   document.getElementById('equityLabel').textContent=ec.length+' points';
 }
@@ -348,7 +355,7 @@ function renderHeat(){
       '<div class="heat-conf">'+(conf?conf.toFixed(2):'0')+' conf</div>'+
       '<div class="heat-pair">'+pair+' '+badge+'</div>'+
       '<div class="heat-score '+cls+'">'+(score>=0?'+':'')+score.toFixed(2)+'</div>'+
-      '<div class="heat-narr">'+(s.narrative||'No data').substring(0,80)+'</div>'+
+      '<div class="heat-narr">'+escapeHtml((s.narrative||'No data').substring(0,80))+'</div>'+
       '</div>';
   });
   document.getElementById('overviewHeat').innerHTML=html;
@@ -367,7 +374,7 @@ function renderSignals(){
       return'<span class="src-tag '+(isHard?'src-hard':'src-soft')+'">'+src+(isHard?' [HARD]':'')+'</span>';
     }).join('');
     var keySignals=(s.key_signals||[]).map(ks=>{
-      return'<div class="sig-item"><span class="sig-src">'+ks.source+'</span>'+ks.signal.substring(0,80)+'<span class="sig-wt">w:'+ks.weight+'</span></div>';
+      return'<div class="sig-item"><span class="sig-src">'+escapeHtml(ks.source)+'</span>'+escapeHtml((ks.signal||'').substring(0,80))+'<span class="sig-wt">w:'+ks.weight+'</span></div>';
     }).join('');
     html+='<div class="heat-card" style="margin-bottom:8px">'+
       '<div style="display:flex;justify-content:space-between;align-items:center">'+
@@ -376,7 +383,7 @@ function renderSignals(){
       '<div style="margin-top:6px"><span class="heat-score '+(score>0.2?'g':score<-0.2?'r':'')+'" style="font-size:1.1rem">'+(score>=0?'+':'')+score.toFixed(2)+'</span>'+
       ' <span style="font-size:.65rem;color:var(--dim)">conf '+(conf||0).toFixed(2)+'</span>'+
       ' <span style="font-size:.65rem;color:'+(contr>0?'var(--gold)':'var(--green)')+'">'+contr+' contradictions</span></div>'+
-      '<div class="heat-narr" style="margin-top:4px">'+(s.narrative||'—')+'</div>'+
+      '<div class="heat-narr" style="margin-top:4px">'+escapeHtml(s.narrative||'—')+'</div>'+
       '<div class="heat-srcs" style="margin-top:6px">'+sources+'</div>'+
       (keySignals?'<div class="sig-list">'+keySignals+'</div>':'')+
       '</div>';
@@ -420,7 +427,7 @@ function renderTrades(){
   var html='';
   trades.slice().reverse().forEach(t=>{
     var pnl=t.pnl||0;
-    html+='<tr><td>'+t.pair+'</td><td>'+(t.direction||'—')+'</td><td>'+usd(t.entry_price||t.entry,2)+'</td><td>'+usd(t.exit_price||t.exit,2)+'</td><td class="'+pnlCls(pnl)+'">'+usd(pnl,2)+'</td><td class="'+pnlCls(t.pnl_pct||0)+'">'+pct(t.pnl_pct||0)+'</td><td style="font-size:.6rem;color:var(--dim)">'+(t.reason||'—').substring(0,30)+'</td><td>'+(t.duration_hours||t.hours||'—')+'</td></tr>';
+    html+='<tr><td>'+escapeHtml(t.pair)+'</td><td>'+(t.direction||'—')+'</td><td>'+usd(t.entry_price||t.entry,2)+'</td><td>'+usd(t.exit_price||t.exit,2)+'</td><td class="'+pnlCls(pnl)+'">'+usd(pnl,2)+'</td><td class="'+pnlCls(t.pnl_pct||0)+'">'+pct(t.pnl_pct||0)+'</td><td style="font-size:.6rem;color:var(--dim)">'+escapeHtml((t.exit_reason||t.reason||'—').substring(0,30))+'</td><td>'+(t.duration_hours||t.hours||'—')+'</td></tr>';
   });
   document.getElementById('tradesBody').innerHTML=html||'<tr><td colspan="8" style="text-align:center;color:var(--dim)">No closed trades</td></tr>';
 }
@@ -502,10 +509,18 @@ function renderHarness(){
     html+='</tbody></table>';
   }
   var adv=h.advisor_regime||{};
-  if(adv){
+  if(adv&&adv.assessments){
+    html+='<div style="margin-top:10px;padding:8px;border-radius:6px;background:var(--surface2)">'+
+      '<div style="font-size:.65rem;color:var(--dim);margin-bottom:4px">🤖 LLM Advisor — '+(escapeHtml(adv.overall_regime||'—'))+'</div>';
+    adv.assessments.forEach(a=>{
+      var vColor=a.verdict=='hold'?'var(--green)':a.verdict=='review'?'var(--gold)':'var(--red)';
+      html+='<div style="font-size:.65rem;margin-top:3px"><span style="font-weight:700;color:'+vColor+'">'+a.pair+': '+escapeHtml(a.verdict)+'</span> <span style="color:var(--dim)">conf '+a.confidence+' · '+escapeHtml((a.reason||'').substring(0,60))+'</span></div>';
+    });
+    html+='</div>';
+  } else if(adv&&(adv.current_regime||adv.regime)){
     html+='<div style="margin-top:10px;padding:8px;border-radius:6px;background:var(--surface2)">'+
       '<div style="font-size:.65rem;color:var(--dim);margin-bottom:4px">LLM Advisor Regime</div>'+
-      '<div style="font-size:.7rem">'+(adv.current_regime||adv.regime||'—')+'</div></div>';
+      '<div style="font-size:.7rem">'+escapeHtml(adv.current_regime||adv.regime)+'</div></div>';
   }
   document.getElementById('harnessBody').innerHTML=html;
 }
@@ -513,7 +528,8 @@ function renderHarness(){
 function renderConfig(){
   var c=D.config||{};
   var riskVal=c.risk_per_trade;
-  var riskDisplay=(typeof riskVal==='number'&&riskVal>0)?(riskVal*100).toFixed(0)+'%':riskVal||'—';
+  // Value may be pre-formatted string like "1.0%" or raw number
+  var riskDisplay=(typeof riskVal==='number')?(riskVal*100).toFixed(0)+'%':(riskVal||'—');
   var html='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px">'+
     cfgItem('Risk/Trade',riskDisplay)+
     cfgItem('Max Leverage',c.max_leverage||c.leverage||'—')+
