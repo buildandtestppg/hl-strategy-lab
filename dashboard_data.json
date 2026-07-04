@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-04T15:15:58.988611+00:00",
+  "last_update": "2026-07-04T15:20:59.780496+00:00",
   "portfolio": {
-    "value": 5072.48,
+    "value": 5078.08,
     "capital": 5048.44,
     "initial": 5000.0,
-    "pnl": 72.48,
-    "pnl_pct": 1.45,
+    "pnl": 78.08,
+    "pnl_pct": 1.56,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 62761.5,
-    "ETH": 1784.45,
-    "SOL": 81.9945,
-    "HYPE": 70.8575
+    "BTC": 62792.5,
+    "ETH": 1787.8,
+    "SOL": 82.0025,
+    "HYPE": 70.9595
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1771.95,
-      "current_price": 1784.45,
+      "current_price": 1787.8,
       "size": 1.6195190341501375,
-      "unrealized_pnl": 20.21,
-      "unrealized_pnl_pct": 0.7,
+      "unrealized_pnl": 25.63,
+      "unrealized_pnl_pct": 0.89,
       "stop_loss": 1740.75,
       "take_profit": 1834.35,
       "strategy": "trend",
       "entry_time": "2026-07-04T14:20:55.094289+00:00",
-      "duration_hours": 0.9,
+      "duration_hours": 1.0,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0332
+      "unrealized_funding": 0.0363
     },
     "SOL": {
       "direction": "LONG",
       "entry_price": 81.8225,
-      "current_price": 81.9945,
+      "current_price": 82.0025,
       "size": 22.31047310117305,
-      "unrealized_pnl": 3.83,
-      "unrealized_pnl_pct": 0.21,
+      "unrealized_pnl": 4.01,
+      "unrealized_pnl_pct": 0.22,
       "stop_loss": 79.55775,
       "take_profit": 86.352,
       "strategy": "breakout",
       "entry_time": "2026-07-04T15:01:00.816313+00:00",
       "duration_hours": 0.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0057
+      "unrealized_funding": 0.0076
     }
   },
   "stats": {
@@ -443,11 +443,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-04T00:35:19.443772+00:00",
-      "v": 5078.89,
-      "p": 1.58
-    },
     {
       "t": "2026-07-04T00:40:19.945967+00:00",
       "v": 5078.08,
@@ -1442,6 +1437,11 @@
       "t": "2026-07-04T15:15:58.988611+00:00",
       "v": 5072.48,
       "p": 1.45
+    },
+    {
+      "t": "2026-07-04T15:20:59.780496+00:00",
+      "v": 5078.08,
+      "p": 1.56
     }
   ],
   "ai_history": [
@@ -1524,52 +1524,66 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "x_scanner"
-      ],
-      "signal_count": 5,
+      "score": 0.0,
+      "confidence": 0.0,
+      "sources": [],
+      "signal_count": 0,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a1 $BTC] @BeastradeAI (\ud83d\udc4d0) Ten days of outflows finally br",
+      "narrative": "No active signals",
+      "key_signals": [],
+      "timestamp": "2026-07-04T15:20:59.698647+00:00"
+    },
+    "ETH": {
+      "score": 0.23,
+      "confidence": 0.84,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a0\ufe0f $ETH] @downtoearth308 (\ud83d\udc4d0 \ud83d\udd040) $ETH hitting resistance, | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\u26a1 $BTC] @BeastradeAI (\ud83d\udc4d0) Ten days of outflows finally broken. Institutional conviction test starts now [score: 2.0]",
+          "signal": "\u2022 [\u26a0\ufe0f $ETH] @downtoearth308 (\ud83d\udc4d0 \ud83d\udd040) $ETH hitting resistance, Z-Vol 1.54, overbought \u2014 don't chase the pump [score: 2.5]",
+          "weight": 1.62
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcb8 $ETH] @WizzyOnChain (\ud83d\udc4d0 \ud83d\udd040) ETH/BTC ratio lifting off multi-year lows, Glamsterdam upgrade in Sept [score: 2.0]",
           "weight": 1.3
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\u26a1 $BTC] @Nebulabsxyz (\ud83d\udc4d0) Bitcoin ETF demand no longer expanding \u2014 YoY ETF flow sum dropped below zero [score: 1.6]",
-          "weight": 1.28
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $BTC] @HeyDeAndre305 (\ud83d\udc4d0) Sell orders $BTC $63K-$66K range. Buy orders near $56K-$58K [score: 1.6]",
-          "weight": 1.04
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @downtoearth308 (\ud83d\udc4d0 \ud83d\udd040) Big money flooding $ETH \u2014 volume 17x norm, institutional footprints [score: 1.5]",
+          "weight": 1.2
         }
       ],
-      "timestamp": "2026-07-04T15:15:58.908574+00:00"
+      "timestamp": "2026-07-04T15:20:59.698673+00:00"
     },
-    "ETH": {
-      "score": 0.16,
+    "SOL": {
+      "score": 0.18,
       "confidence": 0.5,
       "sources": [
-        "whale_monitor",
+        "x_scanner",
         "oi_funding"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd17 $SOL] @MoonKing___ (\ud83d\udc4d0 \ud83d\udd040) $PLUME cross-chain DeFi + RW | oi_funding: OI -4.0% 1h",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 75% bid-weighted (bullish)",
-          "weight": 1.0
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd17 $SOL] @MoonKing___ (\ud83d\udc4d0 \ud83d\udd040) $PLUME cross-chain DeFi + RWAs, partnership with @_gammafi on Solana [score: 1.6]",
+          "weight": 1.04
         },
         {
           "source": "oi_funding",
@@ -1577,56 +1591,25 @@
           "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-04T15:15:58.908589+00:00"
-    },
-    "SOL": {
-      "score": 0.82,
-      "confidence": 0.5,
-      "sources": [
-        "x_scanner",
-        "oi_funding"
-      ],
-      "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $SOL] @VentureCoinist (\ud83d\udc4d147 \ud83d\udd0418) $ANSEM ripping to $300 | oi_funding: OI -4.0% 1h",
-      "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $SOL] @VentureCoinist (\ud83d\udc4d147 \ud83d\udd0418) $ANSEM ripping to $300M in one week \u2014 @blknoiz06 played this two cycles in a row [",
-          "weight": 3.25
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $SOL] @CryptoGodJohn (\ud83d\udc4d5 \ud83d\udd041) Huge vibe shift & money pouring into trenches \u2014 $MANIFEST seeing huge wallet accumulat",
-          "weight": 2.24
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $SOL] @aixbt_agent (\ud83d\udc4d1) Monad: $800M TVL, Aave pulling $75M in 24hrs, Metamask chose it for money product [score: 2",
-          "weight": 1.69
-        }
-      ],
-      "timestamp": "2026-07-04T15:15:58.908598+00:00"
+      "timestamp": "2026-07-04T15:20:59.698685+00:00"
     },
     "HYPE": {
-      "score": 1.0,
+      "score": 0.67,
       "confidence": 0.74,
       "sources": [
         "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @hoodnowink (\ud83d\udc4d1) $ANSEM volume gave @Pumpfun $1M | oi_funding: OI +7.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @WealthGroup (\ud83d\udc4d35 \ud83d\udd0433) Closed $HYPE long for per | oi_funding: OI +7.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $HYPE] @hoodnowink (\ud83d\udc4d1) $ANSEM volume gave @Pumpfun $1M in fees in 24hr \u2014 more revenue than all of $HYPE [score: 2.",
-          "weight": 2.08
+          "signal": "\u2022 [\ud83d\udcb0 $HYPE] @WealthGroup (\ud83d\udc4d35 \ud83d\udd0433) Closed $HYPE long for perfect +3.87R with defined plan [score: 4.2]",
+          "weight": 2.73
         },
         {
           "source": "oi_funding",
@@ -1635,11 +1618,11 @@
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $HYPE] @0xNairolf (\ud83d\udc4d33) Next biggest apps will reinvent UX: hyperliquid frontends, polymarket social apps [score: 1",
+          "signal": "\u2022 [\ud83d\udcb8 $HYPE] @wilsondad77 (\ud83d\udc4d1 \ud83d\udd040) Hyperliquid OI cap warning \u2014 couldn't place sell order on $hmstr [score: 1.6]",
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-04T15:15:58.908608+00:00"
+      "timestamp": "2026-07-04T15:20:59.698695+00:00"
     }
   },
   "config": {
