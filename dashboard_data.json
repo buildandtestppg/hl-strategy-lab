@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-04T12:40:39.558576+00:00",
+  "last_update": "2026-07-04T12:45:40.300620+00:00",
   "portfolio": {
     "value": 5052.9,
     "capital": 5052.9,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62599.5,
-    "ETH": 1765.25,
-    "SOL": 81.4345,
-    "HYPE": 70.9625
+    "BTC": 62612.5,
+    "ETH": 1764.55,
+    "SOL": 81.4775,
+    "HYPE": 70.8895
   },
   "positions": {},
   "stats": {
@@ -353,7 +353,7 @@
     }
   ],
   "pair_strategies": {
-    "BTC": "trend",
+    "BTC": "breakout",
     "ETH": "trend",
     "SOL": "breakout",
     "HYPE": "trend"
@@ -412,16 +412,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-03T22:00:00.723567+00:00",
-      "v": 5082.55,
-      "p": 1.65
-    },
-    {
-      "t": "2026-07-03T22:05:01.236299+00:00",
-      "v": 5080.07,
-      "p": 1.6
-    },
     {
       "t": "2026-07-03T22:06:17.602762+00:00",
       "v": 5077.98,
@@ -1411,6 +1401,16 @@
       "t": "2026-07-04T12:40:39.558576+00:00",
       "v": 5052.9,
       "p": 1.06
+    },
+    {
+      "t": "2026-07-04T12:42:43.210686+00:00",
+      "v": 5052.9,
+      "p": 1.06
+    },
+    {
+      "t": "2026-07-04T12:45:40.300620+00:00",
+      "v": 5052.9,
+      "p": 1.06
     }
   ],
   "ai_history": [
@@ -1485,67 +1485,77 @@
     {
       "timestamp": "2026-07-04T04:23:54.765013+00:00",
       "note": "BTC: keep trend (challenger breakout only +2.1 ahead \u2014 hysteresis holds, need +5) | ETH: keep trend (score 58.8) | SOL: stochastic\u2192breakout (score 34.3, MEDIUM) | HYPE: keep trend (score 41.5)"
+    },
+    {
+      "timestamp": "2026-07-04T12:42:43.090747+00:00",
+      "note": "BTC: trend\u2192breakout (score 41.3, MEDIUM) | ETH: keep trend (score 59.6) | SOL: keep breakout (score 31.7) | HYPE: keep trend (score 40.5)"
     }
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.19,
-      "confidence": 0.5,
+      "score": -0.2,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @CoinEdition (\ud83d\udc4d1) 12H Liquidations Hit $43.24M \u2014  | whale_monitor: Orderbook 94% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @CoinEdition (\ud83d\udc4d1) 12H Liquidations Hit $43.24M \u2014  | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 94% bid-weighted (bullish)",
-          "weight": 1.76
+          "source": "oi_funding",
+          "signal": "OI +7.0% 1h, funding 0.0013%",
+          "weight": 1.26
         },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $BTC] @CoinEdition (\ud83d\udc4d1) 12H Liquidations Hit $43.24M \u2014 66,423 traders liquidated. $SOL led with $7.89M, $ETH $6.38M",
           "weight": 1.2
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 35% bid (ask-heavy, bearish)",
+          "weight": 0.6
         }
       ],
-      "timestamp": "2026-07-04T12:40:39.470389+00:00"
+      "timestamp": "2026-07-04T12:45:40.220610+00:00"
     },
     "ETH": {
       "score": 1.0,
       "confidence": 0.3,
       "sources": [
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 72% bid-weighted (bullish)",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +15.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 72% bid-weighted (bullish)",
-          "weight": 0.88
+          "source": "oi_funding",
+          "signal": "OI +15.0% 1h, funding 0.0013%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-04T12:40:39.470402+00:00"
+      "timestamp": "2026-07-04T12:45:40.220621+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.3,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83e\ude99 $SOL] @oak_xyz (\ud83d\udc4d3) Why $mon can easily 10x from here i | whale_monitor: Orderbook 68% bid-weighted (bullish)",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83e\ude99 $SOL] @oak_xyz (\ud83d\udc4d3) Why $mon can easily 10x from here i | oi_funding: OI -57.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1553,30 +1563,30 @@
           "weight": 1.69
         },
         {
+          "source": "oi_funding",
+          "signal": "OI -57.0% 1h",
+          "weight": 1.44
+        },
+        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83e\ude99 $SOL] @HeyPinky_ (\ud83d\udc4d27 \ud83d\udd042) A HUGE PUMP IS COMING FOR $SOL MEME SZN. [score: 1.5]",
           "weight": 0.98
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 68% bid-weighted (bullish)",
-          "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-04T12:40:39.470413+00:00"
+      "timestamp": "2026-07-04T12:45:40.220631+00:00"
     },
     "HYPE": {
       "score": 1.0,
       "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 5,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Samuelsimonsun1 Building Strategy Maker on Hyp | whale_monitor: Orderbook 81% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Samuelsimonsun1 Building Strategy Maker on Hyp | oi_funding: OI +9.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1589,12 +1599,12 @@
           "weight": 1.62
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 81% bid-weighted (bullish)",
-          "weight": 1.24
+          "source": "oi_funding",
+          "signal": "OI +9.0% 1h, funding 0.0013%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-04T12:40:39.470423+00:00"
+      "timestamp": "2026-07-04T12:45:40.220642+00:00"
     }
   },
   "config": {
