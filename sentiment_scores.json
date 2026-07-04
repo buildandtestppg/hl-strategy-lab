@@ -1,17 +1,22 @@
 {
   "BTC": {
-    "score": -0.12,
-    "confidence": 0.4,
+    "score": 0.44,
+    "confidence": 0.5,
     "sources": [
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 78% bid-weighted (bullish) | oi_funding: OI -44.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0xadc9cf23...89562f \u2192 BTC LONG 2.85\u21929.63 (+238%) | oi_funding: OI -44.0% 1h",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "\ud83d\udc0b 0xadc9cf23...89562f \u2192 BTC LONG 2.85\u21929.63 (+238%)",
+        "weight": 2.0
+      },
       {
         "source": "oi_funding",
         "signal": "OI -44.0% 1h",
@@ -23,20 +28,21 @@
         "weight": 1.12
       }
     ],
-    "timestamp": "2026-07-04T06:25:58.474824+00:00"
+    "timestamp": "2026-07-04T06:30:50.413932+00:00"
   },
   "ETH": {
-    "score": 0.38,
-    "confidence": 0.4,
+    "score": -0.18,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @RoronoaZoroShin (\ud83d\udc4d1) ETH outperforming BTC by 4,33 | oi_funding: OI +17.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$ETH] @RoronoaZoroShin (\ud83d\udc4d1) ETH outperforming BTC by 4,33 | whale_monitor: \ud83d\udc0b 0x7b7f72a2...fedee2 \u2192 ETH LONG 131\u21927.7 (-94%) | oi_funding: OI +17.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -44,51 +50,68 @@
         "weight": 1.44
       },
       {
+        "source": "whale_monitor",
+        "signal": "\ud83d\udc0b 0x7b7f72a2...fedee2 \u2192 ETH LONG 131\u21927.7 (-94%)",
+        "weight": 1.32
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [$ETH] @RoronoaZoroShin (\ud83d\udc4d1) ETH outperforming BTC by 4,336.70B, 7th neg outflow week slowing [1.6]",
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-04T06:25:58.474837+00:00"
+    "timestamp": "2026-07-04T06:30:50.413947+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.25,
+    "score": 0.01,
+    "confidence": 0.5,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -57.0% 1h",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0x7b7f72a2...fedee2 \u2192 SOL LONG 871\u21921512 (+74%) | oi_funding: OI -57.0% 1h",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "\ud83d\udc0b 0x7b7f72a2...fedee2 \u2192 SOL LONG 871\u21921512 (+74%)",
+        "weight": 1.48
+      },
       {
         "source": "oi_funding",
         "signal": "OI -57.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-04T06:25:58.474843+00:00"
+    "timestamp": "2026-07-04T06:30:50.413954+00:00"
   },
   "HYPE": {
-    "score": -1.0,
-    "confidence": 0.25,
+    "score": 0.09,
+    "confidence": 0.5,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -4.0% 1h",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0x7b7f72a2...fedee2 \u2192 HYPE SHORT 1586\u2192620 (-61%) | oi_funding: OI -4.0% 1h",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "\ud83d\udc0b 0x7b7f72a2...fedee2 \u2192 HYPE SHORT 1586\u2192620 (-61%)",
+        "weight": 0.85
+      },
       {
         "source": "oi_funding",
         "signal": "OI -4.0% 1h",
         "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-04T06:25:58.474848+00:00"
+    "timestamp": "2026-07-04T06:30:50.413960+00:00"
   }
 }
