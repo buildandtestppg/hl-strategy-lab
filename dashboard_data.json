@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-05T05:40:45.233813+00:00",
+  "last_update": "2026-07-05T05:45:46.042306+00:00",
   "portfolio": {
     "value": 4992.57,
     "capital": 4992.57,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62714.5,
-    "ETH": 1764.15,
-    "SOL": 80.3975,
-    "HYPE": 68.3155
+    "BTC": 62665.5,
+    "ETH": 1762.55,
+    "SOL": 80.2705,
+    "HYPE": 68.2945
   },
   "positions": {},
   "stats": {
@@ -480,11 +480,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-04T14:40:54.533281+00:00",
-      "v": 5047.89,
-      "p": 0.96
-    },
     {
       "t": "2026-07-04T14:45:55.118082+00:00",
       "v": 5048.86,
@@ -1479,6 +1474,11 @@
       "t": "2026-07-05T05:40:45.233813+00:00",
       "v": 4992.57,
       "p": -0.15
+    },
+    {
+      "t": "2026-07-05T05:45:46.042306+00:00",
+      "v": 4992.57,
+      "p": -0.15
     }
   ],
   "ai_history": [
@@ -1565,7 +1565,7 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.26,
+      "score": -0.13,
       "confidence": 0.7,
       "sources": [
         "x_scanner",
@@ -1576,17 +1576,17 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @Binance_FL (\ud83d\udc4d0 \ud83d\udd040) [score:1.5] $BTC short liquid | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI -15.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @Binance_FL (\ud83d\udc4d0 \ud83d\udd040) [score:1.5] $BTC short liquid | whale_monitor: Orderbook 68% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -15.0% 1h",
-          "weight": 1.44
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcca $BTC] @Binance_FL (\ud83d\udc4d0 \ud83d\udd040) [score:1.5] $BTC short liquidated $117K at $62,884",
           "weight": 1.2
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -6.0% 1h",
+          "weight": 1.08
         },
         {
           "source": "x_scanner",
@@ -1594,7 +1594,7 @@
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-05T05:40:45.147467+00:00"
+      "timestamp": "2026-07-05T05:45:45.961754+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -1606,18 +1606,18 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -8.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -13.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -8.0% 1h",
+          "signal": "OI -13.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-05T05:40:45.147478+00:00"
+      "timestamp": "2026-07-05T05:45:45.961766+00:00"
     },
     "SOL": {
-      "score": 0.54,
+      "score": -0.36,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -1628,8 +1628,13 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @westkatesafari (\ud83d\udc4d0 \ud83d\udd040) [score:2.5] @iScan_AI: $A | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @westkatesafari (\ud83d\udc4d0 \ud83d\udd040) [score:2.5] @iScan_AI: $A | whale_monitor: Orderbook 8% bid (ask-heavy, bearish) | oi_funding: OI -12.0% 1h",
       "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 8% bid (ask-heavy, bearish)",
+          "weight": 1.68
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udd25 $SOL] @westkatesafari (\ud83d\udc4d0 \ud83d\udd040) [score:2.5] @iScan_AI: $AssetFunds can go to $15.7M",
@@ -1637,20 +1642,15 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +7.0% 1h, funding 0.0013%",
-          "weight": 1.26
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 24% bid (ask-heavy, bearish)",
-          "weight": 1.04
+          "signal": "OI -12.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-05T05:40:45.147490+00:00"
+      "timestamp": "2026-07-05T05:45:45.961778+00:00"
     },
     "HYPE": {
-      "score": -0.91,
-      "confidence": 0.9,
+      "score": -1.0,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1659,13 +1659,13 @@
       ],
       "signal_count": 4,
       "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @chairbtc (\ud83d\udc4d3 \ud83d\udd040) [score:1.8] Gold liquidations  | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: pto News Brief \u2014 July 5, 2026 05:37 UTC**  \ud83d\udd34 **BREAKING** \u2022 ",
+      "convergence_strength": 4,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 4-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @chairbtc (\ud83d\udc4d3 \ud83d\udd040) [score:1.8] Gold liquidations  | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | news_agent: pto News Brief \u2014 July 5, 2026 05:37 UTC**  \ud83d\udd34 **BREAKING** \u2022 ",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -36.0% 1h",
+          "signal": "OI -10.0% 1h",
           "weight": 1.44
         },
         {
@@ -1679,7 +1679,7 @@
           "weight": 1.17
         }
       ],
-      "timestamp": "2026-07-05T05:40:45.147500+00:00"
+      "timestamp": "2026-07-05T05:45:45.961789+00:00"
     }
   },
   "config": {
