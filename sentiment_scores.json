@@ -1,77 +1,6 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u20bf $BTC] @OnchainLens (\ud83d\udc4d3 \ud83d\udd040) Whale \"0x2117\" suffered 4 co",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\u20bf $BTC] @OnchainLens (\ud83d\udc4d3 \ud83d\udd040) Whale \"0x2117\" suffered 4 consecutive $BTC partial short liquidations \u2014 $6.18M liquidate",
-        "weight": 1.52
-      }
-    ],
-    "timestamp": "2026-07-05T03:00:27.258624+00:00"
-  },
-  "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 61% bid-weighted (bullish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 61% bid-weighted (bullish)",
-        "weight": 0.44
-      }
-    ],
-    "timestamp": "2026-07-05T03:00:27.258637+00:00"
-  },
-  "SOL": {
-    "score": -0.16,
-    "confidence": 0.5,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udfe0 $SOL] @stip_snare (\ud83d\udc4d1 \ud83d\udd040) @iScan_AI gave $SUPERMAN clea | whale_monitor: Orderbook 25% bid (ask-heavy, bearish)",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udfe0 $SOL] @stip_snare (\ud83d\udc4d1 \ud83d\udd040) @iScan_AI gave $SUPERMAN clean report \u2014 target $2.2M, buy recommended [score: 2.0]",
-        "weight": 1.3
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 25% bid (ask-heavy, bearish)",
-        "weight": 1.0
-      },
-      {
-        "source": "x_scanner",
-        "signal": "AI agents remain the dominant narrative with 60 signals and heavy builder/alpha activity. $SOL leads raw volume (76 sign",
-        "weight": 0.8
-      }
-    ],
-    "timestamp": "2026-07-05T03:00:27.258647+00:00"
-  },
-  "HYPE": {
-    "score": -0.47,
+    "score": -0.76,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -82,24 +11,108 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe3 $HYPE] @aigmx_agent (\ud83d\udc4d0 \ud83d\udd040) Hyperactive Whale weaponizi | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u20bf $BTC] @OnchainLens (\ud83d\udc4d3 \ud83d\udd040) Whale \"0x2117\" suffered 4 co | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI -42.0% 1h",
     "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\u20bf $BTC] @OnchainLens (\ud83d\udc4d3 \ud83d\udd040) Whale \"0x2117\" suffered 4 consecutive $BTC partial short liquidations \u2014 $6.18M liquidate",
+        "weight": 1.52
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -42.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 65% bid-weighted (bullish)",
+        "weight": 0.6
+      }
+    ],
+    "timestamp": "2026-07-05T03:05:27.614186+00:00"
+  },
+  "ETH": {
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -20.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -20.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-05T03:05:27.614198+00:00"
+  },
+  "SOL": {
+    "score": -0.53,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe0 $SOL] @stip_snare (\ud83d\udc4d1 \ud83d\udd040) @iScan_AI gave $SUPERMAN clea | whale_monitor: Orderbook 17% bid (ask-heavy, bearish) | oi_funding: OI -18.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -18.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 17% bid (ask-heavy, bearish)",
+        "weight": 1.32
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udfe0 $SOL] @stip_snare (\ud83d\udc4d1 \ud83d\udd040) @iScan_AI gave $SUPERMAN clean report \u2014 target $2.2M, buy recommended [score: 2.0]",
+        "weight": 1.3
+      }
+    ],
+    "timestamp": "2026-07-05T03:05:27.614210+00:00"
+  },
+  "HYPE": {
+    "score": -0.21,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe3 $HYPE] @aigmx_agent (\ud83d\udc4d0 \ud83d\udd040) Hyperactive Whale weaponizi | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI +21.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +21.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udfe3 $HYPE] @aigmx_agent (\ud83d\udc4d0 \ud83d\udd040) Hyperactive Whale weaponizing $4B June ETF outflows \u2014 $27.6M $BTC short mandate active ",
         "weight": 1.28
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +4.0% 1h, funding 0.0013%",
-        "weight": 0.72
-      },
-      {
         "source": "whale_monitor",
-        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
-        "weight": 0.44
+        "signal": "Orderbook 30% bid (ask-heavy, bearish)",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-05T03:00:27.258658+00:00"
+    "timestamp": "2026-07-05T03:05:27.614219+00:00"
   }
 }
