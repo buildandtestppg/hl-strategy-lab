@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": -0.46,
-    "confidence": 0.74,
+    "score": 0.01,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @CRYPTOWISE00 BEARISH: BlackRock reportedly offl | oi_funding: OI -99.0% 1h",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @CRYPTOWISE00 BEARISH: BlackRock reportedly offl | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI +122.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -24,24 +25,24 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -99.0% 1h",
+        "signal": "OI +122.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-05T14:00:46.287264+00:00"
+    "timestamp": "2026-07-05T14:05:47.047433+00:00"
   },
   "ETH": {
-    "score": 0.65,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @cryptojack (\ud83d\udc4d43 \ud83d\udd049) BREAKING: Someone opened a $ | oi_funding: OI -12.0% 1h",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @cryptojack (\ud83d\udc4d43 \ud83d\udd049) BREAKING: Someone opened a $ | oi_funding: OI +24.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -59,11 +60,11 @@
         "weight": 1.76
       }
     ],
-    "timestamp": "2026-07-05T14:00:46.287279+00:00"
+    "timestamp": "2026-07-05T14:05:47.047451+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.94,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -71,9 +72,9 @@
     ],
     "signal_count": 5,
     "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\ude80 $SOL] @quantJB (\ud83d\udc4d26 \ud83d\udd047) Bullish on Billboard \u2014 dev self | whale_monitor: Orderbook 89% bid-weighted (bullish) | oi_funding: OI +24.0% 1h, funding 0.0013%",
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\ude80 $SOL] @quantJB (\ud83d\udc4d26 \ud83d\udd047) Bullish on Billboard \u2014 dev self | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI +59.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -86,23 +87,37 @@
         "weight": 1.62
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 89% bid-weighted (bullish)",
-        "weight": 1.56
+        "source": "oi_funding",
+        "signal": "OI +59.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-05T14:00:46.287292+00:00"
+    "timestamp": "2026-07-05T14:05:47.047461+00:00"
   },
   "HYPE": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -0.1,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-05T14:00:46.287294+00:00"
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 28% bid (ask-heavy, bearish)",
+        "weight": 0.88
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-07-05T14:05:47.047469+00:00"
   }
 }
