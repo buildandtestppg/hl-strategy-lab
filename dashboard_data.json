@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-05T03:40:32.084870+00:00",
+  "last_update": "2026-07-05T03:45:32.740043+00:00",
   "portfolio": {
     "value": 4992.57,
     "capital": 4992.57,
@@ -9,9 +9,9 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62752.5,
-    "ETH": 1762.65,
-    "SOL": 80.5055,
+    "BTC": 62728.5,
+    "ETH": 1761.35,
+    "SOL": 80.4355,
     "HYPE": 68.4415
   },
   "positions": {},
@@ -480,11 +480,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-04T12:25:38.312453+00:00",
-      "v": 5052.9,
-      "p": 1.06
-    },
     {
       "t": "2026-07-04T12:30:38.645551+00:00",
       "v": 5052.9,
@@ -1479,6 +1474,11 @@
       "t": "2026-07-05T03:40:32.084870+00:00",
       "v": 4992.57,
       "p": -0.15
+    },
+    {
+      "t": "2026-07-05T03:45:32.740043+00:00",
+      "v": 4992.57,
+      "p": -0.15
     }
   ],
   "ai_history": [
@@ -1565,17 +1565,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.49,
-      "confidence": 0.74,
+      "score": 0.17,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 5,
+      "signal_count": 6,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @bootzz (\ud83d\udc4d22 \ud83d\udd044) $USELESS has spent enough time i | whale_monitor: Orderbook 19% bid (ask-heavy, bearish)",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @bootzz (\ud83d\udc4d22 \ud83d\udd044) $USELESS has spent enough time i | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI +50.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1583,33 +1584,39 @@
           "weight": 1.68
         },
         {
+          "source": "oi_funding",
+          "signal": "OI +50.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
           "source": "x_scanner",
           "signal": "\u2022 [\u26a0\ufe0f $BTC] @phishark_ I wouldn't do anything until structure is confirmed as broken (mid-2023 high taken out). This cha",
           "weight": 1.3
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 19% bid (ask-heavy, bearish)",
-          "weight": 1.24
         }
       ],
-      "timestamp": "2026-07-05T03:40:32.001240+00:00"
+      "timestamp": "2026-07-05T03:45:32.659117+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @OnchainLens (\ud83d\udc4d7 \ud83d\udd041) wstETH whale withdrew 4,942 ",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @OnchainLens (\ud83d\udc4d7 \ud83d\udd041) wstETH whale withdrew 4,942  | oi_funding: OI +27.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $ETH] @OnchainLens (\ud83d\udc4d7 \ud83d\udd041) wstETH whale withdrew 4,942 $ETH ($8.83M) from Binance and immediately staked via Lido. ",
+          "weight": 1.44
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI +27.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -1618,39 +1625,59 @@
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-05T03:40:32.001253+00:00"
+      "timestamp": "2026-07-05T03:45:32.659131+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 11% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI +11.0% 1h, funding 0.0013%",
       "key_signals": [
         {
+          "source": "oi_funding",
+          "signal": "OI +11.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
           "source": "whale_monitor",
-          "signal": "Orderbook 11% bid (ask-heavy, bearish)",
-          "weight": 1.56
+          "signal": "Orderbook 61% bid-weighted (bullish)",
+          "weight": 0.44
         }
       ],
-      "timestamp": "2026-07-05T03:40:32.001260+00:00"
+      "timestamp": "2026-07-05T03:45:32.659139+00:00"
     },
     "HYPE": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -0.26,
+      "confidence": 0.5,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-05T03:40:32.001262+00:00"
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -27.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -27.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 71% bid-weighted (bullish)",
+          "weight": 0.84
+        }
+      ],
+      "timestamp": "2026-07-05T03:45:32.659146+00:00"
     }
   },
   "config": {
