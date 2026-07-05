@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-05T00:00:05.919803+00:00",
+  "last_update": "2026-07-05T00:05:06.722188+00:00",
   "portfolio": {
-    "value": 5060.22,
+    "value": 5049.4,
     "capital": 5030.7,
     "initial": 5000.0,
-    "pnl": 60.22,
-    "pnl_pct": 1.2,
+    "pnl": 49.4,
+    "pnl_pct": 0.99,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 63127.5,
-    "ETH": 1781.15,
-    "SOL": 81.7805,
-    "HYPE": 69.8405
+    "BTC": 63054.5,
+    "ETH": 1777.85,
+    "SOL": 81.6125,
+    "HYPE": 69.6145
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1771.95,
-      "current_price": 1781.15,
+      "current_price": 1777.85,
       "size": 1.6195190341501375,
-      "unrealized_pnl": 14.55,
-      "unrealized_pnl_pct": 0.51,
+      "unrealized_pnl": 9.2,
+      "unrealized_pnl_pct": 0.32,
       "stop_loss": 1740.75,
       "take_profit": 1834.35,
       "strategy": "trend",
       "entry_time": "2026-07-04T14:20:55.094289+00:00",
       "duration_hours": 9.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.3481
+      "unrealized_funding": 0.3504
     },
     "BTC": {
       "direction": "LONG",
       "entry_price": 62921.5,
-      "current_price": 63127.5,
+      "current_price": 63054.5,
       "size": 0.07499414821116378,
-      "unrealized_pnl": 14.98,
-      "unrealized_pnl_pct": 0.32,
+      "unrealized_pnl": 9.5,
+      "unrealized_pnl_pct": 0.2,
       "stop_loss": 62242.75,
       "take_profit": 64279.0,
       "strategy": "breakout",
       "entry_time": "2026-07-04T16:00:07.978757+00:00",
-      "duration_hours": 8.0,
+      "duration_hours": 8.1,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.4734
+      "unrealized_funding": 0.4778
     }
   },
   "stats": {
@@ -477,11 +477,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-04T09:00:15.578056+00:00",
-      "v": 5052.9,
-      "p": 1.06
-    },
     {
       "t": "2026-07-04T09:05:16.281945+00:00",
       "v": 5052.9,
@@ -1476,6 +1471,11 @@
       "t": "2026-07-05T00:00:05.919803+00:00",
       "v": 5060.22,
       "p": 1.2
+    },
+    {
+      "t": "2026-07-05T00:05:06.722188+00:00",
+      "v": 5049.4,
+      "p": 0.99
     }
   ],
   "ai_history": [
@@ -1562,43 +1562,36 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.47,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
-        "oi_funding"
+        "whale_monitor"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 73% bid-weighted (bullish)",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 73% bid-weighted (bullish)",
+          "weight": 0.92
+        }
+      ],
+      "timestamp": "2026-07-05T00:05:06.635529+00:00"
+    },
+    "ETH": {
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "x_scanner"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI +64.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +64.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 37% bid (ask-heavy, bearish)",
-          "weight": 0.52
-        }
-      ],
-      "timestamp": "2026-07-05T00:00:05.831567+00:00"
-    },
-    "ETH": {
-      "score": 1.0,
-      "confidence": 0.74,
-      "sources": [
-        "x_scanner",
-        "oi_funding"
-      ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CelalKucuker (\ud83d\udc4d57 \ud83d\udd0413) Strongest community acros | oi_funding: OI +58.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CelalKucuker (\ud83d\udc4d57 \ud83d\udd0413) Strongest community acros",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1606,63 +1599,44 @@
           "weight": 2.02
         },
         {
-          "source": "oi_funding",
-          "signal": "OI +58.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
-        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $ETH] @DeepBlueAlpha $ETH touched $1,802 \u2014 +12.7% off $1,743 low. Spot ETFs flipped to net inflows [score: 1.6]",
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-05T00:00:05.831583+00:00"
+      "timestamp": "2026-07-05T00:05:06.635543+00:00"
     },
     "SOL": {
-      "score": -1.0,
+      "score": 0.0,
+      "confidence": 0.0,
+      "sources": [],
+      "signal_count": 0,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "No active signals",
+      "key_signals": [],
+      "timestamp": "2026-07-05T00:05:06.635545+00:00"
+    },
+    "HYPE": {
+      "score": 1.0,
       "confidence": 0.3,
       "sources": [
-        "oi_funding"
+        "whale_monitor"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -21.0% 1h",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -21.0% 1h",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-07-05T00:00:05.831591+00:00"
-    },
-    "HYPE": {
-      "score": 1.0,
-      "confidence": 0.74,
-      "sources": [
-        "whale_monitor",
-        "oi_funding"
-      ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 77% bid-weighted (bullish) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 67% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 77% bid-weighted (bullish)",
-          "weight": 1.08
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0013%",
-          "weight": 0.9
+          "signal": "Orderbook 67% bid-weighted (bullish)",
+          "weight": 0.68
         }
       ],
-      "timestamp": "2026-07-05T00:00:05.831599+00:00"
+      "timestamp": "2026-07-05T00:05:06.635552+00:00"
     }
   },
   "config": {
