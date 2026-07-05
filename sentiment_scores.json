@@ -1,17 +1,23 @@
 {
   "BTC": {
-    "score": -0.25,
-    "confidence": 0.6,
+    "score": -0.26,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $BTC] @Binance_FL (\ud83d\udc4d0 \ud83d\udd040) [score:1.5] $BTC short liquid | whale_monitor: Orderbook 37% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @Binance_FL (\ud83d\udc4d0 \ud83d\udd040) [score:1.5] $BTC short liquid | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI -15.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -15.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $BTC] @Binance_FL (\ud83d\udc4d0 \ud83d\udd040) [score:1.5] $BTC short liquidated $117K at $62,884",
@@ -21,60 +27,81 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $BTC] @CryptoPatel (\ud83d\udc4d36 \ud83d\udd043) [score:1.6] Never ignore a bullish divergence on $BTC",
         "weight": 1.04
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 37% bid (ask-heavy, bearish)",
-        "weight": 0.52
       }
     ],
-    "timestamp": "2026-07-05T05:20:43.652665+00:00"
+    "timestamp": "2026-07-05T05:25:44.063520+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-05T05:20:43.652669+00:00"
-  },
-  "SOL": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "x_scanner"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udd25 $SOL] @westkatesafari (\ud83d\udc4d0 \ud83d\udd040) [score:2.5] @iScan_AI: $A",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -8.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -8.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-05T05:25:44.063532+00:00"
+  },
+  "SOL": {
+    "score": 0.54,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @westkatesafari (\ud83d\udc4d0 \ud83d\udd040) [score:2.5] @iScan_AI: $A | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd25 $SOL] @westkatesafari (\ud83d\udc4d0 \ud83d\udd040) [score:2.5] @iScan_AI: $AssetFunds can go to $15.7M",
         "weight": 1.62
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +7.0% 1h, funding 0.0013%",
+        "weight": 1.26
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 24% bid (ask-heavy, bearish)",
+        "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-05T05:20:43.652679+00:00"
+    "timestamp": "2026-07-05T05:25:44.063544+00:00"
   },
   "HYPE": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": -0.82,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @chairbtc (\ud83d\udc4d3 \ud83d\udd040) [score:1.8] Gold liquidations  | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @chairbtc (\ud83d\udc4d3 \ud83d\udd040) [score:1.8] Gold liquidations  | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI -36.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -36.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcb0 $HYPE] @chairbtc (\ud83d\udc4d3 \ud83d\udd040) [score:1.8] Gold liquidations on Hyperliquid DEX \u2014 CEX-DEX correlation tightening",
@@ -82,10 +109,10 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 36% bid (ask-heavy, bearish)",
-        "weight": 0.56
+        "signal": "Orderbook 61% bid-weighted (bullish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-07-05T05:20:43.652690+00:00"
+    "timestamp": "2026-07-05T05:25:44.063552+00:00"
   }
 }
