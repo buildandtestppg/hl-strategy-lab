@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-05T11:20:26.391500+00:00",
+  "last_update": "2026-07-05T11:25:26.880230+00:00",
   "portfolio": {
-    "value": 4981.3,
+    "value": 4981.97,
     "capital": 4988.17,
     "initial": 5000.0,
-    "pnl": -18.7,
-    "pnl_pct": -0.37,
+    "pnl": -18.03,
+    "pnl_pct": -0.36,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 62651.5,
-    "ETH": 1763.15,
-    "SOL": 80.5065,
-    "HYPE": 68.6045
+    "BTC": 62619.5,
+    "ETH": 1760.35,
+    "SOL": 80.3835,
+    "HYPE": 68.7365
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 80.6025,
-      "current_price": 80.5065,
+      "current_price": 80.3835,
       "size": 26.61282794027572,
-      "unrealized_pnl": -2.67,
-      "unrealized_pnl_pct": -0.12,
+      "unrealized_pnl": -5.95,
+      "unrealized_pnl_pct": -0.28,
       "stop_loss": 78.7265,
       "take_profit": 84.3545,
       "strategy": "stochastic",
       "entry_time": "2026-07-05T07:00:56.690840+00:00",
-      "duration_hours": 4.3,
+      "duration_hours": 4.4,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1158
+      "unrealized_funding": 0.1179
     },
     "ETH": {
       "direction": "SHORT",
       "entry_price": 1760.15,
-      "current_price": 1763.15,
+      "current_price": 1760.35,
       "size": 1.4082073719607189,
-      "unrealized_pnl": -4.21,
-      "unrealized_pnl_pct": -0.17,
+      "unrealized_pnl": -0.26,
+      "unrealized_pnl_pct": -0.01,
       "stop_loss": 1795.525,
       "take_profit": 1689.4,
       "strategy": "trend",
       "entry_time": "2026-07-05T10:45:23.189500+00:00",
-      "duration_hours": 0.6,
+      "duration_hours": 0.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0181
+      "unrealized_funding": -0.0207
     }
   },
   "stats": {
@@ -57,9 +57,7 @@
     "worst_trade": -40.05,
     "total_realized_pnl": 33.16
   },
-  "actions": [
-    "\ud83e\udde0 HYPE: TA signal SHORT blocked by sentiment overlay"
-  ],
+  "actions": [],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -513,11 +511,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-04T20:10:37.197552+00:00",
-      "v": 5093.7,
-      "p": 1.87
-    },
     {
       "t": "2026-07-04T20:15:37.735780+00:00",
       "v": 5092.53,
@@ -1512,6 +1505,11 @@
       "t": "2026-07-05T11:20:26.391500+00:00",
       "v": 4981.3,
       "p": -0.37
+    },
+    {
+      "t": "2026-07-05T11:25:26.880230+00:00",
+      "v": 4981.97,
+      "p": -0.36
     }
   ],
   "ai_history": [
@@ -1598,49 +1596,43 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": -0.26,
+      "confidence": 0.5,
       "sources": [
         "whale_monitor",
         "oi_funding"
       ],
       "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 88% bid-weighted (bullish) | oi_funding: OI +29.0% 1h, funding 0.0013%",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -39.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -39.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 88% bid-weighted (bullish)",
-          "weight": 1.52
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +29.0% 1h, funding 0.0013%",
-          "weight": 1.44
+          "signal": "Orderbook 71% bid-weighted (bullish)",
+          "weight": 0.84
         }
       ],
-      "timestamp": "2026-07-05T11:20:26.293587+00:00"
+      "timestamp": "2026-07-05T11:25:26.796502+00:00"
     },
     "ETH": {
-      "score": 0.63,
-      "confidence": 0.74,
+      "score": 0.24,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
-        "oi_funding"
+        "x_scanner"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 3,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @Alaouicapital (\ud83d\udc4d38) $ETH between two liquidation | oi_funding: OI +44.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @Alaouicapital (\ud83d\udc4d38) $ETH between two liquidation",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +44.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $ETH] @Alaouicapital (\ud83d\udc4d38) $ETH between two liquidation clusters \u2014 $1700 below, $1800-$1830 above [3.0]",
@@ -1650,9 +1642,14 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $ETH] @CryptoMichNL (\ud83d\udc4d72 \ud83d\udd043) $ETH is clearly starting up a strong uptrend, broke above crucial MA's on daily [3.7]",
           "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @cryptocupra (\ud83d\udc4d29 \ud83d\udd044) $ETH will go parabolic. When it does, that's a green light for altcoins [3.2]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-05T11:20:26.293604+00:00"
+      "timestamp": "2026-07-05T11:25:26.796515+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -1666,17 +1663,17 @@
       "convergence": true,
       "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @web3righteous (\ud83d\udc4d30 \ud83d\udd042) $0 to $20k challenge on S | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI +45.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @web3righteous (\ud83d\udc4d30 \ud83d\udd042) $0 to $20k challenge on S | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI +26.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +45.0% 1h, funding 0.0013%",
+          "signal": "OI +26.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 80% bid-weighted (bullish)",
-          "weight": 1.2
+          "signal": "Orderbook 79% bid-weighted (bullish)",
+          "weight": 1.16
         },
         {
           "source": "x_scanner",
@@ -1684,33 +1681,33 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-05T11:20:26.293615+00:00"
+      "timestamp": "2026-07-05T11:25:26.796528+00:00"
     },
     "HYPE": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": -0.57,
+      "confidence": 0.5,
       "sources": [
         "whale_monitor",
         "oi_funding"
       ],
       "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 74% bid-weighted (bullish) | oi_funding: OI +17.0% 1h, funding 0.0013%",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -91.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +17.0% 1h, funding 0.0013%",
+          "signal": "OI -91.0% 1h",
           "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 74% bid-weighted (bullish)",
-          "weight": 0.96
+          "signal": "Orderbook 60% bid-weighted (bullish)",
+          "weight": 0.4
         }
       ],
-      "timestamp": "2026-07-05T11:20:26.293622+00:00"
+      "timestamp": "2026-07-05T11:25:26.796536+00:00"
     }
   },
   "config": {
