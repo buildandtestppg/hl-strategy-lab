@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-05T17:20:41.024801+00:00",
+  "last_update": "2026-07-05T17:25:41.489673+00:00",
   "portfolio": {
-    "value": 4972.33,
+    "value": 4971.14,
     "capital": 5004.94,
     "initial": 5000.0,
-    "pnl": -27.67,
-    "pnl_pct": -0.55,
+    "pnl": -28.86,
+    "pnl_pct": -0.58,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 62713.5,
-    "ETH": 1777.75,
-    "SOL": 81.1275,
-    "HYPE": 69.2105
+    "BTC": 62740.5,
+    "ETH": 1781.15,
+    "SOL": 81.1415,
+    "HYPE": 69.3565
   },
   "positions": {
     "ETH": {
       "direction": "SHORT",
       "entry_price": 1760.15,
-      "current_price": 1777.75,
+      "current_price": 1781.15,
       "size": 1.4082073719607189,
-      "unrealized_pnl": -24.58,
-      "unrealized_pnl_pct": -0.99,
+      "unrealized_pnl": -29.36,
+      "unrealized_pnl_pct": -1.18,
       "stop_loss": 1795.525,
       "take_profit": 1689.4,
       "strategy": "trend",
       "entry_time": "2026-07-05T10:45:23.189500+00:00",
-      "duration_hours": 6.6,
+      "duration_hours": 6.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.2062
+      "unrealized_funding": -0.2092
     },
     "HYPE": {
       "direction": "LONG",
       "entry_price": 69.535,
-      "current_price": 69.2105,
+      "current_price": 69.3565,
       "size": 24.66246879914393,
-      "unrealized_pnl": -8.04,
-      "unrealized_pnl_pct": -0.47,
+      "unrealized_pnl": -4.44,
+      "unrealized_pnl_pct": -0.26,
       "stop_loss": 67.5125,
       "take_profit": 73.58,
       "strategy": "trend",
       "entry_time": "2026-07-05T15:50:02.517879+00:00",
-      "duration_hours": 1.5,
+      "duration_hours": 1.6,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0322
+      "unrealized_funding": 0.0341
     }
   },
   "stats": {
@@ -528,11 +528,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-05T02:05:21.533515+00:00",
-      "v": 5009.66,
-      "p": 0.19
-    },
     {
       "t": "2026-07-05T02:10:22.142801+00:00",
       "v": 5005.6,
@@ -1527,6 +1522,11 @@
       "t": "2026-07-05T17:20:41.024801+00:00",
       "v": 4972.33,
       "p": -0.55
+    },
+    {
+      "t": "2026-07-05T17:25:41.489673+00:00",
+      "v": 4971.14,
+      "p": -0.58
     }
   ],
   "ai_history": [
@@ -1613,17 +1613,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.05,
-      "confidence": 0.5,
+      "score": 0.64,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC Trending] @sunxliao (\ud83d\udc4d86 \ud83d\udd048) Bitcoin 4-5X over 1-2 | whale_monitor: Orderbook 32% bid (ask-heavy, bearish)",
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC Trending] @sunxliao (\ud83d\udc4d86 \ud83d\udd048) Bitcoin 4-5X over 1-2 | whale_monitor: Orderbook 81% bid-weighted (bullish) | oi_funding: OI +11.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1636,57 +1637,78 @@
           "weight": 1.44
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 32% bid (ask-heavy, bearish)",
-          "weight": 0.72
+          "source": "oi_funding",
+          "signal": "OI +11.0% 1h, funding 0.0013%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-05T17:20:40.920133+00:00"
+      "timestamp": "2026-07-05T17:25:41.409586+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "whale_monitor"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 64% bid-weighted (bullish)",
-      "key_signals": [
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 64% bid-weighted (bullish)",
-          "weight": 0.56
-        }
-      ],
-      "timestamp": "2026-07-05T17:20:40.920147+00:00"
-    },
-    "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-05T17:20:40.920149+00:00"
-    },
-    "HYPE": {
-      "score": 1.0,
       "confidence": 0.74,
       "sources": [
-        "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE Trending] @fgsbilll (\ud83d\udc4d45 \ud83d\udd041) Missed uniswap, pepe | whale_monitor: Orderbook 91% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +16.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +16.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 60% bid-weighted (bullish)",
+          "weight": 0.4
+        }
+      ],
+      "timestamp": "2026-07-05T17:25:41.409599+00:00"
+    },
+    "SOL": {
+      "score": 1.0,
+      "confidence": 0.74,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +7.0% 1h, funding 0.0010%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +7.0% 1h, funding 0.0010%",
+          "weight": 1.26
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 60% bid-weighted (bullish)",
+          "weight": 0.4
+        }
+      ],
+      "timestamp": "2026-07-05T17:25:41.409607+00:00"
+    },
+    "HYPE": {
+      "score": 0.58,
+      "confidence": 0.84,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE Trending] @fgsbilll (\ud83d\udc4d45 \ud83d\udd041) Missed uniswap, pepe | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI -23.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1694,17 +1716,17 @@
           "weight": 2.34
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 91% bid-weighted (bullish)",
-          "weight": 1.64
-        },
-        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcca $HYPE Data] @CW8900 HL whale tracking: 75% long, $4.6M long vol, BTC top pair $3.1M [score: 2.5]",
           "weight": 1.62
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -23.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-05T17:20:40.920161+00:00"
+      "timestamp": "2026-07-05T17:25:41.409616+00:00"
     }
   },
   "config": {
