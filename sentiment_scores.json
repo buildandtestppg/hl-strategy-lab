@@ -1,16 +1,22 @@
 {
   "BTC": {
-    "score": 0.1,
-    "confidence": 0.3,
+    "score": -0.41,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83e\udda1 $BTC] @bpaynews (\ud83d\udc4d0 \ud83d\udd040) Treasury launches Trump Account",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83e\udda1 $BTC] @bpaynews (\ud83d\udc4d0 \ud83d\udd040) Treasury launches Trump Account | whale_monitor: Orderbook 19% bid (ask-heavy, bearish)",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 19% bid (ask-heavy, bearish)",
+        "weight": 1.24
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83e\udda1 $BTC] @bpaynews (\ud83d\udc4d0 \ud83d\udd040) Treasury launches Trump Accounts for long-term US stock investment [1.5]",
@@ -22,7 +28,7 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-05T01:20:15.867454+00:00"
+    "timestamp": "2026-07-05T01:25:16.521794+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -42,45 +48,52 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-05T01:20:15.867467+00:00"
+    "timestamp": "2026-07-05T01:25:16.521804+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.06,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 67% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 67% bid-weighted (bullish)",
-        "weight": 0.68
+        "signal": "Orderbook 34% bid (ask-heavy, bearish)",
+        "weight": 0.64
       }
     ],
-    "timestamp": "2026-07-05T01:20:15.867474+00:00"
+    "timestamp": "2026-07-05T01:25:16.521813+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @whalewatchalert (\ud83d\udc4d2 \ud83d\udd040) MET whale bought $3.15K | whale_monitor: Orderbook 72% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @whalewatchalert (\ud83d\udc4d2 \ud83d\udd040) MET whale bought $3.15K | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 72% bid-weighted (bullish)",
-        "weight": 0.88
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
       },
       {
         "source": "x_scanner",
@@ -93,6 +106,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-05T01:20:15.867484+00:00"
+    "timestamp": "2026-07-05T01:25:16.521824+00:00"
   }
 }
