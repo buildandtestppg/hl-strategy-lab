@@ -124,8 +124,11 @@ canvas{width:100%;height:100%}
 <!-- INTEL -->
 <div id="pg-intel" class="pg">
 <div class="sec"><div class="st">Scanner Health</div><div class="g3" id="scan"></div></div>
+<div class="sec"><div class="st">Signal Synthesis <span class="pl pl-i" id="sigSynthBadge">--</span></div><div class="cd"><div class="cd-b" id="sigSynthBody" style="max-height:300px;overflow-y:auto;font-size:.72rem;line-height:1.6;white-space:pre-wrap"></div></div></div>
 <div class="sec"><div class="st">Intelligence Feeds</div><div class="g2"><div class="cd"><div class="cd-h">X / Twitter</div><div class="cd-b" style="padding:0"><div class="fd" id="xf"></div></div></div><div class="cd"><div class="cd-h">Whale Moves</div><div class="cd-b" style="padding:0"><div class="fd" id="wf"></div></div></div></div></div>
 <div class="sec"><div class="cd"><div class="cd-h">News</div><div class="cd-b" style="padding:0"><div class="fd" id="nf" style="max-height:280px"></div></div></div></div>
+<div class="sec"><div class="st">Analyst Briefings</div><div class="cd"><div class="cd-b" id="briefBody"></div></div></div>
+<div class="sec"><div class="st">All Cron Intelligence <span style="font-size:.56rem;color:var(--t3)" id="intelCount">0 sources</span></div><div class="cd"><div class="cd-b" style="padding:0"><div class="fd" id="allIntel" style="max-height:500px"></div></div></div></div>
 </div>
 
 <!-- LIFESTYLE -->
@@ -155,7 +158,7 @@ function show(id,el){document.querySelectorAll('.pg').forEach(p=>p.classList.rem
 function tick(){var n=new Date();document.getElementById('clk').textContent=n.toLocaleTimeString('en-US',{hour12:false});requestAnimationFrame(tick)}tick();
 async function fetchD(){try{var r=await fetch(URL+'?t='+Date.now());if(!r.ok)throw 0;D=await r.json();document.getElementById('ld').style.display='none';document.getElementById('upd').textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour12:false});render()}catch(e){console.error(e)}}
 setInterval(fetchD,30000);
-function render(){if(!D)return;buildNav();renderHero();renderDomains();renderSysStat();renderSent();renderSig();renderAct();renderTH();renderPos();renderExit();renderTrades();renderScan();renderFeeds();renderFit();renderWC();renderInfra();renderCrons();renderLoop();renderMem();renderLB();drawChart()}
+function render(){if(!D)return;buildNav();renderHero();renderDomains();renderSysStat();renderSent();renderSig();renderAct();renderTH();renderPos();renderExit();renderTrades();renderScan();renderFeeds();renderSignalSynth();renderBriefings();renderAllIntel();renderFit();renderWC();renderInfra();renderCrons();renderLoop();renderMem();renderLB();drawChart()}
 
 function buildNav(){
 var tabs=[['command','Command'],['trading','Trading'],['intel','Intelligence'],['life','Lifestyle'],['system','System']];
@@ -227,6 +230,35 @@ function renderTrades(){var t=(D.trading.closed_trades||[]).slice().reverse().sl
 // INTEL
 function renderScan(){var ss=D.fleet.scanner_status||{};document.getElementById('scan').innerHTML=Object.entries(ss).map(function(e){var n=e[0],s=e[1],st=s.status||'?';var c=st=='fresh'?'pl-ok':st=='stale'?'pl-w':'pl-e';return'<div class="cd"><div class="cd-b"><div class="rw"><span class="k"><strong>'+n.replace(/_/g,' ')+'</strong></span><span class="pl '+c+'">'+st.toUpperCase()+'</span></div><div style="font-size:.6rem;color:var(--t3);font-family:var(--mono);margin-top:3px">'+s.last_run+' ('+s.age_minutes+'m)</div></div></div>'}).join('')}
 function renderFeeds(){var ff=D.fleet.fleet_feed||{};var rl=function(a,s){return(a||[]).slice(0,10).map(x=>'<div class="fi"><span class="tg '+(x.sentiment>0?'tg-gn':x.sentiment<0?'tg-rd':'tg-gy')+'">'+s+'</span> <span style="color:var(--t3);font-size:.58rem">'+(x.time||'')+'</span><br>'+x.text+'</div>').join('')||'<div style="padding:12px;color:var(--t3)">No data</div>'};document.getElementById('xf').innerHTML=rl(ff.x_scanner,'X');document.getElementById('wf').innerHTML=rl(ff.whale_monitor,'WHL');document.getElementById('nf').innerHTML=rl(ff.news_agent,'NEWS')}
+
+function renderSignalSynth(){
+var ss=D.intelligence.signal_synth||{};
+var snip=ss.snippet||'';
+var badge=document.getElementById('sigSynthBadge');
+if(ss.silent){badge.textContent='SILENT';badge.className='pl pl-w'}
+else if(snip){badge.textContent='LIVE';badge.className='pl pl-ok'}
+else{badge.textContent='NO DATA';badge.className='pl pl-e'}
+document.getElementById('sigSynthBody').textContent=snip||'No signal synthesis available';
+}
+
+function renderBriefings(){
+var b=D.intelligence.briefings||[];
+document.getElementById('briefBody').innerHTML=b.length?b.map(function(x){
+return'<div class="fi"><span style="font-size:.9rem">'+(x.emoji||'')+'</span> <strong>'+x.headline+'</strong><br><span style="color:var(--t3);font-size:.62rem">src: '+x.source+'</span>'+(x.detail?'<br><span style="color:var(--t2);font-size:.66rem">'+x.detail+'</span>':'')+'</div>'
+}).join(''):'<div style="padding:12px;color:var(--t3)">No briefings</div>';
+}
+
+function renderAllIntel(){
+var feed=D.intelligence.feed||[];
+document.getElementById('intelCount').textContent=feed.length+' sources';
+// Filter out self (command center builder) and silent entries
+var visible=feed.filter(f=>!f.silent&&f.name.indexOf('Command Center')<0&&f.name.indexOf('Dashboard')<0&&f.snippet.length>20);
+document.getElementById('allIntel').innerHTML=visible.length?visible.map(function(f){
+var age=f.age_hours<1?Math.round(f.age_hours*60)+'m':f.age_hours<24?Math.round(f.age_hours)+'h':Math.round(f.age_hours/24)+'d';
+var preview=f.snippet.slice(0,200).replace(/\n/g,' ');
+return'<div class="fi"><div style="display:flex;justify-content:space-between"><span><strong>'+f.name+'</strong></span><span style="color:var(--t3);font-size:.58rem">'+age+' ago</span></div><div style="color:var(--t2);font-size:.66rem;margin-top:2px">'+preview+(f.snippet.length>200?'...':'')+'</div></div>'
+}).join(''):'<div style="padding:12px;color:var(--t3)">No intelligence data</div>';
+}
 
 // LIFESTYLE
 function renderFit(){var f=D.command.fitness||{};if(!f.active){document.getElementById('fitCards').innerHTML='<div class="cd"><div class="cd-b" style="padding:20px;color:var(--t3)">No fitness data</div></div>';return}

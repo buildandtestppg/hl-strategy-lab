@@ -175,12 +175,23 @@ def get_memory_stats():
         return {"facts": 77, "entities": 86}
 
 def get_latest_cron_outputs():
-    """Get latest output snippets from key cron jobs."""
+    """Get latest output snippets from ALL cron jobs — this is the intelligence feed."""
     job_map = {
         "daily_review": "4a4564fc946b",
         "fleet_heartbeat": "6f7b35ec5e0b",
         "intel_synth": "0d71774646b8",
-        "daily_chart": "0d71774646b8",
+        "x_scanner": "43ba1d393c5a",
+        "whale_monitor": "66a98cf277aa",
+        "news_agent": "8bd6a73fc440",
+        "signal_synth": "ee9ebdc2a789",
+        "market_analyst": "8f99666a8744",
+        "research_analyst": "19d3cb3ac835",
+        "trading_analyst": "cdfa4ef4a5c0",
+        "hermes_health": "3c2578a553f3",
+        "polymarket": "0d71774646b8",
+        "fleet_ops": "a354447653dc",
+        "trade_review": "28ecc728b07c",
+        "conflict_resolver": "0d71774646b8",
     }
     outputs = {}
     for name, job_id in job_map.items():
@@ -189,16 +200,109 @@ def get_latest_cron_outputs():
             files = sorted(d.glob("*.md"), reverse=True)
             if files:
                 content = files[0].read_text()
-                # Extract just the response section
+                # Extract the Response section
                 if "## Response" in content:
-                    resp = content.split("## Response", 1)[1][:800]
+                    resp = content.split("## Response", 1)[1]
+                    # Clean up the response
+                    resp = resp.split("## Prompt")[0].strip()
+                    # Skip silent responses
+                    if resp.strip().startswith("[SILENT]"):
+                        outputs[name] = {"time": files[0].stat().st_mtime, "snippet": "[SILENT]", "silent": True}
+                    else:
+                        outputs[name] = {
+                            "time": files[0].stat().st_mtime,
+                            "snippet": resp.strip()[:1500],
+                            "silent": False,
+                        }
                 else:
-                    resp = content[:800]
-                outputs[name] = {
-                    "time": files[0].stat().st_mtime,
-                    "snippet": resp.strip()[:600],
-                }
+                    outputs[name] = {"time": files[0].stat().st_mtime, "snippet": content[:600], "silent": False}
     return outputs
+
+def get_all_cron_intelligence():
+    """Get ALL cron outputs as a unified intelligence feed, sorted by time."""
+    cron_dir = HOME / ".hermes" / "cron" / "output"
+    if not cron_dir.exists():
+        return []
+    
+    # Map job IDs to names by reading cron list
+    try:
+        result = subprocess.run(["hermes", "cron", "list"], capture_output=True, text=True, timeout=15)
+        output = result.stdout
+        id_to_name = {}
+        current_id = None
+        for line in output.split('\n'):
+            line = line.strip()
+            if len(line) >= 12 and line[0] in '0123456789abcdef':
+                parts = line.split()
+                if len(parts) >= 1 and len(parts[0]) == 12:
+                    current_id = parts[0]
+            elif line.startswith('Name:') and current_id:
+                name = line.split('Name:', 1)[1].strip()
+                id_to_name[current_id] = name
+                current_id = None
+    except:
+        id_to_name = {}
+    
+    feed = []
+    for job_dir in cron_dir.iterdir():
+        if not job_dir.is_dir():
+            continue
+        job_id = job_dir.name
+        name = id_to_name.get(job_id, job_id)
+        files = sorted(job_dir.glob("*.md"), reverse=True)
+        if not files:
+            continue
+        latest = files[0]
+        content = latest.read_text()
+        age_h = (datetime.now().timestamp() - latest.stat().st_mtime) / 3600
+        
+        # Extract response
+        snippet = ""
+        silent = False
+        if "## Response" in content:
+            resp = content.split("## Response", 1)[1].split("## Prompt")[0].strip()
+            if resp.startswith("[SILENT]"):
+                silent = True
+                snippet = "[SILENT]"
+            else:
+                snippet = resp[:1200]
+        else:
+            snippet = content[:600]
+        
+        feed.append({
+            "job_id": job_id,
+            "name": name,
+            "age_hours": round(age_h, 1),
+            "timestamp": latest.stat().st_mtime,
+            "snippet": snippet,
+            "silent": silent,
+            "file_count": len(files),
+        })
+    
+    # Sort by most recent first
+    feed.sort(key=lambda x: x["timestamp"], reverse=True)
+    return feed[:30]  # top 30 most recent
+
+def get_analyst_briefings():
+    """Get the latest analyst briefing items."""
+    data = load_json(HOME / ".hermes" / "scripts" / "analysts" / "dashboard_data.json")
+    if not data:
+        return []
+    briefings = data.get("briefings", [])
+    if not briefings:
+        return []
+    latest = briefings[-1]
+    items = latest.get("items", [])
+    return [{
+        "emoji": item.get("emoji", ""),
+        "headline": item.get("headline", ""),
+        "source": item.get("source", ""),
+        "detail": (item.get("detail", "") or "")[:200],
+    } for item in items[:8]]
+
+def get_fleet_dashboard_data():
+    """Get data from the separate fleet-dashboard (costs, circuit breaker, etc)."""
+    return load_json(HOME / "projects" / "fleet-dashboard" / "dashboard_data.json")
 
 def build_command_data():
     """Build the unified command center data — covers ALL system domains."""
@@ -212,12 +316,17 @@ def build_command_data():
     lessons = load_json(PROJECT / "trading_lessons.json")
     pruned = load_json(PROJECT / "pruned_pairs.json")
     
-    # NEW: All domain data
+    # All domain data
     fitness = get_fitness_data()
     wc = get_wc_portfolio()
     health = get_hermes_health()
     memory = get_memory_stats()
     cron_outputs = get_latest_cron_outputs()
+    
+    # NEW: comprehensive intelligence sources
+    all_intel = get_all_cron_intelligence()
+    briefings = get_analyst_briefings()
+    fleet_dash = get_fleet_dashboard_data()
 
     # Portfolio
     capital = state.get("capital", 0)
@@ -328,6 +437,22 @@ def build_command_data():
                 "disk_mb": sum(disk.values()),
             },
             "memory": memory,
+        },
+        
+        # === INTELLIGENCE FEED (all scanner/watcher output) ===
+        "intelligence": {
+            "feed": all_intel,
+            "briefings": briefings,
+            "signal_synth": cron_outputs.get("signal_synth", {}),
+            "x_scanner": cron_outputs.get("x_scanner", {}),
+            "whale_monitor": cron_outputs.get("whale_monitor", {}),
+            "news_agent": cron_outputs.get("news_agent", {}),
+            "daily_review": cron_outputs.get("daily_review", {}),
+            "fleet_ops": cron_outputs.get("fleet_ops", {}),
+            "market_analyst": cron_outputs.get("market_analyst", {}),
+            "research_analyst": cron_outputs.get("research_analyst", {}),
+            "trading_analyst": cron_outputs.get("trading_analyst", {}),
+            "conflict_resolver": cron_outputs.get("conflict_resolver", {}),
         },
         
         # === TRADING DETAIL ===
