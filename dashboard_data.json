@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-05T04:55:41.477503+00:00",
+  "last_update": "2026-07-05T05:00:41.979467+00:00",
   "portfolio": {
     "value": 4992.57,
     "capital": 4992.57,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62830.5,
-    "ETH": 1768.55,
-    "SOL": 80.5995,
-    "HYPE": 68.7905
+    "BTC": 62805.5,
+    "ETH": 1767.95,
+    "SOL": 80.5585,
+    "HYPE": 68.7465
   },
   "positions": {},
   "stats": {
@@ -26,7 +26,9 @@
     "worst_trade": -40.05,
     "total_realized_pnl": 33.16
   },
-  "actions": [],
+  "actions": [
+    "\u2702\ufe0f PRUNED BTC pruned: 29% WR over 7 trades (PnL $-1.57)"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -480,11 +482,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-04T13:40:46.690158+00:00",
-      "v": 5052.9,
-      "p": 1.06
-    },
     {
       "t": "2026-07-04T13:45:47.151418+00:00",
       "v": 5052.9,
@@ -1479,6 +1476,11 @@
       "t": "2026-07-05T04:55:41.477503+00:00",
       "v": 4992.57,
       "p": -0.15
+    },
+    {
+      "t": "2026-07-05T05:00:41.979467+00:00",
+      "v": 4992.57,
+      "p": -0.15
     }
   ],
   "ai_history": [
@@ -1593,7 +1595,7 @@
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-05T04:55:41.398111+00:00"
+      "timestamp": "2026-07-05T05:00:41.894787+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -1613,7 +1615,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-05T04:55:41.398123+00:00"
+      "timestamp": "2026-07-05T05:00:41.894799+00:00"
     },
     "SOL": {
       "score": -0.17,
@@ -1645,7 +1647,7 @@
           "weight": 0.76
         }
       ],
-      "timestamp": "2026-07-05T04:55:41.398135+00:00"
+      "timestamp": "2026-07-05T05:00:41.894811+00:00"
     },
     "HYPE": {
       "score": -1.0,
@@ -1665,13 +1667,49 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-05T04:55:41.398141+00:00"
+      "timestamp": "2026-07-05T05:00:41.894817+00:00"
     }
   },
   "config": {
     "risk_per_trade": "1.0%",
     "max_leverage": "1.5x",
     "stop_loss": "3.5x ATR",
-    "take_profit": "7.0x ATR"
+    "take_profit": "7.0x ATR",
+    "min_confidence": 0.65,
+    "regime_override_gate": 0.8,
+    "regime_override_protect_r": 2.0,
+    "fee_aware": true,
+    "asset_pruning": true
+  },
+  "exit_breakdown": {
+    "regime_override": {
+      "count": 20,
+      "pnl": 0.82,
+      "fees": 37.27,
+      "wins": 8,
+      "win_rate": 40.0
+    },
+    "signal_exit": {
+      "count": 3,
+      "pnl": 32.33,
+      "fees": 3.55,
+      "wins": 3,
+      "win_rate": 100.0
+    }
+  },
+  "pruned_pairs": {
+    "BTC": {
+      "timestamp": "2026-07-05T05:00:43.553479+00:00",
+      "reason": "BTC pruned: 29% WR over 7 trades (PnL $-1.57)"
+    }
+  },
+  "loop_v2": {
+    "version": "2.0",
+    "implemented": "2026-07-05",
+    "changes": [
+      "P1: Exit hierarchy inverted (signal_exit first, regime_override gated to conf>0.80 + protect >2R winners)",
+      "P3: Fee-aware confidence scoring (penalize fee-doomed entries)",
+      "P5: Asset pruning (auto-disable pairs with <35% WR after 7 trades)"
+    ]
   }
 }
