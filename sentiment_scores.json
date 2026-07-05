@@ -1,93 +1,113 @@
 {
   "BTC": {
-    "score": -0.46,
-    "confidence": 0.74,
+    "score": 0.01,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @0xAralez (\ud83d\udc4d22 \ud83d\udd048) $BTC JUST WALKED INTO A MAJOR  | oi_funding: OI -4.0% 1h",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @0xAralez (\ud83d\udc4d22 \ud83d\udd048) $BTC JUST WALKED INTO A MAJOR  | whale_monitor: Orderbook 19% bid (ask-heavy, bearish) | oi_funding: OI +133.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +133.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 19% bid (ask-heavy, bearish)",
+        "weight": 1.24
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc9 $BTC] @0xAralez (\ud83d\udc4d22 \ud83d\udd048) $BTC JUST WALKED INTO A MAJOR TRAP \u2014 liquidation event brewing [3.2]",
         "weight": 0.8
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
-        "weight": 0.72
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $BTC] @BradyNortonT2 (\ud83d\udc4d0 \ud83d\udd040) $BTC pinned to $162.6k floor \u2014 weekend thin liquidity thesis [1.5]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-05T22:20:44.813683+00:00"
+    "timestamp": "2026-07-05T22:25:45.457680+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 1.0,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @BMNRTracker (\ud83d\udc4d56 \ud83d\udd043) If $ETH stays at $1,776 by ",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @BMNRTracker (\ud83d\udc4d56 \ud83d\udd043) If $ETH stays at $1,776 by  | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI +84.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +84.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @BMNRTracker (\ud83d\udc4d56 \ud83d\udd043) If $ETH stays at $1,776 by 8PM, $BMNR opens $15-$15.15 [2.5]",
         "weight": 0.65
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 62% bid-weighted (bullish)",
+        "weight": 0.48
       }
     ],
-    "timestamp": "2026-07-05T22:20:44.813694+00:00"
+    "timestamp": "2026-07-05T22:25:45.457695+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": -0.01,
+    "confidence": 0.5,
     "sources": [
       "whale_monitor",
       "oi_funding"
     ],
     "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI +84.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 13% bid (ask-heavy, bearish)",
+        "weight": 1.48
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +84.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-05T22:25:45.457704+00:00"
+  },
+  "HYPE": {
+    "score": 0.45,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 5,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @nftclients (\ud83d\udc4d0 \ud83d\udd0410) Hyperliquid TLDR: perps pay | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +56.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
-        "weight": 0.9
+        "signal": "OI +56.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 71% bid-weighted (bullish)",
-        "weight": 0.84
-      }
-    ],
-    "timestamp": "2026-07-05T22:20:44.813704+00:00"
-  },
-  "HYPE": {
-    "score": 0.33,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @nftclients (\ud83d\udc4d0 \ud83d\udd0410) Hyperliquid TLDR: perps pay",
-    "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @nftclients (\ud83d\udc4d0 \ud83d\udd0410) Hyperliquid TLDR: perps pay $178.71m in fees, massive money inflow [2.2]",
@@ -97,13 +117,8 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @segoxomateenbwp (\ud83d\udc4d1 \ud83d\udd040) HYPE +7% after Africa's VALR exchange integrates Hyperliquid [1.5]",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc9 $HYPE] @Trader_8020 (\ud83d\udc4d1 \ud83d\udd040) $BASED volume dropped 300x from peak, revenue down 720x [1.5]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-05T22:20:44.813711+00:00"
+    "timestamp": "2026-07-05T22:25:45.457713+00:00"
   }
 }
