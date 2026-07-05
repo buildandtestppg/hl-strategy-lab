@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-05T09:50:15.824376+00:00",
+  "last_update": "2026-07-05T09:55:16.402876+00:00",
   "portfolio": {
-    "value": 4969.99,
+    "value": 4970.07,
     "capital": 4990.53,
     "initial": 5000.0,
-    "pnl": -30.01,
+    "pnl": -29.93,
     "pnl_pct": -0.6,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 62580.5,
-    "ETH": 1755.05,
-    "SOL": 79.8335,
-    "HYPE": 68.457
+    "BTC": 62615.5,
+    "ETH": 1757.6,
+    "SOL": 79.8365,
+    "HYPE": 68.4785
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 80.6025,
-      "current_price": 79.8335,
+      "current_price": 79.8365,
       "size": 26.61282794027572,
-      "unrealized_pnl": -20.54,
-      "unrealized_pnl_pct": -0.96,
+      "unrealized_pnl": -20.46,
+      "unrealized_pnl_pct": -0.95,
       "stop_loss": 78.7265,
       "take_profit": 84.3545,
       "strategy": "stochastic",
       "entry_time": "2026-07-05T07:00:56.690840+00:00",
-      "duration_hours": 2.8,
+      "duration_hours": 2.9,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.075
+      "unrealized_funding": 0.0772
     }
   },
   "stats": {
@@ -496,11 +496,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-04T18:45:26.693266+00:00",
-      "v": 5083.53,
-      "p": 1.67
-    },
     {
       "t": "2026-07-04T18:50:27.277661+00:00",
       "v": 5081.09,
@@ -1495,6 +1490,11 @@
       "t": "2026-07-05T09:50:15.824376+00:00",
       "v": 4969.99,
       "p": -0.6
+    },
+    {
+      "t": "2026-07-05T09:55:16.402876+00:00",
+      "v": 4970.07,
+      "p": -0.6
     }
   ],
   "ai_history": [
@@ -1581,62 +1581,50 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.55,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 2,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @CW8900 (\ud83d\udc4d16) $BTC whales' sell walls formed at 6 | whale_monitor: Orderbook 60% bid-weighted (bullish)",
+      "contradictions": 0,
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 60% bid-weighted (bullish)",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $BTC] @CW8900 (\ud83d\udc4d16) $BTC whales' sell walls formed at 63.2k and 63.5k. Buy wall at 60k. [score: 2.1]",
-          "weight": 1.37
-        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 60% bid-weighted (bullish)",
           "weight": 0.4
         }
       ],
-      "timestamp": "2026-07-05T09:50:15.718895+00:00"
+      "timestamp": "2026-07-05T09:55:16.322955+00:00"
     },
     "ETH": {
-      "score": -0.24,
-      "confidence": 0.84,
+      "score": -0.38,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 5,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @TedPillows (\ud83d\udc4d100 \ud83d\udd049) $ETH has reclaimed the $1,7 | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI -70.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI -70.0% 1h",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $ETH] @TedPillows (\ud83d\udc4d100 \ud83d\udd049) $ETH has reclaimed the $1,750 level. As long as this level holds, Ethereum could rally ",
-          "weight": 2.94
+          "source": "oi_funding",
+          "signal": "OI -70.0% 1h",
+          "weight": 1.44
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $ETH] @blockchainlenny (\ud83d\udc4d1) Binance reportedly saw $1.2B in outflows as $ETH withdrawals reached levels not seen in",
-          "weight": 2.08
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $ETH] @tokenwatchzone Binance outflows triple to $1.2B as $ETH withdrawals hit 3-year high. $1.23B weekly net outfl",
-          "weight": 2.0
+          "source": "whale_monitor",
+          "signal": "Orderbook 66% bid-weighted (bullish)",
+          "weight": 0.64
         }
       ],
-      "timestamp": "2026-07-05T09:50:15.718913+00:00"
+      "timestamp": "2026-07-05T09:55:16.322971+00:00"
     },
     "SOL": {
       "score": -0.31,
@@ -1662,27 +1650,21 @@
           "weight": 0.76
         }
       ],
-      "timestamp": "2026-07-05T09:50:15.718921+00:00"
+      "timestamp": "2026-07-05T09:55:16.322980+00:00"
     },
     "HYPE": {
-      "score": -0.71,
-      "confidence": 0.84,
+      "score": -0.29,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $HYPE] @aixbt_agent step finance exploiter dumped 261k | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -10.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -10.0% 1h",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\u26a0\ufe0f $HYPE] @aixbt_agent step finance exploiter dumped 261k SOL after 5 months dormant, bridged to ETH into tornado cas",
-          "weight": 1.9
-        },
         {
           "source": "oi_funding",
           "signal": "OI -10.0% 1h",
@@ -1694,7 +1676,7 @@
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-05T09:50:15.718929+00:00"
+      "timestamp": "2026-07-05T09:55:16.322987+00:00"
     }
   },
   "config": {
