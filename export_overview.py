@@ -22,10 +22,18 @@ PROJECT_DIR = Path(__file__).parent.absolute()
 SGT = timezone(timedelta(hours=8))
 
 def load_json(name):
+    # Handle both string filenames and pre-built Path objects
+    path = PROJECT_DIR / name if isinstance(name, str) else name
     try:
-        with open(PROJECT_DIR / name) as f:
+        with open(path) as f:
             return json.load(f)
-    except Exception:
+    except FileNotFoundError:
+        return None
+    except json.JSONDecodeError as e:
+        print(f"⚠️ Corrupt JSON in {path.name}: {e}")
+        return None
+    except Exception as e:
+        print(f"⚠️ Error loading {path.name}: {e}")
         return None
 
 def get_cron_output(job_id, max_age_hours=6):
@@ -102,14 +110,14 @@ def export():
             "value": state.get("capital", 0),
             "initial": state.get("initial_capital", 5000),
             "pnl": state.get("capital", 0) - state.get("initial_capital", 5000),
-            "pnl_pct": ((state.get("capital", 0) - state.get("initial_capital", 5000)) / state.get("initial_capital", 5000)) * 100,
+            "pnl_pct": ((state.get("capital", 0) - state.get("initial_capital", 5000)) / state.get("initial_capital", 5000)) * 100 if state.get("initial_capital", 5000) else 0.0,
             "peak": state.get("peak_equity", state.get("capital", 0)),
             "open_positions": len(state.get("positions", {})),
             "max_positions": 4,
         },
         "positions": state.get("positions", {}),
-        "closed_trades": state.get("closed_trades", [])[-20:],
-        "equity_curve": state.get("equity_curve", [])[-200:],
+        "closed_trades": (state.get("closed_trades") or [])[-20:] if isinstance(state.get("closed_trades"), list) else [],
+        "equity_curve": (state.get("equity_curve") or [])[-200:] if isinstance(state.get("equity_curve"), list) else [],
         "reset_count": state.get("reset_count", 0),
 
         # Signal Synthesis
@@ -148,12 +156,20 @@ def export():
         # Trading Lessons (self-review loop)
         "lessons": load_json(PROJECT_DIR / "trading_lessons.json") or {"pairs": {}, "active_lessons": []},
         "trade_review_output": load_json(PROJECT_DIR / "trade_review_output.json") or {},
+        
+        # Loop Engineering v2 (Jul 5 multi-model review)
+        "exit_breakdown": dashboard.get("exit_breakdown", {}),
+        "pruned_pairs": load_json(PROJECT_DIR / "pruned_pairs.json") or {},
+        "loop_v2": dashboard.get("loop_v2", {}),
+        "config_full": dashboard.get("config", {}),
     }
 
-    # Write
+    # Write atomically (temp + rename prevents partial reads)
     out_path = PROJECT_DIR / "overview_data.json"
-    with open(out_path, "w") as f:
+    tmp_path = PROJECT_DIR / "overview_data.json.tmp"
+    with open(tmp_path, "w") as f:
         json.dump(export_data, f, indent=2, default=str)
+    tmp_path.replace(out_path)
 
     size_kb = os.path.getsize(out_path) / 1024
     print(f"✅ Exported to {out_path} ({size_kb:.1f} KB)")
@@ -168,17 +184,22 @@ if __name__ == "__main__":
     export()
     # Auto-deploy to GitHub Pages
     import subprocess
+    def run_git(args, quiet_ok=False):
+        r = subprocess.run(["git", *args], cwd=str(PROJECT_DIR),
+                          capture_output=True, text=True, timeout=30)
+        if r.returncode != 0 and not (quiet_ok and r.returncode == 1):
+            print(f"⚠️ git {args[0]} failed (exit {r.returncode}): {r.stderr.strip()}")
+        return r
     try:
-        subprocess.run(["git", "add", "overview_data.json"], cwd=str(PROJECT_DIR),
-                       capture_output=True, timeout=10)
-        result = subprocess.run(["git", "diff", "--cached", "--quiet"],
-                               cwd=str(PROJECT_DIR), capture_output=True, timeout=10)
-        if result.returncode != 0:
-            subprocess.run(["git", "commit", "-m",
-                           f"auto: overview dashboard {datetime.now().strftime('%H:%M UTC')}"],
-                           cwd=str(PROJECT_DIR), capture_output=True, text=True, timeout=10)
-            subprocess.run(["git", "push", "origin", "gh-pages"],
-                           cwd=str(PROJECT_DIR), capture_output=True, text=True, timeout=30)
-            print("✅ Pushed to GitHub Pages")
+        run_git(["add", "overview_data.json"])
+        # Check only our file, not other staged changes
+        diff = run_git(["diff", "--cached", "--quiet", "--", "overview_data.json"], quiet_ok=True)
+        if diff.returncode == 1:  # 1 = changes staged, 0 = no changes, >1 = error
+            run_git(["commit", "-m", f"auto: overview dashboard {datetime.now().strftime('%H:%M UTC')}"])
+            push = run_git(["push", "origin", "HEAD:gh-pages"])
+            if push.returncode == 0:
+                print("✅ Pushed to GitHub Pages")
+        elif diff.returncode > 1:
+            print(f"⚠️ Git diff error (exit {diff.returncode})")
     except Exception as e:
-        print(f"⚠️ Git push failed: {e}")
+        print(f"⚠️ Git deploy exception: {e}")

@@ -39,8 +39,15 @@ W_SHARPE, W_PF, W_WIN, W_DD = 0.40, 0.25, 0.20, 0.15
 
 # ─── Scoring ──────────────────────────────────────────────────────────────
 
+# P2: Net PnL weight — penalize fee drag heavily
+NET_PNL_PENALTY = 0.3  # if total PnL after fees < 0, multiply score by this
+
 def composite_score(result) -> float:
-    """Composite 0-100 score for a BacktestResult."""
+    """Composite 0-100 score for a BacktestResult.
+    
+    P2 Fix: Now includes net-PnL penalty (fees included) as primary gate.
+    Previously optimized on gross metrics, ignoring that fees exceeded PnL.
+    """
     sharpe = result.sharpe_ratio
     pf = result.profit_factor if np.isfinite(result.profit_factor) else 5.0
     win = result.win_rate
@@ -56,9 +63,9 @@ def composite_score(result) -> float:
              win_norm * W_WIN - dd_penalty * W_DD)
     score = score * 100  # 0-100 scale
 
-    # Loser penalty: strategies that lose money get crushed hard
+    # P2: Loser penalty — strategies that lose money get crushed
     if result.total_pnl_pct < 0:
-        score *= 0.4
+        score *= NET_PNL_PENALTY
 
     # Edge over buy-hold: if it doesn't beat just holding, discount it
     if result.total_pnl_pct < result.buy_hold_return:
@@ -132,7 +139,20 @@ def load_config() -> dict:
 
 def assign_strategies(assignments: dict[str, dict], dry_run=False) -> list[str]:
     """Write best strategy per pair to strategy_config.json (preserves _meta).
+    
+    Hysteresis: the incumbent strategy is NOT replaced unless a challenger
+    beats it by >= HYSTERESIS_MARGIN points. This prevents flip-flopping
+    when two strategies score within a few points of each other.
+    
+    P4: Promotion Gate — additional conditions before any strategy swap:
+    - Champion freeze: incumbent must have held for >= CHAMPION_FREEZE_DAYS
+    - Minimum trade evidence: challenger must have >= MIN_PROMOTION_TRADES
     Returns list of human-readable change notes."""
+    HYSTERESIS_MARGIN = 5.0  # challenger must beat incumbent by this many points
+    # P4: Promotion gate constants
+    CHAMPION_FREEZE_DAYS = 14    # incumbent is frozen for this many days
+    MIN_PROMOTION_TRADES = 30    # challenger needs this many backtest trades
+    
     config = load_config()
     meta = config.get("_meta", {})
     history = meta.get("history", [])
@@ -147,12 +167,67 @@ def assign_strategies(assignments: dict[str, dict], dry_run=False) -> list[str]:
         old = config.get(pair, {})
         old_strat = old.get("strategy")
         new_strat = winner["strategy"]
-        new_config[pair] = {"strategy": new_strat, "params": {}}
+
+        # ── Hysteresis logic ──
         if old_strat and old_strat != new_strat:
-            changes.append(f"{pair}: {old_strat}→{new_strat} "
+            # Incumbent is being challenged. Find incumbent's score in leaderboard.
+            # assignments[pair] is the winner; we need the full ranked list.
+            # winner["score"] is the challenger's score. But we need incumbent's score.
+            # We stored margin = winner_score - runner_up_score.
+            # If old_strat is the runner-up, margin tells us the gap.
+            # But we don't have the full leaderboard here — we have best_per_pair.
+            # Solution: use margin directly. If margin < HYSTERESIS_MARGIN, keep incumbent.
+            margin = winner.get("margin", 0)
+            if margin < HYSTERESIS_MARGIN:
+                # Challenger wins by too little — keep incumbent
+                new_config[pair] = {"strategy": old_strat, "params": {}}
+                changes.append(
+                    f"{pair}: keep {old_strat} (challenger {new_strat} "
+                    f"only +{margin:.1f} ahead — hysteresis holds, need +{HYSTERESIS_MARGIN:.0f})"
+                )
+                continue
+
+            # P4: Check champion freeze period
+            last_change_ts = None
+            for h_entry in reversed(history):
+                if pair in h_entry.get("note", "") and "→" in h_entry.get("note", ""):
+                    last_change_ts = h_entry.get("timestamp", "")
+                    break
+            if last_change_ts:
+                try:
+                    change_dt = datetime.fromisoformat(last_change_ts.replace("Z", "+00:00"))
+                    days_held = (datetime.now(timezone.utc) - change_dt).days
+                    if days_held < CHAMPION_FREEZE_DAYS:
+                        new_config[pair] = {"strategy": old_strat, "params": {}}
+                        changes.append(
+                            f"{pair}: keep {old_strat} (champion frozen — {days_held}d of {CHAMPION_FREEZE_DAYS}d minimum)"
+                        )
+                        continue
+                except Exception:
+                    pass  # if timestamp parsing fails, don't block the swap
+
+            # P4: Check minimum trade evidence
+            if winner.get("total_trades", 999) < MIN_PROMOTION_TRADES:
+                new_config[pair] = {"strategy": old_strat, "params": {}}
+                changes.append(
+                    f"{pair}: keep {old_strat} (challenger {new_strat} has only "
+                    f"{winner.get('total_trades', 0)} trades — need {MIN_PROMOTION_TRADES})"
+                )
+                continue
+
+        # Either no incumbent, incumbent won outright, or challenger beat margin
+        # Check if we're keeping the same strategy
+        effective_strat = new_config.get(pair, {}).get("strategy", new_strat)
+        if pair not in new_config:
+            new_config[pair] = {"strategy": new_strat, "params": {}}
+
+        if old_strat and old_strat != effective_strat:
+            changes.append(f"{pair}: {old_strat}→{effective_strat} "
                            f"(score {winner['score']:.1f}, {winner['confidence']})")
-        elif old_strat == new_strat:
-            changes.append(f"{pair}: keep {new_strat} (score {winner['score']:.1f})")
+        elif old_strat == effective_strat:
+            changes.append(f"{pair}: keep {effective_strat} (score {winner['score']:.1f})")
+        elif not old_strat:
+            changes.append(f"{pair}: →{effective_strat} (score {winner['score']:.1f}, new)")
 
     if dry_run:
         return changes

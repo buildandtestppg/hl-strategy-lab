@@ -87,13 +87,31 @@ CANDLE_INTERVAL = "1h"
 CANDLE_DAYS = 30            # lookback for indicator calculation
 MIN_HOLD_HOURS = 6          # increased from 3 — let trades breathe
 REENTRY_COOLDOWN_HOURS = 8  # doubled from 4 — less overtrading
-MAX_DRAWDOWN_PCT = 10.0     # NEW: halt all trading if drawdown exceeds 10%
+MAX_DRAWDOWN_PCT = 10.0     # halt all trading if drawdown exceeds 10%
+
+# ─── Loop Engineering v2 (Jul 5 multi-model review) ───
+# P1: Inverted exit hierarchy — signal_exit is now the DEFAULT.
+#     regime_override is a secondary gate, not the primary exit.
+REGIME_OVERRIDE_CONFIDENCE_GATE = 0.80  # must be this confident to override
+REGIME_OVERRIDE_PROTECT_R = 2.0         # don't override trades already up >2R
+
+# P3: Fee-aware confidence — penalize entries where fees eat the edge
+FEE_IMPACT_ENABLED = True
+
+# P5: Asset pruning — auto-disable pairs that consistently lose
+ASSET_PRUNING_ENABLED = True
+ASSET_PRUNING_MIN_TRADES = 7     # need this many trades before pruning
+ASSET_PRUNING_MAX_WR = 35.0      # prune if WR below this after min_trades
+ASSET_PRUNING_COOLDOWN_HOURS = 48  # re-enable after this long
 
 # ─── AI Sentiment Overlay ───
 SENTIMENT_FILE = os.path.join(os.path.dirname(__file__), "sentiment_scores.json")
 SENTIMENT_THRESHOLD = 0.5   # raised from 0.3 — only strong sentiment overrides
 SENTIMENT_MIN_CONFIDENCE = 0.6  # raised from 0.4 — require high confidence
 SENTIMENT_MIN_SOURCES = 2   # NEW: require ≥2 sources before sentiment can override
+
+# ─── Trading Lessons (feedback from self-review loop) ───
+LESSONS_FILE = os.path.join(os.path.dirname(__file__), "trading_lessons.json")
 
 # ─── Regime Override ───
 # If sentiment flips hard against an open position AND position is losing,
@@ -160,13 +178,120 @@ def load_sentiment():
     except Exception:
         return {}
 
+
+def load_lessons():
+    """Load trading lessons from the self-review loop.
+    Returns dict with pair performance and active lessons that should
+    influence entry decisions. High-trust lessons can block or boost trades."""
+    if not os.path.exists(LESSONS_FILE):
+        return {"pairs": {}, "active_lessons": []}
+    try:
+        with open(LESSONS_FILE) as f:
+            data = json.load(f)
+        # Freshness guard — lessons older than 7 days are stale
+        ts = data.get("generated_at", "")
+        if ts:
+            age_h = (datetime.now(timezone.utc) - datetime.fromisoformat(ts.replace("Z", "+00:00"))).total_seconds() / 3600
+            if age_h > 168:  # 7 days
+                return {"pairs": {}, "active_lessons": []}
+        return data
+    except Exception:
+        return {"pairs": {}, "active_lessons": []}
+
+# P5: Asset pruning — track disabled pairs in state
+PRUNED_PAIRS_FILE = os.path.join(os.path.dirname(__file__), "pruned_pairs.json")
+
+def load_pruned_pairs():
+    """Load list of auto-pruned pairs with timestamps."""
+    if not os.path.exists(PRUNED_PAIRS_FILE):
+        return {}
+    try:
+        with open(PRUNED_PAIRS_FILE) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def save_pruned_pairs(data):
+    """Save pruned pairs data."""
+    with open(PRUNED_PAIRS_FILE, "w") as f:
+        json.dump(data, f, indent=2)
+
+def check_asset_pruning(closed_trades, pair):
+    """P5: Check if a pair should be pruned based on performance.
+    
+    Returns (should_prune, reason) tuple.
+    A pair is pruned if:
+    - It has >= ASSET_PRUNING_MIN_TRADES closed trades
+    - Win rate < ASSET_PRUNING_MAX_WR
+    - Not already in cooldown period
+    """
+    if not ASSET_PRUNING_ENABLED:
+        return False, ""
+    
+    pair_trades = [t for t in closed_trades if t.get("pair") == pair]
+    if len(pair_trades) < ASSET_PRUNING_MIN_TRADES:
+        return False, ""
+    
+    wins = sum(1 for t in pair_trades if t.get("pnl", 0) > 0)
+    wr = wins / len(pair_trades) * 100
+    total_pnl = sum(t.get("pnl", 0) for t in pair_trades)
+    
+    if wr < ASSET_PRUNING_MAX_WR:
+        return True, f"{pair} pruned: {wr:.0f}% WR over {len(pair_trades)} trades (PnL ${total_pnl:.2f})"
+    
+    return False, ""
+
+
+def check_lesson_warnings(pair, direction, lessons):
+    """Check if accumulated trading lessons warn against this entry.
+    Returns (should_warn, warning_text, confidence_adjustment).
+    
+    Uses high-trust patterns to identify known-bad entries:
+    - If a pattern has <40% win rate and ≥3 occurrences, warn
+    - If a pattern has >65% win rate, boost confidence
+    """
+    pair_data = lessons.get("pairs", {}).get(pair)
+    if not pair_data:
+        return False, "", 0.0
+    
+    patterns = pair_data.get("top_patterns", [])
+    warning_parts = []
+    adjustment = 0.0
+    
+    for p in patterns:
+        pattern_name = p.get("pattern", "")
+        wr = p.get("win_rate", 50)
+        count = p.get("count", 0)
+        
+        # Only act on patterns with enough data
+        if count < 3:
+            continue
+        
+        # Known-bad pattern for this pair
+        if wr <= 40:
+            if "short_hold" in pattern_name and direction == Signal.LONG:
+                warning_parts.append(f"⚠️ {pair} short holds: {wr:.0f}% WR ({count} trades)")
+                adjustment -= 0.05
+            elif "stopped_out" in pattern_name:
+                warning_parts.append(f"⚠️ {pair} frequently stopped out ({wr:.0f}% WR)")
+                adjustment -= 0.05
+        
+        # Known-good pattern
+        elif wr >= 65 and count >= 3:
+            adjustment += 0.03  # small boost
+    
+    if warning_parts:
+        return True, " | ".join(warning_parts), max(adjustment, -0.15)
+    return False, "", adjustment
+
 def apply_sentiment_overlay(signal, confidence, pair, sentiment):
     """Apply AI sentiment overlay to a TA signal.
     
-    Rules:
+    Rules (enhanced with convergence detection):
     - If sentiment strongly contradicts TA (score > threshold, opposite direction): BLOCK the trade
-    - If sentiment strongly agrees with TA: BOOST confidence (trade bigger)
+    - If sentiment strongly agrees with TA AND convergence detected: BOOST confidence more
     - If sentiment is neutral or weak: no change
+    - Convergence signals (≥2 sources agreeing) get extra weight
     
     Returns (adjusted_signal, adjusted_confidence, sentiment_note)
     """
@@ -175,34 +300,52 @@ def apply_sentiment_overlay(signal, confidence, pair, sentiment):
         return signal, confidence, ""
     
     # Source diversity gate: require ≥SENTIMENT_MIN_SOURCES before sentiment can override
-    sources = pair_data.get("sources", {})
-    if isinstance(sources, dict):
-        active_sources = [s for s, v in sources.items() if v and abs(v.get("score", 0)) > 0.1]
-    elif isinstance(sources, list):
+    sources = pair_data.get("sources", [])
+    if isinstance(sources, list):
         active_sources = sources
+    elif isinstance(sources, dict):
+        active_sources = [s for s, v in sources.items() if v and abs(v.get("score", 0)) > 0.1]
     else:
         active_sources = []
     if len(active_sources) < SENTIMENT_MIN_SOURCES:
         return signal, confidence, f"sentiment skipped (only {len(active_sources)} sources, need {SENTIMENT_MIN_SOURCES})"
     
     score = pair_data["score"]
+    is_convergence = pair_data.get("convergence", False)
+    convergence_strength = pair_data.get("convergence_strength", 0)
+    contradictions = pair_data.get("contradictions", 0)
     
     # Determine sentiment direction
-    if score > SENTIMENT_THRESHOLD:
+    # Convergence lowers the bar: if ≥2 sources agree, smaller scores are actionable
+    effective_threshold = SENTIMENT_THRESHOLD
+    if is_convergence and convergence_strength >= 2:
+        effective_threshold = SENTIMENT_THRESHOLD * 0.7  # 0.5 → 0.35
+
+    if score > effective_threshold:
         sent_dir = Signal.LONG
-    elif score < -SENTIMENT_THRESHOLD:
+    elif score < -effective_threshold:
         sent_dir = Signal.SHORT
     else:
         return signal, confidence, "sentiment neutral"
     
     # Check agreement
     if signal == sent_dir:
-        # Aligned — boost confidence
+        # Aligned — boost confidence (extra boost for convergence)
+        # Cap post-boost confidence at 0.85 per risk review — convergence can
+        # rescue a marginal signal but shouldn't manufacture near-certainty
         boost = min(0.2, abs(score) * 0.15)
-        return signal, min(1.0, confidence + boost), f"sentiment aligned ({score:+.2f}), conf boosted"
+        if is_convergence:
+            boost = min(0.3, boost + convergence_strength * 0.05)
+        note = f"sentiment aligned ({score:+.2f}), conf boosted"
+        if is_convergence:
+            note += f" [convergence x{convergence_strength}]"
+        return signal, min(0.85, confidence + boost), note
     elif signal in (Signal.LONG, Signal.SHORT):
         # Contradiction — block the trade
-        return Signal.FLAT, 0, f"BLOCKED by sentiment ({score:+.2f} vs {signal.value})"
+        note = f"BLOCKED by sentiment ({score:+.2f} vs {signal.value})"
+        if is_convergence:
+            note += f" [strong: {convergence_strength}-source convergence against]"
+        return Signal.FLAT, 0, note
     else:
         return signal, confidence, ""
 
@@ -265,6 +408,33 @@ def check_sentiment_entry(pair, candles, sentiment):
 def trade_cost(size, entry_price, exit_price):
     notional = size * entry_price + size * exit_price
     return notional * (HL_FEE + SLIPPAGE)
+
+def calc_fee_impact(pair, price, candles):
+    """P3: Calculate fee impact as a fraction of expected trade range.
+    
+    If round-trip fees eat >50% of the typical ATR move, the trade is 
+    fee-doomed. Returns a multiplier (0.5–1.0) to penalize confidence.
+    """
+    if not FEE_IMPACT_ENABLED:
+        return 1.0
+    try:
+        o, h, l, c, v = HLData.candles_to_arrays(candles)
+        atr = calc_atr(h, l, c, 14)
+        current_atr = atr[-1] if not np.isnan(atr[-1]) else price * 0.02
+        # Expected round-trip cost as % of price
+        round_trip_fee_pct = 2 * (HL_FEE + SLIPPAGE)  # entry + exit
+        # Expected move (SL distance = 3.5 ATR — the risk we're taking)
+        expected_move_pct = (current_atr * STOP_LOSS_ATR) / price
+        if expected_move_pct <= 0:
+            return 1.0
+        # Fee impact ratio: how much of the expected move gets eaten by fees
+        fee_ratio = round_trip_fee_pct / expected_move_pct
+        # If fees eat 100%+ of expected move, kill the trade (0.5 floor)
+        # If fees eat 10% or less, no penalty (1.0)
+        impact = max(0.5, 1.0 - max(0, fee_ratio - 0.1) * 2)
+        return round(impact, 3)
+    except Exception:
+        return 1.0
 
 def get_current_prices():
     """Fetch all current prices from HL."""
@@ -344,6 +514,9 @@ class PaperTrader:
 
         # Load fleet sentiment for AI overlay
         sentiment = load_sentiment()
+        
+        # Load trading lessons from self-review loop
+        lessons = load_lessons()
 
         # Fetch live funding rates for accurate cost tracking
         try:
@@ -353,6 +526,24 @@ class PaperTrader:
 
         # Reload config fresh each cycle (AI may have changed it)
         active_pairs = load_strategy_config()
+        
+        # P5: Load pruned pairs and auto-re-enable after cooldown
+        pruned = load_pruned_pairs()
+        reenabled = []
+        for p_pair in list(pruned.keys()):
+            pruned_time = pruned[p_pair].get("timestamp", "")
+            if pruned_time:
+                try:
+                    pruned_dt = datetime.fromisoformat(pruned_time.replace("Z", "+00:00"))
+                    age_h = (datetime.now(timezone.utc) - pruned_dt).total_seconds() / 3600
+                    if age_h >= ASSET_PRUNING_COOLDOWN_HOURS:
+                        del pruned[p_pair]
+                        reenabled.append(p_pair)
+                except Exception:
+                    pass
+        if reenabled:
+            save_pruned_pairs(pruned)
+            results["actions"].append(f"♻️ Asset re-enabled after cooldown: {', '.join(reenabled)}")
 
         # Fetch candles for all pairs
         for pair in active_pairs:
@@ -402,43 +593,29 @@ class PaperTrader:
                     exit_reason = "take_profit"
                     exit_price = pos["take_profit"]
 
-            # Check signal exit (if strategy says flip or go flat)
-            # CRITICAL: Use the strategy that opened the position, not current config
-            # (optimizer may have changed it mid-position)
-            # CRITICAL: Enforce minimum hold time to prevent whipsaw churning
+            # ─── EXIT HIERARCHY (v2 — INVERTED) ───
+            # Priority order (check each, first match wins):
+            #   1. Stop loss / take profit (hard limits — always checked first)
+            #   2. Signal exit (DEFAULT — let the strategy drive exits)
+            #   3. Regime override (GATED — only if confidence > 0.80 AND trade < 2R profit)
+            #
+            # Previously regime_override was checked before signal_exit, causing
+            # 87% of exits to be sentiment-driven noise (+$0.82 PnL on 20 trades).
+            # Signal exits generated 100% of profit (+$32.33 on 3 trades).
+            # Fix: check signal_exit FIRST, then regime_override as a secondary gate.
+
             if not exit_reason:
-                # ─── Regime Override ───
-                # If sentiment has flipped strongly against this position AND we're losing,
-                # exit early to avoid bleeding against the market trend.
-                if REGIME_OVERRIDE_ENABLED:
-                    pair_data = sentiment.get(pair) if sentiment else None
-                    if pair_data:
-                        sent_score = pair_data.get("score", 0)
-                        sent_conf = pair_data.get("confidence", 0)
-                        hold_hours = (time.time() - pos["entry_ts"]) / 3600
-
-                        # Check if sentiment has flipped against us significantly
-                        override_triggered = False
-                        if pos["direction"] == "LONG" and sent_score < -REGIME_OVERRIDE_THRESHOLD:
-                            override_triggered = True
-                        elif pos["direction"] == "SHORT" and sent_score > REGIME_OVERRIDE_THRESHOLD:
-                            override_triggered = True
-
-                        if override_triggered and sent_conf >= SENTIMENT_MIN_CONFIDENCE and hold_hours >= REGIME_OVERRIDE_MIN_HOLD:
-                            exit_reason = "regime_override"
-                            exit_price = current_price
-
-                # ─── Signal Exit ───
+                # ─── Signal Exit (PRIMARY) ───
                 entry_strat_name = pos.get("strategy", "unknown")
                 cfg = load_strategy_config().get(pair, {})
                 current_strat_name = cfg.get("strategy", "unknown")
                 hold_hours = (time.time() - pos["entry_ts"]) / 3600
-                
+
                 if hold_hours < MIN_HOLD_HOURS:
                     # Too soon — let SL/TP work, don't exit on signal
                     pass
                 elif entry_strat_name == current_strat_name:
-                    # Config hasn't changed and held long enough — safe to check signal exit
+                    # Config hasn't changed and held long enough — check signal exit
                     strat = get_strategy(pair)
                     if strat:
                         result = strat.compute(candles)
@@ -450,6 +627,51 @@ class PaperTrader:
                     # Strategy was swapped by optimizer while position is open.
                     # Only exit on SL/TP, not signal (avoids premature exit from new strategy).
                     pass
+
+            if not exit_reason and REGIME_OVERRIDE_ENABLED:
+                # ─── Regime Override (SECONDARY — GATED) ───
+                # Only fires if ALL conditions met:
+                #   1. Sentiment strongly flipped against position (> threshold)
+                #   2. Sentiment confidence >= 0.80 (was 0.6 — too permissive)
+                #   3. Trade is NOT already in >2R profit (let winners run)
+                #   4. Held >= minimum override hold time
+                pair_data = sentiment.get(pair) if sentiment else None
+                if pair_data:
+                    sent_score = pair_data.get("score", 0)
+                    sent_conf = pair_data.get("confidence", 0)
+                    hold_hours = (time.time() - pos["entry_ts"]) / 3600
+
+                    # Check if sentiment has flipped against us significantly
+                    override_triggered = False
+                    if pos["direction"] == "LONG" and sent_score < -REGIME_OVERRIDE_THRESHOLD:
+                        override_triggered = True
+                    elif pos["direction"] == "SHORT" and sent_score > REGIME_OVERRIDE_THRESHOLD:
+                        override_triggered = True
+
+                    # P1 fix: Calculate R-multiple to protect winning trades
+                    if override_triggered:
+                        risk_per_unit = abs(pos["entry_price"] - pos["stop_loss"])
+                        if risk_per_unit > 0:
+                            if pos["direction"] == "LONG":
+                                current_r = (current_price - pos["entry_price"]) / risk_per_unit
+                            else:
+                                current_r = (pos["entry_price"] - current_price) / risk_per_unit
+                        else:
+                            current_r = 0
+
+                        # Gate 1: confidence must be very high
+                        # Gate 2: trade must not be >2R in profit (protect winners)
+                        # Gate 3: must have held minimum time
+                        if sent_conf < REGIME_OVERRIDE_CONFIDENCE_GATE:
+                            override_triggered = False  # not confident enough
+                        elif current_r >= REGIME_OVERRIDE_PROTECT_R:
+                            override_triggered = False  # trade is winning big — let it run
+                        elif hold_hours < REGIME_OVERRIDE_MIN_HOLD:
+                            override_triggered = False  # too early
+
+                    if override_triggered:
+                        exit_reason = "regime_override"
+                        exit_price = current_price
 
             if exit_reason:
                 self._close_position(pair, exit_price, exit_reason, results, funding_rates)
@@ -471,6 +693,12 @@ class PaperTrader:
                              action="held", price=results["prices"].get(pair),
                              cycle_id=cycle_id)
                 continue  # already in position
+            # P5: Skip pruned pairs
+            if pair in pruned:
+                log_decision(pair, "FLAT", 0, f"Pruned: {pruned[pair].get('reason','')}",
+                             "BLOCKED_PRUNED", action="evaluated",
+                             price=results["prices"].get(pair), cycle_id=cycle_id)
+                continue
             if pair in pairs_closed_this_cycle:
                 continue  # closed this cycle — no re-entry
             if open_count >= MAX_POSITIONS:
@@ -513,14 +741,36 @@ class PaperTrader:
                 adj_conf = result.confidence
 
             if adj_signal in (Signal.LONG, Signal.SHORT) and adj_conf > MIN_CONFIDENCE:
-                result.signal = adj_signal
-                result.confidence = adj_conf
-                self._open_position(pair, result, results["prices"][pair], candles, results)
-                open_count += 1
-                entered = True
-                log_decision(pair, result.signal.value, result.confidence, result.reason,
-                             "PASSED", sentiment=sentiment.get(pair, {}) if sentiment else None,
-                             action="opened", price=results["prices"][pair], cycle_id=cycle_id)
+                # P3: Apply fee-aware confidence penalty
+                fee_impact = calc_fee_impact(pair, results["prices"][pair], candles)
+                if fee_impact < 1.0:
+                    pre_fee_conf = adj_conf
+                    adj_conf *= fee_impact
+                    result.reason += f" | fee_impact: {fee_impact:.2f} (conf {pre_fee_conf:.2f}→{adj_conf:.2f})"
+
+                # Check trading lessons — warn or boost based on historical patterns
+                lesson_warn, lesson_text, lesson_adj = check_lesson_warnings(pair, adj_signal, lessons)
+                if lesson_adj:
+                    adj_conf = max(0.0, min(0.95, adj_conf + lesson_adj))
+                    result.reason += f" | lesson: {lesson_text}" if lesson_text else f" | lesson_adj: {lesson_adj:+.2f}"
+                
+                if adj_conf > MIN_CONFIDENCE:
+                    result.signal = adj_signal
+                    result.confidence = adj_conf
+                    self._open_position(pair, result, results["prices"][pair], candles, results)
+                    open_count += 1
+                    entered = True
+                    log_decision(pair, result.signal.value, result.confidence, result.reason,
+                                 "PASSED", sentiment=sentiment.get(pair, {}) if sentiment else None,
+                                 action="opened", price=results["prices"][pair], cycle_id=cycle_id)
+                else:
+                    # Lesson warning pushed confidence below threshold
+                    results["actions"].append(
+                        f"📚 {pair}: Entry blocked by lesson — {lesson_text}"
+                    )
+                    log_decision(pair, adj_signal.value, adj_conf, result.reason,
+                                 "BLOCKED_LESSON", action="evaluated",
+                                 price=results["prices"][pair], cycle_id=cycle_id)
             elif result.signal in (Signal.LONG, Signal.SHORT) and sent_note and "BLOCKED" in sent_note:
                 results["actions"].append(
                     f"🧠 {pair}: TA signal {result.signal.value} blocked by sentiment overlay"
@@ -547,6 +797,19 @@ class PaperTrader:
                                  sent_entry.reason, "PASSED_SENTIMENT",
                                  sentiment=sentiment.get(pair, {}) if sentiment else None,
                                  action="opened", price=results["prices"][pair], cycle_id=cycle_id)
+
+        # 2b. P5: Auto-prune pairs with persistent poor performance
+        for pair in list(active_pairs.keys()):
+            if pair in pruned:
+                continue  # already pruned
+            should_prune, prune_reason = check_asset_pruning(self.state.get("closed_trades", []), pair)
+            if should_prune:
+                pruned[pair] = {
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "reason": prune_reason,
+                }
+                save_pruned_pairs(pruned)
+                results["actions"].append(f"✂️ PRUNED {prune_reason}")
 
         # 3. Calculate portfolio value (with unrealized funding cost estimate)
         portfolio_value = self.state["capital"]
@@ -660,6 +923,22 @@ class PaperTrader:
             p["win_rate"] = round(p["wins"] / p["trades"] * 100, 1) if p["trades"] > 0 else 0
             p["pnl"] = round(p["pnl"], 2)
 
+        # Loop Engineering: exit-reason breakdown (P1/P2 diagnostics)
+        exit_breakdown = {}
+        for t in all_trades:
+            reason = t.get("exit_reason", "unknown")
+            if reason not in exit_breakdown:
+                exit_breakdown[reason] = {"count": 0, "pnl": 0.0, "fees": 0.0, "wins": 0}
+            exit_breakdown[reason]["count"] += 1
+            exit_breakdown[reason]["pnl"] += t.get("pnl", 0)
+            exit_breakdown[reason]["fees"] += t.get("fees_paid", 0)
+            if t.get("pnl", 0) > 0:
+                exit_breakdown[reason]["wins"] += 1
+        for reason_data in exit_breakdown.values():
+            reason_data["pnl"] = round(reason_data["pnl"], 2)
+            reason_data["fees"] = round(reason_data["fees"], 2)
+            reason_data["win_rate"] = round(reason_data["wins"] / reason_data["count"] * 100, 1) if reason_data["count"] > 0 else 0
+
         # Load AI optimizer history
         ai_history = []
         config_path = os.path.join(os.path.dirname(__file__), "strategy_config.json")
@@ -696,6 +975,23 @@ class PaperTrader:
                 "max_leverage": f"{MAX_LEVERAGE}x",
                 "stop_loss": f"{STOP_LOSS_ATR}x ATR",
                 "take_profit": f"{TAKE_PROFIT_ATR}x ATR",
+                "min_confidence": MIN_CONFIDENCE,
+                "regime_override_gate": REGIME_OVERRIDE_CONFIDENCE_GATE,
+                "regime_override_protect_r": REGIME_OVERRIDE_PROTECT_R,
+                "fee_aware": FEE_IMPACT_ENABLED,
+                "asset_pruning": ASSET_PRUNING_ENABLED,
+            },
+            # Loop Engineering v2 data
+            "exit_breakdown": exit_breakdown,
+            "pruned_pairs": load_pruned_pairs(),
+            "loop_v2": {
+                "version": "2.0",
+                "implemented": "2026-07-05",
+                "changes": [
+                    "P1: Exit hierarchy inverted (signal_exit first, regime_override gated to conf>0.80 + protect >2R winners)",
+                    "P3: Fee-aware confidence scoring (penalize fee-doomed entries)",
+                    "P5: Asset pruning (auto-disable pairs with <35% WR after 7 trades)",
+                ],
             },
         }
         with open(DASHBOARD_DATA, "w") as f:

@@ -159,6 +159,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-he
         <div class="nav-tab" onclick="showPage('fleet',this)">Fleet Intel</div>
         <div class="nav-tab" onclick="showPage('analytics',this)">Analytics</div>
         <div class="nav-tab" onclick="showPage('harness',this)">Harness</div>
+        <div class="nav-tab" onclick="showPage('loop',this)">Loop v2</div>
         <div class="nav-tab" onclick="showPage('alltime',this)">All-Time</div>
       </div>
     </div>
@@ -221,6 +222,46 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-he
     <div class="grid-2">
       <div class="panel"><div class="panel-header"><span class="panel-title">🔍 Decision Audit Trail</span><span class="panel-badge" style="background:var(--blue-dim);color:var(--blue)" id="auditBadge">0</span></div><div class="panel-body" style="max-height:400px;overflow-y:auto;padding:0"><table class="matrix-table" style="font-size:.72rem"><thead><tr><th>Time</th><th>Pair</th><th>Signal</th><th>Conf</th><th>Gate</th><th>Action</th><th>Reason</th></tr></thead><tbody id="auditBody"></tbody></table></div></div>
       <div class="panel"><div class="panel-header"><span class="panel-title">📊 Gate Statistics</span></div><div class="panel-body" id="gateStats"></div></div>
+    </div>
+  </div>
+  <div id="page-loop" class="page">
+    <div class="kpi-bar">
+      <div class="kpi-card"><div class="kpi-label">Exit Hierarchy</div><div class="kpi-value green" id="loopExitHierarchy">INVERTED</div><div class="kpi-sub">signal_exit → override</div></div>
+      <div class="kpi-card"><div class="kpi-label">Fee-Aware Entry</div><div class="kpi-value green" id="loopFeeAware">ACTIVE</div><div class="kpi-sub" id="loopFeeImpactSub">--</div></div>
+      <div class="kpi-card"><div class="kpi-label">Asset Pruning</div><div class="kpi-value green" id="loopPruning">ACTIVE</div><div class="kpi-sub" id="loopPruningSub">0 pruned</div></div>
+      <div class="kpi-card"><div class="kpi-label">Override Gate</div><div class="kpi-value blue" id="loopOverrideGate">0.80</div><div class="kpi-sub">conf ≥ 0.80 + protect >2R</div></div>
+      <div class="kpi-card"><div class="kpi-label">Promotion Gate</div><div class="kpi-value blue" id="loopPromoGate">14d / 30t</div><div class="kpi-sub">champion freeze</div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">🔄 Exit Reason Performance Breakdown</span>
+        <span class="panel-badge" style="background:var(--purple-dim);color:var(--purple)">Loop Feedback Diagnostic</span>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <div style="overflow-x:auto">
+          <table class="matrix-table">
+            <thead><tr><th>Exit Reason</th><th>Trades</th><th>Win Rate</th><th>Gross P&L</th><th>Fees Paid</th><th>Net P&L</th><th>Verdict</th></tr></thead>
+            <tbody id="exitBreakdownBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="grid-main">
+      <div class="panel">
+        <div class="panel-header"><span class="panel-title">✂️ Asset Pruning Status</span></div>
+        <div class="panel-body" id="pruningStatus"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-header"><span class="panel-title">⚙️ Loop v2 Config</span></div>
+        <div class="panel-body" id="loopConfig"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">📋 Loop Engineering Changes (Jul 5, 2026)</span>
+        <span class="panel-badge" style="background:var(--green-dim);color:var(--green)">Multi-Model Reviewed</span>
+      </div>
+      <div class="panel-body" id="loopChanges"></div>
     </div>
   </div>
   <div id="page-alltime" class="page">
@@ -290,7 +331,7 @@ async function fetchData(){
   try{var r4=await fetch(ALLTIME_URL+'?t='+Date.now());if(r4.ok){ALLTIME=await r4.json();renderAllTime()}}
   catch(e){}
 }
-function renderAll(){if(!D)return;renderKPIs();renderHeatmap();renderEquity();renderMatrix();renderFeed();renderPairs();renderPositions();renderTrades();renderAnalytics()}
+function renderAll(){if(!D)return;renderKPIs();renderHeatmap();renderEquity();renderMatrix();renderFeed();renderPairs();renderPositions();renderTrades();renderAnalytics();renderLoop()}
 
 function renderKPIs(){
   var p=D.portfolio||{},s=D.stats||{};
@@ -513,6 +554,48 @@ function renderHarness(){
     return'<div class="stats-row"><span class="stats-label">'+gate.replace(/_/g,' ')+'</span><div style="display:flex;align-items:center;gap:8px"><div style="flex:1;max-width:200px;height:6px;background:var(--surface2);border-radius:3px;overflow:hidden"><div style="width:'+pct+'%;height:100%;background:'+c+';border-radius:3px"></div></div><span class="stats-value" style="color:'+c+'">'+count+' ('+fmt(pct,0)+'%)</span></div></div>'
   }).join(''):'<div style="color:var(--text-dim);padding:20px;text-align:center">No gate data yet</div>';
 }
+function renderLoop(){
+  var eb=D.exit_breakdown||{},pruned=D.pruned_pairs||{},cfg=D.config_full||D.config||{};
+  // Exit breakdown table
+  var reasons=Object.keys(eb);
+  var totalTrades=reasons.reduce(function(s,r){return s+(eb[r].count||0)},0)||1;
+  document.getElementById('exitBreakdownBody').innerHTML=reasons.length?reasons.map(function(r){
+    var d=eb[r],pnlC=(d.pnl||0)>=0?'green':'red',feeC='red';
+    var verdictC=d.verdict==='profitable'?'green':d.verdict==='unprofitable'?'red':'gold';
+    var verdictTxt=d.verdict?d.verdict.toUpperCase():'--';
+    return '<tr><td><strong>'+r.replace(/_/g,' ')+'</strong></td><td>'+d.count+' ('+fmt(d.count/totalTrades*100,0)+'%)</td><td>'+fmt(d.win_rate,1)+'%</td><td class="'+pnlC+'">$'+fmt(d.pnl)+'</td><td class="'+feeC+'">$'+fmt(d.fees)+'</td><td class="'+pnlC+'"><strong>$'+fmt((d.pnl||0)-(d.fees||0))+'</strong></td><td class="'+verdictC+'">'+verdictTxt+'</td></tr>'
+  }).join(''):'<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--text-dim)">No exit data yet</td></tr>';
+  // Pruning status
+  var prunedKeys=Object.keys(pruned);
+  document.getElementById('loopPruningSub').textContent=prunedKeys.length+' pruned';
+  document.getElementById('pruningStatus').innerHTML=prunedKeys.length?prunedKeys.map(function(p){
+    var d=pruned[p],age='--';
+    if(d.timestamp){try{var dt=new Date(d.timestamp);age=Math.round((Date.now()-dt.getTime())/3600000)+'h ago'}catch(e){}}
+    return '<div class="stats-row"><span class="stats-label"><strong style="color:var(--red)">✂️ '+p+'</strong> — '+d.reason+'</span><span class="stats-value gold">'+age+'</span></div>'
+  }).join(''):'<div style="color:var(--text-dim);padding:20px;text-align:center">No pairs pruned — all active</div>';
+  // Loop config
+  var cfgRows=[
+    ['Regime Override Gate',cfg.regime_override_gate!=null?cfg.regime_override_gate:'0.80'],
+    ['Override Protect R',cfg.regime_override_protect_r!=null?cfg.regime_override_protect_r:'2.0'],
+    ['Fee-Aware Confidence',cfg.fee_aware===true?'ENABLED':cfg.fee_aware===false?'DISABLED':'--'],
+    ['Asset Pruning',cfg.asset_pruning===true?'ENABLED':cfg.asset_pruning===false?'DISABLED':'--'],
+    ['Min Confidence',cfg.min_confidence!=null?cfg.min_confidence:'0.65'],
+  ];
+  document.getElementById('loopConfig').innerHTML=cfgRows.map(function(r){
+    return '<div class="config-row"><span class="ck">'+r[0]+'</span><strong>'+r[1]+'</strong></div>'
+  }).join('');
+  // Changes list
+  var lv2=D.loop_v2||{};
+  var changes=lv2.changes||[
+    'P1: Exit hierarchy inverted (signal_exit first, regime_override gated to conf>0.80 + protect >2R winners)',
+    'P3: Fee-aware confidence scoring (penalize fee-doomed entries)',
+    'P5: Asset pruning (auto-disable pairs with <35% WR after 7 trades)',
+  ];
+  document.getElementById('loopChanges').innerHTML='<ul style="list-style:none;padding:0">'+changes.map(function(c){
+    return '<li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.03);font-size:.78rem"><span style="color:var(--green)">✓</span> '+c+'</li>'
+  }).join('')+'</ul>';
+}
+
 function renderAllTime(){
   if(!ALLTIME)return;
   var at=ALLTIME.all_time||{};
