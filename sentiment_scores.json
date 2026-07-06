@@ -1,27 +1,36 @@
 {
   "BTC": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-06T07:40:54.501190+00:00"
-  },
-  "ETH": {
     "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "x_scanner"
+      "whale_monitor"
     ],
-    "signal_count": 3,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @cryptosanthoshK (\ud83d\udc4d71 \ud83d\udd049) $ETH looks like it want",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 87% bid-weighted (bullish)",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 87% bid-weighted (bullish)",
+        "weight": 1.48
+      }
+    ],
+    "timestamp": "2026-07-06T07:45:55.171846+00:00"
+  },
+  "ETH": {
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @cryptosanthoshK (\ud83d\udc4d71 \ud83d\udd049) $ETH looks like it want | whale_monitor: Orderbook 63% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -39,20 +48,20 @@
         "weight": 1.76
       }
     ],
-    "timestamp": "2026-07-06T07:40:54.501210+00:00"
+    "timestamp": "2026-07-06T07:45:55.171862+00:00"
   },
   "SOL": {
-    "score": 0.74,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $SOL] @Zaynnode (\ud83d\udc4d51 \ud83d\udd0435) Day 6 of $SOL Season \u2014 blessi | whale_monitor: Orderbook 40% bid (ask-heavy, bearish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @Zaynnode (\ud83d\udc4d51 \ud83d\udd0435) Day 6 of $SOL Season \u2014 blessi | oi_funding: OI +18.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -60,23 +69,37 @@
         "weight": 2.73
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 40% bid (ask-heavy, bearish)",
-        "weight": 0.4
+        "source": "oi_funding",
+        "signal": "OI +18.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-06T07:40:54.501223+00:00"
+    "timestamp": "2026-07-06T07:45:55.171871+00:00"
   },
   "HYPE": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 0.2,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-06T07:40:54.501224+00:00"
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 84% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 84% bid-weighted (bullish)",
+        "weight": 1.36
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -5.0% 1h",
+        "weight": 0.9
+      }
+    ],
+    "timestamp": "2026-07-06T07:45:55.171878+00:00"
   }
 }
