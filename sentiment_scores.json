@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": -0.5,
-    "confidence": 0.5,
+    "score": -0.49,
+    "confidence": 0.84,
     "sources": [
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -19.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | news_agent: rkets (contains \"geopolitical\")   - Iran/Saudi tensions, Rus | oi_funding: OI -19.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -18,12 +19,17 @@
         "weight": 1.44
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 62% bid-weighted (bullish)",
-        "weight": 0.48
+        "source": "news_agent",
+        "signal": "rkets (contains \"geopolitical\")   - Iran/Saudi tensions, Russia/NATO, BoE gilt yields \u2014 geopolitical noise  I'll elevate",
+        "weight": 1.2
+      },
+      {
+        "source": "news_agent",
+        "signal": "\u2014 AI chip expansion, market-moving IPO  \ud83d\udfe2 **Notable** \u2022 **Sovereign wealth funds favor regulated Bitcoin access** \u2014 Grow",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-06T06:50:48.444663+00:00"
+    "timestamp": "2026-07-06T06:55:49.085500+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -43,7 +49,7 @@
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-06T06:50:48.444675+00:00"
+    "timestamp": "2026-07-06T06:55:49.085512+00:00"
   },
   "SOL": {
     "score": -1.0,
@@ -51,13 +57,14 @@
     "sources": [
       "x_scanner",
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 3,
+    "convergence_strength": 4,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [$SOL] @TimesOfBlockC_ \u2014 ETF rotation: $527M BTC outflows, | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -13.0% 1h",
+    "narrative": "\ud83d\udcc9 4-source bearish convergence | x_scanner: \u2022 [$SOL] @TimesOfBlockC_ \u2014 ETF rotation: $527M BTC outflows, | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | news_agent: in 44 years** \u2014 Markets shrug, risk recalibrated  *7 article",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -70,12 +77,12 @@
         "weight": 1.04
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
-        "weight": 0.44
+        "source": "news_agent",
+        "signal": "in 44 years** \u2014 Markets shrug, risk recalibrated  *7 articles from this scan \u00b7 Sources: Crypto Briefing (91), CoinDesk (",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-06T06:50:48.444687+00:00"
+    "timestamp": "2026-07-06T06:55:49.085525+00:00"
   },
   "HYPE": {
     "score": 0.3,
@@ -106,6 +113,6 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-07-06T06:50:48.444695+00:00"
+    "timestamp": "2026-07-06T06:55:49.085534+00:00"
   }
 }
