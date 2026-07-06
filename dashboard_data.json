@@ -1,48 +1,34 @@
 {
-  "last_update": "2026-07-06T13:40:37.132942+00:00",
+  "last_update": "2026-07-06T13:45:37.907491+00:00",
   "portfolio": {
-    "value": 4991.82,
-    "capital": 4977.46,
+    "value": 4983.63,
+    "capital": 4983.63,
     "initial": 5000.0,
-    "pnl": -8.18,
-    "pnl_pct": -0.16,
-    "open_positions": 1
+    "pnl": -16.37,
+    "pnl_pct": -0.33,
+    "open_positions": 0
   },
   "prices": {
-    "BTC": 61530.5,
-    "ETH": 1738.95,
-    "SOL": 79.8965,
-    "HYPE": 69.0115
+    "BTC": 61768.5,
+    "ETH": 1746.85,
+    "SOL": 80.5405,
+    "HYPE": 69.4495
   },
-  "positions": {
-    "HYPE": {
-      "direction": "SHORT",
-      "entry_price": 69.8915,
-      "current_price": 69.0115,
-      "size": 16.259097903866035,
-      "unrealized_pnl": 14.36,
-      "unrealized_pnl_pct": 1.26,
-      "stop_loss": 72.9535,
-      "take_profit": 63.7675,
-      "strategy": "trend",
-      "entry_time": "2026-07-06T09:45:11.764725+00:00",
-      "duration_hours": 3.9,
-      "funding_rate": 0.00125,
-      "unrealized_funding": -0.055
-    }
-  },
+  "positions": {},
   "stats": {
-    "total_trades": 27,
-    "wins": 13,
+    "total_trades": 28,
+    "wins": 14,
     "losses": 14,
-    "win_rate": 48.1,
-    "avg_win": 20.09,
+    "win_rate": 50.0,
+    "avg_win": 19.1,
     "avg_loss": -16.73,
     "best_trade": 48.06,
     "worst_trade": -40.05,
-    "total_realized_pnl": 26.95
+    "total_realized_pnl": 33.12
   },
-  "actions": [],
+  "actions": [
+    "\u2705 CLOSED SHORT HYPE @ $69.4495 | P&L: $+6.17 (+0.5%) | Reason: regime_override"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -502,6 +488,23 @@
       "fees_paid": 1.7798,
       "funding_cost": 0.1737,
       "total_cost": 1.9534
+    },
+    {
+      "pair": "HYPE",
+      "direction": "SHORT",
+      "entry_price": 69.8915,
+      "exit_price": 69.4495,
+      "size": 16.259097903866035,
+      "pnl": 6.1704,
+      "pnl_pct": 0.54,
+      "entry_time": "2026-07-06T09:45:11.764725+00:00",
+      "exit_time": "2026-07-06T13:45:40.223101+00:00",
+      "duration_hours": 4.0,
+      "exit_reason": "regime_override",
+      "strategy": "trend",
+      "fees_paid": 1.0727,
+      "funding_cost": -0.0566,
+      "total_cost": 1.0162
     }
   ],
   "pair_strategies": {
@@ -512,11 +515,11 @@
   },
   "strategy_stats": {
     "trend": {
-      "trades": 18,
-      "wins": 9,
+      "trades": 19,
+      "wins": 10,
       "losses": 9,
-      "pnl": 75.85,
-      "win_rate": 50.0
+      "pnl": 82.02,
+      "win_rate": 52.6
     },
     "stochastic": {
       "trades": 5,
@@ -556,19 +559,14 @@
       "win_rate": 57.1
     },
     "HYPE": {
-      "trades": 6,
-      "wins": 4,
+      "trades": 7,
+      "wins": 5,
       "losses": 2,
-      "pnl": 67.2,
-      "win_rate": 66.7
+      "pnl": 73.37,
+      "win_rate": 71.4
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-05T22:25:45.538482+00:00",
-      "v": 5025.29,
-      "p": 0.51
-    },
     {
       "t": "2026-07-05T22:30:46.396230+00:00",
       "v": 5027.3,
@@ -1563,6 +1561,11 @@
       "t": "2026-07-06T13:40:37.132942+00:00",
       "v": 4991.82,
       "p": -0.16
+    },
+    {
+      "t": "2026-07-06T13:45:37.907491+00:00",
+      "v": 4983.63,
+      "p": -0.33
     }
   ],
   "ai_history": [
@@ -1620,17 +1623,17 @@
       "convergence": true,
       "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @Jeremybtc (\ud83d\udc4d29 \ud83d\udd043) Smart trader 0x15a returned f | whale_monitor: Orderbook 84% bid-weighted (bullish) | oi_funding: OI +71.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @Jeremybtc (\ud83d\udc4d29 \ud83d\udd043) Smart trader 0x15a returned f | whale_monitor: Orderbook 90% bid-weighted (bullish) | oi_funding: OI +175.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI +71.0% 1h, funding 0.0013%",
-          "weight": 1.44
+          "source": "whale_monitor",
+          "signal": "Orderbook 90% bid-weighted (bullish)",
+          "weight": 1.6
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 84% bid-weighted (bullish)",
-          "weight": 1.36
+          "source": "oi_funding",
+          "signal": "OI +175.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
@@ -1638,7 +1641,7 @@
           "weight": 1.1
         }
       ],
-      "timestamp": "2026-07-06T13:40:37.049698+00:00"
+      "timestamp": "2026-07-06T13:45:37.827072+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -1650,29 +1653,28 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -507.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -14.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -507.0% 1h",
+          "signal": "OI -14.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-06T13:40:37.049709+00:00"
+      "timestamp": "2026-07-06T13:45:37.827083+00:00"
     },
     "SOL": {
-      "score": 0.35,
-      "confidence": 0.84,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd13 $SOL] @KleNTyo (\ud83d\udc4d2) Solana summer never died, bull is c | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI -187.0% 1h",
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd13 $SOL] @KleNTyo (\ud83d\udc4d2) Solana summer never died, bull is c | oi_funding: OI +150.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1681,33 +1683,29 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -187.0% 1h",
+          "signal": "OI +150.0% 1h, funding 0.0013%",
           "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 75% bid-weighted (bullish)",
-          "weight": 1.0
         }
       ],
-      "timestamp": "2026-07-06T13:40:37.049719+00:00"
+      "timestamp": "2026-07-06T13:45:37.827092+00:00"
     },
     "HYPE": {
-      "score": 0.37,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @BCryptodinero (\ud83d\udc4d3) Hyperliquid whale bias: Smar | oi_funding: OI -76.0% 1h",
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @BCryptodinero (\ud83d\udc4d3) Hyperliquid whale bias: Smar | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +49.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -76.0% 1h",
+          "signal": "OI +49.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -1721,7 +1719,7 @@
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-06T13:40:37.049727+00:00"
+      "timestamp": "2026-07-06T13:45:37.827101+00:00"
     }
   },
   "config": {
@@ -1737,11 +1735,11 @@
   },
   "exit_breakdown": {
     "regime_override": {
-      "count": 23,
-      "pnl": -23.78,
-      "fees": 43.09,
-      "wins": 9,
-      "win_rate": 39.1
+      "count": 24,
+      "pnl": -17.61,
+      "fees": 44.17,
+      "wins": 10,
+      "win_rate": 41.7
     },
     "signal_exit": {
       "count": 4,
