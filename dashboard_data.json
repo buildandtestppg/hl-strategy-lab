@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-06T10:50:17.629240+00:00",
+  "last_update": "2026-07-06T10:55:18.306025+00:00",
   "portfolio": {
-    "value": 4969.02,
+    "value": 4969.46,
     "capital": 4977.46,
     "initial": 5000.0,
-    "pnl": -30.98,
-    "pnl_pct": -0.62,
+    "pnl": -30.54,
+    "pnl_pct": -0.61,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 62833.5,
-    "ETH": 1770.55,
-    "SOL": 80.5665,
-    "HYPE": 70.4115
+    "BTC": 62820.5,
+    "ETH": 1769.85,
+    "SOL": 80.6285,
+    "HYPE": 70.3845
   },
   "positions": {
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 69.8915,
-      "current_price": 70.4115,
+      "current_price": 70.3845,
       "size": 16.259097903866035,
-      "unrealized_pnl": -8.44,
-      "unrealized_pnl_pct": -0.74,
+      "unrealized_pnl": -8.0,
+      "unrealized_pnl_pct": -0.7,
       "stop_loss": 72.9535,
       "take_profit": 63.7675,
       "strategy": "trend",
       "entry_time": "2026-07-06T09:45:11.764725+00:00",
-      "duration_hours": 1.1,
+      "duration_hours": 1.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0155
+      "unrealized_funding": -0.0167
     }
   },
   "stats": {
@@ -564,11 +564,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-05T19:35:24.410031+00:00",
-      "v": 4980.4,
-      "p": -0.39
-    },
     {
       "t": "2026-07-05T19:40:24.893507+00:00",
       "v": 4981.6,
@@ -1563,6 +1558,11 @@
       "t": "2026-07-06T10:50:17.629240+00:00",
       "v": 4969.02,
       "p": -0.62
+    },
+    {
+      "t": "2026-07-06T10:55:18.306025+00:00",
+      "v": 4969.46,
+      "p": -0.61
     }
   ],
   "ai_history": [
@@ -1609,67 +1609,57 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.92,
-      "confidence": 1.0,
+      "score": 0.18,
+      "confidence": 0.9,
       "sources": [
         "x_scanner",
         "whale_monitor",
+        "news_agent",
         "oi_funding"
       ],
       "signal_count": 6,
       "convergence": true,
       "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @shinigamiXBT (\ud83d\udc4d4 \ud83d\udd040) $BTC m5 +7R on bullish lows | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI +109.0% 1h, funding 0.0013%",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @astronomer_zero (\ud83d\udc4d46 \ud83d\udd041) 3D candle closed green  | whale_monitor: Orderbook 75% bid-weighted (bullish) | news_agent: 2 UTC**  \ud83d\udfe2 **Notable**  \ud83d\udd39 Circle mints $3.5B USDC on Solana ",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $BTC] @astronomer_zero (\ud83d\udc4d46 \ud83d\udd041) 3D candle closed green confirming second green OBV signal \u2014 bottom call thesis [sco",
+          "weight": 2.21
+        },
         {
           "source": "oi_funding",
           "signal": "OI +109.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @shinigamiXBT (\ud83d\udc4d4 \ud83d\udd040) $BTC m5 +7R on bullish lows, higher lows since monthly open, healthy OI flow [score: 1.",
-          "weight": 1.28
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $BTC] @joel_sabugal (\ud83d\udc4d6 \ud83d\udd040) $BTC Monday Outlook: gamma flip neg\u2192pos, dealers chasing max pain 62.5k, flat TPO at ra",
-          "weight": 1.17
+          "source": "whale_monitor",
+          "signal": "Orderbook 75% bid-weighted (bullish)",
+          "weight": 1.0
         }
       ],
-      "timestamp": "2026-07-06T10:50:17.544696+00:00"
+      "timestamp": "2026-07-06T10:55:18.224843+00:00"
     },
     "ETH": {
-      "score": 0.34,
-      "confidence": 0.6,
+      "score": 1.0,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udd25 $ETH] @icefrog_sol (\ud83d\udc4d4 \ud83d\udd040) Whale 0x9b2a deposited 9,214 | oi_funding: OI +34.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +34.0% 1h, funding 0.0013%",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $ETH] @icefrog_sol (\ud83d\udc4d4 \ud83d\udd040) Whale 0x9b2a deposited 9,214 $ETH into Lido, received ~9,241 $stETH \u2014 signals long-term ",
-          "weight": 1.61
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83e\uddca $ETH] @TheMoonShow (\ud83d\udc4d2 \ud83d\udd040) $ETH short liquidations hit highest since 2022 \u2014 rebound caught leveraged bears offside ",
-          "weight": 1.52
-        },
         {
           "source": "oi_funding",
           "signal": "OI +34.0% 1h, funding 0.0013%",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-06T10:50:17.544711+00:00"
+      "timestamp": "2026-07-06T10:55:18.224855+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -1683,7 +1673,7 @@
       "convergence": true,
       "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: \ud83d\udcf0 **Crypto News Scan** \u2014 Jul 6, 10:37 UTC  \ud83d\udfe1 **Notable**  \u2022  | oi_funding: OI +40.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: \ud83d\udcf0 **Crypto News Brief \u2014 Jul 6, 2026 10:52 UTC**  \ud83d\udfe2 **Notable | oi_funding: OI +40.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -1692,7 +1682,7 @@
         },
         {
           "source": "news_agent",
-          "signal": "\ud83d\udcf0 **Crypto News Scan** \u2014 Jul 6, 10:37 UTC  \ud83d\udfe1 **Notable**  \u2022 Circle mints $3.5B USDC on Solana in a single week as stable",
+          "signal": "\ud83d\udcf0 **Crypto News Brief \u2014 Jul 6, 2026 10:52 UTC**  \ud83d\udfe2 **Notable**  \ud83d\udd39 Circle mints $3.5B USDC on Solana in a single week as ",
           "weight": 0.98
         },
         {
@@ -1701,7 +1691,7 @@
           "weight": 0.44
         }
       ],
-      "timestamp": "2026-07-06T10:50:17.544721+00:00"
+      "timestamp": "2026-07-06T10:55:18.224865+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -1710,21 +1700,21 @@
         "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 6,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udfe2 Alpha $HYPE] @OGemHODL (\ud83d\udc4d0 \ud83d\udd041) $HYPE 15m RSI hit 33.83  | oi_funding: OI +28.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @arkham (\ud83d\udc4d31 \ud83d\udd041) Whale watershedpath LONG $100M  | oi_funding: OI +28.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udfe2 Alpha $HYPE] @OGemHODL (\ud83d\udc4d0 \ud83d\udd041) $HYPE 15m RSI hit 33.83 \u2014 buyers sleeping on coiled spring. Entry 70.04, TP1 71.49, ",
-          "weight": 1.89
+          "signal": "\u2022 [\ud83d\udd25 $HYPE] @arkham (\ud83d\udc4d31 \ud83d\udd041) Whale watershedpath LONG $100M of $HYPE, up $43.3M \u2014 largest HYPE long on-chain at $97M [sc",
+          "weight": 2.94
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [$HYPE RSI] @OGemHODL \u2014 15m RSI at 33.83, potential long entry 70.04 [score: 2.9]",
-          "weight": 1.89
+          "signal": "\u2022 [$HYPE] @arkham \u2014 Whale watershedpath's $97M HYPE long is largest on-chain, up $43.3M [score:3.1]",
+          "weight": 2.48
         },
         {
           "source": "oi_funding",
@@ -1732,7 +1722,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-06T10:50:17.544728+00:00"
+      "timestamp": "2026-07-06T10:55:18.224874+00:00"
     }
   },
   "config": {
