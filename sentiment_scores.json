@@ -1,21 +1,27 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.14,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: - $BTC pumping to $63.5K on exchange accumulation (Binance/C | whale_monitor: Orderbook 78% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: - $BTC pumping to $63.5K on exchange accumulation (Binance/C | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 78% bid-weighted (bullish)",
-        "weight": 1.12
+        "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+        "weight": 1.36
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +6.0% 1h, funding 0.0013%",
+        "weight": 1.08
       },
       {
         "source": "x_scanner",
@@ -23,58 +29,78 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-06T16:40:59.813613+00:00"
+    "timestamp": "2026-07-06T16:46:00.203974+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 64% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +169.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI +169.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 64% bid-weighted (bullish)",
-        "weight": 0.56
+        "signal": "Orderbook 71% bid-weighted (bullish)",
+        "weight": 0.84
       }
     ],
-    "timestamp": "2026-07-06T16:40:59.813625+00:00"
+    "timestamp": "2026-07-06T16:46:00.203987+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-06T16:40:59.813627+00:00"
-  },
-  "HYPE": {
     "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "x_scanner"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: - $HYPE OI exploded ahead of unlock, Robinhood \u00d7 Lighter par",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +73.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +73.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-06T16:46:00.203993+00:00"
+  },
+  "HYPE": {
+    "score": -0.38,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: - $HYPE OI exploded ahead of unlock, Robinhood \u00d7 Lighter par | oi_funding: OI -34.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -34.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "- $HYPE OI exploded ahead of unlock, Robinhood \u00d7 Lighter partnership for perps onboarding",
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-06T16:40:59.813633+00:00"
+    "timestamp": "2026-07-06T16:46:00.204000+00:00"
   }
 }
