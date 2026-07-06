@@ -1,7 +1,7 @@
 {
   "BTC": {
-    "score": -0.49,
-    "confidence": 0.84,
+    "score": -0.8,
+    "confidence": 1.0,
     "sources": [
       "whale_monitor",
       "news_agent",
@@ -9,30 +9,30 @@
     ],
     "signal_count": 5,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | news_agent: rkets (contains \"geopolitical\")   - Iran/Saudi tensions, Rus | oi_funding: OI -19.0% 1h",
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 1% bid (ask-heavy, bearish) | news_agent: rkets (contains \"geopolitical\")   - Iran/Saudi tensions, Rus | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
+        "source": "whale_monitor",
+        "signal": "Orderbook 1% bid (ask-heavy, bearish)",
+        "weight": 1.96
+      },
+      {
         "source": "oi_funding",
-        "signal": "OI -19.0% 1h",
-        "weight": 1.44
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       },
       {
         "source": "news_agent",
         "signal": "rkets (contains \"geopolitical\")   - Iran/Saudi tensions, Russia/NATO, BoE gilt yields \u2014 geopolitical noise  I'll elevate",
         "weight": 1.2
-      },
-      {
-        "source": "news_agent",
-        "signal": "\u2014 AI chip expansion, market-moving IPO  \ud83d\udfe2 **Notable** \u2022 **Sovereign wealth funds favor regulated Bitcoin access** \u2014 Grow",
-        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-06T07:00:49.618623+00:00"
+    "timestamp": "2026-07-06T07:05:50.459667+00:00"
   },
   "ETH": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -41,36 +41,30 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +18.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -31.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +18.0% 1h, funding 0.0013%",
+        "signal": "OI -31.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-06T07:00:49.618634+00:00"
+    "timestamp": "2026-07-06T07:05:50.459679+00:00"
   },
   "SOL": {
     "score": -1.0,
     "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "news_agent",
       "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 3,
     "convergence": true,
-    "convergence_strength": 4,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 4-source bearish convergence | x_scanner: \u2022 [$SOL] @TimesOfBlockC_ \u2014 ETF rotation: $527M BTC outflows, | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | news_agent: in 44 years** \u2014 Markets shrug, risk recalibrated  *7 article",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [$SOL] @TimesOfBlockC_ \u2014 ETF rotation: $527M BTC outflows, | news_agent: in 44 years** \u2014 Markets shrug, risk recalibrated  *7 article | oi_funding: OI -4.0% 1h",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -13.0% 1h",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$SOL] @TimesOfBlockC_ \u2014 ETF rotation: $527M BTC outflows, XRP and SOL attracting fresh capital [score: 1.6]",
@@ -80,28 +74,29 @@
         "source": "news_agent",
         "signal": "in 44 years** \u2014 Markets shrug, risk recalibrated  *7 articles from this scan \u00b7 Sources: Crypto Briefing (91), CoinDesk (",
         "weight": 0.98
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -4.0% 1h",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-06T07:00:49.618647+00:00"
+    "timestamp": "2026-07-06T07:05:50.459689+00:00"
   },
   "HYPE": {
-    "score": 0.3,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE] @ItsBitcoinWorld \u2014 Whale opened ~$42M $ETH long on | whale_monitor: Orderbook 6% bid (ask-heavy, bearish)",
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$HYPE] @ItsBitcoinWorld \u2014 Whale opened ~$42M $ETH long on | whale_monitor: Orderbook 83% bid-weighted (bullish) | oi_funding: OI +41.0% 1h, funding 0.0013%",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 6% bid (ask-heavy, bearish)",
-        "weight": 1.76
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @ItsBitcoinWorld \u2014 Whale opened ~$42M $ETH long on Hyperliquid, up $3.5M in 7 days [score: 2.5]",
@@ -111,8 +106,13 @@
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE whale] @ItsBitcoinWorld \u2014 ~$42M ETH whale long on Hyperliquid, +$3.5M/7d, Bitfinex parabolic [score: 2.5]",
         "weight": 1.62
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +41.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-06T07:00:49.618656+00:00"
+    "timestamp": "2026-07-06T07:05:50.459699+00:00"
   }
 }
