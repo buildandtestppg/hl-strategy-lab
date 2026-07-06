@@ -1,48 +1,34 @@
 {
-  "last_update": "2026-07-06T06:45:47.925526+00:00",
+  "last_update": "2026-07-06T06:50:48.528507+00:00",
   "portfolio": {
-    "value": 4980.95,
-    "capital": 5009.07,
+    "value": 4978.54,
+    "capital": 4978.54,
     "initial": 5000.0,
-    "pnl": -19.05,
-    "pnl_pct": -0.38,
-    "open_positions": 1
+    "pnl": -21.46,
+    "pnl_pct": -0.43,
+    "open_positions": 0
   },
   "prices": {
-    "BTC": 63064.5,
-    "ETH": 1773.65,
-    "SOL": 80.3825,
-    "HYPE": 70.9595
+    "BTC": 63015.5,
+    "ETH": 1772.55,
+    "SOL": 80.3555,
+    "HYPE": 71.0715
   },
-  "positions": {
-    "SOL": {
-      "direction": "LONG",
-      "entry_price": 81.5815,
-      "current_price": 80.3825,
-      "size": 23.314550600643624,
-      "unrealized_pnl": -28.13,
-      "unrealized_pnl_pct": -1.48,
-      "stop_loss": 79.43225,
-      "take_profit": 85.88,
-      "strategy": "stochastic",
-      "entry_time": "2026-07-05T23:25:54.435523+00:00",
-      "duration_hours": 7.3,
-      "funding_rate": 0.00125,
-      "unrealized_funding": 0.1718
-    }
-  },
+  "positions": {},
   "stats": {
-    "total_trades": 26,
+    "total_trades": 27,
     "wins": 13,
-    "losses": 13,
-    "win_rate": 50.0,
+    "losses": 14,
+    "win_rate": 48.1,
     "avg_win": 20.09,
-    "avg_loss": -15.67,
+    "avg_loss": -16.73,
     "best_trade": 48.06,
     "worst_trade": -40.05,
-    "total_realized_pnl": 57.49
+    "total_realized_pnl": 26.95
   },
-  "actions": [],
+  "actions": [
+    "\u274c CLOSED LONG SOL @ $80.3555 | P&L: $-30.54 (-1.6%) | Reason: regime_override"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -485,6 +471,23 @@
       "fees_paid": 1.6651,
       "funding_cost": 0.1665,
       "total_cost": 1.8315
+    },
+    {
+      "pair": "SOL",
+      "direction": "LONG",
+      "entry_price": 81.5815,
+      "exit_price": 80.3555,
+      "size": 23.314550600643624,
+      "pnl": -30.5371,
+      "pnl_pct": -1.61,
+      "entry_time": "2026-07-05T23:25:54.435523+00:00",
+      "exit_time": "2026-07-06T06:50:50.136526+00:00",
+      "duration_hours": 7.4,
+      "exit_reason": "regime_override",
+      "strategy": "stochastic",
+      "fees_paid": 1.7798,
+      "funding_cost": 0.1737,
+      "total_cost": 1.9534
     }
   ],
   "pair_strategies": {
@@ -502,11 +505,11 @@
       "win_rate": 50.0
     },
     "stochastic": {
-      "trades": 4,
+      "trades": 5,
       "wins": 3,
-      "losses": 1,
-      "pnl": 6.73,
-      "win_rate": 75.0
+      "losses": 2,
+      "pnl": -23.81,
+      "win_rate": 60.0
     },
     "breakout": {
       "trades": 4,
@@ -532,11 +535,11 @@
       "win_rate": 42.9
     },
     "SOL": {
-      "trades": 6,
+      "trades": 7,
       "wins": 4,
-      "losses": 2,
-      "pnl": 7.59,
-      "win_rate": 66.7
+      "losses": 3,
+      "pnl": -22.95,
+      "win_rate": 57.1
     },
     "HYPE": {
       "trades": 6,
@@ -547,11 +550,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-05T15:25:57.241956+00:00",
-      "v": 4985.88,
-      "p": -0.28
-    },
     {
       "t": "2026-07-05T15:30:57.816115+00:00",
       "v": 4983.63,
@@ -1546,6 +1544,11 @@
       "t": "2026-07-06T06:45:47.925526+00:00",
       "v": 4980.95,
       "p": -0.38
+    },
+    {
+      "t": "2026-07-06T06:50:48.528507+00:00",
+      "v": 4978.54,
+      "p": -0.43
     }
   ],
   "ai_history": [
@@ -1592,18 +1595,17 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.89,
-      "confidence": 0.84,
+      "score": -0.5,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @The_JDK99 (\ud83d\udc4d3 \ud83d\udd040) $BTC short \u2014 price pushed into | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -19.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -19.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -1611,17 +1613,12 @@
           "weight": 1.44
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $BTC] @The_JDK99 (\ud83d\udc4d3 \ud83d\udd040) $BTC short \u2014 price pushed into key level with short liquidation move, no real intent. Late",
-          "weight": 1.36
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $BTC] @Cointurknews (\ud83d\udc4d1 \ud83d\udd040) $526.64M net outflows hit spot BTC ETFs over 8 straight weeks. Institutional investors ",
-          "weight": 0.98
+          "source": "whale_monitor",
+          "signal": "Orderbook 62% bid-weighted (bullish)",
+          "weight": 0.48
         }
       ],
-      "timestamp": "2026-07-06T06:45:47.830939+00:00"
+      "timestamp": "2026-07-06T06:50:48.444663+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -1641,20 +1638,21 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-06T06:45:47.830949+00:00"
+      "timestamp": "2026-07-06T06:50:48.444675+00:00"
     },
     "SOL": {
       "score": -1.0,
-      "confidence": 0.74,
+      "confidence": 1.0,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -13.0% 1h",
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [$SOL] @TimesOfBlockC_ \u2014 ETF rotation: $527M BTC outflows, | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -13.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -1662,25 +1660,30 @@
           "weight": 1.44
         },
         {
+          "source": "x_scanner",
+          "signal": "\u2022 [$SOL] @TimesOfBlockC_ \u2014 ETF rotation: $527M BTC outflows, XRP and SOL attracting fresh capital [score: 1.6]",
+          "weight": 1.04
+        },
+        {
           "source": "whale_monitor",
           "signal": "Orderbook 39% bid (ask-heavy, bearish)",
           "weight": 0.44
         }
       ],
-      "timestamp": "2026-07-06T06:45:47.830958+00:00"
+      "timestamp": "2026-07-06T06:50:48.444687+00:00"
     },
     "HYPE": {
-      "score": 0.44,
+      "score": 0.3,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 5,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @bpaynews (\ud83d\udc4d0 \ud83d\udd040) Two MU whales edging into long | whale_monitor: Orderbook 6% bid (ask-heavy, bearish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE] @ItsBitcoinWorld \u2014 Whale opened ~$42M $ETH long on | whale_monitor: Orderbook 6% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -1689,16 +1692,16 @@
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @bpaynews (\ud83d\udc4d0 \ud83d\udd040) Two MU whales edging into longer builds on Hyperliquid, avg entry ~$1,019, fresh 1,319.5 M",
-          "weight": 1.2
+          "signal": "\u2022 [$HYPE] @ItsBitcoinWorld \u2014 Whale opened ~$42M $ETH long on Hyperliquid, up $3.5M in 7 days [score: 2.5]",
+          "weight": 1.62
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @HypedLaunches (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid perp leaders: $BTC +0.64% | $1.3B vol | $2.2B OI; $ETH +1.29% | $723M vol",
-          "weight": 1.2
+          "signal": "\u2022 [$HYPE whale] @ItsBitcoinWorld \u2014 ~$42M ETH whale long on Hyperliquid, +$3.5M/7d, Bitfinex parabolic [score: 2.5]",
+          "weight": 1.62
         }
       ],
-      "timestamp": "2026-07-06T06:45:47.830967+00:00"
+      "timestamp": "2026-07-06T06:50:48.444695+00:00"
     }
   },
   "config": {
@@ -1714,11 +1717,11 @@
   },
   "exit_breakdown": {
     "regime_override": {
-      "count": 22,
-      "pnl": 6.76,
-      "fees": 41.31,
+      "count": 23,
+      "pnl": -23.78,
+      "fees": 43.09,
       "wins": 9,
-      "win_rate": 40.9
+      "win_rate": 39.1
     },
     "signal_exit": {
       "count": 4,
