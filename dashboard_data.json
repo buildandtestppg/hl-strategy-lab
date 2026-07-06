@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-06T21:45:37.449612+00:00",
+  "last_update": "2026-07-06T21:50:38.092606+00:00",
   "portfolio": {
     "value": 5090.42,
     "capital": 5035.46,
@@ -9,10 +9,10 @@
     "open_positions": 1
   },
   "prices": {
-    "BTC": 64224.5,
+    "BTC": 64341.5,
     "ETH": 1815.55,
-    "SOL": 82.6175,
-    "HYPE": 71.2055
+    "SOL": 82.6695,
+    "HYPE": 71.2755
   },
   "positions": {
     "ETH": {
@@ -20,15 +20,15 @@
       "entry_price": 1760.65,
       "current_price": 1815.55,
       "size": 1.0036901781066951,
-      "unrealized_pnl": 54.96,
+      "unrealized_pnl": 54.95,
       "unrealized_pnl_pct": 3.11,
       "stop_loss": 1711.0,
       "take_profit": 1859.95,
       "strategy": "trend",
       "entry_time": "2026-07-06T15:20:51.474646+00:00",
-      "duration_hours": 6.4,
+      "duration_hours": 6.5,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1461
+      "unrealized_funding": 0.148
     }
   },
   "stats": {
@@ -598,11 +598,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-06T06:30:45.920988+00:00",
-      "v": 4980.46,
-      "p": -0.39
-    },
     {
       "t": "2026-07-06T06:33:44.407797+00:00",
       "v": 4980.93,
@@ -1597,6 +1592,11 @@
       "t": "2026-07-06T21:45:37.449612+00:00",
       "v": 5090.42,
       "p": 1.81
+    },
+    {
+      "t": "2026-07-06T21:50:38.092606+00:00",
+      "v": 5090.42,
+      "p": 1.81
     }
   ],
   "ai_history": [
@@ -1643,7 +1643,38 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.05,
+      "score": -0.45,
+      "confidence": 0.74,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @manwithadogg H2 starts today. Bank earnings, CPI | oi_funding: OI -13.0% 1h",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $BTC] @manwithadogg H2 starts today. Bank earnings, CPI, FOMC mins. Mega-caps report Jul 28-30. Nvidia in Aug [scor",
+          "weight": 2.27
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $BTC] @M1Alp_Arslan $BTC long term to 2029. 2028 halving cuts supply to 1.5625 BTC/block. ETFs hold $51B+. Institut",
+          "weight": 1.62
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -13.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-06T21:50:38.010628+00:00"
+    },
+    "ETH": {
+      "score": 0.43,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
@@ -1653,68 +1684,28 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @GucciManee___ BTC +1.74% on 92% above-avg vol +  | oi_funding: OI -13.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Learnernoearner (\ud83d\udc4d80 \ud83d\udd0425) \"$ETH done and dusted\" | oi_funding: OI -14.0% 1h",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI -13.0% 1h",
-          "weight": 1.44
-        },
-        {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @GucciManee___ BTC +1.74% on 92% above-avg vol + ETH +1.65% on 142% vol = coordinated risk-on [2.5]",
-          "weight": 0.65
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @Learnernoearner (\ud83d\udc4d80 \ud83d\udd0425) \"$ETH done and dusted\" [score: 3.5]",
+          "weight": 2.27
         },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @0xAralez (\ud83d\udc4d20 \ud83d\udd043) Cycle bottoms don't form in a single day \u2014 BTC bottom early Oct ~$40K-$50K [2.4]",
-          "weight": 0.65
-        }
-      ],
-      "timestamp": "2026-07-06T21:45:37.355721+00:00"
-    },
-    "ETH": {
-      "score": -1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -14.0% 1h",
-      "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -14.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @LSTraderCrypto (\ud83d\udc4d33 \ud83d\udd048) $ETH $1,800 \u2014 key level from April 2025 bottom. Closes above 1800 = next leg [score:",
+          "weight": 1.3
         }
       ],
-      "timestamp": "2026-07-06T21:45:37.355731+00:00"
+      "timestamp": "2026-07-06T21:50:38.010641+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -59.0% 1h",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -59.0% 1h",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-07-06T21:45:37.355737+00:00"
-    },
-    "HYPE": {
-      "score": -0.25,
+      "score": 0.17,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
@@ -1724,20 +1715,51 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Xeetbtcvox (\ud83d\udc4d14 \ud83d\udd043) Early call on @theiconsart  | oi_funding: OI -6.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @JusttDerrick (\ud83d\udc4d47 \ud83d\udd0433) $15 SOL giveaway [score:  | oi_funding: OI -59.0% 1h",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $SOL] @JusttDerrick (\ud83d\udc4d47 \ud83d\udd0433) $15 SOL giveaway [score: 3.1]",
+          "weight": 2.02
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -59.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-06T21:50:38.010650+00:00"
+    },
+    "HYPE": {
+      "score": -1.0,
+      "confidence": 0.74,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb8 $HYPE] @imperooterxbt (\ud83d\udc4d54 \ud83d\udd043) Callout: @0GAntD shilled | oi_funding: OI -6.0% 1h",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcb8 $HYPE] @imperooterxbt (\ud83d\udc4d54 \ud83d\udd043) Callout: @0GAntD shilled HYPE token and rug pulled \u2014 Jeff wallet misrepresenting sup",
+          "weight": 1.95
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$HYPE] @rafal_jakobsen [ALPHA] Hyperliquid Strategies (PURR) director accepted equity over cash \u2014 reduces outflows, a",
+          "weight": 1.95
+        },
         {
           "source": "oi_funding",
           "signal": "OI -6.0% 1h",
           "weight": 1.08
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Xeetbtcvox (\ud83d\udc4d14 \ud83d\udd043) Early call on @theiconsart \u2014 Web3 artist founder play [2.2]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-06T21:45:37.355743+00:00"
+      "timestamp": "2026-07-06T21:50:38.010658+00:00"
     }
   },
   "config": {
