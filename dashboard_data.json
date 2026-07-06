@@ -1,48 +1,34 @@
 {
-  "last_update": "2026-07-06T23:20:49.254406+00:00",
+  "last_update": "2026-07-06T23:25:49.947932+00:00",
   "portfolio": {
-    "value": 5080.55,
-    "capital": 5035.46,
+    "value": 5076.72,
+    "capital": 5076.72,
     "initial": 5000.0,
-    "pnl": 80.55,
-    "pnl_pct": 1.61,
-    "open_positions": 1
+    "pnl": 76.72,
+    "pnl_pct": 1.53,
+    "open_positions": 0
   },
   "prices": {
-    "BTC": 64161.5,
-    "ETH": 1805.75,
-    "SOL": 82.0725,
-    "HYPE": 70.8055
+    "BTC": 64111.5,
+    "ETH": 1803.65,
+    "SOL": 82.0405,
+    "HYPE": 70.7125
   },
-  "positions": {
-    "ETH": {
-      "direction": "LONG",
-      "entry_price": 1760.65,
-      "current_price": 1805.75,
-      "size": 1.0036901781066951,
-      "unrealized_pnl": 45.09,
-      "unrealized_pnl_pct": 2.55,
-      "stop_loss": 1711.0,
-      "take_profit": 1859.95,
-      "strategy": "trend",
-      "entry_time": "2026-07-06T15:20:51.474646+00:00",
-      "duration_hours": 8.0,
-      "funding_rate": 0.00125,
-      "unrealized_funding": 0.1812
-    }
-  },
+  "positions": {},
   "stats": {
-    "total_trades": 29,
-    "wins": 15,
+    "total_trades": 30,
+    "wins": 16,
     "losses": 14,
-    "win_rate": 51.7,
-    "avg_win": 21.49,
+    "win_rate": 53.3,
+    "avg_win": 22.72,
     "avg_loss": -16.73,
     "best_trade": 54.93,
     "worst_trade": -40.05,
-    "total_realized_pnl": 88.06
+    "total_realized_pnl": 129.31
   },
-  "actions": [],
+  "actions": [
+    "\u2705 CLOSED LONG ETH @ $1803.6500 | P&L: $+41.26 (+2.3%) | Reason: regime_override"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -536,6 +522,23 @@
       "fees_paid": 1.4716,
       "funding_cost": 0.1177,
       "total_cost": 1.5893
+    },
+    {
+      "pair": "ETH",
+      "direction": "LONG",
+      "entry_price": 1760.65,
+      "exit_price": 1803.65,
+      "size": 1.0036901781066951,
+      "pnl": 41.256,
+      "pnl_pct": 2.33,
+      "entry_time": "2026-07-06T15:20:51.474646+00:00",
+      "exit_time": "2026-07-06T23:25:51.353527+00:00",
+      "duration_hours": 8.1,
+      "exit_reason": "regime_override",
+      "strategy": "trend",
+      "fees_paid": 1.7198,
+      "funding_cost": 0.1829,
+      "total_cost": 1.9027
     }
   ],
   "pair_strategies": {
@@ -546,11 +549,11 @@
   },
   "strategy_stats": {
     "trend": {
-      "trades": 19,
-      "wins": 10,
+      "trades": 20,
+      "wins": 11,
       "losses": 9,
-      "pnl": 82.02,
-      "win_rate": 52.6
+      "pnl": 123.27,
+      "win_rate": 55.0
     },
     "stochastic": {
       "trades": 6,
@@ -576,11 +579,11 @@
       "win_rate": 28.6
     },
     "ETH": {
-      "trades": 7,
-      "wins": 3,
+      "trades": 8,
+      "wins": 4,
       "losses": 4,
-      "pnl": -15.73,
-      "win_rate": 42.9
+      "pnl": 25.53,
+      "win_rate": 50.0
     },
     "SOL": {
       "trades": 8,
@@ -598,16 +601,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-06T08:00:57.325184+00:00",
-      "v": 4978.54,
-      "p": -0.43
-    },
-    {
-      "t": "2026-07-06T08:05:57.994875+00:00",
-      "v": 4978.54,
-      "p": -0.43
-    },
     {
       "t": "2026-07-06T08:10:58.668123+00:00",
       "v": 4978.54,
@@ -1597,6 +1590,16 @@
       "t": "2026-07-06T23:20:49.254406+00:00",
       "v": 5080.55,
       "p": 1.61
+    },
+    {
+      "t": "2026-07-06T23:22:47.060132+00:00",
+      "v": 5079.75,
+      "p": 1.59
+    },
+    {
+      "t": "2026-07-06T23:25:49.947932+00:00",
+      "v": 5076.72,
+      "p": 1.53
     }
   ],
   "ai_history": [
@@ -1643,43 +1646,38 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": -1.0,
+      "confidence": 0.3,
       "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -12.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -12.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-06T23:25:49.870131+00:00"
+    },
+    "ETH": {
+      "score": -0.62,
+      "confidence": 0.84,
+      "sources": [
+        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 4,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 71% bid-weighted (bullish)",
-          "weight": 0.84
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0013%",
-          "weight": 0.72
-        }
-      ],
-      "timestamp": "2026-07-06T23:20:49.160006+00:00"
-    },
-    "ETH": {
-      "score": -1.0,
-      "confidence": 0.74,
-      "sources": [
-        "x_scanner",
-        "oi_funding"
-      ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @Alaouicapital (\ud83d\udc4d26 \ud83d\udd042) \u2014 ETH under $1,900 liquid | oi_funding: OI -15.0% 1h",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @Alaouicapital (\ud83d\udc4d26 \ud83d\udd042) \u2014 ETH under $1,900 liquid | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1693,24 +1691,25 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -15.0% 1h",
-          "weight": 1.44
+          "signal": "OI +4.0% 1h, funding 0.0013%",
+          "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-06T23:20:49.160022+00:00"
+      "timestamp": "2026-07-06T23:25:49.870150+00:00"
     },
     "SOL": {
-      "score": 0.36,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Fox_Looper \u2014 Web3 OSS evolving, claim $TEA befo | oi_funding: OI -61.0% 1h",
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Fox_Looper \u2014 Web3 OSS evolving, claim $TEA befo | whale_monitor: Orderbook 82% bid-weighted (bullish) | oi_funding: OI +104.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1719,14 +1718,19 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -61.0% 1h",
+          "signal": "OI +104.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 82% bid-weighted (bullish)",
+          "weight": 1.28
         }
       ],
-      "timestamp": "2026-07-06T23:20:49.160032+00:00"
+      "timestamp": "2026-07-06T23:25:49.870160+00:00"
     },
     "HYPE": {
-      "score": 0.71,
+      "score": 0.68,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -1737,7 +1741,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Ollieelloise (\ud83d\udc4d4 \ud83d\udd042) \u2014 VALR (Africa's largest  | whale_monitor: Orderbook 87% bid-weighted (bullish) | oi_funding: OI -24.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Ollieelloise (\ud83d\udc4d4 \ud83d\udd042) \u2014 VALR (Africa's largest  | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI -43.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1750,12 +1754,12 @@
           "weight": 2.32
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 87% bid-weighted (bullish)",
-          "weight": 1.48
+          "source": "oi_funding",
+          "signal": "OI -43.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-06T23:20:49.160042+00:00"
+      "timestamp": "2026-07-06T23:25:49.870169+00:00"
     }
   },
   "config": {
@@ -1771,11 +1775,11 @@
   },
   "exit_breakdown": {
     "regime_override": {
-      "count": 24,
-      "pnl": -17.61,
-      "fees": 44.17,
-      "wins": 10,
-      "win_rate": 41.7
+      "count": 25,
+      "pnl": 23.65,
+      "fees": 45.89,
+      "wins": 11,
+      "win_rate": 44.0
     },
     "signal_exit": {
       "count": 5,
