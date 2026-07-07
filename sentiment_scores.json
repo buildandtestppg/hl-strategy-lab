@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.32,
-    "confidence": 0.5,
+    "score": 0.61,
+    "confidence": 0.84,
     "sources": [
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 85% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 85% bid-weighted (bullish) | news_agent: Stake   \ud83c\udff7\ufe0f USDT | *TheDefiant*   <https://thedefiant.io/conv | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "whale_monitor",
@@ -18,25 +19,36 @@
         "weight": 1.4
       },
       {
+        "source": "news_agent",
+        "signal": "Stake   \ud83c\udff7\ufe0f USDT | *TheDefiant*   <https://thedefiant.io/converge/cefi/tether-s-former-cio-heathcote-plans-to-sell-equity",
+        "weight": 0.98
+      },
+      {
         "source": "oi_funding",
         "signal": "OI -4.0% 1h",
         "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-07T15:50:45.296080+00:00"
+    "timestamp": "2026-07-07T15:55:45.995503+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.6,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "news_agent"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @MindMathMoney Stablecoins on ETH vs $ETH value ",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @MindMathMoney Stablecoins on ETH vs $ETH value  | news_agent: \ud83c\udff7\ufe0f USDT | *TheDefiant*   <https://thedefiant.io/converge/cef",
     "key_signals": [
+      {
+        "source": "news_agent",
+        "signal": "\ud83c\udff7\ufe0f USDT | *TheDefiant*   <https://thedefiant.io/converge/cefi/tether-s-former-cio-heathcote-plans-to-sell-equity-stake> ",
+        "weight": 0.98
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @MindMathMoney Stablecoins on ETH vs $ETH value capture \u2014 L2 settlement shifts fees away from mainnet. Volum",
@@ -46,14 +58,9 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @SAMALTCOIN_ETH (\ud83d\udc4d10 \ud83d\udd042) \"If you could see what we're seeing from the inside, you'd be wildly bullish\" \u2014 ex-",
         "weight": 0.8
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $ETH] @AskClash (\ud83d\udc4d2 \ud83d\udd041) $ETH ETFs: 3 straight days of net inflows, +$20.7M latest. 90-day net still negative [1.6]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-07T15:50:45.296093+00:00"
+    "timestamp": "2026-07-07T15:55:45.995518+00:00"
   },
   "SOL": {
     "score": 0.24,
@@ -85,7 +92,7 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-07T15:50:45.296106+00:00"
+    "timestamp": "2026-07-07T15:55:45.995530+00:00"
   },
   "HYPE": {
     "score": 0.94,
@@ -117,6 +124,6 @@
         "weight": 0.95
       }
     ],
-    "timestamp": "2026-07-07T15:50:45.296118+00:00"
+    "timestamp": "2026-07-07T15:55:45.995541+00:00"
   }
 }
