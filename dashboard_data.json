@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-07T08:00:49.483960+00:00",
+  "last_update": "2026-07-07T08:05:50.164218+00:00",
   "portfolio": {
-    "value": 5051.08,
+    "value": 5049.69,
     "capital": 5073.88,
     "initial": 5000.0,
-    "pnl": 51.08,
-    "pnl_pct": 1.02,
+    "pnl": 49.69,
+    "pnl_pct": 0.99,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 63124.5,
-    "ETH": 1772.55,
-    "SOL": 81.4695,
-    "HYPE": 70.7205
+    "BTC": 63071.5,
+    "ETH": 1770.65,
+    "SOL": 81.2605,
+    "HYPE": 70.5675
   },
   "positions": {
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 69.6305,
-      "current_price": 70.7205,
+      "current_price": 70.5675,
       "size": 18.912993724289105,
-      "unrealized_pnl": -20.57,
-      "unrealized_pnl_pct": -1.56,
+      "unrealized_pnl": -17.68,
+      "unrealized_pnl_pct": -1.34,
       "stop_loss": 72.31475,
       "take_profit": 64.262,
       "strategy": "trend",
       "entry_time": "2026-07-07T05:25:33.085519+00:00",
-      "duration_hours": 2.6,
+      "duration_hours": 2.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0433
+      "unrealized_funding": -0.0446
     },
     "SOL": {
       "direction": "LONG",
       "entry_price": 81.5785,
-      "current_price": 81.4695,
+      "current_price": 81.2605,
       "size": 20.465169312277276,
-      "unrealized_pnl": -2.24,
-      "unrealized_pnl_pct": -0.13,
+      "unrealized_pnl": -6.51,
+      "unrealized_pnl_pct": -0.39,
       "stop_loss": 79.10975,
       "take_profit": 86.516,
       "strategy": "stochastic",
       "entry_time": "2026-07-07T07:45:51.451565+00:00",
       "duration_hours": 0.3,
-      "funding_rate": 0.001176,
-      "unrealized_funding": 0.0049
+      "funding_rate": 0.00113,
+      "unrealized_funding": 0.0063
     }
   },
   "stats": {
@@ -630,11 +630,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-06T16:30:58.638393+00:00",
-      "v": 5035.98,
-      "p": 0.72
-    },
     {
       "t": "2026-07-06T16:35:59.116167+00:00",
       "v": 5041.23,
@@ -1629,6 +1624,11 @@
       "t": "2026-07-07T08:00:49.483960+00:00",
       "v": 5051.08,
       "p": 1.02
+    },
+    {
+      "t": "2026-07-07T08:05:50.164218+00:00",
+      "v": 5049.69,
+      "p": 0.99
     }
   ],
   "ai_history": [
@@ -1675,18 +1675,25 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.6,
+      "score": 0.62,
+      "confidence": 0.9,
       "sources": [
         "x_scanner",
-        "news_agent"
+        "whale_monitor",
+        "news_agent",
+        "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $BTC Chart] @Abu_Cartel (\ud83d\udc4d49 \ud83d\udd048) $BTC bounces from Reve | news_agent: T back to Bitcoin with RGB protocol rollout**   *Crypto Brie",
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC Chart] @Abu_Cartel (\ud83d\udc4d49 \ud83d\udd048) $BTC bounces from Reve | whale_monitor: Orderbook 69% bid-weighted (bullish) | news_agent: T back to Bitcoin with RGB protocol rollout**   *Crypto Brie",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -119.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "news_agent",
           "signal": "T back to Bitcoin with RGB protocol rollout**   *Crypto Briefing* \u2014 USDT integration via RGB protocol could boost Bitcoi",
@@ -1696,74 +1703,81 @@
           "source": "news_agent",
           "signal": "protocol rollout**   *Crypto Briefing* \u2014 USDT integration via RGB protocol could boost Bitcoin L2 stablecoin adoption   ",
           "weight": 1.2
-        },
-        {
-          "source": "news_agent",
-          "signal": "of Hormuz tensions**   *Crypto Briefing* \u2014 Geopolitical escalation threatens oil shipping routes; risk-off sentiment lik",
-          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-07T08:00:49.387905+00:00"
+      "timestamp": "2026-07-07T08:05:50.083958+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "x_scanner"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfdb\ufe0f $ETH Whale] @SBlockspy (\ud83d\udc4d4 \ud83d\udd040) Whale opened $54.5M $ET",
-      "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfdb\ufe0f $ETH Whale] @SBlockspy (\ud83d\udc4d4 \ud83d\udd040) Whale opened $54.5M $ETH long with 10x leverage \u2014 83.3% win rate, $2.28M profit in ",
-          "weight": 0.65
-        }
-      ],
-      "timestamp": "2026-07-07T08:00:49.387917+00:00"
-    },
-    "SOL": {
-      "score": 0.13,
+      "score": -0.38,
       "confidence": 0.5,
       "sources": [
-        "whale_monitor",
+        "x_scanner",
         "oi_funding"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfdb\ufe0f $ETH Whale] @SBlockspy (\ud83d\udc4d4 \ud83d\udd040) Whale opened $54.5M $ET | oi_funding: OI -13.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +6.0% 1h, funding 0.0013%",
-          "weight": 1.08
+          "signal": "OI -13.0% 1h",
+          "weight": 1.44
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 29% bid (ask-heavy, bearish)",
-          "weight": 0.84
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfdb\ufe0f $ETH Whale] @SBlockspy (\ud83d\udc4d4 \ud83d\udd040) Whale opened $54.5M $ETH long with 10x leverage \u2014 83.3% win rate, $2.28M profit in ",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-07T08:00:49.387926+00:00"
+      "timestamp": "2026-07-07T08:05:50.083971+00:00"
     },
-    "HYPE": {
-      "score": 1.0,
+    "SOL": {
+      "score": -1.0,
       "confidence": 0.74,
       "sources": [
-        "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE ETF] @TheJessePeralta (\ud83d\udc4d4 \ud83d\udd040) $HYPE sets ATH for  | whale_monitor: Orderbook 73% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI -60.0% 1h",
       "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 13% bid (ask-heavy, bearish)",
+          "weight": 1.48
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -60.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-07T08:05:50.083980+00:00"
+    },
+    "HYPE": {
+      "score": 0.31,
+      "confidence": 0.84,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE ETF] @TheJessePeralta (\ud83d\udc4d4 \ud83d\udd040) $HYPE sets ATH for  | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI -32.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -32.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\u26a1 $HYPE ETF] @TheJessePeralta (\ud83d\udc4d4 \ud83d\udd040) $HYPE sets ATH for weekly ETF inflows: $85 > $100 > $200 [1.6]",
@@ -1773,14 +1787,9 @@
           "source": "whale_monitor",
           "signal": "Orderbook 73% bid-weighted (bullish)",
           "weight": 0.92
-        },
-        {
-          "source": "x_scanner",
-          "signal": "ETF flows returned strongly after a week of outflows \u2014 BTC +$265.7M, $HYPE ETF hitting ATH weekly inflows. A $54.5M ETH ",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-07T08:00:49.387936+00:00"
+      "timestamp": "2026-07-07T08:05:50.083989+00:00"
     }
   },
   "config": {
