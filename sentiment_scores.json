@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": -0.89,
+    "score": -0.78,
     "confidence": 0.9,
     "sources": [
       "x_scanner",
@@ -12,7 +12,7 @@
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d66 \ud83d\udd0411) Bitcoin dips but recover | whale_monitor: Orderbook 18% bid (ask-heavy, bearish) | news_agent: fires missiles at ships in Strait of Hormuz** Escalating reg",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d66 \ud83d\udd0411) Bitcoin dips but recover | whale_monitor: Orderbook 84% bid-weighted (bullish) | news_agent: fires missiles at ships in Strait of Hormuz** Escalating reg",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,20 +20,20 @@
         "weight": 3.71
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 18% bid (ask-heavy, bearish)",
-        "weight": 1.28
+        "source": "oi_funding",
+        "signal": "OI -18.0% 1h",
+        "weight": 1.44
       },
       {
-        "source": "news_agent",
-        "signal": "fires missiles at ships in Strait of Hormuz** Escalating regional tensions \u2014 direct threat to global oil shipping lanes ",
-        "weight": 0.98
+        "source": "whale_monitor",
+        "signal": "Orderbook 84% bid-weighted (bullish)",
+        "weight": 1.36
       }
     ],
-    "timestamp": "2026-07-07T04:00:21.176148+00:00"
+    "timestamp": "2026-07-07T04:05:21.703948+00:00"
   },
   "ETH": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -42,40 +42,55 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +11.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -39.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +11.0% 1h, funding 0.0013%",
+        "signal": "OI -39.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-07T04:00:21.176161+00:00"
+    "timestamp": "2026-07-07T04:05:21.703960+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-07T04:00:21.176163+00:00"
-  },
-  "HYPE": {
-    "score": -0.18,
+    "score": -0.07,
     "confidence": 0.5,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @otzgary (\ud83d\udc4d9 \ud83d\udd040) OI for $LIT on Hyperliquid larg | whale_monitor: Orderbook 23% bid (ask-heavy, bearish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 81% bid-weighted (bullish) | oi_funding: OI -98.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -98.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 81% bid-weighted (bullish)",
+        "weight": 1.24
+      }
+    ],
+    "timestamp": "2026-07-07T04:05:21.703969+00:00"
+  },
+  "HYPE": {
+    "score": -0.05,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @otzgary (\ud83d\udc4d9 \ud83d\udd040) OI for $LIT on Hyperliquid larg | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -24.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -83,16 +98,16 @@
         "weight": 1.6
       },
       {
+        "source": "oi_funding",
+        "signal": "OI -24.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $HYPE] @Nishi8mAlert (\ud83d\udc4d1 \ud83d\udd040) BTC Liquidation Monitor: $58K primary trigger $125M, $66K resistance $103M, $68K major",
         "weight": 1.2
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 23% bid (ask-heavy, bearish)",
-        "weight": 1.08
       }
     ],
-    "timestamp": "2026-07-07T04:00:21.176172+00:00"
+    "timestamp": "2026-07-07T04:05:21.703979+00:00"
   }
 }
