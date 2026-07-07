@@ -1,102 +1,118 @@
 {
   "BTC": {
-    "score": -0.4,
-    "confidence": 0.6,
+    "score": -0.18,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d52 \ud83d\udd0410) Bitcoin dips, recovers a | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d52 \ud83d\udd0410) Bitcoin dips, recovers a | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -11.0% 1h",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI -11.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 28% bid (ask-heavy, bearish)",
-        "weight": 0.88
+        "signal": "Orderbook 70% bid-weighted (bullish)",
+        "weight": 0.8
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d52 \ud83d\udd0410) Bitcoin dips, recovers after Strategy dumps 3,888 $BTC. Realized P/L ratio at 43-mon",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @quantalg0 BlackRock: +$209M IBIT, +$23M ETHA ETF inflows early July [2.55]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-07T06:20:37.601267+00:00"
+    "timestamp": "2026-07-07T06:25:38.114821+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-07T06:20:37.601272+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -15.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -15.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-07T06:25:38.114832+00:00"
   },
   "SOL": {
-    "score": -0.5,
-    "confidence": 0.5,
+    "score": -0.71,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$SOL Alpha] @gm_advice $20M exploit hits @bonk_inu \u2014 mali | whale_monitor: Orderbook 62% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$SOL Alpha] @gm_advice $20M exploit hits @bonk_inu \u2014 mali | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI -18.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -18.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$SOL Alpha] @gm_advice $20M exploit hits @bonk_inu \u2014 malicious governance proposal drained ~$20M from DAO treasury [2",
         "weight": 0.8
       },
       {
-        "source": "x_scanner",
-        "signal": "\ud83d\udce1 **Crypto Scan** \u2014 2026-07-07 14:13 SGT (\u26a0\ufe0f Partial: X timeout at $SOL/5. Reddit: 403 blocked)",
-        "weight": 0.65
+        "source": "whale_monitor",
+        "signal": "Orderbook 67% bid-weighted (bullish)",
+        "weight": 0.68
+      }
+    ],
+    "timestamp": "2026-07-07T06:25:38.114844+00:00"
+  },
+  "HYPE": {
+    "score": 0.32,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @kane_tdt (\ud83d\udc4d4) $LIT up 17.3% after tokenomics up | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | oi_funding: OI +9.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +9.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 62% bid-weighted (bullish)",
-        "weight": 0.48
-      }
-    ],
-    "timestamp": "2026-07-07T06:20:37.601285+00:00"
-  },
-  "HYPE": {
-    "score": 0.26,
-    "confidence": 0.5,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $HYPE] @kane_tdt (\ud83d\udc4d4) $LIT up 17.3% after tokenomics up | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
-    "key_signals": [
+        "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+        "weight": 1.36
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $HYPE] @kane_tdt (\ud83d\udc4d4) $LIT up 17.3% after tokenomics update \u2014 buybacks replaced with permanent burns [1.68]",
         "weight": 0.95
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 36% bid (ask-heavy, bearish)",
-        "weight": 0.56
       }
     ],
-    "timestamp": "2026-07-07T06:20:37.601293+00:00"
+    "timestamp": "2026-07-07T06:25:38.114853+00:00"
   }
 }
