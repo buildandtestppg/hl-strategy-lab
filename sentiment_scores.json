@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": 0.61,
+    "score": 0.42,
     "confidence": 0.84,
     "sources": [
       "whale_monitor",
@@ -11,12 +11,12 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 85% bid-weighted (bullish) | news_agent: Stake   \ud83c\udff7\ufe0f USDT | *TheDefiant*   <https://thedefiant.io/conv | oi_funding: OI -4.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 26% bid (ask-heavy, bearish) | news_agent: Stake   \ud83c\udff7\ufe0f USDT | *TheDefiant*   <https://thedefiant.io/conv | oi_funding: OI +6.0% 1h, funding 0.0013%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 85% bid-weighted (bullish)",
-        "weight": 1.4
+        "source": "oi_funding",
+        "signal": "OI +6.0% 1h, funding 0.0013%",
+        "weight": 1.08
       },
       {
         "source": "news_agent",
@@ -24,12 +24,12 @@
         "weight": 0.98
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
-        "weight": 0.72
+        "source": "whale_monitor",
+        "signal": "Orderbook 26% bid (ask-heavy, bearish)",
+        "weight": 0.96
       }
     ],
-    "timestamp": "2026-07-07T16:00:46.629100+00:00"
+    "timestamp": "2026-07-07T16:05:47.274017+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -60,31 +60,25 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-07T16:00:46.629119+00:00"
+    "timestamp": "2026-07-07T16:05:47.274032+00:00"
   },
   "SOL": {
-    "score": 0.24,
-    "confidence": 0.84,
+    "score": -0.19,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
-      "oi_funding"
+      "whale_monitor"
     ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Michael_Orubebe @cubee_ee \u2014 consolidate 5 AMM p | whale_monitor: Orderbook 89% bid-weighted (bullish) | oi_funding: OI -28.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Michael_Orubebe @cubee_ee \u2014 consolidate 5 AMM p | whale_monitor: Orderbook 26% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 89% bid-weighted (bullish)",
-        "weight": 1.56
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -28.0% 1h",
-        "weight": 1.44
+        "signal": "Orderbook 26% bid (ask-heavy, bearish)",
+        "weight": 0.96
       },
       {
         "source": "x_scanner",
@@ -92,27 +86,21 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-07T16:00:46.629130+00:00"
+    "timestamp": "2026-07-07T16:05:47.274041+00:00"
   },
   "HYPE": {
-    "score": 0.94,
-    "confidence": 1.0,
+    "score": 0.56,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 9,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Blockmedia_vn Hyperliquid set ATH for ETF inflo | whale_monitor: Orderbook 64% bid-weighted (bullish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
+    "signal_count": 8,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Blockmedia_vn Hyperliquid set ATH for ETF inflo | oi_funding: OI -4.0% 1h",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +7.0% 1h, funding 0.0013%",
-        "weight": 1.26
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Blockmedia_vn Hyperliquid set ATH for ETF inflow \u2014 one of the best coins at this market point [1.7]",
@@ -122,8 +110,13 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @roseSallyMorgan (\ud83d\udc4d1 \ud83d\udd041) Abraxas Capital deposited 8000 ETH into Aave \u2014 likely complex market neutral/hedgin",
         "weight": 0.95
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @ZeroHedge_ (\ud83d\udc4d4) $HYPE 4hr chart \u2014 volatility compressed, needs release. Alpha Vault breakout arrow alert se",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-07T16:00:46.629141+00:00"
+    "timestamp": "2026-07-07T16:05:47.274051+00:00"
   }
 }
