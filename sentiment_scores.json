@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.5,
-    "confidence": 0.5,
+    "score": 0.62,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @dens_club (\ud83d\udc4d3 \ud83d\udd041) 18 coin watchlist: $BTC holdin | whale_monitor: Orderbook 25% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @dens_club (\ud83d\udc4d3 \ud83d\udd041) 18 coin watchlist: $BTC holdin | whale_monitor: Orderbook 93% bid-weighted (bullish) | oi_funding: OI -16.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -19,29 +20,35 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 25% bid (ask-heavy, bearish)",
-        "weight": 1.0
+        "signal": "Orderbook 93% bid-weighted (bullish)",
+        "weight": 1.72
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcb0 $BTC] @0xAralez (\ud83d\udc4d13) $BTC bull trap thesis: $64K \u2192 $70K \u2192 $43K bottom \u2014 wait for fear then accumulate",
-        "weight": 0.8
+        "source": "oi_funding",
+        "signal": "OI -16.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-07T00:00:53.733195+00:00"
+    "timestamp": "2026-07-07T00:05:54.353384+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @Alaouicapital (\ud83d\udc4d58) ETH sitting under a $1,900 l",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @Alaouicapital (\ud83d\udc4d58) ETH sitting under a $1,900 l | oi_funding: OI -23.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -23.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcb0 $ETH] @Alaouicapital (\ud83d\udc4d58) ETH sitting under a $1,900 liquidation wall \u2014 massive short cluster at $1,800",
@@ -53,30 +60,10 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-07T00:00:53.733207+00:00"
+    "timestamp": "2026-07-07T00:05:54.353399+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u2600\ufe0f $SOL] @theAdamcrypto (\ud83d\udc4d1 \ud83d\udd041) $KAI fresh Solana launch ",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\u2600\ufe0f $SOL] @theAdamcrypto (\ud83d\udc4d1 \ud83d\udd041) $KAI fresh Solana launch \u2014 strong community, growing on-chain activity [score: 2.6]",
-        "weight": 1.69
-      }
-    ],
-    "timestamp": "2026-07-07T00:00:53.733214+00:00"
-  },
-  "HYPE": {
-    "score": -0.31,
+    "score": 0.3,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -87,12 +74,44 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Tentenwiins (\ud83d\udc4d3 \ud83d\udd041) Day 8 green, bullish on Jul | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI -4.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u2600\ufe0f $SOL] @theAdamcrypto (\ud83d\udc4d1 \ud83d\udd041) $KAI fresh Solana launch  | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI -116.0% 1h",
     "key_signals": [
       {
+        "source": "x_scanner",
+        "signal": "\u2022 [\u2600\ufe0f $SOL] @theAdamcrypto (\ud83d\udc4d1 \ud83d\udd041) $KAI fresh Solana launch \u2014 strong community, growing on-chain activity [score: 2.6]",
+        "weight": 1.69
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -116.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 20% bid (ask-heavy, bearish)",
-        "weight": 1.2
+        "signal": "Orderbook 69% bid-weighted (bullish)",
+        "weight": 0.76
+      }
+    ],
+    "timestamp": "2026-07-07T00:05:54.353409+00:00"
+  },
+  "HYPE": {
+    "score": 0.24,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Tentenwiins (\ud83d\udc4d3 \ud83d\udd041) Day 8 green, bullish on Jul | whale_monitor: Orderbook 77% bid-weighted (bullish) | oi_funding: OI -19.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -19.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
@@ -100,11 +119,11 @@
         "weight": 1.1
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
-        "weight": 0.72
+        "source": "whale_monitor",
+        "signal": "Orderbook 77% bid-weighted (bullish)",
+        "weight": 1.08
       }
     ],
-    "timestamp": "2026-07-07T00:00:53.733226+00:00"
+    "timestamp": "2026-07-07T00:05:54.353418+00:00"
   }
 }
