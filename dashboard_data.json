@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-08T12:00:06.846450+00:00",
+  "last_update": "2026-07-08T12:05:07.213745+00:00",
   "portfolio": {
     "value": 5029.46,
     "capital": 5029.46,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62300.5,
-    "ETH": 1747.75,
-    "SOL": 77.5165,
-    "HYPE": 68.8645
+    "BTC": 62294.5,
+    "ETH": 1746.65,
+    "SOL": 77.4635,
+    "HYPE": 68.7365
   },
   "positions": {},
   "stats": {
@@ -701,11 +701,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-07T20:25:18.346333+00:00",
-      "v": 5038.83,
-      "p": 0.78
-    },
     {
       "t": "2026-07-07T20:30:18.913498+00:00",
       "v": 5034.9,
@@ -1700,6 +1695,11 @@
       "t": "2026-07-08T12:00:06.846450+00:00",
       "v": 5029.46,
       "p": 0.59
+    },
+    {
+      "t": "2026-07-08T12:05:07.213745+00:00",
+      "v": 5029.46,
+      "p": 0.59
     }
   ],
   "ai_history": [
@@ -1746,17 +1746,24 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.0,
-      "confidence": 0.3,
+      "score": 0.25,
+      "confidence": 0.7,
       "sources": [
-        "polymarket"
+        "whale_monitor",
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 4,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: ing unlikely \u2022 BTC reach $65K in July: **68.5%** \u25bc9.0pp \u2014 $6",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | polymarket: ing unlikely \u2022 BTC reach $65K in July: **68.5%** \u25bc9.0pp \u2014 $6 | oi_funding: OI +23.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +23.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "polymarket",
           "signal": "ing unlikely \u2022 BTC reach $65K in July: **68.5%** \u25bc9.0pp \u2014 $65K still in play \u2022 BTC dip to $57.5K in July: **40.5%** \u25b27.0",
@@ -1768,7 +1775,7 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-08T12:00:06.744978+00:00"
+      "timestamp": "2026-07-08T12:05:07.132377+00:00"
     },
     "ETH": {
       "score": 0.25,
@@ -1782,7 +1789,7 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $ETH] @cryptojack (\ud83d\udc4d34 \ud83d\udd043) Whale opens $19.8M ETH long  | polymarket: to $57.5K in July: **40.5%** \u25b27.0pp \u2014 downside risk elevated | oi_funding: OI -11.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $ETH] @cryptojack (\ud83d\udc4d34 \ud83d\udd043) Whale opens $19.8M ETH long  | polymarket: to $57.5K in July: **40.5%** \u25b27.0pp \u2014 downside risk elevated | oi_funding: OI -15.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1791,7 +1798,7 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -11.0% 1h",
+          "signal": "OI -15.0% 1h",
           "weight": 1.44
         },
         {
@@ -1800,21 +1807,20 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-08T12:00:06.745014+00:00"
+      "timestamp": "2026-07-08T12:05:07.132393+00:00"
     },
     "SOL": {
-      "score": -0.15,
-      "confidence": 0.84,
+      "score": 0.52,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor",
-        "oi_funding"
+        "whale_monitor"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\ude80 $SOL] @gugugaagha $CATWIF $498K\u2192$2.1M (4.22\u00d7) \u2014 another | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI -30.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\ude80 $SOL] @gugugaagha $CATWIF $498K\u2192$2.1M (4.22\u00d7) \u2014 another | whale_monitor: Orderbook 37% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1822,21 +1828,16 @@
           "weight": 1.62
         },
         {
-          "source": "oi_funding",
-          "signal": "OI -30.0% 1h",
-          "weight": 1.44
-        },
-        {
           "source": "whale_monitor",
-          "signal": "Orderbook 33% bid (ask-heavy, bearish)",
-          "weight": 0.68
+          "signal": "Orderbook 37% bid (ask-heavy, bearish)",
+          "weight": 0.52
         }
       ],
-      "timestamp": "2026-07-08T12:00:06.745050+00:00"
+      "timestamp": "2026-07-08T12:05:07.132401+00:00"
     },
     "HYPE": {
-      "score": 0.47,
-      "confidence": 0.84,
+      "score": 0.67,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1844,9 +1845,9 @@
       ],
       "signal_count": 4,
       "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @CoinWingsAI Multi-exchange arbitrage terminal l | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | oi_funding: OI +16.0% 1h, funding 0.0013%",
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @CoinWingsAI Multi-exchange arbitrage terminal l | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +82.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1855,7 +1856,7 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +16.0% 1h, funding 0.0013%",
+          "signal": "OI +82.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -1864,7 +1865,7 @@
           "weight": 1.2
         }
       ],
-      "timestamp": "2026-07-08T12:00:06.745071+00:00"
+      "timestamp": "2026-07-08T12:05:07.132410+00:00"
     }
   },
   "config": {
