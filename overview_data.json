@@ -1,28 +1,16 @@
 {
-  "exported_at": "2026-07-08T11:50:13.293221+08:00",
-  "exported_at_utc": "2026-07-08T03:50:13.293224+00:00",
+  "exported_at": "2026-07-08T12:00:14.887036+08:00",
+  "exported_at_utc": "2026-07-08T04:00:14.887039+00:00",
   "portfolio": {
-    "value": 5053.376013491523,
+    "value": 5008.365940250576,
     "initial": 5000.0,
-    "pnl": 53.376013491522826,
-    "pnl_pct": 1.0675202698304564,
+    "pnl": 8.365940250576386,
+    "pnl_pct": 0.16731880501152774,
     "peak": 5076.7203404422935,
-    "open_positions": 2,
+    "open_positions": 1,
     "max_positions": 4
   },
   "positions": {
-    "ETH": {
-      "direction": "LONG",
-      "entry_price": 1797.35,
-      "size": 0.9371989681731128,
-      "stop_loss": 1743.475,
-      "take_profit": 1905.1,
-      "entry_time": "2026-07-07T16:00:48.380259+00:00",
-      "entry_ts": 1783440048.380264,
-      "strategy": "trend",
-      "confidence": 0.75,
-      "reason": "Sentiment-driven LONG (score +1.00, conf 0.6, momentum confirmed)"
-    },
     "SOL": {
       "direction": "SHORT",
       "entry_price": 80.1385,
@@ -37,23 +25,6 @@
     }
   },
   "closed_trades": [
-    {
-      "pair": "HYPE",
-      "direction": "LONG",
-      "entry_price": 67.6585,
-      "exit_price": 70.2575,
-      "size": 19.01772304251399,
-      "pnl": 48.0632,
-      "pnl_pct": 3.74,
-      "entry_time": "2026-07-03T09:45:39.368906+00:00",
-      "exit_time": "2026-07-03T15:25:15.511569+00:00",
-      "duration_hours": 5.7,
-      "exit_reason": "regime_override",
-      "strategy": "trend",
-      "fees_paid": 1.2693,
-      "funding_cost": 0.0945,
-      "total_cost": 1.3639
-    },
     {
       "pair": "BTC",
       "direction": "LONG",
@@ -376,19 +347,26 @@
       "fees_paid": 1.0413,
       "funding_cost": -0.0332,
       "total_cost": 1.0081
+    },
+    {
+      "pair": "ETH",
+      "direction": "LONG",
+      "entry_price": 1797.35,
+      "exit_price": 1751.25,
+      "size": 0.9371989681731128,
+      "pnl": -45.0101,
+      "pnl_pct": -2.67,
+      "entry_time": "2026-07-07T16:00:48.380259+00:00",
+      "exit_time": "2026-07-08T04:00:14.012980+00:00",
+      "duration_hours": 12.0,
+      "exit_reason": "signal_exit",
+      "strategy": "trend",
+      "fees_paid": 1.5592,
+      "funding_cost": 0.246,
+      "total_cost": 1.8052
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-07T12:20:21.553083+00:00",
-      "v": 5044.34,
-      "p": 0.89
-    },
-    {
-      "t": "2026-07-07T12:25:21.908695+00:00",
-      "v": 5048.23,
-      "p": 0.96
-    },
     {
       "t": "2026-07-07T12:30:22.396054+00:00",
       "v": 5046.89,
@@ -1378,25 +1356,34 @@
       "t": "2026-07-08T03:50:11.367208+00:00",
       "v": 5035.28,
       "p": 0.71
+    },
+    {
+      "t": "2026-07-08T03:55:11.946002+00:00",
+      "v": 5035.41,
+      "p": 0.71
+    },
+    {
+      "t": "2026-07-08T04:00:12.438034+00:00",
+      "v": 5035.13,
+      "p": 0.7
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.9,
+      "score": -1.0,
       "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
-        "news_agent",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 10,
+      "signal_count": 8,
       "convergence": true,
-      "convergence_strength": 5,
+      "convergence_strength": 4,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 5-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @OnchainLens (\ud83d\udc4d8 \ud83d\udd043) Whale 0x77ee opened $31.08M  | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | news_agent: iefing**  \ud83d\udd34 **Breaking / High Impact** \u2022 Iran shoots down US",
+      "narrative": "\ud83d\udcc9 4-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @OnchainLens (\ud83d\udc4d8 \ud83d\udd043) Whale 0x77ee opened $31.08M  | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | polymarket: timent  **Key Probabilities:**  | Category | Top Market | Pr",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -1404,17 +1391,17 @@
           "weight": 1.44
         },
         {
-          "source": "news_agent",
-          "signal": "iefing**  \ud83d\udd34 **Breaking / High Impact** \u2022 Iran shoots down US MQ-9 Reaper drone, Bitcoin drops below $73K as nearly $1B i",
-          "weight": 1.2
+          "source": "whale_monitor",
+          "signal": "Orderbook 28% bid (ask-heavy, bearish)",
+          "weight": 0.88
         },
         {
-          "source": "news_agent",
-          "signal": "fing.com/iran-closes-strait-of-hormuz-strikes-us-bases-amid-rising-tensions/>  \ud83d\udfe1 **Notable** \u2022 Calle demos NFC tap-to-pa",
-          "weight": 0.98
+          "source": "polymarket",
+          "signal": "timent  **Key Probabilities:**  | Category | Top Market | Probability | 24h | |----------|-----------|-------------|----",
+          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-08T03:50:11.279971+00:00"
+      "timestamp": "2026-07-08T04:00:12.347422+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -1434,7 +1421,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-08T03:50:11.279983+00:00"
+      "timestamp": "2026-07-08T04:00:12.347434+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -1460,7 +1447,7 @@
           "weight": 1.16
         }
       ],
-      "timestamp": "2026-07-08T03:50:11.279992+00:00"
+      "timestamp": "2026-07-08T04:00:12.347443+00:00"
     },
     "HYPE": {
       "score": -0.63,
@@ -1492,7 +1479,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-08T03:50:11.280001+00:00"
+      "timestamp": "2026-07-08T04:00:12.347452+00:00"
     }
   },
   "pair_strategies": {
@@ -1768,47 +1755,47 @@
       {
         "text": "**Job ID:** 8bd6a73fc440",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
-        "text": "**Run Time:** 2026-07-08 11:39:26",
+        "text": "**Run Time:** 2026-07-08 11:53:59",
         "sentiment": 0,
-        "time": "2026-07-08 11:39"
+        "time": "2026-07-08 11:53"
       },
       {
         "text": "**Schedule:** 7,22,37,52 * * * *",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "Run the news agent script and format breaking news as a Discord message (delivery is handled automatically).",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "**DB FACTS (DO NOT investigate \u2014 these are verified):**",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "- DB path: /Users/mojoai/.hermes/swarm/data/agents.db",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "- Table: crypto_news",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "- Columns: id, title, url, source, published_at, category, impact_rating, affected_tokens, summary, fetched_at, last_reported_at",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "- Date filter: use fetched_at (format: \"2026-04-18 14:52:30\") with SQLite datetime('now','-N minutes')",
@@ -1818,80 +1805,80 @@
       {
         "text": "- The script now does blanket mark-as-reported automatically \u2014 just verify 0 remaining",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "- by_impact in JSON is IN-MEMORY only \u2014 always query DB for actual unreported articles",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "- Ignore empty DBs at ~/.hermes/hermes-agent/news*.db and ~/.hermes/scripts/news*.db \u2014 they're red herrings",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "- notable_keywords dual-pass is REQUIRED \u2014 the classifier misses ~90% of important articles",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "1. **Run scan:** `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/news_agent.py 2>&1`",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "2. **Parse the JSON output** from the script (last JSON block in output).",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "3. **Query DB for unreported articles (DO NOT skip this \u2014 by_impact JSON is misleading):**",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 -c \"",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       },
       {
         "text": "import sqlite3, json, html",
         "sentiment": 0,
-        "time": "1783481966.3127956"
+        "time": "1783482839.2348251"
       }
     ],
-    "generated": "2026-07-08T03:50:11.300248Z"
+    "generated": "2026-07-08T04:00:12.367677Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "11:47",
-      "age_minutes": 3,
+      "age_minutes": 13,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "11:41",
-      "age_minutes": 9,
+      "age_minutes": 19,
       "status": "fresh"
     },
     "news_agent": {
-      "last_run": "11:39",
-      "age_minutes": 11,
+      "last_run": "11:53",
+      "age_minutes": 6,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "09:10",
-      "age_minutes": 160,
+      "age_minutes": 170,
       "status": "fresh"
     },
     "synthesizer": {
       "last_run": "11:45",
-      "age_minutes": 4,
+      "age_minutes": 15,
       "status": "fresh"
     }
   },
@@ -2277,15 +2264,15 @@
     }
   ],
   "stats": {
-    "total_trades": 33,
+    "total_trades": 34,
     "wins": 18,
-    "losses": 15,
-    "win_rate": 54.5,
+    "losses": 16,
+    "win_rate": 52.9,
     "avg_win": 21.09,
-    "avg_loss": -17.79,
+    "avg_loss": -19.49,
     "best_trade": 54.93,
-    "worst_trade": -40.05,
-    "total_realized_pnl": 112.8
+    "worst_trade": -45.01,
+    "total_realized_pnl": 67.79
   },
   "pair_stats": {
     "BTC": {
@@ -2296,11 +2283,11 @@
       "win_rate": 28.6
     },
     "ETH": {
-      "trades": 8,
+      "trades": 9,
       "wins": 4,
-      "losses": 4,
-      "pnl": 25.53,
-      "win_rate": 50.0
+      "losses": 5,
+      "pnl": -19.48,
+      "win_rate": 44.4
     },
     "SOL": {
       "trades": 9,
@@ -2318,12 +2305,14 @@
     }
   },
   "prices": {
-    "BTC": 62884.5,
-    "ETH": 1755.05,
-    "SOL": 78.9045,
-    "HYPE": 68.0985
+    "BTC": 62732.0,
+    "ETH": 1751.25,
+    "SOL": 78.6155,
+    "HYPE": 67.9235
   },
-  "actions": [],
+  "actions": [
+    "\u274c CLOSED LONG ETH @ $1751.2500 | P&L: $-45.01 (-2.7%) | Reason: signal_exit"
+  ],
   "ai_history": [
     {
       "timestamp": "2026-07-02T10:27:44.614639+00:00",
@@ -2700,11 +2689,11 @@
       "win_rate": 44.4
     },
     "signal_exit": {
-      "count": 6,
-      "pnl": 113.47,
-      "fees": 8.67,
+      "count": 7,
+      "pnl": 68.46,
+      "fees": 10.23,
       "wins": 6,
-      "win_rate": 100.0
+      "win_rate": 85.7
     }
   },
   "pruned_pairs": {
