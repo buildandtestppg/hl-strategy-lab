@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-08T20:40:09.319630+00:00",
+  "last_update": "2026-07-08T20:45:09.865168+00:00",
   "portfolio": {
-    "value": 5008.27,
+    "value": 5008.29,
     "capital": 5015.13,
     "initial": 5000.0,
-    "pnl": 8.27,
+    "pnl": 8.29,
     "pnl_pct": 0.17,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 62147.5,
-    "ETH": 1736.45,
-    "SOL": 77.1145,
-    "HYPE": 67.0925
+    "BTC": 62169.5,
+    "ETH": 1737.35,
+    "SOL": 77.1155,
+    "HYPE": 67.131
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 77.435,
-      "current_price": 77.1145,
+      "current_price": 77.1155,
       "size": 21.38181193192617,
-      "unrealized_pnl": -6.86,
+      "unrealized_pnl": -6.85,
       "unrealized_pnl_pct": -0.41,
       "stop_loss": 75.08875,
       "take_profit": 82.1275,
       "strategy": "stochastic",
       "entry_time": "2026-07-08T20:05:06.514007+00:00",
-      "duration_hours": 0.6,
+      "duration_hours": 0.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.012
+      "unrealized_funding": 0.0138
     }
   },
   "stats": {
@@ -42,9 +42,7 @@
     "worst_trade": -45.01,
     "total_realized_pnl": 78.68
   },
-  "actions": [
-    "\ud83e\udde0 HYPE: TA signal SHORT blocked by sentiment overlay"
-  ],
+  "actions": [],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -736,11 +734,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-08T05:20:20.985516+00:00",
-      "v": 5034.8,
-      "p": 0.7
-    },
     {
       "t": "2026-07-08T05:25:21.591147+00:00",
       "v": 5034.8,
@@ -1735,6 +1728,11 @@
       "t": "2026-07-08T20:40:09.319630+00:00",
       "v": 5008.27,
       "p": 0.17
+    },
+    {
+      "t": "2026-07-08T20:45:09.865168+00:00",
+      "v": 5008.29,
+      "p": 0.17
     }
   ],
   "ai_history": [
@@ -1781,19 +1779,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.21,
-      "confidence": 0.9,
+      "score": 0.34,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
-        "news_agent",
-        "oi_funding"
+        "news_agent"
       ],
-      "signal_count": 6,
+      "signal_count": 5,
       "convergence": true,
-      "convergence_strength": 3,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC Bottom] @MattMena (\ud83d\udd042) Previous cycle data says we | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | news_agent: o News Brief** \u2014 Jul 8 20:37 UTC  **\ud83d\udfe1 Geopolitical / Macro**",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC Bottom] @MattMena (\ud83d\udd042) Previous cycle data says we | whale_monitor: Orderbook 68% bid-weighted (bullish) | news_agent: o News Brief** \u2014 Jul 8 20:37 UTC  **\ud83d\udfe1 Geopolitical / Macro**",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1801,46 +1798,20 @@
           "weight": 1.69
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 13% bid (ask-heavy, bearish)",
-          "weight": 1.48
-        },
-        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $BTC ATH Call] @Qstorm1774 $BTC 5-6 candles from new ATH. $144K-$165K target. 58 = bottom [score: 1.5]",
           "weight": 1.2
-        }
-      ],
-      "timestamp": "2026-07-08T20:40:09.232202+00:00"
-    },
-    "ETH": {
-      "score": -1.0,
-      "confidence": 0.74,
-      "sources": [
-        "x_scanner",
-        "oi_funding"
-      ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd04 $ETH ETFs] @WhisprNews ETH ETF outflows halted after 8  | oi_funding: OI -9.0% 1h",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -9.0% 1h",
-          "weight": 1.44
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd04 $ETH ETFs] @WhisprNews ETH ETF outflows halted after 8 consecutive weeks \u2014 potential inflection point [score: 1.6]",
-          "weight": 1.28
+          "source": "news_agent",
+          "signal": "o News Brief** \u2014 Jul 8 20:37 UTC  **\ud83d\udfe1 Geopolitical / Macro** \u2022 US strikes on Iran rattle markets as Bitcoin's safe-haven",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-08T20:40:09.232218+00:00"
+      "timestamp": "2026-07-08T20:45:09.780625+00:00"
     },
-    "SOL": {
-      "score": -0.26,
+    "ETH": {
+      "score": -0.49,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
@@ -1850,7 +1821,33 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83e\ude99 $SOL Memes] @_Shadow36 (\ud83d\udc4d28 \ud83d\udd041) Trollface meme tokenize | whale_monitor: Orderbook 73% bid-weighted (bullish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd04 $ETH ETFs] @WhisprNews ETH ETF outflows halted after 8  | whale_monitor: Orderbook 61% bid-weighted (bullish)",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd04 $ETH ETFs] @WhisprNews ETH ETF outflows halted after 8 consecutive weeks \u2014 potential inflection point [score: 1.6]",
+          "weight": 1.28
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 61% bid-weighted (bullish)",
+          "weight": 0.44
+        }
+      ],
+      "timestamp": "2026-07-08T20:45:09.780640+00:00"
+    },
+    "SOL": {
+      "score": -0.34,
+      "confidence": 0.5,
+      "sources": [
+        "x_scanner",
+        "whale_monitor"
+      ],
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83e\ude99 $SOL Memes] @_Shadow36 (\ud83d\udc4d28 \ud83d\udd041) Trollface meme tokenize | whale_monitor: Orderbook 69% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1859,37 +1856,31 @@
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 73% bid-weighted (bullish)",
-          "weight": 0.92
+          "signal": "Orderbook 69% bid-weighted (bullish)",
+          "weight": 0.76
         }
       ],
-      "timestamp": "2026-07-08T20:40:09.232228+00:00"
+      "timestamp": "2026-07-08T20:45:09.780648+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 0.74,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
-        "whale_monitor"
+        "x_scanner"
       ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE RWA] @VictorTopDefiG Variational listing RWA pair | whale_monitor: Orderbook 61% bid-weighted (bullish)",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE RWA] @VictorTopDefiG Variational listing RWA pair",
       "key_signals": [
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE RWA] @VictorTopDefiG Variational listing RWA pairs daily. $200b+ volume, $1.2b OI, token not out yet [score: ",
           "weight": 0.98
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 61% bid-weighted (bullish)",
-          "weight": 0.44
         }
       ],
-      "timestamp": "2026-07-08T20:40:09.232236+00:00"
+      "timestamp": "2026-07-08T20:45:09.780654+00:00"
     }
   },
   "config": {
