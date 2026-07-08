@@ -1,105 +1,131 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.42,
+    "confidence": 0.7,
     "sources": [
+      "news_agent",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | polymarket: ey BTC Price Targets (July 8) - BTC above $62K today: **52.2 | oi_funding: OI +16.0% 1h, funding 0.0013%",
+    "signal_count": 5,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: /www.coindesk.com/markets/2026/07/08/crypto-vc-paradigm-laun | polymarket: ey BTC Price Targets (July 8) - BTC above $62K today: **52.2 | oi_funding: OI -197.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +16.0% 1h, funding 0.0013%",
+        "signal": "OI -197.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "/www.coindesk.com/markets/2026/07/08/crypto-vc-paradigm-launches-usd1-2-billion-ai-fund-as-it-broadens-beyond-digital-as",
+        "weight": 1.2
       },
       {
         "source": "polymarket",
         "signal": "ey BTC Price Targets (July 8) - BTC above $62K today: **52.2%** (-36pp, mechanical expiry repricing) - BTC dip to $57.5K",
         "weight": 0.78
-      },
-      {
-        "source": "polymarket",
-        "signal": "K today: **52.2%** (-36pp, mechanical expiry repricing) - BTC dip to $57.5K in July: **45.5%** (+14pp) - BTC dip to $60K",
-        "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-08T15:20:30.552201+00:00"
+    "timestamp": "2026-07-08T15:25:31.312103+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.14,
+    "confidence": 0.7,
     "sources": [
+      "x_scanner",
+      "news_agent",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | polymarket: pp) - BTC dip to $60K in July: **74.0%** (+19pp) - BTC reach | oi_funding: OI +67.0% 1h, funding 0.0013%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +67.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
-      {
-        "source": "polymarket",
-        "signal": "pp) - BTC dip to $60K in July: **74.0%** (+19pp) - BTC reach $70K in July: **17.5%** (-10pp) - BTC dip to $50K by Dec 31",
-        "weight": 0.78
-      }
-    ],
-    "timestamp": "2026-07-08T15:20:30.552215+00:00"
-  },
-  "SOL": {
-    "score": 0.26,
-    "confidence": 0.5,
-    "sources": [
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 2,
+    "signal_count": 5,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI +46.0% 1h, funding 0.0013%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: AI-Agents narrative dominates this cycle with Injective's ma | news_agent: ts/2026/07/08/crypto-vc-paradigm-launches-usd1-2-billion-ai- | polymarket: pp) - BTC dip to $60K in July: **74.0%** (+19pp) - BTC reach",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +46.0% 1h, funding 0.0013%",
+        "signal": "OI -234.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "ts/2026/07/08/crypto-vc-paradigm-launches-usd1-2-billion-ai-fund-as-it-broadens-beyond-digital-assets-bbg/>  \u26a1 Token act",
+        "weight": 1.2
+      },
+      {
+        "source": "x_scanner",
+        "signal": "AI-Agents narrative dominates this cycle with Injective's major platform rebrand. $ETH shorts building while DeFi blue c",
+        "weight": 0.8
+      }
+    ],
+    "timestamp": "2026-07-08T15:25:31.312118+00:00"
+  },
+  "SOL": {
+    "score": 0.32,
+    "confidence": 0.84,
+    "sources": [
+      "whale_monitor",
+      "news_agent",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 84% bid-weighted (bullish) | news_agent: rypto-vc-paradigm-launches-usd1-2-billion-ai-fund-as-it-broa | oi_funding: OI -67.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -67.0% 1h",
         "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 29% bid (ask-heavy, bearish)",
-        "weight": 0.84
+        "signal": "Orderbook 84% bid-weighted (bullish)",
+        "weight": 1.36
+      },
+      {
+        "source": "news_agent",
+        "signal": "rypto-vc-paradigm-launches-usd1-2-billion-ai-fund-as-it-broadens-beyond-digital-assets-bbg/>  \u26a1 Token activity: BTC (7),",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-07-08T15:20:30.552224+00:00"
+    "timestamp": "2026-07-08T15:25:31.312129+00:00"
   },
   "HYPE": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 0.09,
+    "confidence": 0.84,
     "sources": [
+      "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -80.0% 1h",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @EmberCN (\ud83d\udc4d2 \ud83d\udd041) Whale building large-scale SK H | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI -67.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -80.0% 1h",
+        "signal": "OI -67.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 76% bid-weighted (bullish)",
+        "weight": 1.04
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $HYPE] @EmberCN (\ud83d\udc4d2 \ud83d\udd041) Whale building large-scale SK Hynix longs on Hyperliquid after US market opens. Largest SKH",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-08T15:20:30.552230+00:00"
+    "timestamp": "2026-07-08T15:25:31.312137+00:00"
   }
 }
