@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-08T22:20:21.327564+00:00",
+  "last_update": "2026-07-08T22:25:21.958350+00:00",
   "portfolio": {
-    "value": 5010.27,
+    "value": 5012.57,
     "capital": 5015.13,
     "initial": 5000.0,
-    "pnl": 10.27,
-    "pnl_pct": 0.21,
+    "pnl": 12.57,
+    "pnl_pct": 0.25,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 62200.5,
-    "ETH": 1737.75,
-    "SOL": 77.2095,
-    "HYPE": 67.0485
+    "BTC": 62273.5,
+    "ETH": 1739.65,
+    "SOL": 77.3175,
+    "HYPE": 67.1005
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 77.435,
-      "current_price": 77.2095,
+      "current_price": 77.3175,
       "size": 21.38181193192617,
-      "unrealized_pnl": -4.87,
-      "unrealized_pnl_pct": -0.29,
+      "unrealized_pnl": -2.56,
+      "unrealized_pnl_pct": -0.15,
       "stop_loss": 75.08875,
       "take_profit": 82.1275,
       "strategy": "stochastic",
       "entry_time": "2026-07-08T20:05:06.514007+00:00",
       "duration_hours": 2.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0465
+      "unrealized_funding": 0.0483
     }
   },
   "stats": {
@@ -42,7 +42,9 @@
     "worst_trade": -45.01,
     "total_realized_pnl": 78.68
   },
-  "actions": [],
+  "actions": [
+    "\ud83e\udde0 HYPE: TA signal SHORT blocked by sentiment overlay"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -734,11 +736,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-08T06:55:31.917992+00:00",
-      "v": 5033.15,
-      "p": 0.66
-    },
     {
       "t": "2026-07-08T07:00:32.484747+00:00",
       "v": 5032.14,
@@ -1733,6 +1730,11 @@
       "t": "2026-07-08T22:20:21.327564+00:00",
       "v": 5010.27,
       "p": 0.21
+    },
+    {
+      "t": "2026-07-08T22:25:21.958350+00:00",
+      "v": 5012.57,
+      "p": 0.25
     }
   ],
   "ai_history": [
@@ -1779,41 +1781,8 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.17,
-      "confidence": 0.9,
-      "sources": [
-        "x_scanner",
-        "whale_monitor",
-        "news_agent",
-        "oi_funding"
-      ],
-      "signal_count": 7,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: Reddit: 403 blocked. X-only. AI Agents led (51 sigs). $BTC b | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | news_agent: t** for Invesco, Bitwise funds <https://cryptobriefing.com/b",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -12.0% 1h",
-          "weight": 1.44
-        },
-        {
-          "source": "news_agent",
-          "signal": "t** for Invesco, Bitwise funds <https://cryptobriefing.com/binance-wallet-plume-yield-vault-invesco-bitwise/>  \ud83d\udfe1 **Fed m",
-          "weight": 0.98
-        },
-        {
-          "source": "news_agent",
-          "signal": "Bitwise funds <https://cryptobriefing.com/binance-wallet-plume-yield-vault-invesco-bitwise/>  \ud83d\udfe1 **Fed minutes: rate hike",
-          "weight": 0.98
-        }
-      ],
-      "timestamp": "2026-07-08T22:20:21.213266+00:00"
-    },
-    "ETH": {
-      "score": 0.76,
-      "confidence": 1.0,
+      "score": 0.05,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1821,13 +1790,44 @@
       ],
       "signal_count": 5,
       "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @0x2569 (\ud83d\udc4d28 \ud83d\udd043) Is this the type of CEO that  $E | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +52.0% 1h, funding 0.0013%",
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: Reddit: 403 blocked. X-only. AI Agents led (51 sigs). $BTC b | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI +42.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +52.0% 1h, funding 0.0013%",
+          "signal": "OI +42.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "Reddit: 403 blocked. X-only. AI Agents led (51 sigs). $BTC bearish consolidation, $ETH ~$1511. Trump insider: $60M BTC+E",
+          "weight": 0.8
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd13 $BTC] @DeFiMidas (\ud83d\udc4d1 \ud83d\udd041) BREAKING:  \"TRUMP INSIDER\" WITH A 100% WIN RATE JUST OPENED A $30.6M  $BTC  SHORT AND $29.",
+          "weight": 0.65
+        }
+      ],
+      "timestamp": "2026-07-08T22:25:21.877224+00:00"
+    },
+    "ETH": {
+      "score": 0.71,
+      "confidence": 0.74,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @0x2569 (\ud83d\udc4d28 \ud83d\udd043) Is this the type of CEO that  $E | oi_funding: OI +9.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +9.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -1841,53 +1841,65 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-08T22:20:21.213287+00:00"
+      "timestamp": "2026-07-08T22:25:21.877241+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.29,
+      "confidence": 0.5,
       "sources": [
         "whale_monitor",
         "oi_funding"
       ],
       "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 72% bid-weighted (bullish) | oi_funding: OI +27.0% 1h, funding 0.0013%",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +27.0% 1h, funding 0.0013%",
-          "weight": 1.44
+          "signal": "OI +6.0% 1h, funding 0.0013%",
+          "weight": 1.08
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 72% bid-weighted (bullish)",
-          "weight": 0.88
+          "signal": "Orderbook 35% bid (ask-heavy, bearish)",
+          "weight": 0.6
         }
       ],
-      "timestamp": "2026-07-08T22:20:21.213296+00:00"
+      "timestamp": "2026-07-08T22:25:21.877249+00:00"
     },
     "HYPE": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.66,
+      "confidence": 0.84,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @sssz_zzz (\ud83d\udc4d1 \ud83d\udd040) I did over $50 million in volu",
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @sssz_zzz (\ud83d\udc4d1 \ud83d\udd040) I did over $50 million in volu | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +8.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +8.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @sssz_zzz (\ud83d\udc4d1 \ud83d\udd040) I did over $50 million in volume trading perps on Hyperliquid.   Profit: $8k   My best tra",
           "weight": 0.65
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 36% bid (ask-heavy, bearish)",
+          "weight": 0.56
         }
       ],
-      "timestamp": "2026-07-08T22:20:21.213302+00:00"
+      "timestamp": "2026-07-08T22:25:21.877258+00:00"
     }
   },
   "config": {
