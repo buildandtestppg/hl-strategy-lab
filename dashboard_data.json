@@ -1,48 +1,34 @@
 {
-  "last_update": "2026-07-09T21:00:03.920433+00:00",
+  "last_update": "2026-07-09T21:05:04.517086+00:00",
   "portfolio": {
-    "value": 4975.57,
-    "capital": 4990.54,
+    "value": 4975.41,
+    "capital": 4975.41,
     "initial": 5000.0,
-    "pnl": -24.43,
+    "pnl": -24.59,
     "pnl_pct": -0.49,
-    "open_positions": 1
+    "open_positions": 0
   },
   "prices": {
-    "BTC": 63317.5,
-    "ETH": 1748.15,
-    "SOL": 78.118,
-    "HYPE": 67.2935
+    "BTC": 63385.5,
+    "ETH": 1750.15,
+    "SOL": 78.2275,
+    "HYPE": 67.3665
   },
-  "positions": {
-    "HYPE": {
-      "direction": "LONG",
-      "entry_price": 68.0305,
-      "current_price": 67.2935,
-      "size": 20.643392698893884,
-      "unrealized_pnl": -14.98,
-      "unrealized_pnl_pct": -1.07,
-      "stop_loss": 65.61375,
-      "take_profit": 72.864,
-      "strategy": "trend",
-      "entry_time": "2026-07-09T15:00:24.398664+00:00",
-      "duration_hours": 6.0,
-      "funding_rate": -0.002863,
-      "unrealized_funding": -0.2384
-    }
-  },
+  "positions": {},
   "stats": {
-    "total_trades": 41,
+    "total_trades": 42,
     "wins": 20,
-    "losses": 21,
-    "win_rate": 48.8,
+    "losses": 22,
+    "win_rate": 47.6,
     "avg_win": 20.57,
-    "avg_loss": -16.73,
+    "avg_loss": -16.66,
     "best_trade": 54.93,
     "worst_trade": -45.01,
-    "total_realized_pnl": 60.1
+    "total_realized_pnl": 44.96
   },
-  "actions": [],
+  "actions": [
+    "\u274c CLOSED LONG HYPE @ $67.3665 | P&L: $-15.13 (-1.1%) | Reason: signal_exit"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -740,6 +726,23 @@
       "fees_paid": 1.5078,
       "funding_cost": 0.0596,
       "total_cost": 1.5674
+    },
+    {
+      "pair": "HYPE",
+      "direction": "LONG",
+      "entry_price": 68.0305,
+      "exit_price": 67.3665,
+      "size": 20.643392698893884,
+      "pnl": -15.134,
+      "pnl_pct": -1.08,
+      "entry_time": "2026-07-09T15:00:24.398664+00:00",
+      "exit_time": "2026-07-09T21:05:05.924270+00:00",
+      "duration_hours": 6.1,
+      "exit_reason": "signal_exit",
+      "strategy": "trend",
+      "fees_paid": 1.3211,
+      "funding_cost": 0.1057,
+      "total_cost": 1.4268
     }
   ],
   "pair_strategies": {
@@ -750,11 +753,11 @@
   },
   "strategy_stats": {
     "trend": {
-      "trades": 27,
+      "trades": 28,
       "wins": 12,
-      "losses": 15,
-      "pnl": 28.82,
-      "win_rate": 44.4
+      "losses": 16,
+      "pnl": 13.69,
+      "win_rate": 42.9
     },
     "stochastic": {
       "trades": 10,
@@ -794,19 +797,14 @@
       "win_rate": 66.7
     },
     "HYPE": {
-      "trades": 11,
+      "trades": 12,
       "wins": 6,
-      "losses": 5,
-      "pnl": 44.13,
-      "win_rate": 54.5
+      "losses": 6,
+      "pnl": 28.99,
+      "win_rate": 50.0
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-09T05:35:13.653682+00:00",
-      "v": 4999.0,
-      "p": -0.02
-    },
     {
       "t": "2026-07-09T05:40:14.194598+00:00",
       "v": 4999.0,
@@ -1801,6 +1799,11 @@
       "t": "2026-07-09T21:00:03.920433+00:00",
       "v": 4975.57,
       "p": -0.49
+    },
+    {
+      "t": "2026-07-09T21:05:04.517086+00:00",
+      "v": 4975.41,
+      "p": -0.49
     }
   ],
   "ai_history": [
@@ -1847,17 +1850,17 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.75,
+      "score": 0.74,
       "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "oi_funding"
+        "whale_monitor"
       ],
       "signal_count": 5,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @dd_finance (\ud83d\udc4d165 \ud83d\udd048) BTC long analysis \u2014 trading | oi_funding: OI +29.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @dd_finance (\ud83d\udc4d165 \ud83d\udd048) BTC long analysis \u2014 trading | whale_monitor: Orderbook 78% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1875,21 +1878,20 @@
           "weight": 1.56
         }
       ],
-      "timestamp": "2026-07-09T21:00:03.811500+00:00"
+      "timestamp": "2026-07-09T21:05:04.436499+00:00"
     },
     "ETH": {
-      "score": -0.71,
-      "confidence": 0.84,
+      "score": -0.41,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "polymarket",
-        "oi_funding"
+        "polymarket"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @TimmeseyaC (\ud83d\udc4d21 \ud83d\udd0411) ETH flashing familiar setup | polymarket: 0pp) \u2022 BTC above $64K today: **21.5%** (+8.0pp) \u2014 pricing ar | oi_funding: OI -10.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @TimmeseyaC (\ud83d\udc4d21 \ud83d\udd0411) ETH flashing familiar setup | polymarket: 0pp) \u2022 BTC above $64K today: **21.5%** (+8.0pp) \u2014 pricing ar",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1897,43 +1899,38 @@
           "weight": 1.89
         },
         {
-          "source": "oi_funding",
-          "signal": "OI -10.0% 1h",
-          "weight": 1.44
-        },
-        {
           "source": "polymarket",
           "signal": "0pp) \u2022 BTC above $64K today: **21.5%** (+8.0pp) \u2014 pricing around $58-60K  **ETH Price Targets (July):** \u2022 ETH above $1,8",
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-09T21:00:03.811518+00:00"
+      "timestamp": "2026-07-09T21:05:04.436512+00:00"
     },
     "SOL": {
-      "score": -0.05,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "oi_funding"
+        "whale_monitor"
       ],
       "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $SOL] @GalsonVogerl $ANSEM hype shifted to $CASHCAT \u2014 S | oi_funding: OI -15.0% 1h",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $SOL] @GalsonVogerl $ANSEM hype shifted to $CASHCAT \u2014 S | whale_monitor: Orderbook 82% bid-weighted (bullish)",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -15.0% 1h",
-          "weight": 1.44
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcca $SOL] @GalsonVogerl $ANSEM hype shifted to $CASHCAT \u2014 SOL/ETH volume in constant motion chasing pumper-gems [score:",
           "weight": 1.3
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 82% bid-weighted (bullish)",
+          "weight": 1.28
         }
       ],
-      "timestamp": "2026-07-09T21:00:03.811527+00:00"
+      "timestamp": "2026-07-09T21:05:04.436520+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -1946,20 +1943,20 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI +17.0% 1h, funding 0.0010%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 72% bid-weighted (bullish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +17.0% 1h, funding 0.0010%",
-          "weight": 1.44
+          "signal": "OI +6.0% 1h, funding 0.0013%",
+          "weight": 1.08
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 73% bid-weighted (bullish)",
-          "weight": 0.92
+          "signal": "Orderbook 72% bid-weighted (bullish)",
+          "weight": 0.88
         }
       ],
-      "timestamp": "2026-07-09T21:00:03.811535+00:00"
+      "timestamp": "2026-07-09T21:05:04.436526+00:00"
     }
   },
   "config": {
@@ -1982,11 +1979,11 @@
       "win_rate": 43.8
     },
     "signal_exit": {
-      "count": 9,
-      "pnl": 56.73,
-      "fees": 12.94,
+      "count": 10,
+      "pnl": 41.6,
+      "fees": 14.26,
       "wins": 6,
-      "win_rate": 66.7
+      "win_rate": 60.0
     }
   },
   "pruned_pairs": {
