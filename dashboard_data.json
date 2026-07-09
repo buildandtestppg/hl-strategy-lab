@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-09T06:20:18.881215+00:00",
+  "last_update": "2026-07-09T06:25:19.351172+00:00",
   "portfolio": {
     "value": 4999.0,
     "capital": 4999.0,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62546.5,
-    "ETH": 1747.65,
-    "SOL": 78.1825,
-    "HYPE": 67.8545
+    "BTC": 62590.5,
+    "ETH": 1750.05,
+    "SOL": 78.3085,
+    "HYPE": 68.0845
   },
   "positions": {},
   "stats": {
@@ -752,11 +752,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-08T15:00:28.190241+00:00",
-      "v": 5011.99,
-      "p": 0.24
-    },
     {
       "t": "2026-07-08T15:05:28.636070+00:00",
       "v": 5008.47,
@@ -1751,6 +1746,11 @@
       "t": "2026-07-09T06:20:18.881215+00:00",
       "v": 4999.0,
       "p": -0.02
+    },
+    {
+      "t": "2026-07-09T06:25:19.351172+00:00",
+      "v": 4999.0,
+      "p": -0.02
     }
   ],
   "ai_history": [
@@ -1797,7 +1797,73 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -23.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -23.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-09T06:25:19.269239+00:00"
+    },
+    "ETH": {
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -38.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -38.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-09T06:25:19.269250+00:00"
+    },
+    "SOL": {
+      "score": -0.29,
+      "confidence": 0.5,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @ProfessorCornel (\ud83d\udc4d7 \ud83d\udd041) $BASE B20 trending \u2014 la | oi_funding: OI -26.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -26.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @ProfessorCornel (\ud83d\udc4d7 \ud83d\udd041) $BASE B20 trending \u2014 launch tokens on B20 Launchpad [2.0]",
+          "weight": 0.8
+        }
+      ],
+      "timestamp": "2026-07-09T06:25:19.269260+00:00"
+    },
+    "HYPE": {
+      "score": -1.0,
       "confidence": 0.74,
       "sources": [
         "whale_monitor",
@@ -1807,92 +1873,20 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +34.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | oi_funding: OI -30.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +34.0% 1h, funding 0.0013%",
+          "signal": "OI -30.0% 1h",
           "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 66% bid-weighted (bullish)",
-          "weight": 0.64
+          "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+          "weight": 1.36
         }
       ],
-      "timestamp": "2026-07-09T06:20:18.791681+00:00"
-    },
-    "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +45.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +45.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-07-09T06:20:18.791693+00:00"
-    },
-    "SOL": {
-      "score": 0.66,
-      "confidence": 0.84,
-      "sources": [
-        "x_scanner",
-        "whale_monitor",
-        "oi_funding"
-      ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @ProfessorCornel (\ud83d\udc4d7 \ud83d\udd041) $BASE B20 trending \u2014 la | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | oi_funding: OI +52.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +52.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @ProfessorCornel (\ud83d\udc4d7 \ud83d\udd041) $BASE B20 trending \u2014 launch tokens on B20 Launchpad [2.0]",
-          "weight": 0.8
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 35% bid (ask-heavy, bearish)",
-          "weight": 0.6
-        }
-      ],
-      "timestamp": "2026-07-09T06:20:18.791704+00:00"
-    },
-    "HYPE": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +58.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +58.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-07-09T06:20:18.791710+00:00"
+      "timestamp": "2026-07-09T06:25:19.269269+00:00"
     }
   },
   "config": {
