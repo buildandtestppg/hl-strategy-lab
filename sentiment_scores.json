@@ -1,42 +1,48 @@
 {
   "BTC": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 1.0,
     "sources": [
+      "x_scanner",
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI +70.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Cointelegraph (\ud83d\udc4d15 \ud83d\udd042) US homes up $100K since 2 | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI +70.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $BTC] @Cointelegraph (\ud83d\udc4d15 \ud83d\udd042) US homes up $100K since 2020 but ~10x cheaper in BTC per Fidelity [score: 3.6]",
+        "weight": 2.34
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $BTC/$ETH] @tradexharis (\ud83d\udc4d12 \ud83d\udd045) Longs printing. Whales trade on Blofin [score: 2.3]",
+        "weight": 1.84
+      },
       {
         "source": "oi_funding",
         "signal": "OI +70.0% 1h, funding 0.0013%",
         "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 70% bid-weighted (bullish)",
-        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-09T07:15:24.997264+00:00"
+    "timestamp": "2026-07-09T07:20:25.386210+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": -0.17,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f ETH] @ETH_Daily (\ud83d\udc4d13 \ud83d\udd042) Most people are missing the E | oi_funding: OI +72.0% 1h, funding 0.0013%",
+    "signal_count": 5,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @RANDYKELVINN Public wallet shorting $100M $ETH, al | oi_funding: OI +72.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -45,11 +51,16 @@
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7\ufe0f ETH] @ETH_Daily (\ud83d\udc4d13 \ud83d\udd042) Most people are missing the ETH angle behind Robinhood Chain. Activity on L2, fees go to ",
+        "signal": "\u2022 [$ETH] @RANDYKELVINN Public wallet shorting $100M $ETH, already down $2M, liquidation ~2.1K [score: 1.6]",
+        "weight": 1.28
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$ETH] @CW8900 ETH OI decreasing, Net Position Delta increasing \u2014 short squeeze forming [score: 1.8]",
         "weight": 1.17
       }
     ],
-    "timestamp": "2026-07-09T07:15:24.997279+00:00"
+    "timestamp": "2026-07-09T07:20:25.386225+00:00"
   },
   "SOL": {
     "score": 1.0,
@@ -75,20 +86,20 @@
         "weight": 1.08
       }
     ],
-    "timestamp": "2026-07-09T07:15:24.997288+00:00"
+    "timestamp": "2026-07-09T07:20:25.386234+00:00"
   },
   "HYPE": {
-    "score": -0.38,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: Markets in tight range \u2014 BTC holding levels, ETH rangebound  | oi_funding: OI -26.0% 1h",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: ETH rotation narrative strengthening \u2014 ETF inflows +$70M vs  | oi_funding: OI -26.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -97,10 +108,10 @@
       },
       {
         "source": "x_scanner",
-        "signal": "Markets in tight range \u2014 BTC holding levels, ETH rangebound with notable Robinhood Chain volume surge ($500M/24h, 10x). ",
-        "weight": 0.65
+        "signal": "ETH rotation narrative strengthening \u2014 ETF inflows +$70M vs BTC outflows -$85M, OI declining with short squeeze signals.",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-09T07:15:24.997296+00:00"
+    "timestamp": "2026-07-09T07:20:25.386242+00:00"
   }
 }
