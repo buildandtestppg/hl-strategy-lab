@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-09T23:20:20.005300+00:00",
+  "last_update": "2026-07-09T23:25:20.634376+00:00",
   "portfolio": {
     "value": 4975.41,
     "capital": 4975.41,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63078.5,
-    "ETH": 1742.05,
-    "SOL": 77.8185,
-    "HYPE": 66.9545
+    "BTC": 63268.5,
+    "ETH": 1747.05,
+    "SOL": 78.0545,
+    "HYPE": 67.1875
   },
   "positions": {},
   "stats": {
@@ -803,11 +803,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-09T07:55:29.867416+00:00",
-      "v": 4997.54,
-      "p": -0.05
-    },
     {
       "t": "2026-07-09T08:00:30.488057+00:00",
       "v": 4995.59,
@@ -1802,6 +1797,11 @@
       "t": "2026-07-09T23:20:20.005300+00:00",
       "v": 4975.41,
       "p": -0.49
+    },
+    {
+      "t": "2026-07-09T23:25:20.634376+00:00",
+      "v": 4975.41,
+      "p": -0.49
     }
   ],
   "ai_history": [
@@ -1848,24 +1848,30 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.15,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83e\uddca $BTC] @Morecryptoonl (\ud83d\udc4d6 \ud83d\udd040) $BTC Liquidation Heatmap L",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83e\uddca $BTC] @Morecryptoonl (\ud83d\udc4d6 \ud83d\udd040) $BTC Liquidation Heatmap L | whale_monitor: Orderbook 72% bid-weighted (bullish)",
       "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 72% bid-weighted (bullish)",
+          "weight": 0.88
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83e\uddca $BTC] @Morecryptoonl (\ud83d\udc4d6 \ud83d\udd040) $BTC Liquidation Heatmap Levels [1.8]",
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-09T23:20:19.918706+00:00"
+      "timestamp": "2026-07-09T23:25:20.554087+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -1891,10 +1897,10 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-09T23:20:19.918721+00:00"
+      "timestamp": "2026-07-09T23:25:20.554101+00:00"
     },
     "SOL": {
-      "score": 1.0,
+      "score": -1.0,
       "confidence": 0.3,
       "sources": [
         "whale_monitor"
@@ -1903,27 +1909,41 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 66% bid-weighted (bullish)",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 66% bid-weighted (bullish)",
-          "weight": 0.64
+          "signal": "Orderbook 28% bid (ask-heavy, bearish)",
+          "weight": 0.88
         }
       ],
-      "timestamp": "2026-07-09T23:20:19.918729+00:00"
+      "timestamp": "2026-07-09T23:25:20.554108+00:00"
     },
     "HYPE": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
+      "score": -1.0,
+      "confidence": 0.74,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-09T23:20:19.918731+00:00"
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | oi_funding: OI -5.0% 1h",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 27% bid (ask-heavy, bearish)",
+          "weight": 0.92
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
+        }
+      ],
+      "timestamp": "2026-07-09T23:25:20.554117+00:00"
     }
   },
   "config": {
