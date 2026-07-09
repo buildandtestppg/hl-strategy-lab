@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-09T14:00:14.282243+00:00",
+  "last_update": "2026-07-09T14:05:15.004242+00:00",
   "portfolio": {
     "value": 4987.94,
     "capital": 4987.94,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63051.5,
-    "ETH": 1747.25,
-    "SOL": 78.201,
-    "HYPE": 67.9485
+    "BTC": 63071.5,
+    "ETH": 1747.55,
+    "SOL": 78.226,
+    "HYPE": 68.0125
   },
   "positions": {},
   "stats": {
@@ -26,9 +26,7 @@
     "worst_trade": -45.01,
     "total_realized_pnl": 54.66
   },
-  "actions": [
-    "\ud83e\udde0 SOL: TA signal LONG blocked by sentiment overlay"
-  ],
+  "actions": [],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -771,11 +769,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-08T22:40:23.547626+00:00",
-      "v": 5013.08,
-      "p": 0.26
-    },
     {
       "t": "2026-07-08T22:40:34.173263+00:00",
       "v": 5013.25,
@@ -1770,6 +1763,11 @@
       "t": "2026-07-09T14:00:14.282243+00:00",
       "v": 4987.94,
       "p": -0.24
+    },
+    {
+      "t": "2026-07-09T14:05:15.004242+00:00",
+      "v": 4987.94,
+      "p": -0.24
     }
   ],
   "ai_history": [
@@ -1817,27 +1815,33 @@
   "sentiment": {
     "BTC": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +15.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 84% bid-weighted (bullish) | oi_funding: OI +43.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +15.0% 1h, funding 0.0013%",
+          "signal": "OI +43.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 84% bid-weighted (bullish)",
+          "weight": 1.36
         }
       ],
-      "timestamp": "2026-07-09T14:00:14.191243+00:00"
+      "timestamp": "2026-07-09T14:05:14.848022+00:00"
     },
     "ETH": {
-      "score": 0.22,
-      "confidence": 0.6,
+      "score": 0.84,
+      "confidence": 0.9,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1845,10 +1849,10 @@
         "oi_funding"
       ],
       "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 2,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $ETH] @Crypt0_Coral (\ud83d\udc4d54 \ud83d\udd046) THE $ETH DOUBLE BOTTOM IS  | whale_monitor: Orderbook 60% bid-weighted (bullish) | polymarket: o report briefly.  \ud83d\udcca **Polymarket Sentiment** (July 9, 2026)",
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @Crypt0_Coral (\ud83d\udc4d54 \ud83d\udd046) THE $ETH DOUBLE BOTTOM IS  | whale_monitor: Orderbook 62% bid-weighted (bullish) | polymarket: o report briefly.  \ud83d\udcca **Polymarket Sentiment** (July 9, 2026)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1857,7 +1861,7 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -23.0% 1h",
+          "signal": "OI +145.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -1866,10 +1870,10 @@
           "weight": 1.3
         }
       ],
-      "timestamp": "2026-07-09T14:00:14.191263+00:00"
+      "timestamp": "2026-07-09T14:05:14.848039+00:00"
     },
     "SOL": {
-      "score": -0.37,
+      "score": -0.15,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -1880,11 +1884,11 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u2699\ufe0f $SOL] @cryptomanran (\ud83d\udc4d6) Struggling to understand why  | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | oi_funding: OI +18.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u2699\ufe0f $SOL] @cryptomanran (\ud83d\udc4d6) Struggling to understand why  | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI +51.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +18.0% 1h, funding 0.0013%",
+          "signal": "OI +51.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -1894,35 +1898,29 @@
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 16% bid (ask-heavy, bearish)",
-          "weight": 1.36
+          "signal": "Orderbook 39% bid (ask-heavy, bearish)",
+          "weight": 0.44
         }
       ],
-      "timestamp": "2026-07-09T14:00:14.191276+00:00"
+      "timestamp": "2026-07-09T14:05:14.848048+00:00"
     },
     "HYPE": {
-      "score": 0.31,
-      "confidence": 0.84,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: $HYPE added to Bitwise 10 ETF replacing $AVAX/$DOT \u2014 major i | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI +29.0% 1h, funding 0.0004%",
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: $HYPE added to Bitwise 10 ETF replacing $AVAX/$DOT \u2014 major i | oi_funding: OI +52.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +29.0% 1h, funding 0.0004%",
+          "signal": "OI +52.0% 1h, funding 0.0013%",
           "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 20% bid (ask-heavy, bearish)",
-          "weight": 1.2
         },
         {
           "source": "x_scanner",
@@ -1930,7 +1928,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-09T14:00:14.191286+00:00"
+      "timestamp": "2026-07-09T14:05:14.848055+00:00"
     }
   },
   "config": {
