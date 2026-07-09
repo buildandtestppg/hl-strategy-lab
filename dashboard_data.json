@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-09T05:50:15.411585+00:00",
+  "last_update": "2026-07-09T05:55:16.151385+00:00",
   "portfolio": {
     "value": 4999.0,
     "capital": 4999.0,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62477.5,
-    "ETH": 1746.1,
-    "SOL": 78.2005,
-    "HYPE": 67.8665
+    "BTC": 62534.5,
+    "ETH": 1747.15,
+    "SOL": 78.2765,
+    "HYPE": 68.0295
   },
   "positions": {},
   "stats": {
@@ -752,11 +752,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-08T14:25:23.744793+00:00",
-      "v": 5018.83,
-      "p": 0.38
-    },
     {
       "t": "2026-07-08T14:30:24.594204+00:00",
       "v": 5015.51,
@@ -1751,6 +1746,11 @@
       "t": "2026-07-09T05:50:15.411585+00:00",
       "v": 4999.0,
       "p": -0.02
+    },
+    {
+      "t": "2026-07-09T05:55:16.151385+00:00",
+      "v": 4999.0,
+      "p": -0.02
     }
   ],
   "ai_history": [
@@ -1797,57 +1797,62 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.51,
-      "confidence": 0.9,
+      "score": -0.8,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
-        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 3,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca BTC] @CoinEdition (\ud83d\udc4d0 \ud83d\udd040) 24H LIQUIDATION HEATMAP: $BTC | whale_monitor: Orderbook 64% bid-weighted (bullish) | news_agent: **Breaking** \u2022 Iran halts Tehran-Mashhad rail service amid m",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca BTC] @WhaleInsider (\ud83d\udc4d80 \ud83d\udd049) BlackRock clients sell $59, | whale_monitor: Orderbook 64% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca BTC] @WhaleInsider (\ud83d\udc4d80 \ud83d\udd049) BlackRock clients sell $59,160,000 worth of $BTC [score: 3.1]",
+          "weight": 2.02
+        },
         {
           "source": "oi_funding",
           "signal": "OI -6.0% 1h",
           "weight": 1.08
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca BTC] @CoinEdition (\ud83d\udc4d0 \ud83d\udd040) 24H LIQUIDATION HEATMAP: $BTC leads with $72.02M liquidations, $ETH at $43.20M [score: 1.",
-          "weight": 0.98
-        },
-        {
-          "source": "news_agent",
-          "signal": "**Breaking** \u2022 Iran halts Tehran-Mashhad rail service amid military strikes as US sanctions loom over Iranian crypto exc",
-          "weight": 0.98
+          "source": "whale_monitor",
+          "signal": "Orderbook 64% bid-weighted (bullish)",
+          "weight": 0.56
         }
       ],
-      "timestamp": "2026-07-09T05:50:15.326319+00:00"
+      "timestamp": "2026-07-09T05:55:16.066157+00:00"
     },
     "ETH": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -13.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f ETH] @Crypto_Potato \"Summer of Ethereum Love\" \u2014 instit | oi_funding: OI -13.0% 1h",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\u26a0\ufe0f ETH] @Crypto_Potato \"Summer of Ethereum Love\" \u2014 institutional building & robust fundamentals, yet $ETH struggles d",
+          "weight": 1.95
+        },
         {
           "source": "oi_funding",
           "signal": "OI -13.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-09T05:50:15.326331+00:00"
+      "timestamp": "2026-07-09T05:55:16.066170+00:00"
     },
     "SOL": {
       "score": 0.0,
@@ -1859,39 +1864,39 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-07-09T05:50:15.326333+00:00"
+      "timestamp": "2026-07-09T05:55:16.066172+00:00"
     },
     "HYPE": {
-      "score": 0.17,
+      "score": 0.42,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 5,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: Markets broadly down 1.5-2.5% with BTC ETF outflows ($85M) b | whale_monitor: Orderbook 11% bid (ask-heavy, bearish) | oi_funding: OI +15.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 TAO] @bryantheden (\ud83d\udc4d32) BTC ETFs bled $6.5B this month  | whale_monitor: Orderbook 11% bid (ask-heavy, bearish) | oi_funding: OI +15.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcb0 TAO] @bryantheden (\ud83d\udc4d32) BTC ETFs bled $6.5B this month and $HYPE is still only 8% below ATH \u2014 that gap is the thesi",
+          "weight": 2.02
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcb0 HYPE] @bryantheden (\ud83d\udc4d31) BTC ETFs bled $6.5B this month and $HYPE still parked only 8% under its all-time high \u2014 wh",
+          "weight": 1.95
+        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 11% bid (ask-heavy, bearish)",
           "weight": 1.56
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +15.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
-        {
-          "source": "x_scanner",
-          "signal": "Markets broadly down 1.5-2.5% with BTC ETF outflows ($85M) but ETH seeing inflows (+$70M). DePIN/quantum narrative gaini",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-09T05:50:15.326344+00:00"
+      "timestamp": "2026-07-09T05:55:16.066183+00:00"
     }
   },
   "config": {
