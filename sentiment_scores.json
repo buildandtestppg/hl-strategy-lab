@@ -1,104 +1,124 @@
 {
   "BTC": {
-    "score": 0.03,
-    "confidence": 0.84,
+    "score": -0.48,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "news_agent"
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 7,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$BTC] @astronomer_zero (\ud83d\udc4d45) $BTC longs \u2014 closing 80%, se | whale_monitor: Orderbook 67% bid-weighted (bullish) | news_agent: Crypto News Brief** \u2014 Jul 9, 02:38 UTC  \ud83d\udd34 **BREAKING** \u2022 Bit",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @astronomer_zero (\ud83d\udc4d45 \ud83d\udcac14) \"Closing 80% $BTC long | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | news_agent: Crypto News Brief** \u2014 Jul 9, 02:38 UTC  \ud83d\udd34 **BREAKING** \u2022 Bit",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [$BTC] @astronomer_zero (\ud83d\udc4d45) $BTC longs \u2014 closing 80%, seeing fake breakouts and unclear order flow near daily open [",
+        "signal": "\u2022 [\ud83d\udcb0 $BTC] @astronomer_zero (\ud83d\udc4d45 \ud83d\udcac14) \"Closing 80% $BTC longs \u2014 fake breakouts, unclear order flow near daily open\" [sco",
         "weight": 1.6
       },
       {
-        "source": "news_agent",
-        "signal": "Crypto News Brief** \u2014 Jul 9, 02:38 UTC  \ud83d\udd34 **BREAKING** \u2022 Bitcoin drops as Trump declares Iran ceasefire 'over' amid rene",
-        "weight": 1.2
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc9 $BTC] @PulseFlowHQ (\ud83d\udc4d1 \ud83d\udd041) \"4h SMT Bearish Divergence confirmed on BTC. Pulled back 3%+. Taking shorts\" [score: 1.6",
+        "weight": 1.52
       },
       {
-        "source": "news_agent",
-        "signal": "fire 'over' amid renewed Strait of Hormuz attacks `BTC` \u2022 IRGC strikes US bases in Kuwait and Bahrain as Bitcoin takes a",
-        "weight": 0.98
+        "source": "oi_funding",
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-07-09T02:40:52.466550+00:00"
+    "timestamp": "2026-07-09T02:45:53.070548+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.46,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @CrazyBuddha_ Bitfinex parabolic rise in $ETH lon | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "signal_count": 3,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @CrazyBuddha_ \"Bitfinex parabolic rise in $ETH lo | oi_funding: OI -82.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $ETH] @CrazyBuddha_ Bitfinex parabolic rise in $ETH longs \u2014 whale positioning signal, doesn't mean insiders know bu",
+        "signal": "\u2022 [\ud83d\udcb0 $ETH] @CrazyBuddha_ \"Bitfinex parabolic rise in $ETH longs \u2014 large traders taking aggressive directional exposure\" ",
+        "weight": 1.95
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$ETH alpha] @CrazyBuddha_ \"Bitfinex parabolic rise in $ETH longs \u2014 large traders taking aggressive exposure\" [score: ",
         "weight": 1.95
       },
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
-        "weight": 0.9
+        "signal": "OI -82.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-09T02:40:52.466567+00:00"
+    "timestamp": "2026-07-09T02:45:53.070561+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -0.36,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-09T02:40:52.466570+00:00"
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI -42.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -42.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 67% bid-weighted (bullish)",
+        "weight": 0.68
+      }
+    ],
+    "timestamp": "2026-07-09T02:45:53.070568+00:00"
   },
   "HYPE": {
-    "score": 0.46,
+    "score": 0.5,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 6,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @ZashXYZ $KAITO OI +7.3% in 15m on Hyperliquid \u2014 | whale_monitor: Orderbook 23% bid (ask-heavy, bearish) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @credit_scend (\ud83d\udc4d9 \ud83d\udd042) \"Hyperliquid OI ~$7.1-7.3 | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | oi_funding: OI -21.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @ZashXYZ $KAITO OI +7.3% in 15m on Hyperliquid \u2014 on-chain perps leave nowhere to hide [score: 2.5]",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @credit_scend (\ud83d\udc4d9 \ud83d\udd042) \"Hyperliquid OI ~$7.1-7.3B. HIP-3 permissionless perps driving structural growth\" [sc",
+        "weight": 1.9
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @robw00ds (\ud83d\udc4d32 \ud83d\udd0424) \"no stoppy for papi. $HYPE printing for us.\" [score: 2.87]",
+        "weight": 1.87
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @ZashXYZ \"$KAITO OI +7.3% in 15m on Hyperliquid. Mark $0.668. On-chain perps positioning.\" [score: 2.5]",
         "weight": 1.62
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 23% bid (ask-heavy, bearish)",
-        "weight": 1.08
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
-        "weight": 0.9
       }
     ],
-    "timestamp": "2026-07-09T02:40:52.466583+00:00"
+    "timestamp": "2026-07-09T02:45:53.070578+00:00"
   }
 }
