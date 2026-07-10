@@ -1,16 +1,16 @@
 {
   "BTC": {
-    "score": 0.83,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @whale_alert (\ud83d\udc4d14 \ud83d\udd042) 810 BTC ($51.9M) transferre | whale_monitor: Orderbook 35% bid (ask-heavy, bearish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @whale_alert (\ud83d\udc4d14 \ud83d\udd042) 810 BTC ($51.9M) transferre | oi_funding: OI +14.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -23,57 +23,76 @@
         "weight": 3.12
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 35% bid (ask-heavy, bearish)",
-        "weight": 0.6
+        "source": "oi_funding",
+        "signal": "OI +14.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-10T23:20:06.897368+00:00"
+    "timestamp": "2026-07-10T23:25:07.556569+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @eliz883 (\ud83d\udc4d102 \ud83d\udd0413) $ETH squeeze to 2k? Two level",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @eliz883 (\ud83d\udc4d102 \ud83d\udd0413) $ETH squeeze to 2k? Two level | oi_funding: OI +33.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @eliz883 (\ud83d\udc4d102 \ud83d\udd0413) $ETH squeeze to 2k? Two level in radar, if he flip 1850 and squeeze to 2k [score: 3.4]",
         "weight": 2.21
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +33.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-10T23:20:06.897383+00:00"
+    "timestamp": "2026-07-10T23:25:07.556606+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-10T23:20:06.897385+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.74,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
+    "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE/$ANSEM] @BullpenFi (\ud83d\udc4d132 \ud83d\udd0437) $ANSEM x Hyperliqui | whale_monitor: Orderbook 87% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI -5.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -5.0% 1h",
+        "weight": 0.9
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
+        "weight": 0.68
+      }
+    ],
+    "timestamp": "2026-07-10T23:25:07.556625+00:00"
+  },
+  "HYPE": {
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "x_scanner"
+    ],
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udd25 $HYPE/$ANSEM] @BullpenFi (\ud83d\udc4d132 \ud83d\udd0437) $ANSEM x Hyperliqui",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -91,6 +110,6 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-07-10T23:20:06.897398+00:00"
+    "timestamp": "2026-07-10T23:25:07.556641+00:00"
   }
 }
