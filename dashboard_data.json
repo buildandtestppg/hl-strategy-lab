@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-10T13:45:58.870515+00:00",
+  "last_update": "2026-07-10T13:50:59.470540+00:00",
   "portfolio": {
     "value": 4980.2,
     "capital": 4980.2,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 64405.5,
-    "ETH": 1802.15,
-    "SOL": 79.0095,
-    "HYPE": 68.74
+    "BTC": 64510.0,
+    "ETH": 1804.25,
+    "SOL": 79.1175,
+    "HYPE": 68.7505
   },
   "positions": {},
   "stats": {
@@ -854,11 +854,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-09T22:25:13.724038+00:00",
-      "v": 4975.41,
-      "p": -0.49
-    },
     {
       "t": "2026-07-09T22:30:14.117898+00:00",
       "v": 4975.41,
@@ -1853,6 +1848,11 @@
       "t": "2026-07-10T13:45:58.870515+00:00",
       "v": 4980.2,
       "p": -0.4
+    },
+    {
+      "t": "2026-07-10T13:50:59.470540+00:00",
+      "v": 4980.2,
+      "p": -0.4
     }
   ],
   "ai_history": [
@@ -1922,41 +1922,53 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-10T13:45:58.759765+00:00"
+      "timestamp": "2026-07-10T13:50:59.367010+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +238.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +238.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-07-10T13:45:58.759781+00:00"
-    },
-    "SOL": {
-      "score": -0.25,
-      "confidence": 0.84,
-      "sources": [
-        "whale_monitor",
-        "news_agent",
+        "x_scanner",
         "oi_funding"
       ],
       "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 89% bid-weighted (bullish) | news_agent: \ud83d\udfe2 **Notable Crypto News** (13:38 UTC)  \ud83d\udd38 **Solana wallet lin | oi_funding: OI -11.0% 1h",
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @randgroup (\ud83d\udc4d46) ETH at yearly downtrend resistan | oi_funding: OI +238.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +238.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @randgroup (\ud83d\udc4d46) ETH at yearly downtrend resistance \u2014 breakout = bullish reversal [2.9]",
+          "weight": 0.8
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd25 $ETH] @MookieNFT (\ud83d\udc4d31) Market rebound: BTC $64K, ETH $1,800, SOL holding [3.0]",
+          "weight": 0.65
+        }
+      ],
+      "timestamp": "2026-07-10T13:50:59.367025+00:00"
+    },
+    "SOL": {
+      "score": -0.04,
+      "confidence": 0.6,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "news_agent",
+        "oi_funding"
+      ],
+      "signal_count": 4,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $SOL] @CryptoGodJohn (\ud83d\udc4d20 \ud83d\udd043) Solana sellers will buy b | whale_monitor: Orderbook 89% bid-weighted (bullish) | news_agent: \ud83d\udfe2 **Notable Crypto News** (13:38 UTC)  \ud83d\udd38 **Solana wallet lin",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -1974,27 +1986,38 @@
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-10T13:45:58.759793+00:00"
+      "timestamp": "2026-07-10T13:50:59.367037+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +56.0% 1h, funding 0.0010%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @The1Speculator Polymarket PERP Early Access \u2014 g | oi_funding: OI +56.0% 1h, funding 0.0010%",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI +56.0% 1h, funding 0.0010%",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\u26a1 $HYPE] @The1Speculator Polymarket PERP Early Access \u2014 gold, oil, SP500 onchain [4.0]",
+          "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd25 $HYPE] @Tanaka_L2 (\ud83d\udc4d48 \ud83d\udd041) Crypto perps expanding to stocks, ETFs, FX 24/7 onchain [3.7]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-10T13:45:58.759800+00:00"
+      "timestamp": "2026-07-10T13:50:59.367047+00:00"
     }
   },
   "config": {
