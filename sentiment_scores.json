@@ -1,15 +1,17 @@
 {
   "BTC": {
-    "score": 0.5,
-    "confidence": 0.3,
+    "score": 0.18,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @traderhc (\ud83d\udc4d1) BTC near $63K, funding near zero, ",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @traderhc (\ud83d\udc4d1) BTC near $63K, funding near zero,  | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -34.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -17,30 +19,31 @@
         "weight": 1.62
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [$BTC] @jazzzjackz85870 Whale closed $100M BTC short, +$5.28M profit. Opened $68,859 Jun 2, closed $62,314 [score: 1.5",
-        "weight": 0.98
+        "source": "oi_funding",
+        "signal": "OI -34.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [$BTC] @WhaleNoName (\ud83d\udc4d23 \ud83d\udcac6) 6-month candle history \u2014 5 months to buy",
-        "weight": 0.65
+        "signal": "\u2022 [$BTC] @jazzzjackz85870 Whale closed $100M BTC short, +$5.28M profit. Opened $68,859 Jun 2, closed $62,314 [score: 1.5",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-10T00:00:24.838727+00:00"
+    "timestamp": "2026-07-10T00:05:25.236483+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.6,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @BSCNews (\ud83d\udc4d6) Big money rotating $BTC \u2192 $ETH: BTC | polymarket: 0pp) \u2022 BTC above $64K today: **21.5%** (+8.0pp) \u2014 pricing ar",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @BSCNews (\ud83d\udc4d6) Big money rotating $BTC \u2192 $ETH: BTC | polymarket: 0pp) \u2022 BTC above $64K today: **21.5%** (+8.0pp) \u2014 pricing ar | oi_funding: OI +10.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -48,14 +51,39 @@
         "weight": 1.82
       },
       {
+        "source": "oi_funding",
+        "signal": "OI +10.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "polymarket",
         "signal": "0pp) \u2022 BTC above $64K today: **21.5%** (+8.0pp) \u2014 pricing around $58-60K  **ETH Price Targets (July):** \u2022 ETH above $1,8",
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-10T00:00:24.838744+00:00"
+    "timestamp": "2026-07-10T00:05:25.236499+00:00"
   },
   "SOL": {
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +12.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +12.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-10T00:05:25.236506+00:00"
+  },
+  "HYPE": {
     "score": -1.0,
     "confidence": 0.3,
     "sources": [
@@ -65,26 +93,14 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 37% bid (ask-heavy, bearish)",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 32% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 37% bid (ask-heavy, bearish)",
-        "weight": 0.52
+        "signal": "Orderbook 32% bid (ask-heavy, bearish)",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-10T00:00:24.838752+00:00"
-  },
-  "HYPE": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-10T00:00:24.838753+00:00"
+    "timestamp": "2026-07-10T00:05:25.236511+00:00"
   }
 }
