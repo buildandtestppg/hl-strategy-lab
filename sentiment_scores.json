@@ -1,28 +1,27 @@
 {
   "BTC": {
-    "score": 0.21,
-    "confidence": 0.6,
+    "score": 0.2,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "polymarket",
-      "oi_funding"
+      "polymarket"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 2,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc8e BTC] @eliz883 (\ud83d\udc4d66 \ud83d\udd042) $BTC + $ETH update coming soon [ | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | polymarket: crash, SEC, or crypto-ETF markets active.** All large price ",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e BTC] @eliz883 (\ud83d\udc4d66 \ud83d\udd042) $BTC + $ETH update coming soon [ | whale_monitor: Orderbook 68% bid-weighted (bullish) | polymarket: crash, SEC, or crypto-ETF markets active.** All large price ",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +42.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
       {
         "source": "polymarket",
         "signal": "crash, SEC, or crypto-ETF markets active.** All large price moves are expiry-date mechanical repricings (today is July 1",
         "weight": 0.96
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 68% bid-weighted (bullish)",
+        "weight": 0.72
       },
       {
         "source": "x_scanner",
@@ -30,78 +29,72 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-10T08:40:24.244302+00:00"
+    "timestamp": "2026-07-10T08:45:25.060821+00:00"
   },
   "ETH": {
-    "score": 0.3,
+    "score": -0.16,
     "confidence": 0.5,
     "sources": [
-      "polymarket",
-      "oi_funding"
+      "whale_monitor",
+      "polymarket"
     ],
     "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: h, SEC, or crypto-ETF markets active.** All large price move | oi_funding: OI +208.0% 1h, funding 0.0013%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 64% bid-weighted (bullish) | polymarket: h, SEC, or crypto-ETF markets active.** All large price move",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +208.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
       {
         "source": "polymarket",
         "signal": "h, SEC, or crypto-ETF markets active.** All large price moves are expiry-date mechanical repricings (today is July 10 = ",
         "weight": 0.78
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 64% bid-weighted (bullish)",
+        "weight": 0.56
       }
     ],
-    "timestamp": "2026-07-10T08:40:24.244320+00:00"
+    "timestamp": "2026-07-10T08:45:25.060862+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 0.3,
     "sources": [
-      "whale_monitor",
-      "oi_funding"
+      "whale_monitor"
     ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI +72.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 61% bid-weighted (bullish)",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +72.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 61% bid-weighted (bullish)",
         "weight": 0.44
       }
     ],
-    "timestamp": "2026-07-10T08:40:24.244332+00:00"
+    "timestamp": "2026-07-10T08:45:25.060879+00:00"
   },
   "HYPE": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "oi_funding"
+      "whale_monitor"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +71.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 24% bid (ask-heavy, bearish)",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI +71.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 24% bid (ask-heavy, bearish)",
+        "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-10T08:40:24.244338+00:00"
+    "timestamp": "2026-07-10T08:45:25.060891+00:00"
   }
 }
