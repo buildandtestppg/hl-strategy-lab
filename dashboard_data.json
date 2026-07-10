@@ -1,34 +1,49 @@
 {
-  "last_update": "2026-07-10T09:20:29.747642+00:00",
+  "last_update": "2026-07-10T09:25:30.693824+00:00",
   "portfolio": {
-    "value": 4992.29,
-    "capital": 4975.55,
+    "value": 4990.65,
+    "capital": 4973.69,
     "initial": 5000.0,
-    "pnl": -7.71,
-    "pnl_pct": -0.15,
-    "open_positions": 1
+    "pnl": -9.35,
+    "pnl_pct": -0.19,
+    "open_positions": 2
   },
   "prices": {
-    "BTC": 64344.5,
-    "ETH": 1786.45,
-    "SOL": 79.1275,
-    "HYPE": 68.8845
+    "BTC": 64341.5,
+    "ETH": 1786.65,
+    "SOL": 79.1215,
+    "HYPE": 68.856
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1771.95,
-      "current_price": 1786.45,
+      "current_price": 1786.65,
       "size": 1.1654279151923945,
-      "unrealized_pnl": 16.73,
-      "unrealized_pnl_pct": 0.81,
+      "unrealized_pnl": 16.96,
+      "unrealized_pnl_pct": 0.82,
       "stop_loss": 1729.25,
       "take_profit": 1857.35,
       "strategy": "trend",
       "entry_time": "2026-07-10T03:00:48.047829+00:00",
-      "duration_hours": 6.3,
+      "duration_hours": 6.4,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1647
+      "unrealized_funding": 0.1669
+    },
+    "HYPE": {
+      "direction": "LONG",
+      "entry_price": 68.856,
+      "current_price": 68.856,
+      "size": 28.558193305727947,
+      "unrealized_pnl": -0.0,
+      "unrealized_pnl_pct": -0.0,
+      "stop_loss": 67.10775,
+      "take_profit": 72.3525,
+      "strategy": "trend",
+      "entry_time": "2026-07-10T09:25:32.284783+00:00",
+      "duration_hours": 0.0,
+      "funding_rate": 0.00125,
+      "unrealized_funding": 0.0
     }
   },
   "stats": {
@@ -42,7 +57,9 @@
     "worst_trade": -45.01,
     "total_realized_pnl": 48.84
   },
-  "actions": [],
+  "actions": [
+    "\ud83d\udfe2 OPENED LONG HYPE @ $68.8560 | Size: 28.5582 | SL: $67.1077 | TP: $72.3525 | Strategy: trend | Sentiment-driven LONG (score +1.00, conf 0.7, momentum confirmed)"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -836,11 +853,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-09T17:55:41.683994+00:00",
-      "v": 4974.22,
-      "p": -0.52
-    },
     {
       "t": "2026-07-09T18:00:42.412626+00:00",
       "v": 4974.24,
@@ -1835,6 +1847,11 @@
       "t": "2026-07-10T09:20:29.747642+00:00",
       "v": 4992.29,
       "p": -0.15
+    },
+    {
+      "t": "2026-07-10T09:25:30.693824+00:00",
+      "v": 4990.65,
+      "p": -0.19
     }
   ],
   "ai_history": [
@@ -1881,90 +1898,100 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.41,
+      "confidence": 0.84,
       "sources": [
-        "polymarket"
+        "whale_monitor",
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: crash, SEC, or crypto-ETF markets active.** All large price ",
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 65% bid-weighted (bullish) | polymarket: crash, SEC, or crypto-ETF markets active.** All large price  | oi_funding: OI +31.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +31.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "polymarket",
           "signal": "crash, SEC, or crypto-ETF markets active.** All large price moves are expiry-date mechanical repricings (today is July 1",
           "weight": 0.96
-        }
-      ],
-      "timestamp": "2026-07-10T09:20:29.655337+00:00"
-    },
-    "ETH": {
-      "score": -1.0,
-      "confidence": 0.3,
-      "sources": [
-        "polymarket"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: h, SEC, or crypto-ETF markets active.** All large price move",
-      "key_signals": [
-        {
-          "source": "polymarket",
-          "signal": "h, SEC, or crypto-ETF markets active.** All large price moves are expiry-date mechanical repricings (today is July 10 = ",
-          "weight": 0.78
-        }
-      ],
-      "timestamp": "2026-07-10T09:20:29.655351+00:00"
-    },
-    "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "whale_monitor"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 63% bid-weighted (bullish)",
-      "key_signals": [
+        },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 63% bid-weighted (bullish)",
-          "weight": 0.52
+          "signal": "Orderbook 65% bid-weighted (bullish)",
+          "weight": 0.6
         }
       ],
-      "timestamp": "2026-07-10T09:20:29.655358+00:00"
+      "timestamp": "2026-07-10T09:25:30.355796+00:00"
     },
-    "HYPE": {
-      "score": 0.08,
+    "ETH": {
+      "score": 0.3,
       "confidence": 0.5,
       "sources": [
-        "whale_monitor",
+        "polymarket",
         "oi_funding"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: h, SEC, or crypto-ETF markets active.** All large price move | oi_funding: OI +17.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +6.0% 1h, funding 0.0013%",
-          "weight": 1.08
+          "signal": "OI +17.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "polymarket",
+          "signal": "h, SEC, or crypto-ETF markets active.** All large price moves are expiry-date mechanical repricings (today is July 10 = ",
+          "weight": 0.78
+        }
+      ],
+      "timestamp": "2026-07-10T09:25:30.355860+00:00"
+    },
+    "SOL": {
+      "score": 0.0,
+      "confidence": 0.0,
+      "sources": [],
+      "signal_count": 0,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "No active signals",
+      "key_signals": [],
+      "timestamp": "2026-07-10T09:25:30.355891+00:00"
+    },
+    "HYPE": {
+      "score": 1.0,
+      "confidence": 0.74,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +62.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +62.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 27% bid (ask-heavy, bearish)",
-          "weight": 0.92
+          "signal": "Orderbook 66% bid-weighted (bullish)",
+          "weight": 0.64
         }
       ],
-      "timestamp": "2026-07-10T09:20:29.655367+00:00"
+      "timestamp": "2026-07-10T09:25:30.355946+00:00"
     }
   },
   "config": {
