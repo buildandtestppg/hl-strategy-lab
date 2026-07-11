@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-11T01:00:19.529346+00:00",
+  "last_update": "2026-07-11T01:05:20.290608+00:00",
   "portfolio": {
     "value": 4949.87,
     "capital": 4949.87,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 64119.5,
-    "ETH": 1792.55,
-    "SOL": 77.8365,
-    "HYPE": 67.4315
+    "BTC": 64121.5,
+    "ETH": 1792.05,
+    "SOL": 77.8155,
+    "HYPE": 67.4505
   },
   "positions": {},
   "stats": {
@@ -905,16 +905,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-10T09:35:31.430398+00:00",
-      "v": 4998.29,
-      "p": -0.03
-    },
-    {
-      "t": "2026-07-10T09:40:32.026203+00:00",
-      "v": 5001.1,
-      "p": 0.02
-    },
     {
       "t": "2026-07-10T09:45:32.185533+00:00",
       "v": 5007.42,
@@ -1904,6 +1894,16 @@
       "t": "2026-07-11T01:00:19.529346+00:00",
       "v": 4949.87,
       "p": -1.0
+    },
+    {
+      "t": "2026-07-11T01:03:36.248261+00:00",
+      "v": 4949.87,
+      "p": -1.0
+    },
+    {
+      "t": "2026-07-11T01:05:20.290608+00:00",
+      "v": 4949.87,
+      "p": -1.0
     }
   ],
   "ai_history": [
@@ -1950,32 +1950,91 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": -0.51,
+      "confidence": 0.84,
       "sources": [
         "whale_monitor",
+        "polymarket",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 5,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | polymarket: nge July meeting: **77.5%** (-7.0pp 24h) | $325K vol - 25bps | oi_funding: OI +9.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +6.0% 1h, funding 0.0013%",
-          "weight": 1.08
+          "signal": "OI +9.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 73% bid-weighted (bullish)",
-          "weight": 0.92
+          "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+          "weight": 1.36
+        },
+        {
+          "source": "polymarket",
+          "signal": "nge July meeting: **77.5%** (-7.0pp 24h) | $325K vol - 25bps hike: **21.9%** (+7.2pp 24h) | $275K vol - 50bps hike: **0.",
+          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-11T01:00:19.436690+00:00"
+      "timestamp": "2026-07-11T01:05:20.203800+00:00"
     },
     "ETH": {
+      "score": -0.4,
+      "confidence": 0.9,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "polymarket",
+        "oi_funding"
+      ],
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @beallcrypto Added to $ETH short +$4M \u2014 expecting | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | polymarket: n July: **0.1%** \u2014 effectively dead  **ETH Price Targets \ud83d\udcc5**",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +11.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc9 $ETH] @beallcrypto Added to $ETH short +$4M \u2014 expecting OI cleanse dip [2.0]",
+          "weight": 0.8
+        },
+        {
+          "source": "polymarket",
+          "signal": "n July: **0.1%** \u2014 effectively dead  **ETH Price Targets \ud83d\udcc5** - ETH reach $1,900 in July: **58.0%** (+15.5pp \u26a0\ufe0f) - ETH di",
+          "weight": 0.78
+        }
+      ],
+      "timestamp": "2026-07-11T01:05:20.203817+00:00"
+    },
+    "SOL": {
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "whale_monitor"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 28% bid (ask-heavy, bearish)",
+          "weight": 0.88
+        }
+      ],
+      "timestamp": "2026-07-11T01:05:20.203825+00:00"
+    },
+    "HYPE": {
       "score": 0.51,
       "confidence": 0.84,
       "sources": [
@@ -1987,75 +2046,17 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @beallcrypto Added to $ETH short +$4M \u2014 expecting | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +114.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @Odysseydot_fun (\ud83d\udc4d12 \ud83d\udd048) Perp trading coming to  | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI +11.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +114.0% 1h, funding 0.0013%",
+          "signal": "OI +11.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $ETH] @beallcrypto Added to $ETH short +$4M \u2014 expecting OI cleanse dip [2.0]",
+          "source": "whale_monitor",
+          "signal": "Orderbook 30% bid (ask-heavy, bearish)",
           "weight": 0.8
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 66% bid-weighted (bullish)",
-          "weight": 0.64
-        }
-      ],
-      "timestamp": "2026-07-11T01:00:19.436707+00:00"
-    },
-    "SOL": {
-      "score": 1.0,
-      "confidence": 0.74,
-      "sources": [
-        "whale_monitor",
-        "oi_funding"
-      ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 79% bid-weighted (bullish)",
-          "weight": 1.16
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +6.0% 1h, funding 0.0013%",
-          "weight": 1.08
-        }
-      ],
-      "timestamp": "2026-07-11T01:00:19.436716+00:00"
-    },
-    "HYPE": {
-      "score": 1.0,
-      "confidence": 1.0,
-      "sources": [
-        "x_scanner",
-        "whale_monitor",
-        "oi_funding"
-      ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @Odysseydot_fun (\ud83d\udc4d12 \ud83d\udd048) Perp trading coming to  | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI +20.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +20.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 80% bid-weighted (bullish)",
-          "weight": 1.2
         },
         {
           "source": "x_scanner",
@@ -2063,7 +2064,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-11T01:00:19.436724+00:00"
+      "timestamp": "2026-07-11T01:05:20.203833+00:00"
     }
   },
   "config": {
