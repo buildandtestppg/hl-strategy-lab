@@ -1,15 +1,16 @@
 {
   "BTC": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @shuigvn (\ud83d\udc4d28) Hyperliquid lists $CASHCAT with 3x",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @shuigvn (\ud83d\udc4d28) Hyperliquid lists $CASHCAT with 3x | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,43 +21,59 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcb0 $BTC] @Utoday_en Bitcoin ETF outflows cool off \u2014 could $70,000 be next stop? [score: 1.5]",
         "weight": 0.98
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 36% bid (ask-heavy, bearish)",
+        "weight": 0.56
       }
     ],
-    "timestamp": "2026-07-11T11:20:30.433258+00:00"
+    "timestamp": "2026-07-11T11:25:30.771077+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: holding ~$60k+ range. Daily expiry targets converging normal",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: holding ~$60k+ range. Daily expiry targets converging normal | oi_funding: OI -37.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -37.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "polymarket",
         "signal": "holding ~$60k+ range. Daily expiry targets converging normally. $65k by July: 87.5% (+5.0pp). $100k by July: 0.1% \u2014 effe",
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-11T11:20:30.433271+00:00"
+    "timestamp": "2026-07-11T11:25:30.771091+00:00"
   },
   "SOL": {
-    "score": 0.49,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @cryptochrisceo (\ud83d\udc4d3) Robinhood Chain exploding \u2014  | whale_monitor: Orderbook 30% bid (ask-heavy, bearish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $SOL] @cryptochrisceo (\ud83d\udc4d3) Robinhood Chain exploding \u2014  | oi_funding: OI +8.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +8.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a1 $SOL] @cryptochrisceo (\ud83d\udc4d3) Robinhood Chain exploding \u2014 real winners are infra builders not memecoins [score: 2.1]",
@@ -66,39 +83,34 @@
         "source": "x_scanner",
         "signal": "\u2022 [\u26a1 $SOL] @Lazarotech21 $mogdog recovery begins \u2014 volume and holders growing [score: 1.5]",
         "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 30% bid (ask-heavy, bearish)",
-        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-11T11:20:30.433281+00:00"
+    "timestamp": "2026-07-11T11:25:30.771101+00:00"
   },
   "HYPE": {
     "score": 1.0,
     "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $HYPE] @Blockmedia_vn Hyperliquid continues ATH in perp | whale_monitor: Orderbook 70% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $HYPE] @Blockmedia_vn Hyperliquid continues ATH in perp | oi_funding: OI +8.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +8.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd2e $HYPE] @Blockmedia_vn Hyperliquid continues ATH in perp DEX Open Interest vs CEX [score: 1.6]",
         "weight": 1.04
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 70% bid-weighted (bullish)",
-        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-11T11:20:30.433290+00:00"
+    "timestamp": "2026-07-11T11:25:30.771108+00:00"
   }
 }
