@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-07-11T18:00:24.022376+08:00",
-  "exported_at_utc": "2026-07-11T10:00:24.022379+00:00",
+  "exported_at": "2026-07-11T18:10:23.735856+08:00",
+  "exported_at_utc": "2026-07-11T10:10:23.735858+00:00",
   "portfolio": {
     "value": 4949.874955839221,
     "initial": 5000.0,
@@ -354,16 +354,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-10T18:30:32.299336+00:00",
-      "v": 4967.9,
-      "p": -0.64
-    },
-    {
-      "t": "2026-07-10T18:35:33.110936+00:00",
-      "v": 4969.45,
-      "p": -0.61
-    },
     {
       "t": "2026-07-10T18:40:33.387124+00:00",
       "v": 4966.58,
@@ -1353,12 +1343,22 @@
       "t": "2026-07-11T10:00:21.188623+00:00",
       "v": 4949.87,
       "p": -1.0
+    },
+    {
+      "t": "2026-07-11T10:05:21.200472+00:00",
+      "v": 4949.87,
+      "p": -1.0
+    },
+    {
+      "t": "2026-07-11T10:10:21.595289+00:00",
+      "v": 4949.87,
+      "p": -1.0
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": 0.56,
+      "score": 0.59,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
@@ -1368,7 +1368,7 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @KillaXBT (\ud83d\udc4d67 \ud83d\udd042) Last 5 \"CME gaps\" all acted li | whale_monitor: Orderbook 35% bid (ask-heavy, bearish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @KillaXBT (\ud83d\udc4d67 \ud83d\udd042) Last 5 \"CME gaps\" all acted li | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1386,20 +1386,21 @@
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-11T10:00:20.939761+00:00"
+      "timestamp": "2026-07-11T10:10:21.485575+00:00"
     },
     "ETH": {
-      "score": -0.11,
-      "confidence": 0.6,
+      "score": -0.38,
+      "confidence": 0.94,
       "sources": [
         "x_scanner",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udfe2 $ETH] @TedPillows (\ud83d\udc4d52 \ud83d\udd043) $ETH hovering $1,800 \u2014 as lo | polymarket: holding ~$60k+ range. Daily expiry targets converging normal",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe2 $ETH] @TedPillows (\ud83d\udc4d52 \ud83d\udd043) $ETH hovering $1,800 \u2014 as lo | polymarket: holding ~$60k+ range. Daily expiry targets converging normal | oi_funding: OI -20.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1412,37 +1413,45 @@
           "weight": 1.6
         },
         {
-          "source": "polymarket",
-          "signal": "holding ~$60k+ range. Daily expiry targets converging normally. $65k by July: 87.5% (+5.0pp). $100k by July: 0.1% \u2014 effe",
-          "weight": 0.78
+          "source": "oi_funding",
+          "signal": "OI -20.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-11T10:00:20.939824+00:00"
+      "timestamp": "2026-07-11T10:10:21.485593+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-11T10:00:20.939830+00:00"
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -24.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -24.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-11T10:10:21.485601+00:00"
     },
     "HYPE": {
-      "score": -0.62,
-      "confidence": 0.5,
+      "score": -1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfdb\ufe0f $HYPE] @CW8900 Hyperliquid whale tracker: 58% short bi | whale_monitor: Orderbook 60% bid-weighted (bullish)",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfdb\ufe0f $HYPE] @CW8900 Hyperliquid whale tracker: 58% short bi | oi_funding: OI -10.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1450,12 +1459,12 @@
           "weight": 1.69
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 60% bid-weighted (bullish)",
-          "weight": 0.4
+          "source": "oi_funding",
+          "signal": "OI -10.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-11T10:00:20.939841+00:00"
+      "timestamp": "2026-07-11T10:10:21.485609+00:00"
     }
   },
   "pair_strategies": {
@@ -1629,149 +1638,149 @@
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
-        "text": "**Run Time:** 2026-07-11 17:41:56",
+        "text": "**Run Time:** 2026-07-11 18:01:15",
         "sentiment": 0,
-        "time": "2026-07-11 17:41"
+        "time": "2026-07-11 18:01"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1783762916.4546363"
+        "time": "1783764075.6002307"
       }
     ],
     "news_agent": [
       {
         "text": "**Job ID:** 8bd6a73fc440",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
-        "text": "**Run Time:** 2026-07-11 17:52:53",
+        "text": "**Run Time:** 2026-07-11 18:08:20",
         "sentiment": 0,
-        "time": "2026-07-11 17:52"
+        "time": "2026-07-11 18:08"
       },
       {
         "text": "**Schedule:** 7,22,37,52 * * * *",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "Run the news agent script and format breaking news as a Discord message (delivery is handled automatically).",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "**DB FACTS (DO NOT investigate \u2014 these are verified):**",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "- DB path: /Users/mojoai/.hermes/swarm/data/agents.db",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "- Table: crypto_news",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "- Columns: id, title, url, source, published_at, category, impact_rating, affected_tokens, summary, fetched_at, last_reported_at",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "- Date filter: use fetched_at (format: \"2026-04-18 14:52:30\") with SQLite datetime('now','-N minutes')",
@@ -1781,80 +1790,80 @@
       {
         "text": "- The script now does blanket mark-as-reported automatically \u2014 just verify 0 remaining",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "- by_impact in JSON is IN-MEMORY only \u2014 always query DB for actual unreported articles",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "- Ignore empty DBs at ~/.hermes/hermes-agent/news*.db and ~/.hermes/scripts/news*.db \u2014 they're red herrings",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "- notable_keywords dual-pass is REQUIRED \u2014 the classifier misses ~90% of important articles",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "1. **Run scan:** `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/news_agent.py 2>&1`",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "2. **Parse the JSON output** from the script (last JSON block in output).",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "3. **Query DB for unreported articles (DO NOT skip this \u2014 by_impact JSON is misleading):**",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 -c \"",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       },
       {
         "text": "import sqlite3, json, html",
         "sentiment": 0,
-        "time": "1783763573.3127344"
+        "time": "1783764500.1799963"
       }
     ],
-    "generated": "2026-07-11T10:00:20.990207Z"
+    "generated": "2026-07-11T10:10:21.506710Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "17:45",
-      "age_minutes": 15,
+      "age_minutes": 25,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "17:41",
-      "age_minutes": 18,
+      "last_run": "18:01",
+      "age_minutes": 9,
       "status": "fresh"
     },
     "news_agent": {
-      "last_run": "17:52",
-      "age_minutes": 8,
+      "last_run": "18:08",
+      "age_minutes": 2,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "15:04",
-      "age_minutes": 176,
+      "age_minutes": 186,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "17:45",
-      "age_minutes": 15,
+      "last_run": "18:00",
+      "age_minutes": 10,
       "status": "fresh"
     }
   },
@@ -2282,12 +2291,14 @@
     }
   },
   "prices": {
-    "BTC": 64162.5,
-    "ETH": 1795.45,
-    "SOL": 77.7915,
-    "HYPE": 66.6015
+    "BTC": 64163.5,
+    "ETH": 1796.05,
+    "SOL": 77.8655,
+    "HYPE": 66.5835
   },
-  "actions": [],
+  "actions": [
+    "\ud83e\udde0 ETH: TA signal LONG blocked by sentiment overlay"
+  ],
   "ai_history": [
     {
       "timestamp": "2026-07-02T10:27:44.614639+00:00",
@@ -2342,7 +2353,7 @@
     "asset_pruning": true
   },
   "lessons": {
-    "generated_at": "2026-07-11T08:00:14.198902+00:00",
+    "generated_at": "2026-07-11T10:00:28.149341+00:00",
     "pairs": {
       "BTC": {
         "pair": "BTC",
@@ -2510,7 +2521,7 @@
     }
   },
   "trade_review_output": {
-    "new_reviews": 2,
+    "new_reviews": 48,
     "total_lessons": 48,
     "active_lessons": 1,
     "pair_summaries": {
@@ -2650,8 +2661,54 @@
       }
     },
     "new_lesson_texts": [
+      "BTC: LONG won +$31 (+1.6%) via trend. Duration 4h. Exit: regime_override.",
       "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "HYPE: LOST despite sentiment disagreement (+0.56). Trader ignored convergence signal. HYPE: Lost on short hold (4h). Entry timing was poor. HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L."
+      "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "HYPE: SHORT won +$2 (+0.2%) via trend. Duration 7h. Exit: regime_override.",
+      "ETH: Lost on short hold (2h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "HYPE: LONG won +$4 (+0.5%) via trend. Duration 6h. Exit: signal_exit.",
+      "SOL: LONG won +$24 (+2.2%) via stochastic. Duration 6h. Exit: signal_exit.",
+      "ETH: LONG won +$47 (+2.9%) via trend. Duration 3h. Exit: regime_override.",
+      "BTC: Lost on short hold (4h). Entry timing was poor. BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: LONG won +$1 (+0.1%) via breakout. Duration 12h. Exit: regime_override.",
+      "BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: LONG won +$17 (+0.8%) via trend. Duration 5h. Exit: regime_override.",
+      "HYPE: LONG won +$48 (+3.7%) via trend. Duration 6h. Exit: regime_override.",
+      "BTC: LONG won +$21 (+0.8%) via trend. Duration 3h. Exit: regime_override.",
+      "SOL: LONG won +$4 (+0.2%) via stochastic. Duration 8h. Exit: signal_exit.",
+      "ETH: LONG won +$7 (+0.3%) via trend. Duration 2h. Exit: regime_override.",
+      "HYPE: Lost on short hold (2h). Entry timing was poor. HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "BTC: Lost on short hold (2h). Entry timing was poor. BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: LONG won +$18 (+0.9%) via stochastic. Duration 8h. Exit: signal_exit.",
+      "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "HYPE: LONG won +$36 (+2.1%) via trend. Duration 8h. Exit: regime_override.",
+      "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "HYPE: SHORT won +$6 (+0.5%) via trend. Duration 4h. Exit: regime_override.",
+      "SOL: LONG won +$55 (+3.7%) via stochastic. Duration 6h. Exit: signal_exit.",
+      "ETH: LONG won +$41 (+2.3%) via trend. Duration 8h. Exit: regime_override.",
+      "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: LONG won +$8 (+0.5%) via stochastic. Duration 8h. Exit: signal_exit.",
+      "HYPE: SHORT won +$8 (+0.7%) via trend. Duration 2h. Exit: regime_override.",
+      "ETH: LONG lost -$45 (-2.7%) via trend. Duration 12h. Exit: signal_exit.",
+      "SOL: SHORT won +$26 (+1.9%) via stochastic. Duration 4h. Exit: regime_override.",
+      "HYPE: Lost on short hold (2h). Entry timing was poor. HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: LONG lost -$11 (-0.7%) via trend. Duration 6h. Exit: signal_exit.",
+      "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "HYPE: LONG lost -$1 (-0.1%) via trend. Duration 6h. Exit: signal_exit.",
+      "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: LONG won +$5 (+0.3%) via stochastic. Duration 3h. Exit: regime_override.",
+      "HYPE: LONG lost -$15 (-1.1%) via trend. Duration 6h. Exit: signal_exit.",
+      "SOL: LONG won +$4 (+0.2%) via stochastic. Duration 7h. Exit: signal_exit.",
+      "ETH: LONG won +$22 (+1.1%) via trend. Duration 7h. Exit: regime_override.",
+      "HYPE: Lost on short hold (3h). Entry timing was poor. HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "HYPE: Lost on short hold (4h). Entry timing was poor. HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L."
     ]
   },
   "exit_breakdown": {
