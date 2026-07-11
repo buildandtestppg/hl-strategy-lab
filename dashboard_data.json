@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-11T07:40:04.720294+00:00",
+  "last_update": "2026-07-11T07:45:05.481923+00:00",
   "portfolio": {
     "value": 4949.87,
     "capital": 4949.87,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 64202.5,
-    "ETH": 1800.35,
-    "SOL": 78.0305,
-    "HYPE": 66.2235
+    "BTC": 64162.5,
+    "ETH": 1800.15,
+    "SOL": 77.9715,
+    "HYPE": 66.2015
   },
   "positions": {},
   "stats": {
@@ -905,11 +905,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-10T16:10:15.278121+00:00",
-      "v": 4980.2,
-      "p": -0.4
-    },
     {
       "t": "2026-07-10T16:15:15.702453+00:00",
       "v": 4980.2,
@@ -1904,6 +1899,11 @@
       "t": "2026-07-11T07:40:04.720294+00:00",
       "v": 4949.87,
       "p": -1.0
+    },
+    {
+      "t": "2026-07-11T07:45:05.481923+00:00",
+      "v": 4949.87,
+      "p": -1.0
     }
   ],
   "ai_history": [
@@ -1950,30 +1950,50 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 0.18,
+      "confidence": 0.5,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-11T07:40:04.609007+00:00"
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 76% bid-weighted (bullish)",
+          "weight": 1.04
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -4.0% 1h",
+          "weight": 0.72
+        }
+      ],
+      "timestamp": "2026-07-11T07:45:05.366583+00:00"
     },
     "ETH": {
-      "score": -0.55,
-      "confidence": 0.6,
+      "score": -0.03,
+      "confidence": 0.7,
       "sources": [
         "x_scanner",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH] @MaxCrypto (\ud83d\udc4d39 \ud83d\udd047) Someone opened a $12.4M $ETH sh | polymarket: holding ~$60k+ range. Daily expiry targets converging normal",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @MaxCrypto (\ud83d\udc4d39 \ud83d\udd047) Someone opened a $12.4M $ETH sh | polymarket: holding ~$60k+ range. Daily expiry targets converging normal | oi_funding: OI +16.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +16.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [$ETH] @MaxCrypto (\ud83d\udc4d39 \ud83d\udd047) Someone opened a $12.4M $ETH short with 25x leverage \u2014 $24 from liquidation [2.3]",
@@ -1983,14 +2003,9 @@
           "source": "polymarket",
           "signal": "holding ~$60k+ range. Daily expiry targets converging normally. $65k by July: 87.5% (+5.0pp). $100k by July: 0.1% \u2014 effe",
           "weight": 0.78
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [$ETH] @AlexBayarchyk (\ud83d\udc4d9) Whale converted ~$25.1M USDT \u2192 14,007 $ETH at avg $1,798 spot accumulation [1.8]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-11T07:40:04.609040+00:00"
+      "timestamp": "2026-07-11T07:45:05.366600+00:00"
     },
     "SOL": {
       "score": 0.0,
@@ -2002,20 +2017,27 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-07-11T07:40:04.609043+00:00"
+      "timestamp": "2026-07-11T07:45:05.366602+00:00"
     },
     "HYPE": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.15,
+      "confidence": 0.84,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE/HL] @polsia Oil hit $105. NYSE closed, Hyperliqu",
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE/HL] @polsia Oil hit $105. NYSE closed, Hyperliqu | whale_monitor: Orderbook 64% bid-weighted (bullish) | oi_funding: OI -19.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -19.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE/HL] @polsia Oil hit $105. NYSE closed, Hyperliquid wasn't. $1.43B OI. S&P 500 perps on HL [2.5]",
@@ -2027,7 +2049,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-11T07:40:04.609053+00:00"
+      "timestamp": "2026-07-11T07:45:05.366612+00:00"
     }
   },
   "config": {
