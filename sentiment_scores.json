@@ -1,17 +1,23 @@
 {
   "BTC": {
-    "score": -0.09,
-    "confidence": 0.5,
+    "score": -0.07,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC/ETF] @EthSayn1618 (\ud83d\udc4d3) Weekly spot ETF for $BTC tu | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC/ETF] @EthSayn1618 (\ud83d\udc4d3) Weekly spot ETF for $BTC tu | whale_monitor: Orderbook 72% bid-weighted (bullish) | oi_funding: OI -24.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -24.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $BTC/ETF] @EthSayn1618 (\ud83d\udc4d3) Weekly spot ETF for $BTC turn green after long time [score: 1.6]",
@@ -21,28 +27,22 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc9 $BTC/Standard Chartered] @Flippix_sol (\ud83d\udc4d3) Standard Chartered reaffirms $100K $BTC target for end of 2026 despite S",
         "weight": 1.04
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 38% bid (ask-heavy, bearish)",
-        "weight": 0.48
       }
     ],
-    "timestamp": "2026-07-11T10:20:22.583325+00:00"
+    "timestamp": "2026-07-11T10:25:23.114091+00:00"
   },
   "ETH": {
-    "score": 0.46,
-    "confidence": 0.84,
+    "score": 0.77,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "polymarket",
-      "oi_funding"
+      "polymarket"
     ],
-    "signal_count": 5,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH Analysis] @Crypto__Haris (\ud83d\udc4d93 \ud83d\udd0429) $ETH back near  | polymarket: holding ~$60k+ range. Daily expiry targets converging normal | oi_funding: OI -20.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH Analysis] @Crypto__Haris (\ud83d\udc4d93 \ud83d\udd0429) $ETH back near  | polymarket: holding ~$60k+ range. Daily expiry targets converging normal",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -50,56 +50,62 @@
         "weight": 4.0
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -20.0% 1h",
-        "weight": 1.44
-      },
-      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH/Breakout] @SatoshiFlipper (\ud83d\udc4d35 \ud83d\udd042) Ethereum just itching to breakout \u2014 only a matter of time [score: 1.6]",
         "weight": 1.28
+      },
+      {
+        "source": "polymarket",
+        "signal": "holding ~$60k+ range. Daily expiry targets converging normally. $65k by July: 87.5% (+5.0pp). $100k by July: 0.1% \u2014 effe",
+        "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-11T10:20:22.583344+00:00"
+    "timestamp": "2026-07-11T10:25:23.114104+00:00"
   },
   "SOL": {
     "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "oi_funding"
+      "whale_monitor"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -24.0% 1h",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 31% bid (ask-heavy, bearish)",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI -24.0% 1h",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 31% bid (ask-heavy, bearish)",
+        "weight": 0.76
       }
     ],
-    "timestamp": "2026-07-11T10:20:22.583352+00:00"
+    "timestamp": "2026-07-11T10:25:23.114110+00:00"
   },
   "HYPE": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -10.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 92% bid-weighted (bullish) | oi_funding: OI +9.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "whale_monitor",
+        "signal": "Orderbook 92% bid-weighted (bullish)",
+        "weight": 1.68
+      },
+      {
         "source": "oi_funding",
-        "signal": "OI -10.0% 1h",
+        "signal": "OI +9.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-11T10:20:22.583357+00:00"
+    "timestamp": "2026-07-11T10:25:23.114117+00:00"
   }
 }
