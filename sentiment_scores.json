@@ -1,15 +1,16 @@
 {
   "BTC": {
-    "score": -0.78,
-    "confidence": 0.3,
+    "score": -0.59,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 6,
+    "signal_count": 7,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @0xAralez (\ud83d\udc4d15 \ud83d\udd046) \u2014 BTC roadmap: $64K\u2192$69K\u2192$43K ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @0xAralez (\ud83d\udc4d15 \ud83d\udd046) \u2014 BTC roadmap: $64K\u2192$69K\u2192$43K  | oi_funding: OI +6.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -27,60 +28,73 @@
         "weight": 1.56
       }
     ],
-    "timestamp": "2026-07-12T16:00:49.895046+00:00"
+    "timestamp": "2026-07-12T16:05:50.990913+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CarterVanceUSA \u2014 ETH approaching $1820 \u2014 gas fee",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CarterVanceUSA \u2014 ETH approaching $1820 \u2014 gas fee | oi_funding: OI +14.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @CarterVanceUSA \u2014 ETH approaching $1820 \u2014 gas fees spiking + early momentum vs hourly overbought indicators [",
         "weight": 1.62
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +14.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-12T16:00:49.895058+00:00"
+    "timestamp": "2026-07-12T16:05:50.990928+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 68% bid-weighted (bullish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 68% bid-weighted (bullish)",
-        "weight": 0.72
-      }
-    ],
-    "timestamp": "2026-07-12T16:00:49.895065+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
     "confidence": 0.74,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @RealValther \u2014 How to alpha-dog a multi-billion | whale_monitor: Orderbook 73% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI +128.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +128.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 62% bid-weighted (bullish)",
+        "weight": 0.48
+      }
+    ],
+    "timestamp": "2026-07-12T16:05:50.990936+00:00"
+  },
+  "HYPE": {
+    "score": 0.8,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @RealValther \u2014 How to alpha-dog a multi-billion | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -98,6 +112,6 @@
         "weight": 1.23
       }
     ],
-    "timestamp": "2026-07-12T16:00:49.895075+00:00"
+    "timestamp": "2026-07-12T16:05:50.990945+00:00"
   }
 }
