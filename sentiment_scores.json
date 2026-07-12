@@ -1,17 +1,22 @@
 {
   "BTC": {
-    "score": 0.24,
+    "score": -0.4,
     "confidence": 0.6,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$BTC] @_Crypflow_ BTC 5D death cross: 50 SMA crossed belo | whale_monitor: Orderbook 64% bid-weighted (bullish)",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$BTC] @_Crypflow_ BTC 5D death cross: 50 SMA crossed belo | oi_funding: OI -14.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -14.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$BTC] @_Crypflow_ BTC 5D death cross: 50 SMA crossed below 200 SMA \u2014 historically near cycle bottoms [score:1.6]",
@@ -21,27 +26,28 @@
         "source": "x_scanner",
         "signal": "\u2022 [$BTC] @geoffreytung ETH bearish divergence on daily with volume depleting, BTC showing same [score:1.5]",
         "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 64% bid-weighted (bullish)",
-        "weight": 0.56
       }
     ],
-    "timestamp": "2026-07-12T21:20:26.916369+00:00"
+    "timestamp": "2026-07-12T21:25:27.374993+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: fortably above $58k\u2013$60k range. Market gives only 0.8% chanc",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: fortably above $58k\u2013$60k range. Market gives only 0.8% chanc | oi_funding: OI -36.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -36.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "polymarket",
         "signal": "fortably above $58k\u2013$60k range. Market gives only 0.8% chance of $80k in July, 50.5% for $67.5k in July. No non-expiry s",
@@ -53,31 +59,47 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-12T21:20:26.916397+00:00"
+    "timestamp": "2026-07-12T21:25:27.375007+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-12T21:20:26.916400+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.26,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "whale_monitor",
+      "oi_funding"
     ],
     "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @TedHZhang (\ud83d\udc4d51 \ud83d\udd041) \"$HYPE is such an explosive ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -13.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -13.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 71% bid-weighted (bullish)",
+        "weight": 0.84
+      }
+    ],
+    "timestamp": "2026-07-12T21:25:27.375015+00:00"
+  },
+  "HYPE": {
+    "score": 0.8,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @TedHZhang (\ud83d\udc4d51 \ud83d\udd041) \"$HYPE is such an explosive  | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -88,8 +110,13 @@
         "source": "x_scanner",
         "signal": "DePIN + AI-Agents dominate with 61 builder signals \u2014 space compute, decentralized GPU, autonomous agents leading. $HYPE ",
         "weight": 0.95
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -4.0% 1h",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-12T21:20:26.916414+00:00"
+    "timestamp": "2026-07-12T21:25:27.375024+00:00"
   }
 }
