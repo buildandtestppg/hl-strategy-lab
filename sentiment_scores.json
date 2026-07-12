@@ -1,35 +1,42 @@
 {
   "BTC": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 73% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI +25.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI +25.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 73% bid-weighted (bullish)",
-        "weight": 0.92
+        "signal": "Orderbook 75% bid-weighted (bullish)",
+        "weight": 1.0
       }
     ],
-    "timestamp": "2026-07-12T14:40:40.069527+00:00"
+    "timestamp": "2026-07-12T14:45:40.690333+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @TedPillows (\ud83d\udc4d100 \ud83d\udd049) Machi Big Brother opened $1",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @TedPillows (\ud83d\udc4d100 \ud83d\udd049) Machi Big Brother opened $1 | oi_funding: OI +24.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -47,46 +54,64 @@
         "weight": 1.69
       }
     ],
-    "timestamp": "2026-07-12T14:40:40.069544+00:00"
+    "timestamp": "2026-07-12T14:45:40.690348+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.28,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @tony_arist Focus on progress not price \u2014 Solana",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @tony_arist Focus on progress not price \u2014 Solana | whale_monitor: Orderbook 22% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @tony_arist Focus on progress not price \u2014 Solana shipping, adoption, txn volume building conviction [score: ",
         "weight": 2.0
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 22% bid (ask-heavy, bearish)",
+        "weight": 1.12
       }
     ],
-    "timestamp": "2026-07-12T14:40:40.069552+00:00"
+    "timestamp": "2026-07-12T14:45:40.690356+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.61,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @kerimcalender (\ud83d\udc4d36 \ud83d\udd048) Next week: DTCC tokeniza",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @kerimcalender (\ud83d\udc4d36 \ud83d\udd048) Next week: DTCC tokeniza | whale_monitor: Orderbook 88% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 88% bid-weighted (bullish)",
+        "weight": 1.52
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @kerimcalender (\ud83d\udc4d36 \ud83d\udd048) Next week: DTCC tokenization tests on Canton $CC, $SYRUP mechanism activation [score",
         "weight": 1.43
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -5.0% 1h",
+        "weight": 0.9
       }
     ],
-    "timestamp": "2026-07-12T14:40:40.069558+00:00"
+    "timestamp": "2026-07-12T14:45:40.690363+00:00"
   }
 }
