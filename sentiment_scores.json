@@ -1,48 +1,42 @@
 {
   "BTC": {
-    "score": -0.42,
-    "confidence": 0.84,
+    "score": -1.0,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "news_agent"
+      "x_scanner"
     ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @ViV_Trade $BTC short setup forming \u2014 Trump menti | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | news_agent: /cryptobriefing.com/iran-strikes-us-targets-middle-east-cryp",
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $BTC] @ViV_Trade $BTC short setup forming \u2014 Trump menti",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $BTC] @ViV_Trade $BTC short setup forming \u2014 Trump mention of $ETH triggered market dump [score: 1.5]",
         "weight": 1.2
-      },
-      {
-        "source": "news_agent",
-        "signal": "/cryptobriefing.com/iran-strikes-us-targets-middle-east-crypto-impact/>  **US launches third airstrike round on Iran** a",
-        "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 28% bid (ask-heavy, bearish)",
-        "weight": 0.88
       }
     ],
-    "timestamp": "2026-07-12T07:20:47.892177+00:00"
+    "timestamp": "2026-07-12T07:25:48.468319+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.04,
+    "confidence": 0.5,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: \"above $60K on July 12\" at 99.9%. July $65K target fading at",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: \"above $60K on July 12\" at 99.9%. July $65K target fading at | oi_funding: OI +24.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +24.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "polymarket",
         "signal": "\"above $60K on July 12\" at 99.9%. July $65K target fading at 81.5% (-6.0pp). Markets see little chance of reclaiming $75",
@@ -54,10 +48,10 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-12T07:20:47.892189+00:00"
+    "timestamp": "2026-07-12T07:25:48.468336+00:00"
   },
   "SOL": {
-    "score": 0.35,
+    "score": 0.47,
     "confidence": 0.5,
     "sources": [
       "whale_monitor",
@@ -67,12 +61,12 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0002%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI +35.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +6.0% 1h, funding 0.0002%",
-        "weight": 1.08
+        "signal": "OI +35.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
       {
         "source": "whale_monitor",
@@ -80,20 +74,21 @@
         "weight": 0.52
       }
     ],
-    "timestamp": "2026-07-12T07:20:47.892197+00:00"
+    "timestamp": "2026-07-12T07:25:48.468344+00:00"
   },
   "HYPE": {
-    "score": -0.42,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $HYPE] @0xcoked (\ud83d\udc4d54 \ud83d\udd045) Bro was full port shorting oil | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @0xcoked (\ud83d\udc4d54 \ud83d\udd045) Bro was full port shorting oil | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -102,8 +97,8 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 75% bid-weighted (bullish)",
-        "weight": 1.0
+        "signal": "Orderbook 21% bid (ask-heavy, bearish)",
+        "weight": 1.16
       },
       {
         "source": "x_scanner",
@@ -111,6 +106,6 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-12T07:20:47.892205+00:00"
+    "timestamp": "2026-07-12T07:25:48.468356+00:00"
   }
 }
