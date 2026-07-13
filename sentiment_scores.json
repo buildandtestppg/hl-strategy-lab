@@ -1,18 +1,18 @@
 {
   "BTC": {
-    "score": 0.86,
-    "confidence": 1.0,
+    "score": 0.58,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "news_agent",
-      "polymarket",
-      "oi_funding"
+      "polymarket"
     ],
     "signal_count": 6,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$BTC] @Cointelegraph (\ud83d\udc4d33 \ud83d\udd041) Metaplanet launches Coinche | news_agent: * \u2014 July 13, 2026  \ud83d\udfe2 **Notable** \u2022 June CPI release tomorrow | polymarket: \u2014 $166K vol \u2022 Fed hike by Oct: 55.0% \u25b25.5pp | Full-year hike",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC] @Cointelegraph (\ud83d\udc4d33 \ud83d\udd041) Metaplanet launches Coinche | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | news_agent: * \u2014 July 13, 2026  \ud83d\udfe2 **Notable** \u2022 June CPI release tomorrow",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,30 +20,32 @@
         "weight": 2.73
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +24.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
-      {
         "source": "news_agent",
         "signal": "* \u2014 July 13, 2026  \ud83d\udfe2 **Notable** \u2022 June CPI release tomorrow as inflation pressures persist \u2022 US-Iran tensions hit bitco",
         "weight": 0.98
+      },
+      {
+        "source": "news_agent",
+        "signal": "partner to develop Japan's first on-chain financial market `SOL` \u2022 Resurgent U.S.-Iran hostilities send bitcoin lower ev",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-13T11:40:02.956654+00:00"
+    "timestamp": "2026-07-13T11:45:03.587448+00:00"
   },
   "ETH": {
-    "score": -0.2,
-    "confidence": 0.5,
+    "score": 0.07,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "whale_monitor",
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @MaxCrypto (\ud83d\udc4d24 \ud83d\udd047) Someone opened a $53M $ETH shor | polymarket: ice Targets \ud83d\udcc5** \u2022 Dip to $55K by Dec 31: 62.5% \u25b22.0pp \u2014 $29K",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$ETH] @MaxCrypto (\ud83d\udc4d24 \ud83d\udd047) Someone opened a $53M $ETH shor | whale_monitor: Orderbook 60% bid-weighted (bullish) | polymarket: ice Targets \ud83d\udcc5** \u2022 Dip to $55K by Dec 31: 62.5% \u25b22.0pp \u2014 $29K",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -56,45 +58,52 @@
         "weight": 1.89
       },
       {
-        "source": "polymarket",
-        "signal": "ice Targets \ud83d\udcc5** \u2022 Dip to $55K by Dec 31: 62.5% \u25b22.0pp \u2014 $29K vol \u2022 Dip to $45K by Dec 31: 29.5% \u2014 $49K vol \u2022 ATH by Dec ",
-        "weight": 0.96
+        "source": "oi_funding",
+        "signal": "OI +12.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-13T11:40:02.956671+00:00"
+    "timestamp": "2026-07-13T11:45:03.587466+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0011%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 85% bid-weighted (bullish) | oi_funding: OI +23.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0011%",
-        "weight": 0.9
+        "signal": "OI +23.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 85% bid-weighted (bullish)",
+        "weight": 1.4
       }
     ],
-    "timestamp": "2026-07-13T11:40:02.956679+00:00"
+    "timestamp": "2026-07-13T11:45:03.587475+00:00"
   },
   "HYPE": {
-    "score": 0.68,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd28 $HYPE] @HyperliquidX (\ud83d\udc4d328 \ud83d\udd0457) RWA open interest on Hy | oi_funding: OI -29.0% 1h",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udd28 $HYPE] @HyperliquidX (\ud83d\udc4d328 \ud83d\udd0457) RWA open interest on Hy | whale_monitor: Orderbook 77% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -107,11 +116,11 @@
         "weight": 2.02
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -29.0% 1h",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 77% bid-weighted (bullish)",
+        "weight": 1.08
       }
     ],
-    "timestamp": "2026-07-13T11:40:02.956688+00:00"
+    "timestamp": "2026-07-13T11:45:03.587485+00:00"
   }
 }
