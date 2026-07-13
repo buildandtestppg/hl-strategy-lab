@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-07-13T19:11:02.241481+08:00",
-  "exported_at_utc": "2026-07-13T11:11:02.241483+00:00",
+  "exported_at": "2026-07-13T19:20:03.033264+08:00",
+  "exported_at_utc": "2026-07-13T11:20:03.033267+00:00",
   "portfolio": {
     "value": 4865.041291257158,
     "initial": 5000.0,
@@ -367,16 +367,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-12T19:50:16.623082+00:00",
-      "v": 4951.21,
-      "p": -0.98
-    },
-    {
-      "t": "2026-07-12T19:55:17.067659+00:00",
-      "v": 4955.24,
-      "p": -0.9
-    },
     {
       "t": "2026-07-12T20:00:17.824173+00:00",
       "v": 4957.71,
@@ -1366,24 +1356,40 @@
       "t": "2026-07-13T11:11:00.129675+00:00",
       "v": 4867.45,
       "p": -2.65
+    },
+    {
+      "t": "2026-07-13T11:15:00.685700+00:00",
+      "v": 4867.63,
+      "p": -2.65
+    },
+    {
+      "t": "2026-07-13T11:20:00.999888+00:00",
+      "v": 4863.75,
+      "p": -2.73
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": 0.29,
-      "confidence": 0.84,
+      "score": 0.65,
+      "confidence": 0.9,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 71% bid-weighted (bullish) | polymarket: \u2014 $166K vol \u2022 Fed hike by Oct: 55.0% \u25b25.5pp | Full-year hike | oi_funding: OI -48.0% 1h",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$BTC] @Cointelegraph (\ud83d\udc4d33 \ud83d\udd041) Metaplanet launches Coinche | whale_monitor: Orderbook 71% bid-weighted (bullish) | polymarket: \u2014 $166K vol \u2022 Fed hike by Oct: 55.0% \u25b25.5pp | Full-year hike",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$BTC] @Cointelegraph (\ud83d\udc4d33 \ud83d\udd041) Metaplanet launches Coincheck shareholder benefit offering 20M yen in $BTC prizes from ",
+          "weight": 2.73
+        },
         {
           "source": "oi_funding",
           "signal": "OI -48.0% 1h",
@@ -1393,17 +1399,12 @@
           "source": "whale_monitor",
           "signal": "Orderbook 71% bid-weighted (bullish)",
           "weight": 0.84
-        },
-        {
-          "source": "polymarket",
-          "signal": "\u2014 $166K vol \u2022 Fed hike by Oct: 55.0% \u25b25.5pp | Full-year hike: 58.5% \u25bc5.0pp \u2192 Markets split: July likely unchanged, but g",
-          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-13T11:10:59.957106+00:00"
+      "timestamp": "2026-07-13T11:20:00.908913+00:00"
     },
     "ETH": {
-      "score": 0.24,
+      "score": 0.08,
       "confidence": 0.9,
       "sources": [
         "x_scanner",
@@ -1415,51 +1416,45 @@
       "convergence": true,
       "convergence_strength": 3,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @TedPillows (\ud83d\udc4d25 \ud83d\udd043) Someone opened a $53.45M $ET | whale_monitor: Orderbook 62% bid-weighted (bullish) | polymarket: ice Targets \ud83d\udcc5** \u2022 Dip to $55K by Dec 31: 62.5% \u25b22.0pp \u2014 $29K",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$ETH] @MaxCrypto (\ud83d\udc4d24 \ud83d\udd047) Someone opened a $53M $ETH shor | whale_monitor: Orderbook 62% bid-weighted (bullish) | polymarket: ice Targets \ud83d\udcc5** \u2022 Dip to $55K by Dec 31: 62.5% \u25b22.0pp \u2014 $29K",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $ETH] @TedPillows (\ud83d\udc4d25 \ud83d\udd043) Someone opened a $53.45M $ETH short with 20x leverage. Liquidation: $1,926. Smart or foo",
-          "weight": 2.4
+          "signal": "\u2022 [$ETH] @MaxCrypto (\ud83d\udc4d24 \ud83d\udd047) Someone opened a $53M $ETH short with 20x leverage. Whale has almost $1M in profits, 100% w",
+          "weight": 2.15
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$ETH] @CryptoGerla (\ud83d\udc4d62) SpaceX AND Starlink accounts breached to push rug pull token $SCATMAN [score: 2.9]",
+          "weight": 1.89
         },
         {
           "source": "oi_funding",
           "signal": "OI +13.0% 1h, funding 0.0013%",
           "weight": 1.44
-        },
-        {
-          "source": "polymarket",
-          "signal": "ice Targets \ud83d\udcc5** \u2022 Dip to $55K by Dec 31: 62.5% \u25b22.0pp \u2014 $29K vol \u2022 Dip to $45K by Dec 31: 29.5% \u2014 $49K vol \u2022 ATH by Dec ",
-          "weight": 0.96
         }
       ],
-      "timestamp": "2026-07-13T11:10:59.957141+00:00"
+      "timestamp": "2026-07-13T11:20:00.908933+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 0.74,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$SOL] Japan's SBI building on-chain financial market on S | oi_funding: OI +18.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +18.0% 1h, funding 0.0013%",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [$SOL] Japan's SBI building on-chain financial market on Solana \u2014 yen-backed stablecoins, tokenized RWA, cross-border ",
-          "weight": 2.08
-        },
         {
           "source": "oi_funding",
           "signal": "OI +18.0% 1h, funding 0.0013%",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-13T11:10:59.957151+00:00"
+      "timestamp": "2026-07-13T11:20:00.908941+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -1469,29 +1464,29 @@
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 5,
       "convergence": true,
       "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$HYPE] Hyperliquid OI hits $11.07B \u2014 2026 HIGH. HIP-3 mar | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +17.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udd28 $HYPE] @HyperliquidX (\ud83d\udc4d328 \ud83d\udd0457) RWA open interest on Hy | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +17.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [$HYPE] Hyperliquid OI hits $11.07B \u2014 2026 HIGH. HIP-3 markets carry $3.69B, RWA OI at fresh ATH. [score: 2.7]",
-          "weight": 1.76
+          "signal": "\u2022 [\ud83d\udd28 $HYPE] @HyperliquidX (\ud83d\udc4d328 \ud83d\udd0457) RWA open interest on Hyperliquid reached a new ATH of $3.6B. Total OI reached a new",
+          "weight": 4.88
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$HYPE] @scottmelker (\ud83d\udc4d30) HYPERLIQUID $HYPE RWA OPEN INTEREST HITS NEW ATH OF $3.6B [score: 3.1]",
+          "weight": 2.02
         },
         {
           "source": "oi_funding",
           "signal": "OI +17.0% 1h, funding 0.0013%",
           "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 67% bid-weighted (bullish)",
-          "weight": 0.68
         }
       ],
-      "timestamp": "2026-07-13T11:10:59.957161+00:00"
+      "timestamp": "2026-07-13T11:20:00.908951+00:00"
     }
   },
   "pair_strategies": {
@@ -1563,102 +1558,102 @@
       {
         "text": "**Job ID:** 43ba1d393c5a",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
-        "text": "**Run Time:** 2026-07-13 18:47:21",
+        "text": "**Run Time:** 2026-07-13 19:14:09",
         "sentiment": 0,
-        "time": "2026-07-13 18:47"
+        "time": "2026-07-13 19:14"
       },
       {
         "text": "**Schedule:** 5,35 * * * *",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "[SYSTEM: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just produc",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "You are the Crypto Scanner Agent. Run BOTH the X scanner and Reddit scanner, then report results to Discord.",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "You MUST use a subagent to run Reddit scanner in parallel with X scanner. This saves ~5-9 minutes per cycle.",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "Spawn the Reddit subagent BEFORE starting x_scanner.py so they run in parallel:",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "delegate_task(",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "goal=\"Run the Reddit crypto scanner and write results to a temp file\",",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "context=\"Run this command: cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/reddit_scanner.py 2>&1. Wait for it to complete (may take 5-9 min)",
         "sentiment": -0.3,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "toolsets=[\"terminal\", \"file\"],",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "max_iterations=15",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": ")",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "Run the X scanner normally:",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/x_scanner.py 2>&1",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "Parse the JSON output as usual.",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       },
       {
         "text": "After x_scanner.py finishes:",
         "sentiment": 0,
-        "time": "1783939641.9114752"
+        "time": "1783941249.0425277"
       }
     ],
     "whale_monitor": [
@@ -1865,32 +1860,32 @@
         "time": "1783941008.1714358"
       }
     ],
-    "generated": "2026-07-13T11:10:59.994999Z"
+    "generated": "2026-07-13T11:20:00.930016Z"
   },
   "scanner_status": {
     "x_scanner": {
-      "last_run": "18:47",
-      "age_minutes": 24,
+      "last_run": "19:14",
+      "age_minutes": 6,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "19:02",
-      "age_minutes": 9,
+      "age_minutes": 18,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "19:10",
-      "age_minutes": 1,
+      "age_minutes": 10,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "15:07",
-      "age_minutes": 243,
+      "age_minutes": 252,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "19:01",
-      "age_minutes": 10,
+      "last_run": "19:15",
+      "age_minutes": 5,
       "status": "fresh"
     }
   },
@@ -2319,14 +2314,12 @@
     }
   },
   "prices": {
-    "BTC": 63132.5,
-    "ETH": 1783.95,
-    "SOL": 76.4505,
-    "HYPE": 65.2385
+    "BTC": 63008.5,
+    "ETH": 1780.35,
+    "SOL": 76.3195,
+    "HYPE": 65.0605
   },
-  "actions": [
-    "\ud83e\udde0 SOL: TA signal SHORT blocked by sentiment overlay"
-  ],
+  "actions": [],
   "ai_history": [
     {
       "timestamp": "2026-07-02T10:27:44.614639+00:00",
