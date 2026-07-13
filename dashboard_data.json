@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-13T09:00:46.315109+00:00",
+  "last_update": "2026-07-13T09:05:46.801540+00:00",
   "portfolio": {
     "value": 4866.33,
     "capital": 4866.33,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63197.5,
-    "ETH": 1789.35,
-    "SOL": 76.6645,
-    "HYPE": 65.5425
+    "BTC": 63170.5,
+    "ETH": 1788.95,
+    "SOL": 76.6345,
+    "HYPE": 65.4515
   },
   "positions": {},
   "stats": {
@@ -939,11 +939,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-12T17:40:02.621892+00:00",
-      "v": 4947.26,
-      "p": -1.05
-    },
     {
       "t": "2026-07-12T17:45:03.332974+00:00",
       "v": 4948.18,
@@ -1938,6 +1933,11 @@
       "t": "2026-07-13T09:00:46.315109+00:00",
       "v": 4866.33,
       "p": -2.67
+    },
+    {
+      "t": "2026-07-13T09:05:46.801540+00:00",
+      "v": 4866.33,
+      "p": -2.67
     }
   ],
   "ai_history": [
@@ -1984,8 +1984,8 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.23,
-      "confidence": 0.6,
+      "score": 0.39,
+      "confidence": 0.9,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1993,10 +1993,10 @@
         "oi_funding"
       ],
       "signal_count": 7,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 2,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @Cointelegraph (\ud83d\udc4d33 \ud83d\udd041) UPDATE: Metaplanet launch | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | polymarket: \u2014 $166K vol \u2022 Fed hike by Oct: 55.0% \u25b25.5pp | Full-year hike",
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @Cointelegraph (\ud83d\udc4d33 \ud83d\udd041) UPDATE: Metaplanet launch | whale_monitor: Orderbook 64% bid-weighted (bullish) | polymarket: \u2014 $166K vol \u2022 Fed hike by Oct: 55.0% \u25b25.5pp | Full-year hike",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2014,24 +2014,25 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-13T09:00:46.151393+00:00"
+      "timestamp": "2026-07-13T09:05:46.717238+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.74,
+      "confidence": 1.0,
       "sources": [
+        "whale_monitor",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | polymarket: ice Targets \ud83d\udcc5** \u2022 Dip to $55K by Dec 31: 62.5% \u25b22.0pp \u2014 $29K | oi_funding: OI +11.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | polymarket: ice Targets \ud83d\udcc5** \u2022 Dip to $55K by Dec 31: 62.5% \u25b22.0pp \u2014 $29K | oi_funding: OI +40.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +11.0% 1h, funding 0.0013%",
+          "signal": "OI +40.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -2045,46 +2046,39 @@
           "weight": 0.96
         }
       ],
-      "timestamp": "2026-07-13T09:00:46.151460+00:00"
+      "timestamp": "2026-07-13T09:05:46.717252+00:00"
     },
     "SOL": {
-      "score": 0.44,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
         "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +37.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +37.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-13T09:05:46.717258+00:00"
+    },
+    "HYPE": {
+      "score": 0.06,
+      "confidence": 0.3,
+      "sources": [
+        "x_scanner"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +8.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +8.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 36% bid (ask-heavy, bearish)",
-          "weight": 0.56
-        }
-      ],
-      "timestamp": "2026-07-13T09:00:46.151476+00:00"
-    },
-    "HYPE": {
-      "score": -0.12,
-      "confidence": 0.6,
-      "sources": [
-        "x_scanner",
-        "whale_monitor"
-      ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udd37 $HYPE] @CW8900 (\ud83d\udc4d2 \ud83d\udd040) Hyperliquid Smart Tracking Repor | whale_monitor: Orderbook 34% bid (ask-heavy, bearish)",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udd37 $HYPE] @CW8900 (\ud83d\udc4d2 \ud83d\udd040) Hyperliquid Smart Tracking Repor",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2095,14 +2089,9 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udd37 $HYPE] @Havochl_ (\ud83d\udc4d15 \ud83d\udd040) tradeXYZ flipping Hyperliquid in 24H volume is why I don't think Shoku's token would be b",
           "weight": 1.49
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 34% bid (ask-heavy, bearish)",
-          "weight": 0.64
         }
       ],
-      "timestamp": "2026-07-13T09:00:46.151485+00:00"
+      "timestamp": "2026-07-13T09:05:46.717264+00:00"
     }
   },
   "config": {
