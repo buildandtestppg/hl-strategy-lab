@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-13T17:20:38.152576+00:00",
+  "last_update": "2026-07-13T17:25:38.512511+00:00",
   "portfolio": {
-    "value": 4840.72,
+    "value": 4845.5,
     "capital": 4839.01,
     "initial": 5000.0,
-    "pnl": -159.28,
-    "pnl_pct": -3.19,
+    "pnl": -154.5,
+    "pnl_pct": -3.09,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 62246.5,
-    "ETH": 1773.65,
-    "SOL": 75.3285,
-    "HYPE": 63.7305
+    "BTC": 62191.5,
+    "ETH": 1770.65,
+    "SOL": 75.2655,
+    "HYPE": 63.6075
   },
   "positions": {
     "ETH": {
       "direction": "SHORT",
       "entry_price": 1774.45,
-      "current_price": 1773.65,
+      "current_price": 1770.65,
       "size": 1.0894408475839719,
-      "unrealized_pnl": 0.87,
-      "unrealized_pnl_pct": 0.05,
+      "unrealized_pnl": 4.14,
+      "unrealized_pnl_pct": 0.21,
       "stop_loss": 1818.9,
       "take_profit": 1685.55,
       "strategy": "trend",
       "entry_time": "2026-07-13T17:15:38.867825+00:00",
-      "duration_hours": 0.1,
+      "duration_hours": 0.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.002
+      "unrealized_funding": -0.004
     },
     "SOL": {
       "direction": "SHORT",
       "entry_price": 75.3635,
-      "current_price": 75.3285,
+      "current_price": 75.2655,
       "size": 23.978838722547803,
-      "unrealized_pnl": 0.84,
-      "unrealized_pnl_pct": 0.05,
+      "unrealized_pnl": 2.35,
+      "unrealized_pnl_pct": 0.13,
       "stop_loss": 77.38225,
       "take_profit": 71.326,
       "strategy": "stochastic",
       "entry_time": "2026-07-13T17:15:38.879062+00:00",
-      "duration_hours": 0.1,
-      "funding_rate": -0.00022,
-      "unrealized_funding": 0.0003
+      "duration_hours": 0.2,
+      "funding_rate": -0.000345,
+      "unrealized_funding": 0.001
     }
   },
   "stats": {
@@ -970,11 +970,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-13T02:00:59.435754+00:00",
-      "v": 4868.73,
-      "p": -2.63
-    },
     {
       "t": "2026-07-13T02:05:59.895396+00:00",
       "v": 4871.48,
@@ -1969,6 +1964,11 @@
       "t": "2026-07-13T17:20:38.152576+00:00",
       "v": 4840.72,
       "p": -3.19
+    },
+    {
+      "t": "2026-07-13T17:25:38.512511+00:00",
+      "v": 4845.5,
+      "p": -3.09
     }
   ],
   "ai_history": [
@@ -2015,36 +2015,35 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.19,
-      "confidence": 0.84,
+      "score": -0.05,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 3,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @cryptorover (\ud83d\udc4d53 \ud83d\udd043) Germany's Bitcoin mistake r | whale_monitor: Orderbook 68% bid-weighted (bullish) | oi_funding: OI -47.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @cryptorover (\ud83d\udc4d53 \ud83d\udd043) Germany's Bitcoin mistake r | oi_funding: OI -62.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -47.0% 1h",
+          "signal": "OI -62.0% 1h",
           "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 68% bid-weighted (bullish)",
-          "weight": 0.72
         },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcca $BTC] @cryptorover (\ud83d\udc4d53 \ud83d\udd043) Germany's Bitcoin mistake repeating \u2014 seized 50K BTC may be sold [3.5]",
           "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $BTC] @Trader_Fazal (\ud83d\udc4d2 \ud83d\udd040) XRP whale accumulation debunked by on-chain [1.6]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-13T17:20:38.062124+00:00"
+      "timestamp": "2026-07-13T17:25:38.430386+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2057,11 +2056,11 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @CryptoFalcon2x $ETH below resistance, momentum f | oi_funding: OI -13.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @CryptoFalcon2x $ETH below resistance, momentum f | oi_funding: OI -24.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -13.0% 1h",
+          "signal": "OI -24.0% 1h",
           "weight": 1.44
         },
         {
@@ -2070,7 +2069,7 @@
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-13T17:20:38.062140+00:00"
+      "timestamp": "2026-07-13T17:25:38.430400+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -2083,11 +2082,11 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u26a0\ufe0f X scanner: partial (4/7 topics) due to 300s timeout durin | oi_funding: OI -111.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u26a0\ufe0f X scanner: partial (4/7 topics) due to 300s timeout durin | oi_funding: OI -108.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -111.0% 1h",
+          "signal": "OI -108.0% 1h",
           "weight": 1.44
         },
         {
@@ -2096,38 +2095,39 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-13T17:20:38.062149+00:00"
+      "timestamp": "2026-07-13T17:25:38.430409+00:00"
     },
     "HYPE": {
-      "score": -0.36,
-      "confidence": 0.6,
+      "score": 0.56,
+      "confidence": 0.94,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @thedefivillain (\ud83d\udc4d35 \ud83d\udd040) $HYPE triple top + decl | oi_funding: OI -33.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @thedefivillain (\ud83d\udc4d35 \ud83d\udd040) $HYPE triple top + decl | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI +58.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -33.0% 1h",
+          "signal": "OI +58.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 75% bid-weighted (bullish)",
+          "weight": 1.0
         },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $HYPE] @thedefivillain (\ud83d\udc4d35 \ud83d\udd040) $HYPE triple top + declining volume; ETF euphoria waning [3.0]",
           "weight": 0.65
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @CRYPTOGEMS02 (\ud83d\udc4d2 \ud83d\udd041) $SYN / Hypercall: permissionless options on Hyperliquid [2.7]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-13T17:20:38.062159+00:00"
+      "timestamp": "2026-07-13T17:25:38.430420+00:00"
     }
   },
   "config": {
