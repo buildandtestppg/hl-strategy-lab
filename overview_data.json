@@ -1,47 +1,17 @@
 {
-  "exported_at": "2026-07-14T07:10:19.891027+08:00",
-  "exported_at_utc": "2026-07-13T23:10:19.891030+00:00",
+  "exported_at": "2026-07-14T07:20:20.921699+08:00",
+  "exported_at_utc": "2026-07-13T23:20:20.921702+00:00",
   "portfolio": {
-    "value": 4838.7659711504075,
+    "value": 4853.763600073412,
     "initial": 5000.0,
-    "pnl": -161.2340288495925,
-    "pnl_pct": -3.22468057699185,
+    "pnl": -146.2363999265881,
+    "pnl_pct": -2.9247279985317616,
     "peak": 5076.7203404422935,
-    "open_positions": 1,
+    "open_positions": 0,
     "max_positions": 4
   },
-  "positions": {
-    "SOL": {
-      "direction": "SHORT",
-      "entry_price": 75.3635,
-      "size": 23.978838722547803,
-      "stop_loss": 77.38225,
-      "take_profit": 71.326,
-      "entry_time": "2026-07-13T17:15:38.879062+00:00",
-      "entry_ts": 1783962938.8790662,
-      "strategy": "stochastic",
-      "confidence": 0.75,
-      "reason": "Sentiment-driven SHORT (score -1.00, conf 0.7, momentum confirmed)"
-    }
-  },
+  "positions": {},
   "closed_trades": [
-    {
-      "pair": "SOL",
-      "direction": "LONG",
-      "entry_price": 77.741,
-      "exit_price": 78.0855,
-      "size": 20.325762775650166,
-      "pnl": 5.4348,
-      "pnl_pct": 0.34,
-      "entry_time": "2026-07-09T14:45:23.563530+00:00",
-      "exit_time": "2026-07-09T17:45:42.424466+00:00",
-      "duration_hours": 3.0,
-      "exit_reason": "regime_override",
-      "strategy": "stochastic",
-      "fees_paid": 1.5078,
-      "funding_cost": 0.0596,
-      "total_cost": 1.5674
-    },
     {
       "pair": "HYPE",
       "direction": "LONG",
@@ -364,19 +334,26 @@
       "fees_paid": 1.8351,
       "funding_cost": -0.0645,
       "total_cost": 1.7705
+    },
+    {
+      "pair": "SOL",
+      "direction": "SHORT",
+      "entry_price": 75.3635,
+      "exit_price": 74.6655,
+      "size": 23.978838722547803,
+      "pnl": 14.9976,
+      "pnl_pct": 0.83,
+      "entry_time": "2026-07-13T17:15:38.879062+00:00",
+      "exit_time": "2026-07-13T23:20:20.386146+00:00",
+      "duration_hours": 6.1,
+      "exit_reason": "signal_exit",
+      "strategy": "stochastic",
+      "fees_paid": 1.7009,
+      "funding_cost": 0.0387,
+      "total_cost": 1.7396
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-13T07:45:37.133564+00:00",
-      "v": 4867.21,
-      "p": -2.66
-    },
-    {
-      "t": "2026-07-13T07:50:37.730745+00:00",
-      "v": 4866.33,
-      "p": -2.67
-    },
     {
       "t": "2026-07-13T07:55:38.251883+00:00",
       "v": 4866.33,
@@ -1366,54 +1343,71 @@
       "t": "2026-07-13T23:10:17.711673+00:00",
       "v": 4860.93,
       "p": -2.78
+    },
+    {
+      "t": "2026-07-13T23:15:18.419694+00:00",
+      "v": 4858.53,
+      "p": -2.83
+    },
+    {
+      "t": "2026-07-13T23:20:18.957138+00:00",
+      "v": 4853.76,
+      "p": -2.92
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.6,
-      "confidence": 0.7,
+      "score": -0.07,
+      "confidence": 0.6,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "news_agent",
         "polymarket"
       ],
-      "signal_count": 4,
+      "signal_count": 6,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 66% bid-weighted (bullish) | news_agent: **US-Iran resumed hostilities** \u2192 High Impact (ceasefire end | polymarket: **)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeti",
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @lukesassycunt (\ud83d\udc4d0 \ud83d\udd040) Babylon building native $ | whale_monitor: Orderbook 66% bid-weighted (bullish) | news_agent: **US-Iran resumed hostilities** \u2192 High Impact (ceasefire end",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $BTC] @lukesassycunt (\ud83d\udc4d0 \ud83d\udd040) Babylon building native $BTC utility as institutional adoption grows \u2014 early innings ",
+          "weight": 3.32
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $BTC] @CryptosR_Us (\ud83d\udc4d10 \ud83d\udd042) 8-WEEK ETF OUTFLOW STREAK OVER \u2014 $281.8M weekly inflows, first positive since May [scor",
+          "weight": 2.02
+        },
         {
           "source": "news_agent",
           "signal": "**US-Iran resumed hostilities** \u2192 High Impact (ceasefire ended) 3. Russia-Kyiv missiles \u2192 Notable (war keyword) 4. Bitco",
           "weight": 0.98
-        },
-        {
-          "source": "polymarket",
-          "signal": "**)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeting \u2014 62.5% (+18pp, $11K 24h) | Hike probability surging acro",
-          "weight": 0.78
-        },
-        {
-          "source": "polymarket",
-          "signal": "* \u2022 **Fed/Macro**: Fed hike by Sep meeting \u2014 62.5% (+18pp, $11K 24h) | Hike probability surging across all near-term mee",
-          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-13T23:10:17.608161+00:00"
+      "timestamp": "2026-07-13T23:20:18.868188+00:00"
     },
     "ETH": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.13,
+      "confidence": 0.5,
       "sources": [
+        "x_scanner",
         "polymarket"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in Ju",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $ETH] @CryptosR_Us (\ud83d\udc4d10 \ud83d\udd042) Same ETF inflow data \u2014 $BTC | polymarket: ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in Ju",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $ETH] @CryptosR_Us (\ud83d\udc4d10 \ud83d\udd042) Same ETF inflow data \u2014 $BTC $197.4M, $ETH funds also positive [score: 3.1]",
+          "weight": 2.02
+        },
         {
           "source": "polymarket",
           "signal": "ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in July \u2014 54.5% (-32pp, $139K 24h) | Price targets collapsing, ne",
@@ -1425,7 +1419,7 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-13T23:10:17.608174+00:00"
+      "timestamp": "2026-07-13T23:20:18.868203+00:00"
     },
     "SOL": {
       "score": 0.0,
@@ -1437,38 +1431,27 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-07-13T23:10:17.608176+00:00"
+      "timestamp": "2026-07-13T23:20:18.868205+00:00"
     },
     "HYPE": {
-      "score": 0.22,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 4,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @riskoff_hl (\ud83d\udc4d0 \ud83d\udd040) $HYPE ran ~13% this week, c | whale_monitor: Orderbook 81% bid-weighted (bullish)",
+      "contradictions": 0,
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 81% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "whale_monitor",
           "signal": "Orderbook 81% bid-weighted (bullish)",
           "weight": 1.24
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @riskoff_hl (\ud83d\udc4d0 \ud83d\udd040) $HYPE ran ~13% this week, closing near $79. OI pushed to new local high ~$10B on Hyperl",
-          "weight": 0.8
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $HYPE] @OnchainLens (\ud83d\udc4d3 \ud83d\udd040) A Hyperliquid whale holding ~$54M in short positions across global markets. Portfolio ~",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-13T23:10:17.608186+00:00"
+      "timestamp": "2026-07-13T23:20:18.868212+00:00"
     }
   },
   "pair_strategies": {
@@ -1540,102 +1523,102 @@
       {
         "text": "**Job ID:** 43ba1d393c5a",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
-        "text": "**Run Time:** 2026-07-14 06:46:15",
+        "text": "**Run Time:** 2026-07-14 07:15:09",
         "sentiment": 0,
-        "time": "2026-07-14 06:46"
+        "time": "2026-07-14 07:15"
       },
       {
         "text": "**Schedule:** 5,35 * * * *",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "[SYSTEM: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just produc",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "You are the Crypto Scanner Agent. Run BOTH the X scanner and Reddit scanner, then report results to Discord.",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "You MUST use a subagent to run Reddit scanner in parallel with X scanner. This saves ~5-9 minutes per cycle.",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "Spawn the Reddit subagent BEFORE starting x_scanner.py so they run in parallel:",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "delegate_task(",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "goal=\"Run the Reddit crypto scanner and write results to a temp file\",",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "context=\"Run this command: cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/reddit_scanner.py 2>&1. Wait for it to complete (may take 5-9 min)",
         "sentiment": -0.3,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "toolsets=[\"terminal\", \"file\"],",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "max_iterations=15",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": ")",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "Run the X scanner normally:",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/x_scanner.py 2>&1",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "Parse the JSON output as usual.",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       },
       {
         "text": "After x_scanner.py finishes:",
         "sentiment": 0,
-        "time": "1783982776.0039945"
+        "time": "1783984509.0459805"
       }
     ],
     "whale_monitor": [
@@ -1842,32 +1825,32 @@
         "time": "1783984086.8191583"
       }
     ],
-    "generated": "2026-07-13T23:10:17.629650Z"
+    "generated": "2026-07-13T23:20:18.888576Z"
   },
   "scanner_status": {
     "x_scanner": {
-      "last_run": "06:46",
-      "age_minutes": 24,
+      "last_run": "07:15",
+      "age_minutes": 5,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "07:01",
-      "age_minutes": 9,
+      "age_minutes": 19,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "07:08",
-      "age_minutes": 2,
+      "age_minutes": 12,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "03:05",
-      "age_minutes": 245,
+      "age_minutes": 255,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "07:00",
-      "age_minutes": 10,
+      "last_run": "07:15",
+      "age_minutes": 5,
       "status": "fresh"
     }
   },
@@ -2253,15 +2236,15 @@
     }
   ],
   "stats": {
-    "total_trades": 60,
-    "wins": 25,
+    "total_trades": 61,
+    "wins": 26,
     "losses": 35,
-    "win_rate": 41.7,
-    "avg_win": 19.65,
+    "win_rate": 42.6,
+    "avg_win": 19.47,
     "avg_loss": -15.52,
     "best_trade": 54.93,
     "worst_trade": -45.01,
-    "total_realized_pnl": -52.02
+    "total_realized_pnl": -37.02
   },
   "pair_stats": {
     "BTC": {
@@ -2279,11 +2262,11 @@
       "win_rate": 38.9
     },
     "SOL": {
-      "trades": 17,
-      "wins": 9,
+      "trades": 18,
+      "wins": 10,
       "losses": 8,
-      "pnl": 4.3,
-      "win_rate": 52.9
+      "pnl": 19.3,
+      "win_rate": 55.6
     },
     "HYPE": {
       "trades": 18,
@@ -2294,12 +2277,14 @@
     }
   },
   "prices": {
-    "BTC": 62018.5,
-    "ETH": 1759.85,
-    "SOL": 74.4355,
-    "HYPE": 63.1805
+    "BTC": 62117.5,
+    "ETH": 1765.25,
+    "SOL": 74.6655,
+    "HYPE": 63.3575
   },
-  "actions": [],
+  "actions": [
+    "\u2705 CLOSED SHORT SOL @ $74.6655 | P&L: $+15.00 (+0.8%) | Reason: signal_exit"
+  ],
   "ai_history": [
     {
       "timestamp": "2026-07-02T10:27:44.614639+00:00",
@@ -2742,11 +2727,11 @@
       "win_rate": 38.3
     },
     "signal_exit": {
-      "count": 13,
-      "pnl": 15.52,
-      "fees": 19.08,
-      "wins": 7,
-      "win_rate": 53.8
+      "count": 14,
+      "pnl": 30.52,
+      "fees": 20.78,
+      "wins": 8,
+      "win_rate": 57.1
     }
   },
   "pruned_pairs": {
