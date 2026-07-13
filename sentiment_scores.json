@@ -1,17 +1,18 @@
 {
   "BTC": {
-    "score": 0.58,
-    "confidence": 0.84,
+    "score": 0.15,
+    "confidence": 0.6,
     "sources": [
       "x_scanner",
+      "news_agent",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f BTC] @Garreett_G (\ud83d\udc4d36 \ud83d\udd0417) $BTC trying to stabilize ne | polymarket: **)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeti | oi_funding: OI +8.0% 1h, funding 0.0013%",
+    "signal_count": 6,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 2,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f BTC] @Garreett_G (\ud83d\udc4d36 \ud83d\udd0417) $BTC trying to stabilize ne | news_agent: ump admin discusses US open-source AI framework** \u2014 WaPo rep | polymarket: **)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeti",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -24,12 +25,12 @@
         "weight": 1.44
       },
       {
-        "source": "polymarket",
-        "signal": "**)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeting \u2014 62.5% (+18pp, $11K 24h) | Hike probability surging acro",
-        "weight": 0.78
+        "source": "news_agent",
+        "signal": "ump admin discusses US open-source AI framework** \u2014 WaPo reports industry talks on open-source model rules.  \ud83d\udcca **DB:** 7",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-13T19:35:53.169215+00:00"
+    "timestamp": "2026-07-13T19:40:53.863670+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -43,7 +44,7 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca ETH] @TechCharts (\ud83d\udc4d25 \ud83d\udd043) $ETH short-term double bottom | news_agent: Robinhood Chain $UNI   <https://thedefiant.io/news/defi/unis | polymarket: ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in Ju",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca ETH] @TechCharts (\ud83d\udc4d25 \ud83d\udd043) $ETH short-term double bottom | news_agent: in discusses US open-source AI framework** \u2014 WaPo reports in | polymarket: ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in Ju",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -52,7 +53,7 @@
       },
       {
         "source": "news_agent",
-        "signal": "Robinhood Chain $UNI   <https://thedefiant.io/news/defi/uniswap-auctions-go-live-on-robinhood-chain/> \u2022 Sablier winding ",
+        "signal": "in discusses US open-source AI framework** \u2014 WaPo reports industry talks on open-source model rules.  \ud83d\udcca **DB:** 762 new ",
         "weight": 0.98
       },
       {
@@ -61,46 +62,58 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-13T19:35:53.169231+00:00"
+    "timestamp": "2026-07-13T19:40:53.863702+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.05,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "news_agent"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 72% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 72% bid-weighted (bullish) | news_agent: ** \u2014 WaPo reports industry talks on open-source model rules.",
     "key_signals": [
+      {
+        "source": "news_agent",
+        "signal": "** \u2014 WaPo reports industry talks on open-source model rules.  \ud83d\udcca **DB:** 762 new saved | 0 unreported | BTC(6) ETH(3) HYP",
+        "weight": 0.98
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 72% bid-weighted (bullish)",
         "weight": 0.88
       }
     ],
-    "timestamp": "2026-07-13T19:35:53.169238+00:00"
+    "timestamp": "2026-07-13T19:40:53.863719+00:00"
   },
   "HYPE": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -8.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: usses US open-source AI framework** \u2014 WaPo reports industry  | oi_funding: OI -8.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
         "signal": "OI -8.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "usses US open-source AI framework** \u2014 WaPo reports industry talks on open-source model rules.  \ud83d\udcca **DB:** 762 new saved |",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-13T19:35:53.169244+00:00"
+    "timestamp": "2026-07-13T19:40:53.863736+00:00"
   }
 }
