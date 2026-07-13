@@ -1,21 +1,20 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.0,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @CW8900 (\ud83d\udc4d7) Bitfinex whale longs holding steady, | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +27.0% 1h, funding 0.0013%",
+    "signal_count": 3,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @CW8900 (\ud83d\udc4d7) Bitfinex whale longs holding steady, | oi_funding: OI -32.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +27.0% 1h, funding 0.0013%",
+        "signal": "OI -32.0% 1h",
         "weight": 1.44
       },
       {
@@ -24,12 +23,12 @@
         "weight": 0.8
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 67% bid-weighted (bullish)",
-        "weight": 0.68
+        "source": "x_scanner",
+        "signal": "\u2022 [$BTC] Binance reserve ratio at all-time low + 7-year dormant whale awakening = bullish supply squeeze signal",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-13T07:00:32.999452+00:00"
+    "timestamp": "2026-07-13T07:05:33.299573+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -41,64 +40,58 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +38.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +6.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +38.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "signal": "OI +6.0% 1h, funding 0.0013%",
+        "weight": 1.08
       }
     ],
-    "timestamp": "2026-07-13T07:00:32.999465+00:00"
+    "timestamp": "2026-07-13T07:05:33.299585+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": -0.21,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @blocksquare_io Institutional RWA adoption compo | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI +24.0% 1h, funding 0.0013%",
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @blocksquare_io Institutional RWA adoption compo | oi_funding: OI -22.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +24.0% 1h, funding 0.0013%",
+        "signal": "OI -22.0% 1h",
         "weight": 1.44
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @blocksquare_io Institutional RWA adoption compounding, real estate tokenization on curve [2.5]",
         "weight": 0.95
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 65% bid-weighted (bullish)",
-        "weight": 0.6
       }
     ],
-    "timestamp": "2026-07-13T07:00:32.999475+00:00"
+    "timestamp": "2026-07-13T07:05:33.299594+00:00"
   },
   "HYPE": {
     "score": -1.0,
     "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "oi_funding"
+      "whale_monitor"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @CW8900 (\ud83d\udc4d8) $250.37M liquidated in 24h, largest | oi_funding: OI -52.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @CW8900 (\ud83d\udc4d8) $250.37M liquidated in 24h, largest | whale_monitor: Orderbook 14% bid (ask-heavy, bearish)",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI -52.0% 1h",
+        "source": "whale_monitor",
+        "signal": "Orderbook 14% bid (ask-heavy, bearish)",
         "weight": 1.44
       },
       {
@@ -107,6 +100,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-13T07:00:32.999484+00:00"
+    "timestamp": "2026-07-13T07:05:33.299604+00:00"
   }
 }
