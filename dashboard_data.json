@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-13T02:40:03.586888+00:00",
+  "last_update": "2026-07-13T02:45:04.190261+00:00",
   "portfolio": {
-    "value": 4874.06,
+    "value": 4877.47,
     "capital": 4912.63,
     "initial": 5000.0,
-    "pnl": -125.94,
-    "pnl_pct": -2.52,
+    "pnl": -122.53,
+    "pnl_pct": -2.45,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 63421.5,
-    "ETH": 1809.25,
-    "SOL": 76.4565,
-    "HYPE": 67.0735
+    "BTC": 63458.5,
+    "ETH": 1811.45,
+    "SOL": 76.5605,
+    "HYPE": 67.1295
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 77.6235,
-      "current_price": 76.4565,
+      "current_price": 76.5605,
       "size": 32.92192446290579,
-      "unrealized_pnl": -38.57,
-      "unrealized_pnl_pct": -1.51,
+      "unrealized_pnl": -35.16,
+      "unrealized_pnl_pct": -1.38,
       "stop_loss": 76.1195,
       "take_profit": 80.6315,
       "strategy": "stochastic",
       "entry_time": "2026-07-12T20:05:19.663194+00:00",
-      "duration_hours": 6.6,
-      "funding_rate": 0.000914,
-      "unrealized_funding": 0.1514
+      "duration_hours": 6.7,
+      "funding_rate": 0.000961,
+      "unrealized_funding": 0.1614
     }
   },
   "stats": {
@@ -955,11 +955,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-12T11:20:17.624658+00:00",
-      "v": 4918.47,
-      "p": -1.63
-    },
     {
       "t": "2026-07-12T11:25:18.201981+00:00",
       "v": 4918.47,
@@ -1954,6 +1949,11 @@
       "t": "2026-07-13T02:40:03.586888+00:00",
       "v": 4874.06,
       "p": -2.52
+    },
+    {
+      "t": "2026-07-13T02:45:04.190261+00:00",
+      "v": 4877.47,
+      "p": -2.45
     }
   ],
   "ai_history": [
@@ -2000,18 +2000,19 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 1.0,
+      "score": 0.61,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "news_agent",
         "oi_funding"
       ],
-      "signal_count": 6,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @iamrahulinc (\ud83d\udc4d1 \ud83d\udd040) $BTC | Breaking News A dorm | news_agent: nt:** Classifier rated all low \u2014 upgraded to Breaking/High d | oi_funding: OI +36.0% 1h, funding 0.0013%",
+      "signal_count": 7,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @iamrahulinc (\ud83d\udc4d1 \ud83d\udd040) $BTC | Breaking News A dorm | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | news_agent: nt:** Classifier rated all low \u2014 upgraded to Breaking/High d",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2029,25 +2030,25 @@
           "weight": 1.52
         }
       ],
-      "timestamp": "2026-07-13T02:40:03.440895+00:00"
+      "timestamp": "2026-07-13T02:45:04.053543+00:00"
     },
     "ETH": {
-      "score": 0.47,
-      "confidence": 0.7,
+      "score": 1.0,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "news_agent",
         "oi_funding"
       ],
       "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udca1 $ETH] @meinnameistPatt (\ud83d\udc4d0 \ud83d\udd040) $ETH: 1823.6, strongest  | news_agent: Classifier rated all low \u2014 upgraded to Breaking/High due to  | oi_funding: OI -36.0% 1h",
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udca1 $ETH] @meinnameistPatt (\ud83d\udc4d0 \ud83d\udd040) $ETH: 1823.6, strongest  | news_agent: Classifier rated all low \u2014 upgraded to Breaking/High due to  | oi_funding: OI +230.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -36.0% 1h",
+          "signal": "OI +230.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -2061,25 +2062,26 @@
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-13T02:40:03.440913+00:00"
+      "timestamp": "2026-07-13T02:45:04.053560+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 1.0,
+      "score": 0.2,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "news_agent",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @dex_kolwatcher (\ud83d\udc4d1 \ud83d\udd040) Detect PAID DEXScreener:  | news_agent: sifier rated all low \u2014 upgraded to Breaking/High due to live | oi_funding: OI +55.0% 1h, funding 0.0013%",
+      "signal_count": 5,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @dex_kolwatcher (\ud83d\udc4d1 \ud83d\udd040) Detect PAID DEXScreener:  | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | news_agent: sifier rated all low \u2014 upgraded to Breaking/High due to live",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +55.0% 1h, funding 0.0013%",
+          "signal": "OI -23.0% 1h",
           "weight": 1.44
         },
         {
@@ -2093,10 +2095,10 @@
           "weight": 1.17
         }
       ],
-      "timestamp": "2026-07-13T02:40:03.440924+00:00"
+      "timestamp": "2026-07-13T02:45:04.053570+00:00"
     },
     "HYPE": {
-      "score": 0.9,
+      "score": 0.47,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -2107,13 +2109,8 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @hiperwire (\ud83d\udc4d0 \ud83d\udd040) $SNDK is down 4.95% over fou | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI +15.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @hiperwire (\ud83d\udc4d0 \ud83d\udd040) $SNDK is down 4.95% over fou | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | oi_funding: OI -6.0% 1h",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +15.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @hiperwire (\ud83d\udc4d0 \ud83d\udd040) $SNDK is down 4.95% over four hours to about $1,865 on no fresh company news, trimming l",
@@ -2123,9 +2120,14 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] $SNDK down 4.95%, trimming bounce off Meta NAND supply deal [score: 2.0]",
           "weight": 1.3
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -6.0% 1h",
+          "weight": 1.08
         }
       ],
-      "timestamp": "2026-07-13T02:40:03.440935+00:00"
+      "timestamp": "2026-07-13T02:45:04.053579+00:00"
     }
   },
   "config": {
