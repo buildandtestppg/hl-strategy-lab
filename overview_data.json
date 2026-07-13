@@ -1,28 +1,16 @@
 {
-  "exported_at": "2026-07-14T03:50:57.505143+08:00",
-  "exported_at_utc": "2026-07-13T19:50:57.505146+00:00",
+  "exported_at": "2026-07-14T04:00:58.459016+08:00",
+  "exported_at_utc": "2026-07-13T20:00:58.459019+00:00",
   "portfolio": {
-    "value": 4839.011294362901,
+    "value": 4838.7659711504075,
     "initial": 5000.0,
-    "pnl": -160.98870563709897,
-    "pnl_pct": -3.219774112741979,
+    "pnl": -161.2340288495925,
+    "pnl_pct": -3.22468057699185,
     "peak": 5076.7203404422935,
-    "open_positions": 2,
+    "open_positions": 1,
     "max_positions": 4
   },
   "positions": {
-    "ETH": {
-      "direction": "SHORT",
-      "entry_price": 1774.45,
-      "size": 1.0894408475839719,
-      "stop_loss": 1818.9,
-      "take_profit": 1685.55,
-      "entry_time": "2026-07-13T17:15:38.867825+00:00",
-      "entry_ts": 1783962938.867832,
-      "strategy": "trend",
-      "confidence": 0.75,
-      "reason": "Sentiment-driven SHORT (score -1.00, conf 0.7, momentum confirmed)"
-    },
     "SOL": {
       "direction": "SHORT",
       "entry_price": 75.3635,
@@ -37,23 +25,6 @@
     }
   },
   "closed_trades": [
-    {
-      "pair": "ETH",
-      "direction": "LONG",
-      "entry_price": 1753.75,
-      "exit_price": 1748.15,
-      "size": 1.219267618446943,
-      "pnl": -9.0237,
-      "pnl_pct": -0.42,
-      "entry_time": "2026-07-09T06:45:23.033966+00:00",
-      "exit_time": "2026-07-09T13:10:12.919768+00:00",
-      "duration_hours": 6.4,
-      "exit_reason": "regime_override",
-      "strategy": "trend",
-      "fees_paid": 2.0249,
-      "funding_cost": 0.1709,
-      "total_cost": 2.1958
-    },
     {
       "pair": "SOL",
       "direction": "LONG",
@@ -376,19 +347,26 @@
       "fees_paid": 1.2642,
       "funding_cost": 0.1011,
       "total_cost": 1.3653
+    },
+    {
+      "pair": "ETH",
+      "direction": "SHORT",
+      "entry_price": 1774.45,
+      "exit_price": 1773.05,
+      "size": 1.0894408475839719,
+      "pnl": -0.2453,
+      "pnl_pct": -0.01,
+      "entry_time": "2026-07-13T17:15:38.867825+00:00",
+      "exit_time": "2026-07-13T19:55:57.247165+00:00",
+      "duration_hours": 2.7,
+      "exit_reason": "regime_override",
+      "strategy": "trend",
+      "fees_paid": 1.8351,
+      "funding_cost": -0.0645,
+      "total_cost": 1.7705
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-13T04:30:16.685422+00:00",
-      "v": 4874.05,
-      "p": -2.52
-    },
-    {
-      "t": "2026-07-13T04:31:35.666212+00:00",
-      "v": 4874.05,
-      "p": -2.52
-    },
     {
       "t": "2026-07-13T04:35:17.177871+00:00",
       "v": 4874.05,
@@ -1378,24 +1356,33 @@
       "t": "2026-07-13T19:50:55.032850+00:00",
       "v": 4850.97,
       "p": -2.98
+    },
+    {
+      "t": "2026-07-13T19:55:55.762280+00:00",
+      "v": 4845.82,
+      "p": -3.08
+    },
+    {
+      "t": "2026-07-13T20:00:56.357680+00:00",
+      "v": 4843.8,
+      "p": -3.12
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.07,
-      "confidence": 0.6,
+      "score": 0.17,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "news_agent",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 7,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 2,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f builder] @Garreett_G (\ud83d\udc4d36 \ud83d\udd0417) $BTC stabilizing near $ | news_agent: ump admin discusses US open-source AI framework** \u2014 WaPo rep | polymarket: **)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeti",
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f builder] @Garreett_G (\ud83d\udc4d36 \ud83d\udd0417) $BTC stabilizing near $ | polymarket: **)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeti | oi_funding: OI +39.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1413,22 +1400,21 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-13T19:50:54.938431+00:00"
+      "timestamp": "2026-07-13T20:00:56.266683+00:00"
     },
     "ETH": {
-      "score": 0.52,
-      "confidence": 0.6,
+      "score": 0.78,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "news_agent",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 7,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 2,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u27e0 $ETH] @whale_alert (\ud83d\udc4d9 \ud83d\udd044) 30,006 $ETH (52,896,448 USD) | news_agent: in discusses US open-source AI framework** \u2014 WaPo reports in | polymarket: ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in Ju",
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u27e0 $ETH] @whale_alert (\ud83d\udc4d9 \ud83d\udd044) 30,006 $ETH (52,896,448 USD) | polymarket: ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in Ju | oi_funding: OI +30.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1446,22 +1432,21 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-13T19:50:54.938448+00:00"
+      "timestamp": "2026-07-13T20:00:56.266703+00:00"
     },
     "SOL": {
-      "score": -0.3,
-      "confidence": 0.9,
+      "score": -0.02,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
-        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 3,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: *(\u26a0\ufe0f $SOL, AI-Agents, DePIN topics skipped \u2014 scanner timed o | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | news_agent: ** \u2014 WaPo reports industry talks on open-source model rules.",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: *(\u26a0\ufe0f $SOL, AI-Agents, DePIN topics skipped \u2014 scanner timed o | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI +11.0% 1h, funding 0.0010%",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -1469,32 +1454,31 @@
           "weight": 1.44
         },
         {
-          "source": "news_agent",
-          "signal": "** \u2014 WaPo reports industry talks on open-source model rules.  \ud83d\udcca **DB:** 762 new saved | 0 unreported | BTC(6) ETH(3) HYP",
-          "weight": 0.98
-        },
-        {
           "source": "whale_monitor",
           "signal": "Orderbook 29% bid (ask-heavy, bearish)",
           "weight": 0.84
+        },
+        {
+          "source": "x_scanner",
+          "signal": "*(\u26a0\ufe0f $SOL, AI-Agents, DePIN topics skipped \u2014 scanner timed out after 4/7 queries)*",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-13T19:50:54.938460+00:00"
+      "timestamp": "2026-07-13T20:00:56.266714+00:00"
     },
     "HYPE": {
-      "score": 0.49,
-      "confidence": 0.6,
+      "score": 0.76,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
-        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 6,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 2,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd37 $HYPE] @Cointelegraph (\ud83d\udc4d28 \ud83d\udd0410) UPDATE: Real-world asse | whale_monitor: Orderbook 60% bid-weighted (bullish) | news_agent: usses US open-source AI framework** \u2014 WaPo reports industry ",
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd37 $HYPE] @Cointelegraph (\ud83d\udc4d28 \ud83d\udd0410) UPDATE: Real-world asse | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -15.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1512,7 +1496,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-13T19:50:54.938469+00:00"
+      "timestamp": "2026-07-13T20:00:56.266724+00:00"
     }
   },
   "pair_strategies": {
@@ -1788,47 +1772,47 @@
       {
         "text": "**Job ID:** 8bd6a73fc440",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
-        "text": "**Run Time:** 2026-07-14 03:39:08",
+        "text": "**Run Time:** 2026-07-14 03:54:03",
         "sentiment": 0,
-        "time": "2026-07-14 03:39"
+        "time": "2026-07-14 03:54"
       },
       {
         "text": "**Schedule:** 7,22,37,52 * * * *",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "Run the news agent script and format breaking news as a Discord message (delivery is handled automatically).",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "**DB FACTS (DO NOT investigate \u2014 these are verified):**",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "- DB path: /Users/mojoai/.hermes/swarm/data/agents.db",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "- Table: crypto_news",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "- Columns: id, title, url, source, published_at, category, impact_rating, affected_tokens, summary, fetched_at, last_reported_at",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "- Date filter: use fetched_at (format: \"2026-04-18 14:52:30\") with SQLite datetime('now','-N minutes')",
@@ -1838,80 +1822,80 @@
       {
         "text": "- The script now does blanket mark-as-reported automatically \u2014 just verify 0 remaining",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "- by_impact in JSON is IN-MEMORY only \u2014 always query DB for actual unreported articles",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "- Ignore empty DBs at ~/.hermes/hermes-agent/news*.db and ~/.hermes/scripts/news*.db \u2014 they're red herrings",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "- notable_keywords dual-pass is REQUIRED \u2014 the classifier misses ~90% of important articles",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "1. **Run scan:** `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/news_agent.py 2>&1`",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "2. **Parse the JSON output** from the script (last JSON block in output).",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "3. **Query DB for unreported articles (DO NOT skip this \u2014 by_impact JSON is misleading):**",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 -c \"",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       },
       {
         "text": "import sqlite3, json, html",
         "sentiment": 0,
-        "time": "1783971549.0000117"
+        "time": "1783972443.7626777"
       }
     ],
-    "generated": "2026-07-13T19:50:54.958566Z"
+    "generated": "2026-07-13T20:00:56.287178Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "03:42",
-      "age_minutes": 8,
+      "age_minutes": 18,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "03:41",
-      "age_minutes": 9,
+      "age_minutes": 19,
       "status": "fresh"
     },
     "news_agent": {
-      "last_run": "03:39",
-      "age_minutes": 12,
+      "last_run": "03:54",
+      "age_minutes": 7,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "03:05",
-      "age_minutes": 46,
+      "age_minutes": 56,
       "status": "fresh"
     },
     "synthesizer": {
       "last_run": "03:46",
-      "age_minutes": 5,
+      "age_minutes": 15,
       "status": "fresh"
     }
   },
@@ -2298,15 +2282,15 @@
     }
   ],
   "stats": {
-    "total_trades": 59,
+    "total_trades": 60,
     "wins": 25,
-    "losses": 34,
-    "win_rate": 42.4,
+    "losses": 35,
+    "win_rate": 41.7,
     "avg_win": 19.65,
-    "avg_loss": -15.97,
+    "avg_loss": -15.52,
     "best_trade": 54.93,
     "worst_trade": -45.01,
-    "total_realized_pnl": -51.77
+    "total_realized_pnl": -52.02
   },
   "pair_stats": {
     "BTC": {
@@ -2317,11 +2301,11 @@
       "win_rate": 28.6
     },
     "ETH": {
-      "trades": 17,
+      "trades": 18,
       "wins": 7,
-      "losses": 10,
-      "pnl": -28.58,
-      "win_rate": 41.2
+      "losses": 11,
+      "pnl": -28.83,
+      "win_rate": 38.9
     },
     "SOL": {
       "trades": 17,
@@ -2339,10 +2323,10 @@
     }
   },
   "prices": {
-    "BTC": 62188.5,
-    "ETH": 1771.35,
-    "SOL": 75.0105,
-    "HYPE": 63.5905
+    "BTC": 62263.5,
+    "ETH": 1774.75,
+    "SOL": 75.1515,
+    "HYPE": 63.6535
   },
   "actions": [],
   "ai_history": [
@@ -2754,11 +2738,11 @@
   },
   "exit_breakdown": {
     "regime_override": {
-      "count": 46,
-      "pnl": -67.3,
-      "fees": 86.94,
+      "count": 47,
+      "pnl": -67.54,
+      "fees": 88.77,
       "wins": 18,
-      "win_rate": 39.1
+      "win_rate": 38.3
     },
     "signal_exit": {
       "count": 13,
