@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-14T08:15:16.745800+00:00",
+  "last_update": "2026-07-14T08:20:17.030724+00:00",
   "portfolio": {
     "value": 4856.06,
     "capital": 4856.06,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62543.5,
-    "ETH": 1781.65,
-    "SOL": 75.0475,
-    "HYPE": 63.5475
+    "BTC": 62578.5,
+    "ETH": 1783.35,
+    "SOL": 75.0895,
+    "HYPE": 63.4095
   },
   "positions": {},
   "stats": {
@@ -939,11 +939,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-13T16:55:35.031973+00:00",
-      "v": 4842.56,
-      "p": -3.15
-    },
     {
       "t": "2026-07-13T17:00:35.742612+00:00",
       "v": 4842.56,
@@ -1938,6 +1933,11 @@
       "t": "2026-07-14T08:15:16.745800+00:00",
       "v": 4856.06,
       "p": -2.88
+    },
+    {
+      "t": "2026-07-14T08:20:17.030724+00:00",
+      "v": 4856.06,
+      "p": -2.88
     }
   ],
   "ai_history": [
@@ -1993,19 +1993,37 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-07-14T08:15:16.600568+00:00"
+      "timestamp": "2026-07-14T08:20:16.938489+00:00"
     },
     "ETH": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 0.68,
+      "confidence": 0.3,
+      "sources": [
+        "x_scanner"
+      ],
+      "signal_count": 6,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-14T08:15:16.600576+00:00"
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @CryptoYoddha (\ud83d\udc4d7) Buy $ETH \u2014 hold $1700-1800, re",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcb0 $ETH] @CryptoYoddha (\ud83d\udc4d7) Buy $ETH \u2014 hold $1700-1800, reclaim $1950-2000 \u2192 $4-5k path [2.9]",
+          "weight": 0.8
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @CryptoPatel (\ud83d\udc4d125 \ud83d\udd0412) Breakout to $5,000 or rejection back to $1,000? [3.3]",
+          "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcb0 $ETH] @DustyBC (\ud83d\udc4d81 \ud83d\udd041) US Gov deposited $288M in $BTC and $ETH to Coinbase [2.6]",
+          "weight": 0.65
+        }
+      ],
+      "timestamp": "2026-07-14T08:20:16.938514+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -2025,38 +2043,38 @@
           "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-14T08:15:16.600590+00:00"
+      "timestamp": "2026-07-14T08:20:16.938524+00:00"
     },
     "HYPE": {
-      "score": 0.13,
-      "confidence": 0.5,
+      "score": 0.64,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udf0a $HYPE] @nehalzzzz1 (\ud83d\udd041) A Hyperliquid whale has built a | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @rafal_jakobsen Binance 44th PoR: +7,715 BTC, cu | whale_monitor: Orderbook 75% bid-weighted (bullish)",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udf0a $HYPE] @nehalzzzz1 (\ud83d\udd041) A Hyperliquid whale has built a nearly $58M portfolio that's 93.2% net short, signaling a s",
-          "weight": 2.08
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udea8 alpha_leak] @CoinSignals_ Missed the $HYPE and $LIT airdrops? Don't make the same mistake twice. JTX by Solana stil",
-          "weight": 1.69
-        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 75% bid-weighted (bullish)",
           "weight": 1.0
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\u26a1 $HYPE] @rafal_jakobsen Binance 44th PoR: +7,715 BTC, customer balances +1.22% [2.5]",
+          "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\u26a1 $HYPE] @defi_blackjoker HIP-3 eating 1/3 of total OI \u2014 RWAs leading on Hyperliquid [2.5]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-14T08:15:16.600604+00:00"
+      "timestamp": "2026-07-14T08:20:16.938536+00:00"
     }
   },
   "config": {
