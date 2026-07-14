@@ -1,26 +1,26 @@
 {
-  "last_update": "2026-07-14T16:50:10.877974+00:00",
+  "last_update": "2026-07-14T16:55:11.209538+00:00",
   "portfolio": {
-    "value": 5008.83,
+    "value": 5008.75,
     "capital": 5010.92,
     "initial": 5000.0,
-    "pnl": 8.83,
-    "pnl_pct": 0.18,
+    "pnl": 8.75,
+    "pnl_pct": 0.17,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 64729.5,
-    "ETH": 1873.45,
-    "SOL": 77.3445,
-    "HYPE": 64.828
+    "BTC": 64752.5,
+    "ETH": 1874.05,
+    "SOL": 77.4065,
+    "HYPE": 64.8315
   },
   "positions": {
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 64.7375,
-      "current_price": 64.828,
+      "current_price": 64.8315,
       "size": 23.30785919996215,
-      "unrealized_pnl": -2.1,
+      "unrealized_pnl": -2.18,
       "unrealized_pnl_pct": -0.14,
       "stop_loss": 66.888,
       "take_profit": 60.4365,
@@ -28,7 +28,7 @@
       "entry_time": "2026-07-14T16:05:07.709458+00:00",
       "duration_hours": 0.8,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0142
+      "unrealized_funding": -0.0158
     }
   },
   "stats": {
@@ -955,11 +955,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-14T01:30:34.570098+00:00",
-      "v": 4852.37,
-      "p": -2.95
-    },
     {
       "t": "2026-07-14T01:35:35.190744+00:00",
       "v": 4849.65,
@@ -1954,6 +1949,11 @@
       "t": "2026-07-14T16:50:10.877974+00:00",
       "v": 5008.83,
       "p": 0.18
+    },
+    {
+      "t": "2026-07-14T16:55:11.209538+00:00",
+      "v": 5008.75,
+      "p": 0.17
     }
   ],
   "ai_history": [
@@ -2000,17 +2000,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.26,
-      "confidence": 0.6,
+      "score": -0.43,
+      "confidence": 0.94,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "news_agent"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @goldenelll $ETH approaching major decision zone  | whale_monitor: Orderbook 15% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @goldenelll $ETH approaching major decision zone  | whale_monitor: Orderbook 15% bid (ask-heavy, bearish) | news_agent: Trump: Iran, Hezbollah may be added to US sanctions bill** \u2502",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2028,39 +2029,58 @@
           "weight": 1.4
         }
       ],
-      "timestamp": "2026-07-14T16:50:10.639311+00:00"
+      "timestamp": "2026-07-14T16:55:11.127139+00:00"
     },
     "ETH": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-14T16:50:10.639325+00:00"
-    },
-    "SOL": {
       "score": -1.0,
       "confidence": 0.3,
       "sources": [
-        "whale_monitor"
+        "news_agent"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
+      "narrative": "Single-source signal (news_agent) | news_agent: Iran, Hezbollah may be added to US sanctions bill** \u2502 Source",
       "key_signals": [
+        {
+          "source": "news_agent",
+          "signal": "Iran, Hezbollah may be added to US sanctions bill** \u2502 Source: Crypto Briefing \u2502 \u26a0\ufe0f Regional stability risk; risk asset p",
+          "weight": 0.98
+        },
+        {
+          "source": "news_agent",
+          "signal": "nsions** \u2502 Source: Crypto Briefing \u2502 \u26a0\ufe0f Diplomatic channels narrowing \u2502 **\ud83d\udfe2 Devcon 8 Tickets Live \u2014 Mumbai, Nov 2026** \ud83c\uddee",
+          "weight": 0.98
+        }
+      ],
+      "timestamp": "2026-07-14T16:55:11.127150+00:00"
+    },
+    "SOL": {
+      "score": -1.0,
+      "confidence": 0.74,
+      "sources": [
+        "whale_monitor",
+        "news_agent"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | news_agent: Hezbollah may be added to US sanctions bill** \u2502 Source: Cryp",
+      "key_signals": [
+        {
+          "source": "news_agent",
+          "signal": "Hezbollah may be added to US sanctions bill** \u2502 Source: Crypto Briefing \u2502 \u26a0\ufe0f Regional stability risk; risk asset pressur",
+          "weight": 0.98
+        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 28% bid (ask-heavy, bearish)",
           "weight": 0.88
         }
       ],
-      "timestamp": "2026-07-14T16:50:10.639342+00:00"
+      "timestamp": "2026-07-14T16:55:11.127158+00:00"
     },
     "HYPE": {
       "score": -0.19,
@@ -2091,7 +2111,7 @@
           "weight": 1.24
         }
       ],
-      "timestamp": "2026-07-14T16:50:10.639360+00:00"
+      "timestamp": "2026-07-14T16:55:11.127165+00:00"
     }
   },
   "config": {
