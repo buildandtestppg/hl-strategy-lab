@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-14T00:00:24.118246+00:00",
+  "last_update": "2026-07-14T00:05:24.907004+00:00",
   "portfolio": {
     "value": 4853.76,
     "capital": 4853.76,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62312.5,
-    "ETH": 1775.65,
-    "SOL": 74.9075,
-    "HYPE": 63.3735
+    "BTC": 62323.5,
+    "ETH": 1776.55,
+    "SOL": 74.8585,
+    "HYPE": 63.3295
   },
   "positions": {},
   "stats": {
@@ -26,7 +26,9 @@
     "worst_trade": -45.01,
     "total_realized_pnl": -37.02
   },
-  "actions": [],
+  "actions": [
+    "\ud83e\udde0 HYPE: TA signal SHORT blocked by sentiment overlay"
+  ],
   "closed_trades": [
     {
       "pair": "BTC",
@@ -939,11 +941,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-13T08:40:44.017556+00:00",
-      "v": 4866.33,
-      "p": -2.67
-    },
     {
       "t": "2026-07-13T08:45:03.353137+00:00",
       "v": 4866.33,
@@ -1938,6 +1935,11 @@
       "t": "2026-07-14T00:00:24.118246+00:00",
       "v": 4853.76,
       "p": -2.92
+    },
+    {
+      "t": "2026-07-14T00:05:24.907004+00:00",
+      "v": 4853.76,
+      "p": -2.92
     }
   ],
   "ai_history": [
@@ -1984,23 +1986,22 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 1.0,
+      "score": -0.28,
+      "confidence": 0.5,
       "sources": [
         "whale_monitor",
-        "polymarket",
-        "oi_funding"
+        "polymarket"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | polymarket: **)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeti | oi_funding: OI -33.0% 1h",
+      "signal_count": 3,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 72% bid-weighted (bullish) | polymarket: **)  **Key markets:** \u2022 **Fed/Macro**: Fed hike by Sep meeti",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI -33.0% 1h",
-          "weight": 1.44
+          "source": "whale_monitor",
+          "signal": "Orderbook 72% bid-weighted (bullish)",
+          "weight": 0.88
         },
         {
           "source": "polymarket",
@@ -2013,27 +2014,21 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-14T00:00:24.024189+00:00"
+      "timestamp": "2026-07-14T00:05:24.657894+00:00"
     },
     "ETH": {
-      "score": 0.17,
-      "confidence": 0.84,
+      "score": -0.41,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "polymarket",
-        "oi_funding"
+        "polymarket"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 3,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $ETH] @OnchainLens (\ud83d\udc4d6 \ud83d\udd042) Whale withdrew 30.1K $ETH ($ | polymarket: ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in Ju | oi_funding: OI +158.0% 1h, funding 0.0013%",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $ETH] @OnchainLens (\ud83d\udc4d6 \ud83d\udd042) Whale withdrew 30.1K $ETH ($ | polymarket: ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in Ju",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +158.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
         {
           "source": "polymarket",
           "signal": "ll near-term meetings \u2022 **BTC-PriceTargets**: BTC $65K in July \u2014 54.5% (-32pp, $139K 24h) | Price targets collapsing, ne",
@@ -2043,66 +2038,72 @@
           "source": "polymarket",
           "signal": "s \u2022 **BTC-PriceTargets**: BTC $65K in July \u2014 54.5% (-32pp, $139K 24h) | Price targets collapsing, near-term sentiment be",
           "weight": 0.78
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd25 $ETH] @OnchainLens (\ud83d\udc4d6 \ud83d\udd042) Whale withdrew 30.1K $ETH ($52.84M) from Coinbase Prime to fresh wallet [1.8]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-14T00:00:24.024207+00:00"
+      "timestamp": "2026-07-14T00:05:24.657950+00:00"
     },
     "SOL": {
-      "score": -0.22,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "oi_funding"
+        "whale_monitor"
       ],
       "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $SOL] @Joshuwa \u2014 $SOL whale flow: $223K $ANSEM buy, $27 | oi_funding: OI -7.0% 1h",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @Joshuwa \u2014 $SOL whale flow: $223K $ANSEM buy, $27 | whale_monitor: Orderbook 66% bid-weighted (bullish)",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -7.0% 1h",
-          "weight": 1.26
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udd25 $SOL] @Joshuwa \u2014 $SOL whale flow: $223K $ANSEM buy, $276M cap, single wallet move [1.5]",
           "weight": 0.8
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 66% bid-weighted (bullish)",
+          "weight": 0.64
         }
       ],
-      "timestamp": "2026-07-14T00:00:24.024216+00:00"
+      "timestamp": "2026-07-14T00:05:24.657974+00:00"
     },
     "HYPE": {
-      "score": 0.02,
-      "confidence": 0.5,
+      "score": 0.54,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @FarsideUK \u2014 Hyperliquid ETF Daily Flow: Bitwise | oi_funding: OI -7.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @FarsideUK \u2014 Hyperliquid ETF Daily Flow: Bitwise | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
       "key_signals": [
         {
+          "source": "whale_monitor",
+          "signal": "Orderbook 80% bid-weighted (bullish)",
+          "weight": 1.2
+        },
+        {
           "source": "oi_funding",
-          "signal": "OI -7.0% 1h",
-          "weight": 1.26
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
         },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udd25 $HYPE] @FarsideUK \u2014 Hyperliquid ETF Daily Flow: Bitwise BHYP -$3.9M [1.5]",
           "weight": 0.65
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $HYPE] @PaladanCapital \u2014 Top funding rate spread: $OGN 1.09% daily (397% annualized) via Bybit/Bitget arb [1.5]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-14T00:00:24.024223+00:00"
+      "timestamp": "2026-07-14T00:05:24.657993+00:00"
     }
   },
   "config": {
