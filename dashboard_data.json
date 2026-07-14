@@ -1,34 +1,49 @@
 {
-  "last_update": "2026-07-14T10:00:28.379292+00:00",
+  "last_update": "2026-07-14T10:05:28.739936+00:00",
   "portfolio": {
-    "value": 4851.66,
-    "capital": 4853.99,
+    "value": 4852.2,
+    "capital": 4851.93,
     "initial": 5000.0,
-    "pnl": -148.34,
-    "pnl_pct": -2.97,
-    "open_positions": 1
+    "pnl": -147.8,
+    "pnl_pct": -2.96,
+    "open_positions": 2
   },
   "prices": {
-    "BTC": 62613.5,
-    "ETH": 1786.25,
-    "SOL": 75.0395,
-    "HYPE": 63.4495
+    "BTC": 62682.5,
+    "ETH": 1789.35,
+    "SOL": 75.1295,
+    "HYPE": 63.7395
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 75.1195,
-      "current_price": 75.0395,
+      "current_price": 75.1295,
       "size": 28.96544248776747,
-      "unrealized_pnl": -2.33,
-      "unrealized_pnl_pct": -0.11,
+      "unrealized_pnl": 0.28,
+      "unrealized_pnl_pct": 0.01,
       "stop_loss": 73.443,
       "take_profit": 78.4725,
       "strategy": "stochastic",
       "entry_time": "2026-07-14T09:25:26.650873+00:00",
-      "duration_hours": 0.6,
+      "duration_hours": 0.7,
+      "funding_rate": 0.000766,
+      "unrealized_funding": 0.0111
+    },
+    "ETH": {
+      "direction": "LONG",
+      "entry_price": 1789.35,
+      "current_price": 1789.35,
+      "size": 1.2135697528549871,
+      "unrealized_pnl": -0.0,
+      "unrealized_pnl_pct": -0.0,
+      "stop_loss": 1749.35,
+      "take_profit": 1869.35,
+      "strategy": "trend",
+      "entry_time": "2026-07-14T10:05:30.429130+00:00",
+      "duration_hours": 0.0,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0159
+      "unrealized_funding": 0.0
     }
   },
   "stats": {
@@ -42,7 +57,9 @@
     "worst_trade": -45.01,
     "total_realized_pnl": -33.5
   },
-  "actions": [],
+  "actions": [
+    "\ud83d\udfe2 OPENED LONG ETH @ $1789.3500 | Size: 1.2136 | SL: $1749.3500 | TP: $1869.3500 | Strategy: trend | Sentiment-driven LONG (score +1.00, conf 0.7, momentum confirmed)"
+  ],
   "closed_trades": [
     {
       "pair": "ETH",
@@ -955,16 +972,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-13T18:35:46.713402+00:00",
-      "v": 4868.53,
-      "p": -2.63
-    },
-    {
-      "t": "2026-07-13T18:40:46.893070+00:00",
-      "v": 4865.65,
-      "p": -2.69
-    },
     {
       "t": "2026-07-13T18:45:47.622013+00:00",
       "v": 4864.39,
@@ -1954,6 +1961,16 @@
       "t": "2026-07-14T10:00:28.379292+00:00",
       "v": 4851.66,
       "p": -2.97
+    },
+    {
+      "t": "2026-07-14T10:02:40.129814+00:00",
+      "v": 4853.25,
+      "p": -2.93
+    },
+    {
+      "t": "2026-07-14T10:05:28.739936+00:00",
+      "v": 4852.2,
+      "p": -2.96
     }
   ],
   "ai_history": [
@@ -2000,22 +2017,23 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.11,
-      "confidence": 0.7,
+      "score": 0.73,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "news_agent",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @cexscan (\ud83d\udc4d1) OKX Spot: Top gainers $CARDS +12.2% | news_agent: s://cryptobriefing.com/strait-of-hormuz-vessel-traffic-drops | oi_funding: OI -27.0% 1h",
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @cexscan (\ud83d\udc4d1) OKX Spot: Top gainers $CARDS +12.2% | whale_monitor: Orderbook 74% bid-weighted (bullish) | news_agent: s://cryptobriefing.com/strait-of-hormuz-vessel-traffic-drops",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -27.0% 1h",
+          "signal": "OI +45.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -2029,20 +2047,20 @@
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-14T10:00:28.113613+00:00"
+      "timestamp": "2026-07-14T10:05:28.655184+00:00"
     },
     "ETH": {
-      "score": 0.44,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "oi_funding"
+        "whale_monitor"
       ],
       "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udce6 $ETH] @CryptoTimes_io (\ud83d\udc4d1) Machi Big Brother sold Bored | oi_funding: OI -14.0% 1h",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udce6 $ETH] @CryptoTimes_io (\ud83d\udc4d1) Machi Big Brother sold Bored | whale_monitor: Orderbook 61% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2050,30 +2068,31 @@
           "weight": 1.62
         },
         {
-          "source": "oi_funding",
-          "signal": "OI -14.0% 1h",
-          "weight": 1.44
-        },
-        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $ETH] @MaxCrypto (\ud83d\udc4d32 \ud83d\udd046) $ETH close to major breakout \u2014 daily close above $1,850 could trigger massive SHORT SQUEE",
           "weight": 1.3
+        },
+        {
+          "source": "x_scanner",
+          "signal": "BTC ETFs saw $425M outflows Monday (largest this month) while $ETH tests the $1,850 breakout level. $HYPE narrative shif",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-14T10:00:28.113664+00:00"
+      "timestamp": "2026-07-14T10:05:28.655199+00:00"
     },
     "SOL": {
-      "score": 0.06,
-      "confidence": 0.5,
+      "score": 0.79,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @naraaweb3 (\ud83d\udc4d1) New chains like Robinhood are pop | oi_funding: OI -32.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @naraaweb3 (\ud83d\udc4d1) New chains like Robinhood are pop | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +19.0% 1h, funding 0.0011%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2082,11 +2101,16 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -32.0% 1h",
+          "signal": "OI +19.0% 1h, funding 0.0011%",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 36% bid (ask-heavy, bearish)",
+          "weight": 0.56
         }
       ],
-      "timestamp": "2026-07-14T10:00:28.113704+00:00"
+      "timestamp": "2026-07-14T10:05:28.655210+00:00"
     },
     "HYPE": {
       "score": -0.32,
@@ -2099,11 +2123,11 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @WuBlockchain (\ud83d\udc4d8 \ud83d\udd041) Jeff Yan on Hyperliquid's  | oi_funding: OI -37.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @WuBlockchain (\ud83d\udc4d8 \ud83d\udd041) Jeff Yan on Hyperliquid's  | oi_funding: OI -12.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -37.0% 1h",
+          "signal": "OI -12.0% 1h",
           "weight": 1.44
         },
         {
@@ -2117,7 +2141,7 @@
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-14T10:00:28.113747+00:00"
+      "timestamp": "2026-07-14T10:05:28.655217+00:00"
     }
   },
   "config": {
