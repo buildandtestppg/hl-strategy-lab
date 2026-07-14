@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-14T22:00:45.917614+00:00",
+  "last_update": "2026-07-14T22:05:46.780356+00:00",
   "portfolio": {
     "value": 4986.29,
     "capital": 4989.4,
@@ -9,10 +9,10 @@
     "open_positions": 1
   },
   "prices": {
-    "BTC": 64610.5,
+    "BTC": 64602.5,
     "ETH": 1874.75,
-    "SOL": 77.1335,
-    "HYPE": 65.5855
+    "SOL": 77.1785,
+    "HYPE": 65.609
   },
   "positions": {
     "ETH": {
@@ -26,9 +26,9 @@
       "take_profit": 1994.15,
       "strategy": "trend",
       "entry_time": "2026-07-14T21:30:43.906710+00:00",
-      "duration_hours": 0.5,
+      "duration_hours": 0.6,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0101
+      "unrealized_funding": 0.0118
     }
   },
   "stats": {
@@ -955,11 +955,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-14T06:40:07.867255+00:00",
-      "v": 4856.53,
-      "p": -2.87
-    },
     {
       "t": "2026-07-14T06:45:08.087457+00:00",
       "v": 4859.44,
@@ -1954,6 +1949,11 @@
       "t": "2026-07-14T22:00:45.917614+00:00",
       "v": 4986.29,
       "p": -0.27
+    },
+    {
+      "t": "2026-07-14T22:05:46.780356+00:00",
+      "v": 4986.29,
+      "p": -0.27
     }
   ],
   "ai_history": [
@@ -2000,8 +2000,8 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.86,
-      "confidence": 0.9,
+      "score": 1.0,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -2010,30 +2010,30 @@
       ],
       "signal_count": 7,
       "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @angle66888 BTC daily chart above $677-683, bull | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | polymarket: July: **7.2%** (\u25bc28pp) \u2022 Fed Pause\u2013Pause\u2013Pause (Apr\u2013Jun\u2013Jul)",
+      "convergence_strength": 4,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 4-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @angle66888 BTC daily chart above $677-683, bull | whale_monitor: Orderbook 74% bid-weighted (bullish) | polymarket: July: **7.2%** (\u25bc28pp) \u2022 Fed Pause\u2013Pause\u2013Pause (Apr\u2013Jun\u2013Jul)",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +61.0% 1h, funding 0.0013%",
+          "signal": "OI +14.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 74% bid-weighted (bullish)",
+          "weight": 0.96
         },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $BTC] @angle66888 BTC daily chart above $677-683, bullish setup [2.5]",
           "weight": 0.8
-        },
-        {
-          "source": "polymarket",
-          "signal": "July: **7.2%** (\u25bc28pp) \u2022 Fed Pause\u2013Pause\u2013Pause (Apr\u2013Jun\u2013Jul): **91.0%** (\u25b227.5pp) \u2022 Fed rate hike in 2026 at all: **52.5",
-          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-14T22:00:45.761887+00:00"
+      "timestamp": "2026-07-14T22:05:46.479904+00:00"
     },
     "ETH": {
-      "score": 0.37,
+      "score": 0.53,
       "confidence": 0.5,
       "sources": [
         "polymarket",
@@ -2043,13 +2043,8 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: * \u2014 strong support \u2022 BTC $72.5K in July: **11.5%** \u2014 upside  | oi_funding: OI -6.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: * \u2014 strong support \u2022 BTC $72.5K in July: **11.5%** \u2014 upside  | oi_funding: OI -4.0% 1h",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -6.0% 1h",
-          "weight": 1.08
-        },
         {
           "source": "polymarket",
           "signal": "* \u2014 strong support \u2022 BTC $72.5K in July: **11.5%** \u2014 upside still priced low \u2022 BTC $100K in July: **0.2%** \u2014 effectively",
@@ -2059,46 +2054,58 @@
           "source": "polymarket",
           "signal": "side still priced low \u2022 BTC $100K in July: **0.2%** \u2014 effectively ruled out  **\u039e Ethereum:** \u2022 ETH $1,900 in July: **88.",
           "weight": 0.78
+        },
+        {
+          "source": "polymarket",
+          "signal": "\u2014 effectively ruled out  **\u039e Ethereum:** \u2022 ETH $1,900 in July: **88.5%** \u2014 strong support level \u2022 ETH $2,000 Jul 13-19: ",
+          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-14T22:00:45.761938+00:00"
+      "timestamp": "2026-07-14T22:05:46.479933+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "whale_monitor"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 78% bid-weighted (bullish)",
-      "key_signals": [
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 78% bid-weighted (bullish)",
-          "weight": 1.12
-        }
-      ],
-      "timestamp": "2026-07-14T22:00:45.761947+00:00"
-    },
-    "HYPE": {
-      "score": 0.19,
+      "score": -0.41,
       "confidence": 0.5,
       "sources": [
-        "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @THChumor HL whale closed 2 profitable longs \u2014  | oi_funding: OI -77.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI -22.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -77.0% 1h",
+          "signal": "OI -22.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 65% bid-weighted (bullish)",
+          "weight": 0.6
+        }
+      ],
+      "timestamp": "2026-07-14T22:05:46.479945+00:00"
+    },
+    "HYPE": {
+      "score": 0.39,
+      "confidence": 0.84,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @THChumor HL whale closed 2 profitable longs \u2014  | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -20.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -20.0% 1h",
           "weight": 1.44
         },
         {
@@ -2107,12 +2114,12 @@
           "weight": 0.8
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $HYPE] @glassnode (\ud83d\udc4d47 \ud83d\udd047) Top HL traders aggressively long $BTC \u2014 highest sustained positioning ever [2.4]",
-          "weight": 0.65
+          "source": "whale_monitor",
+          "signal": "Orderbook 70% bid-weighted (bullish)",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-14T22:00:45.761957+00:00"
+      "timestamp": "2026-07-14T22:05:46.479960+00:00"
     }
   },
   "config": {
