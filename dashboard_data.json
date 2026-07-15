@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-15T12:20:20.849482+00:00",
+  "last_update": "2026-07-15T12:25:21.339991+00:00",
   "portfolio": {
-    "value": 5003.36,
+    "value": 5000.69,
     "capital": 4976.39,
     "initial": 5000.0,
-    "pnl": 3.36,
-    "pnl_pct": 0.07,
+    "pnl": 0.69,
+    "pnl_pct": 0.01,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 64694.5,
-    "ETH": 1883.35,
-    "SOL": 77.4525,
-    "HYPE": 68.5135
+    "BTC": 64633.5,
+    "ETH": 1881.35,
+    "SOL": 77.2885,
+    "HYPE": 68.464
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1878.35,
-      "current_price": 1883.35,
+      "current_price": 1881.35,
       "size": 0.8619928184057272,
-      "unrealized_pnl": 4.01,
-      "unrealized_pnl_pct": 0.25,
+      "unrealized_pnl": 2.28,
+      "unrealized_pnl_pct": 0.14,
       "stop_loss": 1820.45,
       "take_profit": 1994.15,
       "strategy": "trend",
       "entry_time": "2026-07-14T21:30:43.906710+00:00",
-      "duration_hours": 14.8,
+      "duration_hours": 14.9,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.3009
+      "unrealized_funding": 0.3023
     },
     "HYPE": {
       "direction": "LONG",
       "entry_price": 67.3435,
-      "current_price": 68.5135,
+      "current_price": 68.464,
       "size": 19.90358667851733,
-      "unrealized_pnl": 22.97,
-      "unrealized_pnl_pct": 1.71,
+      "unrealized_pnl": 22.02,
+      "unrealized_pnl_pct": 1.64,
       "stop_loss": 64.844,
       "take_profit": 72.3425,
       "strategy": "trend",
       "entry_time": "2026-07-15T07:00:48.226522+00:00",
-      "duration_hours": 5.3,
-      "funding_rate": 0.00443,
-      "unrealized_funding": 0.3218
+      "duration_hours": 5.4,
+      "funding_rate": 0.003862,
+      "unrealized_funding": 0.2847
     }
   },
   "stats": {
@@ -970,11 +970,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-14T20:50:38.095074+00:00",
-      "v": 4990.94,
-      "p": -0.18
-    },
     {
       "t": "2026-07-14T20:55:38.595727+00:00",
       "v": 4990.94,
@@ -1969,6 +1964,11 @@
       "t": "2026-07-15T12:20:20.849482+00:00",
       "v": 5003.36,
       "p": 0.07
+    },
+    {
+      "t": "2026-07-15T12:25:21.339991+00:00",
+      "v": 5000.69,
+      "p": 0.01
     }
   ],
   "ai_history": [
@@ -2015,89 +2015,101 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.94,
-      "confidence": 1.0,
+      "score": 0.47,
+      "confidence": 0.7,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "news_agent",
-        "polymarket",
-        "oi_funding"
+        "polymarket"
       ],
-      "signal_count": 7,
-      "convergence": true,
-      "convergence_strength": 4,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 4-source bullish convergence | x_scanner: \u2022 [$BTC] @cryptorover \u2014 Whale buy wall $57K\u2192$48K suggests in | news_agent: \ud83d\udfe2 **Notable** \u2022 Nvidia CEO Jensen Huang heads to Japan after | polymarket: n 2026: **79.7%** (+1.9pp) \u2014 sticky \u2022 Rate hike in 2026: **5",
+      "signal_count": 8,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d61 \ud83d\udd0421) Strategy says it will co | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | news_agent: \ud83d\udfe2 **Notable** \u2022 Nvidia CEO Jensen Huang heads to Japan after",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [$BTC] @cryptorover \u2014 Whale buy wall $57K\u2192$48K suggests institutional bottom-fishing [score:3.1]",
-          "weight": 2.94
+          "source": "news_agent",
+          "signal": "\ud83d\udfe2 **Notable** \u2022 Nvidia CEO Jensen Huang heads to Japan after backlash \u2022 Bitcoin rally cools as investors digest inflatio",
+          "weight": 0.98
+        },
+        {
+          "source": "polymarket",
+          "signal": "n 2026: **79.7%** (+1.9pp) \u2014 sticky \u2022 Rate hike in 2026: **54.5%** (-4pp)  **Key Takeaway:** Market overwhelmingly expec",
+          "weight": 0.96
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @cryptorover (\ud83d\udc4d32 \ud83d\udd041) Whales stacking massive BTC bids below current price \u2014 buy wall from $57K to high-$40Ks",
-          "weight": 2.48
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +12.0% 1h, funding 0.0013%",
-          "weight": 1.44
+          "signal": "\u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d61 \ud83d\udd0421) Strategy says it will continue buying Bitcoin long term and aims to remain the world",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-15T12:20:20.688970+00:00"
+      "timestamp": "2026-07-15T12:25:21.097389+00:00"
     },
     "ETH": {
-      "score": -1.0,
-      "confidence": 0.74,
+      "score": 0.18,
+      "confidence": 0.84,
       "sources": [
+        "x_scanner",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 8,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: ky \u2022 Rate hike in 2026: **54.5%** (-4pp)  **Key Takeaway:**  | oi_funding: OI -50.0% 1h",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: X shows strong institutional BTC accumulation (Strategy doub | polymarket: ky \u2022 Rate hike in 2026: **54.5%** (-4pp)  **Key Takeaway:**  | oi_funding: OI -6.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -50.0% 1h",
-          "weight": 1.44
+          "signal": "OI -6.0% 1h",
+          "weight": 1.08
         },
         {
           "source": "polymarket",
           "signal": "ky \u2022 Rate hike in 2026: **54.5%** (-4pp)  **Key Takeaway:** Market overwhelmingly expects Fed pause at July meeting. BTC",
           "weight": 0.96
+        },
+        {
+          "source": "x_scanner",
+          "signal": "X shows strong institutional BTC accumulation (Strategy doubling down, $53.6M Coinbase outflow) and heavy $ETH leverage ",
+          "weight": 0.95
         }
       ],
-      "timestamp": "2026-07-15T12:20:20.688994+00:00"
+      "timestamp": "2026-07-15T12:25:21.097412+00:00"
     },
     "SOL": {
-      "score": 0.5,
-      "confidence": 0.5,
+      "score": 0.33,
+      "confidence": 0.84,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 8,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI +22.0% 1h, funding 0.0004%",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @TWM20724 (\ud83d\udc4d0 \ud83d\udd040) The $TWM chart is building a s | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | oi_funding: OI -16.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +22.0% 1h, funding 0.0004%",
+          "signal": "OI -16.0% 1h",
           "weight": 1.44
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 38% bid (ask-heavy, bearish)",
-          "weight": 0.48
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @TWM20724 (\ud83d\udc4d0 \ud83d\udd040) The $TWM chart is building a strong base, and the momentum is looking increasingly bullish",
+          "weight": 0.8
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @PiEDawg_ (\ud83d\udc4d0 \ud83d\udd040) Jupiter launched Jupiter Gacha beta on July 13, enabling users to pull professionally grad",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-15T12:20:20.689005+00:00"
+      "timestamp": "2026-07-15T12:25:21.097424+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -2110,25 +2122,25 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @notthreadguy (\ud83d\udc4d55 \ud83d\udd043) Every semi serious trader | oi_funding: OI +35.0% 1h, funding 0.0033%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Crypto__Haris (\ud83d\udc4d73 \ud83d\udd0415) My $HYPE long trade cro | oi_funding: OI +29.0% 1h, funding 0.0044%",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $HYPE] @notthreadguy (\ud83d\udc4d55 \ud83d\udd043) Every semi serious trader across all markets is looking at Hyperliquid right now [sco",
-          "weight": 1.62
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $HYPE] @WatchfulWeb3 (\ud83d\udc4d19 \ud83d\udd043) $ANSEM chart \u2014 only a matter of time before we reach Billions [score:2.5]",
-          "weight": 1.62
-        },
-        {
           "source": "oi_funding",
-          "signal": "OI +35.0% 1h, funding 0.0033%",
+          "signal": "OI +29.0% 1h, funding 0.0044%",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcb0 $HYPE] @Crypto__Haris (\ud83d\udc4d73 \ud83d\udd0415) My $HYPE long trade crossed $3k+ in profit. Another perfect call from me. Congrats ",
+          "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcb0 $HYPE] @TaikiMaeda2 (\ud83d\udc4d43 \ud83d\udd048) Crypto is Bottoming. Here's Why We're Going Higher. Longing $HYPE $LIT $ZEC [2.8]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-15T12:20:20.689016+00:00"
+      "timestamp": "2026-07-15T12:25:21.097445+00:00"
     }
   },
   "config": {

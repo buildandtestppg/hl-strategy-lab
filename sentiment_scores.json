@@ -1,88 +1,100 @@
 {
   "BTC": {
-    "score": 0.94,
-    "confidence": 1.0,
+    "score": 0.47,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "news_agent",
-      "polymarket",
-      "oi_funding"
+      "polymarket"
     ],
-    "signal_count": 7,
-    "convergence": true,
-    "convergence_strength": 4,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 4-source bullish convergence | x_scanner: \u2022 [$BTC] @cryptorover \u2014 Whale buy wall $57K\u2192$48K suggests in | news_agent: \ud83d\udfe2 **Notable** \u2022 Nvidia CEO Jensen Huang heads to Japan after | polymarket: n 2026: **79.7%** (+1.9pp) \u2014 sticky \u2022 Rate hike in 2026: **5",
+    "signal_count": 8,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d61 \ud83d\udd0421) Strategy says it will co | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | news_agent: \ud83d\udfe2 **Notable** \u2022 Nvidia CEO Jensen Huang heads to Japan after",
     "key_signals": [
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [$BTC] @cryptorover \u2014 Whale buy wall $57K\u2192$48K suggests institutional bottom-fishing [score:3.1]",
-        "weight": 2.94
+        "source": "news_agent",
+        "signal": "\ud83d\udfe2 **Notable** \u2022 Nvidia CEO Jensen Huang heads to Japan after backlash \u2022 Bitcoin rally cools as investors digest inflatio",
+        "weight": 0.98
+      },
+      {
+        "source": "polymarket",
+        "signal": "n 2026: **79.7%** (+1.9pp) \u2014 sticky \u2022 Rate hike in 2026: **54.5%** (-4pp)  **Key Takeaway:** Market overwhelmingly expec",
+        "weight": 0.96
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $BTC] @cryptorover (\ud83d\udc4d32 \ud83d\udd041) Whales stacking massive BTC bids below current price \u2014 buy wall from $57K to high-$40Ks",
-        "weight": 2.48
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI +12.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "signal": "\u2022 [\ud83d\udcca $BTC] @Cointelegraph (\ud83d\udc4d61 \ud83d\udd0421) Strategy says it will continue buying Bitcoin long term and aims to remain the world",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-15T12:20:20.688970+00:00"
+    "timestamp": "2026-07-15T12:25:21.097389+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": 0.18,
+    "confidence": 0.84,
     "sources": [
+      "x_scanner",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 8,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: ky \u2022 Rate hike in 2026: **54.5%** (-4pp)  **Key Takeaway:**  | oi_funding: OI -50.0% 1h",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: X shows strong institutional BTC accumulation (Strategy doub | polymarket: ky \u2022 Rate hike in 2026: **54.5%** (-4pp)  **Key Takeaway:**  | oi_funding: OI -6.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -50.0% 1h",
-        "weight": 1.44
+        "signal": "OI -6.0% 1h",
+        "weight": 1.08
       },
       {
         "source": "polymarket",
         "signal": "ky \u2022 Rate hike in 2026: **54.5%** (-4pp)  **Key Takeaway:** Market overwhelmingly expects Fed pause at July meeting. BTC",
         "weight": 0.96
+      },
+      {
+        "source": "x_scanner",
+        "signal": "X shows strong institutional BTC accumulation (Strategy doubling down, $53.6M Coinbase outflow) and heavy $ETH leverage ",
+        "weight": 0.95
       }
     ],
-    "timestamp": "2026-07-15T12:20:20.688994+00:00"
+    "timestamp": "2026-07-15T12:25:21.097412+00:00"
   },
   "SOL": {
-    "score": 0.5,
-    "confidence": 0.5,
+    "score": 0.33,
+    "confidence": 0.84,
     "sources": [
+      "x_scanner",
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 8,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI +22.0% 1h, funding 0.0004%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @TWM20724 (\ud83d\udc4d0 \ud83d\udd040) The $TWM chart is building a s | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | oi_funding: OI -16.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +22.0% 1h, funding 0.0004%",
+        "signal": "OI -16.0% 1h",
         "weight": 1.44
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 38% bid (ask-heavy, bearish)",
-        "weight": 0.48
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @TWM20724 (\ud83d\udc4d0 \ud83d\udd040) The $TWM chart is building a strong base, and the momentum is looking increasingly bullish",
+        "weight": 0.8
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @PiEDawg_ (\ud83d\udc4d0 \ud83d\udd040) Jupiter launched Jupiter Gacha beta on July 13, enabling users to pull professionally grad",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-15T12:20:20.689005+00:00"
+    "timestamp": "2026-07-15T12:25:21.097424+00:00"
   },
   "HYPE": {
     "score": 1.0,
@@ -95,24 +107,24 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @notthreadguy (\ud83d\udc4d55 \ud83d\udd043) Every semi serious trader | oi_funding: OI +35.0% 1h, funding 0.0033%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Crypto__Haris (\ud83d\udc4d73 \ud83d\udd0415) My $HYPE long trade cro | oi_funding: OI +29.0% 1h, funding 0.0044%",
     "key_signals": [
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udd25 $HYPE] @notthreadguy (\ud83d\udc4d55 \ud83d\udd043) Every semi serious trader across all markets is looking at Hyperliquid right now [sco",
-        "weight": 1.62
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udd25 $HYPE] @WatchfulWeb3 (\ud83d\udc4d19 \ud83d\udd043) $ANSEM chart \u2014 only a matter of time before we reach Billions [score:2.5]",
-        "weight": 1.62
-      },
-      {
         "source": "oi_funding",
-        "signal": "OI +35.0% 1h, funding 0.0033%",
+        "signal": "OI +29.0% 1h, funding 0.0044%",
         "weight": 1.44
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @Crypto__Haris (\ud83d\udc4d73 \ud83d\udd0415) My $HYPE long trade crossed $3k+ in profit. Another perfect call from me. Congrats ",
+        "weight": 0.65
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @TaikiMaeda2 (\ud83d\udc4d43 \ud83d\udd048) Crypto is Bottoming. Here's Why We're Going Higher. Longing $HYPE $LIT $ZEC [2.8]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-15T12:20:20.689016+00:00"
+    "timestamp": "2026-07-15T12:25:21.097445+00:00"
   }
 }
