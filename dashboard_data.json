@@ -1,20 +1,36 @@
 {
-  "last_update": "2026-07-16T01:20:46.972002+00:00",
+  "last_update": "2026-07-16T01:25:47.699286+00:00",
   "portfolio": {
-    "value": 4998.97,
-    "capital": 4998.97,
+    "value": 4997.39,
+    "capital": 4997.39,
     "initial": 5000.0,
-    "pnl": -1.03,
-    "pnl_pct": -0.02,
-    "open_positions": 0
+    "pnl": -2.61,
+    "pnl_pct": -0.05,
+    "open_positions": 1
   },
   "prices": {
-    "BTC": 64420.5,
-    "ETH": 1910.45,
-    "SOL": 76.7495,
-    "HYPE": 66.1905
+    "BTC": 64497.5,
+    "ETH": 1913.55,
+    "SOL": 76.8535,
+    "HYPE": 66.2345
   },
-  "positions": {},
+  "positions": {
+    "ETH": {
+      "direction": "SHORT",
+      "entry_price": 1913.55,
+      "current_price": 1913.55,
+      "size": 0.8682527180980523,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "stop_loss": 1971.125,
+      "take_profit": 1798.4,
+      "strategy": "trend",
+      "entry_time": "2026-07-16T01:25:49.379823+00:00",
+      "duration_hours": 0.0,
+      "funding_rate": 0.00125,
+      "unrealized_funding": -0.0
+    }
+  },
   "stats": {
     "total_trades": 69,
     "wins": 30,
@@ -26,7 +42,10 @@
     "worst_trade": -45.01,
     "total_realized_pnl": 121.4
   },
-  "actions": [],
+  "actions": [
+    "\ud83e\udde0 ETH: TA signal LONG blocked by sentiment overlay",
+    "\ud83d\udfe2 OPENED SHORT ETH @ $1913.5500 | Size: 0.8683 | SL: $1971.1250 | TP: $1798.4000 | Strategy: trend | Sentiment-driven SHORT (score -1.00, conf 0.7, momentum confirmed)"
+  ],
   "closed_trades": [
     {
       "pair": "HYPE",
@@ -939,11 +958,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-15T09:55:05.876231+00:00",
-      "v": 4992.04,
-      "p": -0.16
-    },
     {
       "t": "2026-07-15T10:00:06.606241+00:00",
       "v": 4988.93,
@@ -1938,6 +1952,11 @@
       "t": "2026-07-16T01:20:46.972002+00:00",
       "v": 4998.97,
       "p": -0.02
+    },
+    {
+      "t": "2026-07-16T01:25:47.699286+00:00",
+      "v": 4997.39,
+      "p": -0.05
     }
   ],
   "ai_history": [
@@ -1984,8 +2003,8 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.05,
-      "confidence": 0.84,
+      "score": -1.0,
+      "confidence": 1.0,
       "sources": [
         "whale_monitor",
         "polymarket",
@@ -1993,19 +2012,19 @@
       ],
       "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | polymarket: 0pp) \u2014 Strong SOL momentum \u2022 **Solana dip to $70** \u2192 33.0% ( | oi_funding: OI +27.0% 1h, funding 0.0013%",
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 26% bid (ask-heavy, bearish) | polymarket: 0pp) \u2014 Strong SOL momentum \u2022 **Solana dip to $70** \u2192 33.0% ( | oi_funding: OI -40.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +27.0% 1h, funding 0.0013%",
+          "signal": "OI -40.0% 1h",
           "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 30% bid (ask-heavy, bearish)",
-          "weight": 0.8
+          "signal": "Orderbook 26% bid (ask-heavy, bearish)",
+          "weight": 0.96
         },
         {
           "source": "polymarket",
@@ -2013,24 +2032,24 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-16T01:20:46.873636+00:00"
+      "timestamp": "2026-07-16T01:25:47.614191+00:00"
     },
     "ETH": {
-      "score": 0.3,
-      "confidence": 0.5,
+      "score": -1.0,
+      "confidence": 0.74,
       "sources": [
         "polymarket",
         "oi_funding"
       ],
       "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: ds  **Takeaway:** Market expects near-term Fed pause (95.7%  | oi_funding: OI +16.0% 1h, funding 0.0013%",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: ds  **Takeaway:** Market expects near-term Fed pause (95.7%  | oi_funding: OI -16.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +16.0% 1h, funding 0.0013%",
+          "signal": "OI -16.0% 1h",
           "weight": 1.44
         },
         {
@@ -2039,22 +2058,22 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-16T01:20:46.873652+00:00"
+      "timestamp": "2026-07-16T01:25:47.614203+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 1.0,
+      "score": -0.68,
+      "confidence": 0.9,
       "sources": [
         "x_scanner",
-        "news_agent",
+        "whale_monitor",
         "polymarket",
         "oi_funding"
       ],
       "signal_count": 4,
       "convergence": true,
-      "convergence_strength": 4,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 4-source bearish convergence | x_scanner: \u2022 [$SOL] @CrypstocksAI (\ud83d\udc4d1) $ONDO: tokenized securities movi | news_agent: eaper drone \u2022 US strikes Iran for 5th day; Trump vows contin | polymarket: pause (95.7% July), but pivoting toward rate hikes by Oct (6",
+      "convergence_strength": 3,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [$SOL] @CrypstocksAI (\ud83d\udc4d1) $ONDO: tokenized securities movi | whale_monitor: Orderbook 77% bid-weighted (bullish) | polymarket: pause (95.7% July), but pivoting toward rate hikes by Oct (6",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2063,20 +2082,20 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -53.0% 1h",
+          "signal": "OI -31.0% 1h",
           "weight": 1.44
         },
         {
-          "source": "news_agent",
-          "signal": "eaper drone \u2022 US strikes Iran for 5th day; Trump vows continued action  \ud83d\udfe2 **Market Movers** \u2022 Claynosaurz NFT surpasses ",
-          "weight": 0.98
+          "source": "whale_monitor",
+          "signal": "Orderbook 77% bid-weighted (bullish)",
+          "weight": 1.08
         }
       ],
-      "timestamp": "2026-07-16T01:20:46.873666+00:00"
+      "timestamp": "2026-07-16T01:25:47.614213+00:00"
     },
     "HYPE": {
-      "score": 0.02,
-      "confidence": 0.84,
+      "score": -1.0,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -2084,9 +2103,9 @@
       ],
       "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE] @Warrenbucketz (\ud83d\udc4d7 \ud83d\udd042) Incoming Hyperliquid short  | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI +34.0% 1h, funding 0.0026%",
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [$HYPE] @Warrenbucketz (\ud83d\udc4d7 \ud83d\udd042) Incoming Hyperliquid short  | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -68.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2095,16 +2114,16 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +34.0% 1h, funding 0.0026%",
+          "signal": "OI -68.0% 1h",
           "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 63% bid-weighted (bullish)",
-          "weight": 0.52
+          "signal": "Orderbook 30% bid (ask-heavy, bearish)",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-16T01:20:46.873675+00:00"
+      "timestamp": "2026-07-16T01:25:47.614220+00:00"
     }
   },
   "config": {
