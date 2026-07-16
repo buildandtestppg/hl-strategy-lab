@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-16T09:50:41.727596+00:00",
+  "last_update": "2026-07-16T09:55:42.204525+00:00",
   "portfolio": {
-    "value": 4956.86,
+    "value": 4957.38,
     "capital": 4989.33,
     "initial": 5000.0,
-    "pnl": -43.14,
-    "pnl_pct": -0.86,
+    "pnl": -42.62,
+    "pnl_pct": -0.85,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 64062.5,
-    "ETH": 1884.05,
-    "SOL": 76.0115,
-    "HYPE": 65.9185
+    "BTC": 64063.5,
+    "ETH": 1883.95,
+    "SOL": 75.9975,
+    "HYPE": 65.8795
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 77.4935,
-      "current_price": 76.0115,
+      "current_price": 75.9975,
       "size": 26.36614960634362,
-      "unrealized_pnl": -39.07,
-      "unrealized_pnl_pct": -1.91,
+      "unrealized_pnl": -39.44,
+      "unrealized_pnl_pct": -1.93,
       "stop_loss": 75.6025,
       "take_profit": 81.2755,
       "strategy": "stochastic",
       "entry_time": "2026-07-16T06:00:19.172772+00:00",
-      "duration_hours": 3.8,
-      "funding_rate": -0.000101,
-      "unrealized_funding": -0.0077
+      "duration_hours": 3.9,
+      "funding_rate": 1.6e-05,
+      "unrealized_funding": 0.0012
     },
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 66.2035,
-      "current_price": 65.9185,
+      "current_price": 65.8795,
       "size": 23.073242143657016,
-      "unrealized_pnl": 6.6,
-      "unrealized_pnl_pct": 0.43,
+      "unrealized_pnl": 7.5,
+      "unrealized_pnl_pct": 0.49,
       "stop_loss": 68.3535,
       "take_profit": 61.9035,
       "strategy": "trend",
       "entry_time": "2026-07-16T08:40:36.761708+00:00",
-      "duration_hours": 1.2,
+      "duration_hours": 1.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0222
+      "unrealized_funding": -0.0238
     }
   },
   "stats": {
@@ -970,11 +970,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-15T18:31:00.377897+00:00",
-      "v": 5039.14,
-      "p": 0.78
-    },
     {
       "t": "2026-07-15T18:35:00.676943+00:00",
       "v": 5035.61,
@@ -1969,6 +1964,11 @@
       "t": "2026-07-16T09:50:41.727596+00:00",
       "v": 4956.86,
       "p": -0.86
+    },
+    {
+      "t": "2026-07-16T09:55:42.204525+00:00",
+      "v": 4957.38,
+      "p": -0.85
     }
   ],
   "ai_history": [
@@ -2015,104 +2015,106 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.31,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
       "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @KriptoHulk (\ud83d\udc4d14 \ud83d\udd042) We were just about to smash  | whale_monitor: Orderbook 81% bid-weighted (bullish)",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: Hyperliquid whales net short $BTC ($12.7M short vol, 68% bea | whale_monitor: Orderbook 81% bid-weighted (bullish)",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @KriptoHulk (\ud83d\udc4d14 \ud83d\udd042) We were just about to smash 65K, was it a fakeout? [score: 2.2]",
-          "weight": 1.43
-        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 81% bid-weighted (bullish)",
           "weight": 1.24
+        },
+        {
+          "source": "x_scanner",
+          "signal": "Hyperliquid whales net short $BTC ($12.7M short vol, 68% bears). ETH holding key $1,850 support with $2K target. TAO/Bit",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-16T09:50:41.573309+00:00"
+      "timestamp": "2026-07-16T09:55:41.938450+00:00"
     },
     "ETH": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "x_scanner"
+      ],
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-16T09:50:41.573314+00:00"
-    },
-    "SOL": {
-      "score": 1.0,
-      "confidence": 0.74,
-      "sources": [
-        "x_scanner",
-        "whale_monitor"
-      ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @malevus883 If your aim is to hold long-term, pe | whale_monitor: Orderbook 64% bid-weighted (bullish)",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @DonWedge (\ud83d\udc4d61 \ud83d\udd043) $ETH engine for decentralised ",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @malevus883 If your aim is to hold long-term, perps barely have advantage over spot due to funding [score: 2",
-          "weight": 2.0
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @DonWedge (\ud83d\udc4d61 \ud83d\udd043) $ETH engine for decentralised financial instruments \u2014 accumulate now [score: 2.7]",
+          "weight": 2.16
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [$SOL] @yunusemreuludag (\ud83d\udd044) Grass $GRASS Airdrop live for early supporters [score: 1.6]",
-          "weight": 1.04
-        },
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @TedPillows (\ud83d\udc4d108 \ud83d\udd046) $ETH slight correction \u2014 hold above $1,850 for move to $2,000 [score: 2.9]",
+          "weight": 1.89
+        }
+      ],
+      "timestamp": "2026-07-16T09:55:41.938512+00:00"
+    },
+    "SOL": {
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "whale_monitor"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 64% bid-weighted (bullish)",
+      "key_signals": [
         {
           "source": "whale_monitor",
           "signal": "Orderbook 64% bid-weighted (bullish)",
           "weight": 0.56
         }
       ],
-      "timestamp": "2026-07-16T09:50:41.573329+00:00"
+      "timestamp": "2026-07-16T09:55:41.938523+00:00"
     },
     "HYPE": {
-      "score": 0.86,
-      "confidence": 0.5,
+      "score": -0.19,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 6,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @rsshanto Hyperion dropped 500K $HYPE to fuel in | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
+      "contradictions": 0,
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u2699\ufe0f $HYPE] @CW8900 Hyperliquid Smart Tracking: 68% of whal | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd25 $HYPE] @rsshanto Hyperion dropped 500K $HYPE to fuel institutional perp markets on Hyperliquid HIP-3 [score: 2.5]",
-          "weight": 2.0
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @FameEXGlobal (\ud83d\udc4d41 \ud83d\udd0421) Market cap \u2248 $2.22T (-0.30%) $BTC +0.71% \u2248 $64.2K $ETH +1.95% \u2248 $1.9K Fear & Greed 2",
-          "weight": 1.82
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @tokenwatchzone $ETH outruns $BTC as ETF money returns, almost all from BlackRock Fund [score: 2.5]",
+          "signal": "\u2022 [\u2699\ufe0f $HYPE] @CW8900 Hyperliquid Smart Tracking: 68% of whales short, $12.7M total short vol, top pair $BTC $5.1M [score",
           "weight": 1.62
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @BSCNews (\ud83d\udc4d11 \ud83d\udd042) Hyperliquid Treasury Firm Strikes 500K HYPE Deal With Skew \u2014 $33.6M deployed [score: 2.3]",
+          "weight": 1.49
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 36% bid (ask-heavy, bearish)",
+          "weight": 0.56
         }
       ],
-      "timestamp": "2026-07-16T09:50:41.573341+00:00"
+      "timestamp": "2026-07-16T09:55:41.938533+00:00"
     }
   },
   "config": {
