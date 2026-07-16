@@ -1,21 +1,27 @@
 {
   "BTC": {
-    "score": 0.31,
-    "confidence": 0.5,
+    "score": 0.62,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: Hyperliquid whales net short $BTC ($12.7M short vol, 68% bea | whale_monitor: Orderbook 81% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: Hyperliquid whales net short $BTC ($12.7M short vol, 68% bea | whale_monitor: Orderbook 68% bid-weighted (bullish) | oi_funding: OI +10.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI +10.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 81% bid-weighted (bullish)",
-        "weight": 1.24
+        "signal": "Orderbook 68% bid-weighted (bullish)",
+        "weight": 0.72
       },
       {
         "source": "x_scanner",
@@ -23,19 +29,20 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-16T10:00:42.412026+00:00"
+    "timestamp": "2026-07-16T10:05:42.985795+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.47,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @DonWedge (\ud83d\udc4d61 \ud83d\udd043) $ETH engine for decentralised ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @DonWedge (\ud83d\udc4d61 \ud83d\udd043) $ETH engine for decentralised  | oi_funding: OI -21.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -46,42 +53,54 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @TedPillows (\ud83d\udc4d108 \ud83d\udd046) $ETH slight correction \u2014 hold above $1,850 for move to $2,000 [score: 2.9]",
         "weight": 1.89
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -21.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-16T10:00:42.412041+00:00"
+    "timestamp": "2026-07-16T10:05:42.985809+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.26,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 64% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -11.0% 1h",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI -11.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 64% bid-weighted (bullish)",
-        "weight": 0.56
+        "signal": "Orderbook 71% bid-weighted (bullish)",
+        "weight": 0.84
       }
     ],
-    "timestamp": "2026-07-16T10:00:42.412049+00:00"
+    "timestamp": "2026-07-16T10:05:42.985817+00:00"
   },
   "HYPE": {
-    "score": -0.19,
-    "confidence": 0.6,
+    "score": 0.15,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u2699\ufe0f $HYPE] @CW8900 Hyperliquid Smart Tracking: 68% of whal | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u2699\ufe0f $HYPE] @CW8900 Hyperliquid Smart Tracking: 68% of whal | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -94,11 +113,11 @@
         "weight": 1.49
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 36% bid (ask-heavy, bearish)",
-        "weight": 0.56
+        "source": "oi_funding",
+        "signal": "OI +7.0% 1h, funding 0.0013%",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-07-16T10:00:42.412057+00:00"
+    "timestamp": "2026-07-16T10:05:42.985825+00:00"
   }
 }
