@@ -1,7 +1,7 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.62,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -9,9 +9,9 @@
     ],
     "signal_count": 3,
     "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @bitcoinlfgo (\ud83d\udc4d33 \ud83d\udd044) BLACKROCK SPOT BITCOIN ETF  | whale_monitor: Orderbook 77% bid-weighted (bullish) | oi_funding: OI +32.0% 1h, funding 0.0013%",
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @bitcoinlfgo (\ud83d\udc4d33 \ud83d\udd044) BLACKROCK SPOT BITCOIN ETF  | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -19,17 +19,17 @@
         "weight": 2.08
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +32.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 73% bid-weighted (bullish)",
+        "weight": 0.92
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 77% bid-weighted (bullish)",
-        "weight": 1.08
+        "source": "oi_funding",
+        "signal": "OI -5.0% 1h",
+        "weight": 0.9
       }
     ],
-    "timestamp": "2026-07-17T06:20:57.142013+00:00"
+    "timestamp": "2026-07-17T06:25:57.567105+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -42,7 +42,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @CryptoPatel (\ud83d\udc4d34 \ud83d\udd0410) ETF FLOWS UPDATE: BTC ETFs | oi_funding: OI -94.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @CryptoPatel (\ud83d\udc4d34 \ud83d\udd0410) ETF FLOWS UPDATE: BTC ETFs | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -51,45 +51,50 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -94.0% 1h",
-        "weight": 1.44
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-07-17T06:20:57.142033+00:00"
+    "timestamp": "2026-07-17T06:25:57.567128+00:00"
   },
   "SOL": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -92.0% 1h",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -92.0% 1h",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-07-17T06:20:57.142041+00:00"
-  },
-  "HYPE": {
-    "score": 0.16,
-    "confidence": 0.7,
-    "sources": [
-      "x_scanner",
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI -8.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -8.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 36% bid (ask-heavy, bearish)",
+        "weight": 0.56
+      }
+    ],
+    "timestamp": "2026-07-17T06:25:57.567140+00:00"
+  },
+  "HYPE": {
+    "score": -0.13,
+    "confidence": 0.6,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @bishengkegs (\ud83d\udc4d3 \ud83d\udd040) a16z report: \"Hyperliquid  | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI +39.0% 1h, funding 0.0013%",
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @bishengkegs (\ud83d\udc4d3 \ud83d\udd040) a16z report: \"Hyperliquid  | oi_funding: OI -5.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -103,10 +108,10 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +39.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "signal": "OI -5.0% 1h",
+        "weight": 0.9
       }
     ],
-    "timestamp": "2026-07-17T06:20:57.142051+00:00"
+    "timestamp": "2026-07-17T06:25:57.567150+00:00"
   }
 }
