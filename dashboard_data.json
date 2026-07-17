@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-17T10:20:23.332206+00:00",
+  "last_update": "2026-07-17T10:25:24.020715+00:00",
   "portfolio": {
     "value": 4880.47,
     "capital": 4880.47,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63116.5,
-    "ETH": 1838.25,
-    "SOL": 74.7465,
-    "HYPE": 60.7025
+    "BTC": 63093.5,
+    "ETH": 1837.05,
+    "SOL": 74.7075,
+    "HYPE": 60.5655
   },
   "positions": {},
   "stats": {
@@ -939,11 +939,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-16T19:00:41.765579+00:00",
-      "v": 4950.17,
-      "p": -1.0
-    },
     {
       "t": "2026-07-16T19:01:15.117130+00:00",
       "v": 4950.17,
@@ -1938,6 +1933,11 @@
       "t": "2026-07-17T10:20:23.332206+00:00",
       "v": 4880.47,
       "p": -2.39
+    },
+    {
+      "t": "2026-07-17T10:25:24.020715+00:00",
+      "v": 4880.47,
+      "p": -2.39
     }
   ],
   "ai_history": [
@@ -1996,7 +1996,7 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 2,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Cointelegraph (\ud83d\udc4d37 \ud83d\udd049) Long-dormant Bitcoin wall | whale_monitor: Orderbook 94% bid-weighted (bullish) | news_agent: conflict  \u2022 European Central Bank emphasizes digital euro's ",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Cointelegraph (\ud83d\udc4d37 \ud83d\udd049) Long-dormant Bitcoin wall | whale_monitor: Orderbook 93% bid-weighted (bullish) | news_agent: conflict  \u2022 European Central Bank emphasizes digital euro's ",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2014,21 +2014,21 @@
           "weight": 2.24
         }
       ],
-      "timestamp": "2026-07-17T10:20:23.101320+00:00"
+      "timestamp": "2026-07-17T10:25:23.881874+00:00"
     },
     "ETH": {
-      "score": 0.77,
+      "score": 0.22,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
       "signal_count": 4,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @cryptorover (\ud83d\udc4d93 \ud83d\udcac5) 7 new wallets withdrew $164 | whale_monitor: Orderbook 62% bid-weighted (bullish) | polymarket: 6pp) \u2014 tight policy expected through year-end  **Summary:** ",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @cryptorover (\ud83d\udc4d93 \ud83d\udcac5) 7 new wallets withdrew $164 | polymarket: 6pp) \u2014 tight policy expected through year-end  **Summary:**  | oi_funding: OI -8.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2041,36 +2041,42 @@
           "weight": 1.62
         },
         {
-          "source": "polymarket",
-          "signal": "6pp) \u2014 tight policy expected through year-end  **Summary:** Bearish crypto sentiment dominates. BTC monthly targets are ",
-          "weight": 0.78
+          "source": "oi_funding",
+          "signal": "OI -8.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-17T10:20:23.101360+00:00"
+      "timestamp": "2026-07-17T10:25:23.881901+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.07,
+      "confidence": 0.5,
       "sources": [
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: The \"dramatic shifts\" flagged are all expiry/repricing Solan",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: The \"dramatic shifts\" flagged are all expiry/repricing Solan | oi_funding: OI +5.0% 1h, funding 0.0004%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +5.0% 1h, funding 0.0004%",
+          "weight": 0.9
+        },
         {
           "source": "polymarket",
           "signal": "The \"dramatic shifts\" flagged are all expiry/repricing Solana markets (today is July 17, and the market is mechanically ",
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-17T10:20:23.101374+00:00"
+      "timestamp": "2026-07-17T10:25:23.881911+00:00"
     },
     "HYPE": {
-      "score": 0.72,
-      "confidence": 0.84,
+      "score": 0.86,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -2078,9 +2084,9 @@
       ],
       "signal_count": 9,
       "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Satori_btc (\ud83d\udc4d36 \ud83d\udd049) $HYPE Market Watch \u2014 warned | whale_monitor: Orderbook 72% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Satori_btc (\ud83d\udc4d36 \ud83d\udd049) $HYPE Market Watch \u2014 warned | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +8.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2098,7 +2104,7 @@
           "weight": 2.41
         }
       ],
-      "timestamp": "2026-07-17T10:20:23.101399+00:00"
+      "timestamp": "2026-07-17T10:25:23.881925+00:00"
     }
   },
   "config": {
