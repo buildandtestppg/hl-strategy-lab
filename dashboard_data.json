@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-17T13:35:43.666786+00:00",
+  "last_update": "2026-07-17T13:40:44.328215+00:00",
   "portfolio": {
-    "value": 4886.67,
+    "value": 4887.72,
     "capital": 4879.68,
     "initial": 5000.0,
-    "pnl": -113.33,
-    "pnl_pct": -2.27,
+    "pnl": -112.28,
+    "pnl_pct": -2.25,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 62718.5,
-    "ETH": 1809.15,
-    "SOL": 73.6745,
-    "HYPE": 59.5385
+    "BTC": 62705.5,
+    "ETH": 1808.75,
+    "SOL": 73.5835,
+    "HYPE": 59.463
   },
   "positions": {
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 60.0415,
-      "current_price": 59.5385,
+      "current_price": 59.463,
       "size": 13.868915178685848,
-      "unrealized_pnl": 6.99,
-      "unrealized_pnl_pct": 0.84,
+      "unrealized_pnl": 8.04,
+      "unrealized_pnl_pct": 0.96,
       "stop_loss": 63.5605,
       "take_profit": 53.0035,
       "strategy": "trend",
       "entry_time": "2026-07-17T12:30:40.040107+00:00",
-      "duration_hours": 1.1,
+      "duration_hours": 1.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0112
+      "unrealized_funding": -0.012
     }
   },
   "stats": {
@@ -955,11 +955,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-16T22:10:21.006873+00:00",
-      "v": 4950.17,
-      "p": -1.0
-    },
     {
       "t": "2026-07-16T22:15:04.231627+00:00",
       "v": 4950.17,
@@ -1954,6 +1949,11 @@
       "t": "2026-07-17T13:35:43.666786+00:00",
       "v": 4886.67,
       "p": -2.27
+    },
+    {
+      "t": "2026-07-17T13:40:44.328215+00:00",
+      "v": 4887.72,
+      "p": -2.25
     }
   ],
   "ai_history": [
@@ -2000,18 +2000,19 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.16,
-      "confidence": 0.7,
+      "score": 0.01,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd2e $BTC] @TNTCapitalC (\ud83d\udc4d0 \ud83d\udd040) $BTC game theory: Friday pri | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI -52.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $BTC] @TNTCapitalC (\ud83d\udc4d0 \ud83d\udd040) $BTC game theory: Friday pri | whale_monitor: Orderbook 69% bid-weighted (bullish) | news_agent: n a week** \u2014 Macro inflation pressure; crude ATH at 11% by y",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2029,20 +2030,21 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-17T13:35:43.567873+00:00"
+      "timestamp": "2026-07-17T13:40:44.038117+00:00"
     },
     "ETH": {
-      "score": 0.46,
-      "confidence": 0.5,
+      "score": 0.54,
+      "confidence": 0.7,
       "sources": [
         "x_scanner",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 4,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @TedPillows (\ud83d\udc4d53 \ud83d\udd043) Abraxas Capital bought $85,0 | oi_funding: OI -102.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @TedPillows (\ud83d\udc4d53 \ud83d\udd043) Abraxas Capital bought $85,0 | news_agent: o inflation pressure; crude ATH at 11% by year-end  \ud83d\udcca **Scan | oi_funding: OI -102.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2055,32 +2057,38 @@
           "weight": 1.44
         },
         {
-          "source": "x_scanner",
-          "signal": "$ETH sees heavy institutional buying with Abraxas Capital accumulating ~$85M this week, while $BTC recovers toward $65K ",
-          "weight": 0.65
+          "source": "news_agent",
+          "signal": "o inflation pressure; crude ATH at 11% by year-end  \ud83d\udcca **Scan stats:** 763 new articles, 7 unreported (all low-impact). T",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-17T13:35:43.567889+00:00"
+      "timestamp": "2026-07-17T13:40:44.038153+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.19,
+      "confidence": 0.5,
       "sources": [
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -147.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: * \u2014 Macro inflation pressure; crude ATH at 11% by year-end   | oi_funding: OI -147.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -147.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "news_agent",
+          "signal": "* \u2014 Macro inflation pressure; crude ATH at 11% by year-end  \ud83d\udcca **Scan stats:** 763 new articles, 7 unreported (all low-im",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-17T13:35:43.567896+00:00"
+      "timestamp": "2026-07-17T13:40:44.038163+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -2112,7 +2120,7 @@
           "weight": 0.52
         }
       ],
-      "timestamp": "2026-07-17T13:35:43.567908+00:00"
+      "timestamp": "2026-07-17T13:40:44.038174+00:00"
     }
   },
   "config": {
