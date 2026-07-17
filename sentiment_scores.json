@@ -1,27 +1,26 @@
 {
   "BTC": {
-    "score": -0.45,
-    "confidence": 0.84,
+    "score": -0.08,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 6,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 5,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: $BTC whale buy walls 62.7-62.8k, $64M ETH whale long (10x),  | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI -85.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: $BTC whale buy walls 62.7-62.8k, $64M ETH whale long (10x),  | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -85.0% 1h",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "$BTC whale buy walls 62.7-62.8k, $64M ETH whale long (10x), $HYPE ecosystem expanding (1win prediction markets, NEAR int",
         "weight": 0.95
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
       },
       {
         "source": "x_scanner",
@@ -29,26 +28,20 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-17T17:40:11.398429+00:00"
+    "timestamp": "2026-07-17T17:45:11.914272+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @MaxCrypto (\ud83d\udc4d16 \ud83d\udd044) A whale has opened a $64,000, | oi_funding: OI +73.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @MaxCrypto (\ud83d\udc4d16 \ud83d\udd044) A whale has opened a $64,000,",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +73.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $ETH] @MaxCrypto (\ud83d\udc4d16 \ud83d\udd044) A whale has opened a $64,000,000  $ETH  long with 10x leverage.  Previously, this whale h",
@@ -60,57 +53,45 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-17T17:40:11.398461+00:00"
+    "timestamp": "2026-07-17T17:45:11.914304+00:00"
   },
   "SOL": {
     "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "whale_monitor"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 71% bid-weighted (bullish)",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 71% bid-weighted (bullish)",
+        "weight": 0.84
+      }
+    ],
+    "timestamp": "2026-07-17T17:45:11.914314+00:00"
+  },
+  "HYPE": {
+    "score": 1.0,
     "confidence": 0.74,
     "sources": [
-      "whale_monitor",
-      "oi_funding"
+      "x_scanner",
+      "whale_monitor"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI +66.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @NikkiSixx_7 (\ud83d\udc4d42 \ud83d\udd048) The cat died, friends   $C | whale_monitor: Orderbook 79% bid-weighted (bullish)",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI +66.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
-      {
         "source": "whale_monitor",
-        "signal": "Orderbook 65% bid-weighted (bullish)",
-        "weight": 0.6
-      }
-    ],
-    "timestamp": "2026-07-17T17:40:11.398472+00:00"
-  },
-  "HYPE": {
-    "score": 0.49,
-    "confidence": 0.84,
-    "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @NikkiSixx_7 (\ud83d\udc4d42 \ud83d\udd048) The cat died, friends   $C | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI +34.0% 1h, funding 0.0013%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +34.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 29% bid (ask-heavy, bearish)",
-        "weight": 0.84
+        "signal": "Orderbook 79% bid-weighted (bullish)",
+        "weight": 1.16
       },
       {
         "source": "x_scanner",
@@ -118,6 +99,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-17T17:40:11.398486+00:00"
+    "timestamp": "2026-07-17T17:45:11.914326+00:00"
   }
 }
