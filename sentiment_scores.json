@@ -1,21 +1,27 @@
 {
   "BTC": {
-    "score": 0.05,
-    "confidence": 0.5,
+    "score": -0.0,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC] @fundstrat (\ud83d\udc4d31 \ud83d\udd042) CNBC Closing Bell: AI selloff,  | oi_funding: OI +4.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC] @fundstrat (\ud83d\udc4d31 \ud83d\udd042) CNBC Closing Bell: AI selloff,  | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI +14.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +4.0% 1h, funding 0.0013%",
-        "weight": 0.72
+        "signal": "OI +14.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 30% bid (ask-heavy, bearish)",
+        "weight": 0.8
       },
       {
         "source": "x_scanner",
@@ -23,20 +29,26 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-17T18:00:13.558223+00:00"
+    "timestamp": "2026-07-17T18:05:14.289696+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH] @Alaouicapital \u2014 $14.58M ETH short at 25x leverage ",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$ETH] @Alaouicapital \u2014 $14.58M ETH short at 25x leverage  | oi_funding: OI -129.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -129.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$ETH] @Alaouicapital \u2014 $14.58M ETH short at 25x leverage already up $300K \u2014 watch for liquidation cascade [2.5]",
@@ -48,64 +60,59 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-17T18:00:13.558237+00:00"
+    "timestamp": "2026-07-17T18:05:14.289735+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "x_scanner"
     ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @MEMEINSIGHTS1 (\ud83d\udc4d1 \ud83d\udd040) $SD 5x run: $8.7K \u2192 $46K  | whale_monitor: Orderbook 71% bid-weighted (bullish)",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @MEMEINSIGHTS1 (\ud83d\udc4d1 \ud83d\udd040) $SD 5x run: $8.7K \u2192 $46K ",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 71% bid-weighted (bullish)",
-        "weight": 0.84
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @MEMEINSIGHTS1 (\ud83d\udc4d1 \ud83d\udd040) $SD 5x run: $8.7K \u2192 $46K MC with momentum building [3.5]",
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-17T18:00:13.558248+00:00"
+    "timestamp": "2026-07-17T18:05:14.289744+00:00"
   },
   "HYPE": {
-    "score": 0.46,
+    "score": 0.61,
     "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "news_agent"
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 6,
+    "signal_count": 7,
     "convergence": true,
-    "convergence_strength": 3,
+    "convergence_strength": 4,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$HYPE] @HashNews01 \u2014 Whale deposited $17M into Hyperliqui | whale_monitor: Orderbook 79% bid-weighted (bullish) | news_agent: rice surge. Geopolitical risk elevated \u2014 watch for crypto ma",
+    "narrative": "\ud83d\udcc8 4-source bullish convergence | x_scanner: \u2022 [$HYPE] @HashNews01 \u2014 Whale deposited $17M into Hyperliqui | whale_monitor: Orderbook 80% bid-weighted (bullish) | news_agent: rice surge. Geopolitical risk elevated \u2014 watch for crypto ma",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +40.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 80% bid-weighted (bullish)",
+        "weight": 1.2
+      },
       {
         "source": "news_agent",
         "signal": "rice surge. Geopolitical risk elevated \u2014 watch for crypto macro impact. \ud83d\udd17 cryptobriefing.com  **Grayscale launches Hyper",
         "weight": 1.2
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 79% bid-weighted (bullish)",
-        "weight": 1.16
-      },
-      {
-        "source": "news_agent",
-        "signal": "aking ETF on Nasdaq (HYPE)** Grayscale brings a Hyperliquid staking ETF to Nasdaq with the lowest fees in its class. \ud83d\udd17 c",
-        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-17T18:00:13.558260+00:00"
+    "timestamp": "2026-07-17T18:05:14.289834+00:00"
   }
 }
