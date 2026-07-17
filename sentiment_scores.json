@@ -1,29 +1,36 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": 0.97,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 8,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC] @CW8900 (\ud83d\udc4d3 \ud83d\udd040) Bitfinex whale shorts decreased \u2014 b | whale_monitor: Orderbook 30% bid (ask-heavy, bearish)",
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [$BTC] @CW8900 (\ud83d\udc4d3 \ud83d\udd040) Bitfinex whale shorts decreased \u2014 b | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: . **Jordan intercepts Iranian missiles, BTC dips** \u2014 geopoli",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 30% bid (ask-heavy, bearish)",
-        "weight": 0.8
+        "source": "news_agent",
+        "signal": ". **Jordan intercepts Iranian missiles, BTC dips** \u2014 geopolitical + BTC direct impact \u2192 \ud83d\udfe1 High 2. **BlackRock IBIT $79M ",
+        "weight": 1.5
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [$BTC] @CW8900 (\ud83d\udc4d3 \ud83d\udd040) Bitfinex whale shorts decreased \u2014 bearish bets closed, long positions remain dominant",
-        "weight": 0.65
+        "source": "news_agent",
+        "signal": "Wiki writes done. Now the notable articles are: 1. **Jordan intercepts Iranian missiles, BTC dips** \u2014 geopolitical + BTC",
+        "weight": 1.42
+      },
+      {
+        "source": "news_agent",
+        "signal": "Wiki writes done. Now the notable articles are: 1. **Jordan intercepts Iranian missiles, BTC dips** \u2014 geopolitical + BTC",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-07-17T05:20:50.456285+00:00"
+    "timestamp": "2026-07-17T05:25:51.063813+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -43,20 +50,21 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-17T05:20:50.456298+00:00"
+    "timestamp": "2026-07-17T05:25:51.063830+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.81,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @InvisionWorks (\ud83d\udc4d0 \ud83d\udd0420) $CASHCAT Airdrop is LIVE  | whale_monitor: Orderbook 74% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @InvisionWorks (\ud83d\udc4d0 \ud83d\udd0420) $CASHCAT Airdrop is LIVE  | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -64,30 +72,31 @@
         "weight": 1.82
       },
       {
+        "source": "whale_monitor",
+        "signal": "Orderbook 80% bid-weighted (bullish)",
+        "weight": 1.2
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [$SOL] @Maiganamgn (\ud83d\udc4d0 \ud83d\udd040) AFK Fishing whitelist live on Solana \u2014 idle game with upgrade mechanics [score: 1.8]",
         "weight": 1.17
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 74% bid-weighted (bullish)",
-        "weight": 0.96
       }
     ],
-    "timestamp": "2026-07-17T05:20:50.456309+00:00"
+    "timestamp": "2026-07-17T05:25:51.063869+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": -0.05,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE] @usethebitcoin (\ud83d\udc4d0 \ud83d\udd040) T. Rowe Price ($1.9T AUM) l | oi_funding: OI +8.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @usethebitcoin (\ud83d\udc4d0 \ud83d\udd040) T. Rowe Price ($1.9T AUM) l | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI -130.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -96,15 +105,15 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +8.0% 1h, funding 0.0013%",
+        "signal": "OI -130.0% 1h",
         "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "$HYPE getting institutional validation via T. Rowe Price ETF overweight vs $BTC. $TAO seeing dual ETF filings (Grayscale",
-        "weight": 0.8
+        "source": "whale_monitor",
+        "signal": "Orderbook 20% bid (ask-heavy, bearish)",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-07-17T05:20:50.456317+00:00"
+    "timestamp": "2026-07-17T05:25:51.063880+00:00"
   }
 }
