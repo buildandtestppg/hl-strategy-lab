@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-18T07:20:38.418411+00:00",
+  "last_update": "2026-07-18T07:25:38.957618+00:00",
   "portfolio": {
     "value": 4864.16,
     "capital": 4864.16,
@@ -9,9 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "ETH": 1843.75,
-    "SOL": 74.8825,
-    "HYPE": 58.8805
+    "BTC": 63995.5,
+    "ETH": 1844.85,
+    "SOL": 74.9215,
+    "HYPE": 59.0965
   },
   "positions": {},
   "stats": {
@@ -25,9 +26,7 @@
     "worst_trade": -45.01,
     "total_realized_pnl": 3.44
   },
-  "actions": [
-    "\u26a0\ufe0f BTC: Failed to fetch candles: HTTPSConnectionPool(host='api.hyperliquid.xyz', port=443): Read timed out. (read timeout=15)"
-  ],
+  "actions": [],
   "closed_trades": [
     {
       "pair": "HYPE",
@@ -940,11 +939,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-17T16:01:00.022115+00:00",
-      "v": 4873.52,
-      "p": -2.53
-    },
     {
       "t": "2026-07-17T16:05:00.461760+00:00",
       "v": 4873.52,
@@ -1939,6 +1933,11 @@
       "t": "2026-07-18T07:20:38.418411+00:00",
       "v": 4864.16,
       "p": -2.72
+    },
+    {
+      "t": "2026-07-18T07:25:38.957618+00:00",
+      "v": 4864.16,
+      "p": -2.72
     }
   ],
   "ai_history": [
@@ -1985,38 +1984,39 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.61,
-      "confidence": 0.5,
+      "score": -0.57,
+      "confidence": 0.84,
       "sources": [
         "whale_monitor",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 69% bid-weighted (bullish) | polymarket: arget repricings in BTC and ETH that are notable signals.  *",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | polymarket: arget repricings in BTC and ETH that are notable signals.  * | oi_funding: OI +16.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +16.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 20% bid (ask-heavy, bearish)",
+          "weight": 1.2
+        },
         {
           "source": "polymarket",
           "signal": "arget repricings in BTC and ETH that are notable signals.  **\ud83d\udcca Polymarket Sentiment Scan \u2014 July 18, 2026**  **\ud83d\udd34 BTC Pric",
           "weight": 0.78
-        },
-        {
-          "source": "polymarket",
-          "signal": "*\ud83d\udcca Polymarket Sentiment Scan \u2014 July 18, 2026**  **\ud83d\udd34 BTC Price Targets \u2014 Bullish Shift** - BTC reach $67,500 in July: **3",
-          "weight": 0.78
-        },
-        {
-          "source": "polymarket",
-          "signal": "h Shift** - BTC reach $67,500 in July: **36.5%** \ud83d\udd3a+12.0pp ($1.3M vol) - BTC dip to $60,000 in July: **33.5%** \ud83d\udd3b-16.0pp (",
-          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-18T07:20:38.327260+00:00"
+      "timestamp": "2026-07-18T07:25:38.821538+00:00"
     },
     "ETH": {
-      "score": 1.0,
+      "score": -1.0,
       "confidence": 0.3,
       "sources": [
         "oi_funding"
@@ -2025,73 +2025,67 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -9.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0013%",
-          "weight": 0.72
+          "signal": "OI -9.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-18T07:20:38.327272+00:00"
+      "timestamp": "2026-07-18T07:25:38.821579+00:00"
     },
     "SOL": {
-      "score": 0.04,
-      "confidence": 0.5,
+      "score": -1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
-        "oi_funding"
+        "whale_monitor"
       ],
-      "signal_count": 2,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
+      "contradictions": 0,
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 26% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 79% bid-weighted (bullish)",
-          "weight": 1.16
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI -6.0% 1h",
-          "weight": 1.08
+          "signal": "Orderbook 26% bid (ask-heavy, bearish)",
+          "weight": 0.96
         }
       ],
-      "timestamp": "2026-07-18T07:20:38.327281+00:00"
+      "timestamp": "2026-07-18T07:25:38.821602+00:00"
     },
     "HYPE": {
-      "score": -0.81,
-      "confidence": 0.84,
+      "score": 0.8,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @lookonchain (\ud83d\udc4d57 \ud83d\udd045) a16z-linked whale sold ano | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -23.0% 1h",
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @polsia WSJ wrote about Hyperliquid. Oil traders | whale_monitor: Orderbook 87% bid-weighted (bullish) | oi_funding: OI +9.0% 1h, funding 0.0013%",
       "key_signals": [
         {
+          "source": "whale_monitor",
+          "signal": "Orderbook 87% bid-weighted (bullish)",
+          "weight": 1.48
+        },
+        {
           "source": "oi_funding",
-          "signal": "OI -23.0% 1h",
+          "signal": "OI +9.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $HYPE] @lookonchain (\ud83d\udc4d57 \ud83d\udd045) a16z-linked whale sold another 421,796 $HYPE ($25.3M) in 24h [4.2]",
-          "weight": 0.65
-        },
-        {
-          "source": "x_scanner",
-          "signal": "a16z whale continues dumping $HYPE ($25.3M/24h) while ETH tests $1800 support \u2014 sustained L1 sell pressure. DePIN domina",
-          "weight": 0.65
+          "signal": "\u2022 [\u26a1 $HYPE] @polsia WSJ wrote about Hyperliquid. Oil traders flooded in. S&P 500 perps launched. AI-assisted, human-appr",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-18T07:20:38.327292+00:00"
+      "timestamp": "2026-07-18T07:25:38.821639+00:00"
     }
   },
   "config": {
