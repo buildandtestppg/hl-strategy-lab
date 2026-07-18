@@ -11,11 +11,11 @@
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @Geraldine218599 (\ud83d\udc4d1 \ud83d\udd041) BREAKING: BlackRock just | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +16.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @Geraldine218599 (\ud83d\udc4d1 \ud83d\udd041) BREAKING: BlackRock just | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI +12.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +16.0% 1h, funding 0.0013%",
+        "signal": "OI +12.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -25,23 +25,24 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 71% bid-weighted (bullish)",
-        "weight": 0.84
+        "signal": "Orderbook 65% bid-weighted (bullish)",
+        "weight": 0.6
       }
     ],
-    "timestamp": "2026-07-18T04:20:20.482162+00:00"
+    "timestamp": "2026-07-18T04:25:21.057389+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @ywxkst ETH 4H tunnel trend breaking out, retest ",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @ywxkst ETH 4H tunnel trend breaking out, retest  | oi_funding: OI +30.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -49,44 +50,57 @@
         "weight": 1.56
       },
       {
+        "source": "oi_funding",
+        "signal": "OI +30.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @thepfund ETH ETF: +$36.75M \u2014 BlackRock ETHA $31.68M, Fidelity FETH $5.05M [score: 1.5]",
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-18T04:20:20.482271+00:00"
+    "timestamp": "2026-07-18T04:25:21.057404+00:00"
   },
   "SOL": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -4.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI -16.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
-        "weight": 0.72
+        "signal": "OI -16.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 24% bid (ask-heavy, bearish)",
+        "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-18T04:20:20.482289+00:00"
+    "timestamp": "2026-07-18T04:25:21.057412+00:00"
   },
   "HYPE": {
-    "score": -0.25,
-    "confidence": 0.3,
+    "score": -0.34,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a0\ufe0f $HYPE] @HBAcrypto (\ud83d\udc4d11) HYPE lists Cash Cat for inside",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $HYPE] @HBAcrypto (\ud83d\udc4d11) HYPE lists Cash Cat for inside | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI -36.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -94,16 +108,16 @@
         "weight": 1.6
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [alpha_leak $HYPE] @HBAcrypto Hyperliquid lists Cash Cat \u2014 insiders opening shorts, RWA priority pivot [score: 2.0]",
-        "weight": 1.3
+        "source": "oi_funding",
+        "signal": "OI -36.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udc0b $HYPE] @cryptojack Glassnode: Whales on Hyperliquid actively opening long positions on BTC [score: 1.6]",
-        "weight": 1.04
+        "signal": "\u2022 [alpha_leak $HYPE] @HBAcrypto Hyperliquid lists Cash Cat \u2014 insiders opening shorts, RWA priority pivot [score: 2.0]",
+        "weight": 1.3
       }
     ],
-    "timestamp": "2026-07-18T04:20:20.482323+00:00"
+    "timestamp": "2026-07-18T04:25:21.057422+00:00"
   }
 }
