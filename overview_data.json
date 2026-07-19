@@ -1,13 +1,13 @@
 {
-  "exported_at": "2026-07-20T01:20:17.881241+08:00",
-  "exported_at_utc": "2026-07-19T17:20:17.881247+00:00",
+  "exported_at": "2026-07-20T01:30:27.274510+08:00",
+  "exported_at_utc": "2026-07-19T17:30:27.274515+00:00",
   "portfolio": {
-    "value": 4875.384567203691,
+    "value": 4878.0102076841695,
     "initial": 5000.0,
-    "pnl": -124.6154327963086,
-    "pnl_pct": -2.492308655926172,
+    "pnl": -121.98979231583053,
+    "pnl_pct": -2.4397958463166107,
     "peak": 5076.7203404422935,
-    "open_positions": 2,
+    "open_positions": 1,
     "max_positions": 4
   },
   "positions": {
@@ -22,38 +22,9 @@
       "strategy": "trend",
       "confidence": 0.75,
       "reason": "Sentiment-driven LONG (score +1.00, conf 1.0, momentum confirmed)"
-    },
-    "HYPE": {
-      "direction": "SHORT",
-      "entry_price": 61.0745,
-      "size": 33.69835172065289,
-      "stop_loss": 62.5325,
-      "take_profit": 58.1585,
-      "entry_time": "2026-07-19T11:45:40.798816+00:00",
-      "entry_ts": 1784461540.798817,
-      "strategy": "trend",
-      "confidence": 0.75,
-      "reason": "Sentiment-driven SHORT (score -1.00, conf 0.7, momentum confirmed)"
     }
   },
   "closed_trades": [
-    {
-      "pair": "SOL",
-      "direction": "LONG",
-      "entry_price": 75.1195,
-      "exit_price": 77.4635,
-      "size": 28.96544248776747,
-      "pnl": 65.593,
-      "pnl_pct": 3.01,
-      "entry_time": "2026-07-14T09:25:26.650873+00:00",
-      "exit_time": "2026-07-14T15:30:05.656648+00:00",
-      "duration_hours": 6.1,
-      "exit_reason": "signal_exit",
-      "strategy": "stochastic",
-      "fees_paid": 2.1316,
-      "funding_cost": 0.1705,
-      "total_cost": 2.302
-    },
     {
       "pair": "HYPE",
       "direction": "SHORT",
@@ -376,24 +347,26 @@
       "fees_paid": 3.1268,
       "funding_cost": 0.0774,
       "total_cost": 3.2042
+    },
+    {
+      "pair": "HYPE",
+      "direction": "SHORT",
+      "entry_price": 61.0745,
+      "exit_price": 60.943,
+      "size": 33.69835172065289,
+      "pnl": 2.6256,
+      "pnl_pct": 0.13,
+      "entry_time": "2026-07-19T11:45:40.798816+00:00",
+      "exit_time": "2026-07-19T17:25:17.385193+00:00",
+      "duration_hours": 5.7,
+      "exit_reason": "regime_override",
+      "strategy": "trend",
+      "fees_paid": 1.951,
+      "funding_cost": -0.1453,
+      "total_cost": 1.8057
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-19T01:55:38.551134+00:00",
-      "v": 4879.14,
-      "p": -2.42
-    },
-    {
-      "t": "2026-07-19T02:00:39.056263+00:00",
-      "v": 4879.35,
-      "p": -2.41
-    },
-    {
-      "t": "2026-07-19T02:05:39.627592+00:00",
-      "v": 4887.65,
-      "p": -2.25
-    },
     {
       "t": "2026-07-19T02:10:40.112872+00:00",
       "v": 4897.66,
@@ -1378,22 +1351,38 @@
       "t": "2026-07-19T17:20:15.739888+00:00",
       "v": 4900.09,
       "p": -2.0
+    },
+    {
+      "t": "2026-07-19T17:25:16.069601+00:00",
+      "v": 4897.78,
+      "p": -2.04
+    },
+    {
+      "t": "2026-07-19T17:29:34.494673+00:00",
+      "v": 4898.84,
+      "p": -2.02
+    },
+    {
+      "t": "2026-07-19T17:30:16.752649+00:00",
+      "v": 4898.84,
+      "p": -2.02
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.15,
-      "confidence": 0.6,
+      "score": -0.09,
+      "confidence": 0.7,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 5,
+      "signal_count": 6,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 \ud83d\udcca [$BTC] @CryptoPatel (\ud83d\udc4d80 \ud83d\udd042) $BTC Everyone calling $60K  | oi_funding: OI -5.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 \ud83d\udcca [$BTC] @CryptoPatel (\ud83d\udc4d80 \ud83d\udd042) $BTC Everyone calling $60K  | whale_monitor: Orderbook 72% bid-weighted (bullish) | oi_funding: OI -51.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1407,11 +1396,11 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -5.0% 1h",
-          "weight": 0.9
+          "signal": "OI -51.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-19T17:20:15.545752+00:00"
+      "timestamp": "2026-07-19T17:30:23.790255+00:00"
     },
     "ETH": {
       "score": 0.18,
@@ -1424,7 +1413,7 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 \ud83d\udcca [$ETH] @BFB (\ud83d\udc4d1 \ud83d\udd040) $ETH bottom fully locked in, buyers  | oi_funding: OI -29.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 \ud83d\udcca [$ETH] @BFB (\ud83d\udc4d1 \ud83d\udd040) $ETH bottom fully locked in, buyers  | oi_funding: OI -22.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1433,50 +1422,45 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -29.0% 1h",
+          "signal": "OI -22.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-19T17:20:15.545775+00:00"
+      "timestamp": "2026-07-19T17:30:23.790275+00:00"
     },
     "SOL": {
-      "score": -0.26,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -16.0% 1h",
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +16.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -16.0% 1h",
+          "signal": "OI +16.0% 1h, funding 0.0013%",
           "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 71% bid-weighted (bullish)",
-          "weight": 0.84
         }
       ],
-      "timestamp": "2026-07-19T17:20:15.545784+00:00"
+      "timestamp": "2026-07-19T17:30:23.790283+00:00"
     },
     "HYPE": {
-      "score": 0.59,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 \ud83d\udd17 [$HYPE] @blknoiz06 (Ansem) (\ud83d\udc4d59 \ud83d\udd043) pump having same 2Y  | oi_funding: OI -13.0% 1h",
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 \ud83d\udd17 [$HYPE] @blknoiz06 (Ansem) (\ud83d\udc4d59 \ud83d\udd043) pump having same 2Y  | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +12.0% 1h, funding 0.0009%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1494,7 +1478,7 @@
           "weight": 1.62
         }
       ],
-      "timestamp": "2026-07-19T17:20:15.545795+00:00"
+      "timestamp": "2026-07-19T17:30:23.790298+00:00"
     }
   },
   "pair_strategies": {
@@ -1668,149 +1652,149 @@
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
-        "text": "**Run Time:** 2026-07-20 01:01:24",
+        "text": "**Run Time:** 2026-07-20 01:21:18",
         "sentiment": 0,
-        "time": "2026-07-20 01:01"
+        "time": "2026-07-20 01:21"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1784480484.7601004"
+        "time": "1784481678.8189275"
       }
     ],
     "news_agent": [
       {
         "text": "**Job ID:** 8bd6a73fc440",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
-        "text": "**Run Time:** 2026-07-20 01:08:02",
+        "text": "**Run Time:** 2026-07-20 01:23:46",
         "sentiment": 0,
-        "time": "2026-07-20 01:08"
+        "time": "2026-07-20 01:23"
       },
       {
         "text": "**Schedule:** 7,22,37,52 * * * *",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "Run the news agent script and format breaking news as a Discord message (delivery is handled automatically).",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "**DB FACTS (DO NOT investigate \u2014 these are verified):**",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "- DB path: /Users/mojoai/.hermes/swarm/data/agents.db",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "- Table: crypto_news",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "- Columns: id, title, url, source, published_at, category, impact_rating, affected_tokens, summary, fetched_at, last_reported_at",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "- Date filter: use fetched_at (format: \"2026-04-18 14:52:30\") with SQLite datetime('now','-N minutes')",
@@ -1820,80 +1804,80 @@
       {
         "text": "- The script now does blanket mark-as-reported automatically \u2014 just verify 0 remaining",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "- by_impact in JSON is IN-MEMORY only \u2014 always query DB for actual unreported articles",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "- Ignore empty DBs at ~/.hermes/hermes-agent/news*.db and ~/.hermes/scripts/news*.db \u2014 they're red herrings",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "- notable_keywords dual-pass is REQUIRED \u2014 the classifier misses ~90% of important articles",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "1. **Run scan:** `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/news_agent.py 2>&1`",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "2. **Parse the JSON output** from the script (last JSON block in output).",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "3. **Query DB for unreported articles (DO NOT skip this \u2014 by_impact JSON is misleading):**",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 -c \"",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       },
       {
         "text": "import sqlite3, json, html",
         "sentiment": 0,
-        "time": "1784480884.8390045"
+        "time": "1784481826.22889"
       }
     ],
-    "generated": "2026-07-19T17:20:15.588309Z"
+    "generated": "2026-07-19T17:30:16.641222Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "01:12",
-      "age_minutes": 7,
+      "age_minutes": 18,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "01:01",
-      "age_minutes": 19,
+      "last_run": "01:21",
+      "age_minutes": 9,
       "status": "fresh"
     },
     "news_agent": {
-      "last_run": "01:08",
-      "age_minutes": 12,
+      "last_run": "01:23",
+      "age_minutes": 7,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "21:08",
-      "age_minutes": 252,
+      "age_minutes": 262,
       "status": "fresh"
     },
     "synthesizer": {
       "last_run": "01:15",
-      "age_minutes": 5,
+      "age_minutes": 15,
       "status": "fresh"
     }
   },
@@ -1906,7 +1890,7 @@
         "win_rate": 61.5,
         "sharpe": 3.46,
         "pnl_pct": 21.61,
-        "buy_hold": -20.25,
+        "buy_hold": -20.34,
         "profit_factor": 2.69,
         "max_drawdown": 4.09,
         "total_trades": 13
@@ -1918,7 +1902,7 @@
         "win_rate": 47.4,
         "sharpe": 2.11,
         "pnl_pct": 13.75,
-        "buy_hold": -11.46,
+        "buy_hold": -11.35,
         "profit_factor": 1.63,
         "max_drawdown": 8.22,
         "total_trades": 19
@@ -1926,38 +1910,38 @@
       {
         "pair": "HYPE",
         "strategy": "supertrend",
-        "score": 48.23,
+        "score": 48.65,
         "win_rate": 48.4,
-        "sharpe": 2.55,
-        "pnl_pct": 21.56,
-        "buy_hold": 48.23,
-        "profit_factor": 1.6,
+        "sharpe": 2.59,
+        "pnl_pct": 21.93,
+        "buy_hold": 48.72,
+        "profit_factor": 1.61,
         "max_drawdown": 13.58,
         "total_trades": 31
       },
       {
         "pair": "HYPE",
         "strategy": "trend",
-        "score": 46.91,
+        "score": 46.65,
         "win_rate": 45.5,
-        "sharpe": 2.49,
-        "pnl_pct": 21.94,
-        "buy_hold": 48.23,
-        "profit_factor": 1.55,
+        "sharpe": 2.47,
+        "pnl_pct": 21.75,
+        "buy_hold": 48.72,
+        "profit_factor": 1.54,
         "max_drawdown": 12.15,
         "total_trades": 33
       },
       {
         "pair": "ETH",
         "strategy": "stochastic",
-        "score": 42.88,
-        "win_rate": 42.9,
-        "sharpe": 1.6,
-        "pnl_pct": 15.13,
-        "buy_hold": -20.25,
-        "profit_factor": 1.23,
-        "max_drawdown": 17.45,
-        "total_trades": 49
+        "score": 45.88,
+        "win_rate": 43.8,
+        "sharpe": 1.82,
+        "pnl_pct": 17.59,
+        "buy_hold": -20.34,
+        "profit_factor": 1.27,
+        "max_drawdown": 17.46,
+        "total_trades": 48
       },
       {
         "pair": "SOL",
@@ -1966,7 +1950,7 @@
         "win_rate": 42.3,
         "sharpe": 1.51,
         "pnl_pct": 14.41,
-        "buy_hold": -11.46,
+        "buy_hold": -11.35,
         "profit_factor": 1.19,
         "max_drawdown": 15.47,
         "total_trades": 52
@@ -1974,11 +1958,11 @@
       {
         "pair": "HYPE",
         "strategy": "macd",
-        "score": 33.34,
+        "score": 33.42,
         "win_rate": 41.3,
-        "sharpe": 1.39,
-        "pnl_pct": 12.21,
-        "buy_hold": 48.23,
+        "sharpe": 1.4,
+        "pnl_pct": 12.38,
+        "buy_hold": 48.72,
         "profit_factor": 1.21,
         "max_drawdown": 12.97,
         "total_trades": 46
@@ -1986,11 +1970,11 @@
       {
         "pair": "ETH",
         "strategy": "vwap",
-        "score": 32.9,
+        "score": 32.8,
         "win_rate": 40.7,
-        "sharpe": 1.12,
-        "pnl_pct": 9.95,
-        "buy_hold": -20.25,
+        "sharpe": 1.11,
+        "pnl_pct": 9.83,
+        "buy_hold": -20.34,
         "profit_factor": 1.14,
         "max_drawdown": 26.32,
         "total_trades": 54
@@ -2001,8 +1985,8 @@
         "score": 6.27,
         "win_rate": 38.6,
         "sharpe": -0.2,
-        "pnl_pct": -3.59,
-        "buy_hold": -17.03,
+        "pnl_pct": -3.54,
+        "buy_hold": -17.1,
         "profit_factor": 0.94,
         "max_drawdown": 14.59,
         "total_trades": 44
@@ -2014,80 +1998,80 @@
         "win_rate": 33.3,
         "sharpe": -0.21,
         "pnl_pct": -0.95,
-        "buy_hold": -17.03,
+        "buy_hold": -17.1,
         "profit_factor": 0.89,
         "max_drawdown": 8.21,
         "total_trades": 6
       }
     ],
     "tests": {
-      "pass": 196,
+      "pass": 197,
       "fail": 3,
       "failures": [
         "Bug #2: MIN_CONFIDENCE <= 0.5 (was 0.6, too restrictive): got 0.65",
         "Aligned sentiment boosts confidence: sig=Signal.LONG, conf=0.4, note=sentiment skipped (only 0 sources, need 2)",
         "Contradicting sentiment blocks LONG: sig=Signal.LONG, note=sentiment skipped (only 0 sources, need 2)"
       ],
-      "ran_at": "2026-07-19T16:25:16.001725+00:00"
+      "ran_at": "2026-07-19T17:28:25.173294+00:00"
     },
     "audit_recent": [
       {
-        "ts": "2026-07-19T16:26:23.270243+00:00",
-        "epoch": 1784478383.27025,
+        "ts": "2026-07-19T17:29:35.635992+00:00",
+        "epoch": 1784482175.636003,
         "type": "cycle_summary",
-        "cycle_id": "2026-07-19T16:26:22.109773+00:00",
+        "cycle_id": "2026-07-19T17:29:34.494673+00:00",
         "actions": [],
-        "positions_count": 2,
-        "portfolio_value": 4910.6,
-        "pnl": -89.4
+        "positions_count": 1,
+        "portfolio_value": 4898.84,
+        "pnl": -101.16
       },
       {
-        "ts": "2026-07-19T16:26:23.263057+00:00",
-        "epoch": 1784478383.263062,
+        "ts": "2026-07-19T17:29:35.628011+00:00",
+        "epoch": 1784482175.628014,
         "pair": "HYPE",
-        "signal": "SHORT",
+        "signal": "FLAT",
         "confidence": 0,
-        "reason": "Already in position",
-        "gate": "BLOCKED_ALREADY_OPEN",
-        "action": "held",
-        "price": 60.7665,
-        "cycle_id": "20260719162623"
+        "reason": "Cooldown (7.9h left)",
+        "gate": "BLOCKED_COOLDOWN",
+        "action": "evaluated",
+        "price": 60.9695,
+        "cycle_id": "20260719172935"
       },
       {
-        "ts": "2026-07-19T16:26:23.262999+00:00",
-        "epoch": 1784478383.2630022,
+        "ts": "2026-07-19T17:29:35.627925+00:00",
+        "epoch": 1784482175.6279302,
         "pair": "SOL",
         "signal": "FLAT",
         "confidence": 0,
-        "reason": "Cooldown (7.6h left)",
+        "reason": "Cooldown (6.5h left)",
         "gate": "BLOCKED_COOLDOWN",
         "action": "evaluated",
-        "price": 76.0855,
-        "cycle_id": "20260719162623"
+        "price": 76.0875,
+        "cycle_id": "20260719172935"
       },
       {
-        "ts": "2026-07-19T16:26:23.262797+00:00",
-        "epoch": 1784478383.262801,
+        "ts": "2026-07-19T17:29:35.627704+00:00",
+        "epoch": 1784482175.627709,
         "pair": "ETH",
         "signal": "LONG",
         "confidence": 0,
         "reason": "Already in position",
         "gate": "BLOCKED_ALREADY_OPEN",
         "action": "held",
-        "price": 1871.35,
-        "cycle_id": "20260719162623"
+        "price": 1869.55,
+        "cycle_id": "20260719172935"
       },
       {
-        "ts": "2026-07-19T16:26:23.262600+00:00",
-        "epoch": 1784478383.262605,
+        "ts": "2026-07-19T17:29:35.627425+00:00",
+        "epoch": 1784482175.6274319,
         "pair": "BTC",
         "signal": "FLAT",
         "confidence": 0,
         "reason": "Pruned: BTC pruned: 29% WR over 7 trades (PnL $-1.57)",
         "gate": "BLOCKED_PRUNED",
         "action": "evaluated",
-        "price": 64602.5,
-        "cycle_id": "20260719162623"
+        "price": 64639.5,
+        "cycle_id": "20260719172935"
       }
     ],
     "advisor_regime": {
@@ -2095,46 +2079,46 @@
         {
           "pair": "BTC",
           "verdict": "review",
-          "confidence": 0.7,
-          "reason": "All strategies show negative Sharpe; current macd is worst among top alternatives, consider switching to breakout despite still-negative Sharpe.",
+          "confidence": 0.9,
+          "reason": "All strategies show negative Sharpe ratios; current MACD is the worst performer, indicating a persistently unfavorable environment.",
           "risk": "high"
         },
         {
           "pair": "ETH",
           "verdict": "hold",
           "confidence": 0.95,
-          "reason": "Trend strategy dominates with Sharpe 3.46 and score 83.47, far ahead of alternatives.",
+          "reason": "Trend strategy is the top performer with a strong Sharpe of 3.46 and high score; no red flags.",
           "risk": "low"
         },
         {
           "pair": "SOL",
           "verdict": "swap",
-          "confidence": 0.9,
-          "reason": "Current stochastic not in top 3; trend strategy shows Sharpe 2.11 and score 57.94, clear superior alternative.",
+          "confidence": 0.85,
+          "reason": "Current stochastic strategy is absent from top alternatives; trend strategy shows significantly better performance (Sharpe 2.11).",
           "risk": "medium"
         },
         {
           "pair": "HYPE",
           "verdict": "hold",
-          "confidence": 0.85,
-          "reason": "Trend strategy performs well (Sharpe 2.49) and is nearly tied with supertrend; no urgent need to switch.",
+          "confidence": 0.9,
+          "reason": "Current trend strategy is a close second to supertrend with strong Sharpe (2.47); no urgent need to switch.",
           "risk": "low"
         }
       ],
       "overall_regime": "mixed",
-      "top_concern": "BTC exhibits negative Sharpe across all strategies, indicating a persistent non-trending or adverse regime that may require defensive positioning or capital reallocation."
+      "top_concern": "BTC exhibits negative Sharpe ratios across all strategies, signaling a persistently adverse trading environment that may require strategy suspension or capital reallocation."
     },
     "advisor_risk": {
       "risk_level": "high",
-      "correlation_risk": "low",
+      "correlation_risk": "none",
       "direction_bias": "long",
       "allocation_issue": "over-concentrated",
       "recommendations": [
-        "Reduce total notional exposure to at or below initial capital ($5,000) to eliminate leverage risk.",
-        "Widen stop-loss levels to account for crypto volatility (e.g., use ATR-based stops) to avoid premature stop-outs.",
-        "Monitor HYPE/ETH correlation closely; if they become highly correlated, the hedge effect may reduce but adverse moves could still cause losses on both sides."
+        "Diversify into multiple uncorrelated assets to reduce single-position concentration risk.",
+        "Widen the stop-loss or use a volatility-based stop to avoid being whipsawed by normal ETH price fluctuations.",
+        "Keep a cash buffer to manage margin requirements and seize new opportunities."
       ],
-      "stop_assessment": "Both stops are very tight relative to typical crypto volatility, with ETH stop only 1.23% away and HYPE stop 2.39% away, making stop-outs likely on normal price noise."
+      "stop_assessment": "The stop-loss is only 1.23% below entry, which is very tight for ETH and may trigger prematurely on intraday noise."
     }
   },
   "eval_leaderboard": [
@@ -2144,7 +2128,7 @@
       "strategy_label": "Trend",
       "score": 83.47,
       "total_pnl_pct": 21.61,
-      "buy_hold_pct": -20.25,
+      "buy_hold_pct": -20.34,
       "beats_hold": true,
       "sharpe": 3.46,
       "profit_factor": 2.69,
@@ -2158,7 +2142,7 @@
       "strategy_label": "Trend",
       "score": 57.94,
       "total_pnl_pct": 13.75,
-      "buy_hold_pct": -11.46,
+      "buy_hold_pct": -11.35,
       "beats_hold": true,
       "sharpe": 2.11,
       "profit_factor": 1.63,
@@ -2170,12 +2154,12 @@
       "pair": "HYPE",
       "strategy": "supertrend",
       "strategy_label": "Supertrend",
-      "score": 48.23,
-      "total_pnl_pct": 21.56,
-      "buy_hold_pct": 48.23,
+      "score": 48.65,
+      "total_pnl_pct": 21.93,
+      "buy_hold_pct": 48.72,
       "beats_hold": false,
-      "sharpe": 2.55,
-      "profit_factor": 1.6,
+      "sharpe": 2.59,
+      "profit_factor": 1.61,
       "win_rate": 48.4,
       "max_drawdown": 13.58,
       "total_trades": 31
@@ -2184,12 +2168,12 @@
       "pair": "HYPE",
       "strategy": "trend",
       "strategy_label": "Trend",
-      "score": 46.91,
-      "total_pnl_pct": 21.94,
-      "buy_hold_pct": 48.23,
+      "score": 46.65,
+      "total_pnl_pct": 21.75,
+      "buy_hold_pct": 48.72,
       "beats_hold": false,
-      "sharpe": 2.49,
-      "profit_factor": 1.55,
+      "sharpe": 2.47,
+      "profit_factor": 1.54,
       "win_rate": 45.5,
       "max_drawdown": 12.15,
       "total_trades": 33
@@ -2198,15 +2182,15 @@
       "pair": "ETH",
       "strategy": "stochastic",
       "strategy_label": "Stochastic",
-      "score": 42.88,
-      "total_pnl_pct": 15.13,
-      "buy_hold_pct": -20.25,
+      "score": 45.88,
+      "total_pnl_pct": 17.59,
+      "buy_hold_pct": -20.34,
       "beats_hold": true,
-      "sharpe": 1.6,
-      "profit_factor": 1.23,
-      "win_rate": 42.9,
-      "max_drawdown": 17.45,
-      "total_trades": 49
+      "sharpe": 1.82,
+      "profit_factor": 1.27,
+      "win_rate": 43.8,
+      "max_drawdown": 17.46,
+      "total_trades": 48
     },
     {
       "pair": "SOL",
@@ -2214,7 +2198,7 @@
       "strategy_label": "Breakout",
       "score": 42.02,
       "total_pnl_pct": 14.41,
-      "buy_hold_pct": -11.46,
+      "buy_hold_pct": -11.35,
       "beats_hold": true,
       "sharpe": 1.51,
       "profit_factor": 1.19,
@@ -2226,11 +2210,11 @@
       "pair": "HYPE",
       "strategy": "macd",
       "strategy_label": "MACD",
-      "score": 33.34,
-      "total_pnl_pct": 12.21,
-      "buy_hold_pct": 48.23,
+      "score": 33.42,
+      "total_pnl_pct": 12.38,
+      "buy_hold_pct": 48.72,
       "beats_hold": false,
-      "sharpe": 1.39,
+      "sharpe": 1.4,
       "profit_factor": 1.21,
       "win_rate": 41.3,
       "max_drawdown": 12.97,
@@ -2240,11 +2224,11 @@
       "pair": "ETH",
       "strategy": "vwap",
       "strategy_label": "VWAP",
-      "score": 32.9,
-      "total_pnl_pct": 9.95,
-      "buy_hold_pct": -20.25,
+      "score": 32.8,
+      "total_pnl_pct": 9.83,
+      "buy_hold_pct": -20.34,
       "beats_hold": true,
-      "sharpe": 1.12,
+      "sharpe": 1.11,
       "profit_factor": 1.14,
       "win_rate": 40.7,
       "max_drawdown": 26.32,
@@ -2255,8 +2239,8 @@
       "strategy": "breakout",
       "strategy_label": "Breakout",
       "score": 6.27,
-      "total_pnl_pct": -3.59,
-      "buy_hold_pct": -17.03,
+      "total_pnl_pct": -3.54,
+      "buy_hold_pct": -17.1,
       "beats_hold": true,
       "sharpe": -0.2,
       "profit_factor": 0.94,
@@ -2270,7 +2254,7 @@
       "strategy_label": "Trend",
       "score": 6.24,
       "total_pnl_pct": -0.95,
-      "buy_hold_pct": -17.03,
+      "buy_hold_pct": -17.1,
       "beats_hold": true,
       "sharpe": -0.21,
       "profit_factor": 0.89,
@@ -2280,15 +2264,15 @@
     }
   ],
   "stats": {
-    "total_trades": 83,
-    "wins": 36,
+    "total_trades": 84,
+    "wins": 37,
     "losses": 47,
-    "win_rate": 43.4,
-    "avg_win": 20.7,
+    "win_rate": 44.0,
+    "avg_win": 20.21,
     "avg_loss": -15.25,
     "best_trade": 94.84,
     "worst_trade": -45.01,
-    "total_realized_pnl": 28.58
+    "total_realized_pnl": 31.2
   },
   "pair_stats": {
     "BTC": {
@@ -2313,18 +2297,18 @@
       "win_rate": 50.0
     },
     "HYPE": {
-      "trades": 26,
-      "wins": 11,
+      "trades": 27,
+      "wins": 12,
       "losses": 15,
-      "pnl": -73.89,
-      "win_rate": 42.3
+      "pnl": -71.26,
+      "win_rate": 44.4
     }
   },
   "prices": {
-    "BTC": 64649.5,
-    "ETH": 1868.25,
-    "SOL": 76.0525,
-    "HYPE": 60.8805
+    "BTC": 64634.5,
+    "ETH": 1869.55,
+    "SOL": 76.0675,
+    "HYPE": 60.9755
   },
   "actions": [],
   "ai_history": [
@@ -2798,11 +2782,11 @@
   },
   "exit_breakdown": {
     "regime_override": {
-      "count": 62,
-      "pnl": -119.18,
-      "fees": 114.14,
-      "wins": 24,
-      "win_rate": 38.7
+      "count": 63,
+      "pnl": -116.56,
+      "fees": 116.09,
+      "wins": 25,
+      "win_rate": 39.7
     },
     "signal_exit": {
       "count": 20,
