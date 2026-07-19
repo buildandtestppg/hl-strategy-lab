@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-07-19T17:10:25.949014+08:00",
-  "exported_at_utc": "2026-07-19T09:10:25.949019+00:00",
+  "exported_at": "2026-07-19T17:20:26.941902+08:00",
+  "exported_at_utc": "2026-07-19T09:20:26.941908+00:00",
   "portfolio": {
     "value": 4876.352628266465,
     "initial": 5000.0,
@@ -379,16 +379,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-18T17:55:45.616554+00:00",
-      "v": 4880.25,
-      "p": -2.39
-    },
-    {
-      "t": "2026-07-18T18:00:46.398289+00:00",
-      "v": 4879.77,
-      "p": -2.4
-    },
     {
       "t": "2026-07-18T18:05:46.569525+00:00",
       "v": 4882.14,
@@ -1378,53 +1368,111 @@
       "t": "2026-07-19T09:10:23.588554+00:00",
       "v": 4911.19,
       "p": -1.78
+    },
+    {
+      "t": "2026-07-19T09:15:24.048335+00:00",
+      "v": 4901.95,
+      "p": -1.96
+    },
+    {
+      "t": "2026-07-19T09:20:24.468324+00:00",
+      "v": 4884.67,
+      "p": -2.31
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.13,
+      "confidence": 0.5,
       "sources": [
+        "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 1,
+      "signal_count": 4,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 76% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udfe0 $BTC] @TedPillows (\ud83d\udc4d79 \ud83d\udd043) BTC moving to $65K \u2014 reclaim | whale_monitor: Orderbook 76% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "whale_monitor",
           "signal": "Orderbook 76% bid-weighted (bullish)",
           "weight": 1.04
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udfe0 $BTC] @TedPillows (\ud83d\udc4d79 \ud83d\udd043) BTC moving to $65K \u2014 reclaim \u2192 $68K, rejection \u2192 retest $62.5K [2.7]",
+          "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$BTC] Whale 40x long $107M BTC at $63,957 \u2014 liq at $63,126 [1.9]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-19T09:10:23.319182+00:00"
+      "timestamp": "2026-07-19T09:20:24.231930+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +28.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $ETH] @Tanaka_L2 (\ud83d\udc4d61 \ud83d\udd044) Next ETH bull case will come  | oi_funding: OI +28.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI +28.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udc8e $ETH] @Tanaka_L2 (\ud83d\udc4d61 \ud83d\udd044) Next ETH bull case will come from real businesses building products & revenue [2.8]",
+          "weight": 0.8
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udc8e $ETH] @RobinhoodAlphas (\ud83d\udc4d114 \ud83d\udd0450) Biggest gains come from conviction before the crowd. ETH survived every cycle [3.",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-19T09:10:23.319204+00:00"
+      "timestamp": "2026-07-19T09:20:24.231965+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 1.0,
+      "confidence": 0.74,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +19.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +19.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 67% bid-weighted (bullish)",
+          "weight": 0.68
+        }
+      ],
+      "timestamp": "2026-07-19T09:20:24.231983+00:00"
+    },
+    "HYPE": {
+      "score": 0.47,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1432,59 +1480,27 @@
       ],
       "signal_count": 5,
       "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\ude80 Alpha $SOL] @FabiusDefi (\ud83d\udc4d0) Market sleeping on JUP whi | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +19.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\ude80 Alpha $SOL] @FabiusDefi (\ud83d\udc4d0) Market sleeping on JUP while it's printing $15M monthly [score: 2.5]",
-          "weight": 1.62
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @Crypto_peet (\ud83d\udc4d12 \ud83d\udd049) Artist of $PENGU working on new cult $Slippy @Slippyclub \u2014 smart money buying in [scor",
-          "weight": 1.6
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +19.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-07-19T09:10:23.319276+00:00"
-    },
-    "HYPE": {
-      "score": 0.52,
-      "confidence": 0.84,
-      "sources": [
-        "x_scanner",
-        "whale_monitor",
-        "oi_funding"
-      ],
-      "signal_count": 6,
-      "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @brodeldi (\ud83d\udc4d1 \ud83d\udd041) Hyperion DeFi deployed 500K s | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI +26.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE] $384K $HYPE whale buy on Hyperliquid \u2014 filled at $ | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI +26.0% 1h, funding 0.0013%",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @brodeldi (\ud83d\udc4d1 \ud83d\udd041) Hyperion DeFi deployed 500K staked $HYPE via HAUS agreement with Skew Technologies for in",
-          "weight": 2.47
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @ZashXYZ (\ud83d\udc4d0) $kBONK OI +7.0% in 15m on Hyperliquid \u2014 on-chain perps leave nowhere to hide [score: 2.5]",
-          "weight": 1.62
-        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 13% bid (ask-heavy, bearish)",
           "weight": 1.48
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI +26.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$HYPE] $384K $HYPE whale buy on Hyperliquid \u2014 filled at $60.925 [1.5]",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-19T09:10:23.319294+00:00"
+      "timestamp": "2026-07-19T09:20:24.232003+00:00"
     }
   },
   "pair_strategies": {
@@ -1556,102 +1572,102 @@
       {
         "text": "**Job ID:** 43ba1d393c5a",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
-        "text": "**Run Time:** 2026-07-19 16:47:31",
+        "text": "**Run Time:** 2026-07-19 17:18:18",
         "sentiment": 0,
-        "time": "2026-07-19 16:47"
+        "time": "2026-07-19 17:18"
       },
       {
         "text": "**Schedule:** 5,35 * * * *",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "[SYSTEM: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just produc",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "You are the Crypto Scanner Agent. Run BOTH the X scanner and Reddit scanner, then report results to Discord.",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "You MUST use a subagent to run Reddit scanner in parallel with X scanner. This saves ~5-9 minutes per cycle.",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "Spawn the Reddit subagent BEFORE starting x_scanner.py so they run in parallel:",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "delegate_task(",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "goal=\"Run the Reddit crypto scanner and write results to a temp file\",",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "context=\"Run this command: cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/reddit_scanner.py 2>&1. Wait for it to complete (may take 5-9 min)",
         "sentiment": -0.3,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "toolsets=[\"terminal\", \"file\"],",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "max_iterations=15",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": ")",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "Run the X scanner normally:",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/x_scanner.py 2>&1",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "Parse the JSON output as usual.",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       },
       {
         "text": "After x_scanner.py finishes:",
         "sentiment": 0,
-        "time": "1784450851.969638"
+        "time": "1784452698.996484"
       }
     ],
     "whale_monitor": [
@@ -1858,32 +1874,32 @@
         "time": "1784452087.6330824"
       }
     ],
-    "generated": "2026-07-19T09:10:23.366607Z"
+    "generated": "2026-07-19T09:20:24.285572Z"
   },
   "scanner_status": {
     "x_scanner": {
-      "last_run": "16:47",
-      "age_minutes": 23,
+      "last_run": "17:18",
+      "age_minutes": 2,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "17:01",
-      "age_minutes": 9,
+      "age_minutes": 19,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "17:08",
-      "age_minutes": 2,
+      "age_minutes": 12,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "15:05",
-      "age_minutes": 125,
+      "age_minutes": 135,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "17:00",
-      "age_minutes": 9,
+      "last_run": "17:16",
+      "age_minutes": 4,
       "status": "fresh"
     }
   },
@@ -2311,10 +2327,10 @@
     }
   },
   "prices": {
-    "BTC": 64668.5,
-    "ETH": 1873.05,
-    "SOL": 76.2195,
-    "HYPE": 61.3165
+    "BTC": 64568.5,
+    "ETH": 1866.65,
+    "SOL": 75.9215,
+    "HYPE": 61.1035
   },
   "actions": [],
   "ai_history": [
