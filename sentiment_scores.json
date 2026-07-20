@@ -1,118 +1,124 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.11,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
       "whale_monitor",
       "news_agent",
       "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 5,
     "convergence": true,
-    "convergence_strength": 4,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 4-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @AbdullahAkramET (\ud83d\udc4d4) Saylor: plan to buy $70B wo | whale_monitor: Orderbook 85% bid-weighted (bullish) | news_agent: divided on chip stocks after SOX drops 20% from AI rally pea",
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC TA] @AltcoinSherpa (\ud83d\udc4d3) $BTC flipped 200 EMA (4h)  | whale_monitor: Orderbook 69% bid-weighted (bullish) | news_agent: divided on chip stocks after SOX drops 20% from AI rally pea",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +56.0% 1h, funding 0.0013%",
+        "signal": "OI -18.0% 1h",
         "weight": 1.44
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 85% bid-weighted (bullish)",
-        "weight": 1.4
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $BTC TA] @AltcoinSherpa (\ud83d\udc4d3) $BTC flipped 200 EMA (4h) \u2014 could go to 70K if tradfi stays stable, needs volume break",
+        "weight": 1.28
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcb0 $BTC] @AbdullahAkramET (\ud83d\udc4d4) Saylor: plan to buy $70B worth of Bitcoin, institutional accumulation toward $10M long-",
-        "weight": 1.0
+        "signal": "\u2022 [\ud83d\udcc8 $BTC Flow] @Trade17 Large isolated spot sell on BTC \u2014 no futures sync, not broad distribution. Big bid limit appear",
+        "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-20T12:20:17.698732+00:00"
+    "timestamp": "2026-07-20T12:25:18.321156+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.09,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH Alpha] @ainstein_001 (\ud83d\udc4d1) $ETH sector hype +100, f | oi_funding: OI -55.0% 1h",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $ETH Alpha] @ainstein_001 (\ud83d\udc4d1) $ETH sector hype +100, funding rates at 68.8% crowded longs \u2014 mean-reversion setup a",
+        "weight": 1.62
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -55.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $ETH Options] @CoinEdition $ETH perpetual funding turned bullish but options show mixed signals \u2014 near-term caution",
+        "weight": 1.28
+      }
+    ],
+    "timestamp": "2026-07-20T12:25:18.321227+00:00"
+  },
+  "SOL": {
+    "score": -1.0,
+    "confidence": 1.0,
+    "sources": [
+      "whale_monitor",
+      "news_agent",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | news_agent: al risk easing \u2022 Houthi forces to impose **sea navigation ba | oi_funding: OI -63.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -63.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "al risk easing \u2022 Houthi forces to impose **sea navigation ban** on Saudi Arabia starting Monday \u2022 Solana stablecoin mark",
+        "weight": 0.98
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
+        "weight": 0.68
+      }
+    ],
+    "timestamp": "2026-07-20T12:25:18.321258+00:00"
+  },
+  "HYPE": {
+    "score": -1.0,
+    "confidence": 0.74,
+    "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @jimwilldoitnow ETH ETF funds flowing back \u2014 inst | oi_funding: OI +62.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | oi_funding: OI -48.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +62.0% 1h, funding 0.0013%",
+        "signal": "OI -48.0% 1h",
         "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcb0 $ETH] @jimwilldoitnow ETH ETF funds flowing back \u2014 institutional demand intact, real spot absorption vs leverage [1",
-        "weight": 0.65
-      }
-    ],
-    "timestamp": "2026-07-20T12:20:17.698793+00:00"
-  },
-  "SOL": {
-    "score": 0.1,
-    "confidence": 0.5,
-    "sources": [
-      "whale_monitor",
-      "news_agent"
-    ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 80% bid-weighted (bullish) | news_agent: al risk easing \u2022 Houthi forces to impose **sea navigation ba",
-    "key_signals": [
-      {
         "source": "whale_monitor",
-        "signal": "Orderbook 80% bid-weighted (bullish)",
-        "weight": 1.2
-      },
-      {
-        "source": "news_agent",
-        "signal": "al risk easing \u2022 Houthi forces to impose **sea navigation ban** on Saudi Arabia starting Monday \u2022 Solana stablecoin mark",
-        "weight": 0.98
+        "signal": "Orderbook 28% bid (ask-heavy, bearish)",
+        "weight": 0.88
       }
     ],
-    "timestamp": "2026-07-20T12:20:17.698806+00:00"
-  },
-  "HYPE": {
-    "score": 0.44,
-    "confidence": 0.74,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 6,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Gladiator_TA (\ud83d\udc4d53 \ud83d\udd046) Entering $HYPE short at $ | whale_monitor: Orderbook 83% bid-weighted (bullish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 83% bid-weighted (bullish)",
-        "weight": 1.32
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @Gladiator_TA (\ud83d\udc4d53 \ud83d\udd046) Entering $HYPE short at $60, targeting $40s before another run, hearing FUD [2.5]",
-        "weight": 0.8
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @_EMAgency (\ud83d\udc4d10 \ud83d\udd043) Ansem bought $PUMP (+31%/week). Pumpfun just flipped Tron and Hyperliquid in 24h revenue",
-        "weight": 0.65
-      }
-    ],
-    "timestamp": "2026-07-20T12:20:17.698818+00:00"
+    "timestamp": "2026-07-20T12:25:18.321277+00:00"
   }
 }
