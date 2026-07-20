@@ -1,17 +1,16 @@
 {
   "BTC": {
     "score": -1.0,
-    "confidence": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor",
-      "oi_funding"
+      "whale_monitor"
     ],
-    "signal_count": 4,
+    "signal_count": 3,
     "convergence": true,
-    "convergence_strength": 3,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83c\uddef\ud83c\uddf5 Regulation] @MoneyNomads1 (\ud83d\udc4d0 \ud83d\udd040) $BTC/$ETH now legall | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | oi_funding: OI -115.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\uddef\ud83c\uddf5 Regulation] @MoneyNomads1 (\ud83d\udc4d0 \ud83d\udd040) $BTC/$ETH now legall | whale_monitor: Orderbook 22% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -24,24 +23,25 @@
         "weight": 1.95
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -115.0% 1h",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 22% bid (ask-heavy, bearish)",
+        "weight": 1.12
       }
     ],
-    "timestamp": "2026-07-20T20:00:08.535626+00:00"
+    "timestamp": "2026-07-20T20:05:08.924427+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.65,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @fundstrat (\ud83d\udc4d186 \ud83d\udd0417) @eth_systems \u2014 institutiona",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @fundstrat (\ud83d\udc4d186 \ud83d\udd0417) @eth_systems \u2014 institutiona | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -52,48 +52,47 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @fundstrat (\ud83d\udc4d115 \ud83d\udd0410) $ETH strengthening as \"AI downstream\" assets gain traction [score: 3.1]",
         "weight": 2.02
-      }
-    ],
-    "timestamp": "2026-07-20T20:00:08.535645+00:00"
-  },
-  "SOL": {
-    "score": 0.57,
-    "confidence": 0.5,
-    "sources": [
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | oi_funding: OI +20.0% 1h, funding 0.0001%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +20.0% 1h, funding 0.0001%",
-        "weight": 1.44
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 40% bid (ask-heavy, bearish)",
-        "weight": 0.4
+        "source": "oi_funding",
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-07-20T20:00:08.535655+00:00"
+    "timestamp": "2026-07-20T20:05:08.924440+00:00"
+  },
+  "SOL": {
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "whale_monitor"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 75% bid-weighted (bullish)",
+        "weight": 1.0
+      }
+    ],
+    "timestamp": "2026-07-20T20:05:08.924446+00:00"
   },
   "HYPE": {
-    "score": -0.56,
+    "score": -0.47,
     "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "oi_funding"
+      "whale_monitor"
     ],
     "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd2c Zero Vesting Token] mcap/FDV = 1.00, all tokens liquid, | oi_funding: OI -15.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd2c Zero Vesting Token] mcap/FDV = 1.00, all tokens liquid, | whale_monitor: Orderbook 31% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -101,16 +100,16 @@
         "weight": 2.34
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -15.0% 1h",
-        "weight": 1.44
-      },
-      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE HIP-4] @CryptoAddict31x Lower fees = more markets = better prediction data \u2014 tracking HIP-4 profiles and win",
         "weight": 1.3
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 31% bid (ask-heavy, bearish)",
+        "weight": 0.76
       }
     ],
-    "timestamp": "2026-07-20T20:00:08.535665+00:00"
+    "timestamp": "2026-07-20T20:05:08.924454+00:00"
   }
 }
