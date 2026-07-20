@@ -1,20 +1,21 @@
 {
   "BTC": {
-    "score": -0.35,
-    "confidence": 0.6,
+    "score": -0.12,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$BTC] @MarketCycle \u2014 Current BTC move is a classic liquid | oi_funding: OI -19.0% 1h",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC] @MarketCycle \u2014 Current BTC move is a classic liquid | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -115.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -19.0% 1h",
+        "signal": "OI -115.0% 1h",
         "weight": 1.44
       },
       {
@@ -28,7 +29,7 @@
         "weight": 1.28
       }
     ],
-    "timestamp": "2026-07-20T21:20:16.966197+00:00"
+    "timestamp": "2026-07-20T21:25:17.563285+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -41,11 +42,11 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @SqChen64706 (\ud83d\udc4d2 \ud83d\udd040) Institutions dumping equitie | oi_funding: OI -16.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @SqChen64706 (\ud83d\udc4d2 \ud83d\udd040) Institutions dumping equitie | oi_funding: OI -15.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -16.0% 1h",
+        "signal": "OI -15.0% 1h",
         "weight": 1.44
       },
       {
@@ -54,10 +55,10 @@
         "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-20T21:20:16.966238+00:00"
+    "timestamp": "2026-07-20T21:25:17.563312+00:00"
   },
   "SOL": {
-    "score": -0.59,
+    "score": 0.46,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -68,17 +69,17 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: BTC dominates with strong ETF inflows (+$127.66M/day) and in | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI -19.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: BTC dominates with strong ETF inflows (+$127.66M/day) and in | whale_monitor: Orderbook 82% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI -19.0% 1h",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 82% bid-weighted (bullish)",
+        "weight": 1.28
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 24% bid (ask-heavy, bearish)",
-        "weight": 1.04
+        "source": "oi_funding",
+        "signal": "OI -5.0% 1h",
+        "weight": 0.9
       },
       {
         "source": "x_scanner",
@@ -86,32 +87,32 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-20T21:20:16.966252+00:00"
+    "timestamp": "2026-07-20T21:25:17.563324+00:00"
   },
   "HYPE": {
-    "score": 0.03,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE] @FillDotFun \u2014 Ostium exploit: engine detected halt | oi_funding: OI +59.0% 1h, funding 0.0005%",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @FillDotFun \u2014 Ostium exploit: engine detected halt | oi_funding: OI -7.0% 1h",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +59.0% 1h, funding 0.0005%",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @FillDotFun \u2014 Ostium exploit: engine detected halt on-chain, auto-stopped trading, now dual-venue with HL equi",
         "weight": 1.37
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-07-20T21:20:16.966262+00:00"
+    "timestamp": "2026-07-20T21:25:17.563332+00:00"
   }
 }
