@@ -1,64 +1,64 @@
 {
-  "last_update": "2026-07-20T16:40:46.835553+00:00",
+  "last_update": "2026-07-20T16:45:47.309876+00:00",
   "portfolio": {
-    "value": 4934.05,
+    "value": 4923.92,
     "capital": 4872.73,
     "initial": 5000.0,
-    "pnl": -65.95,
-    "pnl_pct": -1.32,
+    "pnl": -76.08,
+    "pnl_pct": -1.52,
     "open_positions": 3
   },
   "prices": {
-    "BTC": 65488.5,
-    "ETH": 1902.75,
-    "SOL": 77.6585,
-    "HYPE": 62.2385
+    "BTC": 65399.5,
+    "ETH": 1898.15,
+    "SOL": 77.5925,
+    "HYPE": 62.1655
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1859.25,
-      "current_price": 1902.75,
+      "current_price": 1898.15,
       "size": 2.1307974752997785,
-      "unrealized_pnl": 90.38,
-      "unrealized_pnl_pct": 2.28,
+      "unrealized_pnl": 80.58,
+      "unrealized_pnl_pct": 2.03,
       "stop_loss": 1836.35,
       "take_profit": 1905.05,
       "strategy": "trend",
       "entry_time": "2026-07-18T19:05:54.863763+00:00",
-      "duration_hours": 45.6,
+      "duration_hours": 45.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": 2.3101
+      "unrealized_funding": 2.3087
     },
     "SOL": {
       "direction": "SHORT",
       "entry_price": 76.1095,
-      "current_price": 77.6585,
+      "current_price": 77.5925,
       "size": 19.847414410800834,
-      "unrealized_pnl": -30.71,
-      "unrealized_pnl_pct": -2.03,
+      "unrealized_pnl": -29.4,
+      "unrealized_pnl_pct": -1.95,
       "stop_loss": 78.572,
       "take_profit": 71.1845,
       "strategy": "stochastic",
       "entry_time": "2026-07-20T14:50:36.739326+00:00",
-      "duration_hours": 1.8,
+      "duration_hours": 1.9,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0354
+      "unrealized_funding": -0.037
     },
     "HYPE": {
       "direction": "LONG",
       "entry_price": 62.1645,
-      "current_price": 62.2385,
+      "current_price": 62.1655,
       "size": 22.508243522400225,
-      "unrealized_pnl": 1.65,
-      "unrealized_pnl_pct": 0.12,
+      "unrealized_pnl": 0.01,
+      "unrealized_pnl_pct": 0.0,
       "stop_loss": 59.973,
       "take_profit": 66.5475,
       "strategy": "trend",
       "entry_time": "2026-07-20T16:00:44.220961+00:00",
-      "duration_hours": 0.7,
+      "duration_hours": 0.8,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0117
+      "unrealized_funding": 0.0131
     }
   },
   "stats": {
@@ -929,7 +929,7 @@
     "BTC": "macd",
     "ETH": "trend",
     "SOL": "stochastic",
-    "HYPE": "trend"
+    "HYPE": "supertrend"
   },
   "strategy_stats": {
     "trend": {
@@ -985,16 +985,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-20T01:15:09.608271+00:00",
-      "v": 4925.61,
-      "p": -1.49
-    },
-    {
-      "t": "2026-07-20T01:20:09.902789+00:00",
-      "v": 4909.34,
-      "p": -1.81
-    },
     {
       "t": "2026-07-20T01:25:10.393988+00:00",
       "v": 4925.63,
@@ -1984,6 +1974,16 @@
       "t": "2026-07-20T16:40:46.835553+00:00",
       "v": 4934.05,
       "p": -1.32
+    },
+    {
+      "t": "2026-07-20T16:42:05.705743+00:00",
+      "v": 4926.49,
+      "p": -1.47
+    },
+    {
+      "t": "2026-07-20T16:45:47.309876+00:00",
+      "v": 4923.92,
+      "p": -1.52
     }
   ],
   "ai_history": [
@@ -2026,28 +2026,38 @@
     {
       "timestamp": "2026-07-06T02:04:57.528920+00:00",
       "note": "BTC: breakout\u2192macd"
+    },
+    {
+      "timestamp": "2026-07-20T16:42:05.551915+00:00",
+      "note": "BTC: keep macd (score 37.9) | ETH: keep trend (score 83.5) | SOL: keep stochastic (challenger trend has only 19 trades \u2014 need 30) | HYPE: trend\u2192supertrend (score 50.8, LOW)"
     }
   ],
   "sentiment": {
     "BTC": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [Short Squeeze] @MaxCrypto (\ud83d\udc4d42 \ud83d\udd047) $BTC reclaimed $65K. $",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [Short Squeeze] @MaxCrypto (\ud83d\udc4d42 \ud83d\udd047) $BTC reclaimed $65K. $ | oi_funding: OI -11.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -11.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [Short Squeeze] @MaxCrypto (\ud83d\udc4d42 \ud83d\udd047) $BTC reclaimed $65K. $ETH reclaimed $1,900. $30M shorts liquidated in 45 min",
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-20T16:40:46.655037+00:00"
+      "timestamp": "2026-07-20T16:45:47.183746+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -2060,7 +2070,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [ETH Breakout] @AshCrypto (\ud83d\udc4d287 \ud83d\udd0434) $ETH BREAKS ABOVE $1, | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [ETH Breakout] @AshCrypto (\ud83d\udc4d287 \ud83d\udd0434) $ETH BREAKS ABOVE $1, | oi_funding: OI +4.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2074,36 +2084,45 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0013%",
-          "weight": 0.9
+          "signal": "OI +4.0% 1h, funding 0.0013%",
+          "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-20T16:40:46.655065+00:00"
+      "timestamp": "2026-07-20T16:45:47.183763+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-20T16:40:46.655068+00:00"
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +73.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +73.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-20T16:45:47.183771+00:00"
     },
     "HYPE": {
-      "score": 0.14,
-      "confidence": 0.5,
+      "score": -0.27,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [HYPE Accumulation] @Omaofweb3 (\ud83d\udc4d77 \ud83d\udd043) Bought some $HYPE  | whale_monitor: Orderbook 17% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [HYPE Accumulation] @Omaofweb3 (\ud83d\udc4d77 \ud83d\udd043) Bought some $HYPE  | whale_monitor: Orderbook 15% bid (ask-heavy, bearish) | oi_funding: OI -56.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2111,12 +2130,17 @@
           "weight": 1.76
         },
         {
+          "source": "oi_funding",
+          "signal": "OI -56.0% 1h",
+          "weight": 1.44
+        },
+        {
           "source": "whale_monitor",
-          "signal": "Orderbook 17% bid (ask-heavy, bearish)",
-          "weight": 1.32
+          "signal": "Orderbook 15% bid (ask-heavy, bearish)",
+          "weight": 1.4
         }
       ],
-      "timestamp": "2026-07-20T16:40:46.655079+00:00"
+      "timestamp": "2026-07-20T16:45:47.183780+00:00"
     }
   },
   "config": {

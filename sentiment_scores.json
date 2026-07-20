@@ -1,23 +1,29 @@
 {
   "BTC": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [Short Squeeze] @MaxCrypto (\ud83d\udc4d42 \ud83d\udd047) $BTC reclaimed $65K. $",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [Short Squeeze] @MaxCrypto (\ud83d\udc4d42 \ud83d\udd047) $BTC reclaimed $65K. $ | oi_funding: OI -11.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -11.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [Short Squeeze] @MaxCrypto (\ud83d\udc4d42 \ud83d\udd047) $BTC reclaimed $65K. $ETH reclaimed $1,900. $30M shorts liquidated in 45 min",
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-20T16:40:46.655037+00:00"
+    "timestamp": "2026-07-20T16:45:47.183746+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -30,7 +36,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [ETH Breakout] @AshCrypto (\ud83d\udc4d287 \ud83d\udd0434) $ETH BREAKS ABOVE $1, | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [ETH Breakout] @AshCrypto (\ud83d\udc4d287 \ud83d\udd0434) $ETH BREAKS ABOVE $1, | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -44,36 +50,45 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
-        "weight": 0.9
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-20T16:40:46.655065+00:00"
+    "timestamp": "2026-07-20T16:45:47.183763+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-20T16:40:46.655068+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +73.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +73.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-20T16:45:47.183771+00:00"
   },
   "HYPE": {
-    "score": 0.14,
-    "confidence": 0.5,
+    "score": -0.27,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [HYPE Accumulation] @Omaofweb3 (\ud83d\udc4d77 \ud83d\udd043) Bought some $HYPE  | whale_monitor: Orderbook 17% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [HYPE Accumulation] @Omaofweb3 (\ud83d\udc4d77 \ud83d\udd043) Bought some $HYPE  | whale_monitor: Orderbook 15% bid (ask-heavy, bearish) | oi_funding: OI -56.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -81,11 +96,16 @@
         "weight": 1.76
       },
       {
+        "source": "oi_funding",
+        "signal": "OI -56.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 17% bid (ask-heavy, bearish)",
-        "weight": 1.32
+        "signal": "Orderbook 15% bid (ask-heavy, bearish)",
+        "weight": 1.4
       }
     ],
-    "timestamp": "2026-07-20T16:40:46.655079+00:00"
+    "timestamp": "2026-07-20T16:45:47.183780+00:00"
   }
 }
