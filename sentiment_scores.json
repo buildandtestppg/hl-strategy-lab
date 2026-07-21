@@ -1,35 +1,34 @@
 {
   "BTC": {
-    "score": 0.06,
-    "confidence": 0.84,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor",
-      "oi_funding"
+      "whale_monitor"
     ],
-    "signal_count": 4,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [ $BTC] @tonscarla (\ud83d\udc4d2) One whale $329 from liquidation \u2014  | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI +35.0% 1h, funding 0.0013%",
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [ $BTC] @tonscarla (\ud83d\udc4d2) One whale $329 from liquidation \u2014  | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +35.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [ $BTC] @tonscarla (\ud83d\udc4d2) One whale $329 from liquidation \u2014 $35.34M $BTC short liquidated if BTC hits $65,829 [score: 1.",
         "weight": 1.28
       },
       {
+        "source": "x_scanner",
+        "signal": "\u2022 [ $BTC] @CoinPost_Alert (\ud83d\udc4d2 \ud83d\udd042) BTC Liquidation Monitor $65,405 \u2014 $58K trigger ($83M), $66K cluster ($119M), $73K clus",
+        "weight": 1.1
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 80% bid-weighted (bullish)",
-        "weight": 1.2
+        "signal": "Orderbook 38% bid (ask-heavy, bearish)",
+        "weight": 0.48
       }
     ],
-    "timestamp": "2026-07-21T04:40:04.049651+00:00"
+    "timestamp": "2026-07-21T04:45:04.435320+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -42,7 +41,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [ $ETH] @0xMo0x (\ud83d\udc4d1) $ETH is THE yield asset in crypto \u2014 a | oi_funding: OI +4.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [ $ETH] @0xMo0x (\ud83d\udc4d1) $ETH is THE yield asset in crypto \u2014 a | oi_funding: OI +10.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -56,50 +55,62 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +4.0% 1h, funding 0.0013%",
-        "weight": 0.72
-      }
-    ],
-    "timestamp": "2026-07-21T04:40:04.049675+00:00"
-  },
-  "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -5.0% 1h",
-        "weight": 0.9
-      }
-    ],
-    "timestamp": "2026-07-21T04:40:04.049683+00:00"
-  },
-  "HYPE": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -10.0% 1h",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -10.0% 1h",
+        "signal": "OI +10.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-21T04:40:04.049689+00:00"
+    "timestamp": "2026-07-21T04:45:04.435346+00:00"
+  },
+  "SOL": {
+    "score": -0.44,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 64% bid-weighted (bullish) | oi_funding: OI -8.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -8.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 64% bid-weighted (bullish)",
+        "weight": 0.56
+      }
+    ],
+    "timestamp": "2026-07-21T04:45:04.435356+00:00"
+  },
+  "HYPE": {
+    "score": -1.0,
+    "confidence": 0.74,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI -9.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -9.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 32% bid (ask-heavy, bearish)",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-07-21T04:45:04.435395+00:00"
   }
 }
