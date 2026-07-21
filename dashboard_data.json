@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-21T16:50:20.249824+00:00",
+  "last_update": "2026-07-21T16:55:20.818681+00:00",
   "portfolio": {
     "value": 4920.03,
     "capital": 4920.03,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 66497.5,
-    "ETH": 1924.75,
-    "SOL": 78.0805,
-    "HYPE": 61.7785
+    "BTC": 66569.0,
+    "ETH": 1927.25,
+    "SOL": 78.1835,
+    "HYPE": 61.8135
   },
   "positions": {},
   "stats": {
@@ -939,16 +939,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-21T01:25:44.617143+00:00",
-      "v": 4932.92,
-      "p": -1.34
-    },
-    {
-      "t": "2026-07-21T01:30:45.311191+00:00",
-      "v": 4932.96,
-      "p": -1.34
-    },
     {
       "t": "2026-07-21T01:35:45.757283+00:00",
       "v": 4933.16,
@@ -1938,6 +1928,16 @@
       "t": "2026-07-21T16:50:20.249824+00:00",
       "v": 4920.03,
       "p": -1.6
+    },
+    {
+      "t": "2026-07-21T16:54:45.149725+00:00",
+      "v": 4920.03,
+      "p": -1.6
+    },
+    {
+      "t": "2026-07-21T16:55:20.818681+00:00",
+      "v": 4920.03,
+      "p": -1.6
     }
   ],
   "ai_history": [
@@ -1988,7 +1988,7 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.25,
+      "score": 0.31,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -1999,7 +1999,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @whale_alert (\ud83d\udc4d21 \ud83d\udd042) 762 $BTC ($50.8M) from Coin | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI -9.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @whale_alert (\ud83d\udc4d21 \ud83d\udd042) 762 $BTC ($50.8M) from Coin | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -9.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2017,7 +2017,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-21T16:50:20.114492+00:00"
+      "timestamp": "2026-07-21T16:55:20.620977+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2037,41 +2037,46 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-21T16:50:20.114510+00:00"
+      "timestamp": "2026-07-21T16:55:20.620998+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.47,
+      "confidence": 0.5,
       "sources": [
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -28.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI -28.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -28.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 63% bid-weighted (bullish)",
+          "weight": 0.52
         }
       ],
-      "timestamp": "2026-07-21T16:50:20.114517+00:00"
+      "timestamp": "2026-07-21T16:55:20.621008+00:00"
     },
     "HYPE": {
-      "score": 0.52,
-      "confidence": 0.84,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @UseNeverbell Hyperliquid integration live, ope | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | oi_funding: OI +24.0% 1h, funding 0.0004%",
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @UseNeverbell Hyperliquid integration live, ope | oi_funding: OI +24.0% 1h, funding 0.0004%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2082,14 +2087,9 @@
           "source": "oi_funding",
           "signal": "OI +24.0% 1h, funding 0.0004%",
           "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 21% bid (ask-heavy, bearish)",
-          "weight": 1.16
         }
       ],
-      "timestamp": "2026-07-21T16:50:20.114528+00:00"
+      "timestamp": "2026-07-21T16:55:20.621019+00:00"
     }
   },
   "config": {
