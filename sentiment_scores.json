@@ -1,49 +1,60 @@
 {
   "BTC": {
-    "score": 0.01,
+    "score": -0.48,
     "confidence": 0.5,
     "sources": [
       "news_agent",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: ge below >  **\ud83d\udcf0 Crypto News Alert \u2014 Jul 22, 09:07 UTC**  \ud83d\udd34 * | oi_funding: OI +8.0% 1h, funding 0.0010%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: newly reported articles from this scan are:  1. **\ud83d\udd34 Critical | oi_funding: OI +26.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +8.0% 1h, funding 0.0010%",
+        "signal": "OI +26.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
         "source": "news_agent",
-        "signal": "ge below >  **\ud83d\udcf0 Crypto News Alert \u2014 Jul 22, 09:07 UTC**  \ud83d\udd34 **Breaking** **Balance stablecoin collapses 99% after $1M exp",
+        "signal": "newly reported articles from this scan are:  1. **\ud83d\udd34 Critical:** Balance stablecoin collapses 99% after $1 million exploi",
+        "weight": 1.42
+      },
+      {
+        "source": "news_agent",
+        "signal": "ngs  **\ud83d\udcf0 Crypto News \u2014 Jul 22, 09:22 UTC**  \ud83d\udd34 **Breaking** \u2022 **Balance stablecoin collapses 99% after $1M exploit drains",
         "weight": 1.42
       }
     ],
-    "timestamp": "2026-07-22T09:20:09.581958+00:00"
+    "timestamp": "2026-07-22T09:25:10.212672+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc8e $ETH] @MaxCrypto (\ud83d\udc4d26 \ud83d\udd044) [score:3.1] HUGE: Whale bough",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $ETH] @MaxCrypto (\ud83d\udc4d26 \ud83d\udd044) [score:3.1] HUGE: Whale bough | oi_funding: OI +22.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udc8e $ETH] @MaxCrypto (\ud83d\udc4d26 \ud83d\udd044) [score:3.1] HUGE: Whale bought $94M worth of $ETH this month. Retail panic selling; whale",
         "weight": 2.02
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +22.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-22T09:20:09.581979+00:00"
+    "timestamp": "2026-07-22T09:25:10.212689+00:00"
   },
   "SOL": {
     "score": 0.0,
@@ -55,20 +66,21 @@
     "contradictions": 0,
     "narrative": "No active signals",
     "key_signals": [],
-    "timestamp": "2026-07-22T09:20:09.581982+00:00"
+    "timestamp": "2026-07-22T09:25:10.212691+00:00"
   },
   "HYPE": {
-    "score": 0.67,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @Telbloggram [score:2.5] Solana & Hyperliquid ET | oi_funding: OI -6.0% 1h",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @Telbloggram [score:2.5] Solana & Hyperliquid ET | whale_monitor: Orderbook 88% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0002%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -86,6 +98,6 @@
         "weight": 1.56
       }
     ],
-    "timestamp": "2026-07-22T09:20:09.581993+00:00"
+    "timestamp": "2026-07-22T09:25:10.212703+00:00"
   }
 }
