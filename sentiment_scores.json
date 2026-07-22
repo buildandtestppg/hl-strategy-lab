@@ -4,19 +4,19 @@
     "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "polymarket",
-      "oi_funding"
+      "whale_monitor",
+      "polymarket"
     ],
     "signal_count": 4,
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @AnonfrXBT (\ud83d\udc4d8) Drifting from onchain sleuthing  | polymarket: : 43.9% \u25bc1.7pp  **Key Signal:** Fed hike probability surging | oi_funding: OI +14.0% 1h, funding 0.0006%",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @AnonfrXBT (\ud83d\udc4d8) Drifting from onchain sleuthing  | whale_monitor: Orderbook 75% bid-weighted (bullish) | polymarket: : 43.9% \u25bc1.7pp  **Key Signal:** Fed hike probability surging",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI +14.0% 1h, funding 0.0006%",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 75% bid-weighted (bullish)",
+        "weight": 1.0
       },
       {
         "source": "polymarket",
@@ -29,25 +29,25 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-22T00:00:08.422463+00:00"
+    "timestamp": "2026-07-22T00:05:08.903863+00:00"
   },
   "ETH": {
     "score": 1.0,
     "confidence": 0.74,
     "sources": [
-      "polymarket",
-      "oi_funding"
+      "whale_monitor",
+      "polymarket"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | polymarket: .9% \u25bc1.7pp  **Key Signal:** Fed hike probability surging acr | oi_funding: OI +20.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 70% bid-weighted (bullish) | polymarket: .9% \u25bc1.7pp  **Key Signal:** Fed hike probability surging acr",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI +20.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 70% bid-weighted (bullish)",
+        "weight": 0.8
       },
       {
         "source": "polymarket",
@@ -55,31 +55,40 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-22T00:00:08.422495+00:00"
+    "timestamp": "2026-07-22T00:05:08.903921+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-22T00:00:08.422499+00:00"
-  },
-  "HYPE": {
     "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "x_scanner"
+      "whale_monitor"
     ],
-    "signal_count": 2,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @MBxxvv (\ud83d\udc4d5) $HYPE sold off after whale unstaked",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 70% bid-weighted (bullish)",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 70% bid-weighted (bullish)",
+        "weight": 0.8
+      }
+    ],
+    "timestamp": "2026-07-22T00:05:08.903931+00:00"
+  },
+  "HYPE": {
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @MBxxvv (\ud83d\udc4d5) $HYPE sold off after whale unstaked | whale_monitor: Orderbook 60% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -90,8 +99,13 @@
         "source": "x_scanner",
         "signal": "\u2022 [\u26a1 $HYPE] @LouayKamel Synthetic engine v0 live on Hyperliquid, early access [2.6]",
         "weight": 0.65
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 60% bid-weighted (bullish)",
+        "weight": 0.4
       }
     ],
-    "timestamp": "2026-07-22T00:00:08.422514+00:00"
+    "timestamp": "2026-07-22T00:05:08.903942+00:00"
   }
 }
