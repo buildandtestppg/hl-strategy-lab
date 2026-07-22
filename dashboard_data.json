@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-22T10:20:16.805418+00:00",
+  "last_update": "2026-07-22T10:25:17.127048+00:00",
   "portfolio": {
-    "value": 4827.36,
+    "value": 4829.24,
     "capital": 4827.06,
     "initial": 5000.0,
-    "pnl": -172.64,
-    "pnl_pct": -3.45,
+    "pnl": -170.76,
+    "pnl_pct": -3.42,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 65914.5,
-    "ETH": 1923.75,
-    "SOL": 77.4525,
-    "HYPE": 58.9355
+    "BTC": 65951.5,
+    "ETH": 1925.35,
+    "SOL": 77.5085,
+    "HYPE": 59.0925
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1923.15,
-      "current_price": 1923.75,
+      "current_price": 1925.35,
       "size": 1.1784507105485744,
-      "unrealized_pnl": 0.3,
-      "unrealized_pnl_pct": 0.01,
+      "unrealized_pnl": 2.19,
+      "unrealized_pnl_pct": 0.1,
       "stop_loss": 1881.4,
       "take_profit": 2006.65,
       "strategy": "trend",
       "entry_time": "2026-07-21T20:05:43.262268+00:00",
-      "duration_hours": 14.2,
+      "duration_hours": 14.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.4036
+      "unrealized_funding": 0.4063
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-21T19:00:35.308049+00:00",
-      "v": 4920.03,
-      "p": -1.6
-    },
     {
       "t": "2026-07-21T19:01:21.377981+00:00",
       "v": 4920.03,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-22T10:20:16.805418+00:00",
       "v": 4827.36,
       "p": -3.45
+    },
+    {
+      "t": "2026-07-22T10:25:17.127048+00:00",
+      "v": 4829.24,
+      "p": -3.42
     }
   ],
   "ai_history": [
@@ -2011,17 +2011,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.23,
-      "confidence": 0.5,
+      "score": -0.31,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC Breakout] @Kyra_Bloom0 (\ud83d\udc4d3 \ud83d\udd040) $BTC broke out of a | whale_monitor: Orderbook 74% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC Breakout] @Kyra_Bloom0 (\ud83d\udc4d3 \ud83d\udd040) $BTC broke out of a | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2039,7 +2040,7 @@
           "weight": 1.62
         }
       ],
-      "timestamp": "2026-07-22T10:20:16.596280+00:00"
+      "timestamp": "2026-07-22T10:25:17.019366+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -2069,20 +2070,21 @@
           "weight": 2.24
         }
       ],
-      "timestamp": "2026-07-22T10:20:16.596302+00:00"
+      "timestamp": "2026-07-22T10:25:17.019382+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.4,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "news_agent",
+        "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL ETF] @SolanaFloor (\ud83d\udc4d0 \ud83d\udd040) U.S. spot @Solana ETFs r | whale_monitor: Orderbook 73% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL ETF] @SolanaFloor (\ud83d\udc4d0 \ud83d\udd040) U.S. spot @Solana ETFs r | news_agent: <https://cryptobriefing.com/glow-billion-valuation-ai-endpoi | oi_funding: OI -12.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2100,27 +2102,21 @@
           "weight": 1.62
         }
       ],
-      "timestamp": "2026-07-22T10:20:16.596317+00:00"
+      "timestamp": "2026-07-22T10:25:17.019394+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "whale_monitor",
-        "oi_funding"
+        "whale_monitor"
       ],
-      "signal_count": 3,
+      "signal_count": 2,
       "convergence": true,
-      "convergence_strength": 3,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: SOL ETF inflows hit 14-day highs ($5.83M) and ETH whale shor | whale_monitor: Orderbook 64% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: SOL ETF inflows hit 14-day highs ($5.83M) and ETH whale shor | whale_monitor: Orderbook 61% bid-weighted (bullish)",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0013%",
-          "weight": 0.72
-        },
         {
           "source": "x_scanner",
           "signal": "SOL ETF inflows hit 14-day highs ($5.83M) and ETH whale shorts are closing \u2014 institutional rotation into alts appears un",
@@ -2128,11 +2124,11 @@
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 64% bid-weighted (bullish)",
-          "weight": 0.56
+          "signal": "Orderbook 61% bid-weighted (bullish)",
+          "weight": 0.44
         }
       ],
-      "timestamp": "2026-07-22T10:20:16.596326+00:00"
+      "timestamp": "2026-07-22T10:25:17.019403+00:00"
     }
   },
   "config": {
