@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-22T22:40:39.034605+00:00",
+  "last_update": "2026-07-22T22:45:39.471282+00:00",
   "portfolio": {
     "value": 4871.82,
     "capital": 4871.82,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 65909.5,
-    "ETH": 1932.05,
-    "SOL": 77.7065,
-    "HYPE": 58.8645
+    "BTC": 65932.5,
+    "ETH": 1933.05,
+    "SOL": 77.7515,
+    "HYPE": 58.8875
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-22T07:25:56.838700+00:00",
-      "v": 4816.13,
-      "p": -3.68
-    },
     {
       "t": "2026-07-22T07:30:57.267893+00:00",
       "v": 4818.72,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-22T22:40:39.034605+00:00",
       "v": 4871.82,
       "p": -2.56
+    },
+    {
+      "t": "2026-07-22T22:45:39.471282+00:00",
+      "v": 4871.82,
+      "p": -2.56
     }
   ],
   "ai_history": [
@@ -1996,56 +1996,74 @@
   "sentiment": {
     "BTC": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 25% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 25% bid (ask-heavy, bearish) | oi_funding: OI -5.0% 1h",
       "key_signals": [
         {
           "source": "whale_monitor",
           "signal": "Orderbook 25% bid (ask-heavy, bearish)",
           "weight": 1.0
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
         }
       ],
-      "timestamp": "2026-07-22T22:40:38.775219+00:00"
+      "timestamp": "2026-07-22T22:45:39.330705+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -0.3,
+      "confidence": 0.5,
       "sources": [
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: ides differently Jun-Jul-Sep\" 58% (\u25b26.0pp).  \u20bf **BTC July ta",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: ides differently Jun-Jul-Sep\" 58% (\u25b26.0pp).  \u20bf **BTC July ta | oi_funding: OI -9.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -9.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "polymarket",
           "signal": "ides differently Jun-Jul-Sep\" 58% (\u25b26.0pp).  \u20bf **BTC July targets:** $67.5K \u2192 64% (\u25bc9.5pp), $65K dip \u2192 81.4% (\u25b28pp). Abo",
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-22T22:40:38.775239+00:00"
+      "timestamp": "2026-07-22T22:45:39.330724+00:00"
     },
     "SOL": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: 23: 98.9% (\u25b22.8pp) - ETH to $2,000 in July: 62.5% (\u25b22.5pp)  ",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: 23: 98.9% (\u25b22.8pp) - ETH to $2,000 in July: 62.5% (\u25b22.5pp)   | oi_funding: OI -50.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -50.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "polymarket",
           "signal": "23: 98.9% (\u25b22.8pp) - ETH to $2,000 in July: 62.5% (\u25b22.5pp)  \ud83d\udcc5 **SOL Price Targets** (33 markets) \u2014 Lower liquidity: - SO",
@@ -2057,20 +2075,26 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-22T22:40:38.775250+00:00"
+      "timestamp": "2026-07-22T22:45:39.330735+00:00"
     },
     "HYPE": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.22,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a1 $HYPE] @Cointurknews (\ud83d\udc4d0 \ud83d\udd040) Trader holds $80M long in ",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $HYPE] @Cointurknews (\ud83d\udc4d0 \ud83d\udd040) Trader holds $80M long in  | oi_funding: OI -40.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -40.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\u26a1 $HYPE] @Cointurknews (\ud83d\udc4d0 \ud83d\udd040) Trader holds $80M long in $HYPE despite $18M unrealized losses, monitored by Arkham [s",
@@ -2082,7 +2106,7 @@
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-22T22:40:38.775260+00:00"
+      "timestamp": "2026-07-22T22:45:39.330744+00:00"
     }
   },
   "config": {
