@@ -1,64 +1,64 @@
 {
-  "last_update": "2026-07-22T04:00:34.042691+00:00",
+  "last_update": "2026-07-22T04:05:34.751805+00:00",
   "portfolio": {
-    "value": 4880.93,
+    "value": 4901.22,
     "capital": 4913.95,
     "initial": 5000.0,
-    "pnl": -119.07,
-    "pnl_pct": -2.38,
+    "pnl": -98.78,
+    "pnl_pct": -1.98,
     "open_positions": 3
   },
   "prices": {
-    "BTC": 66182.5,
-    "ETH": 1929.45,
-    "SOL": 77.8205,
-    "HYPE": 60.0845
+    "BTC": 66303.5,
+    "ETH": 1933.45,
+    "SOL": 78.0535,
+    "HYPE": 60.4195
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1923.15,
-      "current_price": 1929.45,
+      "current_price": 1933.45,
       "size": 1.1784507105485744,
-      "unrealized_pnl": 7.2,
-      "unrealized_pnl_pct": 0.32,
+      "unrealized_pnl": 11.91,
+      "unrealized_pnl_pct": 0.53,
       "stop_loss": 1881.4,
       "take_profit": 2006.65,
       "strategy": "trend",
       "entry_time": "2026-07-21T20:05:43.262268+00:00",
-      "duration_hours": 7.9,
+      "duration_hours": 8.0,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.2249
+      "unrealized_funding": 0.2278
     },
     "HYPE": {
       "direction": "LONG",
       "entry_price": 60.8475,
-      "current_price": 60.0845,
+      "current_price": 60.4195,
       "size": 22.11643622871186,
-      "unrealized_pnl": -16.87,
-      "unrealized_pnl_pct": -1.25,
+      "unrealized_pnl": -9.49,
+      "unrealized_pnl_pct": -0.7,
       "stop_loss": 58.6195,
       "take_profit": 65.3035,
       "strategy": "supertrend",
       "entry_time": "2026-07-22T00:05:10.258218+00:00",
-      "duration_hours": 3.9,
-      "funding_rate": -7.1e-05,
-      "unrealized_funding": -0.0037
+      "duration_hours": 4.0,
+      "funding_rate": 0.000396,
+      "unrealized_funding": 0.0212
     },
     "SOL": {
       "direction": "LONG",
       "entry_price": 78.4815,
-      "current_price": 77.8205,
+      "current_price": 78.0535,
       "size": 35.49659214907164,
-      "unrealized_pnl": -23.35,
-      "unrealized_pnl_pct": -0.84,
+      "unrealized_pnl": -15.15,
+      "unrealized_pnl_pct": -0.54,
       "stop_loss": 77.089,
       "take_profit": 81.2665,
       "strategy": "stochastic",
       "entry_time": "2026-07-22T01:00:16.513156+00:00",
-      "duration_hours": 3.0,
-      "funding_rate": -0.001332,
-      "unrealized_funding": -0.1106
+      "duration_hours": 3.1,
+      "funding_rate": -0.000441,
+      "unrealized_funding": -0.0377
     }
   },
   "stats": {
@@ -985,11 +985,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-21T12:40:53.892937+00:00",
-      "v": 4936.42,
-      "p": -1.27
-    },
     {
       "t": "2026-07-21T12:41:15.775169+00:00",
       "v": 4935.68,
@@ -1984,6 +1979,11 @@
       "t": "2026-07-22T04:00:34.042691+00:00",
       "v": 4880.93,
       "p": -2.38
+    },
+    {
+      "t": "2026-07-22T04:05:34.751805+00:00",
+      "v": 4901.22,
+      "p": -1.98
     }
   ],
   "ai_history": [
@@ -2034,18 +2034,24 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.26,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 4,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @Callistemon25 $BTC hit 5-week high above $66,50 | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @Callistemon25 $BTC hit 5-week high above $66,50 | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI -64.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -64.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 75% bid-weighted (bullish)",
@@ -2055,27 +2061,28 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $BTC] @Callistemon25 $BTC hit 5-week high above $66,500. CLARITY Act odds at 43% on Polymarket (record high) [2.5]",
           "weight": 0.65
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @crypto_lens_ (\ud83d\udc4d3 \ud83d\udd043) Bitcoin cycle: Bull 1064 days, Bear 365 days. Bear phase ~80% complete [1.9]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-22T04:00:33.902556+00:00"
+      "timestamp": "2026-07-22T04:05:34.543826+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @EyeOnChain Whale keeps buying: 54,449 $ETH (~$94",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @EyeOnChain Whale keeps buying: 54,449 $ETH (~$94 | oi_funding: OI +86.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +86.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $ETH] @EyeOnChain Whale keeps buying: 54,449 $ETH (~$94M) at avg $1,726 since June 30 + 600 $WBTC [1.5]",
@@ -2085,47 +2092,54 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $ETH] @Thienthien1305 (\ud83d\udc4d3) ETH whale accepted loss after 5 months. Sold 1,862.3 $ETH at avg $1,923 [1.8]",
           "weight": 0.65
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $ETH] @Callistemon25 $ETH +1.7% to ~$1,936. Total crypto mcap $2.31T. BTC ETFs 2nd straight week net inflows [1.6]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-22T04:00:33.902572+00:00"
+      "timestamp": "2026-07-22T04:05:34.543850+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -0.18,
+      "confidence": 0.5,
       "sources": [
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI -22.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -22.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 75% bid-weighted (bullish)",
           "weight": 1.0
         }
       ],
-      "timestamp": "2026-07-22T04:00:33.902580+00:00"
+      "timestamp": "2026-07-22T04:05:34.543859+00:00"
     },
     "HYPE": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.49,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 7,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @nguyenduc130185 (\ud83d\udc4d31 \ud83d\udd042) Whales bullish on ETH,",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @nguyenduc130185 (\ud83d\udc4d31 \ud83d\udd042) Whales bullish on ETH, | oi_funding: OI -17.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -17.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @nguyenduc130185 (\ud83d\udc4d31 \ud83d\udd042) Whales bullish on ETH, selling 72 BTC and going long x20 on Hyperliquid [3.2]",
@@ -2135,14 +2149,9 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @lookonchain (\ud83d\udc4d90 \ud83d\udd048) Multicoin Capital taking profits on 606K $HYPE ($36.5M), deposited 395K into CoinbaseP",
           "weight": 0.8
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @TuncaIchizo Solana ETFs $904M AUM, Hyperliquid funds $350M net inflows (source: The Block) [1.6]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-22T04:00:33.902589+00:00"
+      "timestamp": "2026-07-22T04:05:34.543870+00:00"
     }
   },
   "config": {
