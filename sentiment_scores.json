@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": 0.51,
+    "score": 0.55,
     "confidence": 0.9,
     "sources": [
       "x_scanner",
@@ -12,7 +12,7 @@
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [BTC] @TedPillows (\ud83d\udc4d59 \ud83d\udd045) $BTC correcting but holding $65 | whale_monitor: Orderbook 78% bid-weighted (bullish) | polymarket: Report looks solid \u2014 5 dramatic shifts, all Fed/Macro relate",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [BTC] @TedPillows (\ud83d\udc4d59 \ud83d\udd045) $BTC correcting but holding $65 | whale_monitor: Orderbook 88% bid-weighted (bullish) | polymarket: Report looks solid \u2014 5 dramatic shifts, all Fed/Macro relate",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,30 +20,30 @@
         "weight": 1.82
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -44.0% 1h",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 88% bid-weighted (bullish)",
+        "weight": 1.52
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 78% bid-weighted (bullish)",
-        "weight": 1.12
+        "source": "oi_funding",
+        "signal": "OI -75.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-23T10:00:57.234055+00:00"
+    "timestamp": "2026-07-23T10:05:57.736385+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.04,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH/$BTC] @cryptogoos (\ud83d\udc4d62 \ud83d\udd041) Eric Trump's posted level | oi_funding: OI +8.0% 1h, funding 0.0013%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH/$BTC] @cryptogoos (\ud83d\udc4d62 \ud83d\udd041) Eric Trump's posted level | oi_funding: OI -83.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -52,44 +52,50 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +8.0% 1h, funding 0.0013%",
+        "signal": "OI -83.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-23T10:00:57.234080+00:00"
+    "timestamp": "2026-07-23T10:05:57.736406+00:00"
   },
   "SOL": {
     "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 15% bid (ask-heavy, bearish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 15% bid (ask-heavy, bearish)",
-        "weight": 1.4
-      }
-    ],
-    "timestamp": "2026-07-23T10:00:57.234090+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
     "confidence": 0.74,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Tanaka_L2 (\ud83d\udc4d60 \ud83d\udd043) RWA Perps becoming a real on | whale_monitor: Orderbook 60% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 25% bid (ask-heavy, bearish) | oi_funding: OI -79.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -79.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 25% bid (ask-heavy, bearish)",
+        "weight": 1.0
+      }
+    ],
+    "timestamp": "2026-07-23T10:05:57.736418+00:00"
+  },
+  "HYPE": {
+    "score": 0.31,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Tanaka_L2 (\ud83d\udc4d60 \ud83d\udd043) RWA Perps becoming a real on | oi_funding: OI -9.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -97,11 +103,11 @@
         "weight": 2.73
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 60% bid-weighted (bullish)",
-        "weight": 0.4
+        "source": "oi_funding",
+        "signal": "OI -9.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-23T10:00:57.234099+00:00"
+    "timestamp": "2026-07-23T10:05:57.736426+00:00"
   }
 }
