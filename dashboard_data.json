@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-23T22:05:21.959803+00:00",
+  "last_update": "2026-07-23T22:10:22.784641+00:00",
   "portfolio": {
-    "value": 4845.82,
+    "value": 4845.14,
     "capital": 4844.69,
     "initial": 5000.0,
-    "pnl": -154.18,
-    "pnl_pct": -3.08,
+    "pnl": -154.86,
+    "pnl_pct": -3.1,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 65153.5,
+    "BTC": 65122.5,
     "ETH": 1881.65,
-    "SOL": 75.9975,
-    "HYPE": 57.4315
+    "SOL": 76.0185,
+    "HYPE": 57.4395
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 76.0345,
-      "current_price": 75.9975,
+      "current_price": 76.0185,
       "size": 30.806548005475175,
-      "unrealized_pnl": 1.12,
-      "unrealized_pnl_pct": 0.05,
+      "unrealized_pnl": 0.45,
+      "unrealized_pnl_pct": 0.02,
       "stop_loss": 77.6145,
       "take_profit": 72.8745,
       "strategy": "stochastic",
       "entry_time": "2026-07-23T16:30:43.423439+00:00",
-      "duration_hours": 5.6,
-      "funding_rate": -0.000123,
-      "unrealized_funding": 0.016
+      "duration_hours": 5.7,
+      "funding_rate": -0.000319,
+      "unrealized_funding": 0.0423
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-23T06:45:33.133035+00:00",
-      "v": 4870.74,
-      "p": -2.59
-    },
     {
       "t": "2026-07-23T06:50:33.630347+00:00",
       "v": 4869.22,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-23T22:05:21.959803+00:00",
       "v": 4845.82,
       "p": -3.08
+    },
+    {
+      "t": "2026-07-23T22:10:22.784641+00:00",
+      "v": 4845.14,
+      "p": -3.1
     }
   ],
   "ai_history": [
@@ -2039,7 +2039,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-23T22:05:21.844424+00:00"
+      "timestamp": "2026-07-23T22:10:22.525727+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2059,20 +2059,21 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-23T22:05:21.844441+00:00"
+      "timestamp": "2026-07-23T22:10:22.525749+00:00"
     },
     "SOL": {
-      "score": -0.21,
-      "confidence": 0.5,
+      "score": -0.43,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @rgr_park @WhiteHouse bidding $JIMOTHY support. C | oi_funding: OI -9.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a1 $SOL] @rgr_park @WhiteHouse bidding $JIMOTHY support. C | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI -9.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -2083,22 +2084,28 @@
           "source": "x_scanner",
           "signal": "\u2022 [\u26a1 $SOL] @rgr_park @WhiteHouse bidding $JIMOTHY support. Consolidate to fill gap & reverse to ATH [1.5]",
           "weight": 0.95
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 34% bid (ask-heavy, bearish)",
+          "weight": 0.64
         }
       ],
-      "timestamp": "2026-07-23T22:05:21.844451+00:00"
+      "timestamp": "2026-07-23T22:10:22.525764+00:00"
     },
     "HYPE": {
-      "score": -0.38,
-      "confidence": 0.5,
+      "score": -0.62,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @trackerxHQ @machibigbrother bleeding \u2014 $10.54M  | oi_funding: OI -30.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @trackerxHQ @machibigbrother bleeding \u2014 $10.54M  | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI -30.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -2106,12 +2113,17 @@
           "weight": 1.44
         },
         {
+          "source": "whale_monitor",
+          "signal": "Orderbook 32% bid (ask-heavy, bearish)",
+          "weight": 0.72
+        },
+        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcb0 $HYPE] @trackerxHQ @machibigbrother bleeding \u2014 $10.54M ETH 25x long, unrealized -$71K, funding -$98K [1.5]",
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-23T22:05:21.844459+00:00"
+      "timestamp": "2026-07-23T22:10:22.525773+00:00"
     }
   },
   "config": {
