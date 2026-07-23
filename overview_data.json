@@ -1,16 +1,29 @@
 {
-  "exported_at": "2026-07-23T10:20:05.097251+08:00",
-  "exported_at_utc": "2026-07-23T02:20:05.097256+00:00",
+  "exported_at": "2026-07-23T10:30:06.516310+08:00",
+  "exported_at_utc": "2026-07-23T02:30:06.516322+00:00",
   "portfolio": {
-    "value": 4871.8167643872,
+    "value": 4870.1734101877255,
     "initial": 5000.0,
-    "pnl": -128.18323561279976,
-    "pnl_pct": -2.5636647122559952,
+    "pnl": -129.8265898122745,
+    "pnl_pct": -2.59653179624549,
     "peak": 5076.7203404422935,
-    "open_positions": 0,
+    "open_positions": 1,
     "max_positions": 4
   },
-  "positions": {},
+  "positions": {
+    "SOL": {
+      "direction": "SHORT",
+      "entry_price": 77.4945,
+      "size": 22.322184487455623,
+      "stop_loss": 79.677,
+      "take_profit": 73.1295,
+      "entry_time": "2026-07-23T02:25:04.771887+00:00",
+      "entry_ts": 1784773504.7719,
+      "strategy": "stochastic",
+      "confidence": 0.88,
+      "reason": "Stochastic bearish cross %K 46.2 < %D 54.2 | sentiment: sentiment aligned (-1.00), conf boosted [convergence x2] | lesson_adj: +0.03"
+    }
+  },
   "closed_trades": [
     {
       "pair": "SOL",
@@ -354,16 +367,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-22T11:00:21.058648+00:00",
-      "v": 4834.65,
-      "p": -3.31
-    },
-    {
-      "t": "2026-07-22T11:05:21.554382+00:00",
-      "v": 4835.35,
-      "p": -3.29
-    },
     {
       "t": "2026-07-22T11:10:22.028441+00:00",
       "v": 4833.23,
@@ -1353,13 +1356,23 @@
       "t": "2026-07-23T02:20:02.731559+00:00",
       "v": 4871.82,
       "p": -2.56
+    },
+    {
+      "t": "2026-07-23T02:25:03.553640+00:00",
+      "v": 4870.17,
+      "p": -2.6
+    },
+    {
+      "t": "2026-07-23T02:30:04.236714+00:00",
+      "v": 4871.04,
+      "p": -2.58
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.32,
-      "confidence": 0.84,
+      "score": -0.75,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1367,9 +1380,9 @@
       ],
       "signal_count": 5,
       "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @ValeriusLabs $BTC CVD_4h -64.7M, shorts paying  | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI -7.0% 1h",
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @ValeriusLabs $BTC CVD_4h -64.7M, shorts paying  | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | oi_funding: OI -68.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1378,69 +1391,82 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -7.0% 1h",
-          "weight": 1.26
+          "signal": "OI -68.0% 1h",
+          "weight": 1.44
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 79% bid-weighted (bullish)",
-          "weight": 1.16
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $BTC] @CryptoLifer33 (\ud83d\udc4d4) $BTC ETFs 6th straight day inflows, 10/13 days green [score: 1.6]",
+          "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-23T02:20:02.614449+00:00"
+      "timestamp": "2026-07-23T02:30:04.024746+00:00"
     },
     "ETH": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.16,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udea8 $ETH] @bpaynews AFX Protocol loses $24M in bridge explo",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udea8 $ETH] @bpaynews AFX Protocol loses $24M in bridge explo | oi_funding: OI +9.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +9.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udea8 $ETH] @bpaynews AFX Protocol loses $24M in bridge exploit; Arbitrum bridge safe [score: 1.6]",
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-23T02:20:02.614464+00:00"
+      "timestamp": "2026-07-23T02:30:04.024777+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -1.0,
+      "confidence": 0.74,
       "sources": [
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 61% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI -7.0% 1h",
       "key_signals": [
         {
+          "source": "oi_funding",
+          "signal": "OI -7.0% 1h",
+          "weight": 1.26
+        },
+        {
           "source": "whale_monitor",
-          "signal": "Orderbook 61% bid-weighted (bullish)",
-          "weight": 0.44
+          "signal": "Orderbook 37% bid (ask-heavy, bearish)",
+          "weight": 0.52
         }
       ],
-      "timestamp": "2026-07-23T02:20:02.614472+00:00"
+      "timestamp": "2026-07-23T02:30:04.024794+00:00"
     },
     "HYPE": {
-      "score": 0.01,
-      "confidence": 0.6,
+      "score": -0.39,
+      "confidence": 0.94,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 6,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 7,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udce2 $HYPE] @wallstreetbets (\ud83d\udc4d166 \ud83d\udd048) The next crypto bull m | whale_monitor: Orderbook 62% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udce2 $HYPE] @wallstreetbets (\ud83d\udc4d166 \ud83d\udd048) The next crypto bull m | whale_monitor: Orderbook 15% bid (ask-heavy, bearish) | oi_funding: OI -38.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1453,12 +1479,12 @@
           "weight": 1.52
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udce2 $HYPE] @kaionchain_ HL settles 40%+ on-chain perp vol, $170B+/30d, 100% fee buyback [score: 1.5]",
-          "weight": 1.2
+          "source": "oi_funding",
+          "signal": "OI -38.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-23T02:20:02.614483+00:00"
+      "timestamp": "2026-07-23T02:30:04.024816+00:00"
     }
   },
   "pair_strategies": {
@@ -1636,149 +1662,149 @@
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
-        "text": "**Run Time:** 2026-07-23 10:02:30",
+        "text": "**Run Time:** 2026-07-23 10:21:33",
         "sentiment": 0,
-        "time": "2026-07-23 10:02"
+        "time": "2026-07-23 10:21"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1784772150.4996195"
+        "time": "1784773293.454761"
       }
     ],
     "news_agent": [
       {
         "text": "**Job ID:** 8bd6a73fc440",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
-        "text": "**Run Time:** 2026-07-23 10:08:36",
+        "text": "**Run Time:** 2026-07-23 10:23:19",
         "sentiment": 0,
-        "time": "2026-07-23 10:08"
+        "time": "2026-07-23 10:23"
       },
       {
         "text": "**Schedule:** 7,22,37,52 * * * *",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "Run the news agent script and format breaking news as a Discord message (delivery is handled automatically).",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "**DB FACTS (DO NOT investigate \u2014 these are verified):**",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "- DB path: /Users/mojoai/.hermes/swarm/data/agents.db",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "- Table: crypto_news",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "- Columns: id, title, url, source, published_at, category, impact_rating, affected_tokens, summary, fetched_at, last_reported_at",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "- Date filter: use fetched_at (format: \"2026-04-18 14:52:30\") with SQLite datetime('now','-N minutes')",
@@ -1788,80 +1814,80 @@
       {
         "text": "- The script now does blanket mark-as-reported automatically \u2014 just verify 0 remaining",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "- by_impact in JSON is IN-MEMORY only \u2014 always query DB for actual unreported articles",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "- Ignore empty DBs at ~/.hermes/hermes-agent/news*.db and ~/.hermes/scripts/news*.db \u2014 they're red herrings",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "- notable_keywords dual-pass is REQUIRED \u2014 the classifier misses ~90% of important articles",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "1. **Run scan:** `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/news_agent.py 2>&1`",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "2. **Parse the JSON output** from the script (last JSON block in output).",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "3. **Query DB for unreported articles (DO NOT skip this \u2014 by_impact JSON is misleading):**",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 -c \"",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       },
       {
         "text": "import sqlite3, json, html",
         "sentiment": 0,
-        "time": "1784772516.841211"
+        "time": "1784773399.3556476"
       }
     ],
-    "generated": "2026-07-23T02:20:02.641128Z"
+    "generated": "2026-07-23T02:30:04.071483Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "10:15",
-      "age_minutes": 4,
+      "age_minutes": 14,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "10:02",
-      "age_minutes": 18,
+      "last_run": "10:21",
+      "age_minutes": 9,
       "status": "fresh"
     },
     "news_agent": {
-      "last_run": "10:08",
-      "age_minutes": 11,
+      "last_run": "10:23",
+      "age_minutes": 7,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "09:04",
-      "age_minutes": 76,
+      "age_minutes": 86,
       "status": "fresh"
     },
     "synthesizer": {
       "last_run": "10:15",
-      "age_minutes": 4,
+      "age_minutes": 14,
       "status": "fresh"
     }
   },
@@ -2281,10 +2307,10 @@
     }
   },
   "prices": {
-    "BTC": 65715.5,
-    "ETH": 1925.85,
-    "SOL": 77.6215,
-    "HYPE": 58.6195
+    "BTC": 65696.5,
+    "ETH": 1923.85,
+    "SOL": 77.4555,
+    "HYPE": 58.7005
   },
   "actions": [],
   "ai_history": [
