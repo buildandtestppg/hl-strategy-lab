@@ -1,56 +1,68 @@
 {
   "BTC": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: Whale movement ($91.7M BTC outflow from Kraken) and politica",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: Whale movement ($91.7M BTC outflow from Kraken) and politica | oi_funding: OI -54.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -54.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "Whale movement ($91.7M BTC outflow from Kraken) and political donation angle (Gemini \u2192 Trump PAC $10M BTC) dominate $BTC",
         "weight": 1.0
       }
     ],
-    "timestamp": "2026-07-23T23:00:27.734216+00:00"
+    "timestamp": "2026-07-23T23:05:28.242453+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @BTCsRewards (\ud83d\udc4d39 \ud83d\udd0427) $75 $ETH giveaway \u2014 repos",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @BTCsRewards (\ud83d\udc4d39 \ud83d\udd0427) $75 $ETH giveaway \u2014 repos | oi_funding: OI +14.0% 1h, funding 0.0008%",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @BTCsRewards (\ud83d\udc4d39 \ud83d\udd0427) $75 $ETH giveaway \u2014 repost & reply campaign [score: 3.8]",
         "weight": 2.47
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +14.0% 1h, funding 0.0008%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-23T23:00:27.734231+00:00"
+    "timestamp": "2026-07-23T23:05:28.242487+00:00"
   },
   "SOL": {
-    "score": 0.39,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "whale_monitor"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83e\udd8a $SOL] @cryptorboe $ANSEM (The Black Bull) Solana memeco | whale_monitor: Orderbook 32% bid (ask-heavy, bearish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83e\udd8a $SOL] @cryptorboe $ANSEM (The Black Bull) Solana memeco | whale_monitor: Orderbook 67% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -59,22 +71,36 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 32% bid (ask-heavy, bearish)",
-        "weight": 0.72
+        "signal": "Orderbook 67% bid-weighted (bullish)",
+        "weight": 0.68
       }
     ],
-    "timestamp": "2026-07-23T23:00:27.734243+00:00"
+    "timestamp": "2026-07-23T23:05:28.242504+00:00"
   },
   "HYPE": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 0.53,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-23T23:00:27.734256+00:00"
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI +45.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +45.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
+        "weight": 0.44
+      }
+    ],
+    "timestamp": "2026-07-23T23:05:28.242521+00:00"
   }
 }
