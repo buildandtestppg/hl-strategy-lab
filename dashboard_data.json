@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-23T22:00:21.588251+00:00",
+  "last_update": "2026-07-23T22:05:21.959803+00:00",
   "portfolio": {
-    "value": 4846.93,
+    "value": 4845.82,
     "capital": 4844.69,
     "initial": 5000.0,
-    "pnl": -153.07,
-    "pnl_pct": -3.06,
+    "pnl": -154.18,
+    "pnl_pct": -3.08,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 65112.5,
-    "ETH": 1880.75,
-    "SOL": 75.9565,
-    "HYPE": 57.5585
+    "BTC": 65153.5,
+    "ETH": 1881.65,
+    "SOL": 75.9975,
+    "HYPE": 57.4315
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 76.0345,
-      "current_price": 75.9565,
+      "current_price": 75.9975,
       "size": 30.806548005475175,
-      "unrealized_pnl": 2.24,
-      "unrealized_pnl_pct": 0.1,
+      "unrealized_pnl": 1.12,
+      "unrealized_pnl_pct": 0.05,
       "stop_loss": 77.6145,
       "take_profit": 72.8745,
       "strategy": "stochastic",
       "entry_time": "2026-07-23T16:30:43.423439+00:00",
-      "duration_hours": 5.5,
-      "funding_rate": -0.0013,
-      "unrealized_funding": 0.1671
+      "duration_hours": 5.6,
+      "funding_rate": -0.000123,
+      "unrealized_funding": 0.016
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-23T06:40:32.725838+00:00",
-      "v": 4870.53,
-      "p": -2.59
-    },
     {
       "t": "2026-07-23T06:45:33.133035+00:00",
       "v": 4870.74,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-23T22:00:21.588251+00:00",
       "v": 4846.93,
       "p": -3.06
+    },
+    {
+      "t": "2026-07-23T22:05:21.959803+00:00",
+      "v": 4845.82,
+      "p": -3.08
     }
   ],
   "ai_history": [
@@ -2011,17 +2011,23 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.0,
-      "confidence": 0.3,
+      "score": 0.53,
+      "confidence": 0.6,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @follis_ (\ud83d\udc4d34 \ud83d\udd046) Why I'm bullish on $BTC \u2014 accum",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @follis_ (\ud83d\udc4d34 \ud83d\udd046) Why I'm bullish on $BTC \u2014 accum | oi_funding: OI +22.0% 1h, funding 0.0007%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +22.0% 1h, funding 0.0007%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcb0 $BTC] @follis_ (\ud83d\udc4d34 \ud83d\udd046) Why I'm bullish on $BTC \u2014 accumulation vs distribution, 3 min of alpha [2.7]",
@@ -2033,7 +2039,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-23T22:00:21.410281+00:00"
+      "timestamp": "2026-07-23T22:05:21.844424+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2045,35 +2051,41 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -14.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -5.0% 1h",
-          "weight": 0.9
+          "signal": "OI -14.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-23T22:00:21.410317+00:00"
+      "timestamp": "2026-07-23T22:05:21.844441+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -0.21,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a1 $SOL] @rgr_park @WhiteHouse bidding $JIMOTHY support. C",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @rgr_park @WhiteHouse bidding $JIMOTHY support. C | oi_funding: OI -9.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -9.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\u26a1 $SOL] @rgr_park @WhiteHouse bidding $JIMOTHY support. Consolidate to fill gap & reverse to ATH [1.5]",
           "weight": 0.95
         }
       ],
-      "timestamp": "2026-07-23T22:00:21.410333+00:00"
+      "timestamp": "2026-07-23T22:05:21.844451+00:00"
     },
     "HYPE": {
       "score": -0.38,
@@ -2086,11 +2098,11 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @trackerxHQ @machibigbrother bleeding \u2014 $10.54M  | oi_funding: OI -35.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @trackerxHQ @machibigbrother bleeding \u2014 $10.54M  | oi_funding: OI -30.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -35.0% 1h",
+          "signal": "OI -30.0% 1h",
           "weight": 1.44
         },
         {
@@ -2099,7 +2111,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-23T22:00:21.410350+00:00"
+      "timestamp": "2026-07-23T22:05:21.844459+00:00"
     }
   },
   "config": {
