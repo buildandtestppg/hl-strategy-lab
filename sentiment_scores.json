@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": 0.08,
+    "score": 0.01,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
@@ -10,7 +10,7 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @LIQPRODIGY (\ud83d\udc4d0 \ud83d\udd040) $BTC 4H \u2014 pump target 68,100$ | whale_monitor: Orderbook 70% bid-weighted (bullish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @LIQPRODIGY (\ud83d\udc4d0 \ud83d\udd040) $BTC 4H \u2014 pump target 68,100$ | whale_monitor: Orderbook 63% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -23,15 +23,15 @@
         "weight": 1.1
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 70% bid-weighted (bullish)",
-        "weight": 0.8
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $BTC] $51.3M whale transfer to OKEX \u2014 potential sell pressure incoming",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-23T06:20:30.268046+00:00"
+    "timestamp": "2026-07-23T06:25:30.833533+00:00"
   },
   "ETH": {
-    "score": -1.0,
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -40,28 +40,28 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -16.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +8.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -16.0% 1h",
+        "signal": "OI +8.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-23T06:20:30.268080+00:00"
+    "timestamp": "2026-07-23T06:25:30.833549+00:00"
   },
   "SOL": {
-    "score": 0.39,
+    "score": 0.69,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "oi_funding"
+      "whale_monitor"
     ],
     "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @clicknhack (\ud83d\udc4d1 \ud83d\udd040) Honest update: sales and vol | oi_funding: OI -17.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @clicknhack (\ud83d\udc4d1 \ud83d\udd040) Honest update: sales and vol | whale_monitor: Orderbook 35% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -74,43 +74,36 @@
         "weight": 1.56
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -17.0% 1h",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 35% bid (ask-heavy, bearish)",
+        "weight": 0.6
       }
     ],
-    "timestamp": "2026-07-23T06:20:30.268099+00:00"
+    "timestamp": "2026-07-23T06:25:30.833561+00:00"
   },
   "HYPE": {
-    "score": -0.13,
-    "confidence": 0.84,
+    "score": 1.0,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @BlockFlow_News (\ud83d\udc4d3 \ud83d\udd040) Chinese trader made $60 | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI -42.0% 1h",
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @BlockFlow_News (\ud83d\udc4d3 \ud83d\udd040) Chinese trader made $60",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -42.0% 1h",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @BlockFlow_News (\ud83d\udc4d3 \ud83d\udd040) Chinese trader made $600K+ arbitraging $SKHY across Korean stocks, crypto perps and",
         "weight": 1.04
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
-        "weight": 0.68
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] Cross-asset arbitrage play: $SKHY Korean stock/crypto/ETF gap yielded $600K+",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-23T06:20:30.268123+00:00"
+    "timestamp": "2026-07-23T06:25:30.833567+00:00"
   }
 }
