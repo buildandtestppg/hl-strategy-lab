@@ -1,16 +1,15 @@
 {
   "BTC": {
-    "score": -0.14,
-    "confidence": 0.6,
+    "score": -0.04,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "news_agent"
+      "x_scanner"
     ],
-    "signal_count": 5,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d15 \ud83d\udd041) 793 $BTC ($51.6M) transferr | news_agent: to News Flash**  \ud83d\udd34 **Geopolitical \u2014 CENTCOM strikes Iranian ",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d15 \ud83d\udd041) 793 $BTC ($51.6M) transferr",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -28,7 +27,7 @@
         "weight": 2.24
       }
     ],
-    "timestamp": "2026-07-24T12:40:04.778478+00:00"
+    "timestamp": "2026-07-24T12:45:05.164175+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -48,30 +47,36 @@
         "weight": 1.9
       }
     ],
-    "timestamp": "2026-07-24T12:40:04.778499+00:00"
+    "timestamp": "2026-07-24T12:45:05.164207+00:00"
   },
   "SOL": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 16% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 22% bid (ask-heavy, bearish) | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 16% bid (ask-heavy, bearish)",
-        "weight": 1.36
+        "signal": "Orderbook 22% bid (ask-heavy, bearish)",
+        "weight": 1.12
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -4.0% 1h",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-24T12:40:04.778507+00:00"
+    "timestamp": "2026-07-24T12:45:05.164226+00:00"
   },
   "HYPE": {
-    "score": 0.1,
+    "score": -0.55,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -82,24 +87,24 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @Outcomexyz HIP-4 crosses $350M total volume in  | whale_monitor: Orderbook 19% bid (ask-heavy, bearish) | oi_funding: OI +9.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @Outcomexyz HIP-4 crosses $350M total volume in  | whale_monitor: Orderbook 26% bid (ask-heavy, bearish) | oi_funding: OI -11.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +9.0% 1h, funding 0.0013%",
+        "signal": "OI -11.0% 1h",
         "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 19% bid (ask-heavy, bearish)",
-        "weight": 1.24
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd25 $HYPE] @Outcomexyz HIP-4 crosses $350M total volume in 3 months. Tightest spreads onchain [score: 1.8]",
         "weight": 1.17
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 26% bid (ask-heavy, bearish)",
+        "weight": 0.96
       }
     ],
-    "timestamp": "2026-07-24T12:40:04.778524+00:00"
+    "timestamp": "2026-07-24T12:45:05.164245+00:00"
   }
 }
