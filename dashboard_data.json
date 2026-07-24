@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-24T21:05:03.430583+00:00",
+  "last_update": "2026-07-24T21:10:04.154760+00:00",
   "portfolio": {
-    "value": 4928.8,
+    "value": 4928.92,
     "capital": 4904.21,
     "initial": 5000.0,
-    "pnl": -71.2,
+    "pnl": -71.08,
     "pnl_pct": -1.42,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 64178.5,
-    "ETH": 1859.75,
-    "SOL": 73.7325,
-    "HYPE": 57.8685
+    "BTC": 64157.5,
+    "ETH": 1859.65,
+    "SOL": 73.6135,
+    "HYPE": 57.579
   },
   "positions": {
     "ETH": {
       "direction": "SHORT",
       "entry_price": 1879.25,
-      "current_price": 1859.75,
+      "current_price": 1859.65,
       "size": 1.258966819218492,
-      "unrealized_pnl": 24.6,
+      "unrealized_pnl": 24.71,
       "unrealized_pnl_pct": 1.04,
       "stop_loss": 1917.875,
       "take_profit": 1802.0,
       "strategy": "trend",
       "entry_time": "2026-07-24T11:35:57.998942+00:00",
-      "duration_hours": 9.5,
-      "funding_rate": 0.000211,
-      "unrealized_funding": -0.047
+      "duration_hours": 9.6,
+      "funding_rate": 0.000166,
+      "unrealized_funding": -0.0372
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-24T05:45:15.647156+00:00",
-      "v": 4848.9,
-      "p": -3.02
-    },
     {
       "t": "2026-07-24T05:50:16.007306+00:00",
       "v": 4848.9,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-24T21:05:03.430583+00:00",
       "v": 4928.8,
       "p": -1.42
+    },
+    {
+      "t": "2026-07-24T21:10:04.154760+00:00",
+      "v": 4928.92,
+      "p": -1.42
     }
   ],
   "ai_history": [
@@ -2011,17 +2011,16 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.57,
-      "confidence": 0.5,
+      "score": -1.0,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
-        "whale_monitor"
+        "x_scanner"
       ],
-      "signal_count": 3,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @StockStormX BTC slipped below $64K, $87M liquida | whale_monitor: Orderbook 70% bid-weighted (bullish)",
+      "contradictions": 0,
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @StockStormX BTC slipped below $64K, $87M liquida",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2032,14 +2031,9 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $BTC] @PeoplesReserve (\ud83d\udc4d4 \ud83d\udd042) Don't sell $BTC to buy a home \u2014 post it as pristine collateral with property title. [",
           "weight": 1.23
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 70% bid-weighted (bullish)",
-          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-24T21:05:03.264024+00:00"
+      "timestamp": "2026-07-24T21:10:03.884331+00:00"
     },
     "ETH": {
       "score": 0.0,
@@ -2051,19 +2045,20 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-07-24T21:05:03.264036+00:00"
+      "timestamp": "2026-07-24T21:10:03.884340+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.56,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @ErelMaatita (\ud83d\udd044) Normie supports $Normie token w",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @ErelMaatita (\ud83d\udd044) Normie supports $Normie token w | whale_monitor: Orderbook 21% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2074,21 +2069,27 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @WhaleInsider (\ud83d\udc4d16 \ud83d\udd044) $BROKER @osbroker launched \u2014 first stock trading on Solana with a tweet. [score: 2.1]",
           "weight": 1.68
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 21% bid (ask-heavy, bearish)",
+          "weight": 1.16
         }
       ],
-      "timestamp": "2026-07-24T21:05:03.264049+00:00"
+      "timestamp": "2026-07-24T21:10:03.884354+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $HYPE] @Soka_Data (\ud83d\udc4d2 \ud83d\udd041) $HYPE OI hit ATH $11.3B (up f",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @Soka_Data (\ud83d\udc4d2 \ud83d\udd041) $HYPE OI hit ATH $11.3B (up f | whale_monitor: Orderbook 60% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2099,9 +2100,14 @@
           "source": "x_scanner",
           "signal": "\u2022 [$HYPE OI ATH] @Soka_Data \u2014 $HYPE OI hit ATH $11.3B, gained $0.6B in collateral from USDC changes [score: 1.7]",
           "weight": 1.1
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 60% bid-weighted (bullish)",
+          "weight": 0.4
         }
       ],
-      "timestamp": "2026-07-24T21:05:03.264057+00:00"
+      "timestamp": "2026-07-24T21:10:03.884366+00:00"
     }
   },
   "config": {
