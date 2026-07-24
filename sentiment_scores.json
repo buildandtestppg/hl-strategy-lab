@@ -10,7 +10,7 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC Market] @seth_fin (\ud83d\udc4d13 \ud83d\udd041) MM pumped BTC to 67K to | oi_funding: OI +21.0% 1h, funding 0.0013%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC Market] @seth_fin (\ud83d\udc4d13 \ud83d\udd041) MM pumped BTC to 67K to | oi_funding: OI +35.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -19,7 +19,7 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +21.0% 1h, funding 0.0013%",
+        "signal": "OI +35.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -28,62 +28,64 @@
         "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-24T19:40:54.147736+00:00"
+    "timestamp": "2026-07-24T19:45:54.656342+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 0.05,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a0\ufe0f $ETH Pain Point] @Manu0X51 (\ud83d\udc4d0 \ud83d\udd040) ETH DeFi dominance ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a0\ufe0f $ETH Pain Point] @Manu0X51 (\ud83d\udc4d0 \ud83d\udd040) ETH DeFi dominance  | oi_funding: OI +14.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +14.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a0\ufe0f $ETH Pain Point] @Manu0X51 (\ud83d\udc4d0 \ud83d\udd040) ETH DeFi dominance hits multi-year low at 53% \u2014 Solana/L2s/Robinhood gaining [s",
         "weight": 1.3
       }
     ],
-    "timestamp": "2026-07-24T19:40:54.147753+00:00"
+    "timestamp": "2026-07-24T19:45:54.656361+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
+    "score": 0.0,
+    "confidence": 0.0,
+    "sources": [],
+    "signal_count": 0,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -9.0% 1h",
+    "narrative": "No active signals",
+    "key_signals": [],
+    "timestamp": "2026-07-24T19:45:54.656363+00:00"
+  },
+  "HYPE": {
+    "score": -0.52,
+    "confidence": 0.74,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE RWA] @Sentixeai (\ud83d\udc4d1 \ud83d\udd041) Hyperliquid RWA OI hits n | oi_funding: OI -25.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -9.0% 1h",
+        "signal": "OI -25.0% 1h",
         "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-07-24T19:40:54.147760+00:00"
-  },
-  "HYPE": {
-    "score": -0.21,
-    "confidence": 0.84,
-    "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 5,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE RWA] @Sentixeai (\ud83d\udc4d1 \ud83d\udd041) Hyperliquid RWA OI hits n | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
-    "key_signals": [
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE RWA] @Sentixeai (\ud83d\udc4d1 \ud83d\udd041) Hyperliquid RWA OI hits new ATH, RWA tokens +11%, on-chain value reaches $29B [score:",
@@ -93,13 +95,8 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc9 $HYPE ETF] @Cointurknews (\ud83d\udc4d0 \ud83d\udd040) HYPE ETF posts $1.02M daily net outflow, price dips to $58.78 [score: 1.6]",
         "weight": 1.28
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -6.0% 1h",
-        "weight": 1.08
       }
     ],
-    "timestamp": "2026-07-24T19:40:54.147776+00:00"
+    "timestamp": "2026-07-24T19:45:54.656376+00:00"
   }
 }
