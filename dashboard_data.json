@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-24T11:40:57.916686+00:00",
+  "last_update": "2026-07-24T11:45:58.335617+00:00",
   "portfolio": {
-    "value": 4861.66,
+    "value": 4863.81,
     "capital": 4843.7,
     "initial": 5000.0,
-    "pnl": -138.34,
-    "pnl_pct": -2.77,
+    "pnl": -136.19,
+    "pnl_pct": -2.72,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 64957.5,
-    "ETH": 1878.95,
-    "SOL": 75.1125,
-    "HYPE": 58.4205
+    "BTC": 64900.5,
+    "ETH": 1878.35,
+    "SOL": 75.0715,
+    "HYPE": 58.3615
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 75.6295,
-      "current_price": 75.1125,
+      "current_price": 75.0715,
       "size": 34.17975781797097,
-      "unrealized_pnl": 17.58,
-      "unrealized_pnl_pct": 0.68,
+      "unrealized_pnl": 18.98,
+      "unrealized_pnl_pct": 0.73,
       "stop_loss": 77.048,
       "take_profit": 72.7925,
       "strategy": "stochastic",
       "entry_time": "2026-07-24T09:05:40.259500+00:00",
-      "duration_hours": 2.6,
-      "funding_rate": -0.001365,
-      "unrealized_funding": 0.0907
+      "duration_hours": 2.7,
+      "funding_rate": -0.001373,
+      "unrealized_funding": 0.0941
     },
     "ETH": {
       "direction": "SHORT",
       "entry_price": 1879.25,
-      "current_price": 1878.95,
+      "current_price": 1878.35,
       "size": 1.258966819218492,
-      "unrealized_pnl": 0.38,
-      "unrealized_pnl_pct": 0.02,
+      "unrealized_pnl": 1.14,
+      "unrealized_pnl_pct": 0.05,
       "stop_loss": 1917.875,
       "take_profit": 1802.0,
       "strategy": "trend",
       "entry_time": "2026-07-24T11:35:57.998942+00:00",
-      "duration_hours": 0.1,
+      "duration_hours": 0.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0025
+      "unrealized_funding": -0.0049
     }
   },
   "stats": {
@@ -977,11 +977,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-23T20:20:09.923607+00:00",
-      "v": 4849.85,
-      "p": -3.0
-    },
     {
       "t": "2026-07-23T20:25:10.065081+00:00",
       "v": 4847.06,
@@ -1976,6 +1971,11 @@
       "t": "2026-07-24T11:40:57.916686+00:00",
       "v": 4861.66,
       "p": -2.77
+    },
+    {
+      "t": "2026-07-24T11:45:58.335617+00:00",
+      "v": 4863.81,
+      "p": -2.72
     }
   ],
   "ai_history": [
@@ -2026,18 +2026,24 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.38,
-      "confidence": 0.5,
+      "score": -0.61,
+      "confidence": 0.84,
       "sources": [
         "whale_monitor",
-        "news_agent"
+        "news_agent",
+        "oi_funding"
       ],
-      "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: e:  \ud83d\udcf0 **Crypto News Brief \u2014 Jul 24, 2026 11:23 UTC**  \ud83d\udd34 **Br",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: e:  \ud83d\udcf0 **Crypto News Brief \u2014 Jul 24, 2026 11:23 UTC**  \ud83d\udd34 **Br | oi_funding: OI -10.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -10.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "news_agent",
           "signal": "e:  \ud83d\udcf0 **Crypto News Brief \u2014 Jul 24, 2026 11:23 UTC**  \ud83d\udd34 **Breaking** \u2022 Poolin was bitcoin's biggest mining pool and now ",
@@ -2047,14 +2053,9 @@
           "source": "news_agent",
           "signal": "g.com/softbank-gravis-robotics-ai-acquisition/>  \ud83d\udfe2 **Notable** \u2022 Bitcoin settles near $65,000 as oil's march toward $100",
           "weight": 0.98
-        },
-        {
-          "source": "news_agent",
-          "signal": "000-as-oil-s-march-toward-usd100-fails-to-spook-the-market> \u2022 Bitcoin treasury companies sell up, repay debt, pivot to A",
-          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-24T11:40:57.624305+00:00"
+      "timestamp": "2026-07-24T11:45:58.166257+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2067,7 +2068,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 \ud83d\udcc9 [$ETH] @kay_drake_ (\ud83d\udc4d41 \ud83d\udd041) ETH trades 17% below realize | oi_funding: OI -14.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 \ud83d\udcc9 [$ETH] @kay_drake_ (\ud83d\udc4d41 \ud83d\udd041) ETH trades 17% below realize | oi_funding: OI -8.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2076,11 +2077,11 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -14.0% 1h",
+          "signal": "OI -8.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-24T11:40:57.624342+00:00"
+      "timestamp": "2026-07-24T11:45:58.166284+00:00"
     },
     "SOL": {
       "score": -0.67,
@@ -2104,7 +2105,7 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -29.0% 1h",
+          "signal": "OI -9.0% 1h",
           "weight": 1.44
         },
         {
@@ -2113,7 +2114,7 @@
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-24T11:40:57.624366+00:00"
+      "timestamp": "2026-07-24T11:45:58.166305+00:00"
     },
     "HYPE": {
       "score": 0.02,
@@ -2127,7 +2128,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 \ud83d\udd3b [$HYPE] @denizfunding HYPE rejecting old 4H trendline, - | whale_monitor: Orderbook 26% bid (ask-heavy, bearish) | oi_funding: OI -24.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 \ud83d\udd3b [$HYPE] @denizfunding HYPE rejecting old 4H trendline, - | whale_monitor: Orderbook 26% bid (ask-heavy, bearish) | oi_funding: OI -12.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2145,7 +2146,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-24T11:40:57.624390+00:00"
+      "timestamp": "2026-07-24T11:45:58.166324+00:00"
     }
   },
   "config": {
