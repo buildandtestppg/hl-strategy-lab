@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": -0.23,
-    "confidence": 0.5,
+    "score": -0.75,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @HIT (\ud83d\udc4d42 \ud83d\udd0446) $BTC holds near $65,000 as $800B s | oi_funding: OI +35.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @HIT (\ud83d\udc4d42 \ud83d\udd0446) $BTC holds near $65,000 as $800B s | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -15.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -19,11 +20,16 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +35.0% 1h, funding 0.0013%",
+        "signal": "OI -15.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 70% bid-weighted (bullish)",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-24T06:00:17.509231+00:00"
+    "timestamp": "2026-07-24T06:05:18.261775+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -49,22 +55,21 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-24T06:00:17.509249+00:00"
+    "timestamp": "2026-07-24T06:05:18.261791+00:00"
   },
   "SOL": {
-    "score": 0.25,
-    "confidence": 0.6,
+    "score": 0.11,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "polymarket",
-      "oi_funding"
+      "polymarket"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 2,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @CryptoShivay @Pumpfun users have now paid nearly | whale_monitor: Orderbook 83% bid-weighted (bullish) | polymarket: The Fed path is the dominant signal \u2014 markets are repricing ",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @CryptoShivay @Pumpfun users have now paid nearly | whale_monitor: Orderbook 22% bid (ask-heavy, bearish) | polymarket: The Fed path is the dominant signal \u2014 markets are repricing ",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -72,36 +77,42 @@
         "weight": 2.38
       },
       {
+        "source": "whale_monitor",
+        "signal": "Orderbook 22% bid (ask-heavy, bearish)",
+        "weight": 1.12
+      },
+      {
+        "source": "polymarket",
+        "signal": "The Fed path is the dominant signal \u2014 markets are repricing *against* a hike and *toward* \"something different\" at the n",
+        "weight": 0.78
+      }
+    ],
+    "timestamp": "2026-07-24T06:05:18.261802+00:00"
+  },
+  "HYPE": {
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 85% bid-weighted (bullish) | oi_funding: OI +19.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
         "source": "oi_funding",
-        "signal": "OI -33.0% 1h",
+        "signal": "OI +19.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 83% bid-weighted (bullish)",
-        "weight": 1.32
+        "signal": "Orderbook 85% bid-weighted (bullish)",
+        "weight": 1.4
       }
     ],
-    "timestamp": "2026-07-24T06:00:17.509261+00:00"
-  },
-  "HYPE": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -18.0% 1h",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -18.0% 1h",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-07-24T06:00:17.509267+00:00"
+    "timestamp": "2026-07-24T06:05:18.261811+00:00"
   }
 }
