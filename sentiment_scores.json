@@ -1,95 +1,118 @@
 {
   "BTC": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -0.22,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-24T09:00:38.205554+00:00"
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI -49.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -49.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 73% bid-weighted (bullish)",
+        "weight": 0.92
+      }
+    ],
+    "timestamp": "2026-07-24T09:05:38.753880+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @MaxCrypto (\ud83d\udc4d29 \ud83d\udd043) $6B in shorts liquidate if ET",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @MaxCrypto (\ud83d\udc4d29 \ud83d\udd043) $6B in shorts liquidate if ET | oi_funding: OI -23.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -23.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $ETH] @MaxCrypto (\ud83d\udc4d29 \ud83d\udd043) $6B in shorts liquidate if ETH pumps 15%; max pain is clearly a PUMP right now [2.7]",
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-24T09:00:38.205590+00:00"
+    "timestamp": "2026-07-24T09:05:38.753903+00:00"
   },
   "SOL": {
-    "score": 0.31,
-    "confidence": 0.5,
+    "score": -0.4,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udfe2 $SOL] @Kingfinity PumpSwap at center of Solana memecoin | whale_monitor: Orderbook 33% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe2 $SOL] @Kingfinity PumpSwap at center of Solana memecoin | whale_monitor: Orderbook 19% bid (ask-heavy, bearish) | oi_funding: OI -19.0% 1h",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI -19.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
-        "weight": 0.68
+        "signal": "Orderbook 19% bid (ask-heavy, bearish)",
+        "weight": 1.24
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udfe2 $SOL] @Kingfinity PumpSwap at center of Solana memecoin activity; massive 24h transaction volume on GeckoTerminal [",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7 $SOL] @jamie_ross30 BulkTrade (BULK) Season 1 LIVE on Solana \u2014 fully on-chain perps DEX, sub-50ms matching engine [",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-24T09:00:38.205606+00:00"
+    "timestamp": "2026-07-24T09:05:38.753915+00:00"
   },
   "HYPE": {
-    "score": -0.5,
-    "confidence": 0.3,
+    "score": -0.86,
+    "confidence": 1.0,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: $HYPE showing bearish structure (consecutive red monthly can",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: $HYPE showing bearish structure (consecutive red monthly can | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | oi_funding: OI -30.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -30.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 21% bid (ask-heavy, bearish)",
+        "weight": 1.16
+      },
       {
         "source": "x_scanner",
         "signal": "$HYPE showing bearish structure (consecutive red monthly candles) but massive whale staking ($164M) creates a divergent ",
         "weight": 1.0
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc9 $HYPE] @Satori_btc (\ud83d\udc4d87 \ud83d\udd0423) Bearish setup continues; $HYPE on track for 2nd consecutive red monthly candle [3.5]",
-        "weight": 0.95
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$HYPE] @louisdives (\ud83d\udc4d8 \ud83d\udd042) Whale staked 2.785M $HYPE (~$164M) in 11hrs \u2014 contrarian to VC unstaking narrative [2.1]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-24T09:00:38.205615+00:00"
+    "timestamp": "2026-07-24T09:05:38.753925+00:00"
   }
 }
