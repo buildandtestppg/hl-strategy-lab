@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-24T04:20:05.187784+00:00",
+  "last_update": "2026-07-24T04:25:05.909826+00:00",
   "portfolio": {
     "value": 4848.9,
     "capital": 4848.9,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 65351.5,
-    "ETH": 1878.25,
-    "SOL": 75.6855,
-    "HYPE": 58.309
+    "BTC": 65376.5,
+    "ETH": 1879.85,
+    "SOL": 75.7455,
+    "HYPE": 58.3525
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-23T13:00:17.769840+00:00",
-      "v": 4876.4,
-      "p": -2.47
-    },
     {
       "t": "2026-07-23T13:05:18.143840+00:00",
       "v": 4882.78,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-24T04:20:05.187784+00:00",
       "v": 4848.9,
       "p": -3.02
+    },
+    {
+      "t": "2026-07-24T04:25:05.909826+00:00",
+      "v": 4848.9,
+      "p": -3.02
     }
   ],
   "ai_history": [
@@ -1995,17 +1995,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.05,
-      "confidence": 0.5,
+      "score": -0.01,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @JustinMorganQ8 (\ud83d\udc4d0 \ud83d\udd040) $BTC just reclaimed anot | whale_monitor: Orderbook 39% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @JustinMorganQ8 (\ud83d\udc4d0 \ud83d\udd040) $BTC just reclaimed anot | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -39.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2013,31 +2014,37 @@
           "weight": 1.62
         },
         {
+          "source": "oi_funding",
+          "signal": "OI -39.0% 1h",
+          "weight": 1.44
+        },
+        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcca $BTC] @0xHeatt (\ud83d\udc4d2 \ud83d\udd040) Japan sold US bonds, Korean exchange crashing, US bombed Iran \u2014 but $BTC still holding $65K.",
           "weight": 1.02
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 39% bid (ask-heavy, bearish)",
-          "weight": 0.44
         }
       ],
-      "timestamp": "2026-07-24T04:20:05.000018+00:00"
+      "timestamp": "2026-07-24T04:25:05.741698+00:00"
     },
     "ETH": {
-      "score": 0.45,
-      "confidence": 0.5,
+      "score": -0.04,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $ETH] @cryptoWZRD_ (\ud83d\udc4d2 \ud83d\udd040) ETH closed bearish. Bullish  | polymarket: s:** The Fed path is the dominant signal \u2014 markets are repri",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @cryptoWZRD_ (\ud83d\udc4d2 \ud83d\udd040) ETH closed bearish. Bullish  | polymarket: s:** The Fed path is the dominant signal \u2014 markets are repri | oi_funding: OI -9.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -9.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcca $ETH] @cryptoWZRD_ (\ud83d\udc4d2 \ud83d\udd040) ETH closed bearish. Bullish breakout above $1,940 resistance needed for long. Below = mo",
@@ -2047,18 +2054,13 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcca $ETH] @Cointurknews (\ud83d\udc4d0 \ud83d\udd040) ETH DeFi TVL climbed to 54.39%. Solana at 6.49%. Spot ETH ETF approvals driving institu",
           "weight": 1.01
-        },
-        {
-          "source": "polymarket",
-          "signal": "s:** The Fed path is the dominant signal \u2014 markets are repricing *against* a hike and *toward* \"something different\" at ",
-          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-24T04:20:05.000050+00:00"
+      "timestamp": "2026-07-24T04:25:05.741754+00:00"
     },
     "SOL": {
-      "score": -0.21,
-      "confidence": 0.9,
+      "score": 0.27,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -2066,10 +2068,10 @@
         "oi_funding"
       ],
       "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udea8 $SOL] @Deanrado (\ud83d\udc4d0 \ud83d\udd040) And people are sleeping on $ANS | whale_monitor: Orderbook 12% bid (ask-heavy, bearish) | polymarket: The Fed path is the dominant signal \u2014 markets are repricing ",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udea8 $SOL] @Deanrado (\ud83d\udc4d0 \ud83d\udd040) And people are sleeping on $ANS | whale_monitor: Orderbook 81% bid-weighted (bullish) | polymarket: The Fed path is the dominant signal \u2014 markets are repricing ",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2077,30 +2079,31 @@
           "weight": 2.6
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 12% bid (ask-heavy, bearish)",
-          "weight": 1.52
+          "source": "oi_funding",
+          "signal": "OI -18.0% 1h",
+          "weight": 1.44
         },
         {
-          "source": "oi_funding",
-          "signal": "OI -13.0% 1h",
-          "weight": 1.44
+          "source": "whale_monitor",
+          "signal": "Orderbook 81% bid-weighted (bullish)",
+          "weight": 1.24
         }
       ],
-      "timestamp": "2026-07-24T04:20:05.000077+00:00"
+      "timestamp": "2026-07-24T04:25:05.741775+00:00"
     },
     "HYPE": {
-      "score": 0.49,
-      "confidence": 0.5,
+      "score": 0.94,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 7,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @shash_hoddler (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid was built to | oi_funding: OI -19.0% 1h",
+      "signal_count": 8,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @shash_hoddler (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid was built to | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI +22.0% 1h, funding 0.0011%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2109,7 +2112,7 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -19.0% 1h",
+          "signal": "OI +22.0% 1h, funding 0.0011%",
           "weight": 1.44
         },
         {
@@ -2118,7 +2121,7 @@
           "weight": 1.38
         }
       ],
-      "timestamp": "2026-07-24T04:20:05.000098+00:00"
+      "timestamp": "2026-07-24T04:25:05.741798+00:00"
     }
   },
   "config": {
