@@ -1,18 +1,17 @@
 {
   "BTC": {
-    "score": -0.14,
-    "confidence": 0.6,
+    "score": -0.41,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "news_agent",
-      "oi_funding"
+      "news_agent"
     ],
-    "signal_count": 4,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 2,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @CacheTrading (\ud83d\udc4d6 \ud83d\udd040) $BTC & $ETH 7-Day Liquidat | whale_monitor: Orderbook 60% bid-weighted (bullish) | news_agent: concise report:  \ud83d\udfe1 **Notable** \u2022 Houthi rebels attack Saudi ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @CacheTrading (\ud83d\udc4d6 \ud83d\udd040) $BTC & $ETH 7-Day Liquidat | whale_monitor: Orderbook 75% bid-weighted (bullish) | news_agent: concise report:  \ud83d\udfe1 **Notable** \u2022 Houthi rebels attack Saudi ",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,9 +19,9 @@
         "weight": 1.44
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +10.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 75% bid-weighted (bullish)",
+        "weight": 1.0
       },
       {
         "source": "news_agent",
@@ -30,7 +29,7 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-25T18:40:31.989463+00:00"
+    "timestamp": "2026-07-25T18:45:32.463632+00:00"
   },
   "ETH": {
     "score": -0.03,
@@ -43,11 +42,11 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @CryptoMichNL (\ud83d\udc4d43 \ud83d\udd042) Monitoring $ETH from this  | oi_funding: OI -79.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @CryptoMichNL (\ud83d\udc4d43 \ud83d\udd042) Monitoring $ETH from this  | oi_funding: OI -14.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -79.0% 1h",
+        "signal": "OI -14.0% 1h",
         "weight": 1.44
       },
       {
@@ -56,31 +55,37 @@
         "weight": 1.37
       }
     ],
-    "timestamp": "2026-07-25T18:40:31.989486+00:00"
+    "timestamp": "2026-07-25T18:45:32.463654+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.57,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 39% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -51.0% 1h",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI -51.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
-        "weight": 0.44
+        "signal": "Orderbook 60% bid-weighted (bullish)",
+        "weight": 0.4
       }
     ],
-    "timestamp": "2026-07-25T18:40:31.989494+00:00"
+    "timestamp": "2026-07-25T18:45:32.463663+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.4,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -88,9 +93,9 @@
     ],
     "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @holymolyweb3 DeFi vibes electric! Hyperliquid R | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +19.0% 1h, funding 0.0013%",
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @holymolyweb3 DeFi vibes electric! Hyperliquid R | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -104,10 +109,10 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +19.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-07-25T18:40:31.989509+00:00"
+    "timestamp": "2026-07-25T18:45:32.463677+00:00"
   }
 }
