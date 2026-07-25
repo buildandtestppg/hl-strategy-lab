@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-25T13:00:53.421884+00:00",
+  "last_update": "2026-07-25T13:05:53.872547+00:00",
   "portfolio": {
-    "value": 4922.43,
+    "value": 4920.17,
     "capital": 4896.51,
     "initial": 5000.0,
-    "pnl": -77.57,
-    "pnl_pct": -1.55,
+    "pnl": -79.83,
+    "pnl_pct": -1.6,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 64093.5,
-    "ETH": 1859.25,
-    "SOL": 73.9105,
-    "HYPE": 57.5115
+    "BTC": 64104.5,
+    "ETH": 1861.05,
+    "SOL": 73.9385,
+    "HYPE": 57.5345
   },
   "positions": {
     "ETH": {
       "direction": "SHORT",
       "entry_price": 1879.25,
-      "current_price": 1859.25,
+      "current_price": 1861.05,
       "size": 1.258966819218492,
-      "unrealized_pnl": 25.92,
-      "unrealized_pnl_pct": 1.1,
+      "unrealized_pnl": 23.66,
+      "unrealized_pnl_pct": 1.0,
       "stop_loss": 1917.875,
       "take_profit": 1802.0,
       "strategy": "trend",
       "entry_time": "2026-07-24T11:35:57.998942+00:00",
-      "duration_hours": 25.4,
+      "duration_hours": 25.5,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.7436
+      "unrealized_funding": -0.7468
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-24T21:35:06.619847+00:00",
-      "v": 4934.46,
-      "p": -1.31
-    },
     {
       "t": "2026-07-24T21:40:07.302244+00:00",
       "v": 4938.59,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-25T13:00:53.421884+00:00",
       "v": 4922.43,
       "p": -1.55
+    },
+    {
+      "t": "2026-07-25T13:05:53.872547+00:00",
+      "v": 4920.17,
+      "p": -1.6
     }
   ],
   "ai_history": [
@@ -2011,7 +2011,7 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.32,
+      "score": -0.55,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -2022,7 +2022,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @TedPillows (\ud83d\udc4d126 \ud83d\udd042) Someone tell $BTC that it's | whale_monitor: Orderbook 68% bid-weighted (bullish) | oi_funding: OI +18.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @TedPillows (\ud83d\udc4d126 \ud83d\udd042) Someone tell $BTC that it's | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | oi_funding: OI +35.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2040,34 +2040,56 @@
           "weight": 1.62
         }
       ],
-      "timestamp": "2026-07-25T13:00:53.163679+00:00"
+      "timestamp": "2026-07-25T13:05:53.705211+00:00"
     },
     "ETH": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-25T13:00:53.163690+00:00"
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +8.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +8.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-07-25T13:05:53.705237+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -0.11,
+      "confidence": 0.5,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-25T13:00:53.163692+00:00"
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0005%",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+          "weight": 1.36
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI +6.0% 1h, funding 0.0005%",
+          "weight": 1.08
+        }
+      ],
+      "timestamp": "2026-07-25T13:05:53.705253+00:00"
     },
     "HYPE": {
-      "score": 0.77,
+      "score": 0.75,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -2078,7 +2100,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @GT_Protocol (\ud83d\udc4d60 \ud83d\udd0416) GT runs algo strategies n | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI +9.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @GT_Protocol (\ud83d\udc4d60 \ud83d\udd0416) GT runs algo strategies n | whale_monitor: Orderbook 18% bid (ask-heavy, bearish) | oi_funding: OI +9.0% 1h, funding 0.0006%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2092,11 +2114,11 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +9.0% 1h, funding 0.0013%",
+          "signal": "OI +9.0% 1h, funding 0.0006%",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-25T13:00:53.163719+00:00"
+      "timestamp": "2026-07-25T13:05:53.705272+00:00"
     }
   },
   "config": {
