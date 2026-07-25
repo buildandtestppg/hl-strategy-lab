@@ -1,16 +1,16 @@
 {
   "BTC": {
-    "score": 0.02,
-    "confidence": 0.5,
+    "score": -0.29,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @alanrog3 (\ud83d\udc4d126 \ud83d\udd044) BTC $63.9K, ETH $1.95K \u2014 inst | whale_monitor: Orderbook 74% bid-weighted (bullish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @alanrog3 (\ud83d\udc4d126 \ud83d\udd044) BTC $63.9K, ETH $1.95K \u2014 inst | oi_funding: OI -356.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -18,30 +18,36 @@
         "weight": 3.28
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [$BTC/$ETH] @cryptorover (\ud83d\udc4d33 \ud83d\udd047) BlackRock sells $212M $BTC + $52.8M $ETH \u2014 institutional outflows accelerating [scor",
-        "weight": 1.37
+        "source": "oi_funding",
+        "signal": "OI -356.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [$BTC] @Qrigina (\ud83d\udc4d1 \ud83d\udd041) $MARVIN rug with @tetsuoai \u2014 accountability call for stolen funds [score: 2.1]",
+        "signal": "\u2022 [$BTC/$ETH] @cryptorover (\ud83d\udc4d33 \ud83d\udd047) BlackRock sells $212M $BTC + $52.8M $ETH \u2014 institutional outflows accelerating [scor",
         "weight": 1.37
       }
     ],
-    "timestamp": "2026-07-25T09:00:24.927670+00:00"
+    "timestamp": "2026-07-25T09:05:25.574611+00:00"
   },
   "ETH": {
-    "score": 0.16,
-    "confidence": 0.3,
+    "score": -0.27,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH] @cryptogoos (\ud83d\udc4d54 \ud83d\udd043) Robinhood Chain fastest blockc",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @cryptogoos (\ud83d\udc4d54 \ud83d\udd043) Robinhood Chain fastest blockc | oi_funding: OI -15.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -15.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$ETH] @cryptogoos (\ud83d\udc4d54 \ud83d\udd043) Robinhood Chain fastest blockchain to 100M transactions \u2014 bullish for ETH ecosystem [score",
@@ -53,32 +59,40 @@
         "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-25T09:00:24.927715+00:00"
+    "timestamp": "2026-07-25T09:05:25.574648+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "whale_monitor"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-25T09:00:24.927721+00:00"
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 91% bid-weighted (bullish)",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 91% bid-weighted (bullish)",
+        "weight": 1.64
+      }
+    ],
+    "timestamp": "2026-07-25T09:05:25.574662+00:00"
   },
   "HYPE": {
-    "score": -0.55,
+    "score": -0.68,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @LLuciano_BTC (\ud83d\udc4d461 \ud83d\udd0412) 74K traders liquidated  | whale_monitor: Orderbook 78% bid-weighted (bullish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @LLuciano_BTC (\ud83d\udc4d461 \ud83d\udd0412) 74K traders liquidated  | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -86,11 +100,11 @@
         "weight": 3.84
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 78% bid-weighted (bullish)",
-        "weight": 1.12
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-25T09:00:24.927740+00:00"
+    "timestamp": "2026-07-25T09:05:25.574677+00:00"
   }
 }
