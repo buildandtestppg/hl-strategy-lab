@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-07-26T01:05:17.566972+00:00",
+  "last_update": "2026-07-26T01:10:18.423997+00:00",
   "portfolio": {
-    "value": 4896.99,
+    "value": 4895.12,
     "capital": 4880.32,
     "initial": 5000.0,
-    "pnl": -103.01,
-    "pnl_pct": -2.06,
+    "pnl": -104.88,
+    "pnl_pct": -2.1,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 64455.5,
-    "ETH": 1878.65,
-    "SOL": 74.7165,
-    "HYPE": 58.2135
+    "BTC": 64445.5,
+    "ETH": 1878.75,
+    "SOL": 74.6865,
+    "HYPE": 58.1415
   },
   "positions": {
     "ETH": {
       "direction": "SHORT",
       "entry_price": 1879.25,
-      "current_price": 1878.65,
+      "current_price": 1878.75,
       "size": 1.258966819218492,
-      "unrealized_pnl": 1.86,
-      "unrealized_pnl_pct": 0.08,
+      "unrealized_pnl": 1.74,
+      "unrealized_pnl_pct": 0.07,
       "stop_loss": 1917.875,
       "take_profit": 1802.0,
       "strategy": "trend",
       "entry_time": "2026-07-24T11:35:57.998942+00:00",
-      "duration_hours": 37.5,
+      "duration_hours": 37.6,
       "funding_rate": 0.00125,
-      "unrealized_funding": -1.1083
+      "unrealized_funding": -1.1109
     },
     "SOL": {
       "direction": "LONG",
       "entry_price": 74.4605,
-      "current_price": 74.7165,
+      "current_price": 74.6865,
       "size": 58.28885718088381,
-      "unrealized_pnl": 14.81,
-      "unrealized_pnl_pct": 0.34,
+      "unrealized_pnl": 13.06,
+      "unrealized_pnl_pct": 0.3,
       "stop_loss": 73.62125,
       "take_profit": 76.139,
       "strategy": "stochastic",
       "entry_time": "2026-07-25T23:05:03.685055+00:00",
-      "duration_hours": 2.0,
+      "duration_hours": 2.1,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1091
+      "unrealized_funding": 0.1136
     }
   },
   "stats": {
@@ -977,11 +977,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-25T09:45:30.442912+00:00",
-      "v": 4931.34,
-      "p": -1.37
-    },
     {
       "t": "2026-07-25T09:50:31.094701+00:00",
       "v": 4930.24,
@@ -1976,6 +1971,11 @@
       "t": "2026-07-26T01:05:17.566972+00:00",
       "v": 4896.99,
       "p": -2.06
+    },
+    {
+      "t": "2026-07-26T01:10:18.423997+00:00",
+      "v": 4895.12,
+      "p": -2.1
     }
   ],
   "ai_history": [
@@ -2026,18 +2026,19 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.92,
-      "confidence": 0.84,
+      "score": 0.41,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
         "whale_monitor",
+        "polymarket",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Cointelegraph (\ud83d\udc4d22 \ud83d\udd043) Bitdeer mined a record-br | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +10.0% 1h, funding 0.0013%",
+      "signal_count": 6,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Cointelegraph (\ud83d\udc4d22 \ud83d\udd043) Bitdeer mined a record-br | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | polymarket: ** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2055,27 +2056,38 @@
           "weight": 1.1
         }
       ],
-      "timestamp": "2026-07-26T01:05:17.417389+00:00"
+      "timestamp": "2026-07-26T01:10:18.125872+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -0.03,
+      "confidence": 0.5,
       "sources": [
+        "polymarket",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 5,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +19.0% 1h, funding 0.0013%",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: mechanical) - Reach $67.5K in July: 27.5% (+5.0pp) - Reach $ | oi_funding: OI +19.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI +19.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "polymarket",
+          "signal": "mechanical) - Reach $67.5K in July: 27.5% (+5.0pp) - Reach $70K in July: 6.9% | $80K: 0.4% - Dip to $55K by Dec 31: 50.5",
+          "weight": 0.78
+        },
+        {
+          "source": "polymarket",
+          "signal": "Price Targets (\ud83d\udcc5 expiry)** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$2,000 on July 27: 31.5% (+7.0pp) - S",
+          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-26T01:05:17.417406+00:00"
+      "timestamp": "2026-07-26T01:10:18.125895+00:00"
     },
     "SOL": {
       "score": 0.48,
@@ -2106,7 +2118,7 @@
           "weight": 1.3
         }
       ],
-      "timestamp": "2026-07-26T01:05:17.417417+00:00"
+      "timestamp": "2026-07-26T01:10:18.125907+00:00"
     },
     "HYPE": {
       "score": 0.63,
@@ -2138,7 +2150,7 @@
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-26T01:05:17.417428+00:00"
+      "timestamp": "2026-07-26T01:10:18.125917+00:00"
     }
   },
   "config": {
