@@ -1,17 +1,18 @@
 {
   "BTC": {
-    "score": 0.23,
-    "confidence": 0.84,
+    "score": -0.11,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 5,
+    "signal_count": 6,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @KillaXBT (\ud83d\udc4d112 \ud83d\udd047) \"Oh you thought I was joking? | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | polymarket: ** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @KillaXBT (\ud83d\udc4d112 \ud83d\udd047) \"Oh you thought I was joking? | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | polymarket: ** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -19,30 +20,36 @@
         "weight": 1.95
       },
       {
+        "source": "oi_funding",
+        "signal": "OI -33.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $BTC] @BitImmortal (\ud83d\udc4d8) Spot ETFs now own 9% of total $BTC supply [score: 1.8]",
         "weight": 1.17
-      },
-      {
-        "source": "polymarket",
-        "signal": "** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$2,000 on July 27: 31.5% (+7.0pp) - Sub-$1,700: <1% (negligib",
-        "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-26T05:00:44.878237+00:00"
+    "timestamp": "2026-07-26T05:05:45.485967+00:00"
   },
   "ETH": {
-    "score": -0.5,
-    "confidence": 0.3,
+    "score": -0.03,
+    "confidence": 0.5,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 5,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: mechanical) - Reach $67.5K in July: 27.5% (+5.0pp) - Reach $",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: mechanical) - Reach $67.5K in July: 27.5% (+5.0pp) - Reach $ | oi_funding: OI +17.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +17.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "polymarket",
         "signal": "mechanical) - Reach $67.5K in July: 27.5% (+5.0pp) - Reach $70K in July: 6.9% | $80K: 0.4% - Dip to $55K by Dec 31: 50.5",
@@ -52,48 +59,55 @@
         "source": "polymarket",
         "signal": "Price Targets (\ud83d\udcc5 expiry)** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$2,000 on July 27: 31.5% (+7.0pp) - S",
         "weight": 0.78
-      },
-      {
-        "source": "polymarket",
-        "signal": "nario fading - Fed \"triple pause\": +5.9pp \u2192 strong conviction on extended hold - ETH $1,700\u2013$1,800 bucket: -8.0pp \u2192 spot",
-        "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-26T05:00:44.878257+00:00"
+    "timestamp": "2026-07-26T05:05:45.485987+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.14,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 64% bid-weighted (bullish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 64% bid-weighted (bullish)",
-        "weight": 0.56
-      }
-    ],
-    "timestamp": "2026-07-26T05:00:44.878264+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
-    "confidence": 0.74,
-    "sources": [
-      "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 77% bid-weighted (bullish) | oi_funding: OI -24.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -24.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 77% bid-weighted (bullish)",
+        "weight": 1.08
+      }
+    ],
+    "timestamp": "2026-07-26T05:05:45.485995+00:00"
+  },
+  "HYPE": {
+    "score": 0.5,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @mm_bingbing (\ud83d\udc4d5) Next-gen onchain trading via p | oi_funding: OI +6.0% 1h, funding 0.0002%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @mm_bingbing (\ud83d\udc4d5) Next-gen onchain trading via p | whale_monitor: Orderbook 72% bid-weighted (bullish) | oi_funding: OI -9.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -9.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @mm_bingbing (\ud83d\udc4d5) Next-gen onchain trading via plain human language instead of K-line charts [score: 2.2]",
@@ -103,13 +117,8 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Henrik_on_HL (\ud83d\udc4d52) \"I've read bad takes about Hyperliquid but this is probably the worst one\" [score: 2.1]",
         "weight": 1.37
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI +6.0% 1h, funding 0.0002%",
-        "weight": 1.08
       }
     ],
-    "timestamp": "2026-07-26T05:00:44.878276+00:00"
+    "timestamp": "2026-07-26T05:05:45.486005+00:00"
   }
 }
