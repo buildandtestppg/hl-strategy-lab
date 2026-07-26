@@ -1,36 +1,49 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 0.6,
+    "confidence": 0.84,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 39% bid (ask-heavy, bearish)",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | news_agent: offering new investment pathways and challenges. \ud83d\udd17 [Crypto B | oi_funding: OI +19.0% 1h, funding 0.0004%",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI +19.0% 1h, funding 0.0004%",
+        "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "offering new investment pathways and challenges. \ud83d\udd17 [Crypto Briefing](https://cryptobriefing.com/brazil-etf-market-triple",
+        "weight": 0.98
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
-        "weight": 0.44
+        "signal": "Orderbook 31% bid (ask-heavy, bearish)",
+        "weight": 0.76
       }
     ],
-    "timestamp": "2026-07-26T13:20:45.488057+00:00"
+    "timestamp": "2026-07-26T13:25:46.071242+00:00"
   },
   "ETH": {
-    "score": -0.27,
-    "confidence": 0.5,
+    "score": -0.48,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $ETH] @SatoshiOwl (\ud83d\udc4d36 \ud83d\udd0413) Most people massively under | polymarket: 31: 35.0% (flat)  ### ETH Price Context (expiry targets, \ud83d\udcc5) ",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @SatoshiOwl (\ud83d\udc4d36 \ud83d\udd0413) Most people massively under | polymarket: 31: 35.0% (flat)  ### ETH Price Context (expiry targets, \ud83d\udcc5)  | oi_funding: OI -39.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -43,50 +56,46 @@
         "weight": 1.56
       },
       {
-        "source": "polymarket",
-        "signal": "31: 35.0% (flat)  ### ETH Price Context (expiry targets, \ud83d\udcc5) - ETH reach $2,000 in July: **30.5%** (+10.0pp \u2014 expiry-driv",
-        "weight": 0.96
+        "source": "oi_funding",
+        "signal": "OI -39.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-26T13:20:45.488081+00:00"
+    "timestamp": "2026-07-26T13:25:46.071266+00:00"
   },
   "SOL": {
-    "score": 0.43,
-    "confidence": 0.5,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @lifeo22618053 (\ud83d\udc4d2) Still believe SY and Data Tea | whale_monitor: Orderbook 33% bid (ask-heavy, bearish)",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\u26a1 $SOL] @lifeo22618053 (\ud83d\udc4d2) Still believe SY and Data Team will pull off dramatic comeback. Even Solana had tough fir",
-        "weight": 1.69
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
-        "weight": 0.68
-      }
-    ],
-    "timestamp": "2026-07-26T13:20:45.488092+00:00"
-  },
-  "HYPE": {
     "score": 1.0,
     "confidence": 0.3,
     "sources": [
       "x_scanner"
     ],
-    "signal_count": 3,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a1 $HYPE] @SageWhale (\ud83d\udc4d4) Another CEX shutdown \u2014 BitMEX, B",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a1 $SOL] @lifeo22618053 (\ud83d\udc4d2) Still believe SY and Data Tea",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\u26a1 $SOL] @lifeo22618053 (\ud83d\udc4d2) Still believe SY and Data Team will pull off dramatic comeback. Even Solana had tough fir",
+        "weight": 1.69
+      }
+    ],
+    "timestamp": "2026-07-26T13:25:46.071275+00:00"
+  },
+  "HYPE": {
+    "score": 0.45,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @SageWhale (\ud83d\udc4d4) Another CEX shutdown \u2014 BitMEX, B | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI -8.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -104,6 +113,6 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-07-26T13:20:45.488100+00:00"
+    "timestamp": "2026-07-26T13:25:46.071287+00:00"
   }
 }
