@@ -1,29 +1,23 @@
 {
   "BTC": {
-    "score": 0.05,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.3,
     "sources": [
-      "whale_monitor",
-      "oi_funding"
+      "whale_monitor"
     ],
-    "signal_count": 2,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
+    "contradictions": 0,
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 84% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 80% bid-weighted (bullish)",
-        "weight": 1.2
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -6.0% 1h",
-        "weight": 1.08
+        "signal": "Orderbook 84% bid-weighted (bullish)",
+        "weight": 1.36
       }
     ],
-    "timestamp": "2026-07-26T15:00:57.537125+00:00"
+    "timestamp": "2026-07-26T15:05:57.984810+00:00"
   },
   "ETH": {
     "score": -0.1,
@@ -37,11 +31,11 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @SatoshiOwl (\ud83d\udc4d36 \ud83d\udd0413) I still think most people are | polymarket: 31: 35.0% (flat)  ### ETH Price Context (expiry targets, \ud83d\udcc5)  | oi_funding: OI +48.0% 1h, funding 0.0013%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @SatoshiOwl (\ud83d\udc4d36 \ud83d\udd0413) I still think most people are | polymarket: 31: 35.0% (flat)  ### ETH Price Context (expiry targets, \ud83d\udcc5)  | oi_funding: OI +34.0% 1h, funding 0.0011%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +48.0% 1h, funding 0.0013%",
+        "signal": "OI +34.0% 1h, funding 0.0011%",
         "weight": 1.44
       },
       {
@@ -55,58 +49,57 @@
         "weight": 0.96
       }
     ],
-    "timestamp": "2026-07-26T15:00:57.537156+00:00"
+    "timestamp": "2026-07-26T15:05:57.984853+00:00"
   },
   "SOL": {
     "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "oi_funding"
+      "whale_monitor"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -13.0% 1h",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 33% bid (ask-heavy, bearish)",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI -13.0% 1h",
-        "weight": 1.44
+        "source": "whale_monitor",
+        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
+        "weight": 0.68
       }
     ],
-    "timestamp": "2026-07-26T15:00:57.537165+00:00"
+    "timestamp": "2026-07-26T15:05:57.984886+00:00"
   },
   "HYPE": {
     "score": -1.0,
-    "confidence": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor",
-      "oi_funding"
+      "whale_monitor"
     ],
-    "signal_count": 4,
+    "signal_count": 3,
     "convergence": true,
-    "convergence_strength": 3,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [$HYPE] @joinautomatic (\ud83d\udc4d0 \ud83d\udd040) BREAKING: A 9-figure Axios- | whale_monitor: Orderbook 25% bid (ask-heavy, bearish) | oi_funding: OI -36.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @joinautomatic (\ud83d\udc4d0 \ud83d\udd040) BREAKING: A 9-figure Axios- | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -36.0% 1h",
-        "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 25% bid (ask-heavy, bearish)",
-        "weight": 1.0
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @joinautomatic (\ud83d\udc4d0 \ud83d\udd040) BREAKING: A 9-figure Axios-linked insider trader on Hyperliquid just opened a massive o",
         "weight": 0.65
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$HYPE] BREAKING: A 9-figure Axios-linked insider trader on Hyperliquid just opened a massive oil short position hours",
+        "weight": 0.65
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 38% bid (ask-heavy, bearish)",
+        "weight": 0.48
       }
     ],
-    "timestamp": "2026-07-26T15:00:57.537180+00:00"
+    "timestamp": "2026-07-26T15:05:57.984934+00:00"
   }
 }
