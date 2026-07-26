@@ -11,25 +11,25 @@
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 14% bid (ask-heavy, bearish) | polymarket: ** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$ | oi_funding: OI -17.0% 1h",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | polymarket: ** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$ | oi_funding: OI -8.0% 1h",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 14% bid (ask-heavy, bearish)",
-        "weight": 1.44
-      },
-      {
         "source": "oi_funding",
-        "signal": "OI -17.0% 1h",
+        "signal": "OI -8.0% 1h",
         "weight": 1.44
       },
       {
         "source": "polymarket",
         "signal": "** - $1,800\u2013$1,900 on July 27: **60.0%** (-3.5pp) - $1,900\u2013$2,000 on July 27: 31.5% (+7.0pp) - Sub-$1,700: <1% (negligib",
         "weight": 0.78
+      },
+      {
+        "source": "polymarket",
+        "signal": "engthening (+5.3pp). This is risk-neutral to slightly risk-on for crypto, as a hold removes near-term rate-hike pressure",
+        "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-26T04:20:40.556896+00:00"
+    "timestamp": "2026-07-26T04:25:41.031039+00:00"
   },
   "ETH": {
     "score": -0.76,
@@ -42,11 +42,11 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: mechanical) - Reach $67.5K in July: 27.5% (+5.0pp) - Reach $ | oi_funding: OI -10.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: mechanical) - Reach $67.5K in July: 27.5% (+5.0pp) - Reach $ | oi_funding: OI -8.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -10.0% 1h",
+        "signal": "OI -8.0% 1h",
         "weight": 1.44
       },
       {
@@ -60,46 +60,70 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-07-26T04:20:40.556929+00:00"
+    "timestamp": "2026-07-26T04:25:41.031063+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.72,
+    "confidence": 0.84,
     "sources": [
+      "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +22.0% 1h, funding 0.0013%",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @CryptoCurb (\ud83d\udc4d10 \ud83d\udd041) $2.25 BILLION USDC MINTED ON | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $SOL] @CryptoCurb (\ud83d\udc4d10 \ud83d\udd041) $2.25 BILLION USDC MINTED ON SOLANA LAST WEEK! #SOLANA [score: 3.0]",
+        "weight": 1.95
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 79% bid-weighted (bullish)",
+        "weight": 1.16
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -4.0% 1h",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-07-26T04:25:41.031075+00:00"
+  },
+  "HYPE": {
+    "score": 0.2,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 8,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @mm_bingbing (\ud83d\udc4d4) Next-gen on-chain trading = pl | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI -11.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +22.0% 1h, funding 0.0013%",
+        "signal": "OI -11.0% 1h",
         "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-07-26T04:20:40.556943+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 66% bid-weighted (bullish)",
-    "key_signals": [
+      },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 66% bid-weighted (bullish)",
-        "weight": 0.64
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @mm_bingbing (\ud83d\udc4d4) Next-gen on-chain trading = plain human language, not complex K-line charts [score: 2.1]",
+        "weight": 1.37
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Cryptonesia_ID (\ud83d\udc4d2) Whale deposits & stakes 2.93M $HYPE (~$172M) to Hyperliquid via 19 wallets [score: 1.6]",
+        "weight": 1.28
       }
     ],
-    "timestamp": "2026-07-26T04:20:40.556954+00:00"
+    "timestamp": "2026-07-26T04:25:41.031087+00:00"
   }
 }
