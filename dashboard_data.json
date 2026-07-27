@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-27T03:00:22.566232+00:00",
+  "last_update": "2026-07-27T03:05:22.629422+00:00",
   "portfolio": {
     "value": 4868.85,
     "capital": 4868.85,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 65147.5,
-    "ETH": 1942.95,
-    "SOL": 76.4205,
-    "HYPE": 59.5765
+    "BTC": 65186.5,
+    "ETH": 1942.65,
+    "SOL": 76.367,
+    "HYPE": 59.5215
   },
   "positions": {},
   "stats": {
@@ -26,9 +26,7 @@
     "worst_trade": -50.61,
     "total_realized_pnl": 67.77
   },
-  "actions": [
-    "\ud83e\udde0 ETH: TA signal LONG blocked by sentiment overlay"
-  ],
+  "actions": [],
   "closed_trades": [
     {
       "pair": "ETH",
@@ -948,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-26T11:40:33.340139+00:00",
-      "v": 4857.79,
-      "p": -2.84
-    },
     {
       "t": "2026-07-26T11:45:33.984074+00:00",
       "v": 4862.03,
@@ -1947,6 +1940,11 @@
       "t": "2026-07-27T03:00:22.566232+00:00",
       "v": 4868.85,
       "p": -2.62
+    },
+    {
+      "t": "2026-07-27T03:05:22.629422+00:00",
+      "v": 4868.85,
+      "p": -2.62
     }
   ],
   "ai_history": [
@@ -1998,43 +1996,48 @@
   "sentiment": {
     "BTC": {
       "score": 1.0,
-      "confidence": 0.74,
+      "confidence": 1.0,
       "sources": [
+        "whale_monitor",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | polymarket: entiment-driven dramatic shifts. Fed firmly expects no chang | oi_funding: OI +15.0% 1h, funding 0.0012%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | whale_monitor: Orderbook 82% bid-weighted (bullish) | polymarket: entiment-driven dramatic shifts. Fed firmly expects no chang | oi_funding: OI +4.0% 1h, funding 0.0012%",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI +15.0% 1h, funding 0.0012%",
-          "weight": 1.44
+          "source": "whale_monitor",
+          "signal": "Orderbook 82% bid-weighted (bullish)",
+          "weight": 1.28
         },
         {
           "source": "polymarket",
           "signal": "entiment-driven dramatic shifts. Fed firmly expects no change in July (80%), with September becoming the live debate (hi",
           "weight": 0.78
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI +4.0% 1h, funding 0.0012%",
+          "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-27T03:00:22.099521+00:00"
+      "timestamp": "2026-07-27T03:05:22.490157+00:00"
     },
     "ETH": {
-      "score": -0.43,
-      "confidence": 1.0,
+      "score": -0.23,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
-        "polymarket",
-        "oi_funding"
+        "polymarket"
       ],
-      "signal_count": 6,
-      "convergence": true,
-      "convergence_strength": 3,
+      "signal_count": 5,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @y_cryptoanalyst (\ud83d\udc4d2) FWA (Fake World Assets) no | polymarket: ** \u2022 Above $1,800: **99.4%** \u2022 Reach $2,000 in July: **59.5% | oi_funding: OI -55.0% 1h",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @y_cryptoanalyst (\ud83d\udc4d2) FWA (Fake World Assets) no | polymarket: ** \u2022 Above $1,800: **99.4%** \u2022 Reach $2,000 in July: **59.5%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2052,7 +2055,7 @@
           "weight": 1.52
         }
       ],
-      "timestamp": "2026-07-27T03:00:22.099567+00:00"
+      "timestamp": "2026-07-27T03:05:22.490181+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -2065,7 +2068,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Humanevolvd (\ud83d\udc4d10 \ud83d\udd049) BillyM2k claimed another 7 | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Humanevolvd (\ud83d\udc4d10 \ud83d\udd049) BillyM2k claimed another 7 | whale_monitor: Orderbook 63% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2074,23 +2077,31 @@
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 75% bid-weighted (bullish)",
-          "weight": 1.0
+          "signal": "Orderbook 63% bid-weighted (bullish)",
+          "weight": 0.52
         }
       ],
-      "timestamp": "2026-07-27T03:00:22.099676+00:00"
+      "timestamp": "2026-07-27T03:05:22.490191+00:00"
     },
     "HYPE": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-27T03:00:22.099685+00:00"
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +5.0% 1h, funding 0.0013%",
+          "weight": 0.9
+        }
+      ],
+      "timestamp": "2026-07-27T03:05:22.490197+00:00"
     }
   },
   "config": {
