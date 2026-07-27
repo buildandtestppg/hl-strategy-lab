@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-27T21:40:31.438360+00:00",
+  "last_update": "2026-07-27T21:45:31.745336+00:00",
   "portfolio": {
     "value": 4807.78,
     "capital": 4801.36,
@@ -9,10 +9,10 @@
     "open_positions": 1
   },
   "prices": {
-    "BTC": 64786.5,
-    "ETH": 1941.75,
+    "BTC": 64787.5,
+    "ETH": 1941.45,
     "SOL": 75.5305,
-    "HYPE": 56.7985
+    "HYPE": 56.7435
   },
   "positions": {
     "SOL": {
@@ -27,8 +27,8 @@
       "strategy": "stochastic",
       "entry_time": "2026-07-27T16:30:57.122997+00:00",
       "duration_hours": 5.2,
-      "funding_rate": -0.000482,
-      "unrealized_funding": 0.0482
+      "funding_rate": -0.000499,
+      "unrealized_funding": 0.0507
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-27T06:20:44.509425+00:00",
-      "v": 4872.39,
-      "p": -2.55
-    },
     {
       "t": "2026-07-27T06:25:44.915743+00:00",
       "v": 4870.87,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-27T21:40:31.438360+00:00",
       "v": 4807.78,
       "p": -3.84
+    },
+    {
+      "t": "2026-07-27T21:45:31.745336+00:00",
+      "v": 4807.78,
+      "p": -3.84
     }
   ],
   "ai_history": [
@@ -2011,55 +2011,61 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.55,
+      "confidence": 0.5,
       "sources": [
-        "oi_funding"
+        "x_scanner",
+        "whale_monitor"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -12.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @AroonUp (\ud83d\udc4d0 \ud83d\udd042) Bullish trend consolidation \u2014 BT | whale_monitor: Orderbook 40% bid (ask-heavy, bearish)",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI -12.0% 1h",
-          "weight": 1.44
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $BTC] @AroonUp (\ud83d\udc4d0 \ud83d\udd042) Bullish trend consolidation \u2014 BTC tested $65.5k, settling near $64,800. BlackRock $IBIT firm",
+          "weight": 1.36
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 40% bid (ask-heavy, bearish)",
+          "weight": 0.4
         }
       ],
-      "timestamp": "2026-07-27T21:40:31.210362+00:00"
+      "timestamp": "2026-07-27T21:45:31.469695+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.59,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @BMNRTracker (\ud83d\udc4d97 \ud83d\udd048) $ETH +23% past month, $BMNR | oi_funding: OI +9.0% 1h, funding 0.0013%",
+      "signal_count": 4,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @AshCrypto (\ud83d\udc4d215 \ud83d\udd0429) $ETH just broke an 11-month | oi_funding: OI -22.0% 1h",
       "key_signals": [
         {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @AshCrypto (\ud83d\udc4d215 \ud83d\udd0429) $ETH just broke an 11-month downtrend. Bullish for Altcoins. [score: 3.5]",
+          "weight": 2.8
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @MoneymindF (\ud83d\udc4d0 \ud83d\udd040) $ETH tapped $1,970 two-month high, +30% in 30 days. ETH ETFs pulled $104M last week, 3x B",
+          "weight": 1.62
+        },
+        {
           "source": "oi_funding",
-          "signal": "OI +9.0% 1h, funding 0.0013%",
+          "signal": "OI -22.0% 1h",
           "weight": 1.44
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $ETH] @BMNRTracker (\ud83d\udc4d97 \ud83d\udd048) $ETH +23% past month, $BMNR +33%, buybacks driving investor alpha [4.4]",
-          "weight": 0.8
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [$ETH] @BMNRTracker (\ud83d\udc4d97 \ud83d\udcac8) $ETH +23% monthly, buyback tokens outperforming [4.4]",
-          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-27T21:40:31.210395+00:00"
+      "timestamp": "2026-07-27T21:45:31.469733+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -2072,46 +2078,46 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI -38.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | oi_funding: OI -43.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -38.0% 1h",
+          "signal": "OI -43.0% 1h",
           "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 38% bid (ask-heavy, bearish)",
-          "weight": 0.48
+          "signal": "Orderbook 31% bid (ask-heavy, bearish)",
+          "weight": 0.76
         }
       ],
-      "timestamp": "2026-07-27T21:40:31.210407+00:00"
+      "timestamp": "2026-07-27T21:45:31.469750+00:00"
     },
     "HYPE": {
-      "score": -0.29,
-      "confidence": 0.5,
+      "score": -1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
         "oi_funding"
       ],
       "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @CaliBTC_ (\ud83d\udc4d0 \ud83d\udd040) TxFlow: fair launch, no VCs,  | oi_funding: OI -35.0% 1h",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @Powviewdotcom (\ud83d\udc4d0 \ud83d\udd040) WHALE ALERT: $126.8M short  | oi_funding: OI -63.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -35.0% 1h",
+          "signal": "OI -63.0% 1h",
           "weight": 1.44
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @CaliBTC_ (\ud83d\udc4d0 \ud83d\udd040) TxFlow: fair launch, no VCs, 2yr+ lock, Hyperliquid volume ambition [3.5]",
-          "weight": 0.8
+          "signal": "\u2022 [$HYPE] @Powviewdotcom (\ud83d\udc4d0 \ud83d\udd040) WHALE ALERT: $126.8M short ETH, $94.2M short BTC, $51.7M short HYPE \u2014 all on HL top acc",
+          "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-27T21:40:31.210416+00:00"
+      "timestamp": "2026-07-27T21:45:31.469759+00:00"
     }
   },
   "config": {
