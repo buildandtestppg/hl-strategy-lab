@@ -1,18 +1,17 @@
 {
   "BTC": {
-    "score": 0.03,
-    "confidence": 0.6,
+    "score": -0.12,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "news_agent",
-      "oi_funding"
+      "news_agent"
     ],
-    "signal_count": 6,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 2,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @CryptoKing4Ever (\ud83d\udc4d29 \ud83d\udd0412) BTC liquidation heatma | whale_monitor: Orderbook 75% bid-weighted (bullish) | news_agent: $12B treasury `ETH` \u2022 Wavebridge \u00d7 Jito Foundation MOU for i",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @CryptoKing4Ever (\ud83d\udc4d29 \ud83d\udd0412) BTC liquidation heatma | whale_monitor: Orderbook 14% bid (ask-heavy, bearish) | news_agent: $12B treasury `ETH` \u2022 Wavebridge \u00d7 Jito Foundation MOU for i",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,8 +19,8 @@
         "weight": 2.47
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -50.0% 1h",
+        "source": "whale_monitor",
+        "signal": "Orderbook 14% bid (ask-heavy, bearish)",
         "weight": 1.44
       },
       {
@@ -30,7 +29,7 @@
         "weight": 1.2
       }
     ],
-    "timestamp": "2026-07-27T16:00:51.437022+00:00"
+    "timestamp": "2026-07-27T16:05:52.141388+00:00"
   },
   "ETH": {
     "score": 0.64,
@@ -54,7 +53,7 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -37.0% 1h",
+        "signal": "OI -9.0% 1h",
         "weight": 1.44
       },
       {
@@ -63,22 +62,28 @@
         "weight": 1.42
       }
     ],
-    "timestamp": "2026-07-27T16:00:51.437049+00:00"
+    "timestamp": "2026-07-27T16:05:52.141415+00:00"
   },
   "SOL": {
-    "score": 0.14,
-    "confidence": 0.84,
+    "score": -0.26,
+    "confidence": 0.9,
     "sources": [
       "whale_monitor",
       "news_agent",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 5,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | news_agent: performing 3:1 `ETH` `BTC` \u2022 Bitmine nears 5% Ethereum suppl | polymarket: 50.5%. 2026 hike probability 66.5%.  **Dramatic Shifts:** No",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | news_agent: performing 3:1 `ETH` `BTC` \u2022 Bitmine nears 5% Ethereum suppl | polymarket: 50.5%. 2026 hike probability 66.5%.  **Dramatic Shifts:** No",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -31.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "news_agent",
         "signal": "performing 3:1 `ETH` `BTC` \u2022 Bitmine nears 5% Ethereum supply control w/ $12B treasury `ETH` \u2022 Wavebridge \u00d7 Jito Foundat",
@@ -88,33 +93,34 @@
         "source": "news_agent",
         "signal": "3:1 `ETH` `BTC` \u2022 Bitmine nears 5% Ethereum supply control w/ $12B treasury `ETH` \u2022 Wavebridge \u00d7 Jito Foundation MOU for",
         "weight": 0.98
-      },
-      {
-        "source": "polymarket",
-        "signal": "50.5%. 2026 hike probability 66.5%.  **Dramatic Shifts:** None on non-expiry markets (max +6pp). All large moves were ex",
-        "weight": 0.96
       }
     ],
-    "timestamp": "2026-07-27T16:00:51.437062+00:00"
+    "timestamp": "2026-07-27T16:05:52.141428+00:00"
   },
   "HYPE": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -90.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -68.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -90.0% 1h",
+        "signal": "OI -68.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-07-27T16:00:51.437069+00:00"
+    "timestamp": "2026-07-27T16:05:52.141437+00:00"
   }
 }
