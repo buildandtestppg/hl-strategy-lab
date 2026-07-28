@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-28T00:20:50.395056+00:00",
+  "last_update": "2026-07-28T00:25:50.749101+00:00",
   "portfolio": {
     "value": 4846.38,
     "capital": 4846.38,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63803.5,
-    "ETH": 1889.25,
-    "SOL": 74.1045,
-    "HYPE": 56.0765
+    "BTC": 63638.5,
+    "ETH": 1882.65,
+    "SOL": 73.9065,
+    "HYPE": 55.9755
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-27T08:55:02.358482+00:00",
-      "v": 4884.49,
-      "p": -2.31
-    },
     {
       "t": "2026-07-27T09:00:03.125187+00:00",
       "v": 4880.4,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-28T00:20:50.395056+00:00",
       "v": 4846.38,
       "p": -3.07
+    },
+    {
+      "t": "2026-07-28T00:25:50.749101+00:00",
+      "v": 4846.38,
+      "p": -3.07
     }
   ],
   "ai_history": [
@@ -1995,33 +1995,33 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.27,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "whale_monitor",
         "oi_funding"
       ],
       "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 81% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +25.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 81% bid-weighted (bullish)",
-          "weight": 1.24
+          "source": "oi_funding",
+          "signal": "OI +25.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
-          "source": "oi_funding",
-          "signal": "OI -4.0% 1h",
-          "weight": 0.72
+          "source": "whale_monitor",
+          "signal": "Orderbook 60% bid-weighted (bullish)",
+          "weight": 0.4
         }
       ],
-      "timestamp": "2026-07-28T00:20:50.122572+00:00"
+      "timestamp": "2026-07-28T00:25:50.635318+00:00"
     },
     "ETH": {
-      "score": 1.0,
+      "score": -1.0,
       "confidence": 0.3,
       "sources": [
         "oi_funding"
@@ -2030,18 +2030,18 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0001%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -15.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0001%",
-          "weight": 0.9
+          "signal": "OI -15.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-28T00:20:50.122593+00:00"
+      "timestamp": "2026-07-28T00:25:50.635333+00:00"
     },
     "SOL": {
-      "score": -0.27,
+      "score": 0.32,
       "confidence": 0.6,
       "sources": [
         "x_scanner",
@@ -2051,8 +2051,13 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $SOL] @DeadSeaTrader (\ud83d\udc4d5) SUPER volatile week \u2014 pumped  | whale_monitor: Orderbook 35% bid (ask-heavy, bearish)",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $SOL] @DeadSeaTrader (\ud83d\udc4d5) SUPER volatile week \u2014 pumped  | whale_monitor: Orderbook 79% bid-weighted (bullish)",
       "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 79% bid-weighted (bullish)",
+          "weight": 1.16
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $SOL] @DeadSeaTrader (\ud83d\udc4d5) SUPER volatile week \u2014 pumped yesterday, dumped today. Economic data + political headlines",
@@ -2062,27 +2067,23 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $SOL] @Blockcastcc (\ud83d\udc4d1) Sunrise on Solana tokenized SpaceX stock (SPCX) first to surpass $1B cumulative trading vol",
           "weight": 0.98
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 35% bid (ask-heavy, bearish)",
-          "weight": 0.6
         }
       ],
-      "timestamp": "2026-07-28T00:20:50.122624+00:00"
+      "timestamp": "2026-07-28T00:25:50.635345+00:00"
     },
     "HYPE": {
-      "score": -0.59,
-      "confidence": 0.74,
+      "score": -0.06,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 7,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Blockcastcc Cumulative U.S. spot ETF net flows  | whale_monitor: Orderbook 33% bid (ask-heavy, bearish)",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Blockcastcc Cumulative U.S. spot ETF net flows  | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI +16.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2090,17 +2091,17 @@
           "weight": 1.62
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $HYPE] @NZensin (\ud83d\udc4d2) 151,689 traders liquidated in 24h, $592.14M total liquidations [score: 1.6]",
-          "weight": 1.28
+          "source": "oi_funding",
+          "signal": "OI +16.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $HYPE] @velo_xyz (\ud83d\udc4d57) July perf: Gold +2%, BTC +11%, ETH +23%, Hyperliquid -11%. One of these is not like the othe",
-          "weight": 1.23
+          "signal": "\u2022 [\ud83d\udcc9 $HYPE] @NZensin (\ud83d\udc4d2) 151,689 traders liquidated in 24h, $592.14M total liquidations [score: 1.6]",
+          "weight": 1.28
         }
       ],
-      "timestamp": "2026-07-28T00:20:50.122640+00:00"
+      "timestamp": "2026-07-28T00:25:50.635358+00:00"
     }
   },
   "config": {
