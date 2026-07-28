@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-28T01:00:55.086707+00:00",
+  "last_update": "2026-07-28T01:05:55.551429+00:00",
   "portfolio": {
     "value": 4846.38,
     "capital": 4846.38,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63457.5,
-    "ETH": 1877.75,
-    "SOL": 73.6405,
-    "HYPE": 56.2025
+    "BTC": 63341.5,
+    "ETH": 1875.35,
+    "SOL": 73.2995,
+    "HYPE": 56.0055
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-27T09:40:07.661258+00:00",
-      "v": 4885.46,
-      "p": -2.29
-    },
     {
       "t": "2026-07-27T09:45:08.348969+00:00",
       "v": 4883.71,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-28T01:00:55.086707+00:00",
       "v": 4846.38,
       "p": -3.07
+    },
+    {
+      "t": "2026-07-28T01:05:55.551429+00:00",
+      "v": 4846.38,
+      "p": -3.07
     }
   ],
   "ai_history": [
@@ -1995,47 +1995,59 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 35% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI +5.0% 1h, funding 0.0006%",
       "key_signals": [
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 35% bid (ask-heavy, bearish)",
-          "weight": 0.6
+          "signal": "Orderbook 79% bid-weighted (bullish)",
+          "weight": 1.16
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI +5.0% 1h, funding 0.0006%",
+          "weight": 0.9
         }
       ],
-      "timestamp": "2026-07-28T01:00:54.870464+00:00"
+      "timestamp": "2026-07-28T01:05:55.366123+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CredibleCrypto (\ud83d\udc4d103 \ud83d\udd047) Choppy LTF PA on $BTC/$",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CredibleCrypto (\ud83d\udc4d103 \ud83d\udd047) Choppy LTF PA on $BTC/$ | oi_funding: OI +10.0% 1h, funding 0.0001%",
       "key_signals": [
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $ETH] @CredibleCrypto (\ud83d\udc4d103 \ud83d\udd047) Choppy LTF PA on $BTC/$ETH. Untapped liq below us on both [score: 3.0]",
           "weight": 1.95
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI +10.0% 1h, funding 0.0001%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-28T01:00:54.870492+00:00"
+      "timestamp": "2026-07-28T01:05:55.366149+00:00"
     },
     "SOL": {
-      "score": -0.24,
+      "score": 0.08,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
@@ -2045,34 +2057,40 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @rust_node $BatCat heating up across Jupiverse. J | whale_monitor: Orderbook 8% bid (ask-heavy, bearish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @rust_node $BatCat heating up across Jupiverse. J | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
       "key_signals": [
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 8% bid (ask-heavy, bearish)",
-          "weight": 1.68
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\u26a1 $SOL] @rust_node $BatCat heating up across Jupiverse. Jupiter rewards live. Solana whales moving in [score: 1.6]",
           "weight": 1.04
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 28% bid (ask-heavy, bearish)",
+          "weight": 0.88
         }
       ],
-      "timestamp": "2026-07-28T01:00:54.870510+00:00"
+      "timestamp": "2026-07-28T01:05:55.366160+00:00"
     },
     "HYPE": {
-      "score": 0.62,
-      "confidence": 0.74,
+      "score": 0.36,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @UnProfQT Hyperliquid SK Hynix market: $100M OI  | whale_monitor: Orderbook 65% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @UnProfQT Hyperliquid SK Hynix market: $100M OI  | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
       "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 79% bid-weighted (bullish)",
+          "weight": 1.16
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\u26a1 $HYPE] @UnProfQT Hyperliquid SK Hynix market: $100M OI wiped out. Massive auto-deleveraging at the bottom [score: 1",
@@ -2082,14 +2100,9 @@
           "source": "x_scanner",
           "signal": "\u2022 [\u26a1 $HYPE] @ZashXYZ Someone sold $269,949 of $UNI on Hyperliquid in single print at $3.70. Real-time alert [score: 1.6]",
           "weight": 1.04
-        },
-        {
-          "source": "x_scanner",
-          "signal": "DePIN/quantum compute dominated with Quip Network's Unchained pod going viral (\ud83d\udc4d163 \ud83d\udd04101). $HYPE saw massive liquidation",
-          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-28T01:00:54.870533+00:00"
+      "timestamp": "2026-07-28T01:05:55.366173+00:00"
     }
   },
   "config": {
