@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-28T00:45:53.144717+00:00",
+  "last_update": "2026-07-28T00:50:53.793885+00:00",
   "portfolio": {
     "value": 4846.38,
     "capital": 4846.38,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63556.0,
-    "ETH": 1881.15,
-    "SOL": 73.9285,
-    "HYPE": 56.1235
+    "BTC": 63468.5,
+    "ETH": 1876.55,
+    "SOL": 73.6435,
+    "HYPE": 56.0555
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-27T09:25:06.001856+00:00",
-      "v": 4872.18,
-      "p": -2.56
-    },
     {
       "t": "2026-07-27T09:30:06.549643+00:00",
       "v": 4873.03,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-28T00:45:53.144717+00:00",
       "v": 4846.38,
       "p": -3.07
+    },
+    {
+      "t": "2026-07-28T00:50:53.793885+00:00",
+      "v": 4846.38,
+      "p": -3.07
     }
   ],
   "ai_history": [
@@ -2012,32 +2012,40 @@
           "weight": 0.6
         }
       ],
-      "timestamp": "2026-07-28T00:45:52.956108+00:00"
+      "timestamp": "2026-07-28T00:50:53.662455+00:00"
     },
     "ETH": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "x_scanner"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-28T00:45:52.956117+00:00"
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CredibleCrypto (\ud83d\udc4d103 \ud83d\udd047) Choppy LTF PA on $BTC/$",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @CredibleCrypto (\ud83d\udc4d103 \ud83d\udd047) Choppy LTF PA on $BTC/$ETH. Untapped liq below us on both [score: 3.0]",
+          "weight": 1.95
+        }
+      ],
+      "timestamp": "2026-07-28T00:50:53.662473+00:00"
     },
     "SOL": {
-      "score": -0.48,
-      "confidence": 0.6,
+      "score": -0.24,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 3,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $SOL] @DeadSeaTrader (\ud83d\udc4d5) SUPER volatile week \u2014 pumped  | whale_monitor: Orderbook 8% bid (ask-heavy, bearish)",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @rust_node $BatCat heating up across Jupiverse. J | whale_monitor: Orderbook 8% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -2046,47 +2054,42 @@
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $SOL] @DeadSeaTrader (\ud83d\udc4d5) SUPER volatile week \u2014 pumped yesterday, dumped today. Economic data + political headlines",
-          "weight": 1.1
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $SOL] @Blockcastcc (\ud83d\udc4d1) Sunrise on Solana tokenized SpaceX stock (SPCX) first to surpass $1B cumulative trading vol",
-          "weight": 0.98
+          "signal": "\u2022 [\u26a1 $SOL] @rust_node $BatCat heating up across Jupiverse. Jupiter rewards live. Solana whales moving in [score: 1.6]",
+          "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-28T00:45:52.956134+00:00"
+      "timestamp": "2026-07-28T00:50:53.662484+00:00"
     },
     "HYPE": {
-      "score": -0.32,
-      "confidence": 0.5,
+      "score": 0.62,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 6,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Blockcastcc Cumulative U.S. spot ETF net flows  | whale_monitor: Orderbook 65% bid-weighted (bullish)",
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @UnProfQT Hyperliquid SK Hynix market: $100M OI  | whale_monitor: Orderbook 65% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Blockcastcc Cumulative U.S. spot ETF net flows \u2014 $HYPE rising sharply vs BTC/ETH/SOL/XRP early days [score:",
-          "weight": 1.62
+          "signal": "\u2022 [\u26a1 $HYPE] @UnProfQT Hyperliquid SK Hynix market: $100M OI wiped out. Massive auto-deleveraging at the bottom [score: 1",
+          "weight": 1.04
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $HYPE] @NZensin (\ud83d\udc4d2) 151,689 traders liquidated in 24h, $592.14M total liquidations [score: 1.6]",
-          "weight": 1.28
+          "signal": "\u2022 [\u26a1 $HYPE] @ZashXYZ Someone sold $269,949 of $UNI on Hyperliquid in single print at $3.70. Real-time alert [score: 1.6]",
+          "weight": 1.04
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $HYPE] @velo_xyz (\ud83d\udc4d57) July perf: Gold +2%, BTC +11%, ETH +23%, Hyperliquid -11%. One of these is not like the othe",
-          "weight": 1.23
+          "signal": "DePIN/quantum compute dominated with Quip Network's Unchained pod going viral (\ud83d\udc4d163 \ud83d\udd04101). $HYPE saw massive liquidation",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-28T00:45:52.956146+00:00"
+      "timestamp": "2026-07-28T00:50:53.662499+00:00"
     }
   },
   "config": {
