@@ -1,53 +1,54 @@
 {
   "BTC": {
-    "score": 0.8,
-    "confidence": 0.94,
+    "score": 0.02,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "news_agent",
       "oi_funding"
     ],
-    "signal_count": 6,
+    "signal_count": 7,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 ETH] @DayTrade_Cory $BTC CEX netflow flipped positive ( | news_agent: olitics + ETH ATH.  \ud83d\udcf0 **Crypto News Brief \u2014 Jul 29, 17:37 UT | oi_funding: OI +9.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 ETH] @DayTrade_Cory $BTC CEX netflow flipped positive ( | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | news_agent: olitics + ETH ATH.  \ud83d\udcf0 **Crypto News Brief \u2014 Jul 29, 17:37 UT",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +9.0% 1h, funding 0.0013%",
+        "signal": "OI -12.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+        "weight": 1.36
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 ETH] @DayTrade_Cory $BTC CEX netflow flipped positive (exchange supply), flows still going to $ETH and $UNI/$VVV [s",
         "weight": 1.04
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca BTC] @xyziuw $BTC $63,800 \u2014 Uniswap founder rejects claims v4 fees reduce LP earnings [score: 1.5]",
-        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-29T17:40:39.736672+00:00"
+    "timestamp": "2026-07-29T17:45:40.298640+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.4,
+    "confidence": 0.5,
     "sources": [
       "news_agent",
       "oi_funding"
     ],
     "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | news_agent: Discord message. The notable articles from this scan are all | oi_funding: OI +18.0% 1h, funding 0.0013%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: Discord message. The notable articles from this scan are all | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +18.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       },
       {
         "source": "news_agent",
@@ -60,47 +61,53 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-29T17:40:39.736711+00:00"
+    "timestamp": "2026-07-29T17:45:40.298682+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": -0.22,
+    "confidence": 0.5,
     "sources": [
       "whale_monitor",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 94% bid-weighted (bullish) | oi_funding: OI +575.0% 1h, funding 0.0013%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI -31.0% 1h",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 94% bid-weighted (bullish)",
-        "weight": 1.76
-      },
       {
         "source": "oi_funding",
-        "signal": "OI +575.0% 1h, funding 0.0013%",
+        "signal": "OI -31.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 73% bid-weighted (bullish)",
+        "weight": 0.92
       }
     ],
-    "timestamp": "2026-07-29T17:40:39.736728+00:00"
+    "timestamp": "2026-07-29T17:45:40.298694+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.07,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 HYPE] @JustinBennettFX (\ud83d\udc4d4) $50 is the most obvious lev | whale_monitor: Orderbook 74% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 HYPE] @JustinBennettFX (\ud83d\udc4d4) $50 is the most obvious lev | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI -53.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -53.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 HYPE] @JustinBennettFX (\ud83d\udc4d4) $50 is the most obvious level on the $HYPE chart [score: 1.6]",
@@ -108,10 +115,10 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 74% bid-weighted (bullish)",
-        "weight": 0.96
+        "signal": "Orderbook 65% bid-weighted (bullish)",
+        "weight": 0.6
       }
     ],
-    "timestamp": "2026-07-29T17:40:39.736742+00:00"
+    "timestamp": "2026-07-29T17:45:40.298706+00:00"
   }
 }
