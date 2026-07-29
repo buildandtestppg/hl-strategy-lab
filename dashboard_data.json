@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-29T01:20:42.833348+00:00",
+  "last_update": "2026-07-29T01:25:43.508342+00:00",
   "portfolio": {
-    "value": 4804.94,
+    "value": 4803.89,
     "capital": 4795.7,
     "initial": 5000.0,
-    "pnl": -195.06,
-    "pnl_pct": -3.9,
+    "pnl": -196.11,
+    "pnl_pct": -3.92,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 63859.5,
-    "ETH": 1912.55,
-    "SOL": 73.6125,
-    "HYPE": 54.795
+    "BTC": 63869.5,
+    "ETH": 1913.35,
+    "SOL": 73.6545,
+    "HYPE": 54.8715
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 73.9895,
-      "current_price": 73.6125,
+      "current_price": 73.6545,
       "size": 24.77504794194184,
-      "unrealized_pnl": 9.24,
-      "unrealized_pnl_pct": 0.5,
+      "unrealized_pnl": 8.19,
+      "unrealized_pnl_pct": 0.45,
       "stop_loss": 75.93475,
       "take_profit": 70.099,
       "strategy": "stochastic",
       "entry_time": "2026-07-28T21:00:14.619889+00:00",
-      "duration_hours": 4.3,
-      "funding_rate": -0.001238,
-      "unrealized_funding": 0.098
+      "duration_hours": 4.4,
+      "funding_rate": -0.001382,
+      "unrealized_funding": 0.1116
     }
   },
   "stats": {
@@ -42,9 +42,7 @@
     "worst_trade": -50.62,
     "total_realized_pnl": 8.35
   },
-  "actions": [
-    "\u274c CLOSED LONG HYPE @ $54.7950 | P&L: $-20.65 (-1.5%) | Reason: regime_override"
-  ],
+  "actions": [],
   "closed_trades": [
     {
       "pair": "HYPE",
@@ -964,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-28T10:00:57.385021+00:00",
-      "v": 4812.85,
-      "p": -3.74
-    },
     {
       "t": "2026-07-28T10:05:57.694226+00:00",
       "v": 4811.07,
@@ -1963,6 +1956,11 @@
       "t": "2026-07-29T01:20:42.833348+00:00",
       "v": 4804.94,
       "p": -3.9
+    },
+    {
+      "t": "2026-07-29T01:25:43.508342+00:00",
+      "v": 4803.89,
+      "p": -3.92
     }
   ],
   "ai_history": [
@@ -2013,23 +2011,22 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.44,
-      "confidence": 0.84,
+      "score": -0.56,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 5,
+      "signal_count": 4,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc0b $BTC] $363M BTC whale buy at $65k \u2014 massive accumulatio | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udc0b $BTC] $363M BTC whale buy at $65k \u2014 massive accumulatio | oi_funding: OI -22.0% 1h",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 76% bid-weighted (bullish)",
-          "weight": 1.04
+          "source": "oi_funding",
+          "signal": "OI -22.0% 1h",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
@@ -2037,12 +2034,12 @@
           "weight": 0.95
         },
         {
-          "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0013%",
-          "weight": 0.9
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $BTC] @BangXBT (\ud83d\udc4d12 \ud83d\udd041) $BTC update: July completed mVAL\u2192mVAH move with HH/HL structure, plan from 4 days ago still",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-29T01:20:42.706658+00:00"
+      "timestamp": "2026-07-29T01:25:43.304344+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2054,38 +2051,44 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -22.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -21.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -22.0% 1h",
+          "signal": "OI -21.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-29T01:20:42.706674+00:00"
+      "timestamp": "2026-07-29T01:25:43.304371+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.32,
+      "confidence": 0.5,
       "sources": [
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -32.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 64% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -32.0% 1h",
-          "weight": 1.44
+          "signal": "OI -6.0% 1h",
+          "weight": 1.08
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 64% bid-weighted (bullish)",
+          "weight": 0.56
         }
       ],
-      "timestamp": "2026-07-29T01:20:42.706681+00:00"
+      "timestamp": "2026-07-29T01:25:43.304387+00:00"
     },
     "HYPE": {
-      "score": -0.91,
+      "score": -0.94,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -2096,11 +2099,11 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udf10 $HYPE] @_stevenhl (\ud83d\udc4d33 \ud83d\udd040) SKHYNIX HIP-3 ticker liquida | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -41.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udf10 $HYPE] @_stevenhl (\ud83d\udc4d33 \ud83d\udd040) SKHYNIX HIP-3 ticker liquida | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -28.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -41.0% 1h",
+          "signal": "OI -28.0% 1h",
           "weight": 1.44
         },
         {
@@ -2114,7 +2117,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-29T01:20:42.706694+00:00"
+      "timestamp": "2026-07-29T01:25:43.304408+00:00"
     }
   },
   "config": {
