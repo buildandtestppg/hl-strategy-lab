@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.23,
-    "confidence": 0.6,
+    "score": 0.03,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 5,
+    "signal_count": 6,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @SolAlphaHntr (\ud83d\udc4d0) TradFi flexing 89% yearly gro | oi_funding: OI +32.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @SolAlphaHntr (\ud83d\udc4d0) TradFi flexing 89% yearly gro | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -23,24 +24,25 @@
         "weight": 2.15
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +32.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "source": "x_scanner",
+        "signal": "\u2022 [$BTC] @BingXMENA (\ud83d\udc4d1) Morgan Stanley launching traded products linked to $ETH and $SOL at 0.14% fees \u2014 cheapest crypt",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-29T17:00:34.743214+00:00"
+    "timestamp": "2026-07-29T17:05:35.404059+00:00"
   },
   "ETH": {
-    "score": -0.23,
-    "confidence": 0.3,
+    "score": -0.06,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH] @Larskooistra_ (\ud83d\udc4d54 \ud83d\udd044) ETH bearish pivot: HTF equa",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @Larskooistra_ (\ud83d\udc4d54 \ud83d\udd044) ETH bearish pivot: HTF equa | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -58,7 +60,7 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-29T17:00:34.743243+00:00"
+    "timestamp": "2026-07-29T17:05:35.404081+00:00"
   },
   "SOL": {
     "score": 1.0,
@@ -70,29 +72,34 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +4.0% 1h, funding 0.0005%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +6.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +4.0% 1h, funding 0.0005%",
-        "weight": 0.72
+        "signal": "OI +6.0% 1h, funding 0.0013%",
+        "weight": 1.08
       }
     ],
-    "timestamp": "2026-07-29T17:00:34.743256+00:00"
+    "timestamp": "2026-07-29T17:05:35.404088+00:00"
   },
   "HYPE": {
-    "score": 0.23,
+    "score": 0.3,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE] @BurryGraham \u2014 Korean exchange bad print crashed H | whale_monitor: Orderbook 74% bid-weighted (bullish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE] @BurryGraham \u2014 Korean exchange bad print crashed H | oi_funding: OI +7.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +7.0% 1h, funding 0.0013%",
+        "weight": 1.26
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @BurryGraham \u2014 Korean exchange bad print crashed HL contract 19%, liquidated 960 accounts for $57.4M. Oracle r",
@@ -102,13 +109,8 @@
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @OkoProtocol (\ud83d\udc4d1) OKO supports both CEX (Binance) and fully onchain (Hyperliquid), no KYC on latter. [score: 1",
         "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 74% bid-weighted (bullish)",
-        "weight": 0.96
       }
     ],
-    "timestamp": "2026-07-29T17:00:34.743274+00:00"
+    "timestamp": "2026-07-29T17:05:35.404097+00:00"
   }
 }
