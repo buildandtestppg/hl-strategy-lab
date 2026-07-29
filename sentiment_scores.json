@@ -1,17 +1,22 @@
 {
   "BTC": {
-    "score": 0.58,
+    "score": 0.25,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @astronomer_zero (\ud83d\udc4d54 \ud83d\udd040) $BTC long (scalp) \u2014 pri | whale_monitor: Orderbook 34% bid (ask-heavy, bearish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @astronomer_zero (\ud83d\udc4d54 \ud83d\udd040) $BTC long (scalp) \u2014 pri | oi_funding: OI -51.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -51.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $BTC] @astronomer_zero (\ud83d\udc4d54 \ud83d\udd040) $BTC long (scalp) \u2014 price reacting well off TP, rangebound between entry and exit [",
@@ -21,37 +26,24 @@
         "source": "x_scanner",
         "signal": "\u2022 [$BTC] @MysteriousDoct3 Fed holding rates gives crypto room to breathe. Liquidity tight but predictable [score: 1.5]",
         "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 34% bid (ask-heavy, bearish)",
-        "weight": 0.64
       }
     ],
-    "timestamp": "2026-07-29T19:00:48.562136+00:00"
+    "timestamp": "2026-07-29T19:05:49.181826+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
+    "score": 0.0,
+    "confidence": 0.0,
+    "sources": [],
+    "signal_count": 0,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +13.0% 1h, funding 0.0010%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +13.0% 1h, funding 0.0010%",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-07-29T19:00:48.562155+00:00"
+    "narrative": "No active signals",
+    "key_signals": [],
+    "timestamp": "2026-07-29T19:05:49.181835+00:00"
   },
   "SOL": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -60,29 +52,27 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +12.0% 1h, funding 0.0010%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -19.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +12.0% 1h, funding 0.0010%",
+        "signal": "OI -19.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-29T19:00:48.562162+00:00"
+    "timestamp": "2026-07-29T19:05:49.181845+00:00"
   },
   "HYPE": {
-    "score": 0.02,
-    "confidence": 0.84,
+    "score": -0.46,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 6,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @TheDeFiAngel (\ud83d\udc4d7 \ud83d\udd040) One SK Hynix trade trigger | whale_monitor: Orderbook 72% bid-weighted (bullish) | oi_funding: OI +16.0% 1h, funding 0.0004%",
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @TheDeFiAngel (\ud83d\udc4d7 \ud83d\udd040) One SK Hynix trade trigger",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -90,16 +80,16 @@
         "weight": 1.8
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +16.0% 1h, funding 0.0004%",
-        "weight": 1.44
-      },
-      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $HYPE] @HyperliquidNews (\ud83d\udc4d9 \ud83d\udd042) New 24-hour ATH volumes at Trade.xyz with $8.1B [score: 2.0]",
         "weight": 1.3
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$HYPE] @cryptodotnews Hyperliquid SK Hynix perpetual drops 17.9% on oracle anomaly \u2014 forced liquidations [score: 1.6]",
+        "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-29T19:00:48.562177+00:00"
+    "timestamp": "2026-07-29T19:05:49.181855+00:00"
   }
 }
