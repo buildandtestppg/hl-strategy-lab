@@ -1,16 +1,23 @@
 {
   "BTC": {
-    "score": -0.55,
-    "confidence": 0.3,
+    "score": -0.81,
+    "confidence": 1.0,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "news_agent"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udce1 $BTC] @CryptoReviewing (\ud83d\udc4d6 \ud83d\udd040) $BTC dumped $65.6K\u2192$63K ",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udce1 $BTC] @CryptoReviewing (\ud83d\udc4d6 \ud83d\udd040) $BTC dumped $65.6K\u2192$63K  | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | news_agent: C financing scheme (Crypto Briefing) \u2022 U.S. treasury sanctio",
     "key_signals": [
+      {
+        "source": "news_agent",
+        "signal": "C financing scheme (Crypto Briefing) \u2022 U.S. treasury sanctions two iranian firms linked to bitcoin payments and sanction",
+        "weight": 1.42
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udce1 $BTC] @CryptoReviewing (\ud83d\udc4d6 \ud83d\udd040) $BTC dumped $65.6K\u2192$63K liquidating $806M, then below $62.7K another $416M, then pum",
@@ -20,26 +27,22 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udce1 $BTC] @BSCNews (\ud83d\udc4d5 \ud83d\udd041) BlackRock records $60M net outflow from $IBIT $BTC ETF \u2014 tactical pivot to Ethereum. [score:",
         "weight": 1.17
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udce1 $BTC] @Altcoinchaserhq $BTC at $64,056, funding 5.3% \u2014 crowded longs paying to hold underwater bags, smart money fa",
-        "weight": 0.98
       }
     ],
-    "timestamp": "2026-07-29T15:20:22.934015+00:00"
+    "timestamp": "2026-07-29T15:25:23.434801+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.33,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udce1 $ETH] @Peter_CT93 $ETH ETF inflows hit $103.8M last wee",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udce1 $ETH] @Peter_CT93 $ETH ETF inflows hit $103.8M last wee | oi_funding: OI -46.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -47,37 +50,50 @@
         "weight": 1.62
       },
       {
+        "source": "oi_funding",
+        "signal": "OI -46.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udce1 $ETH] @Stefan_B_Trades (\ud83d\udc4d40 \ud83d\udd043) Nothing bullish on $ETH weekly \u2014 no bottom forming yet, 3rd drive high probability.",
         "weight": 1.23
       }
     ],
-    "timestamp": "2026-07-29T15:20:22.934031+00:00"
+    "timestamp": "2026-07-29T15:25:23.434820+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-29T15:20:22.934033+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -20.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -20.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-07-29T15:25:23.434827+00:00"
   },
   "HYPE": {
-    "score": 0.77,
+    "score": 0.7,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @criptomaniac_ (\ud83d\udc4d2 \ud83d\udd041) New frontend for Hyperli | whale_monitor: Orderbook 37% bid (ask-heavy, bearish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @criptomaniac_ (\ud83d\udc4d2 \ud83d\udd041) New frontend for Hyperli | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -90,11 +106,11 @@
         "weight": 1.62
       },
       {
-        "source": "x_scanner",
-        "signal": "$86M $HYPE whale movement to exchanges (Multicoin + Selini wallets unstaking/depositing to Coinbase Prime). Institutiona",
-        "weight": 0.65
+        "source": "oi_funding",
+        "signal": "OI -4.0% 1h",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-07-29T15:20:22.934044+00:00"
+    "timestamp": "2026-07-29T15:25:23.434835+00:00"
   }
 }
