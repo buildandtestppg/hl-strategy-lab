@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-29T19:35:52.924004+00:00",
+  "last_update": "2026-07-29T19:40:53.367592+00:00",
   "portfolio": {
-    "value": 4756.75,
+    "value": 4756.38,
     "capital": 4796.39,
     "initial": 5000.0,
-    "pnl": -243.25,
-    "pnl_pct": -4.86,
+    "pnl": -243.62,
+    "pnl_pct": -4.87,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 63922.5,
-    "ETH": 1899.95,
-    "SOL": 73.3595,
-    "HYPE": 53.3815
+    "BTC": 63843.5,
+    "ETH": 1898.95,
+    "SOL": 73.265,
+    "HYPE": 53.3665
   },
   "positions": {
     "HYPE": {
       "direction": "LONG",
       "entry_price": 54.9895,
-      "current_price": 53.3815,
+      "current_price": 53.3665,
       "size": 24.582387279613233,
-      "unrealized_pnl": -39.64,
-      "unrealized_pnl_pct": -2.93,
+      "unrealized_pnl": -40.01,
+      "unrealized_pnl_pct": -2.96,
       "stop_loss": 53.03525,
       "take_profit": 58.898,
       "strategy": "supertrend",
       "entry_time": "2026-07-29T13:05:08.007111+00:00",
-      "duration_hours": 6.5,
+      "duration_hours": 6.6,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1068
+      "unrealized_funding": 0.1082
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-29T04:10:03.953093+00:00",
-      "v": 4802.83,
-      "p": -3.94
-    },
     {
       "t": "2026-07-29T04:15:04.551602+00:00",
       "v": 4802.83,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-29T19:35:52.924004+00:00",
       "v": 4756.75,
       "p": -4.86
+    },
+    {
+      "t": "2026-07-29T19:40:53.367592+00:00",
+      "v": 4756.38,
+      "p": -4.87
     }
   ],
   "ai_history": [
@@ -2011,18 +2011,19 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.51,
-      "confidence": 0.84,
+      "score": 0.35,
+      "confidence": 0.9,
       "sources": [
         "x_scanner",
         "whale_monitor",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 5,
+      "signal_count": 6,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @TheLongInvest (\ud83d\udc4d72 \ud83d\udd042) Another day where $ETH an | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI -97.0% 1h",
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @TheLongInvest (\ud83d\udc4d72 \ud83d\udd042) Another day where $ETH an | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | news_agent: m/carney-rejects-idea-of-using-oil-as-weapon-against-us-tari",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2040,20 +2041,21 @@
           "weight": 1.82
         }
       ],
-      "timestamp": "2026-07-29T19:35:52.778806+00:00"
+      "timestamp": "2026-07-29T19:40:53.207553+00:00"
     },
     "ETH": {
-      "score": 0.26,
-      "confidence": 0.5,
+      "score": 0.01,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @TheLongInvest (\ud83d\udc4d76 \ud83d\udd042) $ETH and $BTC weathered a | oi_funding: OI -167.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @TheLongInvest (\ud83d\udc4d76 \ud83d\udd042) $ETH and $BTC weathered a | news_agent: fing.com/carney-rejects-idea-of-using-oil-as-weapon-against- | oi_funding: OI -167.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2064,22 +2066,28 @@
           "source": "oi_funding",
           "signal": "OI -167.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "news_agent",
+          "signal": "fing.com/carney-rejects-idea-of-using-oil-as-weapon-against-us-tariffs/>  --- **Scan stats:** 952 saved | 0 remaining un",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-29T19:35:52.778825+00:00"
+      "timestamp": "2026-07-29T19:40:53.207574+00:00"
     },
     "SOL": {
-      "score": 0.36,
-      "confidence": 0.5,
+      "score": -0.08,
+      "confidence": 0.84,
       "sources": [
         "whale_monitor",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI +55.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | news_agent: y-rejects-idea-of-using-oil-as-weapon-against-us-tariffs/>   | oi_funding: OI +55.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -2087,12 +2095,17 @@
           "weight": 1.44
         },
         {
+          "source": "news_agent",
+          "signal": "y-rejects-idea-of-using-oil-as-weapon-against-us-tariffs/>  --- **Scan stats:** 952 saved | 0 remaining unreported | 15s",
+          "weight": 0.98
+        },
+        {
           "source": "whale_monitor",
           "signal": "Orderbook 33% bid (ask-heavy, bearish)",
           "weight": 0.68
         }
       ],
-      "timestamp": "2026-07-29T19:35:52.778834+00:00"
+      "timestamp": "2026-07-29T19:40:53.207585+00:00"
     },
     "HYPE": {
       "score": -0.15,
@@ -2124,7 +2137,7 @@
           "weight": 0.52
         }
       ],
-      "timestamp": "2026-07-29T19:35:52.778844+00:00"
+      "timestamp": "2026-07-29T19:40:53.207593+00:00"
     }
   },
   "config": {
