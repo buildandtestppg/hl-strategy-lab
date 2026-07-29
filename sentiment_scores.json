@@ -1,60 +1,62 @@
 {
   "BTC": {
-    "score": 0.29,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "oi_funding"
+      "whale_monitor"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \ud83d\udcca [$BTC macro] @Criptobuzz_Of (\ud83d\udc4d1) ETF outflows + forced liq | oi_funding: OI +51.0% 1h, funding 0.0013%",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \ud83d\udcca [$BTC macro] @Criptobuzz_Of (\ud83d\udc4d1) ETF outflows + forced liq | whale_monitor: Orderbook 30% bid (ask-heavy, bearish)",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +51.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "\ud83d\udcca [$BTC macro] @Criptobuzz_Of (\ud83d\udc4d1) ETF outflows + forced liquidations before FED decision. BTC $63.9K, SOL $73, XRP $1.0",
         "weight": 0.8
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 30% bid (ask-heavy, bearish)",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-29T18:20:44.289591+00:00"
+    "timestamp": "2026-07-29T18:25:44.837489+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.43,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
+      "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 5,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \ud83d\udd25 [$ETH whale long] @_rise (\ud83d\udc4d74 \ud83d\udd0432) Longed $16m of $ETH [3. | oi_funding: OI +139.0% 1h, funding 0.0013%",
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \ud83d\udd25 [$ETH whale long] @_rise (\ud83d\udc4d74 \ud83d\udd0432) Longed $16m of $ETH [3. | whale_monitor: Orderbook 69% bid-weighted (bullish) | news_agent: tegy-stake-11-percent/ \u2022 **Fed rate statement released** pos",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +139.0% 1h, funding 0.0013%",
+        "signal": "OI -118.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "tegy-stake-11-percent/ \u2022 **Fed rate statement released** post-FOMC   https://cryptobriefing.com/fed-rate-statement-relea",
+        "weight": 0.98
       },
       {
         "source": "x_scanner",
         "signal": "\ud83d\udd25 [$ETH whale long] @_rise (\ud83d\udc4d74 \ud83d\udd0432) Longed $16m of $ETH [3.4]",
         "weight": 0.8
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\ud83c\udfd7\ufe0f [$ETH staking] @0xc06 (\ud83d\udc4d32) Lido Curated Module v2 could lift effective validator balances from 32 to 2,048 ETH [2.2]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-29T18:20:44.289613+00:00"
+    "timestamp": "2026-07-29T18:25:44.837524+00:00"
   },
   "SOL": {
     "score": 1.0,
@@ -68,17 +70,17 @@
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \ud83d\udd17 [$SOL ETF] @dburrells (\ud83d\udd043) Morgan Stanley launched lowest- | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \ud83d\udd17 [$SOL ETF] @dburrells (\ud83d\udd043) Morgan Stanley launched lowest- | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI +9.0% 1h, funding 0.0012%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +7.0% 1h, funding 0.0013%",
-        "weight": 1.26
+        "signal": "OI +9.0% 1h, funding 0.0012%",
+        "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 80% bid-weighted (bullish)",
-        "weight": 1.2
+        "signal": "Orderbook 76% bid-weighted (bullish)",
+        "weight": 1.04
       },
       {
         "source": "x_scanner",
@@ -86,24 +88,25 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-29T18:20:44.289624+00:00"
+    "timestamp": "2026-07-29T18:25:44.837544+00:00"
   },
   "HYPE": {
-    "score": 0.66,
-    "confidence": 0.74,
+    "score": -0.56,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \ud83c\udfd7\ufe0f [$HYPE RWA] @boom_wallet Hyperliquid Explains $57M SK Hyn | oi_funding: OI +128.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \ud83c\udfd7\ufe0f [$HYPE RWA] @boom_wallet Hyperliquid Explains $57M SK Hyn | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI -129.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +128.0% 1h, funding 0.0013%",
+        "signal": "OI -129.0% 1h",
         "weight": 1.44
       },
       {
@@ -117,6 +120,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-07-29T18:20:44.289632+00:00"
+    "timestamp": "2026-07-29T18:25:44.837563+00:00"
   }
 }
