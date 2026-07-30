@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-07-30T10:00:43.254121+08:00",
-  "exported_at_utc": "2026-07-30T02:00:43.254126+00:00",
+  "exported_at": "2026-07-30T10:10:44.163864+08:00",
+  "exported_at_utc": "2026-07-30T02:10:44.163869+00:00",
   "portfolio": {
     "value": 4793.723424450417,
     "initial": 5000.0,
@@ -391,21 +391,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-29T10:35:50.128287+00:00",
-      "v": 4806.76,
-      "p": -3.86
-    },
-    {
-      "t": "2026-07-29T10:40:50.568598+00:00",
-      "v": 4805.42,
-      "p": -3.89
-    },
-    {
-      "t": "2026-07-29T10:45:50.573775+00:00",
-      "v": 4807.2,
-      "p": -3.86
-    },
     {
       "t": "2026-07-29T10:50:51.199475+00:00",
       "v": 4806.27,
@@ -1390,29 +1375,50 @@
       "t": "2026-07-30T02:00:40.929003+00:00",
       "v": 4776.65,
       "p": -4.47
+    },
+    {
+      "t": "2026-07-30T02:03:26.168688+00:00",
+      "v": 4774.71,
+      "p": -4.51
+    },
+    {
+      "t": "2026-07-30T02:05:41.407797+00:00",
+      "v": 4773.33,
+      "p": -4.53
+    },
+    {
+      "t": "2026-07-30T02:10:41.893002+00:00",
+      "v": 4773.51,
+      "p": -4.53
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.47,
+      "confidence": 0.5,
       "sources": [
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 37% bid (ask-heavy, bearish)",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI +32.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +32.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 37% bid (ask-heavy, bearish)",
           "weight": 0.52
         }
       ],
-      "timestamp": "2026-07-30T02:00:40.717860+00:00"
+      "timestamp": "2026-07-30T02:10:41.752167+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -1425,11 +1431,11 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI +22.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI +19.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +22.0% 1h, funding 0.0013%",
+          "signal": "OI +19.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -1438,45 +1444,47 @@
           "weight": 0.76
         }
       ],
-      "timestamp": "2026-07-30T02:00:40.717885+00:00"
+      "timestamp": "2026-07-30T02:10:41.752192+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 0.74,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
-        "oi_funding"
+        "whale_monitor"
       ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 89% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0011%",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 89% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "whale_monitor",
           "signal": "Orderbook 89% bid-weighted (bullish)",
           "weight": 1.56
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0011%",
-          "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-30T02:00:40.717895+00:00"
+      "timestamp": "2026-07-30T02:10:41.752229+00:00"
     },
     "HYPE": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-07-30T02:00:40.717897+00:00"
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
+        }
+      ],
+      "timestamp": "2026-07-30T02:10:41.752236+00:00"
     }
   },
   "pair_strategies": {
@@ -1854,32 +1862,32 @@
         "time": "1785376534.1338959"
       }
     ],
-    "generated": "2026-07-30T02:00:40.764780Z"
+    "generated": "2026-07-30T02:10:41.781997Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "09:46",
-      "age_minutes": 14,
+      "age_minutes": 24,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "09:57",
-      "age_minutes": 3,
+      "age_minutes": 13,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "09:55",
-      "age_minutes": 5,
+      "age_minutes": 15,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "09:04",
-      "age_minutes": 56,
+      "age_minutes": 66,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "09:46",
-      "age_minutes": 14,
+      "last_run": "10:01",
+      "age_minutes": 9,
       "status": "fresh"
     }
   },
@@ -1892,7 +1900,7 @@
         "win_rate": 57.1,
         "sharpe": 3.04,
         "pnl_pct": 18.95,
-        "buy_hold": -18.44,
+        "buy_hold": -17.71,
         "profit_factor": 2.22,
         "max_drawdown": 4.79,
         "total_trades": 14
@@ -1900,38 +1908,38 @@
       {
         "pair": "SOL",
         "strategy": "trend",
-        "score": 56.72,
+        "score": 53.79,
         "win_rate": 45.0,
-        "sharpe": 2.08,
-        "pnl_pct": 13.54,
-        "buy_hold": -12.91,
-        "profit_factor": 1.62,
+        "sharpe": 1.9,
+        "pnl_pct": 12.31,
+        "buy_hold": -12.21,
+        "profit_factor": 1.53,
         "max_drawdown": 8.22,
         "total_trades": 20
       },
       {
-        "pair": "BTC",
-        "strategy": "macd",
-        "score": 55.15,
-        "win_rate": 50.0,
-        "sharpe": 2.14,
-        "pnl_pct": 17.36,
-        "buy_hold": -19.17,
-        "profit_factor": 1.48,
-        "max_drawdown": 13.79,
-        "total_trades": 32
-      },
-      {
         "pair": "HYPE",
         "strategy": "trend",
-        "score": 53.61,
+        "score": 53.27,
         "win_rate": 48.5,
-        "sharpe": 2.92,
-        "pnl_pct": 26.71,
-        "buy_hold": 30.99,
-        "profit_factor": 1.63,
+        "sharpe": 2.89,
+        "pnl_pct": 26.34,
+        "buy_hold": 32.63,
+        "profit_factor": 1.62,
         "max_drawdown": 6.61,
         "total_trades": 33
+      },
+      {
+        "pair": "ETH",
+        "strategy": "stochastic",
+        "score": 50.46,
+        "win_rate": 45.1,
+        "sharpe": 2.16,
+        "pnl_pct": 22.35,
+        "buy_hold": -17.71,
+        "profit_factor": 1.33,
+        "max_drawdown": 17.46,
+        "total_trades": 51
       },
       {
         "pair": "HYPE",
@@ -1940,46 +1948,34 @@
         "win_rate": 45.2,
         "sharpe": 2.26,
         "pnl_pct": 18.84,
-        "buy_hold": 30.99,
+        "buy_hold": 32.63,
         "profit_factor": 1.53,
         "max_drawdown": 13.58,
         "total_trades": 31
       },
       {
+        "pair": "BTC",
+        "strategy": "macd",
+        "score": 42.31,
+        "win_rate": 43.8,
+        "sharpe": 1.39,
+        "pnl_pct": 10.43,
+        "buy_hold": -18.41,
+        "profit_factor": 1.28,
+        "max_drawdown": 15.83,
+        "total_trades": 32
+      },
+      {
         "pair": "ETH",
         "strategy": "vwap",
-        "score": 36.97,
-        "win_rate": 40.7,
-        "sharpe": 1.44,
-        "pnl_pct": 13.77,
-        "buy_hold": -18.44,
-        "profit_factor": 1.21,
+        "score": 38.56,
+        "win_rate": 42.6,
+        "sharpe": 1.51,
+        "pnl_pct": 14.67,
+        "buy_hold": -17.71,
+        "profit_factor": 1.23,
         "max_drawdown": 26.32,
         "total_trades": 54
-      },
-      {
-        "pair": "SOL",
-        "strategy": "breakout",
-        "score": 36.22,
-        "win_rate": 40.7,
-        "sharpe": 1.07,
-        "pnl_pct": 9.35,
-        "buy_hold": -12.91,
-        "profit_factor": 1.12,
-        "max_drawdown": 15.47,
-        "total_trades": 54
-      },
-      {
-        "pair": "ETH",
-        "strategy": "stochastic",
-        "score": 36.19,
-        "win_rate": 41.5,
-        "sharpe": 1.09,
-        "pnl_pct": 9.59,
-        "buy_hold": -18.44,
-        "profit_factor": 1.14,
-        "max_drawdown": 17.45,
-        "total_trades": 53
       },
       {
         "pair": "SOL",
@@ -1988,92 +1984,104 @@
         "win_rate": 40.0,
         "sharpe": 0.79,
         "pnl_pct": 5.41,
-        "buy_hold": -12.91,
+        "buy_hold": -12.21,
         "profit_factor": 1.11,
         "max_drawdown": 11.1,
         "total_trades": 35
       },
       {
+        "pair": "SOL",
+        "strategy": "breakout",
+        "score": 34.59,
+        "win_rate": 38.9,
+        "sharpe": 0.98,
+        "pnl_pct": 8.36,
+        "buy_hold": -12.21,
+        "profit_factor": 1.11,
+        "max_drawdown": 15.47,
+        "total_trades": 54
+      },
+      {
         "pair": "HYPE",
         "strategy": "macd",
-        "score": 31.96,
+        "score": 31.62,
         "win_rate": 39.1,
-        "sharpe": 1.24,
-        "pnl_pct": 10.63,
-        "buy_hold": 30.99,
-        "profit_factor": 1.18,
+        "sharpe": 1.21,
+        "pnl_pct": 10.28,
+        "buy_hold": 32.63,
+        "profit_factor": 1.17,
         "max_drawdown": 10.61,
         "total_trades": 46
       }
     ],
     "tests": {
-      "pass": 264,
+      "pass": 265,
       "fail": 3,
       "failures": [
         "Bug #2: MIN_CONFIDENCE <= 0.5 (was 0.6, too restrictive): got 0.65",
         "Aligned sentiment boosts confidence: sig=Signal.LONG, conf=0.4, note=sentiment skipped (only 0 sources, need 2)",
         "Contradicting sentiment blocks LONG: sig=Signal.LONG, note=sentiment skipped (only 0 sources, need 2)"
       ],
-      "ran_at": "2026-07-30T00:58:38.899552+00:00"
+      "ran_at": "2026-07-30T02:02:18.306809+00:00"
     },
     "audit_recent": [
       {
-        "ts": "2026-07-30T00:59:48.419889+00:00",
-        "epoch": 1785373188.419895,
+        "ts": "2026-07-30T02:03:27.527516+00:00",
+        "epoch": 1785377007.5275269,
         "type": "cycle_summary",
-        "cycle_id": "2026-07-30T00:59:47.226316+00:00",
+        "cycle_id": "2026-07-30T02:03:26.168688+00:00",
         "actions": [],
-        "positions_count": 2,
-        "portfolio_value": 4755.65,
-        "pnl": -244.35
+        "positions_count": 3,
+        "portfolio_value": 4774.71,
+        "pnl": -225.29
       },
       {
-        "ts": "2026-07-30T00:59:48.412158+00:00",
-        "epoch": 1785373188.412162,
+        "ts": "2026-07-30T02:03:27.520953+00:00",
+        "epoch": 1785377007.520957,
         "pair": "HYPE",
         "signal": "LONG",
         "confidence": 0,
         "reason": "Already in position",
         "gate": "BLOCKED_ALREADY_OPEN",
         "action": "held",
-        "price": 53.8825,
-        "cycle_id": "20260730005948"
+        "price": 54.1445,
+        "cycle_id": "20260730020327"
       },
       {
-        "ts": "2026-07-30T00:59:48.412047+00:00",
-        "epoch": 1785373188.412052,
+        "ts": "2026-07-30T02:03:27.520848+00:00",
+        "epoch": 1785377007.520854,
         "pair": "SOL",
-        "signal": "FLAT",
+        "signal": "LONG",
         "confidence": 0,
-        "reason": "Cooldown (0.2h left)",
-        "gate": "BLOCKED_COOLDOWN",
-        "action": "evaluated",
-        "price": 73.2245,
-        "cycle_id": "20260730005948"
+        "reason": "Already in position",
+        "gate": "BLOCKED_ALREADY_OPEN",
+        "action": "held",
+        "price": 74.0445,
+        "cycle_id": "20260730020327"
       },
       {
-        "ts": "2026-07-30T00:59:48.411819+00:00",
-        "epoch": 1785373188.411823,
+        "ts": "2026-07-30T02:03:27.520611+00:00",
+        "epoch": 1785377007.520616,
         "pair": "ETH",
         "signal": "LONG",
         "confidence": 0,
         "reason": "Already in position",
         "gate": "BLOCKED_ALREADY_OPEN",
         "action": "held",
-        "price": 1896.65,
-        "cycle_id": "20260730005948"
+        "price": 1915.15,
+        "cycle_id": "20260730020327"
       },
       {
-        "ts": "2026-07-30T00:59:48.411604+00:00",
-        "epoch": 1785373188.4116092,
+        "ts": "2026-07-30T02:03:27.520399+00:00",
+        "epoch": 1785377007.520405,
         "pair": "BTC",
         "signal": "FLAT",
         "confidence": 0,
         "reason": "Pruned: BTC pruned: 29% WR over 7 trades (PnL $-1.57)",
         "gate": "BLOCKED_PRUNED",
         "action": "evaluated",
-        "price": 63652.5,
-        "cycle_id": "20260730005948"
+        "price": 64244.5,
+        "cycle_id": "20260730020327"
       }
     ],
     "advisor_regime": {
@@ -2081,46 +2089,47 @@
         {
           "pair": "BTC",
           "verdict": "hold",
-          "confidence": 0.95,
-          "reason": "MACD dominates with Sharpe 2.14 and a 27-point score margin over the next best alternative, no red flags.",
+          "confidence": 0.9,
+          "reason": "MACD is the top performer with a solid Sharpe of 1.39 and a clear score margin over alternatives; no red flags.",
           "risk": "low"
         },
         {
           "pair": "ETH",
           "verdict": "hold",
           "confidence": 0.95,
-          "reason": "Trend strategy is clearly superior with Sharpe 3.04 and a 42-point score lead, indicating strong fit.",
+          "reason": "Trend strategy dominates with a Sharpe of 3.04 and a 28-point score lead; exceptionally strong fit.",
           "risk": "low"
         },
         {
           "pair": "SOL",
           "verdict": "swap",
-          "confidence": 0.9,
-          "reason": "Current stochastic strategy is missing from top alternatives; trend strategy leads with Sharpe 2.08, signaling a regime mismatch.",
-          "risk": "medium"
+          "confidence": 0.85,
+          "reason": "Current stochastic strategy is not even in the top 3; trend shows a 1.9 Sharpe and should be adopted immediately.",
+          "risk": "high"
         },
         {
           "pair": "HYPE",
           "verdict": "review",
           "confidence": 0.7,
-          "reason": "Supertrend performs well (Sharpe 2.26) but trend strategy shows higher score and Sharpe 2.92, worth monitoring for a switch.",
+          "reason": "Supertrend is strong (Sharpe 2.26) but trend scores higher (53.27 vs 44.36) with a better Sharpe (2.89); consider switching.",
           "risk": "low"
         }
       ],
       "overall_regime": "trending",
-      "top_concern": "SOL's stochastic strategy is absent from top alternatives while trend-following strategies dominate, risking significant underperformance in a trending market."
+      "top_concern": "SOL's current stochastic strategy is absent from the top alternatives, indicating severe underperformance and high risk of drawdowns."
     },
     "advisor_risk": {
       "risk_level": "high",
       "correlation_risk": "high",
       "direction_bias": "long",
-      "allocation_issue": "none",
+      "allocation_issue": "under-utilized",
       "recommendations": [
-        "Diversify into uncorrelated assets or stablecoins to reduce portfolio-wide drawdown risk.",
-        "Widen stop-losses to account for crypto volatility (e.g., 5-8%) or use volatility-adjusted stops.",
-        "Monitor HYPE-ETH correlation; if they move in lockstep, a single adverse move could hit both stops simultaneously."
+        "Diversify into non-crypto or negatively correlated assets to reduce portfolio-wide drawdown risk",
+        "Widen stop-loss distances or use volatility-based stops to avoid premature exits from normal price swings",
+        "Consider partial hedging (e.g., short futures or put options) to offset extreme long bias",
+        "Re-evaluate position sizing to ensure total exposure aligns with risk tolerance and available capital"
       ],
-      "stop_assessment": "Both stops are set very close to entry (~3.3-3.5%), which is tight for crypto and may trigger premature exits during normal intraday swings."
+      "stop_assessment": "All stops are set approximately 3.3\u20133.5% below entry, which is very tight for volatile crypto assets and may lead to frequent whipsaws and correlated stop-outs during a broad market dip."
     }
   },
   "eval_leaderboard": [
@@ -2130,7 +2139,7 @@
       "strategy_label": "Trend",
       "score": 78.74,
       "total_pnl_pct": 18.95,
-      "buy_hold_pct": -18.44,
+      "buy_hold_pct": -17.71,
       "beats_hold": true,
       "sharpe": 3.04,
       "profit_factor": 2.22,
@@ -2142,43 +2151,43 @@
       "pair": "SOL",
       "strategy": "trend",
       "strategy_label": "Trend",
-      "score": 56.72,
-      "total_pnl_pct": 13.54,
-      "buy_hold_pct": -12.91,
+      "score": 53.79,
+      "total_pnl_pct": 12.31,
+      "buy_hold_pct": -12.21,
       "beats_hold": true,
-      "sharpe": 2.08,
-      "profit_factor": 1.62,
+      "sharpe": 1.9,
+      "profit_factor": 1.53,
       "win_rate": 45.0,
       "max_drawdown": 8.22,
       "total_trades": 20
     },
     {
-      "pair": "BTC",
-      "strategy": "macd",
-      "strategy_label": "MACD",
-      "score": 55.15,
-      "total_pnl_pct": 17.36,
-      "buy_hold_pct": -19.17,
-      "beats_hold": true,
-      "sharpe": 2.14,
-      "profit_factor": 1.48,
-      "win_rate": 50.0,
-      "max_drawdown": 13.79,
-      "total_trades": 32
-    },
-    {
       "pair": "HYPE",
       "strategy": "trend",
       "strategy_label": "Trend",
-      "score": 53.61,
-      "total_pnl_pct": 26.71,
-      "buy_hold_pct": 30.99,
+      "score": 53.27,
+      "total_pnl_pct": 26.34,
+      "buy_hold_pct": 32.63,
       "beats_hold": false,
-      "sharpe": 2.92,
-      "profit_factor": 1.63,
+      "sharpe": 2.89,
+      "profit_factor": 1.62,
       "win_rate": 48.5,
       "max_drawdown": 6.61,
       "total_trades": 33
+    },
+    {
+      "pair": "ETH",
+      "strategy": "stochastic",
+      "strategy_label": "Stochastic",
+      "score": 50.46,
+      "total_pnl_pct": 22.35,
+      "buy_hold_pct": -17.71,
+      "beats_hold": true,
+      "sharpe": 2.16,
+      "profit_factor": 1.33,
+      "win_rate": 45.1,
+      "max_drawdown": 17.46,
+      "total_trades": 51
     },
     {
       "pair": "HYPE",
@@ -2186,7 +2195,7 @@
       "strategy_label": "Supertrend",
       "score": 44.36,
       "total_pnl_pct": 18.84,
-      "buy_hold_pct": 30.99,
+      "buy_hold_pct": 32.63,
       "beats_hold": false,
       "sharpe": 2.26,
       "profit_factor": 1.53,
@@ -2195,46 +2204,32 @@
       "total_trades": 31
     },
     {
+      "pair": "BTC",
+      "strategy": "macd",
+      "strategy_label": "MACD",
+      "score": 42.31,
+      "total_pnl_pct": 10.43,
+      "buy_hold_pct": -18.41,
+      "beats_hold": true,
+      "sharpe": 1.39,
+      "profit_factor": 1.28,
+      "win_rate": 43.8,
+      "max_drawdown": 15.83,
+      "total_trades": 32
+    },
+    {
       "pair": "ETH",
       "strategy": "vwap",
       "strategy_label": "VWAP",
-      "score": 36.97,
-      "total_pnl_pct": 13.77,
-      "buy_hold_pct": -18.44,
+      "score": 38.56,
+      "total_pnl_pct": 14.67,
+      "buy_hold_pct": -17.71,
       "beats_hold": true,
-      "sharpe": 1.44,
-      "profit_factor": 1.21,
-      "win_rate": 40.7,
+      "sharpe": 1.51,
+      "profit_factor": 1.23,
+      "win_rate": 42.6,
       "max_drawdown": 26.32,
       "total_trades": 54
-    },
-    {
-      "pair": "SOL",
-      "strategy": "breakout",
-      "strategy_label": "Breakout",
-      "score": 36.22,
-      "total_pnl_pct": 9.35,
-      "buy_hold_pct": -12.91,
-      "beats_hold": true,
-      "sharpe": 1.07,
-      "profit_factor": 1.12,
-      "win_rate": 40.7,
-      "max_drawdown": 15.47,
-      "total_trades": 54
-    },
-    {
-      "pair": "ETH",
-      "strategy": "stochastic",
-      "strategy_label": "Stochastic",
-      "score": 36.19,
-      "total_pnl_pct": 9.59,
-      "buy_hold_pct": -18.44,
-      "beats_hold": true,
-      "sharpe": 1.09,
-      "profit_factor": 1.14,
-      "win_rate": 41.5,
-      "max_drawdown": 17.45,
-      "total_trades": 53
     },
     {
       "pair": "SOL",
@@ -2242,7 +2237,7 @@
       "strategy_label": "Supertrend",
       "score": 34.7,
       "total_pnl_pct": 5.41,
-      "buy_hold_pct": -12.91,
+      "buy_hold_pct": -12.21,
       "beats_hold": true,
       "sharpe": 0.79,
       "profit_factor": 1.11,
@@ -2251,15 +2246,29 @@
       "total_trades": 35
     },
     {
+      "pair": "SOL",
+      "strategy": "breakout",
+      "strategy_label": "Breakout",
+      "score": 34.59,
+      "total_pnl_pct": 8.36,
+      "buy_hold_pct": -12.21,
+      "beats_hold": true,
+      "sharpe": 0.98,
+      "profit_factor": 1.11,
+      "win_rate": 38.9,
+      "max_drawdown": 15.47,
+      "total_trades": 54
+    },
+    {
       "pair": "HYPE",
       "strategy": "macd",
       "strategy_label": "MACD",
-      "score": 31.96,
-      "total_pnl_pct": 10.63,
-      "buy_hold_pct": 30.99,
+      "score": 31.62,
+      "total_pnl_pct": 10.28,
+      "buy_hold_pct": 32.63,
       "beats_hold": false,
-      "sharpe": 1.24,
-      "profit_factor": 1.18,
+      "sharpe": 1.21,
+      "profit_factor": 1.17,
       "win_rate": 39.1,
       "max_drawdown": 10.61,
       "total_trades": 46
@@ -2308,13 +2317,11 @@
   },
   "prices": {
     "BTC": 64276.5,
-    "ETH": 1917.05,
-    "SOL": 74.0465,
-    "HYPE": 54.1635
+    "ETH": 1916.25,
+    "SOL": 74.0135,
+    "HYPE": 54.0855
   },
-  "actions": [
-    "\ud83d\udfe2 OPENED LONG SOL @ $74.0465 | Size: 18.3671 | SL: $71.4450 | TP: $79.2495 | Strategy: stochastic | Stochastic bullish cross %K 76.6 > %D 60.4 | sentiment: sentiment aligned (+1.00), conf boosted [convergence x2] | lesson_adj: +0.03"
-  ],
+  "actions": [],
   "ai_history": [
     {
       "timestamp": "2026-07-02T13:35:29.623844+00:00",
@@ -2369,7 +2376,7 @@
     "asset_pruning": true
   },
   "lessons": {
-    "generated_at": "2026-07-30T00:00:37.647464+00:00",
+    "generated_at": "2026-07-30T02:01:29.584761+00:00",
     "pairs": {
       "BTC": {
         "pair": "BTC",
@@ -2456,6 +2463,12 @@
             "verdict": "mixed"
           },
           {
+            "pattern": "convergence_aligned",
+            "count": 30,
+            "win_rate": 46.7,
+            "verdict": "mixed"
+          },
+          {
             "pattern": "sentiment_override",
             "count": 21,
             "win_rate": 28.6,
@@ -2468,13 +2481,13 @@
             "verdict": "profitable"
           },
           {
-            "pattern": "short_hold",
-            "count": 7,
-            "win_rate": 57.1,
-            "verdict": "mixed"
+            "pattern": "convergence_ignored",
+            "count": 11,
+            "win_rate": 72.7,
+            "verdict": "profitable"
           }
         ],
-        "avg_trust": 0.23
+        "avg_trust": 0.24
       },
       "HYPE": {
         "pair": "HYPE",
@@ -2538,24 +2551,6 @@
         "trust": 0.7000000000000003
       },
       {
-        "pair": "SOL",
-        "pattern": [
-          "medium_hold",
-          "signal_exit"
-        ],
-        "lesson": "SOL: SHORT won +$4 (+0.2%) via stochastic. Duration 6h. Exit: signal_exit.",
-        "trust": 0.7000000000000003
-      },
-      {
-        "pair": "SOL",
-        "pattern": [
-          "medium_hold",
-          "signal_exit"
-        ],
-        "lesson": "SOL: SHORT won +$4 (+0.2%) via stochastic. Duration 8h. Exit: signal_exit.",
-        "trust": 0.6500000000000002
-      },
-      {
         "pair": "HYPE",
         "pattern": [
           "medium_hold",
@@ -2568,9 +2563,10 @@
         "pair": "SOL",
         "pattern": [
           "medium_hold",
-          "signal_exit"
+          "signal_exit",
+          "convergence_aligned"
         ],
-        "lesson": "SOL: LONG won +$24 (+0.6%) via stochastic. Duration 6h. Exit: signal_exit.",
+        "lesson": "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
         "trust": 0.6500000000000001
       },
       {
@@ -2621,7 +2617,7 @@
   "trade_review_output": {
     "new_reviews": 117,
     "total_lessons": 117,
-    "active_lessons": 7,
+    "active_lessons": 5,
     "pair_summaries": {
       "BTC": {
         "pair": "BTC",
@@ -2708,6 +2704,12 @@
             "verdict": "mixed"
           },
           {
+            "pattern": "convergence_aligned",
+            "count": 30,
+            "win_rate": 46.7,
+            "verdict": "mixed"
+          },
+          {
             "pattern": "sentiment_override",
             "count": 21,
             "win_rate": 28.6,
@@ -2720,13 +2722,13 @@
             "verdict": "profitable"
           },
           {
-            "pattern": "short_hold",
-            "count": 7,
-            "win_rate": 57.1,
-            "verdict": "mixed"
+            "pattern": "convergence_ignored",
+            "count": 11,
+            "win_rate": 72.7,
+            "verdict": "profitable"
           }
         ],
-        "avg_trust": 0.23
+        "avg_trust": 0.24
       },
       "HYPE": {
         "pair": "HYPE",
@@ -2772,37 +2774,37 @@
     },
     "new_lesson_texts": [
       "BTC: LONG won +$31 (+1.6%) via trend. Duration 4h. Exit: regime_override.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: SHORT won +$2 (+0.2%) via trend. Duration 7h. Exit: regime_override.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal. ETH: Lost on short hold (2h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. ETH: Lost on short hold (2h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: LONG won +$4 (+0.5%) via trend. Duration 6h. Exit: signal_exit.",
-      "SOL: LONG won +$24 (+2.2%) via stochastic. Duration 6h. Exit: signal_exit.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "BTC: Lost on short hold (4h). Entry timing was poor. BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "SOL: LONG won +$1 (+0.1%) via breakout. Duration 12h. Exit: regime_override.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: LONG won +$48 (+3.7%) via trend. Duration 6h. Exit: regime_override.",
       "BTC: LONG won +$21 (+0.8%) via trend. Duration 3h. Exit: regime_override.",
-      "SOL: LONG won +$4 (+0.2%) via stochastic. Duration 8h. Exit: signal_exit.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: Lost on short hold (2h). Entry timing was poor. HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "BTC: Lost on short hold (2h). Entry timing was poor. BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "BTC: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "SOL: LONG won +$18 (+0.9%) via stochastic. Duration 8h. Exit: signal_exit.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: LONG won +$36 (+2.1%) via trend. Duration 8h. Exit: regime_override.",
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: SHORT won +$6 (+0.5%) via trend. Duration 4h. Exit: regime_override.",
-      "SOL: LONG won +$55 (+3.7%) via stochastic. Duration 6h. Exit: signal_exit.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "SOL: LONG won +$8 (+0.5%) via stochastic. Duration 8h. Exit: signal_exit.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: SHORT won +$8 (+0.7%) via trend. Duration 2h. Exit: regime_override.",
       "ETH: LONG lost -$45 (-2.7%) via trend. Duration 12h. Exit: signal_exit.",
       "SOL: SHORT won +$26 (+1.9%) via stochastic. Duration 4h. Exit: regime_override.",
@@ -2811,36 +2813,36 @@
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: LONG lost -$1 (-0.1%) via trend. Duration 6h. Exit: signal_exit.",
       "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "SOL: LONG won +$5 (+0.3%) via stochastic. Duration 3h. Exit: regime_override.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: LONG lost -$15 (-1.1%) via trend. Duration 6h. Exit: signal_exit.",
-      "SOL: LONG won +$4 (+0.2%) via stochastic. Duration 7h. Exit: signal_exit.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: Lost on short hold (3h). Entry timing was poor. HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: Lost on short hold (4h). Entry timing was poor. HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: LONG won +$14 (+0.6%) via trend. Duration 5h. Exit: regime_override.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal. ETH: Lost on short hold (4h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. ETH: Lost on short hold (4h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: LONG lost -$7 (-0.4%) via stochastic. Duration 7h. Exit: signal_exit.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal. ETH: Lost on short hold (2h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. ETH: Lost on short hold (2h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: LONG lost -$22 (-1.7%) via trend. Duration 6h. Exit: signal_exit.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal. ETH: Lost on short hold (3h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. ETH: Lost on short hold (3h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: SHORT won +$15 (+0.8%) via stochastic. Duration 6h. Exit: signal_exit.",
       "HYPE: LONG won +$4 (+0.3%) via trend. Duration 6h. Exit: signal_exit.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable. ETH: Take profit hit in 3h. trend strategy caught the move.",
-      "SOL: LONG won +$66 (+3.0%) via stochastic. Duration 6h. Exit: signal_exit.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable. ETH: Take profit hit in 3h. trend strategy caught the move.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: Lost on short hold (3h). Entry timing was poor. SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable. ETH: Long hold (16h) was profitable. Patience rewarded.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable. ETH: Long hold (16h) was profitable. Patience rewarded.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal.",
       "HYPE: SHORT won +$6 (+0.4%) via trend. Duration 3h. Exit: regime_override.",
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "ETH: Lost on short hold (2h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
@@ -2851,20 +2853,20 @@
       "ETH: Lost on short hold (3h). Entry timing was poor. ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: LONG lost -$2 (-0.1%) via stochastic. Duration 8h. Exit: signal_exit.",
       "HYPE: SHORT won +$5 (+0.5%) via trend. Duration 5h. Exit: regime_override.",
-      "SOL: LONG won +$18 (+0.5%) via stochastic. Duration 5h. Exit: regime_override.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: LONG won +$6 (+0.4%) via trend. Duration 4h. Exit: regime_override.",
-      "SOL: LONG won +$1 (+0.0%) via stochastic. Duration 9h. Exit: signal_exit.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: SHORT won +$3 (+0.1%) via trend. Duration 6h. Exit: regime_override.",
       "SOL: Lost on short hold (2h). Entry timing was poor. SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable. ETH: Take profit hit in 47h. trend strategy caught the move. ETH: Long hold (47h) was profitable. Patience rewarded.",
-      "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable. ETH: Take profit hit in 47h. trend strategy caught the move. ETH: Long hold (47h) was profitable. Patience rewarded.",
+      "SOL: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: LONG won +$22 (+1.6%) via trend. Duration 18h. Exit: regime_override.",
       "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: LONG lost -$21 (-0.9%) via stochastic. Duration 7h. Exit: signal_exit.",
       "SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: Stopped out after 6h. supertrend signal was wrong.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
-      "SOL: LONG won +$17 (+0.7%) via stochastic. Duration 3h. Exit: regime_override.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: LONG won +$3 (+0.3%) via supertrend. Duration 2h. Exit: regime_override.",
       "SOL: SHORT won +$4 (+0.2%) via stochastic. Duration 6h. Exit: signal_exit.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
@@ -2874,16 +2876,16 @@
       "HYPE: SHORT won +$7 (+0.5%) via supertrend. Duration 10h. Exit: regime_override.",
       "SOL: LONG lost -$11 (-0.4%) via stochastic. Duration 11h. Exit: signal_exit.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "SOL: LONG won +$9 (+0.2%) via stochastic. Duration 2h. Exit: regime_override.",
-      "ETH: LOST despite sentiment disagreement (+0.45). Trader ignored convergence signal.",
-      "SOL: LONG won +$24 (+0.6%) via stochastic. Duration 6h. Exit: signal_exit.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
+      "ETH: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal.",
+      "SOL: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "SOL: Lost on short hold (3h). Entry timing was poor. SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
+      "SOL: LOST despite sentiment disagreement (+1.00). Trader ignored convergence signal. SOL: Lost on short hold (3h). Entry timing was poor. SOL: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "HYPE: Stopped out after 11h. supertrend signal was wrong.",
       "SOL: SHORT won +$45 (+2.3%) via stochastic. Duration 6h. Exit: signal_exit.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
-      "ETH: Trade won WITH sentiment convergence (+0.45). Convergence alignment profitable.",
+      "ETH: Trade won WITH sentiment convergence (+1.00). Convergence alignment profitable.",
       "HYPE: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
       "SOL: SHORT won +$7 (+0.4%) via stochastic. Duration 6h. Exit: signal_exit.",
       "ETH: Sentiment regime override triggered exit. Saved or lost money depending on P&L.",
