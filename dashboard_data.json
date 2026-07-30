@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-30T10:40:42.124531+00:00",
+  "last_update": "2026-07-30T10:45:42.585917+00:00",
   "portfolio": {
     "value": 4739.29,
     "capital": 4739.29,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 64562.5,
-    "ETH": 1920.05,
-    "SOL": 74.0725,
-    "HYPE": 53.8205
+    "BTC": 64588.5,
+    "ETH": 1920.85,
+    "SOL": 74.0815,
+    "HYPE": 53.8285
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-29T19:20:51.300826+00:00",
-      "v": 4779.96,
-      "p": -4.4
-    },
     {
       "t": "2026-07-29T19:25:51.856400+00:00",
       "v": 4773.2,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-30T10:40:42.124531+00:00",
       "v": 4739.29,
       "p": -5.21
+    },
+    {
+      "t": "2026-07-30T10:45:42.585917+00:00",
+      "v": 4739.29,
+      "p": -5.21
     }
   ],
   "ai_history": [
@@ -1995,18 +1995,19 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.24,
-      "confidence": 0.84,
+      "score": 0.33,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
         "whale_monitor",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC TA] @PILTR_XBT (\ud83d\udc4d10 \ud83d\udd041) Trading at wVAH from volume/ | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | polymarket: **\ud83d\udcca Polymarket Crypto Sentiment \u2014 2026-07-30**  **BTC:** Fir",
+      "signal_count": 5,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC TA] @PILTR_XBT (\ud83d\udc4d10 \ud83d\udd041) Trading at wVAH from volume/ | whale_monitor: Orderbook 76% bid-weighted (bullish) | polymarket: **\ud83d\udcca Polymarket Crypto Sentiment \u2014 2026-07-30**  **BTC:** Fir",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2019,25 +2020,26 @@
           "weight": 1.04
         },
         {
-          "source": "polymarket",
-          "signal": "**\ud83d\udcca Polymarket Crypto Sentiment \u2014 2026-07-30**  **BTC:** Firmly $56-62K for Jul 30. Crash to $45K by year-end at 27%. $7",
-          "weight": 0.78
+          "source": "whale_monitor",
+          "signal": "Orderbook 76% bid-weighted (bullish)",
+          "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-30T10:40:41.808296+00:00"
+      "timestamp": "2026-07-30T10:45:42.415212+00:00"
     },
     "ETH": {
-      "score": 0.51,
-      "confidence": 0.5,
+      "score": 0.76,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH/$SOL ETF] @usethebitcoin (\ud83d\udc4d0 \ud83d\udd040) Morgan Stanley laun | polymarket: lymarket Crypto Sentiment \u2014 2026-07-30**  **BTC:** Firmly $5",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH/$SOL ETF] @usethebitcoin (\ud83d\udc4d0 \ud83d\udd040) Morgan Stanley laun | polymarket: lymarket Crypto Sentiment \u2014 2026-07-30**  **BTC:** Firmly $5 | oi_funding: OI +11.0% 1h, funding 0.0006%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2045,17 +2047,17 @@
           "weight": 1.62
         },
         {
+          "source": "oi_funding",
+          "signal": "OI +11.0% 1h, funding 0.0006%",
+          "weight": 1.44
+        },
+        {
           "source": "x_scanner",
           "signal": "ETH's 11th birthday + Morgan Stanley's $ETH/$SOL ETF launch signal institutional momentum. DePIN sector showing real tra",
           "weight": 0.8
-        },
-        {
-          "source": "polymarket",
-          "signal": "lymarket Crypto Sentiment \u2014 2026-07-30**  **BTC:** Firmly $56-62K for Jul 30. Crash to $45K by year-end at 27%. $70K nea",
-          "weight": 0.78
         }
       ],
-      "timestamp": "2026-07-30T10:40:41.808328+00:00"
+      "timestamp": "2026-07-30T10:45:42.415261+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -2067,29 +2069,29 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 60% bid-weighted (bullish)",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 68% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 60% bid-weighted (bullish)",
-          "weight": 0.4
+          "signal": "Orderbook 68% bid-weighted (bullish)",
+          "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-30T10:40:41.808337+00:00"
+      "timestamp": "2026-07-30T10:45:42.415275+00:00"
     },
     "HYPE": {
-      "score": -0.01,
-      "confidence": 0.7,
+      "score": -0.55,
+      "confidence": 0.94,
       "sources": [
         "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
       "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE: SK Hynix Liquidation] @pentabase_dlt (\ud83d\udc4d0 \ud83d\udd040) Singl | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE: SK Hynix Liquidation] @pentabase_dlt (\ud83d\udc4d0 \ud83d\udd040) Singl | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI -47.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2097,17 +2099,17 @@
           "weight": 1.62
         },
         {
+          "source": "oi_funding",
+          "signal": "OI -47.0% 1h",
+          "weight": 1.44
+        },
+        {
           "source": "x_scanner",
           "signal": "\u2022 [$HYPE: ANSEM] @Ibb_thegreat (\ud83d\udc4d3 \ud83d\udd040) Why $ANSEM (The Black Bull) is what this cycle needs \u2014 memecoins at an inflection",
           "weight": 1.37
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0013%",
-          "weight": 0.72
         }
       ],
-      "timestamp": "2026-07-30T10:40:41.808347+00:00"
+      "timestamp": "2026-07-30T10:45:42.415294+00:00"
     }
   },
   "config": {
