@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-30T14:35:08.145124+00:00",
+  "last_update": "2026-07-30T14:40:08.694360+00:00",
   "portfolio": {
-    "value": 4737.81,
+    "value": 4735.97,
     "capital": 4737.25,
     "initial": 5000.0,
-    "pnl": -262.19,
-    "pnl_pct": -5.24,
+    "pnl": -264.03,
+    "pnl_pct": -5.28,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 64770.5,
-    "ETH": 1919.45,
-    "SOL": 74.6125,
-    "HYPE": 53.8285
+    "BTC": 64788.5,
+    "ETH": 1919.55,
+    "SOL": 74.6765,
+    "HYPE": 53.8755
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 74.6315,
-      "current_price": 74.6125,
+      "current_price": 74.6765,
       "size": 28.784038314474433,
-      "unrealized_pnl": 0.56,
-      "unrealized_pnl_pct": 0.03,
+      "unrealized_pnl": -1.28,
+      "unrealized_pnl_pct": -0.06,
       "stop_loss": 76.278,
       "take_profit": 71.3385,
       "strategy": "stochastic",
       "entry_time": "2026-07-30T14:00:07.313220+00:00",
-      "duration_hours": 0.6,
+      "duration_hours": 0.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0157
+      "unrealized_funding": -0.0179
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-29T23:10:19.475258+00:00",
-      "v": 4766.33,
-      "p": -4.67
-    },
     {
       "t": "2026-07-29T23:15:19.971718+00:00",
       "v": 4766.48,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-30T14:35:08.145124+00:00",
       "v": 4737.81,
       "p": -5.24
+    },
+    {
+      "t": "2026-07-30T14:40:08.694360+00:00",
+      "v": 4735.97,
+      "p": -5.28
     }
   ],
   "ai_history": [
@@ -2011,19 +2011,20 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.13,
-      "confidence": 0.6,
+      "score": -0.05,
+      "confidence": 0.8,
       "sources": [
         "x_scanner",
         "whale_monitor",
+        "news_agent",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 12,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 13,
+      "convergence": true,
+      "convergence_strength": 3,
       "contradictions": 2,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @CryptoGodJohn (\ud83d\udc4d245 \ud83d\udd043) $BTC closed half [score: | whale_monitor: Orderbook 60% bid-weighted (bullish) | polymarket: ETH above $2K on July 30 \u2192 0.8% (-6.7pp)  **Key takeaway:** ",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @CryptoGodJohn (\ud83d\udc4d245 \ud83d\udd043) $BTC closed half [score: | whale_monitor: Orderbook 60% bid-weighted (bullish) | news_agent: Yen surges 2%** vs USD \u2014 carry trade unwind fears for crypto",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2041,20 +2042,21 @@
           "weight": 1.3
         }
       ],
-      "timestamp": "2026-07-30T14:35:07.976060+00:00"
+      "timestamp": "2026-07-30T14:40:08.550061+00:00"
     },
     "ETH": {
-      "score": -1.0,
-      "confidence": 0.74,
+      "score": -0.52,
+      "confidence": 0.84,
       "sources": [
+        "news_agent",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: ets are de-risking on Fed rate hikes \u2014 Sept/Oct hike probabi | oi_funding: OI -52.0% 1h",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: ges 2%** vs USD \u2014 carry trade unwind fears for crypto   <htt | polymarket: ets are de-risking on Fed rate hikes \u2014 Sept/Oct hike probabi | oi_funding: OI -52.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -2065,22 +2067,28 @@
           "source": "polymarket",
           "signal": "ets are de-risking on Fed rate hikes \u2014 Sept/Oct hike probabilities dropping 11-13pp. BTC firmly above $56-62K near-term ",
           "weight": 1.14
+        },
+        {
+          "source": "news_agent",
+          "signal": "ges 2%** vs USD \u2014 carry trade unwind fears for crypto   <https://cryptobriefing.com/yen-surges-carry-trade-crypto-risk/>",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-30T14:35:07.976091+00:00"
+      "timestamp": "2026-07-30T14:40:08.550083+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.74,
+      "score": -0.51,
+      "confidence": 0.84,
       "sources": [
         "whale_monitor",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 23% bid (ask-heavy, bearish) | oi_funding: OI -35.0% 1h",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 23% bid (ask-heavy, bearish) | news_agent: USD \u2014 carry trade unwind fears for crypto   <https://cryptob | oi_funding: OI -35.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -2091,23 +2099,29 @@
           "source": "whale_monitor",
           "signal": "Orderbook 23% bid (ask-heavy, bearish)",
           "weight": 1.08
+        },
+        {
+          "source": "news_agent",
+          "signal": "USD \u2014 carry trade unwind fears for crypto   <https://cryptobriefing.com/yen-surges-carry-trade-crypto-risk/>  \ud83d\udcca **Token ",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-07-30T14:35:07.976102+00:00"
+      "timestamp": "2026-07-30T14:40:08.550093+00:00"
     },
     "HYPE": {
-      "score": 0.35,
-      "confidence": 0.84,
+      "score": 0.45,
+      "confidence": 0.9,
       "sources": [
         "x_scanner",
         "whale_monitor",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 7,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @midsusnight Hyperliquid seeing cool 6k traders | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI -29.0% 1h",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @midsusnight Hyperliquid seeing cool 6k traders | whale_monitor: Orderbook 67% bid-weighted (bullish) | news_agent: \u2014 carry trade unwind fears for crypto   <https://cryptobrief",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2125,7 +2139,7 @@
           "weight": 1.2
         }
       ],
-      "timestamp": "2026-07-30T14:35:07.976115+00:00"
+      "timestamp": "2026-07-30T14:40:08.550105+00:00"
     }
   },
   "config": {
