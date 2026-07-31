@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-31T20:55:38.320532+00:00",
+  "last_update": "2026-07-31T21:00:39.171431+00:00",
   "portfolio": {
-    "value": 4662.44,
+    "value": 4660.75,
     "capital": 4669.7,
     "initial": 5000.0,
-    "pnl": -337.56,
-    "pnl_pct": -6.75,
+    "pnl": -339.25,
+    "pnl_pct": -6.78,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 62926.5,
-    "ETH": 1862.55,
-    "SOL": 72.9715,
-    "HYPE": 52.6635
+    "BTC": 62925.5,
+    "ETH": 1860.95,
+    "SOL": 72.9395,
+    "HYPE": 52.6875
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1868.95,
-      "current_price": 1862.55,
+      "current_price": 1860.95,
       "size": 1.1311001215848244,
-      "unrealized_pnl": -7.27,
-      "unrealized_pnl_pct": -0.34,
+      "unrealized_pnl": -8.95,
+      "unrealized_pnl_pct": -0.42,
       "stop_loss": 1827.525,
       "take_profit": 1951.8,
       "strategy": "trend",
       "entry_time": "2026-07-31T17:25:14.084620+00:00",
-      "duration_hours": 3.5,
-      "funding_rate": 0.000355,
-      "unrealized_funding": 0.0262
+      "duration_hours": 3.6,
+      "funding_rate": -0.001285,
+      "unrealized_funding": -0.0971
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-31T05:25:55.103746+00:00",
-      "v": 4714.95,
-      "p": -5.7
-    },
     {
       "t": "2026-07-31T05:30:55.885192+00:00",
       "v": 4714.67,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-31T20:55:38.320532+00:00",
       "v": 4662.44,
       "p": -6.75
+    },
+    {
+      "t": "2026-07-31T21:00:39.171431+00:00",
+      "v": 4660.75,
+      "p": -6.78
     }
   ],
   "ai_history": [
@@ -2011,37 +2011,49 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.32,
+      "confidence": 0.6,
       "sources": [
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
+      "narrative": "Single-source signal (news_agent) | news_agent: ttps://cryptobriefing.com/china-ai-nvidia-export-controls/)  | oi_funding: OI -5.0% 1h",
       "key_signals": [
+        {
+          "source": "news_agent",
+          "signal": "ttps://cryptobriefing.com/china-ai-nvidia-export-controls/) \u2022 **Bitcoin holds July gain as \"forced-selling fuel was alre",
+          "weight": 0.98
+        },
+        {
+          "source": "news_agent",
+          "signal": "sk.com/markets/2026/07/31/bitcoin-holds-onto-july-gain-as-forced-selling-fuel-was-already-spent-analysts-say)  \ud83d\udcca Scan: 9",
+          "weight": 0.98
+        },
         {
           "source": "oi_funding",
           "signal": "OI -5.0% 1h",
           "weight": 0.9
         }
       ],
-      "timestamp": "2026-07-31T20:55:38.202157+00:00"
+      "timestamp": "2026-07-31T21:00:38.980618+00:00"
     },
     "ETH": {
-      "score": 0.54,
-      "confidence": 0.5,
+      "score": 0.6,
+      "confidence": 0.7,
       "sources": [
         "x_scanner",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc9c $ETH] @CryptoCaesarTA (\ud83d\udc4d0 \ud83d\udd040) The $WOJAK chart is looki | oi_funding: OI -23.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc9c $ETH] @CryptoCaesarTA (\ud83d\udc4d0 \ud83d\udd040) The $WOJAK chart is looki | news_agent: 31/bitcoin-holds-onto-july-gain-as-forced-selling-fuel-was-a | oi_funding: OI -23.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2059,7 +2071,7 @@
           "weight": 1.62
         }
       ],
-      "timestamp": "2026-07-31T20:55:38.202179+00:00"
+      "timestamp": "2026-07-31T21:00:38.980647+00:00"
     },
     "SOL": {
       "score": -0.16,
@@ -2085,20 +2097,21 @@
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-31T20:55:38.202188+00:00"
+      "timestamp": "2026-07-31T21:00:38.980698+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 0.74,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 7,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $HYPE] @WeissCrypto (\ud83d\udc4d2 \ud83d\udd040) Question 3: Is the supply c | oi_funding: OI +66.0% 1h, funding 0.0012%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $HYPE] @WeissCrypto (\ud83d\udc4d2 \ud83d\udd040) Question 3: Is the supply c | news_agent: 2026/07/31/bitcoin-holds-onto-july-gain-as-forced-selling-fu | oi_funding: OI +66.0% 1h, funding 0.0012%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2116,7 +2129,7 @@
           "weight": 1.69
         }
       ],
-      "timestamp": "2026-07-31T20:55:38.202200+00:00"
+      "timestamp": "2026-07-31T21:00:38.980715+00:00"
     }
   },
   "config": {
