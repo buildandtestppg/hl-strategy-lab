@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": -0.03,
-    "confidence": 0.5,
+    "score": -0.32,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC Breaking] Coldcard vulnerability drains $70M+ from 1 | whale_monitor: Orderbook 70% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC Breaking] Coldcard vulnerability drains $70M+ from 1 | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -19.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -18,58 +19,40 @@
         "weight": 2.15
       },
       {
+        "source": "oi_funding",
+        "signal": "OI -19.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd25 $BTC] @VoidOnChain (\ud83d\udc4d8): Every $BTC bottom looks the same \u2014 longs liquidated, volatility dies, volume increases bef",
         "weight": 1.23
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 70% bid-weighted (bullish)",
-        "weight": 0.8
       }
     ],
-    "timestamp": "2026-07-31T22:00:45.776041+00:00"
+    "timestamp": "2026-07-31T22:05:46.292509+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-31T22:00:45.776053+00:00"
-  },
-  "SOL": {
-    "score": 1.0,
-    "confidence": 0.74,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $SOL] @stakecraft: Solana DEX volume has been flipping  | whale_monitor: Orderbook 71% bid-weighted (bullish)",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -74.0% 1h",
     "key_signals": [
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udd2e $SOL] @stakecraft: Solana DEX volume has been flipping Ethereum's on several days this cycle. [score: 4.0]",
-        "weight": 2.6
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 71% bid-weighted (bullish)",
-        "weight": 0.84
+        "source": "oi_funding",
+        "signal": "OI -74.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-07-31T22:00:45.776094+00:00"
+    "timestamp": "2026-07-31T22:05:46.292531+00:00"
   },
-  "HYPE": {
-    "score": 0.57,
+  "SOL": {
+    "score": 0.47,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -80,7 +63,38 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @LibertySwapFi (\ud83d\udc4d52 \ud83d\udd047): Team hard at work integ | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI +10.0% 1h, funding 0.0006%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $SOL] @stakecraft: Solana DEX volume has been flipping  | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -193.0% 1h",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udd2e $SOL] @stakecraft: Solana DEX volume has been flipping Ethereum's on several days this cycle. [score: 4.0]",
+        "weight": 2.6
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -193.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 71% bid-weighted (bullish)",
+        "weight": 0.84
+      }
+    ],
+    "timestamp": "2026-07-31T22:05:46.292545+00:00"
+  },
+  "HYPE": {
+    "score": 0.27,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @LibertySwapFi (\ud83d\udc4d52 \ud83d\udd047): Team hard at work integ | whale_monitor: Orderbook 20% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -88,16 +102,11 @@
         "weight": 2.08
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +10.0% 1h, funding 0.0006%",
-        "weight": 1.44
-      },
-      {
         "source": "whale_monitor",
         "signal": "Orderbook 20% bid (ask-heavy, bearish)",
         "weight": 1.2
       }
     ],
-    "timestamp": "2026-07-31T22:00:45.776119+00:00"
+    "timestamp": "2026-07-31T22:05:46.292554+00:00"
   }
 }
