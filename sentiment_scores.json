@@ -1,23 +1,29 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.16,
+    "confidence": 0.5,
     "sources": [
+      "x_scanner",
       "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -34.0% 1h",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcf0 $BTC] @tdcryptovn (\ud83d\udc4d2 \ud83d\udd040) Whale 0x2684 accumulated 1,05 | oi_funding: OI -10.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -34.0% 1h",
+        "signal": "OI -10.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcf0 $BTC] @tdcryptovn (\ud83d\udc4d2 \ud83d\udd040) Whale 0x2684 accumulated 1,050 WBTC ($67M) + 66K ETH ($117M) in 30d [score: 1.6]",
+        "weight": 1.04
       }
     ],
-    "timestamp": "2026-07-31T01:45:28.669609+00:00"
+    "timestamp": "2026-07-31T01:50:29.283429+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -29,46 +35,78 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -5.0% 1h",
-        "weight": 0.9
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-07-31T01:45:28.669680+00:00"
+    "timestamp": "2026-07-31T01:50:29.283445+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 0.86,
+    "confidence": 0.84,
     "sources": [
+      "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -12.0% 1h",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7 $SOL] @GCandleGazette (\ud83d\udc4d0 \ud83d\udd040) Crypto firm w/ millions i | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI +17.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7 $SOL] @GCandleGazette (\ud83d\udc4d0 \ud83d\udd040) Crypto firm w/ millions in SOL seeks emergency loan, $4K cash left [score: 2.5]",
+        "weight": 1.62
+      },
+      {
         "source": "oi_funding",
-        "signal": "OI -12.0% 1h",
+        "signal": "OI +17.0% 1h, funding 0.0013%",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-07-31T01:45:28.669692+00:00"
+    "timestamp": "2026-07-31T01:50:29.283459+00:00"
   },
   "HYPE": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-07-31T01:45:28.669694+00:00"
+    "score": 0.62,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @Nomaticcap (\ud83d\udc4d4 \ud83d\udd042) ATH TVL $6.14B \u2014 AQAv2 deal  | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI -9.0% 1h",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7 $HYPE] @Nomaticcap (\ud83d\udc4d4 \ud83d\udd042) ATH TVL $6.14B \u2014 AQAv2 deal w/ Circle turns TVL into passive revenue [score: 3.9]",
+        "weight": 3.12
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -9.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 76% bid-weighted (bullish)",
+        "weight": 1.04
+      }
+    ],
+    "timestamp": "2026-07-31T01:50:29.283470+00:00"
   }
 }
