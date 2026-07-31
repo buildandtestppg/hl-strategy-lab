@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-31T13:20:46.657893+00:00",
+  "last_update": "2026-07-31T13:25:47.132059+00:00",
   "portfolio": {
     "value": 4685.58,
     "capital": 4685.58,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63729.5,
-    "ETH": 1887.05,
-    "SOL": 73.6655,
-    "HYPE": 55.2115
+    "BTC": 63785.5,
+    "ETH": 1888.05,
+    "SOL": 73.7535,
+    "HYPE": 55.3185
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-30T21:58:15.442675+00:00",
-      "v": 4751.25,
-      "p": -4.98
-    },
     {
       "t": "2026-07-30T22:00:02.573995+00:00",
       "v": 4751.51,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-31T13:20:46.657893+00:00",
       "v": 4685.58,
       "p": -6.29
+    },
+    {
+      "t": "2026-07-31T13:25:47.132059+00:00",
+      "v": 4685.58,
+      "p": -6.29
     }
   ],
   "ai_history": [
@@ -1995,18 +1995,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.1,
-      "confidence": 0.94,
+      "score": 0.05,
+      "confidence": 0.7,
       "sources": [
         "x_scanner",
-        "whale_monitor",
-        "news_agent"
+        "news_agent",
+        "oi_funding"
       ],
       "signal_count": 9,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Cointelegraph (\ud83d\udc4d17 \ud83d\udd044) WHALE ALERT: 500 $BTC wor | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | news_agent: m/us-treasury-sanctions-irans-bitcoin-backed-shipping-insura",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Cointelegraph (\ud83d\udc4d17 \ud83d\udd044) WHALE ALERT: 500 $BTC wor | news_agent: Now format the Discord message. The article is critical \u2014 US | oi_funding: OI +71.0% 1h, funding 0.0007%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2024,7 +2024,7 @@
           "weight": 2.54
         }
       ],
-      "timestamp": "2026-07-31T13:20:46.457226+00:00"
+      "timestamp": "2026-07-31T13:25:47.016734+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -2049,40 +2049,46 @@
           "weight": 2.02
         }
       ],
-      "timestamp": "2026-07-31T13:20:46.457254+00:00"
+      "timestamp": "2026-07-31T13:25:47.016749+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -0.04,
+      "confidence": 0.5,
       "sources": [
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 68% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 83% bid-weighted (bullish) | oi_funding: OI -43.0% 1h",
       "key_signals": [
         {
+          "source": "oi_funding",
+          "signal": "OI -43.0% 1h",
+          "weight": 1.44
+        },
+        {
           "source": "whale_monitor",
-          "signal": "Orderbook 68% bid-weighted (bullish)",
-          "weight": 0.72
+          "signal": "Orderbook 83% bid-weighted (bullish)",
+          "weight": 1.32
         }
       ],
-      "timestamp": "2026-07-31T13:20:46.457267+00:00"
+      "timestamp": "2026-07-31T13:25:47.016758+00:00"
     },
     "HYPE": {
-      "score": 0.85,
+      "score": 0.55,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 4,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @0xfazio hxFunding captures Hyperliquid funding | whale_monitor: Orderbook 40% bid (ask-heavy, bearish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @0xfazio hxFunding captures Hyperliquid funding | oi_funding: OI -24.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2090,17 +2096,17 @@
           "weight": 2.67
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @nodegoblin (\ud83d\udc4d9) Next perp DEX airdrop after Hyperliquid \u2014 positioning for early [score: 1.8]",
-          "weight": 1.17
+          "source": "oi_funding",
+          "signal": "OI -24.0% 1h",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @Dune (\ud83d\udc4d3) Hyperliquid equities volume $2-3B/day, 86 markets live via HIP-3 [score: 1.7]",
-          "weight": 1.1
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @nodegoblin (\ud83d\udc4d9) Next perp DEX airdrop after Hyperliquid \u2014 positioning for early [score: 1.8]",
+          "weight": 1.17
         }
       ],
-      "timestamp": "2026-07-31T13:20:46.457285+00:00"
+      "timestamp": "2026-07-31T13:25:47.016767+00:00"
     }
   },
   "config": {
