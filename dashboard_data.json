@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-31T09:20:21.366556+00:00",
+  "last_update": "2026-07-31T09:25:21.735041+00:00",
   "portfolio": {
     "value": 4699.7,
     "capital": 4699.7,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63712.5,
-    "ETH": 1885.35,
-    "SOL": 73.5415,
-    "HYPE": 54.4875
+    "BTC": 63668.5,
+    "ETH": 1883.75,
+    "SOL": 73.5025,
+    "HYPE": 54.3785
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-30T17:55:31.257043+00:00",
-      "v": 4735.44,
-      "p": -5.29
-    },
     {
       "t": "2026-07-30T18:00:31.819358+00:00",
       "v": 4734.81,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-31T09:20:21.366556+00:00",
       "v": 4699.7,
       "p": -6.01
+    },
+    {
+      "t": "2026-07-31T09:25:21.735041+00:00",
+      "v": 4699.7,
+      "p": -6.01
     }
   ],
   "ai_history": [
@@ -1995,22 +1995,23 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.28,
-      "confidence": 0.6,
+      "score": -0.54,
+      "confidence": 0.94,
       "sources": [
         "x_scanner",
-        "news_agent"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @wiseadvicesumit (\ud83d\udc4d2 \ud83d\udd041) $38M Bitcoin stolen in C | news_agent: ip it.  \ud83d\udfe1 **Crypto News \u2014 July 31, 2026**  **High Impact** \ud83d\udfe1",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @wiseadvicesumit (\ud83d\udc4d2 \ud83d\udd041) $38M Bitcoin stolen in C | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI -25.0% 1h",
       "key_signals": [
         {
-          "source": "news_agent",
-          "signal": "ip it.  \ud83d\udfe1 **Crypto News \u2014 July 31, 2026**  **High Impact** \ud83d\udfe1 **$38M in Bitcoin Drained by Coldcard Key Flaw \u2014 Maker Says",
-          "weight": 1.2
+          "source": "oi_funding",
+          "signal": "OI -25.0% 1h",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
@@ -2018,12 +2019,12 @@
           "weight": 1.1
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcb0 $BTC] @OnchainLens (\ud83d\udc4d1) 500 $BTC ($31.89M) moved to Binance \u2014 whale sent to new wallet then deposited.",
-          "weight": 0.65
+          "source": "whale_monitor",
+          "signal": "Orderbook 24% bid (ask-heavy, bearish)",
+          "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-31T09:20:21.156732+00:00"
+      "timestamp": "2026-07-31T09:25:21.611609+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -2035,38 +2036,38 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +4.0% 1h, funding 0.0003%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +17.0% 1h, funding 0.0005%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0003%",
-          "weight": 0.72
+          "signal": "OI +17.0% 1h, funding 0.0005%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-31T09:20:21.156759+00:00"
+      "timestamp": "2026-07-31T09:25:21.611625+00:00"
     },
     "SOL": {
-      "score": 1.0,
+      "score": -1.0,
       "confidence": 0.3,
       "sources": [
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 71% bid-weighted (bullish)",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -29.0% 1h",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 71% bid-weighted (bullish)",
-          "weight": 0.84
+          "source": "oi_funding",
+          "signal": "OI -29.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-31T09:20:21.156772+00:00"
+      "timestamp": "2026-07-31T09:25:21.611633+00:00"
     },
     "HYPE": {
-      "score": 0.84,
+      "score": 0.37,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
@@ -2077,7 +2078,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @milly_rock7 (\ud83d\udc4d0) MoonPay shipped AI payment vau | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI +40.0% 1h, funding 0.0006%",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @milly_rock7 (\ud83d\udc4d0) MoonPay shipped AI payment vau | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | oi_funding: OI -64.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2091,11 +2092,11 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +40.0% 1h, funding 0.0006%",
+          "signal": "OI -64.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-07-31T09:20:21.156796+00:00"
+      "timestamp": "2026-07-31T09:25:21.611644+00:00"
     }
   },
   "config": {
