@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-07-31T21:45:44.700202+00:00",
+  "last_update": "2026-07-31T21:50:44.954236+00:00",
   "portfolio": {
-    "value": 4662.05,
+    "value": 4663.05,
     "capital": 4669.7,
     "initial": 5000.0,
-    "pnl": -337.95,
-    "pnl_pct": -6.76,
+    "pnl": -336.95,
+    "pnl_pct": -6.74,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 63005.5,
-    "ETH": 1862.25,
-    "SOL": 73.0125,
-    "HYPE": 52.2685
+    "BTC": 62987.5,
+    "ETH": 1863.15,
+    "SOL": 73.0215,
+    "HYPE": 52.0985
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1868.95,
-      "current_price": 1862.25,
+      "current_price": 1863.15,
       "size": 1.1311001215848244,
-      "unrealized_pnl": -7.66,
-      "unrealized_pnl_pct": -0.36,
+      "unrealized_pnl": -6.65,
+      "unrealized_pnl_pct": -0.31,
       "stop_loss": 1827.525,
       "take_profit": 1951.8,
       "strategy": "trend",
       "entry_time": "2026-07-31T17:25:14.084620+00:00",
-      "duration_hours": 4.3,
-      "funding_rate": 0.000841,
-      "unrealized_funding": 0.077
+      "duration_hours": 4.4,
+      "funding_rate": 0.000973,
+      "unrealized_funding": 0.0907
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-31T06:20:00.839200+00:00",
-      "v": 4709.98,
-      "p": -5.8
-    },
     {
       "t": "2026-07-31T06:21:19.899185+00:00",
       "v": 4710.7,
@@ -1961,6 +1956,11 @@
       "t": "2026-07-31T21:45:44.700202+00:00",
       "v": 4662.05,
       "p": -6.76
+    },
+    {
+      "t": "2026-07-31T21:50:44.954236+00:00",
+      "v": 4663.05,
+      "p": -6.74
     }
   ],
   "ai_history": [
@@ -2011,24 +2011,35 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -0.03,
+      "confidence": 0.5,
       "sources": [
+        "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 1,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 70% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC Breaking] Coldcard vulnerability drains $70M+ from 1 | whale_monitor: Orderbook 70% bid-weighted (bullish)",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$BTC Breaking] Coldcard vulnerability drains $70M+ from 1,200+ addresses \u2014 hardware wallet trust shaken. [score: 3.3]",
+          "weight": 2.15
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd25 $BTC] @VoidOnChain (\ud83d\udc4d8): Every $BTC bottom looks the same \u2014 longs liquidated, volatility dies, volume increases bef",
+          "weight": 1.23
+        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 70% bid-weighted (bullish)",
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-31T21:45:44.341365+00:00"
+      "timestamp": "2026-07-31T21:50:44.774131+00:00"
     },
     "ETH": {
       "score": 0.0,
@@ -2040,7 +2051,7 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-07-31T21:45:44.341375+00:00"
+      "timestamp": "2026-07-31T21:50:44.774144+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -2053,12 +2064,12 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u2600\ufe0f $SOL] @wasewy (\ud83d\udc4d32 \ud83d\udd0432) @nogaybrother launched on @sol | whale_monitor: Orderbook 71% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $SOL] @stakecraft: Solana DEX volume has been flipping  | whale_monitor: Orderbook 71% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\u2600\ufe0f $SOL] @wasewy (\ud83d\udc4d32 \ud83d\udd0432) @nogaybrother launched on @solana @Pumpfun Aug 3rd \u2014 \"incredible community and promising f",
-          "weight": 2.08
+          "signal": "\u2022 [\ud83d\udd2e $SOL] @stakecraft: Solana DEX volume has been flipping Ethereum's on several days this cycle. [score: 4.0]",
+          "weight": 2.6
         },
         {
           "source": "whale_monitor",
@@ -2066,26 +2077,26 @@
           "weight": 0.84
         }
       ],
-      "timestamp": "2026-07-31T21:45:44.341403+00:00"
+      "timestamp": "2026-07-31T21:50:44.774168+00:00"
     },
     "HYPE": {
-      "score": 0.66,
+      "score": 0.57,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @DI88_MARE88 (\ud83d\udc4d1) $HYPE volume speaking loud, u | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI +10.0% 1h, funding 0.0006%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @LibertySwapFi (\ud83d\udc4d52 \ud83d\udd047): Team hard at work integ | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI +10.0% 1h, funding 0.0006%",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @DI88_MARE88 (\ud83d\udc4d1) $HYPE volume speaking loud, under-owned names clean. Real throughput over narrative [scor",
-          "weight": 1.62
+          "signal": "\u2022 [\ud83c\udfd7 $HYPE] @LibertySwapFi (\ud83d\udc4d52 \ud83d\udd047): Team hard at work integrating smart contracts into UI, careful testing to avoid rou",
+          "weight": 2.08
         },
         {
           "source": "oi_funding",
@@ -2093,12 +2104,12 @@
           "weight": 1.44
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcf0 $HYPE] @realtommybibi (\ud83d\udc4d15 \ud83d\udd046) TOP 15 HEADLINES: Strategy bought 48x more BTC than sold YTD, Pumpfun layoffs, more ",
-          "weight": 1.37
+          "source": "whale_monitor",
+          "signal": "Orderbook 20% bid (ask-heavy, bearish)",
+          "weight": 1.2
         }
       ],
-      "timestamp": "2026-07-31T21:45:44.341427+00:00"
+      "timestamp": "2026-07-31T21:50:44.774188+00:00"
     }
   },
   "config": {
