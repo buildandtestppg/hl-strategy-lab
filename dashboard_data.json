@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-07-31T15:00:56.411859+00:00",
+  "last_update": "2026-07-31T15:05:56.799478+00:00",
   "portfolio": {
     "value": 4685.58,
     "capital": 4685.58,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 62600.5,
-    "ETH": 1855.75,
-    "SOL": 72.9275,
-    "HYPE": 54.3405
+    "BTC": 62668.5,
+    "ETH": 1858.65,
+    "SOL": 72.9925,
+    "HYPE": 54.4505
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-07-30T23:40:13.536464+00:00",
-      "v": 4776.73,
-      "p": -4.47
-    },
     {
       "t": "2026-07-30T23:45:14.047272+00:00",
       "v": 4761.6,
@@ -1945,6 +1940,11 @@
       "t": "2026-07-31T15:00:56.411859+00:00",
       "v": 4685.58,
       "p": -6.29
+    },
+    {
+      "t": "2026-07-31T15:05:56.799478+00:00",
+      "v": 4685.58,
+      "p": -6.29
     }
   ],
   "ai_history": [
@@ -1995,29 +1995,36 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.35,
+      "confidence": 0.84,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $BTC ETF Outflows] @PennybagsCX (\ud83d\udc4d2) Bitcoin ETFs worst",
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC ETF Outflows] @PennybagsCX (\ud83d\udc4d2) Bitcoin ETFs worst | whale_monitor: Orderbook 19% bid (ask-heavy, bearish) | oi_funding: OI +44.0% 1h, funding 0.0010%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +44.0% 1h, funding 0.0010%",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 19% bid (ask-heavy, bearish)",
+          "weight": 1.24
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $BTC ETF Outflows] @PennybagsCX (\ud83d\udc4d2) Bitcoin ETFs worst monthly inflows in July \u2014 only $205M all month [1.6]",
           "weight": 0.8
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udc9a $BTC ETF Recovery] @PARAGONDEN (\ud83d\udc4d1) $BTC bounced back with $251M ETF inflows after consecutive outflows [1.5]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-31T15:00:56.184803+00:00"
+      "timestamp": "2026-07-31T15:05:56.614405+00:00"
     },
     "ETH": {
       "score": 0.0,
@@ -2042,41 +2049,42 @@
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-07-31T15:00:56.184833+00:00"
+      "timestamp": "2026-07-31T15:05:56.614424+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 0.74,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 4,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL Memecoin] @mars_bnb (\ud83d\udc4d4) Binance Flashdisk $SNDK v | whale_monitor: Orderbook 72% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL Memecoin] @mars_bnb (\ud83d\udc4d4) Binance Flashdisk $SNDK v | whale_monitor: Orderbook 82% bid-weighted (bullish) | oi_funding: OI +83.0% 1h, funding 0.0003%",
       "key_signals": [
         {
+          "source": "oi_funding",
+          "signal": "OI +83.0% 1h, funding 0.0003%",
+          "weight": 1.44
+        },
+        {
           "source": "whale_monitor",
-          "signal": "Orderbook 72% bid-weighted (bullish)",
-          "weight": 0.88
+          "signal": "Orderbook 82% bid-weighted (bullish)",
+          "weight": 1.28
         },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $SOL Memecoin] @mars_bnb (\ud83d\udc4d4) Binance Flashdisk $SNDK volume surpassed $ETH, $7.6B \u2014 near $BTC volume [1.7]",
           "weight": 0.65
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\ude80 $SOL Airdrop Hype] @BARONMOND_1 (\ud83d\udc4d1) Airdrop would send Solana on-chain volume into the stratosphere [1.6]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-31T15:00:56.184864+00:00"
+      "timestamp": "2026-07-31T15:05:56.614437+00:00"
     },
     "HYPE": {
-      "score": -0.16,
+      "score": -0.38,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
@@ -2086,12 +2094,12 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE Volume Record] @Cbb0fe (\ud83d\udc4d67 \ud83d\udd042) New 24h record af | oi_funding: OI -5.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE Volume Record] @Cbb0fe (\ud83d\udc4d67 \ud83d\udd042) New 24h record af | oi_funding: OI -110.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -5.0% 1h",
-          "weight": 0.9
+          "signal": "OI -110.0% 1h",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
@@ -2099,7 +2107,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-07-31T15:00:56.184884+00:00"
+      "timestamp": "2026-07-31T15:05:56.614446+00:00"
     }
   },
   "config": {
