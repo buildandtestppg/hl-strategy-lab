@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-08-01T05:03:08.511833+08:00",
-  "exported_at_utc": "2026-07-31T21:03:08.511837+00:00",
+  "exported_at": "2026-08-01T05:10:43.198116+08:00",
+  "exported_at_utc": "2026-07-31T21:10:43.198121+00:00",
   "portfolio": {
     "value": 4669.70366598689,
     "initial": 5000.0,
@@ -367,16 +367,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-07-31T05:35:56.468830+00:00",
-      "v": 4713.61,
-      "p": -5.73
-    },
-    {
-      "t": "2026-07-31T05:40:56.984201+00:00",
-      "v": 4711.5,
-      "p": -5.77
-    },
     {
       "t": "2026-07-31T05:45:57.241085+00:00",
       "v": 4713.87,
@@ -1366,23 +1356,38 @@
       "t": "2026-07-31T21:01:51.199319+00:00",
       "v": 4658.82,
       "p": -6.82
+    },
+    {
+      "t": "2026-07-31T21:05:39.513436+00:00",
+      "v": 4660.71,
+      "p": -6.79
+    },
+    {
+      "t": "2026-07-31T21:10:40.385586+00:00",
+      "v": 4661.94,
+      "p": -6.76
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.32,
+      "score": 0.42,
       "confidence": 0.6,
       "sources": [
-        "news_agent",
-        "oi_funding"
+        "whale_monitor",
+        "news_agent"
       ],
       "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (news_agent) | news_agent: ttps://cryptobriefing.com/china-ai-nvidia-export-controls/)  | oi_funding: OI -5.0% 1h",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 85% bid-weighted (bullish) | news_agent: ttps://cryptobriefing.com/china-ai-nvidia-export-controls/) ",
       "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 85% bid-weighted (bullish)",
+          "weight": 1.4
+        },
         {
           "source": "news_agent",
           "signal": "ttps://cryptobriefing.com/china-ai-nvidia-export-controls/) \u2022 **Bitcoin holds July gain as \"forced-selling fuel was alre",
@@ -1392,28 +1397,22 @@
           "source": "news_agent",
           "signal": "sk.com/markets/2026/07/31/bitcoin-holds-onto-july-gain-as-forced-selling-fuel-was-already-spent-analysts-say)  \ud83d\udcca Scan: 9",
           "weight": 0.98
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI -5.0% 1h",
-          "weight": 0.9
         }
       ],
-      "timestamp": "2026-07-31T21:00:47.256771+00:00"
+      "timestamp": "2026-07-31T21:10:40.131954+00:00"
     },
     "ETH": {
-      "score": 0.6,
-      "confidence": 0.7,
+      "score": 1.0,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
-        "news_agent",
-        "oi_funding"
+        "news_agent"
       ],
-      "signal_count": 5,
+      "signal_count": 4,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc9c $ETH] @CryptoCaesarTA (\ud83d\udc4d0 \ud83d\udd040) The $WOJAK chart is looki | news_agent: 31/bitcoin-holds-onto-july-gain-as-forced-selling-fuel-was-a | oi_funding: OI -23.0% 1h",
+      "contradictions": 0,
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc9c $ETH] @CryptoCaesarTA (\ud83d\udc4d0 \ud83d\udd040) The $WOJAK chart is looki | news_agent: 31/bitcoin-holds-onto-july-gain-as-forced-selling-fuel-was-a",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1431,47 +1430,54 @@
           "weight": 1.62
         }
       ],
-      "timestamp": "2026-07-31T21:00:47.256806+00:00"
+      "timestamp": "2026-07-31T21:10:40.131982+00:00"
     },
     "SOL": {
-      "score": -0.16,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u2600\ufe0f $SOL] @ftosol (\ud83d\udc4d3 \ud83d\udd040) Be @PhoenixTrade > have the best | oi_funding: OI -15.0% 1h",
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\u2600\ufe0f $SOL] @ftosol (\ud83d\udc4d3 \ud83d\udd040) Be @PhoenixTrade > have the best | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI +10.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -15.0% 1h",
+          "signal": "OI +10.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\u2600\ufe0f $SOL] @ftosol (\ud83d\udc4d3 \ud83d\udd040) Be @PhoenixTrade > have the best fees > list basically everything > launch rewards campaign ",
           "weight": 1.04
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 76% bid-weighted (bullish)",
+          "weight": 1.04
         }
       ],
-      "timestamp": "2026-07-31T21:00:47.256817+00:00"
+      "timestamp": "2026-07-31T21:10:40.131997+00:00"
     },
     "HYPE": {
       "score": 1.0,
       "confidence": 1.0,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "news_agent",
         "oi_funding"
       ],
-      "signal_count": 7,
+      "signal_count": 8,
       "convergence": true,
-      "convergence_strength": 3,
+      "convergence_strength": 4,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $HYPE] @WeissCrypto (\ud83d\udc4d2 \ud83d\udd040) Question 3: Is the supply c | news_agent: 2026/07/31/bitcoin-holds-onto-july-gain-as-forced-selling-fu | oi_funding: OI +66.0% 1h, funding 0.0012%",
+      "narrative": "\ud83d\udcc8 4-source bullish convergence | x_scanner: \u2022 [\ud83d\udd2e $HYPE] @WeissCrypto (\ud83d\udc4d2 \ud83d\udd040) Question 3: Is the supply c | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: 2026/07/31/bitcoin-holds-onto-july-gain-as-forced-selling-fu",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1489,7 +1495,7 @@
           "weight": 1.69
         }
       ],
-      "timestamp": "2026-07-31T21:00:47.256832+00:00"
+      "timestamp": "2026-07-31T21:10:40.132010+00:00"
     }
   },
   "pair_strategies": {
@@ -1667,102 +1673,102 @@
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
-        "text": "**Run Time:** 2026-08-01 04:47:23",
+        "text": "**Run Time:** 2026-08-01 05:07:48",
         "sentiment": 0,
-        "time": "2026-08-01 04:47"
+        "time": "2026-08-01 05:07"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1785530843.1707313"
+        "time": "1785532071.3400786"
       }
     ],
     "news_agent": [
@@ -1867,32 +1873,32 @@
         "time": "1785531341.861404"
       }
     ],
-    "generated": "2026-07-31T21:00:39.023863Z"
+    "generated": "2026-07-31T21:10:40.175943Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "04:54",
-      "age_minutes": 9,
+      "age_minutes": 17,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "04:47",
-      "age_minutes": 16,
+      "last_run": "05:07",
+      "age_minutes": 3,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "04:55",
-      "age_minutes": 7,
+      "age_minutes": 15,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "03:04",
-      "age_minutes": 118,
+      "age_minutes": 126,
       "status": "fresh"
     },
     "synthesizer": {
       "last_run": "05:02",
-      "age_minutes": 1,
+      "age_minutes": 8,
       "status": "fresh"
     }
   },
@@ -2311,10 +2317,10 @@
     }
   },
   "prices": {
-    "BTC": 62891.5,
-    "ETH": 1859.25,
-    "SOL": 72.9005,
-    "HYPE": 52.6685
+    "BTC": 62938.5,
+    "ETH": 1862.05,
+    "SOL": 73.0115,
+    "HYPE": 52.6085
   },
   "actions": [],
   "ai_history": [
