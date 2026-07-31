@@ -1,16 +1,16 @@
 {
   "BTC": {
-    "score": -0.02,
-    "confidence": 0.5,
+    "score": -0.49,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "whale_monitor"
     ],
     "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @CryptomegaNews Coldcard Mk3 warning amid report | whale_monitor: Orderbook 73% bid-weighted (bullish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @CryptomegaNews Coldcard Mk3 warning amid report | whale_monitor: Orderbook 16% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -23,61 +23,67 @@
         "weight": 1.62
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @BtcPhenom (\ud83d\udc4d2) Record retail liquidations every other day \u2014 they're making a killing in this range [score: 1",
-        "weight": 1.04
+        "source": "whale_monitor",
+        "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+        "weight": 1.36
       }
     ],
-    "timestamp": "2026-07-31T05:05:52.211337+00:00"
+    "timestamp": "2026-07-31T05:10:52.870376+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @EyeOnChain (\ud83d\udc4d2) Whale built massive position in ",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $ETH] @EyeOnChain (\ud83d\udc4d2) Whale built massive position in $WBTC + $ETH \u2014 1,050 WBTC accumulated, no signs of slowing [",
-        "weight": 1.04
-      }
-    ],
-    "timestamp": "2026-07-31T05:05:52.211359+00:00"
-  },
-  "SOL": {
-    "score": -0.12,
+    "score": 0.24,
     "confidence": 0.5,
     "sources": [
-      "whale_monitor",
-      "oi_funding"
+      "x_scanner",
+      "whale_monitor"
     ],
     "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 78% bid-weighted (bullish) | oi_funding: OI -9.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $ETH] @EyeOnChain (\ud83d\udc4d2) Whale built massive position in  | whale_monitor: Orderbook 34% bid (ask-heavy, bearish)",
     "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $ETH] @EyeOnChain (\ud83d\udc4d2) Whale built massive position in $WBTC + $ETH \u2014 1,050 WBTC accumulated, no signs of slowing [",
+        "weight": 1.04
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 34% bid (ask-heavy, bearish)",
+        "weight": 0.64
+      }
+    ],
+    "timestamp": "2026-07-31T05:10:52.870389+00:00"
+  },
+  "SOL": {
+    "score": -1.0,
+    "confidence": 0.74,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI -9.0% 1h",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 13% bid (ask-heavy, bearish)",
+        "weight": 1.48
+      },
       {
         "source": "oi_funding",
         "signal": "OI -9.0% 1h",
         "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 78% bid-weighted (bullish)",
-        "weight": 1.12
       }
     ],
-    "timestamp": "2026-07-31T05:05:52.211370+00:00"
+    "timestamp": "2026-07-31T05:10:52.870399+00:00"
   },
   "HYPE": {
-    "score": 0.54,
+    "score": 0.13,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -88,7 +94,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @autoasetech Eole isn't aping HYPE for a flip \u2014 | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI -11.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @autoasetech Eole isn't aping HYPE for a flip \u2014 | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI -11.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -106,6 +112,6 @@
         "weight": 1.2
       }
     ],
-    "timestamp": "2026-07-31T05:05:52.211386+00:00"
+    "timestamp": "2026-07-31T05:10:52.870409+00:00"
   }
 }
