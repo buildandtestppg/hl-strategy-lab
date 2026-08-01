@@ -1,13 +1,13 @@
 {
-  "exported_at": "2026-08-02T02:40:09.585999+08:00",
-  "exported_at_utc": "2026-08-01T18:40:09.586005+00:00",
+  "exported_at": "2026-08-02T02:50:10.419759+08:00",
+  "exported_at_utc": "2026-08-01T18:50:10.419765+00:00",
   "portfolio": {
-    "value": 4649.935179644057,
+    "value": 4738.809082621914,
     "initial": 5000.0,
-    "pnl": -350.0648203559431,
-    "pnl_pct": -7.001296407118862,
+    "pnl": -261.19091737808594,
+    "pnl_pct": -5.223818347561719,
     "peak": 5076.7203404422935,
-    "open_positions": 2,
+    "open_positions": 1,
     "max_positions": 4
   },
   "positions": {
@@ -22,38 +22,9 @@
       "strategy": "supertrend",
       "confidence": 0.75,
       "reason": "Sentiment-driven LONG (score +1.00, conf 0.7, momentum confirmed)"
-    },
-    "ETH": {
-      "direction": "SHORT",
-      "entry_price": 1867.55,
-      "size": 2.495271211838021,
-      "stop_loss": 1886.2255,
-      "take_profit": 1830.199,
-      "entry_time": "2026-08-01T17:00:56.785965+00:00",
-      "entry_ts": 1785603656.785973,
-      "strategy": "trend",
-      "confidence": 0.75,
-      "reason": "Sentiment-driven SHORT (score -1.00, conf 0.6, momentum confirmed)"
     }
   },
   "closed_trades": [
-    {
-      "pair": "HYPE",
-      "direction": "LONG",
-      "entry_price": 59.6335,
-      "exit_price": 58.1785,
-      "size": 33.462899717006046,
-      "pnl": -50.6174,
-      "pnl_pct": -2.54,
-      "entry_time": "2026-07-27T03:20:25.585427+00:00",
-      "exit_time": "2026-07-27T14:30:42.849325+00:00",
-      "duration_hours": 11.2,
-      "exit_reason": "stop_loss",
-      "strategy": "supertrend",
-      "fees_paid": 1.8495,
-      "funding_cost": 0.0794,
-      "total_cost": 1.9289
-    },
     {
       "pair": "SOL",
       "direction": "SHORT",
@@ -376,19 +347,26 @@
       "fees_paid": 3.1988,
       "funding_cost": -0.2077,
       "total_cost": 2.9911
+    },
+    {
+      "pair": "ETH",
+      "direction": "SHORT",
+      "entry_price": 1867.55,
+      "exit_price": 1830.199,
+      "size": 2.495271211838021,
+      "pnl": 88.8739,
+      "pnl_pct": 1.91,
+      "entry_time": "2026-08-01T17:00:56.785965+00:00",
+      "exit_time": "2026-08-01T18:50:09.493240+00:00",
+      "duration_hours": 1.8,
+      "exit_reason": "take_profit",
+      "strategy": "trend",
+      "fees_paid": 4.3385,
+      "funding_cost": -0.0115,
+      "total_cost": 4.327
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-08-01T03:18:36.503601+00:00",
-      "v": 4655.89,
-      "p": -6.88
-    },
-    {
-      "t": "2026-08-01T03:20:22.886240+00:00",
-      "v": 4656.95,
-      "p": -6.86
-    },
     {
       "t": "2026-08-01T03:25:23.440018+00:00",
       "v": 4655.43,
@@ -1378,6 +1356,16 @@
       "t": "2026-08-01T18:40:07.160625+00:00",
       "v": 4710.34,
       "p": -5.79
+    },
+    {
+      "t": "2026-08-01T18:45:07.686399+00:00",
+      "v": 4723.53,
+      "p": -5.53
+    },
+    {
+      "t": "2026-08-01T18:50:08.247010+00:00",
+      "v": 4717.11,
+      "p": -5.66
     }
   ],
   "reset_count": 1,
@@ -1388,13 +1376,14 @@
       "sources": [
         "x_scanner",
         "whale_monitor",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": true,
-      "convergence_strength": 3,
+      "convergence_strength": 4,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @iamrahulinc (\ud83d\udc4d1) Selling spiked into Friday clos | whale_monitor: Orderbook 12% bid (ask-heavy, bearish) | polymarket: Zero cuts in all of 2026: 88.3%  The market is decisively pr",
+      "narrative": "\ud83d\udcc9 4-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @iamrahulinc (\ud83d\udc4d1) Selling spiked into Friday clos | whale_monitor: Orderbook 12% bid (ask-heavy, bearish) | polymarket: Zero cuts in all of 2026: 88.3%  The market is decisively pr",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -1402,17 +1391,17 @@
           "weight": 1.52
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $BTC] @iamrahulinc (\ud83d\udc4d1) Selling spiked into Friday close \u2014 multiple large funds pulled money, Bitcoin ETFs lower in",
-          "weight": 1.2
+          "source": "oi_funding",
+          "signal": "OI -135.0% 1h",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $BTC] @0xWhaleHL (\ud83d\udc4d1) Bitcoin daily bearish \u2014 close below all averages with low below 62505, sequence broken [score",
+          "signal": "\u2022 [\ud83d\udcc9 $BTC] @iamrahulinc (\ud83d\udc4d1) Selling spiked into Friday close \u2014 multiple large funds pulled money, Bitcoin ETFs lower in",
           "weight": 1.2
         }
       ],
-      "timestamp": "2026-08-01T18:40:06.897038+00:00"
+      "timestamp": "2026-08-01T18:50:08.111601+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -1426,7 +1415,7 @@
       "convergence": true,
       "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @cryptogoos (\ud83d\udc4d59 \ud83d\udd043) CRAZY! $ETH tx counts RISING | polymarket: in that band for today). Zero probability above $66K. Large  | oi_funding: OI -25.0% 1h",
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @cryptogoos (\ud83d\udc4d59 \ud83d\udd043) CRAZY! $ETH tx counts RISING | polymarket: in that band for today). Zero probability above $66K. Large  | oi_funding: OI -207.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1435,7 +1424,7 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -25.0% 1h",
+          "signal": "OI -207.0% 1h",
           "weight": 1.44
         },
         {
@@ -1444,40 +1433,46 @@
           "weight": 0.96
         }
       ],
-      "timestamp": "2026-08-01T18:40:06.897073+00:00"
+      "timestamp": "2026-08-01T18:50:08.111623+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "x_scanner"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @JORVUTHEMEME (\ud83d\udc4d1) Building the next trend they'",
-      "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @JORVUTHEMEME (\ud83d\udc4d1) Building the next trend they'll wish they never ignored on Solana [score: 2.6]",
-          "weight": 1.69
-        }
-      ],
-      "timestamp": "2026-08-01T18:40:06.897087+00:00"
-    },
-    "HYPE": {
-      "score": 0.29,
+      "score": 0.08,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $HYPE] @strikeperps (\ud83d\udc4d52 \ud83d\udd0423) RFQ now live \u2014 execute la | oi_funding: OI -41.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @JORVUTHEMEME (\ud83d\udc4d1) Building the next trend they' | oi_funding: OI -110.0% 1h",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @JORVUTHEMEME (\ud83d\udc4d1) Building the next trend they'll wish they never ignored on Solana [score: 2.6]",
+          "weight": 1.69
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -110.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-08-01T18:50:08.111633+00:00"
+    },
+    "HYPE": {
+      "score": 0.82,
+      "confidence": 0.74,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @strikeperps (\ud83d\udc4d52 \ud83d\udd0423) RFQ now live \u2014 execute la | oi_funding: OI +13.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1491,11 +1486,11 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -41.0% 1h",
+          "signal": "OI +13.0% 1h, funding 0.0013%",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-08-01T18:40:06.897105+00:00"
+      "timestamp": "2026-08-01T18:50:08.111642+00:00"
     }
   },
   "pair_strategies": {
@@ -1873,32 +1868,32 @@
         "time": "1785609545.0618458"
       }
     ],
-    "generated": "2026-08-01T18:40:06.944131Z"
+    "generated": "2026-08-01T18:50:08.140913Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "02:20",
-      "age_minutes": 20,
+      "age_minutes": 30,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "02:21",
-      "age_minutes": 18,
+      "age_minutes": 28,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "02:39",
-      "age_minutes": 1,
+      "age_minutes": 11,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "21:32",
-      "age_minutes": 307,
+      "age_minutes": 317,
       "status": "fresh"
     },
     "synthesizer": {
       "last_run": "02:31",
-      "age_minutes": 9,
+      "age_minutes": 19,
       "status": "fresh"
     }
   },
@@ -2245,15 +2240,15 @@
     }
   ],
   "stats": {
-    "total_trades": 129,
-    "wins": 56,
+    "total_trades": 130,
+    "wins": 57,
     "losses": 73,
-    "win_rate": 43.4,
-    "avg_win": 19.82,
+    "win_rate": 43.8,
+    "avg_win": 21.03,
     "avg_loss": -16.66,
     "best_trade": 94.84,
     "worst_trade": -50.62,
-    "total_realized_pnl": -106.73
+    "total_realized_pnl": -17.86
   },
   "pair_stats": {
     "BTC": {
@@ -2264,11 +2259,11 @@
       "win_rate": 28.6
     },
     "ETH": {
-      "trades": 34,
-      "wins": 13,
+      "trades": 35,
+      "wins": 14,
       "losses": 21,
-      "pnl": 100.07,
-      "win_rate": 38.2
+      "pnl": 188.94,
+      "win_rate": 40.0
     },
     "SOL": {
       "trades": 46,
@@ -2286,12 +2281,14 @@
     }
   },
   "prices": {
-    "BTC": 62406.5,
-    "ETH": 1838.85,
-    "SOL": 71.2605,
-    "HYPE": 51.9785
+    "BTC": 62329.5,
+    "ETH": 1821.55,
+    "SOL": 70.6025,
+    "HYPE": 51.6765
   },
-  "actions": [],
+  "actions": [
+    "\u2705 CLOSED SHORT ETH @ $1830.1990 | P&L: $+88.87 (+1.9%) | Reason: take_profit"
+  ],
   "ai_history": [
     {
       "timestamp": "2026-07-02T13:35:29.623844+00:00",
@@ -2886,10 +2883,10 @@
       "win_rate": 60.6
     },
     "take_profit": {
-      "count": 2,
-      "pnl": 186.19,
-      "fees": 6.01,
-      "wins": 2,
+      "count": 3,
+      "pnl": 275.07,
+      "fees": 10.35,
+      "wins": 3,
       "win_rate": 100.0
     },
     "stop_loss": {
