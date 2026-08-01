@@ -1,16 +1,29 @@
 {
-  "exported_at": "2026-08-02T05:40:32.362971+08:00",
-  "exported_at_utc": "2026-08-01T21:40:32.362974+00:00",
+  "exported_at": "2026-08-02T05:50:33.712457+08:00",
+  "exported_at_utc": "2026-08-01T21:50:33.712463+00:00",
   "portfolio": {
-    "value": 4722.548656622537,
+    "value": 4720.052348892407,
     "initial": 5000.0,
-    "pnl": -277.45134337746276,
-    "pnl_pct": -5.549026867549255,
+    "pnl": -279.9476511075927,
+    "pnl_pct": -5.598953022151854,
     "peak": 5076.7203404422935,
-    "open_positions": 0,
+    "open_positions": 1,
     "max_positions": 4
   },
-  "positions": {},
+  "positions": {
+    "SOL": {
+      "direction": "LONG",
+      "entry_price": 71.7635,
+      "size": 36.616000439019636,
+      "stop_loss": 70.47375,
+      "take_profit": 74.343,
+      "entry_time": "2026-08-01T21:45:32.059281+00:00",
+      "entry_ts": 1785620732.059288,
+      "strategy": "stochastic",
+      "confidence": 0.75,
+      "reason": "Sentiment-driven LONG (score +1.00, conf 0.7, momentum confirmed)"
+    }
+  },
   "closed_trades": [
     {
       "pair": "HYPE",
@@ -354,16 +367,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-08-01T06:20:43.463296+00:00",
-      "v": 4657.29,
-      "p": -6.85
-    },
-    {
-      "t": "2026-08-01T06:25:44.171198+00:00",
-      "v": 4657.29,
-      "p": -6.85
-    },
     {
       "t": "2026-08-01T06:26:57.866537+00:00",
       "v": 4657.29,
@@ -1353,29 +1356,45 @@
       "t": "2026-08-01T21:40:30.036816+00:00",
       "v": 4722.55,
       "p": -5.55
+    },
+    {
+      "t": "2026-08-01T21:45:30.642561+00:00",
+      "v": 4720.05,
+      "p": -5.6
+    },
+    {
+      "t": "2026-08-01T21:50:31.448332+00:00",
+      "v": 4721.63,
+      "p": -5.57
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.04,
+      "confidence": 0.5,
       "sources": [
+        "whale_monitor",
         "polymarket"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: : 38.5% (-2.0pp) - Rate hike in 2026 (any): **67.5%** - No r",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 68% bid-weighted (bullish) | polymarket: : 38.5% (-2.0pp) - Rate hike in 2026 (any): **67.5%** - No r",
       "key_signals": [
         {
           "source": "polymarket",
           "signal": ": 38.5% (-2.0pp) - Rate hike in 2026 (any): **67.5%** - No rate cuts in 2026: **88.5%**  **Key takeaway:** Markets firml",
           "weight": 0.78
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 68% bid-weighted (bullish)",
+          "weight": 0.72
         }
       ],
-      "timestamp": "2026-08-01T21:40:29.890108+00:00"
+      "timestamp": "2026-08-01T21:50:31.226265+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -1400,19 +1419,33 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-08-01T21:40:29.890129+00:00"
+      "timestamp": "2026-08-01T21:50:31.226286+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
+      "score": 1.0,
+      "confidence": 0.74,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-08-01T21:40:29.890131+00:00"
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 68% bid-weighted (bullish) | oi_funding: OI +6.0% 1h, funding 0.0002%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +6.0% 1h, funding 0.0002%",
+          "weight": 1.08
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 68% bid-weighted (bullish)",
+          "weight": 0.72
+        }
+      ],
+      "timestamp": "2026-08-01T21:50:31.226299+00:00"
     },
     "HYPE": {
       "score": 0.0,
@@ -1424,7 +1457,7 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-08-01T21:40:29.890133+00:00"
+      "timestamp": "2026-08-01T21:50:31.226303+00:00"
     }
   },
   "pair_strategies": {
@@ -1602,102 +1635,102 @@
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
-        "text": "**Run Time:** 2026-08-02 05:21:10",
+        "text": "**Run Time:** 2026-08-02 05:41:52",
         "sentiment": 0,
-        "time": "2026-08-02 05:21"
+        "time": "2026-08-02 05:41"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1785619272.9182878"
+        "time": "1785620512.1671865"
       }
     ],
     "news_agent": [
@@ -1802,32 +1835,32 @@
         "time": "1785620299.9322457"
       }
     ],
-    "generated": "2026-08-01T21:40:29.923078Z"
+    "generated": "2026-08-01T21:50:31.272079Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "05:20",
-      "age_minutes": 20,
+      "age_minutes": 30,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "05:21",
-      "age_minutes": 19,
+      "last_run": "05:41",
+      "age_minutes": 9,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "05:38",
-      "age_minutes": 2,
+      "age_minutes": 12,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "03:09",
-      "age_minutes": 151,
+      "age_minutes": 161,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "05:31",
-      "age_minutes": 9,
+      "last_run": "05:46",
+      "age_minutes": 4,
       "status": "fresh"
     }
   },
@@ -2216,10 +2249,10 @@
     }
   },
   "prices": {
-    "BTC": 62746.5,
-    "ETH": 1842.25,
-    "SOL": 71.6975,
-    "HYPE": 52.0865
+    "BTC": 62795.5,
+    "ETH": 1844.35,
+    "SOL": 71.8065,
+    "HYPE": 52.2395
   },
   "actions": [],
   "ai_history": [
