@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": 0.05,
+    "score": -0.07,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
@@ -10,20 +10,20 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 \ud83d\udcca [$BTC] @xyziuw Dubai crypto exchange tied to $4B Iran sa | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 \ud83d\udcca [$BTC] @xyziuw Dubai crypto exchange tied to $4B Iran sa | whale_monitor: Orderbook 22% bid (ask-heavy, bearish)",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 22% bid (ask-heavy, bearish)",
+        "weight": 1.12
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 \ud83d\udcca [$BTC] @xyziuw Dubai crypto exchange tied to $4B Iran sanctions-evasion network \u2014 stablecoins as \"Trojan horse\" of a",
         "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 28% bid (ask-heavy, bearish)",
-        "weight": 0.88
       }
     ],
-    "timestamp": "2026-08-01T00:00:59.374756+00:00"
+    "timestamp": "2026-08-01T00:06:00.034109+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -43,30 +43,36 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-01T00:00:59.374774+00:00"
+    "timestamp": "2026-08-01T00:06:00.034172+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 \ud83d\udce2 [$SOL] @Pr0fitconscious (\ud83d\udc4d1) \"Next 10x insider launch sc",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 \ud83d\udce2 [$SOL] @Pr0fitconscious (\ud83d\udc4d1) \"Next 10x insider launch sc | whale_monitor: Orderbook 80% bid-weighted (bullish)",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 80% bid-weighted (bullish)",
+        "weight": 1.2
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 \ud83d\udce2 [$SOL] @Pr0fitconscious (\ud83d\udc4d1) \"Next 10x insider launch scheduled 16 UTC Sunday \u2014 have $SOL ready in Phantom wallets\" ",
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-01T00:00:59.374782+00:00"
+    "timestamp": "2026-08-01T00:06:00.034241+00:00"
   },
   "HYPE": {
-    "score": -0.06,
+    "score": -0.4,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -77,24 +83,24 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 \ud83d\udcca [$HYPE] @Mega_Fund HIP-3 markets hit record 74% share of | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 \ud83d\udcca [$HYPE] @Mega_Fund HIP-3 markets hit record 74% share of | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +7.0% 1h, funding 0.0013%",
-        "weight": 1.26
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 76% bid-weighted (bullish)",
-        "weight": 1.04
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 \ud83d\udcca [$HYPE] @Mega_Fund HIP-3 markets hit record 74% share of Hyperliquid perp volume for 2nd consecutive day \u2014 permissio",
         "weight": 0.98
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 \ud83d\udcca [$HYPE] @Outcomexyz $HYPE never actually traded at the liquidation price \u2014 interesting market microstructure note [s",
+        "weight": 0.98
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-01T00:00:59.374797+00:00"
+    "timestamp": "2026-08-01T00:06:00.034276+00:00"
   }
 }
