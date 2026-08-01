@@ -1,47 +1,17 @@
 {
-  "exported_at": "2026-08-02T03:40:16.174512+08:00",
-  "exported_at_utc": "2026-08-01T19:40:16.174516+00:00",
+  "exported_at": "2026-08-02T03:50:17.561521+08:00",
+  "exported_at_utc": "2026-08-01T19:50:17.561531+00:00",
   "portfolio": {
-    "value": 4738.809082621914,
+    "value": 4722.548656622537,
     "initial": 5000.0,
-    "pnl": -261.19091737808594,
-    "pnl_pct": -5.223818347561719,
+    "pnl": -277.45134337746276,
+    "pnl_pct": -5.549026867549255,
     "peak": 5076.7203404422935,
-    "open_positions": 1,
+    "open_positions": 0,
     "max_positions": 4
   },
-  "positions": {
-    "HYPE": {
-      "direction": "LONG",
-      "entry_price": 52.3005,
-      "size": 34.64347841435124,
-      "stop_loss": 50.9565,
-      "take_profit": 54.9885,
-      "entry_time": "2026-08-01T15:00:44.676712+00:00",
-      "entry_ts": 1785596444.676725,
-      "strategy": "supertrend",
-      "confidence": 0.75,
-      "reason": "Sentiment-driven LONG (score +1.00, conf 0.7, momentum confirmed)"
-    }
-  },
+  "positions": {},
   "closed_trades": [
-    {
-      "pair": "SOL",
-      "direction": "SHORT",
-      "entry_price": 75.7825,
-      "exit_price": 73.95,
-      "size": 25.66161079126301,
-      "pnl": 45.0177,
-      "pnl_pct": 2.31,
-      "entry_time": "2026-07-27T16:30:57.122997+00:00",
-      "exit_time": "2026-07-27T23:00:41.356431+00:00",
-      "duration_hours": 6.5,
-      "exit_reason": "signal_exit",
-      "strategy": "stochastic",
-      "fees_paid": 1.8028,
-      "funding_cost": 0.2044,
-      "total_cost": 2.0072
-    },
     {
       "pair": "HYPE",
       "direction": "LONG",
@@ -364,19 +334,26 @@
       "fees_paid": 4.3385,
       "funding_cost": -0.0115,
       "total_cost": 4.327
+    },
+    {
+      "pair": "HYPE",
+      "direction": "LONG",
+      "entry_price": 52.3005,
+      "exit_price": 51.8835,
+      "size": 34.64347841435124,
+      "pnl": -16.2604,
+      "pnl_pct": -0.9,
+      "entry_time": "2026-08-01T15:00:44.676712+00:00",
+      "exit_time": "2026-08-01T19:45:15.792183+00:00",
+      "duration_hours": 4.7,
+      "exit_reason": "regime_override",
+      "strategy": "supertrend",
+      "fees_paid": 1.7076,
+      "funding_cost": 0.1065,
+      "total_cost": 1.8141
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-08-01T04:20:30.144185+00:00",
-      "v": 4656.29,
-      "p": -6.87
-    },
-    {
-      "t": "2026-08-01T04:21:40.043922+00:00",
-      "v": 4658.94,
-      "p": -6.82
-    },
     {
       "t": "2026-08-01T04:25:30.684083+00:00",
       "v": 4658.53,
@@ -1366,42 +1343,53 @@
       "t": "2026-08-01T19:40:14.256314+00:00",
       "v": 4724.64,
       "p": -5.51
+    },
+    {
+      "t": "2026-08-01T19:45:14.903019+00:00",
+      "v": 4722.55,
+      "p": -5.55
+    },
+    {
+      "t": "2026-08-01T19:50:15.511665+00:00",
+      "v": 4722.55,
+      "p": -5.55
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.14,
-      "confidence": 0.9,
+      "score": -0.86,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
         "news_agent",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 7,
+      "signal_count": 8,
       "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @CW8900 (\ud83d\udc4d1) $BTC whale buy walls exist at 62k an | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | news_agent: uly new article for delivery.  **\ud83d\udcf0 | Crypto News \u2014 Aug 1**  ",
+      "convergence_strength": 5,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 5-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @SolanaFloor (\ud83d\udc4d1 \ud83d\udd042) JUST IN: @Strategy says it \" | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | news_agent: uly new article for delivery.  **\ud83d\udcf0 | Crypto News \u2014 Aug 1**  ",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $BTC] @CW8900 (\ud83d\udc4d1) $BTC whale buy walls exist at 62k and 61k \u2014 if broken, decline to 60k likely [score: 1.5]",
-          "weight": 1.2
+          "signal": "\u2022 [\ud83d\udcca $BTC] @SolanaFloor (\ud83d\udc4d1 \ud83d\udd042) JUST IN: @Strategy says it \"can and will sell $BTC when advantageous,\" outlining roughly",
+          "weight": 1.76
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -14.0% 1h",
+          "weight": 1.44
         },
         {
           "source": "news_agent",
           "signal": "uly new article for delivery.  **\ud83d\udcf0 | Crypto News \u2014 Aug 1**  \ud83d\udd34 **SEC freezes Nasdaq's Bitcoin options approval as CME wag",
           "weight": 1.2
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\u26a1 $BTC] @MannuellFox $BTC drops below $63K \u2014 $120M+ long liquidations on the squeeze [score: 1.5]",
-          "weight": 0.98
         }
       ],
-      "timestamp": "2026-08-01T19:40:14.119998+00:00"
+      "timestamp": "2026-08-01T19:50:15.375273+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -1410,47 +1398,53 @@
         "x_scanner",
         "polymarket"
       ],
-      "signal_count": 3,
+      "signal_count": 4,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @BituraiTrading $ETH OI -4.6%/1h, Price -1.1% \u2014 l | polymarket: his period ends today) - BTC dip to $50K in Aug: 7.6% | BTC ",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udca5 $ETH] @SkyFlame_x (\ud83d\udc4d0 \ud83d\udd040) $1.00M | $ETH @ $1,826.3 WHAL | polymarket: his period ends today) - BTC dip to $50K in Aug: 7.6% | BTC ",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $ETH] @BituraiTrading $ETH OI -4.6%/1h, Price -1.1% \u2014 leverage moving faster than price, liquidation sensitivity ri",
+          "signal": "\u2022 [\ud83d\udca5 $ETH] @SkyFlame_x (\ud83d\udc4d0 \ud83d\udd040) $1.00M | $ETH @ $1,826.3 WHALE SELL [score: 1.5]",
+          "weight": 1.2
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udca5 $ETH] @HunterKillerHQ (\ud83d\udc4d0 \ud83d\udd040) MAP: elevated chatter and flow on $ETH \u2014 graded liquidation-fuel map from our own mul",
           "weight": 0.98
         },
         {
           "source": "polymarket",
           "signal": "his period ends today) - BTC dip to $50K in Aug: 7.6% | BTC dip to $40K in Aug: 0.9% - Market expects BTC to hold above ",
           "weight": 0.78
-        },
-        {
-          "source": "polymarket",
-          "signal": "Rate hike in 2026 (any): **67.5%** - No rate cuts in 2026: **88.5%**  **Key takeaway:** Markets firmly priced for a Sept",
-          "weight": 0.78
         }
       ],
-      "timestamp": "2026-08-01T19:40:14.120018+00:00"
+      "timestamp": "2026-08-01T19:50:15.375295+00:00"
     },
     "SOL": {
-      "score": 0.28,
-      "confidence": 0.5,
+      "score": -0.17,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7 $SOL] @kolo_wisdom (\ud83d\udc4d1) Nabulines \u00d7 Quants whitelist co | whale_monitor: Orderbook 27% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\ude80 $SOL] @fluffycrypt (\ud83d\udc4d20 \ud83d\udd0418) Just stealth launched my o | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | oi_funding: OI -20.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7 $SOL] @kolo_wisdom (\ud83d\udc4d1) Nabulines \u00d7 Quants whitelist collab \u2014 builder alpha [score: 2.5]",
-          "weight": 1.62
+          "signal": "\u2022 [\ud83d\ude80 $SOL] @fluffycrypt (\ud83d\udc4d20 \ud83d\udd0418) Just stealth launched my own memecoin footcoin $MARSCAT \u2014 10M tokens equally distribut",
+          "weight": 1.76
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -20.0% 1h",
+          "weight": 1.44
         },
         {
           "source": "whale_monitor",
@@ -1458,38 +1452,39 @@
           "weight": 0.92
         }
       ],
-      "timestamp": "2026-08-01T19:40:14.120027+00:00"
+      "timestamp": "2026-08-01T19:50:15.375307+00:00"
     },
     "HYPE": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": -0.69,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
       "signal_count": 4,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @MetaJude ATH $72, top 10 MC, $170M ETF inflows, | whale_monitor: Orderbook 71% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @ValeriusLabs (\ud83d\udc4d0 \ud83d\udd040) 13 wallets selling $HYPE  | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -42.0% 1h",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @MetaJude ATH $72, top 10 MC, $170M ETF inflows, HIP4 testnet \u2014 in <2yrs what most L1s couldn't [score: 2.5]",
-          "weight": 2.38
+          "source": "oi_funding",
+          "signal": "OI -42.0% 1h",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @CoinMarketCap (\ud83d\udc4d69 \ud83d\udd0414) Ex-Barclays CEO Bob Diamond: Circle & Hyperliquid will be CLARITY Act infrastructur",
-          "weight": 2.21
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @ValeriusLabs (\ud83d\udc4d0 \ud83d\udd040) 13 wallets selling $HYPE simultaneously. Not one whale splitting orders \u2014 distributed",
+          "weight": 0.98
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udc8e $HYPE] @rafal_jakobsen Bitwise filed for a Hyperliquid ETF \u2014 another TradFi route for $HYPE exposure [score: 1.5]",
+          "signal": "\u2022 [\ud83d\udc80 $HYPE] @DegenTT (\ud83d\udc4d0 \ud83d\udd040) Big players just plotting to liquidate this whale @ $47.6. $HYPE becomes attractive again s",
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-08-01T19:40:14.120037+00:00"
+      "timestamp": "2026-08-01T19:50:15.375317+00:00"
     }
   },
   "pair_strategies": {
@@ -1565,102 +1560,102 @@
       {
         "text": "**Job ID:** 43ba1d393c5a",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
-        "text": "**Run Time:** 2026-08-02 02:59:29",
+        "text": "**Run Time:** 2026-08-02 03:43:18",
         "sentiment": 0,
-        "time": "2026-08-02 02:59"
+        "time": "2026-08-02 03:43"
       },
       {
         "text": "**Schedule:** 5,35 * * * *",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "[SYSTEM: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just produc",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "You are the Crypto Scanner Agent. Run BOTH the X scanner and Reddit scanner, then report results to Discord.",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "You MUST use a subagent to run Reddit scanner in parallel with X scanner. This saves ~5-9 minutes per cycle.",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "Spawn the Reddit subagent BEFORE starting x_scanner.py so they run in parallel:",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "delegate_task(",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "goal=\"Run the Reddit crypto scanner and write results to a temp file\",",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "context=\"Run this command: cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/reddit_scanner.py 2>&1. Wait for it to complete (may take 5-9 min)",
         "sentiment": -0.3,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "toolsets=[\"terminal\", \"file\"],",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "max_iterations=15",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": ")",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "Run the X scanner normally:",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/x_scanner.py 2>&1",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "Parse the JSON output as usual.",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       },
       {
         "text": "After x_scanner.py finishes:",
         "sentiment": 0,
-        "time": "1785610769.1400878"
+        "time": "1785613398.1182702"
       }
     ],
     "whale_monitor": [
@@ -1867,32 +1862,32 @@
         "time": "1785612722.015621"
       }
     ],
-    "generated": "2026-08-01T19:40:14.150349Z"
+    "generated": "2026-08-01T19:50:15.404622Z"
   },
   "scanner_status": {
     "x_scanner": {
-      "last_run": "02:59",
-      "age_minutes": 41,
+      "last_run": "03:43",
+      "age_minutes": 7,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "03:33",
-      "age_minutes": 7,
+      "age_minutes": 17,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "03:32",
-      "age_minutes": 8,
+      "age_minutes": 18,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "03:09",
-      "age_minutes": 31,
+      "age_minutes": 41,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "03:31",
-      "age_minutes": 9,
+      "last_run": "03:46",
+      "age_minutes": 4,
       "status": "fresh"
     }
   },
@@ -2239,15 +2234,15 @@
     }
   ],
   "stats": {
-    "total_trades": 130,
+    "total_trades": 131,
     "wins": 57,
-    "losses": 73,
-    "win_rate": 43.8,
+    "losses": 74,
+    "win_rate": 43.5,
     "avg_win": 21.03,
     "avg_loss": -16.66,
     "best_trade": 94.84,
     "worst_trade": -50.62,
-    "total_realized_pnl": -17.86
+    "total_realized_pnl": -34.12
   },
   "pair_stats": {
     "BTC": {
@@ -2272,18 +2267,18 @@
       "win_rate": 52.2
     },
     "HYPE": {
-      "trades": 42,
+      "trades": 43,
       "wins": 17,
-      "losses": 25,
-      "pnl": -294.76,
-      "win_rate": 40.5
+      "losses": 26,
+      "pnl": -311.02,
+      "win_rate": 39.5
     }
   },
   "prices": {
-    "BTC": 62444.5,
-    "ETH": 1835.35,
-    "SOL": 71.1735,
-    "HYPE": 51.8945
+    "BTC": 62501.5,
+    "ETH": 1837.65,
+    "SOL": 71.2825,
+    "HYPE": 52.0945
   },
   "actions": [],
   "ai_history": [
@@ -2866,11 +2861,11 @@
   },
   "exit_breakdown": {
     "regime_override": {
-      "count": 91,
-      "pnl": -313.69,
-      "fees": 165.28,
+      "count": 92,
+      "pnl": -329.95,
+      "fees": 166.99,
       "wins": 34,
-      "win_rate": 37.4
+      "win_rate": 37.0
     },
     "signal_exit": {
       "count": 33,
