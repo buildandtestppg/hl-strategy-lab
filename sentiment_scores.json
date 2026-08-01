@@ -1,17 +1,22 @@
 {
   "BTC": {
-    "score": -0.07,
-    "confidence": 0.5,
+    "score": -0.5,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "whale_monitor"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 \ud83d\udcca [$BTC] @xyziuw Dubai crypto exchange tied to $4B Iran sa | whale_monitor: Orderbook 22% bid (ask-heavy, bearish)",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC] @cryptojack (\ud83d\udc4d6) \u2014 BREAKING: $36.9M $BTC short open | whale_monitor: Orderbook 22% bid (ask-heavy, bearish)",
     "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$BTC] @cryptojack (\ud83d\udc4d6) \u2014 BREAKING: $36.9M $BTC short opened with 20x leverage. Liq price: $65,502 [score: 2.1]",
+        "weight": 1.37
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 22% bid (ask-heavy, bearish)",
@@ -19,31 +24,23 @@
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 \ud83d\udcca [$BTC] @xyziuw Dubai crypto exchange tied to $4B Iran sanctions-evasion network \u2014 stablecoins as \"Trojan horse\" of a",
+        "signal": "\u2022 [$BTC] @CryptomegaNews \u2014 BTC Fear & Greed: 25/100 (Extreme Fear). Top traders 70% long. ETFs $2.36B 24h vol. Retail pa",
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-01T00:15:00.907922+00:00"
+    "timestamp": "2026-08-01T00:20:01.430067+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 1,
+    "score": 0.0,
+    "confidence": 0.0,
+    "sources": [],
+    "signal_count": 0,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH] @CryptocapoOO (\ud83d\udc4d10) Liquidation heatmap shows highe",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$ETH] @CryptocapoOO (\ud83d\udc4d10) Liquidation heatmap shows highest concentration zones \u2014 \"yesterday $BTC, today $ETH's turn\"",
-        "weight": 0.65
-      }
-    ],
-    "timestamp": "2026-08-01T00:15:00.907940+00:00"
+    "narrative": "No active signals",
+    "key_signals": [],
+    "timestamp": "2026-08-01T00:20:01.430074+00:00"
   },
   "SOL": {
     "score": 1.0,
@@ -52,55 +49,54 @@
       "x_scanner",
       "whale_monitor"
     ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @JackDorsey0x (\ud83d\udc4d48 \ud83d\udd0432) START SHILLING $COPE TO C | whale_monitor: Orderbook 80% bid-weighted (bullish)",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udd25 $SOL] @JackDorsey0x (\ud83d\udc4d48 \ud83d\udd0432) START SHILLING $COPE TO CELEBRITIES [score: 3.1]",
+        "weight": 2.02
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @trypumpiq \u2014 PumpIQ refetches Solana tx before sending wallet alerts. Classifies buys/sells/transfers from v",
+        "weight": 2.0
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udca1 $SOL] @SignalLord \u2014 $MYSPACE started at $71k MC, surged to $431k. Insider access + sharp moves [score: 2.5]",
+        "weight": 1.62
+      }
+    ],
+    "timestamp": "2026-08-01T00:20:01.430088+00:00"
+  },
+  "HYPE": {
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 \ud83d\udce2 [$SOL] @Pr0fitconscious (\ud83d\udc4d1) \"Next 10x insider launch sc | whale_monitor: Orderbook 80% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 80% bid-weighted (bullish)",
-        "weight": 1.2
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 \ud83d\udce2 [$SOL] @Pr0fitconscious (\ud83d\udc4d1) \"Next 10x insider launch scheduled 16 UTC Sunday \u2014 have $SOL ready in Phantom wallets\" ",
-        "weight": 0.98
-      }
-    ],
-    "timestamp": "2026-08-01T00:15:00.907953+00:00"
-  },
-  "HYPE": {
-    "score": -0.4,
-    "confidence": 0.84,
-    "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 5,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 \ud83d\udcca [$HYPE] @Mega_Fund HIP-3 markets hit record 74% share of | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 \ud83d\udcca [$HYPE] @Mega_Fund HIP-3 markets hit record 74% share of Hyperliquid perp volume for 2nd consecutive day \u2014 permissio",
-        "weight": 0.98
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 \ud83d\udcca [$HYPE] @Outcomexyz $HYPE never actually traded at the liquidation price \u2014 interesting market microstructure note [s",
-        "weight": 0.98
-      },
       {
         "source": "oi_funding",
         "signal": "OI +4.0% 1h, funding 0.0013%",
         "weight": 0.72
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 60% bid-weighted (bullish)",
+        "weight": 0.4
       }
     ],
-    "timestamp": "2026-08-01T00:15:00.907965+00:00"
+    "timestamp": "2026-08-01T00:20:01.430097+00:00"
   }
 }
