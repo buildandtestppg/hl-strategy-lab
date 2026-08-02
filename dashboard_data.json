@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-08-02T18:00:55.155189+00:00",
+  "last_update": "2026-08-02T18:05:55.482126+00:00",
   "portfolio": {
-    "value": 4702.14,
+    "value": 4702.3,
     "capital": 4701.15,
     "initial": 5000.0,
-    "pnl": -297.86,
-    "pnl_pct": -5.96,
+    "pnl": -297.7,
+    "pnl_pct": -5.95,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 63307.5,
-    "ETH": 1869.05,
-    "SOL": 73.2925,
-    "HYPE": 52.2435
+    "BTC": 63306.5,
+    "ETH": 1869.15,
+    "SOL": 73.2965,
+    "HYPE": 52.3665
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1868.45,
-      "current_price": 1869.05,
+      "current_price": 1869.15,
       "size": 1.647663342332606,
-      "unrealized_pnl": 0.99,
-      "unrealized_pnl_pct": 0.03,
+      "unrealized_pnl": 1.15,
+      "unrealized_pnl_pct": 0.04,
       "stop_loss": 1839.9,
       "take_profit": 1925.55,
       "strategy": "trend",
       "entry_time": "2026-08-02T17:55:55.762116+00:00",
-      "duration_hours": 0.1,
+      "duration_hours": 0.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0032
+      "unrealized_funding": 0.0064
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-02T02:40:04.590975+00:00",
-      "v": 4762.08,
-      "p": -4.76
-    },
     {
       "t": "2026-08-02T02:45:05.031451+00:00",
       "v": 4764.06,
@@ -1961,6 +1956,11 @@
       "t": "2026-08-02T18:00:55.155189+00:00",
       "v": 4702.14,
       "p": -5.96
+    },
+    {
+      "t": "2026-08-02T18:05:55.482126+00:00",
+      "v": 4702.3,
+      "p": -5.95
     }
   ],
   "ai_history": [
@@ -2012,23 +2012,29 @@
   "sentiment": {
     "BTC": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0013%",
-          "weight": 0.9
+          "signal": "OI +7.0% 1h, funding 0.0013%",
+          "weight": 1.26
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 65% bid-weighted (bullish)",
+          "weight": 0.6
         }
       ],
-      "timestamp": "2026-08-02T18:00:54.865801+00:00"
+      "timestamp": "2026-08-02T18:05:55.359321+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -2041,12 +2047,12 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH] $ETH quietly building momentum \u2014 DeFi backbone stre | oi_funding: OI +22.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH] $ETH quietly building momentum \u2014 DeFi backbone stre | oi_funding: OI +7.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +22.0% 1h, funding 0.0013%",
-          "weight": 1.44
+          "signal": "OI +7.0% 1h, funding 0.0013%",
+          "weight": 1.26
         },
         {
           "source": "x_scanner",
@@ -2054,46 +2060,47 @@
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-08-02T18:00:54.865834+00:00"
+      "timestamp": "2026-08-02T18:05:55.359340+00:00"
     },
     "SOL": {
-      "score": -0.01,
-      "confidence": 0.5,
-      "sources": [
-        "whale_monitor",
-        "oi_funding"
-      ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI +38.0% 1h, funding 0.0000%",
-      "key_signals": [
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 13% bid (ask-heavy, bearish)",
-          "weight": 1.48
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +38.0% 1h, funding 0.0000%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-08-02T18:00:54.865845+00:00"
-    },
-    "HYPE": {
-      "score": 0.18,
+      "score": -1.0,
       "confidence": 0.3,
       "sources": [
-        "x_scanner"
+        "whale_monitor"
       ],
-      "signal_count": 5,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @NoLiquidity77 Loracle selling is a single trade",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 25% bid (ask-heavy, bearish)",
       "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 25% bid (ask-heavy, bearish)",
+          "weight": 1.0
+        }
+      ],
+      "timestamp": "2026-08-02T18:05:55.359348+00:00"
+    },
+    "HYPE": {
+      "score": 0.55,
+      "confidence": 1.0,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 7,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @NoLiquidity77 Loracle selling is a single trade | whale_monitor: Orderbook 64% bid-weighted (bullish) | oi_funding: OI +18.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +18.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $HYPE] @NoLiquidity77 Loracle selling is a single trader's PnL, not protocol drift \u2014 not an insider signaling struc",
@@ -2103,14 +2110,9 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @cozypront (\ud83d\udc4d187 \ud83d\udd044) $HYPE is still the best coin to buy and hold this cycle by far \u2014 buying at $52 is an ab",
           "weight": 0.8
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Mr_Derivatives (\ud83d\udc4d176 \ud83d\udd044) Futes should open up decently green based on all the weekend (WS IG, Hyperliquid) ",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-08-02T18:00:54.865856+00:00"
+      "timestamp": "2026-08-02T18:05:55.359360+00:00"
     }
   },
   "config": {
