@@ -1,54 +1,69 @@
 {
   "BTC": {
-    "score": -0.05,
-    "confidence": 0.5,
+    "score": 0.19,
+    "confidence": 0.84,
     "sources": [
       "whale_monitor",
-      "news_agent"
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 77% bid-weighted (bullish) | news_agent: .  \ud83d\udcf0 **Crypto News Briefing** \u2014 Aug 2, 17:23 UTC  \ud83d\udd34 **BREAKI",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 77% bid-weighted (bullish) | news_agent: that was delivered this cycle.  \ud83d\udcf0 **Crypto News \u2014 Aug 3, 202 | oi_funding: OI +5.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "news_agent",
-        "signal": ".  \ud83d\udcf0 **Crypto News Briefing** \u2014 Aug 2, 17:23 UTC  \ud83d\udd34 **BREAKING** \u2022 **Coldcard Bitcoin Exploit Balloons to $88M as Attack",
-        "weight": 1.2
+        "signal": "that was delivered this cycle.  \ud83d\udcf0 **Crypto News \u2014 Aug 3, 2026**  \ud83d\udd34 **Coldcard Bitcoin Exploit Balloons to $88M as Attack",
+        "weight": 1.42
       },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 77% bid-weighted (bullish)",
         "weight": 1.08
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +5.0% 1h, funding 0.0013%",
+        "weight": 0.9
       }
     ],
-    "timestamp": "2026-08-02T17:40:52.235549+00:00"
+    "timestamp": "2026-08-02T17:45:52.887157+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-02T17:40:52.235562+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +22.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +22.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-02T17:45:52.887172+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @FuckTheAlgo BlackRock, Franklin Templeton, JPMo | whale_monitor: Orderbook 74% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @FuckTheAlgo BlackRock, Franklin Templeton, JPMo | whale_monitor: Orderbook 74% bid-weighted (bullish) | oi_funding: OI +38.0% 1h, funding 0.0000%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -56,25 +71,29 @@
         "weight": 1.62
       },
       {
+        "source": "oi_funding",
+        "signal": "OI +38.0% 1h, funding 0.0000%",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
         "signal": "Orderbook 74% bid-weighted (bullish)",
         "weight": 0.96
       }
     ],
-    "timestamp": "2026-08-02T17:40:52.235578+00:00"
+    "timestamp": "2026-08-02T17:45:52.887184+00:00"
   },
   "HYPE": {
-    "score": -0.83,
-    "confidence": 0.74,
+    "score": -0.65,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 6,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 5,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @Xaif_Crypto (\ud83d\udc4d10 \ud83d\udd045) $XRP ETF +$14.86M inflow v | oi_funding: OI -9.0% 1h",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $HYPE] @Xaif_Crypto (\ud83d\udc4d10 \ud83d\udd045) $XRP ETF +$14.86M inflow v",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -82,16 +101,16 @@
         "weight": 1.49
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -9.0% 1h",
-        "weight": 1.44
-      },
-      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83e\udd15 $HYPE] @__finality__ Single trade in Korea's pre-market triggered ~$60M liquidations on Hyperliquid \u2014 exposed edge ",
         "weight": 1.3
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $HYPE] @SatoshiBitunix (\ud83d\udc4d3 \ud83d\udd043) Liquidation map on $HYPE looks like a minefield \u2014 $568M+ in leveraged positions [sco",
+        "weight": 1.3
       }
     ],
-    "timestamp": "2026-08-02T17:40:52.235592+00:00"
+    "timestamp": "2026-08-02T17:45:52.887194+00:00"
   }
 }
