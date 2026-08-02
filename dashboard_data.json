@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-08-02T15:30:35.201706+00:00",
+  "last_update": "2026-08-02T15:35:35.612275+00:00",
   "portfolio": {
-    "value": 4718.71,
+    "value": 4717.91,
     "capital": 4714.47,
     "initial": 5000.0,
-    "pnl": -281.29,
-    "pnl_pct": -5.63,
+    "pnl": -282.09,
+    "pnl_pct": -5.64,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 63122.5,
-    "ETH": 1857.95,
-    "SOL": 73.0695,
-    "HYPE": 51.5645
+    "BTC": 63143.5,
+    "ETH": 1860.05,
+    "SOL": 73.0885,
+    "HYPE": 51.5185
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 73.1705,
-      "current_price": 73.0695,
+      "current_price": 73.0885,
       "size": 41.90437297722615,
-      "unrealized_pnl": 4.24,
-      "unrealized_pnl_pct": 0.14,
+      "unrealized_pnl": 3.44,
+      "unrealized_pnl_pct": 0.11,
       "stop_loss": 74.29625,
       "take_profit": 70.919,
       "strategy": "stochastic",
       "entry_time": "2026-08-02T12:15:13.648002+00:00",
       "duration_hours": 3.3,
-      "funding_rate": 5.2e-05,
-      "unrealized_funding": -0.0052
+      "funding_rate": -7e-06,
+      "unrealized_funding": 0.0008
     }
   },
   "stats": {
@@ -962,11 +962,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-02T00:05:47.491830+00:00",
-      "v": 4730.23,
-      "p": -5.4
-    },
     {
       "t": "2026-08-02T00:10:47.993406+00:00",
       "v": 4728.13,
@@ -1961,6 +1956,11 @@
       "t": "2026-08-02T15:30:35.201706+00:00",
       "v": 4718.71,
       "p": -5.63
+    },
+    {
+      "t": "2026-08-02T15:35:35.612275+00:00",
+      "v": 4717.91,
+      "p": -5.64
     }
   ],
   "ai_history": [
@@ -2011,84 +2011,125 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -0.34,
+      "confidence": 0.84,
       "sources": [
+        "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +18.0% 1h, funding 0.0013%",
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @CryptoReviewing (\ud83d\udc4d2) $BTC dumped $65.4K\u2192$62.3K,  | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +18.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI +18.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc9 $BTC] @CryptoReviewing (\ud83d\udc4d2) $BTC dumped $65.4K\u2192$62.3K, $648M liquidated. $2.2B total liquidations this week. $60-62",
+          "weight": 0.8
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $BTC] @KillaXBT (\ud83d\udc4d156 \ud83d\udd047) $BTC \u2014 Positions more net negative this bear cycle than any previous. Exchange volume off",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-08-02T15:30:34.993205+00:00"
+      "timestamp": "2026-08-02T15:35:35.491355+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.49,
+      "confidence": 0.6,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +7.0% 1h, funding 0.0011%",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @DeFiTracer (\ud83d\udc4d30 \ud83d\udd044) BULLISH SETUP forming \u2014 $BTC | oi_funding: OI +7.0% 1h, funding 0.0011%",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI +7.0% 1h, funding 0.0011%",
           "weight": 1.26
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $ETH] @DeFiTracer (\ud83d\udc4d30 \ud83d\udd044) BULLISH SETUP forming \u2014 $BTC/$ETH/$SOL look ready, most alts already bottomed, next 6-12",
+          "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc9 $ETH] @Alek_Carter (\ud83d\udc4d10 \ud83d\udd047) ETH broken below channel support, under selling pressure. Bounce possible but reclaim n",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-08-02T15:30:34.993233+00:00"
+      "timestamp": "2026-08-02T15:35:35.491371+00:00"
     },
     "SOL": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -6.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $SOL] @hylo_so (\ud83d\udc4d5 \ud83d\udd041) $xSOL \u2014 3x leveraged SOL exposur | oi_funding: OI -6.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -6.0% 1h",
           "weight": 1.08
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $SOL] @hylo_so (\ud83d\udc4d5 \ud83d\udd041) $xSOL \u2014 3x leveraged SOL exposure, no traditional liquidations, no margin management [1.8]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-08-02T15:30:34.993246+00:00"
+      "timestamp": "2026-08-02T15:35:35.491381+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 1.0,
       "sources": [
+        "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +21.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udca7 $HYPE] @WhaleFactor (\ud83d\udc4d3) $HYPE broken structure \u2014 watch | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +21.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI +21.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udca7 $HYPE] @WhaleFactor (\ud83d\udc4d3) $HYPE broken structure \u2014 watch key levels, if bulls defend lows expect bounce [2.1]",
+          "weight": 0.65
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 60% bid-weighted (bullish)",
+          "weight": 0.4
         }
       ],
-      "timestamp": "2026-08-02T15:30:34.993257+00:00"
+      "timestamp": "2026-08-02T15:35:35.491390+00:00"
     }
   },
   "config": {
