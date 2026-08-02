@@ -1,20 +1,36 @@
 {
-  "last_update": "2026-08-02T17:50:53.564689+00:00",
+  "last_update": "2026-08-02T17:55:54.251815+00:00",
   "portfolio": {
-    "value": 4704.08,
-    "capital": 4704.08,
+    "value": 4701.15,
+    "capital": 4701.15,
     "initial": 5000.0,
-    "pnl": -295.92,
-    "pnl_pct": -5.92,
-    "open_positions": 0
+    "pnl": -298.85,
+    "pnl_pct": -5.98,
+    "open_positions": 1
   },
   "prices": {
-    "BTC": 63312.5,
-    "ETH": 1868.35,
-    "SOL": 73.3415,
-    "HYPE": 52.2085
+    "BTC": 63294.5,
+    "ETH": 1868.45,
+    "SOL": 73.3305,
+    "HYPE": 52.2465
   },
-  "positions": {},
+  "positions": {
+    "ETH": {
+      "direction": "LONG",
+      "entry_price": 1868.45,
+      "current_price": 1868.45,
+      "size": 1.647663342332606,
+      "unrealized_pnl": -0.0,
+      "unrealized_pnl_pct": -0.0,
+      "stop_loss": 1839.9,
+      "take_profit": 1925.55,
+      "strategy": "trend",
+      "entry_time": "2026-08-02T17:55:55.762116+00:00",
+      "duration_hours": 0.0,
+      "funding_rate": 0.00125,
+      "unrealized_funding": 0.0
+    }
+  },
   "stats": {
     "total_trades": 134,
     "wins": 58,
@@ -26,7 +42,10 @@
     "worst_trade": -50.62,
     "total_realized_pnl": -45.33
   },
-  "actions": [],
+  "actions": [
+    "\ud83e\udde0 ETH: TA signal SHORT blocked by sentiment overlay",
+    "\ud83d\udfe2 OPENED LONG ETH @ $1868.4500 | Size: 1.6477 | SL: $1839.9000 | TP: $1925.5500 | Strategy: trend | Sentiment-driven LONG (score +1.00, conf 0.7, momentum confirmed)"
+  ],
   "closed_trades": [
     {
       "pair": "SOL",
@@ -946,11 +965,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-02T02:30:03.753257+00:00",
-      "v": 4767.86,
-      "p": -4.64
-    },
     {
       "t": "2026-08-02T02:35:03.934692+00:00",
       "v": 4762.53,
@@ -1945,6 +1959,11 @@
       "t": "2026-08-02T17:50:53.564689+00:00",
       "v": 4704.08,
       "p": -5.92
+    },
+    {
+      "t": "2026-08-02T17:55:54.251815+00:00",
+      "v": 4701.15,
+      "p": -5.98
     }
   ],
   "ai_history": [
@@ -1995,38 +2014,6 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.19,
-      "confidence": 0.84,
-      "sources": [
-        "whale_monitor",
-        "news_agent",
-        "oi_funding"
-      ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 77% bid-weighted (bullish) | news_agent: that was delivered this cycle.  \ud83d\udcf0 **Crypto News \u2014 Aug 3, 202 | oi_funding: OI +5.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "news_agent",
-          "signal": "that was delivered this cycle.  \ud83d\udcf0 **Crypto News \u2014 Aug 3, 2026**  \ud83d\udd34 **Coldcard Bitcoin Exploit Balloons to $88M as Attack",
-          "weight": 1.42
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 77% bid-weighted (bullish)",
-          "weight": 1.08
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0013%",
-          "weight": 0.9
-        }
-      ],
-      "timestamp": "2026-08-02T17:50:53.448150+00:00"
-    },
-    "ETH": {
       "score": 1.0,
       "confidence": 0.3,
       "sources": [
@@ -2036,50 +2023,70 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +22.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +5.0% 1h, funding 0.0013%",
+          "weight": 0.9
+        }
+      ],
+      "timestamp": "2026-08-02T17:55:54.136329+00:00"
+    },
+    "ETH": {
+      "score": 1.0,
+      "confidence": 0.74,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH] $ETH quietly building momentum \u2014 DeFi backbone stre | oi_funding: OI +22.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI +22.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [$ETH] $ETH quietly building momentum \u2014 DeFi backbone strengthening with L2 innovation and institutional adoption [3.5",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-08-02T17:50:53.448166+00:00"
+      "timestamp": "2026-08-02T17:55:54.136358+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 1.0,
+      "score": -0.01,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @FuckTheAlgo BlackRock, Franklin Templeton, JPMo | whale_monitor: Orderbook 74% bid-weighted (bullish) | oi_funding: OI +38.0% 1h, funding 0.0000%",
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI +38.0% 1h, funding 0.0000%",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @FuckTheAlgo BlackRock, Franklin Templeton, JPMorgan, Mastercard building on Solana. ETFs surpassed $1B AUM ",
-          "weight": 1.62
+          "source": "whale_monitor",
+          "signal": "Orderbook 13% bid (ask-heavy, bearish)",
+          "weight": 1.48
         },
         {
           "source": "oi_funding",
           "signal": "OI +38.0% 1h, funding 0.0000%",
           "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 74% bid-weighted (bullish)",
-          "weight": 0.96
         }
       ],
-      "timestamp": "2026-08-02T17:50:53.448177+00:00"
+      "timestamp": "2026-08-02T17:55:54.136374+00:00"
     },
     "HYPE": {
-      "score": -0.65,
+      "score": 0.18,
       "confidence": 0.3,
       "sources": [
         "x_scanner"
@@ -2088,25 +2095,25 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $HYPE] @Xaif_Crypto (\ud83d\udc4d10 \ud83d\udd045) $XRP ETF +$14.86M inflow v",
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $HYPE] @NoLiquidity77 Loracle selling is a single trade",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $HYPE] @Xaif_Crypto (\ud83d\udc4d10 \ud83d\udd045) $XRP ETF +$14.86M inflow vs $HYPE ETF -$14.75M outflow same week. Institutions voting ",
-          "weight": 1.49
+          "signal": "\u2022 [\ud83d\udcc9 $HYPE] @NoLiquidity77 Loracle selling is a single trader's PnL, not protocol drift \u2014 not an insider signaling struc",
+          "weight": 0.8
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83e\udd15 $HYPE] @__finality__ Single trade in Korea's pre-market triggered ~$60M liquidations on Hyperliquid \u2014 exposed edge ",
-          "weight": 1.3
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @cozypront (\ud83d\udc4d187 \ud83d\udd044) $HYPE is still the best coin to buy and hold this cycle by far \u2014 buying at $52 is an ab",
+          "weight": 0.8
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $HYPE] @SatoshiBitunix (\ud83d\udc4d3 \ud83d\udd043) Liquidation map on $HYPE looks like a minefield \u2014 $568M+ in leveraged positions [sco",
-          "weight": 1.3
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Mr_Derivatives (\ud83d\udc4d176 \ud83d\udd044) Futes should open up decently green based on all the weekend (WS IG, Hyperliquid) ",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-08-02T17:50:53.448187+00:00"
+      "timestamp": "2026-08-02T17:55:54.136384+00:00"
     }
   },
   "config": {
