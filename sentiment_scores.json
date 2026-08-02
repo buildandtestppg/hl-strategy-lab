@@ -1,15 +1,16 @@
 {
   "BTC": {
-    "score": -0.26,
-    "confidence": 0.3,
+    "score": -0.0,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc0b Whale Short] @vinhdtrai Whale opened $57M $BTC short wi",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc0b Whale Short] @vinhdtrai Whale opened $57M $BTC short wi | whale_monitor: Orderbook 74% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,9 +21,14 @@
         "source": "x_scanner",
         "signal": "\u2022 [\u26a1 Trump BTC] @MaxCrypto (\ud83d\udc4d11) Trump Media deposited $165M in $BTC to exchanges \u2014 are they selling? [score: 2.18]",
         "weight": 1.42
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 74% bid-weighted (bullish)",
+        "weight": 0.96
       }
     ],
-    "timestamp": "2026-08-02T10:15:57.790141+00:00"
+    "timestamp": "2026-08-02T10:20:58.468580+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -52,31 +58,40 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-02T10:15:57.790230+00:00"
+    "timestamp": "2026-08-02T10:20:58.468595+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-02T10:15:57.790239+00:00"
-  },
-  "HYPE": {
-    "score": -0.19,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "x_scanner"
+      "whale_monitor"
     ],
-    "signal_count": 3,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 HYPE Dump] @farxxxxx1 (\ud83d\udc4d3) $HYPE dumping around $53 \u2014 S",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 20% bid (ask-heavy, bearish)",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 20% bid (ask-heavy, bearish)",
+        "weight": 1.2
+      }
+    ],
+    "timestamp": "2026-08-02T10:20:58.468603+00:00"
+  },
+  "HYPE": {
+    "score": 0.11,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 HYPE Dump] @farxxxxx1 (\ud83d\udc4d3) $HYPE dumping around $53 \u2014 S | whale_monitor: Orderbook 90% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -89,11 +104,11 @@
         "weight": 1.89
       },
       {
-        "source": "x_scanner",
-        "signal": "ETH showing accumulation signals (exchange outflows, long setups) but BTC faces heavy sell pressure \u2014 Trump Media moved ",
-        "weight": 0.8
+        "source": "whale_monitor",
+        "signal": "Orderbook 90% bid-weighted (bullish)",
+        "weight": 1.6
       }
     ],
-    "timestamp": "2026-08-02T10:15:57.790263+00:00"
+    "timestamp": "2026-08-02T10:20:58.468612+00:00"
   }
 }
