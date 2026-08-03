@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.29,
-    "confidence": 0.5,
+    "score": 0.47,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "news_agent"
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @Stan_Steps (\ud83d\udc4d10 \ud83d\udd042) 4H chart \u2014 BTC below key MAs | news_agent: \u2022 ZeroStack warns of survival risk, $83M loss as 0G holdings",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @Stan_Steps (\ud83d\udc4d10 \ud83d\udd042) 4H chart \u2014 BTC below key MAs | news_agent: \u2022 ZeroStack warns of survival risk, $83M loss as 0G holdings | oi_funding: OI +5.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "news_agent",
@@ -28,20 +29,26 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-03T08:00:34.151589+00:00"
+    "timestamp": "2026-08-03T08:05:34.697244+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.05,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @WhaleFactor (\ud83d\udc4d22 \ud83d\udd047) Institutional capital shift",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @WhaleFactor (\ud83d\udc4d22 \ud83d\udd047) Institutional capital shift | oi_funding: OI -16.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -16.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @WhaleFactor (\ud83d\udc4d22 \ud83d\udd047) Institutional capital shifting positions \u2014 $BTC: -$61M, $ETH inflows [2.8]",
@@ -53,56 +60,63 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-03T08:00:34.151609+00:00"
+    "timestamp": "2026-08-03T08:05:34.697276+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": -0.68,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd27 $SOL] @wiredwisely Tool that filters memecoins using tr | whale_monitor: Orderbook 26% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd27 $SOL] @wiredwisely Tool that filters memecoins using tr | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 26% bid (ask-heavy, bearish)",
-        "weight": 0.96
+        "source": "oi_funding",
+        "signal": "OI -6.0% 1h",
+        "weight": 1.08
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd27 $SOL] @wiredwisely Tool that filters memecoins using trader signals \u2014 filter rugs, score liquidity + holders [3.0]",
         "weight": 0.65
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 61% bid-weighted (bullish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-08-03T08:00:34.151625+00:00"
+    "timestamp": "2026-08-03T08:05:34.697302+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.44,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
+    "signal_count": 6,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @herfarmercist (\ud83d\udc4d45 \ud83d\udd046) HYPE downtrend since ATH | whale_monitor: Orderbook 67% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @herfarmercist (\ud83d\udc4d45 \ud83d\udd046) HYPE downtrend since ATH | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -10.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -10.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @herfarmercist (\ud83d\udc4d45 \ud83d\udd046) HYPE downtrend since ATH \u2014 area for accumulating/DCAing into $HYPE (NFA) [3.9]",
         "weight": 0.8
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 67% bid-weighted (bullish)",
-        "weight": 0.68
       },
       {
         "source": "x_scanner",
@@ -110,6 +124,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-03T08:00:34.151636+00:00"
+    "timestamp": "2026-08-03T08:05:34.697325+00:00"
   }
 }
