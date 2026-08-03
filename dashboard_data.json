@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-08-03T16:00:34.284240+00:00",
+  "last_update": "2026-08-03T16:05:34.736649+00:00",
   "portfolio": {
     "value": 4655.62,
     "capital": 4655.62,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 63671.5,
-    "ETH": 1862.85,
-    "SOL": 73.5725,
-    "HYPE": 54.3315
+    "BTC": 63809.5,
+    "ETH": 1865.35,
+    "SOL": 73.5975,
+    "HYPE": 54.4465
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-03T00:40:42.250567+00:00",
-      "v": 4722.26,
-      "p": -5.55
-    },
     {
       "t": "2026-08-03T00:45:42.586828+00:00",
       "v": 4714.62,
@@ -1945,6 +1940,11 @@
       "t": "2026-08-03T16:00:34.284240+00:00",
       "v": 4655.62,
       "p": -6.89
+    },
+    {
+      "t": "2026-08-03T16:05:34.736649+00:00",
+      "v": 4655.62,
+      "p": -6.89
     }
   ],
   "ai_history": [
@@ -1995,19 +1995,25 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.63,
-      "confidence": 1.0,
+      "score": -0.51,
+      "confidence": 0.9,
       "sources": [
         "x_scanner",
         "whale_monitor",
-        "news_agent"
+        "news_agent",
+        "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": true,
       "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @bpaynews \u2014 Hashdex shutting smallest spot BTC ET | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | news_agent: cord message:  \ud83d\udcf0 **Crypto News Scan** \u2014 Aug 3, 15:52 UTC  \ud83d\udd34 ",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @bpaynews \u2014 Hashdex shutting smallest spot BTC ET | whale_monitor: Orderbook 65% bid-weighted (bullish) | news_agent: cord message:  \ud83d\udcf0 **Crypto News Scan** \u2014 Aug 3, 15:52 UTC  \ud83d\udd34 ",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -29.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "news_agent",
           "signal": "cord message:  \ud83d\udcf0 **Crypto News Scan** \u2014 Aug 3, 15:52 UTC  \ud83d\udd34 **BREAKING** \u2022 Hashdex to shut down its smallest Bitcoin ETF",
@@ -2017,36 +2023,11 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $BTC] @bpaynews \u2014 Hashdex shutting smallest spot BTC ETF; liquidating 225 BTC [1.5]",
           "weight": 0.8
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udfe2 $BTC] @Valid_signals \u2014 Spot demand + falling OI = real buying, not leverage [1.5]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-08-03T16:00:34.192631+00:00"
+      "timestamp": "2026-08-03T16:05:34.649236+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "x_scanner"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: BTC shows mixed signals \u2014 ETF weekly outflows (-$61.5M) but ",
-      "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "BTC shows mixed signals \u2014 ETF weekly outflows (-$61.5M) but spot-driven rally with shrinking OI suggests real accumulati",
-          "weight": 0.65
-        }
-      ],
-      "timestamp": "2026-08-03T16:00:34.192645+00:00"
-    },
-    "SOL": {
       "score": 1.0,
       "confidence": 0.74,
       "sources": [
@@ -2057,12 +2038,38 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @revolut20 (\ud83d\udc4d43 \ud83d\udd0430) $BRICK chart looks very clos | oi_funding: OI +12.0% 1h, funding 0.0005%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: BTC shows mixed signals \u2014 ETF weekly outflows (-$61.5M) but  | oi_funding: OI +10.0% 1h, funding 0.0007%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +12.0% 1h, funding 0.0005%",
+          "signal": "OI +10.0% 1h, funding 0.0007%",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "BTC shows mixed signals \u2014 ETF weekly outflows (-$61.5M) but spot-driven rally with shrinking OI suggests real accumulati",
+          "weight": 0.65
+        }
+      ],
+      "timestamp": "2026-08-03T16:05:34.649251+00:00"
+    },
+    "SOL": {
+      "score": 1.0,
+      "confidence": 0.74,
+      "sources": [
+        "x_scanner",
+        "whale_monitor"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $SOL] @revolut20 (\ud83d\udc4d43 \ud83d\udd0430) $BRICK chart looks very clos | whale_monitor: Orderbook 74% bid-weighted (bullish)",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 74% bid-weighted (bullish)",
+          "weight": 0.96
         },
         {
           "source": "x_scanner",
@@ -2070,39 +2077,27 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-08-03T16:00:34.192656+00:00"
+      "timestamp": "2026-08-03T16:05:34.649259+00:00"
     },
     "HYPE": {
-      "score": 0.2,
-      "confidence": 0.84,
+      "score": 1.0,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
-        "whale_monitor",
-        "oi_funding"
+        "x_scanner"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @defi_monk (\ud83d\udc4d21 \ud83d\udd042) $HYPE whale booking profits  | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI +52.0% 1h, funding 0.0013%",
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @defi_monk (\ud83d\udc4d21 \ud83d\udd042) $HYPE whale booking profits ",
       "key_signals": [
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 13% bid (ask-heavy, bearish)",
-          "weight": 1.48
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +52.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udd25 $HYPE] @defi_monk (\ud83d\udc4d21 \ud83d\udd042) $HYPE whale booking profits and leaving the casino [2.7]",
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-08-03T16:00:34.192666+00:00"
+      "timestamp": "2026-08-03T16:05:34.649265+00:00"
     }
   },
   "config": {
