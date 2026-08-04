@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-08-05T05:41:15.414000+08:00",
-  "exported_at_utc": "2026-08-04T21:41:15.414003+00:00",
+  "exported_at": "2026-08-05T05:50:40.241329+08:00",
+  "exported_at_utc": "2026-08-04T21:50:40.241331+00:00",
   "portfolio": {
     "value": 4631.787840926643,
     "initial": 5000.0,
@@ -391,16 +391,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-08-04T06:15:29.630233+00:00",
-      "v": 4642.29,
-      "p": -7.15
-    },
-    {
-      "t": "2026-08-04T06:20:30.303559+00:00",
-      "v": 4642.79,
-      "p": -7.14
-    },
     {
       "t": "2026-08-04T06:25:31.052348+00:00",
       "v": 4641.64,
@@ -1390,107 +1380,134 @@
       "t": "2026-08-04T21:40:40.238329+00:00",
       "v": 4633.13,
       "p": -7.34
+    },
+    {
+      "t": "2026-08-04T21:45:37.191398+00:00",
+      "v": 4631.91,
+      "p": -7.36
+    },
+    {
+      "t": "2026-08-04T21:50:37.863706+00:00",
+      "v": 4635.51,
+      "p": -7.29
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.36,
+      "confidence": 0.5,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -6.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @whale_alert (\ud83d\udc4d15 \ud83d\udd042) 8,144 $BTC ($524M) whale\u2192wh | oi_funding: OI -9.0% 1h",
       "key_signals": [
         {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $BTC] @whale_alert (\ud83d\udc4d15 \ud83d\udd042) 8,144 $BTC ($524M) whale\u2192whale transfer [score: 4.7]",
+          "weight": 3.06
+        },
+        {
           "source": "oi_funding",
-          "signal": "OI -6.0% 1h",
-          "weight": 1.08
+          "signal": "OI -9.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-08-04T21:40:36.431175+00:00"
+      "timestamp": "2026-08-04T21:50:37.778413+00:00"
     },
     "ETH": {
+      "score": 0.43,
+      "confidence": 0.5,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 4,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @BMNRTracker (\ud83d\udc4d59) $BMNR MNAV=0.94 | $ETH $1872 | | oi_funding: OI -9.0% 1h",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @BMNRTracker (\ud83d\udc4d59) $BMNR MNAV=0.94 | $ETH $1872 | WE ARE BACK [score: 2.4]",
+          "weight": 1.56
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -9.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @icefrog_sol Smart money spent 480 $ETH \u2192 42M $NEIRO. Up $340k in 2hrs. 90% win rate [score: 1.6]",
+          "weight": 1.04
+        }
+      ],
+      "timestamp": "2026-08-04T21:50:37.778428+00:00"
+    },
+    "SOL": {
       "score": 1.0,
       "confidence": 0.74,
       "sources": [
-        "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
       "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83e\udd91 ETH] @icefrog_sol Whale spent 480 $ETH buying 42M $NEIR | oi_funding: OI +5.0% 1h, funding 0.0010%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +128.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83e\udd91 ETH] @icefrog_sol Whale spent 480 $ETH buying 42M $NEIRO. Up $340k in 2hrs. 90% win rate [score: 1.6]",
-          "weight": 1.04
+          "source": "oi_funding",
+          "signal": "OI +128.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
-          "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0010%",
-          "weight": 0.9
+          "source": "whale_monitor",
+          "signal": "Orderbook 66% bid-weighted (bullish)",
+          "weight": 0.64
         }
       ],
-      "timestamp": "2026-08-04T21:40:36.431192+00:00"
-    },
-    "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +4.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0013%",
-          "weight": 0.72
-        }
-      ],
-      "timestamp": "2026-08-04T21:40:36.431200+00:00"
+      "timestamp": "2026-08-04T21:50:37.778438+00:00"
     },
     "HYPE": {
-      "score": -0.21,
+      "score": 0.02,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 7,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f HYPE] @KOTANkorKAMUY_0 (\ud83d\udc4d3 \ud83d\udd041) Eole Inc acquired $HYPE | whale_monitor: Orderbook 23% bid (ask-heavy, bearish) | oi_funding: OI -8.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @0xPresage Smart money 24h: 4796 whale moves. HL | whale_monitor: Orderbook 17% bid (ask-heavy, bearish) | oi_funding: OI -44.0% 1h",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f HYPE] @KOTANkorKAMUY_0 (\ud83d\udc4d3 \ud83d\udd041) Eole Inc acquired $HYPE \u2014 building AI data centers in Japan [score: 2.7]",
-          "weight": 1.76
-        },
-        {
           "source": "oi_funding",
-          "signal": "OI -8.0% 1h",
+          "signal": "OI -44.0% 1h",
           "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 23% bid (ask-heavy, bearish)",
-          "weight": 1.08
+          "signal": "Orderbook 17% bid (ask-heavy, bearish)",
+          "weight": 1.32
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @0xPresage Smart money 24h: 4796 whale moves. HL $7.4M flow, biggest $4.2M on HYPE [score: 1.5]",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-08-04T21:40:36.431210+00:00"
+      "timestamp": "2026-08-04T21:50:37.778450+00:00"
     }
   },
   "pair_strategies": {
@@ -1570,204 +1587,204 @@
       {
         "text": "**Job ID:** 43ba1d393c5a",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
-        "text": "**Run Time:** 2026-08-05 05:18:57",
+        "text": "**Run Time:** 2026-08-05 05:46:51",
         "sentiment": 0,
-        "time": "2026-08-05 05:18"
+        "time": "2026-08-05 05:46"
       },
       {
         "text": "**Schedule:** 5,35 * * * *",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "[SYSTEM: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just produc",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "You are the Crypto Scanner Agent. Run BOTH the X scanner and Reddit scanner, then report results to Discord.",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "You MUST use a subagent to run Reddit scanner in parallel with X scanner. This saves ~5-9 minutes per cycle.",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "Spawn the Reddit subagent BEFORE starting x_scanner.py so they run in parallel:",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "delegate_task(",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "goal=\"Run the Reddit crypto scanner and write results to a temp file\",",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "context=\"Run this command: cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/reddit_scanner.py 2>&1. Wait for it to complete (may take 5-9 min)",
         "sentiment": -0.3,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "toolsets=[\"terminal\", \"file\"],",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "max_iterations=15",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": ")",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "Run the X scanner normally:",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/x_scanner.py 2>&1",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "Parse the JSON output as usual.",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       },
       {
         "text": "After x_scanner.py finishes:",
         "sentiment": 0,
-        "time": "1785878337.973726"
+        "time": "1785880011.3300674"
       }
     ],
     "whale_monitor": [
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
-        "text": "**Run Time:** 2026-08-05 05:23:28",
+        "text": "**Run Time:** 2026-08-05 05:43:02",
         "sentiment": 0,
-        "time": "2026-08-05 05:23"
+        "time": "2026-08-05 05:43"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1785878608.3298178"
+        "time": "1785879782.964368"
       }
     ],
     "news_agent": [
@@ -1872,32 +1889,32 @@
         "time": "1785879543.26599"
       }
     ],
-    "generated": "2026-08-04T21:40:36.452188Z"
+    "generated": "2026-08-04T21:50:37.798492Z"
   },
   "scanner_status": {
     "x_scanner": {
-      "last_run": "05:18",
-      "age_minutes": 22,
+      "last_run": "05:46",
+      "age_minutes": 4,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "05:23",
-      "age_minutes": 18,
+      "last_run": "05:43",
+      "age_minutes": 8,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "05:39",
-      "age_minutes": 2,
+      "age_minutes": 12,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "03:17",
-      "age_minutes": 143,
+      "age_minutes": 153,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "05:30",
-      "age_minutes": 10,
+      "last_run": "05:46",
+      "age_minutes": 5,
       "status": "fresh"
     }
   },
@@ -2285,10 +2302,10 @@
     }
   },
   "prices": {
-    "BTC": 64196.5,
-    "ETH": 1872.05,
-    "SOL": 74.0475,
-    "HYPE": 55.1125
+    "BTC": 64182.5,
+    "ETH": 1872.45,
+    "SOL": 74.1105,
+    "HYPE": 55.1175
   },
   "actions": [],
   "ai_history": [
