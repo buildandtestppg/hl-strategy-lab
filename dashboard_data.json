@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-08-05T02:40:16.124798+00:00",
+  "last_update": "2026-08-05T02:45:16.997817+00:00",
   "portfolio": {
-    "value": 4630.59,
+    "value": 4636.36,
     "capital": 4630.37,
     "initial": 5000.0,
-    "pnl": -369.41,
-    "pnl_pct": -7.39,
+    "pnl": -363.64,
+    "pnl_pct": -7.27,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 64403.5,
-    "ETH": 1874.35,
-    "SOL": 74.2305,
-    "HYPE": 55.8595
+    "BTC": 64408.5,
+    "ETH": 1874.95,
+    "SOL": 74.4065,
+    "HYPE": 55.8785
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 1870.65,
-      "current_price": 1874.35,
+      "current_price": 1874.95,
       "size": 1.184663893229319,
-      "unrealized_pnl": 4.12,
-      "unrealized_pnl_pct": 0.19,
+      "unrealized_pnl": 4.87,
+      "unrealized_pnl_pct": 0.22,
       "stop_loss": 1831.35,
       "take_profit": 1949.25,
       "strategy": "trend",
       "entry_time": "2026-08-04T13:45:33.494733+00:00",
-      "duration_hours": 12.9,
-      "funding_rate": 0.000931,
-      "unrealized_funding": 0.2669
+      "duration_hours": 13.0,
+      "funding_rate": 0.000759,
+      "unrealized_funding": 0.2191
     },
     "SOL": {
       "direction": "LONG",
       "entry_price": 74.3605,
-      "current_price": 74.2305,
+      "current_price": 74.4065,
       "size": 28.49066255433866,
-      "unrealized_pnl": -3.9,
-      "unrealized_pnl_pct": -0.18,
+      "unrealized_pnl": 1.11,
+      "unrealized_pnl_pct": 0.05,
       "stop_loss": 72.72425,
       "take_profit": 77.633,
       "strategy": "stochastic",
       "entry_time": "2026-08-04T19:15:18.708753+00:00",
-      "duration_hours": 7.4,
+      "duration_hours": 7.5,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1961
+      "unrealized_funding": 0.1987
     }
   },
   "stats": {
@@ -977,11 +977,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-04T11:15:11.198228+00:00",
-      "v": 4652.14,
-      "p": -6.96
-    },
     {
       "t": "2026-08-04T11:16:15.466436+00:00",
       "v": 4651.37,
@@ -1976,6 +1971,11 @@
       "t": "2026-08-05T02:40:16.124798+00:00",
       "v": 4630.59,
       "p": -7.39
+    },
+    {
+      "t": "2026-08-05T02:45:16.997817+00:00",
+      "v": 4636.36,
+      "p": -7.27
     }
   ],
   "ai_history": [
@@ -2053,50 +2053,62 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-08-05T02:40:16.040656+00:00"
+      "timestamp": "2026-08-05T02:45:16.913587+00:00"
     },
     "ETH": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.03,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @GlockchainGlock (\ud83d\udc4d1) BTC Dominance 58.75%, Marke",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @GlockchainGlock (\ud83d\udc4d1) BTC Dominance 58.75%, Marke | oi_funding: OI +11.0% 1h, funding 0.0009%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +11.0% 1h, funding 0.0009%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $ETH] @GlockchainGlock (\ud83d\udc4d1) BTC Dominance 58.75%, Market Cap ~$2.27T, ETF: BTC +$170.1M | ETH \u2013$17.7M [score: 2.1]",
           "weight": 1.37
         }
       ],
-      "timestamp": "2026-08-05T02:40:16.040669+00:00"
+      "timestamp": "2026-08-05T02:45:16.913601+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 67% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +14.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +14.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 67% bid-weighted (bullish)",
           "weight": 0.68
         }
       ],
-      "timestamp": "2026-08-05T02:40:16.040676+00:00"
+      "timestamp": "2026-08-05T02:45:16.913611+00:00"
     },
     "HYPE": {
-      "score": -1.0,
+      "score": 1.0,
       "confidence": 0.3,
       "sources": [
         "oi_funding"
@@ -2105,15 +2117,15 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -7.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +11.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -7.0% 1h",
-          "weight": 1.26
+          "signal": "OI +11.0% 1h, funding 0.0013%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-08-05T02:40:16.040682+00:00"
+      "timestamp": "2026-08-05T02:45:16.913616+00:00"
     }
   },
   "config": {
