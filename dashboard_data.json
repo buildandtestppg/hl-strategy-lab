@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-08-05T09:00:10.219179+00:00",
+  "last_update": "2026-08-05T09:05:10.997743+00:00",
   "portfolio": {
     "value": 4609.93,
     "capital": 4609.93,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 64098.5,
-    "ETH": 1868.95,
-    "SOL": 74.0515,
-    "HYPE": 57.5485
+    "BTC": 64103.5,
+    "ETH": 1869.55,
+    "SOL": 74.0475,
+    "HYPE": 57.4335
   },
   "positions": {},
   "stats": {
@@ -946,11 +946,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-04T17:30:03.870924+00:00",
-      "v": 4656.21,
-      "p": -6.88
-    },
     {
       "t": "2026-08-04T17:35:04.437992+00:00",
       "v": 4658.74,
@@ -1945,6 +1940,11 @@
       "t": "2026-08-05T09:00:10.219179+00:00",
       "v": 4609.93,
       "p": -7.8
+    },
+    {
+      "t": "2026-08-05T09:05:10.997743+00:00",
+      "v": 4609.93,
+      "p": -7.8
     }
   ],
   "ai_history": [
@@ -2000,104 +2000,119 @@
   "sentiment": {
     "BTC": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 1.0,
       "sources": [
-        "whale_monitor"
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 30% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udd14 $BTC] @AshCrypto (\ud83d\udc4d69 \ud83d\udd048) Michael Saylor's Strategy tra | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -22.0% 1h",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 30% bid (ask-heavy, bearish)",
-          "weight": 0.8
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd14 $BTC] @AshCrypto (\ud83d\udc4d69 \ud83d\udd048) Michael Saylor's Strategy transferred $66M in BTC to a new wallet \u2014 selling? [score: 3.0]",
+          "weight": 1.95
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -22.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udd14 $BTC] @sodav001 (\ud83d\udc4d1 \ud83d\udd040) Whale opened $102.5M BTC short at 40x leverage, liq price $64,891 [score: 1.5]",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-08-05T09:00:10.126243+00:00"
+      "timestamp": "2026-08-05T09:05:10.909830+00:00"
     },
     "ETH": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.27,
+      "confidence": 0.7,
       "sources": [
-        "polymarket"
+        "x_scanner",
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: 89.5%** (+20pp) - Above $1,900: 9.0% (\u221210pp) \u2022 Above $2,000:",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @CW8900 (\ud83d\udc4d4 \ud83d\udd040) ETH whale sell orders solid, sell | polymarket: 89.5%** (+20pp) - Above $1,900: 9.0% (\u221210pp) \u2022 Above $2,000: | oi_funding: OI +24.0% 1h, funding 0.0006%",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc9 $ETH] @CW8900 (\ud83d\udc4d4 \ud83d\udd040) ETH whale sell orders solid, sell pressure in current range [score: 1.6]",
+          "weight": 1.52
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI +24.0% 1h, funding 0.0006%",
+          "weight": 1.44
+        },
         {
           "source": "polymarket",
           "signal": "89.5%** (+20pp) - Above $1,900: 9.0% (\u221210pp) \u2022 Above $2,000: 0.2% (resistance firm)  ### \u26a0\ufe0f Notable No \u226510pp non-expiry ",
           "weight": 0.96
         }
       ],
-      "timestamp": "2026-08-05T09:00:10.126258+00:00"
+      "timestamp": "2026-08-05T09:05:10.909845+00:00"
     },
     "SOL": {
-      "score": 1.0,
+      "score": -1.0,
       "confidence": 0.3,
       "sources": [
-        "x_scanner"
+        "oi_funding"
       ],
-      "signal_count": 3,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\ude80 $SOL alpha] @Ritesh_Pratt \u2014 @trenches Solana meme launc",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\ude80 $SOL alpha] @Ritesh_Pratt \u2014 @trenches Solana meme launchpad, early access waitlist open [score: 4.0]",
-          "weight": 3.2
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $SOL] @AddyyyOnChain \u2014 $zaibatsu posted 450k \u2192 ATH 1.6m (nearly 4x), now 800k, stocks being paid (\ud83d\udc4d12) [score: 1.8]",
-          "weight": 1.44
-        },
-        {
-          "source": "x_scanner",
-          "signal": "ETF flows narrative dominated: BTC +$211M, ETH +$53.75M net inflows Aug 4. Cloudflare wallet handles was the standout bu",
-          "weight": 0.65
+          "source": "oi_funding",
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
         }
       ],
-      "timestamp": "2026-08-05T09:00:10.126268+00:00"
+      "timestamp": "2026-08-05T09:05:10.909853+00:00"
     },
     "HYPE": {
-      "score": 0.27,
-      "confidence": 0.6,
+      "score": 0.54,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Blockcastcc \u2014 HIP-3 DEX on Hyperliquid exceede | whale_monitor: Orderbook 77% bid-weighted (bullish)",
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\ude80 $HYPE] @Gyokeres_eth (\ud83d\udc4d36 \ud83d\udd043) Early Projects Watchlist  | whale_monitor: Orderbook 77% bid-weighted (bullish) | oi_funding: OI -79.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @Blockcastcc \u2014 HIP-3 DEX on Hyperliquid exceeded $450B all-time vol, 364K unique traders [score: 2.5]",
-          "weight": 1.62
+          "signal": "\u2022 [\ud83d\ude80 $HYPE] @Gyokeres_eth (\ud83d\udc4d36 \ud83d\udd043) Early Projects Watchlist Week 5: Cero Card, Launchonvaro, Packs TCG, Shrimp [score: 4",
+          "weight": 3.52
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca $HYPE] @ninjanewsx \u2014 ETF flows Aug 4: BTC +$211.5M, ETH +$53.1M, SOL no outflow, HYPE no outflow (\ud83d\udc4d21) [score: 2.4]",
-          "weight": 1.56
+          "signal": "\u2022 [\ud83d\ude80 $HYPE] @Gyokeres_eth Early Projects Watchlist Week 5: Cero, Varo, Packs, Shrimp [score: 4.4]",
+          "weight": 2.86
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 77% bid-weighted (bullish)",
-          "weight": 1.08
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca $HYPE] @massdotmoney (\ud83d\udc4d1 \ud83d\udd040) $CRCL earnings today \u2014 81% of HYPE whales bearish on CRCL [score: 2.5]",
+          "weight": 1.62
         }
       ],
-      "timestamp": "2026-08-05T09:00:10.126277+00:00"
+      "timestamp": "2026-08-05T09:05:10.909864+00:00"
     }
   },
   "config": {
