@@ -1,15 +1,18 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.73,
+    "confidence": 0.9,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @TradesTyr (\ud83d\udc4d122 \ud83d\udd040) Something I've been watching",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @TradesTyr (\ud83d\udc4d122 \ud83d\udd040) Something I've been watching | whale_monitor: Orderbook 75% bid-weighted (bullish) | news_agent: om/wintermute-1b-hft-ai-infrastructure-investment/  \ud83d\udfe2 **Nota",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -17,24 +20,30 @@
         "weight": 2.88
       },
       {
+        "source": "oi_funding",
+        "signal": "OI -11.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $BTC] @Wealthmanager (\ud83d\udc4d16 \ud83d\udd043) The setup looks familiar. The last 2 CPI reports triggered a 10% and 7 [score: 2.2]",
         "weight": 1.43
       }
     ],
-    "timestamp": "2026-08-12T11:20:02.905602+00:00"
+    "timestamp": "2026-08-12T11:25:03.644123+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CryptoMichNL (\ud83d\udc4d60 \ud83d\udd047) $ETH looks so ready for a ",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CryptoMichNL (\ud83d\udc4d60 \ud83d\udd047) $ETH looks so ready for a  | whale_monitor: Orderbook 61% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -52,19 +61,33 @@
         "weight": 1.23
       }
     ],
-    "timestamp": "2026-08-12T11:20:02.905617+00:00"
+    "timestamp": "2026-08-12T11:25:03.644136+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 0.35,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-12T11:20:02.905620+00:00"
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 87% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 87% bid-weighted (bullish)",
+        "weight": 1.48
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -4.0% 1h",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-08-12T11:25:03.644144+00:00"
   },
   "HYPE": {
     "score": 1.0,
@@ -89,6 +112,6 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-08-12T11:20:02.905627+00:00"
+    "timestamp": "2026-08-12T11:25:03.644150+00:00"
   }
 }
