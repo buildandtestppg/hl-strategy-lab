@@ -1,15 +1,17 @@
 {
   "BTC": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 7,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d21 \ud83d\udd044) 1,112 $BTC ($70.7M) transfe",
+    "signal_count": 9,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d21 \ud83d\udd044) 1,112 $BTC ($70.7M) transfe | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI +66.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -27,60 +29,72 @@
         "weight": 2.79
       }
     ],
-    "timestamp": "2026-08-12T15:40:45.338460+00:00"
+    "timestamp": "2026-08-12T15:45:45.973322+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 0.3,
+    "confidence": 0.5,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: 12, 2026**  **BTC:** Implied range ~$62-64K. $64K line conte",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: 12, 2026**  **BTC:** Implied range ~$62-64K. $64K line conte | oi_funding: OI +26.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +26.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "polymarket",
         "signal": "12, 2026**  **BTC:** Implied range ~$62-64K. $64K line contested (60.5%, -5pp intraday). $85K in Aug fading (44%). $100K",
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-12T15:40:45.338472+00:00"
+    "timestamp": "2026-08-12T15:45:45.973335+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 28% bid (ask-heavy, bearish)",
-        "weight": 0.88
-      }
-    ],
-    "timestamp": "2026-08-12T15:40:45.338479+00:00"
-  },
-  "HYPE": {
-    "score": 0.76,
+    "score": 0.5,
     "confidence": 0.5,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83e\udd16 $HYPE] @Cointelegraph (\ud83d\udc4d12 \ud83d\udd042) LATEST: Hyperliquid is s | whale_monitor: Orderbook 37% bid (ask-heavy, bearish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI +20.0% 1h, funding 0.0000%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +20.0% 1h, funding 0.0000%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 38% bid (ask-heavy, bearish)",
+        "weight": 0.48
+      }
+    ],
+    "timestamp": "2026-08-12T15:45:45.973344+00:00"
+  },
+  "HYPE": {
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83e\udd16 $HYPE] @Cointelegraph (\ud83d\udc4d12 \ud83d\udd042) LATEST: Hyperliquid is s | oi_funding: OI +50.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -93,11 +107,11 @@
         "weight": 1.62
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 37% bid (ask-heavy, bearish)",
-        "weight": 0.52
+        "source": "oi_funding",
+        "signal": "OI +50.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-12T15:40:45.338488+00:00"
+    "timestamp": "2026-08-12T15:45:45.973353+00:00"
   }
 }
