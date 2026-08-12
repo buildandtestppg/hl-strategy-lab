@@ -1,17 +1,18 @@
 {
   "BTC": {
-    "score": 0.55,
-    "confidence": 0.84,
+    "score": 0.45,
+    "confidence": 0.6,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 8,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @whale_alert (\ud83d\udc4d10 \ud83d\udd040) 800 $BTC (50,720,486 USD) t | whale_monitor: Orderbook 60% bid-weighted (bullish) | polymarket: ding. Market now sees 66.5% chance of Sept pause (up 8pp), o",
+    "signal_count": 9,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 2,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @whale_alert (\ud83d\udc4d10 \ud83d\udd040) 800 $BTC (50,720,486 USD) t | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | polymarket: ding. Market now sees 66.5% chance of Sept pause (up 8pp), o",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -24,25 +25,31 @@
         "weight": 1.89
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $BTC] @ValeriusLabs (\ud83d\udc4d0 \ud83d\udd040) $BTC whale net long $108M while $ETH net short $24M. Deribit options B [score: 1.5]",
-        "weight": 0.98
+        "source": "oi_funding",
+        "signal": "OI +97.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-12T20:00:28.302689+00:00"
+    "timestamp": "2026-08-12T20:05:29.315589+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: 62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: 62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19 | oi_funding: OI -104.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -104.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "polymarket",
         "signal": "62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19.5% (-10pp) \u2014 struggling to hold higher - ETH above $1,800 t",
@@ -54,20 +61,20 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-12T20:00:28.302701+00:00"
+    "timestamp": "2026-08-12T20:05:29.315609+00:00"
   },
   "SOL": {
-    "score": 0.66,
+    "score": 0.6,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f \u26a1 $SOL] @Crypto__Haris (\ud83d\udc4d40 \ud83d\udd0420) Guys I think I just f | whale_monitor: Orderbook 20% bid (ask-heavy, bearish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f \u26a1 $SOL] @Crypto__Haris (\ud83d\udc4d40 \ud83d\udd0420) Guys I think I just f | oi_funding: OI -15.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -80,24 +87,25 @@
         "weight": 1.6
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 20% bid (ask-heavy, bearish)",
-        "weight": 1.2
+        "source": "oi_funding",
+        "signal": "OI -15.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-12T20:00:28.302710+00:00"
+    "timestamp": "2026-08-12T20:05:29.315618+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.35,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @0xDecodex (\ud83d\udc4d1 \ud83d\udd040) Building lightweight tools o",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @0xDecodex (\ud83d\udc4d1 \ud83d\udd040) Building lightweight tools o | oi_funding: OI -13.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -105,11 +113,16 @@
         "weight": 1.62
       },
       {
+        "source": "oi_funding",
+        "signal": "OI -13.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @CantonArmy (\ud83d\udc4d8 \ud83d\udd043) Canton Network ranked first among all blockchains in 30-day fee genera [score: 2.1]",
         "weight": 1.37
       }
     ],
-    "timestamp": "2026-08-12T20:00:28.302716+00:00"
+    "timestamp": "2026-08-12T20:05:29.315625+00:00"
   }
 }
