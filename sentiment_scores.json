@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": 0.42,
+    "score": 0.34,
     "confidence": 0.9,
     "sources": [
       "x_scanner",
@@ -12,7 +12,7 @@
     "convergence": true,
     "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @RealAllinCrypto (\ud83d\udc4d2 \ud83d\udd042) Chainlink tech could be | whale_monitor: Orderbook 85% bid-weighted (bullish) | polymarket: ding. Market now sees 66.5% chance of Sept pause (up 8pp), o",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @RealAllinCrypto (\ud83d\udc4d2 \ud83d\udd042) Chainlink tech could be | whale_monitor: Orderbook 62% bid-weighted (bullish) | polymarket: ding. Market now sees 66.5% chance of Sept pause (up 8pp), o",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -26,24 +26,30 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +53.0% 1h, funding 0.0013%",
+        "signal": "OI +21.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-12T21:20:42.131961+00:00"
+    "timestamp": "2026-08-12T21:25:43.002482+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: 62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: 62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19 | oi_funding: OI -47.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -47.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "polymarket",
         "signal": "62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19.5% (-10pp) \u2014 struggling to hold higher - ETH above $1,800 t",
@@ -55,32 +61,39 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-12T21:20:42.131975+00:00"
+    "timestamp": "2026-08-12T21:25:43.002496+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-12T21:20:42.131977+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -11.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -11.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-12T21:25:43.002504+00:00"
   },
   "HYPE": {
-    "score": 0.4,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 3,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\ude80 $HYPE] @Laura__crypto (\ud83d\udc4d4) $PUMP looks exactly like $HY | oi_funding: OI -8.0% 1h",
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\ude80 $HYPE] @Laura__crypto (\ud83d\udc4d4) $PUMP looks exactly like $HY",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -88,16 +101,11 @@
         "weight": 2.16
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -8.0% 1h",
-        "weight": 1.44
-      },
-      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd25 $HYPE] @TheBlockCo (\ud83d\udc4d6 \ud83d\udd041) Hyperliquid treasury Hyperion DeFi posts RECORD $31M quarterly profit, 3x Q1 [score: 1.8",
         "weight": 1.17
       }
     ],
-    "timestamp": "2026-08-12T21:20:42.131988+00:00"
+    "timestamp": "2026-08-12T21:25:43.002510+00:00"
   }
 }
