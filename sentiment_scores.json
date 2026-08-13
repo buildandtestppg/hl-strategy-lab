@@ -1,52 +1,59 @@
 {
   "BTC": {
-    "score": -0.53,
-    "confidence": 0.6,
+    "score": 0.22,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $BTC] @CointribuneEN Inflation drops to 3.4% but $BTC s | oi_funding: OI -27.0% 1h",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @CointribuneEN Inflation drops to 3.4% but $BTC s | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI +28.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -27.0% 1h",
+        "signal": "OI +28.0% 1h, funding 0.0013%",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
+        "weight": 0.68
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $BTC] @CointribuneEN Inflation drops to 3.4% but $BTC struggles for momentum. August 12 CPI didn't provide expected",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @BitcoinAlphaX (\ud83d\udc4d6 \ud83d\udd041) Whale opened $95.1M $BTC long ahead of PPI. 90% win rate this month [1.8]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-13T13:00:18.021051+00:00"
+    "timestamp": "2026-08-13T13:05:19.096937+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.52,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "polymarket",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @AltCryptoGems (\ud83d\udc4d53) Nothing-burger PA for $ETH.  | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @AltCryptoGems (\ud83d\udc4d53) Nothing-burger PA for $ETH.  | polymarket: h intraday momentum.  **BTC implied ~$63K:** $64K target at  | oi_funding: OI +31.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
-        "weight": 0.9
+        "signal": "OI +31.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "polymarket",
+        "signal": "h intraday momentum.  **BTC implied ~$63K:** $64K target at 26.5% (-27pp expiry repricing). $62K nearly certain (99.7%).",
+        "weight": 0.78
       },
       {
         "source": "x_scanner",
@@ -54,56 +61,56 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-13T13:00:18.021067+00:00"
+    "timestamp": "2026-08-13T13:05:19.096951+00:00"
   },
   "SOL": {
     "score": 1.0,
     "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $SOL] @Benhur2202 Solana this week: quiet chart, loud f | whale_monitor: Orderbook 60% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $SOL] @Benhur2202 Solana this week: quiet chart, loud f | oi_funding: OI +24.0% 1h, funding 0.0003%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +24.0% 1h, funding 0.0003%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a1 $SOL] @Benhur2202 Solana this week: quiet chart, loud fundamentals. $SOL chops $73-76 range, real alpha under the h",
         "weight": 0.65
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 60% bid-weighted (bullish)",
-        "weight": 0.4
       }
     ],
-    "timestamp": "2026-08-13T13:00:18.021077+00:00"
+    "timestamp": "2026-08-13T13:05:19.096960+00:00"
   },
   "HYPE": {
-    "score": 0.49,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @baritttt (\ud83d\udc4d6) Variational launched event for ac | oi_funding: OI -4.0% 1h",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @baritttt (\ud83d\udc4d6) Variational launched event for ac | oi_funding: OI +18.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +18.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udc8e $HYPE] @baritttt (\ud83d\udc4d6) Variational launched event for active PerpDEX wallets (Hyperliquid/Lighter) \u2014 up to 3,000 poi",
         "weight": 0.8
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
-        "weight": 0.72
       },
       {
         "source": "x_scanner",
@@ -111,6 +118,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-13T13:00:18.021087+00:00"
+    "timestamp": "2026-08-13T13:05:19.096968+00:00"
   }
 }
