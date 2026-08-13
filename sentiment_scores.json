@@ -1,77 +1,117 @@
 {
   "BTC": {
-    "score": 0.12,
-    "confidence": 0.5,
+    "score": 0.09,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
     "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC] Paxos whale dumped 800 BTC/$50M via Wintermute \u2014 2, | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @lookonchain (\ud83d\udc4d6 \ud83d\udd042) Gambler deposited $153K into | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI +25.0% 1h, funding 0.0013%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 75% bid-weighted (bullish)",
-        "weight": 1.0
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $BTC] @lookonchain (\ud83d\udc4d6 \ud83d\udd042) Gambler deposited $153K into Hyperliquid, 40x long $BTC ($6.22M). Liq: $62,825 [score: 1",
+        "weight": 1.44
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +25.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [$BTC] Paxos whale dumped 800 BTC/$50M via Wintermute \u2014 2,500 BTC ($154M) over 2 months [4.0]",
-        "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$BTC] @DonAlt (\ud83d\udc4d199 \ud83d\udcac28) Bought $ETH, will buy more \u2014 less comfy not having it",
-        "weight": 0.65
+        "signal": "\u2022 [\ud83d\udcc9 $BTC] @Finora_EN (\ud83d\udc4d1 \ud83d\udd040) $BTC 3D still bearish, close to liquidity pool under 60K and 57.8K [score: 1.5]",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-08-13T03:20:42.930235+00:00"
+    "timestamp": "2026-08-13T03:25:43.764660+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: *BTC:** Comfortably in $58-66K range today. $62K+ at 97.5%, ",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: *BTC:** Comfortably in $58-66K range today. $62K+ at 97.5%,  | oi_funding: OI -6.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -6.0% 1h",
+        "weight": 1.08
+      },
       {
         "source": "polymarket",
         "signal": "*BTC:** Comfortably in $58-66K range today. $62K+ at 97.5%, $66K+ at just 0.4%. Monthly $67.5K target fading (35.5%, -5p",
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-13T03:20:42.930250+00:00"
+    "timestamp": "2026-08-13T03:25:43.764676+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -0.37,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-13T03:20:42.930252+00:00"
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udca1 $SOL] @AiSolanaKols (\ud83d\udc4d0 \ud83d\udd040) $RUN migration warning: Top | whale_monitor: Orderbook 65% bid-weighted (bullish)",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udca1 $SOL] @AiSolanaKols (\ud83d\udc4d0 \ud83d\udd040) $RUN migration warning: Top 10 holds 82.7%, bundlers took 86.9% supply. High rug ratio ",
+        "weight": 1.3
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 65% bid-weighted (bullish)",
+        "weight": 0.6
+      }
+    ],
+    "timestamp": "2026-08-13T03:25:43.764684+00:00"
   },
   "HYPE": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 0.25,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 7,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-13T03:20:42.930254+00:00"
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Cointelegraph (\ud83d\udc4d40 \ud83d\udd048) Bitwise CIO: crypto ente | whale_monitor: Orderbook 11% bid (ask-heavy, bearish)",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @Cointelegraph (\ud83d\udc4d40 \ud83d\udd048) Bitwise CIO: crypto entering revenue-driven era \u2014 Hyperliquid, Uniswap, Aave funneli",
+        "weight": 4.66
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @Cointelegraph (\ud83d\udc4d12 \ud83d\udd043) Anthropic to buy Decart AI for ~$6B. US inflation drops to 3.4% in July [score: 3.6]",
+        "weight": 2.34
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @coinversaa (\ud83d\udc4d0 \ud83d\udd040) Coinversa Pulse Explorer: every wallet on Hyperliquid classified \u2014 Apex to Blown Out [s",
+        "weight": 1.62
+      }
+    ],
+    "timestamp": "2026-08-13T03:25:43.764694+00:00"
   }
 }
