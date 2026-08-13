@@ -1,22 +1,18 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": -0.16,
+    "confidence": 0.84,
     "sources": [
+      "whale_monitor",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: ding. Market now sees 66.5% chance of Sept pause (up 8pp), o | oi_funding: OI -10.0% 1h",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | polymarket: ding. Market now sees 66.5% chance of Sept pause (up 8pp), o | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -10.0% 1h",
-        "weight": 1.44
-      },
       {
         "source": "polymarket",
         "signal": "ding. Market now sees 66.5% chance of Sept pause (up 8pp), only 32.5% for +25bps hike. 2026 hike odds also down 4pp to 5",
@@ -26,21 +22,27 @@
         "source": "polymarket",
         "signal": ".5% chance of Sept pause (up 8pp), only 32.5% for +25bps hike. 2026 hike odds also down 4pp to 54.5%.  **Crypto price le",
         "weight": 0.78
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-13T00:00:08.636030+00:00"
+    "timestamp": "2026-08-13T00:05:09.629364+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.41,
+    "confidence": 0.5,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: 62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: 62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19 | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "polymarket",
@@ -51,54 +53,65 @@
         "source": "polymarket",
         "signal": "rice levels (BTC ~$61-62K zone):** - BTC above $62K today: 95.5% \u2705 \u2014 strong floor - BTC above $64K today: 19.5% (-10pp) ",
         "weight": 0.78
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-13T00:00:08.636041+00:00"
+    "timestamp": "2026-08-13T00:05:09.629378+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +8.0% 1h, funding 0.0001%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +8.0% 1h, funding 0.0001%",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-08-13T00:00:08.636049+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
     "confidence": 0.74,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @aixbt_agent hydrex down 99% from ATH, $639K ca | whale_monitor: Orderbook 69% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 68% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0004%",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 68% bid-weighted (bullish)",
+        "weight": 0.72
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0004%",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-08-13T00:05:09.629389+00:00"
+  },
+  "HYPE": {
+    "score": -0.29,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @aixbt_agent hydrex down 99% from ATH, $639K ca | oi_funding: OI -11.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -11.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @aixbt_agent hydrex down 99% from ATH, $639K cap. nest $1.3M cap, both sub-$30K daily volume. nest on hyper",
         "weight": 0.8
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 69% bid-weighted (bullish)",
-        "weight": 0.76
       }
     ],
-    "timestamp": "2026-08-13T00:00:08.636057+00:00"
+    "timestamp": "2026-08-13T00:05:09.629396+00:00"
   }
 }
