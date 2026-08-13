@@ -1,71 +1,73 @@
 {
   "BTC": {
     "score": -1.0,
-    "confidence": 0.74,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: - \ud83d\udfe1 **$BTC:** Bearish sentiment \u2014 BlackRock/Fidelity ETF sol | oi_funding: OI -16.0% 1h",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: - \ud83d\udfe1 **$BTC:** Bearish sentiment \u2014 BlackRock/Fidelity ETF sol",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -16.0% 1h",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "- \ud83d\udfe1 **$BTC:** Bearish sentiment \u2014 BlackRock/Fidelity ETF sold ~970M yen worth, Goldman Sachs acquiring NEOS for $2.25B (",
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-13T07:00:18.942671+00:00"
+    "timestamp": "2026-08-13T07:05:20.047704+00:00"
   },
   "ETH": {
-    "score": -1.0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +184.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +184.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-13T07:05:20.047715+00:00"
+  },
+  "SOL": {
+    "score": 1.0,
     "confidence": 0.74,
     "sources": [
-      "polymarket",
+      "whale_monitor",
       "oi_funding"
     ],
     "signal_count": 2,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: *BTC:** Comfortably in $58-66K range today. $62K+ at 97.5%,  | oi_funding: OI -15.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI +20.0% 1h, funding 0.0010%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -15.0% 1h",
+        "signal": "OI +20.0% 1h, funding 0.0010%",
         "weight": 1.44
       },
       {
-        "source": "polymarket",
-        "signal": "*BTC:** Comfortably in $58-66K range today. $62K+ at 97.5%, $66K+ at just 0.4%. Monthly $67.5K target fading (35.5%, -5p",
-        "weight": 0.78
+        "source": "whale_monitor",
+        "signal": "Orderbook 61% bid-weighted (bullish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-08-13T07:00:18.942686+00:00"
-  },
-  "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-13T07:00:18.942688+00:00"
+    "timestamp": "2026-08-13T07:05:20.047725+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.37,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -73,26 +75,26 @@
     ],
     "signal_count": 3,
     "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: - \ud83c\udfd7\ufe0f **$HYPE:** Hyperion DeFi (Nasdaq: HYPD) record Q2 \u2014 $31 | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI +21.0% 1h, funding 0.0013%",
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: - \ud83c\udfd7\ufe0f **$HYPE:** Hyperion DeFi (Nasdaq: HYPD) record Q2 \u2014 $31 | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | oi_funding: OI +19.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +21.0% 1h, funding 0.0013%",
+        "signal": "OI +19.0% 1h, funding 0.0013%",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 21% bid (ask-heavy, bearish)",
+        "weight": 1.16
       },
       {
         "source": "x_scanner",
         "signal": "- \ud83c\udfd7\ufe0f **$HYPE:** Hyperion DeFi (Nasdaq: HYPD) record Q2 \u2014 $31M net profit (3x Q1), $133M HYPE holdings. Dominant narrativ",
         "weight": 0.8
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 65% bid-weighted (bullish)",
-        "weight": 0.6
       }
     ],
-    "timestamp": "2026-08-13T07:00:18.942698+00:00"
+    "timestamp": "2026-08-13T07:05:20.047734+00:00"
   }
 }
