@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": -0.69,
-    "confidence": 0.5,
+    "score": -0.58,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @Jeremybtc (\ud83d\udc4d56 \ud83d\udd046) Biggest BTC bear onchain: sho | whale_monitor: Orderbook 87% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @Jeremybtc (\ud83d\udc4d56 \ud83d\udd046) Biggest BTC bear onchain: sho | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI +5.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -28,65 +29,59 @@
         "weight": 1.89
       }
     ],
-    "timestamp": "2026-08-14T10:00:53.117622+00:00"
+    "timestamp": "2026-08-14T10:05:54.166725+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.26,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @kryptosopus (\ud83d\udc4d9) $94M short on $ETH at 3x \u2014 whal",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @kryptosopus (\ud83d\udc4d9) $94M short on $ETH at 3x \u2014 whal | oi_funding: OI +5.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc9 $ETH] @kryptosopus (\ud83d\udc4d9) $94M short on $ETH at 3x \u2014 whale paid and pressing hard, liq level way above [score: 1.9]",
         "weight": 1.52
-      }
-    ],
-    "timestamp": "2026-08-14T10:00:53.117632+00:00"
-  },
-  "SOL": {
-    "score": -1.0,
-    "confidence": 0.74,
-    "sources": [
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI -10.0% 1h",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -10.0% 1h",
-        "weight": 1.44
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 38% bid (ask-heavy, bearish)",
-        "weight": 0.48
+        "source": "oi_funding",
+        "signal": "OI +5.0% 1h, funding 0.0013%",
+        "weight": 0.9
       }
     ],
-    "timestamp": "2026-08-14T10:00:53.117642+00:00"
+    "timestamp": "2026-08-14T10:05:54.166739+00:00"
   },
-  "HYPE": {
-    "score": 0.12,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 2,
+  "SOL": {
+    "score": 0.0,
+    "confidence": 0.0,
+    "sources": [],
+    "signal_count": 0,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @BSCNews (\ud83d\udc4d9 \ud83d\udd041) Chainlink Brings Tokenized Equ",
+    "narrative": "No active signals",
+    "key_signals": [],
+    "timestamp": "2026-08-14T10:05:54.166740+00:00"
+  },
+  "HYPE": {
+    "score": 0.14,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @BSCNews (\ud83d\udc4d9 \ud83d\udd041) Chainlink Brings Tokenized Equ | whale_monitor: Orderbook 22% bid (ask-heavy, bearish) | oi_funding: OI +8.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -94,11 +89,16 @@
         "weight": 1.49
       },
       {
+        "source": "oi_funding",
+        "signal": "OI +8.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udfe2 $HYPE] @MavenHL (\ud83d\udc4d6) Hyperliquid OI hits new high since 10.10 \u2014 $11.718B secured this summer [score: 1.8]",
         "weight": 1.17
       }
     ],
-    "timestamp": "2026-08-14T10:00:53.117649+00:00"
+    "timestamp": "2026-08-14T10:05:54.166750+00:00"
   }
 }
