@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.73,
-    "confidence": 0.5,
+    "score": 0.71,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @AshCrypto (\ud83d\udc4d47 \ud83d\udd044) BREAKING : Bitcoin ETFs have  | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @AshCrypto (\ud83d\udc4d47 \ud83d\udd044) BREAKING : Bitcoin ETFs have  | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI -19.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -28,21 +29,27 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-08-15T05:40:10.366735+00:00"
+    "timestamp": "2026-08-15T05:45:11.128521+00:00"
   },
   "ETH": {
-    "score": 0.14,
-    "confidence": 0.5,
+    "score": -0.42,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @ywxkst (\ud83d\udc4d1 \ud83d\udd041) $ETH 4-hour swing trades mainly b | polymarket: pp) \u00b7 Max: +5.5pp**  **BTC Price Consensus:** ~$60K\u2013$68K tod",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @ywxkst (\ud83d\udc4d1 \ud83d\udd041) $ETH 4-hour swing trades mainly b | polymarket: pp) \u00b7 Max: +5.5pp**  **BTC Price Consensus:** ~$60K\u2013$68K tod | oi_funding: OI -25.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -25.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @ywxkst (\ud83d\udc4d1 \ud83d\udd041) $ETH 4-hour swing trades mainly based on Ethereum. Keep [score: 1.6]",
@@ -54,40 +61,41 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-15T05:40:10.366751+00:00"
+    "timestamp": "2026-08-15T05:45:11.128541+00:00"
   },
   "SOL": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 76% bid-weighted (bullish)",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -14.0% 1h",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 76% bid-weighted (bullish)",
-        "weight": 1.04
+        "source": "oi_funding",
+        "signal": "OI -14.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-15T05:40:10.366760+00:00"
+    "timestamp": "2026-08-15T05:45:11.128552+00:00"
   },
   "HYPE": {
-    "score": 0.37,
-    "confidence": 0.5,
+    "score": 0.09,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 7,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 8,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Ranger_RWA (\ud83d\udc4d5 \ud83d\udd040) Crypto & RWA Market Report  | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Ranger_RWA (\ud83d\udc4d5 \ud83d\udd040) Crypto & RWA Market Report  | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI -57.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -100,11 +108,11 @@
         "weight": 2.08
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @HyperEVM_CN (\ud83d\udc4d10 \ud83d\udd040) August 14 Hyperliquid EVM Daily Report: HIP-4 major upd [score: 1.8]",
-        "weight": 1.17
+        "source": "oi_funding",
+        "signal": "OI -57.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-15T05:40:10.366771+00:00"
+    "timestamp": "2026-08-15T05:45:11.128563+00:00"
   }
 }
