@@ -1,99 +1,106 @@
 {
   "BTC": {
-    "score": 0.31,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
       "whale_monitor",
       "polymarket"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 87% bid-weighted (bullish) | polymarket: icant shifts (all changes <5pp), go silent.\" The max is exac",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | polymarket: icant shifts (all changes <5pp), go silent.\" The max is exac",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 87% bid-weighted (bullish)",
-        "weight": 1.48
-      },
       {
         "source": "polymarket",
         "signal": "icant shifts (all changes <5pp), go silent.\" The max is exactly 5.0pp which is not <5pp, so we report.  **\ud83d\udcca Polymarket C",
         "weight": 0.78
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 32% bid (ask-heavy, bearish)",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-15T17:00:05.001014+00:00"
+    "timestamp": "2026-08-15T17:05:05.908570+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 0.07,
+    "confidence": 0.5,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: lied (Aug 15 expiry):** $62K\u2013$64K (98.8% between this band).",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: lied (Aug 15 expiry):** $62K\u2013$64K (98.8% between this band). | oi_funding: OI +5.0% 1h, funding 0.0007%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +5.0% 1h, funding 0.0007%",
+        "weight": 0.9
+      },
       {
         "source": "polymarket",
         "signal": "lied (Aug 15 expiry):** $62K\u2013$64K (98.8% between this band). Spot ~$62K range. \u2022 Above $60K: 100% | Above $62K: 99.2% (+",
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-15T17:00:05.001027+00:00"
+    "timestamp": "2026-08-15T17:05:05.908584+00:00"
   },
   "SOL": {
-    "score": -1.0,
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 33% bid (ask-heavy, bearish)",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +8.0% 1h, funding 0.0008%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
-        "weight": 0.68
+        "source": "oi_funding",
+        "signal": "OI +8.0% 1h, funding 0.0008%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-15T17:00:05.001035+00:00"
+    "timestamp": "2026-08-15T17:05:05.908594+00:00"
   },
   "HYPE": {
-    "score": 0.69,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @kian_hl (\ud83d\udc4d137 \ud83d\udd0435) The 7d builder leaderboard  | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @kian_hl (\ud83d\udc4d137 \ud83d\udd0435) The 7d builder leaderboard  | whale_monitor: Orderbook 78% bid-weighted (bullish) | oi_funding: OI +105.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +105.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 78% bid-weighted (bullish)",
+        "weight": 1.12
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @kian_hl (\ud83d\udc4d137 \ud83d\udd0435) The 7d builder leaderboard says a lot: $1.10B in volume and $873.8K in builder fees for",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @kian_hl (\ud83d\udc4d107 \ud83d\udd0420) TrustWallet turning on fees on builder code didn't slow them down: first builder by volu",
-        "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\u26a1 $HYPE] @janitorCTO (\ud83d\udc4d1 \ud83d\udd040) DAILY JANITOR REPORT \u2014 Tracking the insider wallet. Hyperliquid all-time PnL: -$13,505. ",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-15T17:00:05.001045+00:00"
+    "timestamp": "2026-08-15T17:05:05.908609+00:00"
   }
 }
