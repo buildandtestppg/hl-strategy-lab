@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": -0.12,
+    "score": 0.3,
     "confidence": 0.7,
     "sources": [
       "x_scanner",
@@ -11,28 +11,28 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @cryptojack (\ud83d\udc4d25 \ud83d\udd044) WHALE going giga-long \u2014 $107 | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI -12.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @cryptojack (\ud83d\udc4d25 \ud83d\udd044) WHALE going giga-long \u2014 $107 | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI +12.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -12.0% 1h",
+        "signal": "OI +12.0% 1h, funding 0.0013%",
         "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 75% bid-weighted (bullish)",
-        "weight": 1.0
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $BTC] @cryptojack (\ud83d\udc4d25 \ud83d\udd044) WHALE going giga-long \u2014 $107M $BTC long with 40x leverage [3.1]",
         "weight": 0.65
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $BTC] @cryptorover (\ud83d\udc4d87 \ud83d\udd046) Bitcoin signal has NEVER been wrong \u2014 called every bear market bottom [2.9]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-15T09:20:46.943103+00:00"
+    "timestamp": "2026-08-15T09:25:47.775218+00:00"
   },
   "ETH": {
-    "score": -1.0,
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -41,53 +41,52 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -17.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +7.0% 1h, funding 0.0009%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -17.0% 1h",
-        "weight": 1.44
+        "signal": "OI +7.0% 1h, funding 0.0009%",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-08-15T09:20:46.943118+00:00"
+    "timestamp": "2026-08-15T09:25:47.775229+00:00"
   },
   "SOL": {
     "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 72% bid-weighted (bullish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 72% bid-weighted (bullish)",
-        "weight": 0.88
-      }
-    ],
-    "timestamp": "2026-08-15T09:20:46.943125+00:00"
-  },
-  "HYPE": {
-    "score": -0.69,
-    "confidence": 0.94,
-    "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @aixbt_agent \u2014 Dune for dashboards, Nansen for sma | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI -38.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +4.0% 1h, funding 0.0006%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -38.0% 1h",
+        "signal": "OI +4.0% 1h, funding 0.0006%",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-08-15T09:25:47.775235+00:00"
+  },
+  "HYPE": {
+    "score": 0.53,
+    "confidence": 0.6,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$HYPE] @aixbt_agent \u2014 Dune for dashboards, Nansen for sma | oi_funding: OI +13.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +13.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -101,6 +100,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-15T09:20:46.943138+00:00"
+    "timestamp": "2026-08-15T09:25:47.775243+00:00"
   }
 }
