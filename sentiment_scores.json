@@ -1,17 +1,18 @@
 {
   "BTC": {
-    "score": -0.43,
-    "confidence": 0.8,
+    "score": -0.26,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "news_agent",
       "polymarket"
     ],
-    "signal_count": 4,
+    "signal_count": 5,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $BTC] @NerrdAlerrt \ud83e\uddf5 $BTC spot ETFs flushed $56M yester | news_agent: irm-increases-blackrock-s-bitcoin-etf-stake-after-year-of-se | polymarket: icant shifts (all changes <5pp), go silent.\" The max is exac",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @NerrdAlerrt \ud83e\uddf5 $BTC spot ETFs flushed $56M yester | whale_monitor: Orderbook 65% bid-weighted (bullish) | news_agent: irm-increases-blackrock-s-bitcoin-etf-stake-after-year-of-se",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -29,7 +30,7 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-15T16:00:54.541479+00:00"
+    "timestamp": "2026-08-15T16:05:55.684812+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -49,45 +50,41 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-15T16:00:54.541490+00:00"
+    "timestamp": "2026-08-15T16:05:55.684824+00:00"
   },
   "SOL": {
-    "score": 0.13,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "x_scanner"
     ],
-    "signal_count": 2,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u26a0\ufe0f Partial scan \u2014 timed out at 300s after 4/7 topics ($SOL,  | whale_monitor: Orderbook 71% bid-weighted (bullish)",
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u26a0\ufe0f Partial scan \u2014 timed out at 300s after 4/7 topics ($SOL, ",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 71% bid-weighted (bullish)",
-        "weight": 0.84
-      },
       {
         "source": "x_scanner",
         "signal": "\u26a0\ufe0f Partial scan \u2014 timed out at 300s after 4/7 topics ($SOL, AI-Agents, DePIN missed). Reddit blocked (HTTP 403, 79+ days",
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-15T16:00:54.541499+00:00"
+    "timestamp": "2026-08-15T16:05:55.684832+00:00"
   },
   "HYPE": {
-    "score": -0.12,
-    "confidence": 0.3,
+    "score": -0.07,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$HYPE] @elin_hl (\ud83d\udc4d111 \ud83d\udd0419) $HYPE Salt Sheet \u2014 airdrop sel",
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @elin_hl (\ud83d\udc4d111 \ud83d\udd0419) $HYPE Salt Sheet \u2014 airdrop sel | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -105,6 +102,6 @@
         "weight": 2.47
       }
     ],
-    "timestamp": "2026-08-15T16:00:54.541507+00:00"
+    "timestamp": "2026-08-15T16:05:55.684845+00:00"
   }
 }
