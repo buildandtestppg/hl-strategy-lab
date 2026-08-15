@@ -1,81 +1,99 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.31,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 70% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | oi_funding: OI +18.0% 1h, funding 0.0013%",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI +18.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 70% bid-weighted (bullish)",
-        "weight": 0.8
+        "signal": "Orderbook 31% bid (ask-heavy, bearish)",
+        "weight": 0.76
       }
     ],
-    "timestamp": "2026-08-15T04:20:57.173497+00:00"
+    "timestamp": "2026-08-15T04:25:57.993620+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.04,
+    "confidence": 0.5,
     "sources": [
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: pp) \u00b7 Max: +5.5pp**  **BTC Price Consensus:** ~$60K\u2013$68K tod",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: pp) \u00b7 Max: +5.5pp**  **BTC Price Consensus:** ~$60K\u2013$68K tod | oi_funding: OI +4.0% 1h, funding 0.0004%",
     "key_signals": [
       {
         "source": "polymarket",
         "signal": "pp) \u00b7 Max: +5.5pp**  **BTC Price Consensus:** ~$60K\u2013$68K today. Above $62K: 97.4% \u2713. Dip to $60K in Aug: 43.5% (+5pp). $",
         "weight": 0.78
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0004%",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-15T04:20:57.173514+00:00"
+    "timestamp": "2026-08-15T04:25:57.993636+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @cardanado (\ud83d\udc4d1) $BREAD building RWA/DeFi incubat",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @cardanado (\ud83d\udc4d1) $BREAD building RWA/DeFi incubat | whale_monitor: Orderbook 97% bid-weighted (bullish)",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 97% bid-weighted (bullish)",
+        "weight": 1.88
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @cardanado (\ud83d\udc4d1) $BREAD building RWA/DeFi incubator on Robinhood & Solana \u2014 already airdropped $INDEX + $CARD",
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-15T04:20:57.173526+00:00"
+    "timestamp": "2026-08-15T04:25:57.993652+00:00"
   },
   "HYPE": {
-    "score": 0.09,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a0\ufe0f $HYPE] @bgv1806 (\ud83d\udc4d16) Hacker scammed 550K+ USD via fak | whale_monitor: Orderbook 74% bid-weighted (bullish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $HYPE] @bgv1806 (\ud83d\udc4d16) Hacker scammed 550K+ USD via fak | oi_funding: OI -33.0% 1h",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 74% bid-weighted (bullish)",
-        "weight": 0.96
+        "source": "oi_funding",
+        "signal": "OI -33.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
@@ -83,6 +101,6 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-15T04:20:57.173537+00:00"
+    "timestamp": "2026-08-15T04:25:57.993663+00:00"
   }
 }
