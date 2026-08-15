@@ -1,16 +1,23 @@
 {
   "BTC": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 1.0,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: * \ud83c\udfd7\ufe0f [$BTC] @BitcoinPulseX (5L 0RT) THE NEXT $BTC CYCLE MAY ",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: * \ud83c\udfd7\ufe0f [$BTC] @BitcoinPulseX (5L 0RT) THE NEXT $BTC CYCLE MAY  | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +20.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +20.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "* \ud83c\udfd7\ufe0f [$BTC] @BitcoinPulseX (5L 0RT) THE NEXT $BTC CYCLE MAY BE CLOSER THAN MOST THINK! But 85% of traders  [2.9]",
@@ -22,79 +29,90 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-15T00:40:19.904591+00:00"
+    "timestamp": "2026-08-15T00:45:20.698753+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "whale_monitor"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-15T00:40:19.904598+00:00"
-  },
-  "SOL": {
-    "score": 1.0,
-    "confidence": 0.74,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: * \ud83d\udcc8 [$SOL] @checkpointIDN (0L 0RT) $POC may be showing early | whale_monitor: Orderbook 88% bid-weighted (bullish)",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 60% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 88% bid-weighted (bullish)",
-        "weight": 1.52
+        "signal": "Orderbook 60% bid-weighted (bullish)",
+        "weight": 0.4
+      }
+    ],
+    "timestamp": "2026-08-15T00:45:20.698765+00:00"
+  },
+  "SOL": {
+    "score": 0.18,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: * \ud83d\udcc8 [$SOL] @checkpointIDN (0L 0RT) $POC may be showing early | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI -22.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -22.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 67% bid-weighted (bullish)",
+        "weight": 0.68
       },
       {
         "source": "x_scanner",
         "signal": "* \ud83d\udcc8 [$SOL] @checkpointIDN (0L 0RT) $POC may be showing early signs of an organic reversal. After a brutal [2.5]",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "* \ud83d\udcc8 [$SOL] @Talentre_ (4L 2RT) Our tool detected an unusual inflow into $Shadow and it's flagged not  [1.8]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-15T00:40:19.904613+00:00"
+    "timestamp": "2026-08-15T00:45:20.698778+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.34,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: * \ud83c\udfd7\ufe0f [$HYPE] @DVB00N (1L 0RT) Funding rates are still positi",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: * \ud83c\udfd7\ufe0f [$HYPE] @DVB00N (1L 0RT) Funding rates are still positi | whale_monitor: Orderbook 68% bid-weighted (bullish) | oi_funding: OI -9.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -9.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 68% bid-weighted (bullish)",
+        "weight": 0.72
+      },
       {
         "source": "x_scanner",
         "signal": "* \ud83c\udfd7\ufe0f [$HYPE] @DVB00N (1L 0RT) Funding rates are still positive as open interest has climbed overnigh [2.5]",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "* \ud83d\udcc8 [$HYPE] @HederaKimchi (1L 0RT) 2026/8/14 ETF Trading Volume: $HBAR $0.27m, $XRP $10.35m, $SOL $35.42m [1.5]",
-        "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "* \ud83d\udcc8 [$HYPE] @FarsideUK (0L 0RT) Hyperliquid ETF Daily Flow - US$ Grayscale (HYPG): 0 million [1.5]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-15T00:40:19.904622+00:00"
+    "timestamp": "2026-08-15T00:45:20.698788+00:00"
   }
 }
