@@ -1,16 +1,15 @@
 {
   "BTC": {
-    "score": -0.6,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "x_scanner"
     ],
-    "signal_count": 3,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC Weakness] @DavidSmithX1 $BTC struggling to break 65k | whale_monitor: Orderbook 66% bid-weighted (bullish)",
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$BTC Weakness] @DavidSmithX1 $BTC struggling to break 65k",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -21,55 +20,58 @@
         "source": "x_scanner",
         "signal": "\u2022 [$BTC Bearish] @Wealthmanager (\ud83d\udc4d28 \ud83d\udd047) Symmetrical triangle for $BTC breaking to the downside [score: 1.9]",
         "weight": 1.23
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 66% bid-weighted (bullish)",
-        "weight": 0.64
       }
     ],
-    "timestamp": "2026-08-16T23:00:07.936958+00:00"
+    "timestamp": "2026-08-16T23:05:08.989528+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-16T23:00:07.936963+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +42.0% 1h, funding 0.0010%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +42.0% 1h, funding 0.0010%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-16T23:05:08.989539+00:00"
   },
   "SOL": {
-    "score": 0.03,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "whale_monitor",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 74% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI +33.0% 1h, funding 0.0001%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 74% bid-weighted (bullish)",
-        "weight": 0.96
+        "source": "oi_funding",
+        "signal": "OI +33.0% 1h, funding 0.0001%",
+        "weight": 1.44
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -5.0% 1h",
-        "weight": 0.9
+        "source": "whale_monitor",
+        "signal": "Orderbook 63% bid-weighted (bullish)",
+        "weight": 0.52
       }
     ],
-    "timestamp": "2026-08-16T23:00:07.936974+00:00"
+    "timestamp": "2026-08-16T23:05:08.989549+00:00"
   },
   "HYPE": {
-    "score": -0.17,
+    "score": -0.23,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
@@ -79,7 +81,7 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE Funding] @DVB00N (\ud83d\udc4d1 \ud83d\udd041) Funding rates dropping as  | whale_monitor: Orderbook 73% bid-weighted (bullish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE Funding] @DVB00N (\ud83d\udc4d1 \ud83d\udd041) Funding rates dropping as  | whale_monitor: Orderbook 66% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -97,6 +99,6 @@
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-16T23:00:07.936984+00:00"
+    "timestamp": "2026-08-16T23:05:08.989557+00:00"
   }
 }
