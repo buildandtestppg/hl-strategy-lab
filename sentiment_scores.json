@@ -1,23 +1,29 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.47,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @CryptoApprenti1 (\ud83d\udc4d6 \ud83d\udd040) OKX BTC 1-min perps \u2014 m",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @CryptoApprenti1 (\ud83d\udc4d6 \ud83d\udd040) OKX BTC 1-min perps \u2014 m | whale_monitor: Orderbook 64% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a0\ufe0f $BTC] @CryptoApprenti1 (\ud83d\udc4d6 \ud83d\udd040) OKX BTC 1-min perps \u2014 market makers gone on weekend, liquidity zero [score: 2.4]",
         "weight": 1.56
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 64% bid-weighted (bullish)",
+        "weight": 0.56
       }
     ],
-    "timestamp": "2026-08-16T07:40:33.405564+00:00"
+    "timestamp": "2026-08-16T07:45:34.108218+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -37,20 +43,19 @@
         "weight": 2.08
       }
     ],
-    "timestamp": "2026-08-16T07:40:33.405579+00:00"
+    "timestamp": "2026-08-16T07:45:34.108230+00:00"
   },
   "SOL": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 3,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcac $SOL] @ifwraviel (\ud83d\udc4d34 \ud83d\udd0417) $50 to 1 reply guy. follow @ | oi_funding: OI +7.0% 1h, funding 0.0003%",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcac $SOL] @ifwraviel (\ud83d\udc4d34 \ud83d\udd0417) $50 to 1 reply guy. follow @",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -68,19 +73,20 @@
         "weight": 1.69
       }
     ],
-    "timestamp": "2026-08-16T07:40:33.405593+00:00"
+    "timestamp": "2026-08-16T07:45:34.108240+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.43,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcac $HYPE] @HypedLaunches (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid generated $1.",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcac $HYPE] @HypedLaunches (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid generated $1. | whale_monitor: Orderbook 18% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -91,8 +97,13 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcac $HYPE] @HypedLaunches (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid 24H fees $284K (-68%). Still generating despite decline [score: 2.5]",
         "weight": 1.62
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 18% bid (ask-heavy, bearish)",
+        "weight": 1.28
       }
     ],
-    "timestamp": "2026-08-16T07:40:33.405601+00:00"
+    "timestamp": "2026-08-16T07:45:34.108248+00:00"
   }
 }
