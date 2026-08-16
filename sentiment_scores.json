@@ -1,7 +1,7 @@
 {
   "BTC": {
-    "score": 0.03,
-    "confidence": 0.84,
+    "score": 0.41,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -9,10 +9,15 @@
     ],
     "signal_count": 9,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @CoinPost_Alert \u2014 Liquidation Monitor: $62K trigg | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @CoinPost_Alert \u2014 Liquidation Monitor: $62K trigg | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI +17.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +17.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc9 $BTC] @CoinPost_Alert \u2014 Liquidation Monitor: $62K trigger $196M, $66K resistance $160M [1.5]",
@@ -22,14 +27,9 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $BTC] @assetfeel \u2014 Don't mistake relief bounce for structural shift \u2014 BTC flashing mini rally toward 72k [1.5]",
         "weight": 0.95
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -5.0% 1h",
-        "weight": 0.9
       }
     ],
-    "timestamp": "2026-08-16T01:40:32.959899+00:00"
+    "timestamp": "2026-08-16T01:45:33.729906+00:00"
   },
   "ETH": {
     "score": -1.0,
@@ -41,63 +41,65 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -13.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -28.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -13.0% 1h",
+        "signal": "OI -28.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-16T01:40:32.959914+00:00"
+    "timestamp": "2026-08-16T01:45:33.729918+00:00"
   },
   "SOL": {
-    "score": 0.39,
-    "confidence": 0.5,
+    "score": 0.58,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 6,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Solanadailys (\ud83d\udc4d2 \ud83d\udd041) $FLOAT quietly building he | oi_funding: OI -9.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Solanadailys (\ud83d\udc4d2 \ud83d\udd041) $FLOAT quietly building he | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI -12.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -9.0% 1h",
+        "signal": "OI -12.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 79% bid-weighted (bullish)",
+        "weight": 1.16
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @Solanadailys (\ud83d\udc4d2 \ud83d\udd041) $FLOAT quietly building heat \u2014 rising holder count, chart getting interesting [2.6]",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udd25 $SOL] @deezyn2810 (\ud83d\udd0418) Jupiter introducing $JUP token to Solana \u2014 memecoin airdrop getting traction [1.8]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-16T01:40:32.959926+00:00"
+    "timestamp": "2026-08-16T01:45:33.729930+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.83,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 5,
+    "signal_count": 6,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: BTC sentiment is split \u2014 bears flag historically low volume  | oi_funding: OI +20.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: BTC sentiment is split \u2014 bears flag historically low volume  | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI +17.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +20.0% 1h, funding 0.0013%",
+        "signal": "OI +17.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -111,6 +113,6 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-16T01:40:32.959937+00:00"
+    "timestamp": "2026-08-16T01:45:33.729940+00:00"
   }
 }
