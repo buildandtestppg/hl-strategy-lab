@@ -17,10 +17,10 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-16T19:20:31.395955+00:00"
+    "timestamp": "2026-08-16T19:25:32.350986+00:00"
   },
   "ETH": {
-    "score": -1.0,
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -29,66 +29,71 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -6.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +9.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -6.0% 1h",
-        "weight": 1.08
+        "signal": "OI +9.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-16T19:20:31.395969+00:00"
+    "timestamp": "2026-08-16T19:25:32.350998+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 34% bid (ask-heavy, bearish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 34% bid (ask-heavy, bearish)",
-        "weight": 0.64
-      }
-    ],
-    "timestamp": "2026-08-16T19:20:31.395976+00:00"
-  },
-  "HYPE": {
-    "score": -0.22,
-    "confidence": 0.7,
-    "sources": [
-      "x_scanner",
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE] @liquidated0x (\ud83d\udc4d0) sleeping on some of these micro | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI -14.0% 1h",
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 84% bid-weighted (bullish) | oi_funding: OI +16.0% 1h, funding 0.0010%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -14.0% 1h",
+        "signal": "OI +16.0% 1h, funding 0.0010%",
         "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 67% bid-weighted (bullish)",
-        "weight": 0.68
+        "signal": "Orderbook 84% bid-weighted (bullish)",
+        "weight": 1.36
+      }
+    ],
+    "timestamp": "2026-08-16T19:25:32.351010+00:00"
+  },
+  "HYPE": {
+    "score": 0.53,
+    "confidence": 0.6,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$HYPE] @liquidated0x (\ud83d\udc4d0) sleeping on some of these micro | oi_funding: OI +21.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +21.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @liquidated0x (\ud83d\udc4d0) sleeping on some of these microcaps, drop a few hyperliquid runners and check the tape [2.5",
         "weight": 0.65
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$HYPE] @HypedLaunches (\ud83d\udc4d0) Hyperion DeFi $HYPD \u2014 HYPE Treasury grew 1.31M\u21922.04M in 12 months around Hyperliquid econo",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-16T19:20:31.395987+00:00"
+    "timestamp": "2026-08-16T19:25:32.351018+00:00"
   }
 }
