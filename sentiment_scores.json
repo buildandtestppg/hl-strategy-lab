@@ -1,15 +1,17 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.02,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \ud83d\udcc8 [$BTC] @SkyFlame_x (0L 0R) $987K $BTC whale BUY at $63,206",
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \ud83d\udcc8 [$BTC] @SkyFlame_x (0L 0R) $987K $BTC whale BUY at $63,206 | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI -5.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -17,79 +19,94 @@
         "weight": 0.95
       },
       {
-        "source": "x_scanner",
-        "signal": "\ud83c\udfd7\ufe0f [$BTC] @ZaksMetaX (1L 0R) $BTC building un-swept liquidity below 1.5 months [1.5]",
-        "weight": 0.65
-      }
-    ],
-    "timestamp": "2026-08-16T20:40:45.347227+00:00"
-  },
-  "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-16T20:40:45.347234+00:00"
-  },
-  "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \ud83d\udcc8 [$SOL] @j33t_sol (3L 0R) $FROG chart bullish, higher highs",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\ud83d\udcc8 [$SOL] @j33t_sol (3L 0R) $FROG chart bullish, higher highs higher lows [1.7]",
-        "weight": 0.8
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u26a1 [$SOL] @Stratabookdex (0L 0R) Build gambling for retail or have insider connections [2.5]",
-        "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\ud83c\udfd7\ufe0f [$SOL] @Robinhoodalerts (0L 0R) $CALL attracting attention on Solana [2.0]",
-        "weight": 0.65
-      }
-    ],
-    "timestamp": "2026-08-16T20:40:45.347245+00:00"
-  },
-  "HYPE": {
-    "score": -0.2,
-    "confidence": 0.5,
-    "sources": [
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
-    "key_signals": [
-      {
         "source": "oi_funding",
         "signal": "OI -5.0% 1h",
         "weight": 0.9
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 65% bid-weighted (bullish)",
-        "weight": 0.6
+        "source": "x_scanner",
+        "signal": "\ud83c\udfd7\ufe0f [$BTC] @ZaksMetaX (1L 0R) $BTC building un-swept liquidity below 1.5 months [1.5]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-16T20:40:45.347255+00:00"
+    "timestamp": "2026-08-16T20:45:45.766274+00:00"
+  },
+  "ETH": {
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -16.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -16.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-16T20:45:45.766287+00:00"
+  },
+  "SOL": {
+    "score": -0.16,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \ud83d\udcc8 [$SOL] @j33t_sol (3L 0R) $FROG chart bullish, higher highs | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | oi_funding: OI -10.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -10.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+        "weight": 1.36
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\ud83d\udcc8 [$SOL] @j33t_sol (3L 0R) $FROG chart bullish, higher highs higher lows [1.7]",
+        "weight": 0.8
+      }
+    ],
+    "timestamp": "2026-08-16T20:45:45.766301+00:00"
+  },
+  "HYPE": {
+    "score": -1.0,
+    "confidence": 0.74,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI -10.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -10.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 38% bid (ask-heavy, bearish)",
+        "weight": 0.48
+      }
+    ],
+    "timestamp": "2026-08-16T20:45:45.766310+00:00"
   }
 }
