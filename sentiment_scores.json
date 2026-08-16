@@ -1,15 +1,17 @@
 {
   "BTC": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @w00dsbot (\ud83d\udc4d99 \ud83d\udd0421) Dominance up, majors down. Bu",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @w00dsbot (\ud83d\udc4d99 \ud83d\udd0421) Dominance up, majors down. Bu | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI +130.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -27,20 +29,20 @@
         "weight": 3.39
       }
     ],
-    "timestamp": "2026-08-16T23:20:11.682910+00:00"
+    "timestamp": "2026-08-16T23:25:12.637038+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.69,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Cointelegraph (\ud83d\udc4d31 \ud83d\udd045) SharpLink to stake $200M  | oi_funding: OI +42.0% 1h, funding 0.0010%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Cointelegraph (\ud83d\udc4d31 \ud83d\udd045) SharpLink to stake $200M  | oi_funding: OI -11.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -54,14 +56,14 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +42.0% 1h, funding 0.0010%",
+        "signal": "OI -11.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-16T23:20:11.682928+00:00"
+    "timestamp": "2026-08-16T23:25:12.637053+00:00"
   },
   "SOL": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.74,
     "sources": [
       "whale_monitor",
@@ -71,33 +73,33 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI +33.0% 1h, funding 0.0001%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -8.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +33.0% 1h, funding 0.0001%",
+        "signal": "OI -8.0% 1h",
         "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 63% bid-weighted (bullish)",
-        "weight": 0.52
+        "signal": "Orderbook 30% bid (ask-heavy, bearish)",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-16T23:20:11.682937+00:00"
+    "timestamp": "2026-08-16T23:25:12.637062+00:00"
   },
   "HYPE": {
-    "score": -0.72,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u9cb8 $HYPE] @BitcoinArchive (\ud83d\udc4d38 \ud83d\udd045) Hyperliquid whale INCRE | whale_monitor: Orderbook 66% bid-weighted (bullish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u9cb8 $HYPE] @BitcoinArchive (\ud83d\udc4d38 \ud83d\udd045) Hyperliquid whale INCRE | oi_funding: OI -14.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -105,11 +107,11 @@
         "weight": 3.96
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 66% bid-weighted (bullish)",
-        "weight": 0.64
+        "source": "oi_funding",
+        "signal": "OI -14.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-16T23:20:11.682945+00:00"
+    "timestamp": "2026-08-16T23:25:12.637068+00:00"
   }
 }
