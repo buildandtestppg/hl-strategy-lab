@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": -0.32,
+    "score": -0.63,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
@@ -10,13 +10,8 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udce6 $BTC] @CryptoYieldPro (\ud83d\udc4d0 \ud83d\udd040) ETH ETF assets down 63% i | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udce6 $BTC] @CryptoYieldPro (\ud83d\udc4d0 \ud83d\udd040) ETH ETF assets down 63% i | whale_monitor: Orderbook 61% bid-weighted (bullish)",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 75% bid-weighted (bullish)",
-        "weight": 1.0
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udce6 $BTC] @CryptoYieldPro (\ud83d\udc4d0 \ud83d\udd040) ETH ETF assets down 63% in a year ($28.6B\u2192$10.5B) \u2014 but only $2B was actual outflows,",
@@ -26,39 +21,52 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udce6 $BTC] @SupplyDemand29 (\ud83d\udc4d0 \ud83d\udd040) Timeline bearish after 50%+ drawdown \u2014 patience zone at $63k $BTC [score: 1.5]",
         "weight": 0.98
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 61% bid-weighted (bullish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-08-16T02:40:43.371017+00:00"
+    "timestamp": "2026-08-16T02:45:44.147577+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-16T02:40:43.371022+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +9.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +9.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-16T02:45:44.147590+00:00"
   },
   "SOL": {
     "score": 1.0,
     "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83e\ude99 $SOL] @0rdlibrary (\ud83d\udc4d5 \ud83d\udd040) $CLAWD \u2014 first Omni chain lau | whale_monitor: Orderbook 84% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83e\ude99 $SOL] @0rdlibrary (\ud83d\udc4d5 \ud83d\udd040) $CLAWD \u2014 first Omni chain lau | oi_funding: OI +28.0% 1h, funding 0.0006%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 84% bid-weighted (bullish)",
-        "weight": 1.36
+        "source": "oi_funding",
+        "signal": "OI +28.0% 1h, funding 0.0006%",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
@@ -71,38 +79,32 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-16T02:40:43.371037+00:00"
+    "timestamp": "2026-08-16T02:45:44.147603+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 2,
     "convergence": true,
-    "convergence_strength": 3,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @gyukatsu_maxi (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid didn't out-ma | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @gyukatsu_maxi (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid didn't out-ma | oi_funding: OI +36.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +36.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udc8e $HYPE] @gyukatsu_maxi (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid didn't out-market CEXs, it out-executed them. No listing fees, no KYC the",
         "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 69% bid-weighted (bullish)",
-        "weight": 0.76
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI +4.0% 1h, funding 0.0013%",
-        "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-16T02:40:43.371048+00:00"
+    "timestamp": "2026-08-16T02:45:44.147611+00:00"
   }
 }
