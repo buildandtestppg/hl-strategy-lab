@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": -0.45,
-    "confidence": 0.5,
+    "score": -0.4,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca BTC] @ZordXBT (\ud83d\udc4d20 \ud83d\udd041) $BTC breakout above 4H 200 SMA & | oi_funding: OI -12.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcf0 $BTC] @seth_fin (\ud83d\udc4d8 \ud83d\udd041) $BTC funding is NUKING \u2014 bears  | news_agent: decrypt.co/375816/openai-answer-rogue-agents-hacks-more-ai>  | oi_funding: OI -12.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -18,50 +19,64 @@
         "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca BTC] @ZordXBT (\ud83d\udc4d20 \ud83d\udd041) $BTC breakout above 4H 200 SMA & EMA + daily high \u2014 bullish confluence",
-        "weight": 0.8
+        "source": "news_agent",
+        "signal": "decrypt.co/375816/openai-answer-rogue-agents-hacks-more-ai>  \ud83d\udfe1 **Notable** \u2022 Brevan Howard slashes Bitcoin ETF stake by ",
+        "weight": 0.98
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc9 BTC] @BitcoinHypers (\ud83d\udc4d6 \ud83d\udd042) $BTC largest liquidation cluster downside at ~$62.4K, 170M+ long liqs",
-        "weight": 0.65
+        "source": "news_agent",
+        "signal": "t overseas payments service   <https://cryptobriefing.com/ex-signature-bank-chair-n3xt-overseas-payments/>  \ud83d\udcca Scan: 950 ",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-17T20:15:43.572202+00:00"
+    "timestamp": "2026-08-17T20:20:44.344803+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.55,
+    "confidence": 0.84,
     "sources": [
+      "x_scanner",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +15.0% 1h, funding 0.0013%",
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83e\uddea $ETH] @NeronCrypto $OPAL tokenomics: 100% protocol fees | news_agent: eas payments service   <https://cryptobriefing.com/ex-signat | oi_funding: OI +15.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
         "signal": "OI +15.0% 1h, funding 0.0013%",
         "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "eas payments service   <https://cryptobriefing.com/ex-signature-bank-chair-n3xt-overseas-payments/>  \ud83d\udcca Scan: 950 new art",
+        "weight": 0.98
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83e\uddea $ETH] @NeronCrypto $OPAL tokenomics: 100% protocol fees \u2192 holders in $ETH each weekly cycle, fair launch [1.6]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-17T20:15:43.572215+00:00"
+    "timestamp": "2026-08-17T20:20:44.344820+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.52,
+    "confidence": 0.9,
     "sources": [
+      "x_scanner",
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI +62.0% 1h, funding 0.0010%",
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcf0 $SOL] @Eagle_0X (\ud83d\udc4d11) $ANSEM breaking out of 2-month ra | whale_monitor: Orderbook 62% bid-weighted (bullish) | news_agent: ments service   <https://cryptobriefing.com/ex-signature-ban",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -69,31 +84,48 @@
         "weight": 1.44
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 62% bid-weighted (bullish)",
-        "weight": 0.48
+        "source": "news_agent",
+        "signal": "ments service   <https://cryptobriefing.com/ex-signature-bank-chair-n3xt-overseas-payments/>  \ud83d\udcca Scan: 950 new articles |",
+        "weight": 0.98
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcf0 $SOL] @Eagle_0X (\ud83d\udc4d11) $ANSEM breaking out of 2-month range, reclaiming $300M support [2.0]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-17T20:15:43.572226+00:00"
+    "timestamp": "2026-08-17T20:20:44.344831+00:00"
   },
   "HYPE": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.75,
+    "confidence": 0.94,
     "sources": [
+      "x_scanner",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -13.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcf0 $HYPE] @DiarioBitcoin (\ud83d\udd041) Hyperliquid +16% from weeken | news_agent: ervice   <https://cryptobriefing.com/ex-signature-bank-chair | oi_funding: OI -13.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
         "signal": "OI -13.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "ervice   <https://cryptobriefing.com/ex-signature-bank-chair-n3xt-overseas-payments/>  \ud83d\udcca Scan: 950 new articles | 13 del",
+        "weight": 0.98
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcf0 $HYPE] @DiarioBitcoin (\ud83d\udd041) Hyperliquid +16% from weekend lows \u2014 Bitwise & Grayscale bought $2.8M in HYPE, ETFs not ",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-17T20:15:43.572232+00:00"
+    "timestamp": "2026-08-17T20:20:44.344840+00:00"
   }
 }
