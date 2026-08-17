@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": 0.31,
+    "score": 0.32,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
@@ -10,7 +10,7 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $BTC] @DonAlt (\ud83d\udc4d99 \ud83d\udd044) Close above $64.7k = early signa | whale_monitor: Orderbook 19% bid (ask-heavy, bearish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $BTC] @DonAlt (\ud83d\udc4d99 \ud83d\udd044) Close above $64.7k = early signa | whale_monitor: Orderbook 20% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -19,11 +19,11 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 19% bid (ask-heavy, bearish)",
-        "weight": 1.24
+        "signal": "Orderbook 20% bid (ask-heavy, bearish)",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-08-17T23:00:11.807838+00:00"
+    "timestamp": "2026-08-17T23:05:12.835213+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -53,39 +53,47 @@
         "weight": 2.34
       }
     ],
-    "timestamp": "2026-08-17T23:00:11.807853+00:00"
+    "timestamp": "2026-08-17T23:05:12.835226+00:00"
   },
   "SOL": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 27% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 14% bid (ask-heavy, bearish) | oi_funding: OI -8.0% 1h",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 27% bid (ask-heavy, bearish)",
-        "weight": 0.92
+        "signal": "Orderbook 14% bid (ask-heavy, bearish)",
+        "weight": 1.44
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -8.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-17T23:00:11.807860+00:00"
+    "timestamp": "2026-08-17T23:05:12.835236+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 1.0,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @CryptoGodJohn (\ud83d\udc4d257 \ud83d\udd0419) Don't forget to accumu",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @CryptoGodJohn (\ud83d\udc4d257 \ud83d\udd0419) Don't forget to accumu | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -96,8 +104,13 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $HYPE] @R2D2zen (\ud83d\udc4d17 \ud83d\udd040) HYPE vs Pump.fun valuation: Q2 fees nearly equal ($204M vs $212M) but Pump FDV 7.3x higher",
         "weight": 2.15
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 75% bid-weighted (bullish)",
+        "weight": 1.0
       }
     ],
-    "timestamp": "2026-08-17T23:00:11.807866+00:00"
+    "timestamp": "2026-08-17T23:05:12.835245+00:00"
   }
 }
