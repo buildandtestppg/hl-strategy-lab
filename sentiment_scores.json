@@ -1,22 +1,23 @@
 {
   "BTC": {
-    "score": -0.37,
-    "confidence": 0.7,
+    "score": 0.44,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "news_agent"
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $BTC] @NicolOnchain (\ud83d\udc4d1) $BTC below $63K, $48M liquidat | whale_monitor: Orderbook 71% bid-weighted (bullish) | news_agent: ion software** \u2014 AI sector momentum   \ud83d\udd17 cryptobriefing.com  ",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\u26a1 $BTC] @NicolOnchain (\ud83d\udc4d1) $BTC below $63K, $48M liquidat | whale_monitor: Orderbook 63% bid-weighted (bullish) | news_agent: Only 1 article qualifies \u2014 medium impact ETH upgrade. All ot",
     "key_signals": [
       {
-        "source": "news_agent",
-        "signal": "ion software** \u2014 AI sector momentum   \ud83d\udd17 cryptobriefing.com  \ud83d\udfe2 **NOTABLE** \u2022 **BTC drops below 200-week moving average** ",
-        "weight": 1.42
+        "source": "oi_funding",
+        "signal": "OI +11.0% 1h, funding 0.0000%",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
@@ -25,23 +26,25 @@
       },
       {
         "source": "news_agent",
-        "signal": "g.com  \ud83d\udfe1 **HIGH IMPACT** \u2022 **Wispr achieves $2B valuation with AI dictation software** \u2014 AI sector momentum   \ud83d\udd17 cryptobr",
-        "weight": 1.2
+        "signal": "Only 1 article qualifies \u2014 medium impact ETH upgrade. All others are low-impact with no notable keyword matches (Strateg",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-17T12:20:22.738797+00:00"
+    "timestamp": "2026-08-17T12:25:23.668610+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.64,
+    "confidence": 0.7,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 6,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @AltCryptoGems (\ud83d\udc4d27) One month of $ETH nothing \u2014 ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $ETH] @AltCryptoGems (\ud83d\udc4d27) One month of $ETH nothing \u2014  | news_agent: Only 1 article qualifies \u2014 medium impact ETH upgrade. All ot | oi_funding: OI -14.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -52,46 +55,59 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $ETH] @CRBOTSignals (\ud83d\udc4d0) ETF flows could be catalyst \u2014 institutional demand building while price compressed [score:",
         "weight": 1.62
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -14.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-17T12:20:22.738812+00:00"
+    "timestamp": "2026-08-17T12:25:23.668629+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-17T12:20:22.738814+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -29.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -29.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-17T12:25:23.668635+00:00"
   },
   "HYPE": {
-    "score": -0.45,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
       "whale_monitor",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -7.0% 1h",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -26.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -7.0% 1h",
-        "weight": 1.26
+        "signal": "OI -26.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 62% bid-weighted (bullish)",
-        "weight": 0.48
+        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-08-17T12:20:22.738823+00:00"
+    "timestamp": "2026-08-17T12:25:23.668642+00:00"
   }
 }
