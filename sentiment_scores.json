@@ -1,64 +1,91 @@
 {
   "BTC": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 62% bid-weighted (bullish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 62% bid-weighted (bullish)",
-        "weight": 0.48
-      }
-    ],
-    "timestamp": "2026-08-17T13:40:35.704685+00:00"
-  },
-  "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
+      "whale_monitor",
+      "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: $ETH institutional accumulation (BitMine $18.9M buy). $TAO m",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 85% bid-weighted (bullish) | oi_funding: OI +8.0% 1h, funding 0.0002%",
     "key_signals": [
       {
-        "source": "x_scanner",
-        "signal": "$ETH institutional accumulation (BitMine $18.9M buy). $TAO momentum with Kaito listing hints. DePIN miners pivoting to A",
-        "weight": 0.95
+        "source": "oi_funding",
+        "signal": "OI +8.0% 1h, funding 0.0002%",
+        "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $ETH] @AshCrypto (\ud83d\udc4d195 \ud83d\udd0421) BREAKING Tom Lee BitMine bought $18.9M $ETH last week total $11.04B [3.5]",
-        "weight": 0.65
+        "source": "whale_monitor",
+        "signal": "Orderbook 85% bid-weighted (bullish)",
+        "weight": 1.4
       }
     ],
-    "timestamp": "2026-08-17T13:40:35.704698+00:00"
+    "timestamp": "2026-08-17T13:45:36.464600+00:00"
+  },
+  "ETH": {
+    "score": 0.14,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "news_agent",
+      "oi_funding"
+    ],
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: $ETH institutional accumulation (BitMine $18.9M buy). $TAO m | news_agent: 47:R>  \ud83d\udd34 **Breaking** \u2022 Hackers Are Abusing a macOS Screen S | oi_funding: OI +56.0% 1h, funding 0.0010%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +56.0% 1h, funding 0.0010%",
+        "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "47:R>  \ud83d\udd34 **Breaking** \u2022 Hackers Are Abusing a macOS Screen Sharing Flaw to Secretly Mine Monero   `XMR` \u2014 Decrypt  \ud83d\udfe2 **N",
+        "weight": 1.42
+      },
+      {
+        "source": "news_agent",
+        "signal": "a macOS Screen Sharing Flaw to Secretly Mine Monero   `XMR` \u2014 Decrypt  \ud83d\udfe2 **Notable** \u2022 Bitmine adds 9,926 ETH as treasur",
+        "weight": 0.98
+      }
+    ],
+    "timestamp": "2026-08-17T13:45:36.464620+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-17T13:40:35.704700+00:00"
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI +32.0% 1h, funding 0.0006%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +32.0% 1h, funding 0.0006%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 80% bid-weighted (bullish)",
+        "weight": 1.2
+      }
+    ],
+    "timestamp": "2026-08-17T13:45:36.464630+00:00"
   },
   "HYPE": {
-    "score": 0.65,
-    "confidence": 0.84,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -66,14 +93,14 @@
     ],
     "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Margexcom (\ud83d\udc4d0 \ud83d\udd040) $PUMP up 80% past month 90B  | whale_monitor: Orderbook 79% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Margexcom (\ud83d\udc4d0 \ud83d\udd040) $PUMP up 80% past month 90B  | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI +50.0% 1h, funding 0.0013%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 79% bid-weighted (bullish)",
-        "weight": 1.16
+        "source": "oi_funding",
+        "signal": "OI +50.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
@@ -81,11 +108,11 @@
         "weight": 0.8
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
-        "weight": 0.72
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @abhayait (\ud83d\udc4d2 \ud83d\udd040) top traders pay full fees every week and still finish green delta neut [1.6]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-17T13:40:35.704715+00:00"
+    "timestamp": "2026-08-17T13:45:36.464639+00:00"
   }
 }
