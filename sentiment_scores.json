@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.18,
-    "confidence": 0.5,
+    "score": 0.33,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC] 2,782 BTC ($177M) moved Bitstamp \u2192 cold wallet \u2014 po | oi_funding: OI -4.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$BTC] 2,782 BTC ($177M) moved Bitstamp \u2192 cold wallet \u2014 po | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI +6.0% 1h, funding 0.0002%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -24,24 +25,24 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
-        "weight": 0.72
+        "signal": "OI +6.0% 1h, funding 0.0002%",
+        "weight": 1.08
       }
     ],
-    "timestamp": "2026-08-17T07:40:36.976043+00:00"
+    "timestamp": "2026-08-17T07:45:37.729350+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.53,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @cryptorover (\ud83d\udc4d123 \ud83d\udd0416) $BTC $63,500 / $ETH $1,90 | oi_funding: OI +5.0% 1h, funding 0.0012%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @cryptorover (\ud83d\udc4d123 \ud83d\udd0416) $BTC $63,500 / $ETH $1,90 | oi_funding: OI -9.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -55,51 +56,36 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0012%",
-        "weight": 0.9
+        "signal": "OI -9.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-17T07:40:36.976062+00:00"
+    "timestamp": "2026-08-17T07:45:37.729367+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.74,
-    "sources": [
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
+    "score": 0.0,
+    "confidence": 0.0,
+    "sources": [],
+    "signal_count": 0,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI -8.0% 1h",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -8.0% 1h",
-        "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 29% bid (ask-heavy, bearish)",
-        "weight": 0.84
-      }
-    ],
-    "timestamp": "2026-08-17T07:40:36.976072+00:00"
+    "narrative": "No active signals",
+    "key_signals": [],
+    "timestamp": "2026-08-17T07:45:37.729369+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.86,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
-      "oi_funding"
+      "whale_monitor"
     ],
-    "signal_count": 5,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @TheMoonShow HIP-3 builder perp OI touches new  | whale_monitor: Orderbook 74% bid-weighted (bullish) | oi_funding: OI +37.0% 1h, funding 0.0013%",
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @TheMoonShow HIP-3 builder perp OI touches new  | whale_monitor: Orderbook 40% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -112,11 +98,11 @@
         "weight": 1.69
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +37.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @gem_insider (\ud83d\udc4d111) $100K to buy ONE token? $PONS $TRIPLET $HYPE $TROLL $MOG $ANSEM [score: 2.1]",
+        "weight": 1.37
       }
     ],
-    "timestamp": "2026-08-17T07:40:36.976082+00:00"
+    "timestamp": "2026-08-17T07:45:37.729379+00:00"
   }
 }
