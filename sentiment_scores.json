@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": -0.73,
+    "score": -0.72,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -11,7 +11,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @EyeOnChain (\ud83d\udc4d1) Whale couldn't exit fast enough  | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | polymarket: \u2022 Fed **no change** Sep meeting: **70.5%** (-4.0pp) \u2014 $378K ",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @EyeOnChain (\ud83d\udc4d1) Whale couldn't exit fast enough  | whale_monitor: Orderbook 22% bid (ask-heavy, bearish) | polymarket: \u2022 Fed **no change** Sep meeting: **70.5%** (-4.0pp) \u2014 $378K ",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,8 +20,8 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 21% bid (ask-heavy, bearish)",
-        "weight": 1.16
+        "signal": "Orderbook 22% bid (ask-heavy, bearish)",
+        "weight": 1.12
       },
       {
         "source": "x_scanner",
@@ -29,47 +29,53 @@
         "weight": 1.04
       }
     ],
-    "timestamp": "2026-08-18T04:00:01.700351+00:00"
+    "timestamp": "2026-08-18T04:05:02.865303+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.03,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a1 $ETH] @Eveningtraders (\ud83d\udc4d2) Whale accumulated 10.3K ETH ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $ETH] @Eveningtraders (\ud83d\udc4d2) Whale accumulated 10.3K ETH  | oi_funding: OI -72.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a1 $ETH] @Eveningtraders (\ud83d\udc4d2) Whale accumulated 10.3K ETH ($19.51M) from Kraken, part staked on beacon [score: 1.6]",
         "weight": 1.52
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -72.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-18T04:00:01.700364+00:00"
+    "timestamp": "2026-08-18T04:05:02.865317+00:00"
   },
   "SOL": {
     "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 62% bid-weighted (bullish)",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +11.0% 1h, funding 0.0007%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 62% bid-weighted (bullish)",
-        "weight": 0.48
+        "source": "oi_funding",
+        "signal": "OI +11.0% 1h, funding 0.0007%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-18T04:00:01.700372+00:00"
+    "timestamp": "2026-08-18T04:05:02.865325+00:00"
   },
   "HYPE": {
     "score": 0.0,
@@ -81,6 +87,6 @@
     "contradictions": 0,
     "narrative": "No active signals",
     "key_signals": [],
-    "timestamp": "2026-08-18T04:00:01.700374+00:00"
+    "timestamp": "2026-08-18T04:05:02.865326+00:00"
   }
 }
