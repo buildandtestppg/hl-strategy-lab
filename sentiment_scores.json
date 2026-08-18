@@ -1,27 +1,29 @@
 {
   "BTC": {
-    "score": 0.63,
-    "confidence": 0.7,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "polymarket"
+      "news_agent",
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 6,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $BTC] @MarzellCrypto (\ud83d\udc4d1 \ud83d\udd040) $BTC still showing weaknes | whale_monitor: Orderbook 18% bid (ask-heavy, bearish) | polymarket: \u2022 Fed **no change** Sep meeting: **70.5%** (-4.0pp) \u2014 $378K ",
+    "signal_count": 9,
+    "convergence": true,
+    "convergence_strength": 5,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 5-source bullish convergence | x_scanner: \u2022 [\u26a1 $BTC] @MarzellCrypto (\ud83d\udc4d1 \ud83d\udd040) $BTC still showing weaknes | whale_monitor: Orderbook 76% bid-weighted (bullish) | news_agent: \ud83d\udcf0 **Crypto News** \u2014 Aug 18, 2026  \ud83d\udfe2 **Notable**  \u2022 **Moscow ",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +19.0% 1h, funding 0.0003%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a1 $BTC] @MarzellCrypto (\ud83d\udc4d1 \ud83d\udd040) $BTC still showing weakness \u2014 breakdown \u2192 relief rally \u2192 rejection \u2192 weakness pattern ",
         "weight": 1.37
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 18% bid (ask-heavy, bearish)",
-        "weight": 1.28
       },
       {
         "source": "x_scanner",
@@ -29,58 +31,71 @@
         "weight": 1.23
       }
     ],
-    "timestamp": "2026-08-18T05:20:15.180673+00:00"
+    "timestamp": "2026-08-18T05:30:08.265352+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-18T05:20:15.180678+00:00"
-  },
-  "SOL": {
-    "score": -1.0,
+    "score": 1.0,
     "confidence": 0.74,
     "sources": [
-      "x_scanner",
-      "whale_monitor"
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $SOL] @LiqFlowApp (\ud83d\udc4d0 \ud83d\udd040) Smart money SHORT $SOL $75.43 | whale_monitor: Orderbook 31% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | news_agent: \ud83d\udcf0 **Crypto News** \u2014 Aug 18, 2026  \ud83d\udfe2 **Notable**  \u2022 **Moscow  | oi_funding: OI +53.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +53.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "\ud83d\udcf0 **Crypto News** \u2014 Aug 18, 2026  \ud83d\udfe2 **Notable**  \u2022 **Moscow Exchange to launch BTC & ETH perpetual futures** `BTC` `ETH`",
+        "weight": 1.2
+      },
+      {
+        "source": "news_agent",
+        "signal": "\ud83d\udcf0 **Crypto News** \u2014 Aug 18, 2026  \ud83d\udfe2 **Notable**  \u2022 **Moscow Exchange to launch BTC & ETH perpetual futures** `BTC` `ETH`",
+        "weight": 1.2
+      }
+    ],
+    "timestamp": "2026-08-18T05:30:08.265368+00:00"
+  },
+  "SOL": {
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "x_scanner"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $SOL] @LiqFlowApp (\ud83d\udc4d0 \ud83d\udd040) Smart money SHORT $SOL $75.43",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc9 $SOL] @LiqFlowApp (\ud83d\udc4d0 \ud83d\udd040) Smart money SHORT $SOL $75.43 \u2014 72.8% profitable traders short, $167M long liq [score: 1.",
         "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 31% bid (ask-heavy, bearish)",
-        "weight": 0.76
       }
     ],
-    "timestamp": "2026-08-18T05:20:15.180694+00:00"
+    "timestamp": "2026-08-18T05:30:08.265376+00:00"
   },
   "HYPE": {
-    "score": 0.44,
-    "confidence": 0.5,
+    "score": 0.76,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 8,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @HypedLaunches (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid turning idle | whale_monitor: Orderbook 19% bid (ask-heavy, bearish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @HypedLaunches (\ud83d\udc4d0 \ud83d\udd040) Hyperliquid turning idle | oi_funding: OI +43.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -98,6 +113,6 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-08-18T05:20:15.180706+00:00"
+    "timestamp": "2026-08-18T05:30:08.265387+00:00"
   }
 }
