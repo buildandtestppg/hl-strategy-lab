@@ -1,17 +1,18 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 1.0,
+    "score": -0.41,
+    "confidence": 0.6,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 6,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 Whale] @cryptorover (\ud83d\udc4d58 \ud83d\udd042) Binance whales pushed $BTC | polymarket: 25bps hike: 28.5% (+5.0pp) \u26a0\ufe0f \u2014 hike expectations building - | oi_funding: OI -32.0% 1h",
+    "signal_count": 7,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 2,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 Whale] @cryptorover (\ud83d\udc4d58 \ud83d\udd042) Binance whales pushed $BTC | whale_monitor: Orderbook 81% bid-weighted (bullish) | polymarket: 25bps hike: 28.5% (+5.0pp) \u26a0\ufe0f \u2014 hike expectations building -",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -20,30 +21,36 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -32.0% 1h",
+        "signal": "OI +9.0% 1h, funding 0.0001%",
         "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca TA] @CW8900 (\ud83d\udc4d4) $BTC OI decreasing while net position delta increasing \u2014 short closing occurring [score: 1.63]",
-        "weight": 1.06
+        "source": "whale_monitor",
+        "signal": "Orderbook 81% bid-weighted (bullish)",
+        "weight": 1.24
       }
     ],
-    "timestamp": "2026-08-18T15:40:37.508850+00:00"
+    "timestamp": "2026-08-18T15:45:37.659147+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.6,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca TA] @carisneeth (\ud83d\udc4d5) Longing ETH breakout. Sentiment sh | polymarket: plied spot ~$61-62K** from today's daily targets. $65K in Au",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca TA] @carisneeth (\ud83d\udc4d5) Longing ETH breakout. Sentiment sh | polymarket: plied spot ~$61-62K** from today's daily targets. $65K in Au | oi_funding: OI +172.0% 1h, funding 0.0003%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +172.0% 1h, funding 0.0003%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca TA] @carisneeth (\ud83d\udc4d5) Longing ETH breakout. Sentiment shift, volume picking up \u2014 $ETH at $2000 very soon, solid Q4 [",
@@ -53,18 +60,13 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83e\ude99 Listing] @UpholdInc (\ud83d\udc4d9) Uphold now supports Ink Network \u2014 $ETH and $USDC native access to on-chain ecosystem [scor",
         "weight": 1.2
-      },
-      {
-        "source": "polymarket",
-        "signal": "plied spot ~$61-62K** from today's daily targets. $65K in Aug now 79.5% (+11pp, but expiry). Year-end $80K: 28.5%. Deep ",
-        "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-18T15:40:37.508870+00:00"
+    "timestamp": "2026-08-18T15:45:37.659167+00:00"
   },
   "SOL": {
-    "score": 0.68,
-    "confidence": 0.9,
+    "score": 0.23,
+    "confidence": 0.6,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -72,53 +74,59 @@
       "oi_funding"
     ],
     "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: **\ud83d\udd25 Top Signals** (4/7 topics scanned \u2014 timeout at $SOL) | whale_monitor: Orderbook 74% bid-weighted (bullish) | polymarket: . Year-end $80K: 28.5%. Deep dip to $45K by Dec: 21.5%.  **E",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 2,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: **\ud83d\udd25 Top Signals** (4/7 topics scanned \u2014 timeout at $SOL) | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | polymarket: . Year-end $80K: 28.5%. Deep dip to $45K by Dec: 21.5%.  **E",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +37.0% 1h, funding 0.0006%",
+        "signal": "OI +30.0% 1h, funding 0.0013%",
         "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 74% bid-weighted (bullish)",
-        "weight": 0.96
       },
       {
         "source": "polymarket",
         "signal": ". Year-end $80K: 28.5%. Deep dip to $45K by Dec: 21.5%.  **ETH implied spot ~$1,750-1,800**. $2K in Aug: 46.5% (coin fli",
         "weight": 0.78
+      },
+      {
+        "source": "x_scanner",
+        "signal": "**\ud83d\udd25 Top Signals** (4/7 topics scanned \u2014 timeout at $SOL)",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-18T15:40:37.508883+00:00"
+    "timestamp": "2026-08-18T15:45:37.659178+00:00"
   },
   "HYPE": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": 0.73,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @getalertio (\ud83d\udcac1) HL funding still flat at -0.05% a | whale_monitor: Orderbook 34% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE] @getalertio (\ud83d\udcac1) HL funding still flat at -0.05% a | whale_monitor: Orderbook 86% bid-weighted (bullish) | oi_funding: OI +17.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 86% bid-weighted (bullish)",
+        "weight": 1.44
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +17.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @getalertio (\ud83d\udcac1) HL funding still flat at -0.05% annualized after $30M shorts liquidated \u2014 breakout without ne",
         "weight": 0.65
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 34% bid (ask-heavy, bearish)",
-        "weight": 0.64
       }
     ],
-    "timestamp": "2026-08-18T15:40:37.508891+00:00"
+    "timestamp": "2026-08-18T15:45:37.659186+00:00"
   }
 }
