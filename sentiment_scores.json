@@ -1,18 +1,17 @@
 {
   "BTC": {
-    "score": 0.3,
-    "confidence": 0.9,
+    "score": 0.08,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "whale_monitor",
-      "polymarket",
-      "oi_funding"
+      "news_agent",
+      "polymarket"
     ],
-    "signal_count": 10,
-    "convergence": true,
-    "convergence_strength": 3,
+    "signal_count": 12,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @randgroup (\ud83d\udc4d112 \ud83d\udd0418) $BTC about to trigger bulli | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | polymarket: 25bps hike: 28.5% (+5.0pp) \u26a0\ufe0f \u2014 hike expectations building -",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @randgroup (\ud83d\udc4d112 \ud83d\udd0418) $BTC about to trigger bulli | news_agent: scan window:Let me draft the Discord message. I have 1 high- | polymarket: 25bps hike: 28.5% (+5.0pp) \u26a0\ufe0f \u2014 hike expectations building -",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -30,21 +29,21 @@
         "weight": 1.89
       }
     ],
-    "timestamp": "2026-08-18T16:40:40.445861+00:00"
+    "timestamp": "2026-08-18T16:45:40.702688+00:00"
   },
   "ETH": {
-    "score": -0.41,
+    "score": -0.27,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "polymarket",
-      "oi_funding"
+      "whale_monitor",
+      "polymarket"
     ],
     "signal_count": 5,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @robw00ds (\ud83d\udc4d66 \ud83d\udd047) $ETH a little higher and we sw | polymarket: plied spot ~$61-62K** from today's daily targets. $65K in Au | oi_funding: OI -45.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @robw00ds (\ud83d\udc4d66 \ud83d\udd047) $ETH a little higher and we sw | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | polymarket: plied spot ~$61-62K** from today's daily targets. $65K in Au",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -52,56 +51,63 @@
         "weight": 2.4
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -45.0% 1h",
-        "weight": 1.44
-      },
-      {
         "source": "polymarket",
         "signal": "plied spot ~$61-62K** from today's daily targets. $65K in Aug now 79.5% (+11pp, but expiry). Year-end $80K: 28.5%. Deep ",
         "weight": 0.78
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $ETH] @__LiqHunter__ (\ud83d\udc4d13 \ud83d\udd041) $ETH and $Total2 have broken out",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-18T16:40:40.445882+00:00"
+    "timestamp": "2026-08-18T16:45:40.702708+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": 0.05,
+    "confidence": 0.84,
     "sources": [
+      "whale_monitor",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: . Year-end $80K: 28.5%. Deep dip to $45K by Dec: 21.5%.  **E | oi_funding: OI -42.0% 1h",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | polymarket: . Year-end $80K: 28.5%. Deep dip to $45K by Dec: 21.5%.  **E | oi_funding: OI +21.0% 1h, funding 0.0005%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -42.0% 1h",
+        "signal": "OI +21.0% 1h, funding 0.0005%",
         "weight": 1.44
       },
       {
         "source": "polymarket",
         "signal": ". Year-end $80K: 28.5%. Deep dip to $45K by Dec: 21.5%.  **ETH implied spot ~$1,750-1,800**. $2K in Aug: 46.5% (coin fli",
         "weight": 0.78
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 37% bid (ask-heavy, bearish)",
+        "weight": 0.52
       }
     ],
-    "timestamp": "2026-08-18T16:40:40.445892+00:00"
+    "timestamp": "2026-08-18T16:45:40.702718+00:00"
   },
   "HYPE": {
-    "score": 0.55,
-    "confidence": 0.5,
+    "score": 0.28,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 6,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $HYPE] @janitorCTO Hyperliquid insider wallet PnL: -$13 | oi_funding: OI -125.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a1 $HYPE] @janitorCTO Hyperliquid insider wallet PnL: -$13 | news_agent: ypto meeting).  \ud83d\udcf0 **Crypto News \u2014 Aug 18, 16:37 UTC**  \ud83d\udfe1 **H | oi_funding: OI -31.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -110,15 +116,15 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -125.0% 1h",
+        "signal": "OI -31.0% 1h",
         "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @BJauhi (\ud83d\udc4d18) Kaito Pulse brings off-X activity (Polymarket, Hyperliquid) into timeline [score: 2.1]",
-        "weight": 1.37
+        "source": "news_agent",
+        "signal": "ypto meeting).  \ud83d\udcf0 **Crypto News \u2014 Aug 18, 16:37 UTC**  \ud83d\udfe1 **High Impact** \u2022 Hyperliquid Policy Center asks SEC to conside",
+        "weight": 1.42
       }
     ],
-    "timestamp": "2026-08-18T16:40:40.445902+00:00"
+    "timestamp": "2026-08-18T16:45:40.702729+00:00"
   }
 }
