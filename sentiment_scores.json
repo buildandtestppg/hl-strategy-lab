@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.39,
-    "confidence": 0.6,
+    "score": -0.14,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$BTC] @crypto_banter (\ud83d\udc4d11 \ud83d\udd045) Jane Street disclosed over  | polymarket: \u2022 Fed **no change** Sep meeting: **70.5%** (-4.0pp) \u2014 $378K ",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC] @crypto_banter (\ud83d\udc4d11 \ud83d\udd045) Jane Street disclosed over  | whale_monitor: Orderbook 7% bid (ask-heavy, bearish) | oi_funding: OI -42.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -28,64 +29,90 @@
         "weight": 2.0
       }
     ],
-    "timestamp": "2026-08-18T07:00:21.790968+00:00"
+    "timestamp": "2026-08-18T07:05:22.529406+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH] @cryptogoos (\ud83d\udc4d39 \ud83d\udd043) Whale bought 5,000 $ETH ($9.53",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$ETH] @cryptogoos (\ud83d\udc4d39 \ud83d\udd043) Whale bought 5,000 $ETH ($9.53M) \u2192 staked all of it [score: 3.5]",
-        "weight": 2.27
-      }
-    ],
-    "timestamp": "2026-08-18T07:00:21.790984+00:00"
-  },
-  "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-18T07:00:21.790986+00:00"
-  },
-  "HYPE": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": 0.22,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @cryptogoos (\ud83d\udc4d39 \ud83d\udd043) Whale bought 5,000 $ETH ($9.53 | oi_funding: OI -27.0% 1h",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$ETH] @cryptogoos (\ud83d\udc4d39 \ud83d\udd043) Whale bought 5,000 $ETH ($9.53M) \u2192 staked all of it [score: 3.5]",
+        "weight": 2.27
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -27.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-18T07:05:22.529419+00:00"
+  },
+  "SOL": {
+    "score": 0.38,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI +24.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +24.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 34% bid (ask-heavy, bearish)",
+        "weight": 0.64
+      }
+    ],
+    "timestamp": "2026-08-18T07:05:22.529427+00:00"
+  },
+  "HYPE": {
+    "score": -0.1,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @CW8900 (\ud83d\udc4d1 \ud83d\udd041) 67,035 traders liquidated ($221.9M | oi_funding: OI -5.0% 1h",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$HYPE] @CW8900 (\ud83d\udc4d1 \ud83d\udd041) 67,035 traders liquidated ($221.9M | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI +12.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +12.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @CW8900 (\ud83d\udc4d1 \ud83d\udd041) 67,035 traders liquidated ($221.9M) \u2014 largest single liq on Hyperliquid $BTC-USD $10.29M [scor",
         "weight": 1.04
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -5.0% 1h",
-        "weight": 0.9
+        "source": "whale_monitor",
+        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
+        "weight": 0.68
       }
     ],
-    "timestamp": "2026-08-18T07:00:21.790997+00:00"
+    "timestamp": "2026-08-18T07:05:22.529435+00:00"
   }
 }
