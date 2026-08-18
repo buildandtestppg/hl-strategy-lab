@@ -1,15 +1,17 @@
 {
   "BTC": {
-    "score": 0.45,
-    "confidence": 0.3,
+    "score": 0.05,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @raintures (\ud83d\udc4d21 \ud83d\udd041) $BTC holding above $64K \u2014 lon",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @raintures (\ud83d\udc4d21 \ud83d\udd041) $BTC holding above $64K \u2014 lon | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI -10.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -27,19 +29,20 @@
         "weight": 2.02
       }
     ],
-    "timestamp": "2026-08-18T10:40:55.984664+00:00"
+    "timestamp": "2026-08-18T10:45:56.731609+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @BladeDefi (\ud83d\udc4d2 \ud83d\udd040) \"Trump insider\" with 100% win ",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @BladeDefi (\ud83d\udc4d2 \ud83d\udd040) \"Trump insider\" with 100% win  | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -50,43 +53,17 @@
         "source": "x_scanner",
         "signal": "\u2022 [$ETH] $48.2M $ETH short opened by historically accurate political trader ahead of market open [score: 3.3]",
         "weight": 2.15
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-08-18T10:40:55.984679+00:00"
+    "timestamp": "2026-08-18T10:45:56.731625+00:00"
   },
   "SOL": {
-    "score": 0.74,
-    "confidence": 0.5,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $SOL] @Jeremybtc (\ud83d\udc4d62 \ud83d\udd0410) Legendary SOL whale who made | whale_monitor: Orderbook 40% bid (ask-heavy, bearish)",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $SOL] @Jeremybtc (\ud83d\udc4d62 \ud83d\udd0410) Legendary SOL whale who made $20M last cycle just came back after 2 years to buy the dip",
-        "weight": 2.06
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$SOL] @Jeremybtc (\ud83d\udc4d62 \ud83d\udcac47) Legendary SOL whale reactivates after 2 years to buy dip",
-        "weight": 0.65
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 40% bid (ask-heavy, bearish)",
-        "weight": 0.4
-      }
-    ],
-    "timestamp": "2026-08-18T10:40:55.984688+00:00"
-  },
-  "HYPE": {
-    "score": 0.54,
+    "score": 0.18,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -97,7 +74,38 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd27 $HYPE] @Stan_Steps (\ud83d\udc4d62 \ud83d\udd048) WenLong brings @Hyperliquid | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcca $SOL] @Jeremybtc (\ud83d\udc4d62 \ud83d\udd0410) Legendary SOL whale who made | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -6.0% 1h",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $SOL] @Jeremybtc (\ud83d\udc4d62 \ud83d\udd0410) Legendary SOL whale who made $20M last cycle just came back after 2 years to buy the dip",
+        "weight": 2.06
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -6.0% 1h",
+        "weight": 1.08
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 30% bid (ask-heavy, bearish)",
+        "weight": 0.8
+      }
+    ],
+    "timestamp": "2026-08-18T10:45:56.731637+00:00"
+  },
+  "HYPE": {
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd27 $HYPE] @Stan_Steps (\ud83d\udc4d62 \ud83d\udd048) WenLong brings @Hyperliquid | whale_monitor: Orderbook 79% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -106,15 +114,15 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 20% bid (ask-heavy, bearish)",
-        "weight": 1.2
+        "signal": "Orderbook 79% bid-weighted (bullish)",
+        "weight": 1.16
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +4.0% 1h, funding 0.0013%",
-        "weight": 0.72
+        "source": "x_scanner",
+        "signal": "\u2022 [$HYPE] @Stan_Steps (\ud83d\udc4d62 \ud83d\udcac60) WenLong brings Hyperliquid perps to Telegram \u2014 62 likes, high engagement",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-18T10:40:55.984700+00:00"
+    "timestamp": "2026-08-18T10:45:56.731645+00:00"
   }
 }
