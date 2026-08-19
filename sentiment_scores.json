@@ -1,18 +1,24 @@
 {
   "BTC": {
-    "score": -0.15,
-    "confidence": 0.84,
+    "score": -0.49,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
       "whale_monitor",
-      "news_agent"
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @MaxCrypto (\ud83d\udc4d17 \ud83d\udd041) Whale $82.3M $BTC short 40x \u2014 | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | news_agent: 4-billion-shorts-as-treasury-buybacks-boost-risk-appetite) \ud83d\udd17",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcb0 $BTC] @MaxCrypto (\ud83d\udc4d17 \ud83d\udd041) Whale $82.3M $BTC short 40x \u2014 | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | news_agent: 4-billion-shorts-as-treasury-buybacks-boost-risk-appetite) \ud83d\udd17",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -131.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "news_agent",
         "signal": "4-billion-shorts-as-treasury-buybacks-boost-risk-appetite) \ud83d\udd17 [Decrypt](https://decrypt.co/375955/bitcoin-surges-70k-bill",
@@ -22,68 +28,81 @@
         "source": "whale_monitor",
         "signal": "Orderbook 27% bid (ask-heavy, bearish)",
         "weight": 0.92
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcb0 $BTC] @MaxCrypto (\ud83d\udc4d17 \ud83d\udd041) Whale $82.3M $BTC short 40x \u2014 liq at $69,897 [2.4]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-19T17:05:22.792838+00:00"
+    "timestamp": "2026-08-19T17:10:23.093851+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.29,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @TedPillows (\ud83d\udc4d31) $59M $ETH long opened 20x \u2014 wha",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @TedPillows (\ud83d\udc4d31) $59M $ETH long opened 20x \u2014 wha | oi_funding: OI -202.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -202.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcb0 $ETH] @TedPillows (\ud83d\udc4d31) $59M $ETH long opened 20x \u2014 whales expect pump [3.0]",
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-19T17:05:22.792851+00:00"
+    "timestamp": "2026-08-19T17:10:23.093883+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.36,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 67% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI -48.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -48.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 67% bid-weighted (bullish)",
         "weight": 0.68
       }
     ],
-    "timestamp": "2026-08-19T17:05:22.792858+00:00"
+    "timestamp": "2026-08-19T17:10:23.093901+00:00"
   },
   "HYPE": {
-    "score": 0.53,
-    "confidence": 0.74,
+    "score": 0.76,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 5,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @realcryptopikin HIP-4 early days: $201K notiona | whale_monitor: Orderbook 62% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @realcryptopikin HIP-4 early days: $201K notiona | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI +9.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +9.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udc8e $HYPE] @realcryptopikin HIP-4 early days: $201K notional, $144K OI, 3 active markets [2.5]",
@@ -93,13 +112,8 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udc8e $HYPE] @MoneyPrinter0x (\ud83d\udc4d43 \ud83d\udd044) Druckenmiller & Tudor Jones now top holders $PURR $HYPE [2.0]",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$HYPE] @Saanjana_Nikita $1.23B shorts wiped in an hour \u2014 3 HL whales lost $194M combined",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-19T17:05:22.792869+00:00"
+    "timestamp": "2026-08-19T17:10:23.093925+00:00"
   }
 }
