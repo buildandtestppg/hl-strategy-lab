@@ -1,7 +1,79 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.84,
+    "score": 0.22,
+    "confidence": 0.7,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfe0 $BTC] @GpaAndy (\ud83d\udc4d1 \ud83d\udd040) $BTC ~40% below highs yet >100 B | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +12.0% 1h, funding 0.0006%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +12.0% 1h, funding 0.0006%",
+        "weight": 1.44
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfe0 $BTC] @GpaAndy (\ud83d\udc4d1 \ud83d\udd040) $BTC ~40% below highs yet >100 BTC addresses near ATH at ~20.1k. Large balances distributing",
+        "weight": 0.98
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfe0 $BTC/Policy] @CappyGrowth (\ud83d\udc4d0 \ud83d\udd040) WH crypto summit today: Trump + SEC/CFTC chairs + Coinbase, Ripple, Nasdaq, CME e",
+        "weight": 0.98
+      }
+    ],
+    "timestamp": "2026-08-19T10:10:14.356336+00:00"
+  },
+  "ETH": {
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -13.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -13.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-19T10:10:14.356348+00:00"
+  },
+  "SOL": {
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "whale_monitor"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 25% bid (ask-heavy, bearish)",
+    "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 25% bid (ask-heavy, bearish)",
+        "weight": 1.0
+      }
+    ],
+    "timestamp": "2026-08-19T10:10:14.356355+00:00"
+  },
+  "HYPE": {
+    "score": -1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -9,115 +81,26 @@
     ],
     "signal_count": 6,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @trdEverything (\ud83d\udc4d25 \ud83d\udd0419) BTC testing $65K: Strate | whale_monitor: Orderbook 36% bid (ask-heavy, bearish) | oi_funding: OI +12.0% 1h, funding 0.0006%",
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83c\udfe0 $HYPE/DeFi] @RR2Capital (\ud83d\udc4d23 \ud83d\udd040) DeFi's Worst Quarter E | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI -10.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @trdEverything (\ud83d\udc4d25 \ud83d\udd0419) BTC testing $65K: Strategy stopped buying 8 wks, Winklevoss say gift, ETF inflows re",
-        "weight": 3.86
+        "signal": "\u2022 [\ud83c\udfe0 $HYPE/DeFi] @RR2Capital (\ud83d\udc4d23 \ud83d\udd040) DeFi's Worst Quarter Ever: $775M Gone in 3 Months. $942M lost to 121 hacks H1 2026",
+        "weight": 1.56
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7 $BTC] @MariusOnChain Citi launching bitcoin custody for institutional clients later this year [score: 2.55]",
-        "weight": 2.42
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @WhaleInsider (\ud83d\udc4d131 \ud83d\udd048) Fidelity clients buy $23.92M worth of BTC [score: 3.03]",
-        "weight": 1.97
-      }
-    ],
-    "timestamp": "2026-08-19T10:05:14.122836+00:00"
-  },
-  "ETH": {
-    "score": 0.06,
-    "confidence": 0.5,
-    "sources": [
-      "x_scanner",
-      "oi_funding"
-    ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7 $ETH] @OxSimpleFarmer (\ud83d\udc4d84 \ud83d\udd0431) Safe launch tool: 1066  | oi_funding: OI -13.0% 1h",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7 $ETH] @OxSimpleFarmer (\ud83d\udc4d84 \ud83d\udd0431) Safe launch tool: 1066 $ETH ($2.05M) gross pre-bond volume in 24h [score: 5.0]",
-        "weight": 4.0
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$ETH] @BladeDefi \"TRUMP INSIDER\" opened $54.3M ETH short ahead of market open [score: 3.25]",
-        "weight": 2.11
+        "signal": "\u2022 [\ud83c\udfe0 $HYPE/Spot] @alex_hunter20 (\ud83d\udc4d6 \ud83d\udd040) Whale selling 8-9 figs on HL spot \u2014 people frontran him, worse execution than pr",
+        "weight": 1.52
       },
       {
         "source": "oi_funding",
-        "signal": "OI -13.0% 1h",
+        "signal": "OI -10.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-19T10:05:14.122850+00:00"
-  },
-  "SOL": {
-    "score": -1.0,
-    "confidence": 0.74,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: X scan partial (timed out at $SOL, missed AI-Agents + DePIN) | whale_monitor: Orderbook 25% bid (ask-heavy, bearish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 25% bid (ask-heavy, bearish)",
-        "weight": 1.0
-      },
-      {
-        "source": "x_scanner",
-        "signal": "X scan partial (timed out at $SOL, missed AI-Agents + DePIN). BTC narrative split: VanEck/fund flows say correction endi",
-        "weight": 0.65
-      }
-    ],
-    "timestamp": "2026-08-19T10:05:14.122859+00:00"
-  },
-  "HYPE": {
-    "score": 0.57,
-    "confidence": 0.84,
-    "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 5,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7 $HYPE] @0xvietnguyen (\ud83d\udc4d26 \ud83d\udd041) Robinhood Chain endorsed  | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI -10.0% 1h",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7 $HYPE] @0xvietnguyen (\ud83d\udc4d26 \ud83d\udd041) Robinhood Chain endorsed MOB Exchange (Yzi Labs) \u2014 unified margin for Hyperliquid+Lig",
-        "weight": 2.55
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7 $HYPE] @tradenetorg (\ud83d\udc4d5 \ud83d\udd043) TradeNet Beta: added HYPE support + Bookmap-style Flowfield liquidity heatmaps [score: ",
-        "weight": 2.42
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7 $HYPE] @investingluc (\ud83d\udc4d12 \ud83d\udd041) $PURR thesis: Druckenmiller in, unusual vol, real product, companies building on HL \u2014",
-        "weight": 2.09
-      }
-    ],
-    "timestamp": "2026-08-19T10:05:14.122869+00:00"
+    "timestamp": "2026-08-19T10:10:14.356367+00:00"
   }
 }
