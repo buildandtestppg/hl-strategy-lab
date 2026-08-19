@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": -0.63,
-    "confidence": 0.5,
+    "score": -1.0,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$BTC] AMINA bank adds $HYPE trading + SEC tokenized stock | whale_monitor: Orderbook 96% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC] AMINA bank adds $HYPE trading + SEC tokenized stock | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI -237.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -23,25 +24,25 @@
         "weight": 3.68
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 96% bid-weighted (bullish)",
-        "weight": 1.84
+        "source": "oi_funding",
+        "signal": "OI -237.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-19T15:20:05.384452+00:00"
+    "timestamp": "2026-08-19T15:25:06.217595+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.69,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @dawhalecircle (\ud83d\udc4d212 \ud83d\udd04103) ETF Inflows: BTC $297. | oi_funding: OI +229.0% 1h, funding 0.0013%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @dawhalecircle (\ud83d\udc4d212 \ud83d\udd04103) ETF Inflows: BTC $297. | oi_funding: OI -146.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -55,45 +56,50 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +229.0% 1h, funding 0.0013%",
+        "signal": "OI -146.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-19T15:20:05.384472+00:00"
+    "timestamp": "2026-08-19T15:25:06.217611+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +258.0% 1h, funding 0.0010%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +258.0% 1h, funding 0.0010%",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-08-19T15:20:05.384480+00:00"
-  },
-  "HYPE": {
-    "score": 0.01,
-    "confidence": 0.7,
-    "sources": [
-      "x_scanner",
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 7,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | oi_funding: OI -145.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -145.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 21% bid (ask-heavy, bearish)",
+        "weight": 1.16
+      }
+    ],
+    "timestamp": "2026-08-19T15:25:06.217621+00:00"
+  },
+  "HYPE": {
+    "score": -0.15,
+    "confidence": 0.6,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 6,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $HYPE] @blknoiz06 (\ud83d\udc4d348 \ud83d\udd0452) Institutional money flippi | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI +148.0% 1h, funding 0.0013%",
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $HYPE] @blknoiz06 (\ud83d\udc4d348 \ud83d\udd0452) Institutional money flippi | whale_monitor: Orderbook 13% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -111,6 +117,6 @@
         "weight": 2.27
       }
     ],
-    "timestamp": "2026-08-19T15:20:05.384492+00:00"
+    "timestamp": "2026-08-19T15:25:06.217631+00:00"
   }
 }
