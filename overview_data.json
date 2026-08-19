@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-08-19T10:40:21.006315+08:00",
-  "exported_at_utc": "2026-08-19T02:40:21.006317+00:00",
+  "exported_at": "2026-08-19T10:50:21.804008+08:00",
+  "exported_at_utc": "2026-08-19T02:50:21.804010+00:00",
   "portfolio": {
     "value": 4516.7622913661635,
     "initial": 5000.0,
@@ -1358,125 +1358,112 @@
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.24,
+      "score": 0.55,
       "confidence": 0.5,
       "sources": [
-        "whale_monitor",
+        "x_scanner",
+        "whale_monitor"
+      ],
+      "signal_count": 5,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfe6 $BTC] @feifan7686 Jane Street Q2: $990M BTC ETF (IBIT)  | whale_monitor: Orderbook 31% bid (ask-heavy, bearish)",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 31% bid (ask-heavy, bearish)",
+          "weight": 0.76
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfe6 $BTC] @feifan7686 Jane Street Q2: $990M BTC ETF (IBIT) + MSTR. Cut 70% Q1, bought back Q2. Institutional smart mone",
+          "weight": 0.65
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udc0b $BTC] @Moneygurudigi Whales accumulated 43K $BTC ($2.7B) in 60 days. Retail scared, whales stacking [1.6]",
+          "weight": 0.65
+        }
+      ],
+      "timestamp": "2026-08-19T02:50:19.503382+00:00"
+    },
+    "ETH": {
+      "score": -0.29,
+      "confidence": 0.5,
+      "sources": [
+        "x_scanner",
         "oi_funding"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 72% bid-weighted (bullish) | oi_funding: OI -74.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @ZephloTerminal Bitmine holding 4.8% of $ETH sup | oi_funding: OI -30.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -74.0% 1h",
+          "signal": "OI -30.0% 1h",
           "weight": 1.44
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 72% bid-weighted (bullish)",
-          "weight": 0.88
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @ZephloTerminal Bitmine holding 4.8% of $ETH supply \u2014 major institutional concentration event [1.5]",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-08-19T02:40:18.095863+00:00"
+      "timestamp": "2026-08-19T02:50:19.503397+00:00"
     },
-    "ETH": {
-      "score": 0.13,
+    "SOL": {
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +24.0% 1h, funding 0.0007%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +24.0% 1h, funding 0.0007%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-08-19T02:50:19.503404+00:00"
+    },
+    "HYPE": {
+      "score": 0.49,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "oi_funding"
+        "whale_monitor"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd37 $ETH] @OxSimpleFarmer (\ud83d\udc4d84 \ud83d\udd0431) Safe launch tool genera | oi_funding: OI -84.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @crypto_ddadda Kaito Pulse launched: Yaps\u2192Aura, | whale_monitor: Orderbook 25% bid (ask-heavy, bearish)",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd37 $ETH] @OxSimpleFarmer (\ud83d\udc4d84 \ud83d\udd0431) Safe launch tool generated $2M gross volume in 24h, $36K broker fees [score: 5.0]",
-          "weight": 3.25
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udd37 $ETH] @lookonchain (\ud83d\udc4d43 \ud83d\udd049) 9.3M $KTAO + 2B $GALA bridged then dumped for $3.64M ETH. $KTAO -37% [score: 2.8]",
-          "weight": 1.82
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI -84.0% 1h",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-08-19T02:40:18.095882+00:00"
-    },
-    "SOL": {
-      "score": 0.47,
-      "confidence": 0.84,
-      "sources": [
-        "x_scanner",
-        "whale_monitor",
-        "oi_funding"
-      ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udfe1 $SOL] @Bitmartsignals1 $SOL big long setup \u2014 stop 75, T | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI -17.0% 1h",
-      "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udfe1 $SOL] @Bitmartsignals1 $SOL big long setup \u2014 stop 75, TP 79, big volume breakout [score: 3.0]",
-          "weight": 2.4
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI -17.0% 1h",
-          "weight": 1.44
-        },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 76% bid-weighted (bullish)",
-          "weight": 1.04
-        }
-      ],
-      "timestamp": "2026-08-19T02:40:18.095894+00:00"
-    },
-    "HYPE": {
-      "score": -0.76,
-      "confidence": 0.84,
-      "sources": [
-        "x_scanner",
-        "whale_monitor",
-        "oi_funding"
-      ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe2 $HYPE] @ANCrypto_ HL absorbed $576M forced selling OFF- | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI -43.0% 1h",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -43.0% 1h",
-          "weight": 1.44
+          "signal": "Orderbook 25% bid (ask-heavy, bearish)",
+          "weight": 1.0
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udfe2 $HYPE] @ANCrypto_ HL absorbed $576M forced selling OFF-BOOK during liquidation cascade [score: 1.5]",
-          "weight": 1.2
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @crypto_ddadda Kaito Pulse launched: Yaps\u2192Aura, Polymarket+HL positions in X timeline. New KOL credibility ",
+          "weight": 0.8
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udfe2 $HYPE] @ai_9684xtpa (\ud83d\udc4d3) HL UNITREE 5x short \u2014 $526K floating loss, opened at $81.8 [score: 1.7]",
-          "weight": 1.1
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @starzq Unitree on Hyperliquid went live ~$70, already 5x from initial launch price [1.2]",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-08-19T02:40:18.095906+00:00"
+      "timestamp": "2026-08-19T02:50:19.503413+00:00"
     }
   },
   "pair_strategies": {
@@ -1560,204 +1547,204 @@
       {
         "text": "**Job ID:** 43ba1d393c5a",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
-        "text": "**Run Time:** 2026-08-19 10:29:06",
+        "text": "**Run Time:** 2026-08-19 10:46:52",
         "sentiment": 0,
-        "time": "2026-08-19 10:29"
+        "time": "2026-08-19 10:46"
       },
       {
         "text": "**Schedule:** 5,35 * * * *",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "[SYSTEM: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just produc",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "You are the Crypto Scanner Agent. Run BOTH the X scanner and Reddit scanner, then report results to Discord.",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "You MUST use a subagent to run Reddit scanner in parallel with X scanner. This saves ~5-9 minutes per cycle.",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "Spawn the Reddit subagent BEFORE starting x_scanner.py so they run in parallel:",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "delegate_task(",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "goal=\"Run the Reddit crypto scanner and write results to a temp file\",",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "context=\"Run this command: cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/reddit_scanner.py 2>&1. Wait for it to complete (may take 5-9 min)",
         "sentiment": -0.3,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "toolsets=[\"terminal\", \"file\"],",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "max_iterations=15",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": ")",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "Run the X scanner normally:",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/x_scanner.py 2>&1",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "Parse the JSON output as usual.",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       },
       {
         "text": "After x_scanner.py finishes:",
         "sentiment": 0,
-        "time": "1787106546.3331356"
+        "time": "1787107612.4891884"
       }
     ],
     "whale_monitor": [
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
-        "text": "**Run Time:** 2026-08-19 10:21:51",
+        "text": "**Run Time:** 2026-08-19 10:42:01",
         "sentiment": 0,
-        "time": "2026-08-19 10:21"
+        "time": "2026-08-19 10:42"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1787106111.3397627"
+        "time": "1787107321.9522421"
       }
     ],
     "news_agent": [
@@ -1862,32 +1849,32 @@
         "time": "1787107093.53527"
       }
     ],
-    "generated": "2026-08-19T02:40:18.116651Z"
+    "generated": "2026-08-19T02:50:19.522723Z"
   },
   "scanner_status": {
     "x_scanner": {
-      "last_run": "10:29",
-      "age_minutes": 11,
+      "last_run": "10:46",
+      "age_minutes": 3,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "10:21",
-      "age_minutes": 18,
+      "last_run": "10:42",
+      "age_minutes": 8,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "10:38",
-      "age_minutes": 2,
+      "age_minutes": 12,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "09:02",
-      "age_minutes": 98,
+      "age_minutes": 108,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "10:30",
-      "age_minutes": 10,
+      "last_run": "10:46",
+      "age_minutes": 4,
       "status": "fresh"
     }
   },
@@ -2247,24 +2234,24 @@
   },
   "pair_stats": {},
   "prices": {
-    "#11130": "0.7575",
-    "#11131": "0.2425",
-    "#11140": "0.92529",
-    "#11141": "0.07471",
-    "#11150": "0.98311",
-    "#11151": "0.01689",
-    "#11160": "0.055005",
-    "#11161": "0.944995",
+    "#11130": "0.73295",
+    "#11131": "0.26705",
+    "#11140": "0.92304",
+    "#11141": "0.07696",
+    "#11150": "0.980725",
+    "#11151": "0.019275",
+    "#11160": "0.053335",
+    "#11161": "0.946665",
     "#11170": "0.5",
     "#11171": "0.5",
     "#11180": "0.74833",
     "#11181": "0.25167",
     "#11190": "0.7985",
     "#11191": "0.2015",
-    "#11200": "0.003165",
-    "#11201": "0.996835",
-    "0G": "0.141255",
-    "2Z": "0.046339",
+    "#11200": "0.002665",
+    "#11201": "0.997335",
+    "0G": "0.141055",
+    "2Z": "0.046461",
     "@1": "14.6385",
     "@10": "0.0000705",
     "@100": "0.003622",
@@ -2274,7 +2261,7 @@
     "@104": "0.01825",
     "@105": "0.110335",
     "@106": "0.005081",
-    "@107": "58.3775",
+    "@107": "58.3815",
     "@108": "0.028854",
     "@109": "0.00048729",
     "@11": "0.000405",
@@ -2302,7 +2289,7 @@
     "@13": "0.00047543",
     "@130": "0.000018",
     "@131": "0.1242",
-    "@132": "0.00099",
+    "@132": "0.000991",
     "@133": "0.000043",
     "@134": "0.000803",
     "@135": "0.000012",
@@ -2313,7 +2300,7 @@
     "@14": "0.00007262",
     "@140": "0.000067",
     "@141": "0.012876",
-    "@142": "64343.5",
+    "@142": "64331.5",
     "@143": "0.002311",
     "@144": "0.000271",
     "@145": "0.000022",
@@ -2323,23 +2310,23 @@
     "@149": "1.0",
     "@15": "0.000146",
     "@150": "1.0",
-    "@151": "1908.85",
+    "@151": "1908.35",
     "@152": "0.96265",
     "@153": "1.001",
     "@154": "1.0",
     "@155": "0.00049",
-    "@156": "76.8325",
+    "@156": "76.75",
     "@157": "0.003123",
     "@158": "0.000011",
     "@159": "0.50177",
     "@16": "0.058574",
     "@160": "0.000668",
     "@161": "0.007133",
-    "@162": "0.13991",
+    "@162": "0.139755",
     "@163": "0.071103",
     "@164": "0.001056",
     "@165": "0.048118",
-    "@166": "0.999125",
+    "@166": "0.99916",
     "@167": "1.0",
     "@168": "1.0",
     "@169": "1.0",
@@ -2348,7 +2335,7 @@
     "@171": "1.12",
     "@172": "0.015453",
     "@173": "29900.5",
-    "@174": "0.319265",
+    "@174": "0.31805",
     "@175": "0.0095418",
     "@176": "0.000293",
     "@177": "0.017362",
@@ -2357,24 +2344,24 @@
     "@18": "0.010135",
     "@180": "0.8822",
     "@181": "1.0",
-    "@182": "4335.85",
+    "@182": "4336.9",
     "@183": "0.00975",
     "@184": "0.006068",
     "@185": "0.00171",
     "@186": "1.0",
     "@187": "0.000086",
-    "@188": "0.0030363",
+    "@188": "0.0030181",
     "@189": "620.0",
     "@19": "0.0113355",
     "@190": "0.004",
     "@191": "0.000204",
     "@192": "0.000285",
-    "@193": "0.31737",
+    "@193": "0.31725",
     "@194": "0.00000231",
     "@195": "0.000122",
     "@196": "0.000026",
     "@197": "1.0",
-    "@198": "0.068955",
+    "@198": "0.068575",
     "@199": "0.010185",
     "@2": "0.00004708",
     "@20": "0.00009245",
@@ -2384,16 +2371,16 @@
     "@203": "1.0",
     "@204": "0.03329",
     "@205": "1.00502",
-    "@206": "0.0836905",
-    "@207": "58.4635",
+    "@206": "0.083789",
+    "@207": "58.477",
     "@208": "0.008805",
     "@209": "4100.0",
     "@21": "0.0000165",
-    "@210": "0.0751955",
+    "@210": "0.07519",
     "@211": "0.0003",
     "@212": "8.7797",
-    "@213": "9.5318",
-    "@214": "0.427845",
+    "@213": "9.5225",
+    "@214": "0.427725",
     "@215": "0.0006105",
     "@216": "0.0362",
     "@217": "0.655005",
@@ -2406,9 +2393,9 @@
     "@223": "0.00068",
     "@224": "1.75",
     "@225": "0.005876",
-    "@226": "6.3515",
-    "@227": "87.18",
-    "@228": "0.046493",
+    "@226": "6.352",
+    "@227": "87.085",
+    "@228": "0.04659",
     "@229": "1.0",
     "@23": "0.18694",
     "@230": "0.996075",
@@ -2424,8 +2411,8 @@
     "@24": "0.00001996",
     "@240": "0.00135",
     "@241": "0.000314",
-    "@242": "0.016718",
-    "@243": "0.0216885",
+    "@242": "0.016725",
+    "@243": "0.0214185",
     "@244": "3.12485",
     "@245": "0.000919",
     "@246": "0.002745",
@@ -2434,55 +2421,55 @@
     "@249": "0.020388",
     "@25": "0.000218",
     "@250": "65.6",
-    "@251": "0.00598",
+    "@251": "0.005972",
     "@252": "0.057843",
     "@253": "0.768005",
     "@254": "0.20712",
-    "@255": "58.3445",
+    "@255": "58.3775",
     "@256": "0.02087",
     "@257": "0.1",
-    "@258": "0.03025",
+    "@258": "0.030053",
     "@259": "1.0",
     "@26": "0.000751",
-    "@260": "409.57",
+    "@260": "409.52",
     "@261": "0.002044",
     "@262": "1.0",
     "@263": "72.397",
     "@264": "14162.0",
     "@265": "57.1265",
     "@266": "343.375",
-    "@267": "0.998185",
+    "@267": "0.99787",
     "@268": "311.66",
-    "@269": "603.52",
+    "@269": "601.87",
     "@27": "0.00000995",
-    "@270": "0.193945",
+    "@270": "0.193045",
     "@271": "91.166",
-    "@272": "505.165",
+    "@272": "505.6",
     "@273": "78.0",
     "@274": "0.00000024",
     "@275": "1.3338",
     "@276": "405.105",
-    "@277": "602.93",
+    "@277": "602.14",
     "@278": "0.001548",
-    "@279": "775.465",
+    "@279": "775.91",
     "@28": "0.0001439",
-    "@280": "262.3",
+    "@280": "260.06",
     "@281": "0.00237395",
     "@282": "0.0000527",
     "@283": "0.055753",
     "@284": "0.005139",
-    "@285": "0.0118735",
-    "@286": "0.038552",
+    "@285": "0.0118585",
+    "@286": "0.038512",
     "@287": "553.385",
     "@288": "721.88",
     "@289": "483.305",
     "@29": "0.009152",
-    "@290": "0.57268",
+    "@290": "0.572385",
     "@291": "0.000476",
-    "@292": "0.041672",
+    "@292": "0.041591",
     "@293": "0.217425",
     "@294": "0.010355",
-    "@295": "0.006626",
+    "@295": "0.006609",
     "@296": "0.061664",
     "@297": "35.95",
     "@298": "0.003195",
@@ -2495,12 +2482,12 @@
     "@303": "0.56",
     "@304": "0.000285",
     "@305": "0.0777705",
-    "@306": "6.33865",
+    "@306": "6.32545",
     "@307": "190.885",
     "@308": "484.5",
     "@309": "1.0",
     "@31": "0.000025",
-    "@310": "0.091351",
+    "@310": "0.0913245",
     "@311": "0.0001",
     "@312": "0.99994",
     "@313": "0.5",
@@ -2526,9 +2513,9 @@
     "@331": "156.825",
     "@332": "1077.5",
     "@333": "934.14",
-    "@334": "0.117695",
+    "@334": "0.12481",
     "@335": "0.010131",
-    "@336": "59.7045",
+    "@336": "59.718",
     "@337": "0.99582",
     "@338": "0.00021",
     "@339": "0.08",
@@ -2550,7 +2537,7 @@
     "@36": "0.001155",
     "@367": "0.000631",
     "@37": "0.00007374",
-    "@370": "0.040974",
+    "@370": "0.041081",
     "@371": "0.0006",
     "@372": "0.99999",
     "@373": "0.014",
@@ -2655,7 +2642,7 @@
     "@462": "0.99299",
     "@463": "0.00003",
     "@464": "0.995",
-    "@465": "142.045",
+    "@465": "142.325",
     "@466": "0.98201",
     "@467": "0.00001",
     "@468": "0.00015",
@@ -2913,19 +2900,19 @@
     "@695": "0.99222",
     "@696": "0.99999",
     "@697": "0.0718",
-    "@698": "0.0439165",
-    "@699": "0.24013",
+    "@698": "0.0438465",
+    "@699": "0.23821",
     "@7": "0.00002308",
     "@70": "0.018088",
     "@700": "0.093082",
     "@701": "0.19075",
-    "@702": "219.415",
-    "@703": "771.12",
-    "@704": "718.44",
-    "@705": "152.75",
-    "@706": "928.25",
+    "@702": "219.41",
+    "@703": "771.435",
+    "@704": "718.76",
+    "@705": "153.255",
+    "@706": "930.55",
     "@707": "0.029878",
-    "@708": "22.21055",
+    "@708": "22.19455",
     "@709": "1.0",
     "@71": "1.0",
     "@710": "1.0",
@@ -2964,237 +2951,237 @@
     "@97": "0.040178",
     "@98": "1.0",
     "@99": "0.0175",
-    "AAVE": "87.1875",
-    "ACE": "0.2267",
-    "ADA": "0.174025",
-    "AERO": "0.40044",
+    "AAVE": "87.2105",
+    "ACE": "0.2327",
+    "ADA": "0.17394",
+    "AERO": "0.40022",
     "AI": "0.12555",
     "AI16Z": "0.06157",
-    "AIXBT": "0.017242",
-    "ALGO": "0.078503",
-    "ALT": "0.005828",
-    "ANIME": "0.002361",
-    "APE": "0.12223",
-    "APEX": "0.199995",
-    "APT": "0.5304",
-    "AR": "1.7527",
-    "ARB": "0.07572",
+    "AIXBT": "0.017234",
+    "ALGO": "0.078457",
+    "ALT": "0.005822",
+    "ANIME": "0.002363",
+    "APE": "0.1221",
+    "APEX": "0.197185",
+    "APT": "0.53",
+    "AR": "1.7511",
+    "ARB": "0.0755",
     "ARK": "0.10667",
-    "ASTER": "0.60029",
-    "ATOM": "1.4122",
-    "AVAX": "6.3457",
-    "AVNT": "0.085806",
-    "AXS": "0.8421",
-    "AZTEC": "0.011887",
-    "BABY": "0.010152",
+    "ASTER": "0.60034",
+    "ATOM": "1.4098",
+    "AVAX": "6.3431",
+    "AVNT": "0.085742",
+    "AXS": "0.84119",
+    "AZTEC": "0.011877",
+    "BABY": "0.010158",
     "BADGER": "0.88823",
-    "BANANA": "3.60795",
-    "BCH": "203.13",
-    "BERA": "0.14858",
-    "BIGTIME": "0.005163",
-    "BIO": "0.024814",
+    "BANANA": "3.586",
+    "BCH": "203.125",
+    "BERA": "0.14822",
+    "BIGTIME": "0.005164",
+    "BIO": "0.024682",
     "BLAST": "0.000456",
-    "BLUR": "0.013259",
+    "BLUR": "0.013198",
     "BLZ": "0.070043",
-    "BNB": "602.405",
+    "BNB": "602.005",
     "BNT": "0.38287",
-    "BOME": "0.000766",
-    "BRETT": "0.003651",
-    "BSV": "14.4015",
-    "BTC": "64367.5",
-    "CAKE": "1.51705",
+    "BOME": "0.000763",
+    "BRETT": "0.003647",
+    "BSV": "14.3885",
+    "BTC": "64341.5",
+    "CAKE": "1.5169",
     "CANTO": "0.066",
-    "CASHCAT": "0.08935",
+    "CASHCAT": "0.087748",
     "CATI": "0.082821",
-    "CC": "0.090149",
-    "CELO": "0.058154",
-    "CFX": "0.041042",
+    "CC": "0.090003",
+    "CELO": "0.058147",
+    "CFX": "0.041124",
     "CHILLGUY": "0.012699",
-    "CHIP": "0.026125",
-    "COMP": "17.7545",
-    "CRV": "0.2404",
+    "CHIP": "0.026009",
+    "COMP": "17.76",
+    "CRV": "0.2402",
     "CYBER": "1.0415",
-    "DASH": "29.6725",
-    "DOGE": "0.069949",
+    "DASH": "29.671",
+    "DOGE": "0.069924",
     "DOOD": "0.001412",
-    "DOT": "0.75433",
-    "DYDX": "0.10176",
-    "DYM": "0.01425",
-    "EIGEN": "0.1674",
-    "ENA": "0.083742",
-    "ENS": "3.8232",
-    "ETC": "6.0862",
-    "ETH": "1908.75",
-    "ETHFI": "0.48454",
-    "FARTCOIN": "0.14022",
-    "FET": "0.12116",
-    "FIL": "0.63477",
-    "FOGO": "0.008063",
+    "DOT": "0.7541",
+    "DYDX": "0.1016",
+    "DYM": "0.01424",
+    "EIGEN": "0.1667",
+    "ENA": "0.083794",
+    "ENS": "3.8143",
+    "ETC": "6.0821",
+    "ETH": "1908.15",
+    "ETHFI": "0.48294",
+    "FARTCOIN": "0.14008",
+    "FET": "0.12097",
+    "FIL": "0.63482",
+    "FOGO": "0.008058",
     "FRIEND": "4.72",
     "FTM": "0.71688",
     "FTT": "0.32243",
     "FXS": "0.65538",
-    "GALA": "0.00136",
-    "GAS": "0.93083",
-    "GMT": "0.005936",
-    "GMX": "6.4762",
-    "GOAT": "0.012557",
-    "GRAM": "1.31755",
-    "GRASS": "0.30929",
-    "GRIFFAIN": "0.011751",
-    "HBAR": "0.067717",
-    "HEMI": "0.00698",
+    "GALA": "0.001358",
+    "GAS": "0.93068",
+    "GMT": "0.00592",
+    "GMX": "6.4725",
+    "GOAT": "0.012554",
+    "GRAM": "1.31725",
+    "GRASS": "0.30871",
+    "GRIFFAIN": "0.011736",
+    "HBAR": "0.067503",
+    "HEMI": "0.006954",
     "HMSTR": "0.000172",
     "HPOS": "0.041873",
-    "HYPE": "58.3205",
-    "HYPER": "0.06193",
-    "ICP": "2.19445",
+    "HYPE": "58.3425",
+    "HYPER": "0.061926",
+    "ICP": "2.1937",
     "ILV": "12.118",
-    "IMX": "0.09657",
-    "INIT": "0.051246",
-    "INJ": "4.1379",
-    "IO": "0.11528",
-    "IOTA": "0.032878",
+    "IMX": "0.09674",
+    "INIT": "0.051404",
+    "INJ": "4.13885",
+    "IO": "0.11567",
+    "IOTA": "0.032872",
     "IP": "0.31703",
     "JELLY": "0.037555",
-    "JTO": "0.545675",
-    "JUP": "0.16622",
-    "KAITO": "0.339045",
+    "JTO": "0.547045",
+    "JUP": "0.16612",
+    "KAITO": "0.341505",
     "KAS": "0.025193",
     "LAUNCHCOIN": "0.060367",
-    "LAYER": "0.060041",
-    "LDO": "0.3035",
-    "LINEA": "0.002084",
-    "LINK": "9.53475",
+    "LAYER": "0.060035",
+    "LDO": "0.30346",
+    "LINEA": "0.00208",
+    "LINK": "9.526",
     "LISTA": "0.12466",
-    "LIT": "2.34055",
+    "LIT": "2.33685",
     "LOOM": "0.071161",
-    "LTC": "44.3685",
-    "MANTA": "0.0554",
+    "LTC": "44.3585",
+    "MANTA": "0.05538",
     "MATIC": "0.37621",
     "MAV": "0.015456",
     "MAVIA": "0.03725",
-    "ME": "0.05796",
-    "MEGA": "0.031856",
-    "MELANIA": "0.07019",
+    "ME": "0.05799",
+    "MEGA": "0.03195",
+    "MELANIA": "0.07031",
     "MEME": "0.000458",
-    "MERL": "0.017664",
-    "MET": "0.17252",
+    "MERL": "0.017697",
+    "MET": "0.171755",
     "MEW": "0.00064",
-    "MINA": "0.040007",
+    "MINA": "0.040014",
     "MKR": "1831.5",
-    "MNT": "0.42795",
-    "MON": "0.02167",
-    "MOODENG": "0.035143",
-    "MORPHO": "2.0598",
-    "MOVE": "0.005996",
+    "MNT": "0.42792",
+    "MON": "0.021411",
+    "MOODENG": "0.035061",
+    "MORPHO": "2.05955",
+    "MOVE": "0.005981",
     "MYRO": "0.015813",
-    "NEAR": "1.59295",
+    "NEAR": "1.58865",
     "NEIROETH": "0.01808",
-    "NEO": "1.6861",
+    "NEO": "1.6843",
     "NFTI": "6.5609",
-    "NIL": "0.043793",
-    "NOT": "0.000376",
+    "NIL": "0.043781",
+    "NOT": "0.000375",
     "NTRN": "0.1238",
-    "NXPC": "0.20644",
+    "NXPC": "0.20631",
     "OGN": "0.055683",
     "OM": "0.06527",
     "OMNI": "4.1915",
-    "ONDO": "0.3228",
-    "OP": "0.08145",
+    "ONDO": "0.32353",
+    "OP": "0.08137",
     "ORBS": "0.01939",
-    "ORDI": "3.4029",
+    "ORDI": "3.3966",
     "OX": "0.007459",
     "PANDORA": "3026.3",
-    "PAXG": "4352.45",
-    "PENDLE": "1.30675",
-    "PENGU": "0.006081",
-    "PEOPLE": "0.007473",
+    "PAXG": "4353.25",
+    "PENDLE": "1.30665",
+    "PENGU": "0.006079",
+    "PEOPLE": "0.00745",
     "PIXEL": "0.024027",
-    "PNUT": "0.0417",
-    "POL": "0.082612",
-    "POLYX": "0.028063",
-    "POPCAT": "0.040835",
+    "PNUT": "0.04168",
+    "POL": "0.081867",
+    "POLYX": "0.02801",
+    "POPCAT": "0.040845",
     "PROMPT": "0.03661",
-    "PROVE": "0.155235",
-    "PUMP": "0.003039",
-    "PURR": "0.073641",
+    "PROVE": "0.154995",
+    "PUMP": "0.003017",
+    "PURR": "0.073647",
     "PURR/USDC": "0.0733185",
-    "PYTH": "0.038335",
+    "PYTH": "0.038266",
     "RDNT": "0.018328",
-    "RENDER": "1.25935",
+    "RENDER": "1.25775",
     "REQ": "0.15473",
-    "RESOLV": "0.017382",
-    "REZ": "0.002607",
+    "RESOLV": "0.017369",
+    "REZ": "0.002608",
     "RLB": "0.071",
     "RNDR": "6.8952",
-    "RSR": "0.001151",
-    "RUNE": "0.39902",
-    "S": "0.021297",
-    "SAGA": "0.01322",
-    "SAND": "0.038446",
+    "RSR": "0.001149",
+    "RUNE": "0.39668",
+    "S": "0.021263",
+    "SAGA": "0.01321",
+    "SAND": "0.03837",
     "SCR": "0.04737",
-    "SEI": "0.038591",
+    "SEI": "0.038545",
     "SHIA": "0.000621",
-    "SKR": "0.007028",
-    "SKY": "0.056254",
-    "SNX": "0.19129",
-    "SOL": "76.8565",
-    "SOPH": "0.003289",
-    "SPX": "0.3178",
-    "STABLE": "0.03019",
-    "STBL": "0.026148",
+    "SKR": "0.007032",
+    "SKY": "0.05625",
+    "SNX": "0.19109",
+    "SOL": "76.7725",
+    "SOPH": "0.003288",
+    "SPX": "0.31767",
+    "STABLE": "0.029985",
+    "STBL": "0.026125",
     "STG": "0.15387",
     "STRAX": "1.5829",
-    "STRK": "0.02261",
-    "STX": "0.11969",
-    "SUI": "0.65349",
-    "SUPER": "0.086232",
-    "SUSHI": "0.16036",
-    "SYRUP": "0.158615",
-    "TAO": "190.82",
-    "TIA": "0.29992",
-    "TNSR": "0.03111",
+    "STRK": "0.02257",
+    "STX": "0.11918",
+    "SUI": "0.65222",
+    "SUPER": "0.086217",
+    "SUSHI": "0.16013",
+    "SYRUP": "0.158135",
+    "TAO": "190.765",
+    "TIA": "0.29927",
+    "TNSR": "0.03113",
     "TON": "1.8014",
-    "TRB": "13.0955",
-    "TRUMP": "1.40595",
-    "TRX": "0.332335",
+    "TRB": "13.084",
+    "TRUMP": "1.40615",
+    "TRX": "0.332165",
     "TST": "0.017491",
-    "TURBO": "0.00076",
-    "UMA": "0.31843",
-    "UNI": "3.2825",
+    "TURBO": "0.000761",
+    "UMA": "0.31824",
+    "UNI": "3.28375",
     "UNIBOT": "7.636",
     "USTC": "0.007534",
-    "USUAL": "0.00871",
-    "VINE": "0.007168",
-    "VIRTUAL": "0.57373",
-    "VVV": "13.7465",
-    "W": "0.00807",
-    "WCT": "0.033477",
-    "WIF": "0.136395",
-    "WLD": "0.31477",
-    "WLFI": "0.060571",
-    "XAI": "0.00721",
-    "XLM": "0.154855",
-    "XMR": "410.325",
-    "XPL": "0.075191",
-    "XRP": "0.998365",
-    "YGG": "0.019232",
+    "USUAL": "0.0087",
+    "VINE": "0.007103",
+    "VIRTUAL": "0.57264",
+    "VVV": "13.7705",
+    "W": "0.00805",
+    "WCT": "0.033432",
+    "WIF": "0.136195",
+    "WLD": "0.31508",
+    "WLFI": "0.06038",
+    "XAI": "0.00725",
+    "XLM": "0.15498",
+    "XMR": "410.43",
+    "XPL": "0.075239",
+    "XRP": "0.998155",
+    "YGG": "0.019196",
     "YZY": "0.31107",
-    "ZEC": "506.055",
-    "ZEN": "3.8337",
+    "ZEC": "506.155",
+    "ZEN": "3.8315",
     "ZEREBRO": "0.032083",
-    "ZETA": "0.02689",
-    "ZK": "0.007522",
-    "ZORA": "0.004756",
-    "ZRO": "0.79961",
-    "kBONK": "0.002318",
+    "ZETA": "0.02676",
+    "ZK": "0.007496",
+    "ZORA": "0.00475",
+    "ZRO": "0.79883",
+    "kBONK": "0.002317",
     "kDOGS": "0.13659",
     "kFLOKI": "0.019959",
-    "kLUNC": "0.047462",
-    "kNEIRO": "0.0629",
-    "kPEPE": "0.002594",
-    "kSHIB": "0.004445"
+    "kLUNC": "0.047534",
+    "kNEIRO": "0.06278",
+    "kPEPE": "0.002591",
+    "kSHIB": "0.004443"
   },
   "actions": [
     "\ud83d\uded1 CIRCUIT BREAKER: drawdown 11.0% exceeds 10.0% \u2014 closing all positions and halting new entries"
