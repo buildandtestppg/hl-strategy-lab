@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": 0.17,
+    "score": -0.17,
     "confidence": 0.6,
     "sources": [
       "x_scanner",
@@ -10,7 +10,7 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udfe0 $BTC] @CoinRemark (\ud83d\udc4d1) Institutional BTC ETF holdings r | whale_monitor: Orderbook 66% bid-weighted (bullish)",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udfe0 $BTC] @CoinRemark (\ud83d\udc4d1) Institutional BTC ETF holdings r | whale_monitor: Orderbook 32% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -24,34 +24,40 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 66% bid-weighted (bullish)",
-        "weight": 0.64
+        "signal": "Orderbook 32% bid (ask-heavy, bearish)",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-19T14:40:27.375897+00:00"
+    "timestamp": "2026-08-19T14:45:27.546197+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +294.0% 1h, funding 0.0000%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | oi_funding: OI -63.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +294.0% 1h, funding 0.0000%",
+        "signal": "OI -63.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 35% bid (ask-heavy, bearish)",
+        "weight": 0.6
       }
     ],
-    "timestamp": "2026-08-19T14:40:27.375910+00:00"
+    "timestamp": "2026-08-19T14:45:27.546212+00:00"
   },
   "SOL": {
-    "score": -1.0,
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
       "whale_monitor"
@@ -60,28 +66,28 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 33% bid (ask-heavy, bearish)",
+    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 96% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
-        "weight": 0.68
+        "signal": "Orderbook 96% bid-weighted (bullish)",
+        "weight": 1.84
       }
     ],
-    "timestamp": "2026-08-19T14:40:27.375917+00:00"
+    "timestamp": "2026-08-19T14:45:27.546219+00:00"
   },
   "HYPE": {
-    "score": 0.57,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "whale_monitor"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd35 $HYPE] @SolanaFloor (\ud83d\udc4d7 \ud83d\udd041) Pumpfun continues to outpac | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd35 $HYPE] @SolanaFloor (\ud83d\udc4d7 \ud83d\udd041) Pumpfun continues to outpac | whale_monitor: Orderbook 80% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -90,10 +96,10 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 36% bid (ask-heavy, bearish)",
-        "weight": 0.56
+        "signal": "Orderbook 80% bid-weighted (bullish)",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-08-19T14:40:27.375925+00:00"
+    "timestamp": "2026-08-19T14:45:27.546227+00:00"
   }
 }
