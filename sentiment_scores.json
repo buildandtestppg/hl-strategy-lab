@@ -1,17 +1,18 @@
 {
   "BTC": {
-    "score": 0.17,
-    "confidence": 0.84,
+    "score": -0.01,
+    "confidence": 0.6,
     "sources": [
       "x_scanner",
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @astronomer_zero (\ud83d\udc4d45 \ud83d\udd041) Multi-day positional lo | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | oi_funding: OI +49.0% 1h, funding 0.0013%",
+    "signal_count": 10,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 2,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @astronomer_zero (\ud83d\udc4d45 \ud83d\udd041) Multi-day positional lo | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | news_agent: Now format the Discord message. The two truly notable items ",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -25,24 +26,26 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +49.0% 1h, funding 0.0013%",
+        "signal": "OI +31.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-20T04:40:05.711276+00:00"
+    "timestamp": "2026-08-20T04:45:06.445393+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
+      "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 5,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @pveonop (\ud83d\udc4d1 \ud83d\udd042) $PvE contract whitelisted clear | oi_funding: OI +95.0% 1h, funding 0.0013%",
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @pveonop (\ud83d\udc4d1 \ud83d\udd042) $PvE contract whitelisted clear | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | news_agent: BTC` \u2014 [CoinDesk](https://www.coindesk.com/markets/2026/08/2",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -51,24 +54,30 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +95.0% 1h, funding 0.0013%",
+        "signal": "OI +23.0% 1h, funding 0.0013%",
         "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "BTC` \u2014 [CoinDesk](https://www.coindesk.com/markets/2026/08/20/bearish-crypto-bets-lose-record-usd2-7-billion-as-bitcoin-",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-08-20T04:40:05.711291+00:00"
+    "timestamp": "2026-08-20T04:45:06.445411+00:00"
   },
   "SOL": {
-    "score": -0.15,
-    "confidence": 0.5,
+    "score": -0.89,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83e\udde0 $SOL] @lvn_crypto (\ud83d\udc4d0 \ud83d\udd040) \"Everyone talks about decoupl | oi_funding: OI +22.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83e\udde0 $SOL] @lvn_crypto (\ud83d\udc4d0 \ud83d\udd040) \"Everyone talks about decoupl | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI -18.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -77,11 +86,16 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +22.0% 1h, funding 0.0013%",
+        "signal": "OI -18.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 61% bid-weighted (bullish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-08-20T04:40:05.711300+00:00"
+    "timestamp": "2026-08-20T04:45:06.445423+00:00"
   },
   "HYPE": {
     "score": 0.82,
@@ -94,7 +108,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @_WOO_X (\ud83d\udc4d2 \ud83d\udd040) CFTC reportedly working on comp | oi_funding: OI +69.0% 1h, funding 0.0038%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @_WOO_X (\ud83d\udc4d2 \ud83d\udd040) CFTC reportedly working on comp | oi_funding: OI +62.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -112,6 +126,6 @@
         "weight": 2.54
       }
     ],
-    "timestamp": "2026-08-20T04:40:05.711310+00:00"
+    "timestamp": "2026-08-20T04:45:06.445433+00:00"
   }
 }
