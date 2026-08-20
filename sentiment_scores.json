@@ -1,52 +1,57 @@
 {
   "BTC": {
-    "score": 0.26,
-    "confidence": 0.5,
+    "score": 0.79,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @CointribuneEN (\ud83d\udc4d0 \ud83d\udd040) @vaneck_us  Flags 8 of 12 | oi_funding: OI +44.0% 1h, funding 0.0013%",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC ETF] @HIT (\ud83d\udc4d15 \ud83d\udd0412) Spot BTC ETFs draw $517M net i | oi_funding: OI +44.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\u26a0\ufe0f $BTC] @CointribuneEN (\ud83d\udc4d0 \ud83d\udd040) @vaneck_us  Flags 8 of 12 Capitulation Signals For  $BTC   While bitcoin struggles to",
-        "weight": 1.6
+        "signal": "\u2022 [\ud83d\udcc8 $BTC ETF] @HIT (\ud83d\udc4d15 \ud83d\udd0412) Spot BTC ETFs draw $517M net inflows, largest in 3.5 months. BTC surges 8.6% to ~$70K [sco",
+        "weight": 3.36
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $BTC] @TheColdest0x (\ud83d\udc4d5 \ud83d\udd042) 9.9% of global connected pop (560M+) actively owns crypto \u2014 still early [score: 2.8]",
+        "weight": 1.82
       },
       {
         "source": "oi_funding",
         "signal": "OI +44.0% 1h, funding 0.0013%",
         "weight": 1.44
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $BTC] @CRBOTSignals (\ud83d\udc4d1 \ud83d\udd040) The squeeze lit the fuse, but  $BTC  now needs genuine spot buyers to hold the breakout",
-        "weight": 1.28
       }
     ],
-    "timestamp": "2026-08-20T07:25:31.183608+00:00"
+    "timestamp": "2026-08-20T07:30:31.840722+00:00"
   },
   "ETH": {
-    "score": 0.08,
+    "score": 0.13,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 5,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @WhaleFactor (\ud83d\udc4d1 \ud83d\udd040)  WHALE WATCH : The crypto ma | oi_funding: OI -17.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @ItsBitcoinWorld HL whale pension-usdt.eth liqui | oi_funding: OI -17.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $ETH] @WhaleFactor (\ud83d\udc4d1 \ud83d\udd040)  WHALE WATCH : The crypto market has exploded sharply over the past 24 hours.  The top 5",
-        "weight": 1.69
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @ItsBitcoinWorld HL whale pension-usdt.eth liquidated on 50k $ETH short (~$106M), ~$23.9M loss [score: 2.5]",
+        "weight": 1.62
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $ETH] @gmnome (\ud83d\udc4d1) ETH long setup: Entry 2150-2260, TP 2300-2500, SL 2050. Breakout from 1820 base [score: 1.6]",
+        "weight": 1.52
       },
       {
         "source": "oi_funding",
@@ -54,59 +59,48 @@
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-20T07:25:31.183621+00:00"
+    "timestamp": "2026-08-20T07:30:31.840737+00:00"
   },
   "SOL": {
-    "score": 0.88,
+    "score": 0.33,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI +11.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +11.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 32% bid (ask-heavy, bearish)",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-08-20T07:30:31.840746+00:00"
+  },
+  "HYPE": {
+    "score": -0.24,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @0xSweep (\ud83d\udc4d56 \ud83d\udd0410) $SOL  just broke above the 20W | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI +11.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @bryantheden (\ud83d\udc4d12) $HYPE making moves. HL clear | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -18.0% 1h",
     "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $SOL] @0xSweep (\ud83d\udc4d56 \ud83d\udd0410) $SOL  just broke above the 20W EMA level  Last time this happened Solana pumped 60% in jus",
-        "weight": 2.4
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udd28 $SOL] @Ozzxy (\ud83d\udc4d0 \ud83d\udd040) Something big is getting ready to launch at  https:// three.ws.  Agent Deployer. On-chain Agen",
-        "weight": 1.62
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI +11.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-08-20T07:25:31.183634+00:00"
-  },
-  "HYPE": {
-    "score": -0.77,
-    "confidence": 1.0,
-    "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 5,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @cockpit_xyz (\ud83d\udc4d0 \ud83d\udd040)  A crypto trader who made $ | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -18.0% 1h",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @cockpit_xyz (\ud83d\udc4d0 \ud83d\udd040)  A crypto trader who made $49M shorting the market lost nearly $24M in just 12 seconds ",
-        "weight": 2.0
-      },
       {
         "source": "oi_funding",
         "signal": "OI -18.0% 1h",
@@ -114,10 +108,15 @@
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\u26a0\ufe0f $HYPE] @ArkadiBaudelair (\ud83d\udc4d1 \ud83d\udd040) What is Hyperliquid, and why is  $HYPE  different from any other cryptocurrency?  ",
-        "weight": 1.3
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @bryantheden (\ud83d\udc4d12) $HYPE making moves. HL cleared $185B perp vol last month, $41M+ fees [score: 1.9]",
+        "weight": 1.23
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-08-20T07:25:31.183644+00:00"
+    "timestamp": "2026-08-20T07:30:31.840755+00:00"
   }
 }
