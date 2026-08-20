@@ -1,15 +1,16 @@
 {
   "BTC": {
-    "score": -0.65,
-    "confidence": 0.3,
+    "score": -0.83,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @CryptoSantoso $BTC saw $2.7B in shorts flushed \u2014",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @CryptoSantoso $BTC saw $2.7B in shorts flushed \u2014 | whale_monitor: Orderbook 27% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -17,20 +18,20 @@
         "weight": 0.95
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc9 $BTC] @OnchainIns5699 (\ud83d\udc4d1 \ud83d\udcac1) $2.98B liquidated across 174,350 traders \u2014 8th-largest single liquidation event [1.6]",
-        "weight": 0.8
+        "source": "whale_monitor",
+        "signal": "Orderbook 27% bid (ask-heavy, bearish)",
+        "weight": 0.92
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfe6 $BTC] @klaybrowning_ (\ud83d\udc4d1 \ud83d\udd041) TRUMP INSIDER with 100% win rate opened $32.4M $BTC SHORT \u2014 called every major move th",
-        "weight": 0.65
+        "signal": "\u2022 [\ud83d\udcc9 $BTC] @OnchainIns5699 (\ud83d\udc4d1 \ud83d\udcac1) $2.98B liquidated across 174,350 traders \u2014 8th-largest single liquidation event [1.6]",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-20T02:40:46.487184+00:00"
+    "timestamp": "2026-08-20T02:45:46.638212+00:00"
   },
   "ETH": {
-    "score": -0.23,
+    "score": -0.35,
     "confidence": 0.6,
     "sources": [
       "x_scanner",
@@ -40,8 +41,13 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @lookonchain (\ud83d\udc4d65 \ud83d\udd0411) Smart trader pension-usdt. | oi_funding: OI -4.0% 1h",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @lookonchain (\ud83d\udc4d65 \ud83d\udd0411) Smart trader pension-usdt. | oi_funding: OI -52.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -52.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $ETH] @lookonchain (\ud83d\udc4d65 \ud83d\udd0411) Smart trader pension-usdt.eth (23-win streak, $49M made) liquidated! 50K $ETH ($106M) ",
@@ -51,65 +57,59 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $ETH] @SkyFlame_x $500K $ETH @ $2,263 WHALE BUY [1.5]",
         "weight": 0.8
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$ETH] @lookonchain (\ud83d\udc4d65 \ud83d\udcac18) pension-usdt whale liquidated \u2014 50K ETH $106M short wiped",
-        "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-20T02:40:46.487200+00:00"
+    "timestamp": "2026-08-20T02:45:46.638227+00:00"
   },
   "SOL": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 72% bid-weighted (bullish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 72% bid-weighted (bullish)",
-        "weight": 0.88
-      }
-    ],
-    "timestamp": "2026-08-20T02:40:46.487208+00:00"
-  },
-  "HYPE": {
-    "score": 0.08,
-    "confidence": 0.84,
-    "sources": [
-      "x_scanner",
-      "whale_monitor",
-      "oi_funding"
-    ],
-    "signal_count": 8,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe2 $HYPE] @Cointelegraph (\ud83d\udc4d20 \ud83d\udd042) UPDATE: Hyperliquid & ET | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | oi_funding: OI -7.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -16.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -7.0% 1h",
-        "weight": 1.26
-      },
+        "signal": "OI -16.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-20T02:45:46.638235+00:00"
+  },
+  "HYPE": {
+    "score": 0.87,
+    "confidence": 0.74,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udfe2 $HYPE] @Cointelegraph (\ud83d\udc4d20 \ud83d\udd042) UPDATE: Hyperliquid & ET | oi_funding: OI +35.0% 1h, funding 0.0047%",
+    "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 28% bid (ask-heavy, bearish)",
-        "weight": 0.88
+        "source": "oi_funding",
+        "signal": "OI +35.0% 1h, funding 0.0047%",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udfe2 $HYPE] @Cointelegraph (\ud83d\udc4d20 \ud83d\udd042) UPDATE: Hyperliquid & ETH outpacing every other major crypto asset in today's rally,",
         "weight": 0.65
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udc80 $HYPE] @0xWhaleHL (\ud83d\udc4d2) $HYPE whale liquidated \u2014 famous @pensionusdt lost 38M since June equity line high [1.6]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-20T02:40:46.487222+00:00"
+    "timestamp": "2026-08-20T02:45:46.638245+00:00"
   }
 }
