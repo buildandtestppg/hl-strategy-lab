@@ -1,18 +1,23 @@
 {
   "BTC": {
-    "score": 0.62,
-    "confidence": 0.7,
+    "score": -0.06,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
       "news_agent"
     ],
-    "signal_count": 6,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @QuintenFrancois (\ud83d\udc4d14) Both $BTC and $ETH seeing  | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | news_agent: oth classifier and keyword filter missed it (gap: no standal",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [$BTC] $1.2B liquidations in a single hour \u2014 shorts oblite | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | news_agent: oth classifier and keyword filter missed it (gap: no standal",
     "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$BTC] $1.2B liquidations in a single hour \u2014 shorts obliterated, mostly BTC + ETH [score: 1.55]",
+        "weight": 1.24
+      },
       {
         "source": "news_agent",
         "signal": "oth classifier and keyword filter missed it (gap: no standalone \"bitcoin\" keyword). The BoA article caught by keyword is",
@@ -22,54 +27,52 @@
         "source": "news_agent",
         "signal": "ll include the BTC one and note the keyword gap.  \ud83d\udfe2 **Notable** \u2022 **Bitcoin tops $77,000 as best week since 2023 pulls a",
         "weight": 0.98
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 27% bid (ask-heavy, bearish)",
-        "weight": 0.92
       }
     ],
-    "timestamp": "2026-08-21T10:55:27.301220+00:00"
+    "timestamp": "2026-08-21T11:00:27.787777+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "x_scanner"
-    ],
-    "signal_count": 1,
+    "score": 0.0,
+    "confidence": 0.0,
+    "sources": [],
+    "signal_count": 0,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc8e $ETH] @AbhasSirotha (\ud83d\udc4d1 \ud83d\udd041) ETFs bought crypto aggressi",
+    "narrative": "No active signals",
+    "key_signals": [],
+    "timestamp": "2026-08-21T11:00:27.787783+00:00"
+  },
+  "SOL": {
+    "score": 0.7,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "whale_monitor"
+    ],
+    "signal_count": 3,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @solana (\ud83d\udc4d40 \ud83d\udd047) We're in a new era of 350ms. Nex | whale_monitor: Orderbook 31% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udc8e $ETH] @AbhasSirotha (\ud83d\udc4d1 \ud83d\udd041) ETFs bought crypto aggressively: $BTC $606M (largest in 3mo), $ETH $220.7M (biggest sin",
-        "weight": 0.65
-      }
-    ],
-    "timestamp": "2026-08-21T10:55:27.301233+00:00"
-  },
-  "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 31% bid (ask-heavy, bearish)",
-    "key_signals": [
+        "signal": "\u2022 [\u26a1 $SOL] @solana (\ud83d\udc4d40 \ud83d\udd047) We're in a new era of 350ms. Next stop, 300ms [score: 4.8]",
+        "weight": 3.12
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $SOL] @axxel_ai (\ud83d\udc4d3 \ud83d\udd043) BTC +24.5% ETH +28.5% SOL +20.9% weekly. Big chunk in last 24h [score: 1.8]",
+        "weight": 1.17
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 31% bid (ask-heavy, bearish)",
         "weight": 0.76
       }
     ],
-    "timestamp": "2026-08-21T10:55:27.301241+00:00"
+    "timestamp": "2026-08-21T11:00:27.787798+00:00"
   },
   "HYPE": {
     "score": 1.0,
@@ -77,28 +80,23 @@
     "sources": [
       "x_scanner"
     ],
-    "signal_count": 4,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @sudeepb02 ETH funding rate on Hyperliquid brief",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Overdose_AI (\ud83d\udc4d47 \ud83d\udd0420) Midcaps looking good. $PU",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @sudeepb02 ETH funding rate on Hyperliquid briefly hit 23% APY \u2014 sharp bullish sentiment shift [1.5]",
-        "weight": 0.8
+        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @Overdose_AI (\ud83d\udc4d47 \ud83d\udd0420) Midcaps looking good. $PUMP up ~3x since bottom call, $HYPE up even more [score: 2.87",
+        "weight": 1.87
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udca1 $HYPE] @y_cryptoanalyst With $HYPE at ATH, next 1-2 months = optimal TGE window for HyperEVM. Half of top-20 TVL pr",
-        "weight": 0.8
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [$HYPE] @y_cryptoanalyst: $HYPE ATH \u2192 HyperEVM TGE window open. Top-20 TVL protocols: Valantis, Felix, Rysk, PRJX, Hyp",
-        "weight": 0.8
+        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @Tom_Degen68 (\ud83d\udc4d11 \ud83d\udd040) Bullish on crypto = bullish on volume = bullish on $HYPE. 99% fees go to burns [score:",
+        "weight": 1.66
       }
     ],
-    "timestamp": "2026-08-21T10:55:27.301248+00:00"
+    "timestamp": "2026-08-21T11:00:27.787807+00:00"
   }
 }
