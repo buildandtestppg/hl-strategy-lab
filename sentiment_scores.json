@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.92,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 6,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \ud83d\udc0b [Whale $BTC] @whale_alert (\ud83d\udc4d11 \ud83d\udd042) 2,191 $BTC ($169M) tran | whale_monitor: Orderbook 39% bid (ask-heavy, bearish)",
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \ud83d\udc0b [Whale $BTC] @whale_alert (\ud83d\udc4d11 \ud83d\udd042) 2,191 $BTC ($169M) tran | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +80.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -28,61 +29,85 @@
         "weight": 2.79
       }
     ],
-    "timestamp": "2026-08-21T17:00:21.755580+00:00"
+    "timestamp": "2026-08-21T17:05:22.472082+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.49,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \ud83d\udc0b [Whale $ETH] @whale_alert (\ud83d\udc4d14 \ud83d\udd041) 21,632 $ETH ($51.6M) tr",
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \ud83d\udc0b [Whale $ETH] @whale_alert (\ud83d\udc4d14 \ud83d\udd041) 21,632 $ETH ($51.6M) tr | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI -61.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\ud83d\udc0b [Whale $ETH] @whale_alert (\ud83d\udc4d14 \ud83d\udd041) 21,632 $ETH ($51.6M) transferred to Coinbase Institutional [score: 4.7]",
         "weight": 3.06
-      }
-    ],
-    "timestamp": "2026-08-21T17:00:21.755594+00:00"
-  },
-  "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 71% bid-weighted (bullish)",
-    "key_signals": [
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -61.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 71% bid-weighted (bullish)",
-        "weight": 0.84
+        "signal": "Orderbook 63% bid-weighted (bullish)",
+        "weight": 0.52
       }
     ],
-    "timestamp": "2026-08-21T17:00:21.755601+00:00"
+    "timestamp": "2026-08-21T17:05:22.472097+00:00"
+  },
+  "SOL": {
+    "score": 0.38,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI +76.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +76.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 34% bid (ask-heavy, bearish)",
+        "weight": 0.64
+      }
+    ],
+    "timestamp": "2026-08-21T17:05:22.472106+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: Massive BTC whale flows to Coinbase Institutional ($467M+ in | whale_monitor: Orderbook 62% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: Massive BTC whale flows to Coinbase Institutional ($467M+ in | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +37.0% 1h, funding 0.0048%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +37.0% 1h, funding 0.0048%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "Massive BTC whale flows to Coinbase Institutional ($467M+ in 5 txs) signal institutional accumulation. $HYPE hit a new A",
@@ -92,13 +117,8 @@
         "source": "x_scanner",
         "signal": "\ud83d\udd25 [$HYPE ATH] @MrketInsider (\ud83d\udc4d57 \ud83d\udcac32) BREAKING: $HYPE HITS A NEW ALL-TIME HIGH",
         "weight": 0.95
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 62% bid-weighted (bullish)",
-        "weight": 0.48
       }
     ],
-    "timestamp": "2026-08-21T17:00:21.755611+00:00"
+    "timestamp": "2026-08-21T17:05:22.472115+00:00"
   }
 }
