@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": 0.3,
+    "score": 0.17,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
@@ -10,7 +10,7 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @MaxCrypto (\ud83d\udc4d17 \ud83d\udd043) Whale $93M $BTC long at 40x l | whale_monitor: Orderbook 35% bid (ask-heavy, bearish)",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @MaxCrypto (\ud83d\udc4d17 \ud83d\udd043) Whale $93M $BTC long at 40x l | whale_monitor: Orderbook 20% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -28,30 +28,36 @@
         "weight": 1.43
       }
     ],
-    "timestamp": "2026-08-22T18:40:43.961286+00:00"
+    "timestamp": "2026-08-22T18:45:00.809823+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.22,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @AshCrypto (\ud83d\udc4d323 \ud83d\udd0432) $ETH last month outperforme",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @AshCrypto (\ud83d\udc4d323 \ud83d\udd0432) $ETH last month outperforme | oi_funding: OI -12.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @AshCrypto (\ud83d\udc4d323 \ud83d\udd0432) $ETH last month outperformed 45yr silver holder [score: 3.5]",
         "weight": 2.27
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -12.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-22T18:40:43.961301+00:00"
+    "timestamp": "2026-08-22T18:45:00.809836+00:00"
   },
   "SOL": {
-    "score": 0.6,
+    "score": 0.21,
     "confidence": 0.84,
     "sources": [
       "whale_monitor",
@@ -62,39 +68,38 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 90% bid-weighted (bullish) | polymarket: *BTC:** Consolidating ~$82.5K. $85K Aug target at 82.5%. Qui | oi_funding: OI +9.0% 1h, funding 0.0040%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 67% bid-weighted (bullish) | polymarket: *BTC:** Consolidating ~$82.5K. $85K Aug target at 82.5%. Qui | oi_funding: OI +4.0% 1h, funding 0.0047%",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 90% bid-weighted (bullish)",
-        "weight": 1.6
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI +9.0% 1h, funding 0.0040%",
-        "weight": 1.44
-      },
       {
         "source": "polymarket",
         "signal": "*BTC:** Consolidating ~$82.5K. $85K Aug target at 82.5%. Quiet.  **ETH:** Strong \u2014 $2,600 already hit this week (99.1%).",
         "weight": 0.96
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0047%",
+        "weight": 0.72
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 67% bid-weighted (bullish)",
+        "weight": 0.68
       }
     ],
-    "timestamp": "2026-08-22T18:40:43.961314+00:00"
+    "timestamp": "2026-08-22T18:45:00.809848+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.22,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @KookCapitalLLC (\ud83d\udc4d77 \ud83d\udd045) Most sidelined on hype  | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI +25.0% 1h, funding 0.0032%",
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @KookCapitalLLC (\ud83d\udc4d77 \ud83d\udd045) Most sidelined on hype  | oi_funding: OI -58.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -103,15 +108,10 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +25.0% 1h, funding 0.0032%",
+        "signal": "OI -58.0% 1h",
         "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 69% bid-weighted (bullish)",
-        "weight": 0.76
       }
     ],
-    "timestamp": "2026-08-22T18:40:43.961323+00:00"
+    "timestamp": "2026-08-22T18:45:00.809854+00:00"
   }
 }
