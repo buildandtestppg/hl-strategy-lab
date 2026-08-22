@@ -1,26 +1,26 @@
 {
   "BTC": {
-    "score": -0.18,
+    "score": -0.22,
     "confidence": 0.6,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 5,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udfe0 $BTC] @Alaouicapital (\ud83d\udc4d10 \ud83d\udd042) $63.6M whale: $24.67M $BT | whale_monitor: Orderbook 20% bid (ask-heavy, bearish)",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udfe0 $BTC] @Alaouicapital (\ud83d\udc4d10 \ud83d\udd042) $63.6M whale: $24.67M $BT | oi_funding: OI -42.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -42.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udfe0 $BTC] @Alaouicapital (\ud83d\udc4d10 \ud83d\udd042) $63.6M whale: $24.67M $BTC long (-$298K), $16.37M $ETH long [score: 2.0]",
         "weight": 1.3
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 20% bid (ask-heavy, bearish)",
-        "weight": 1.2
       },
       {
         "source": "x_scanner",
@@ -28,10 +28,10 @@
         "weight": 1.04
       }
     ],
-    "timestamp": "2026-08-22T12:40:09.359434+00:00"
+    "timestamp": "2026-08-22T12:45:09.930337+00:00"
   },
   "ETH": {
-    "score": 0.3,
+    "score": 0.2,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -42,7 +42,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @AshCrypto (\ud83d\udc4d239 \ud83d\udd0419) $ETH 2022 summer pump was + | polymarket: % no cuts in 2026.  **BTC:** Near $72K today (99.4%). 63% ch | oi_funding: OI -4.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @AshCrypto (\ud83d\udc4d239 \ud83d\udd0419) $ETH 2022 summer pump was + | polymarket: % no cuts in 2026.  **BTC:** Near $72K today (99.4%). 63% ch | oi_funding: OI -6.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -50,46 +50,52 @@
         "weight": 2.8
       },
       {
+        "source": "oi_funding",
+        "signal": "OI -6.0% 1h",
+        "weight": 1.08
+      },
+      {
         "source": "polymarket",
         "signal": "% no cuts in 2026.  **BTC:** Near $72K today (99.4%). 63% chance $80K this month. 84% $80K by year-end. Strong expiry re",
         "weight": 0.78
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
-        "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-22T12:40:09.359454+00:00"
+    "timestamp": "2026-08-22T12:45:09.930354+00:00"
   },
   "SOL": {
-    "score": 0.3,
-    "confidence": 0.5,
+    "score": -0.74,
+    "confidence": 0.84,
     "sources": [
+      "whale_monitor",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: piry repricing as Aug progresses.  **ETH:** 52% chance $2,60 | oi_funding: OI +8.0% 1h, funding 0.0024%",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | polymarket: piry repricing as Aug progresses.  **ETH:** 52% chance $2,60 | oi_funding: OI -32.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +8.0% 1h, funding 0.0024%",
+        "signal": "OI -32.0% 1h",
         "weight": 1.44
       },
       {
         "source": "polymarket",
         "signal": "piry repricing as Aug progresses.  **ETH:** 52% chance $2,600 this month. 97% above $2,300 today. Year-end crash targets",
         "weight": 0.78
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 62% bid-weighted (bullish)",
+        "weight": 0.48
       }
     ],
-    "timestamp": "2026-08-22T12:40:09.359463+00:00"
+    "timestamp": "2026-08-22T12:45:09.930364+00:00"
   },
   "HYPE": {
-    "score": -0.35,
+    "score": -0.29,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -100,7 +106,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe2 $HYPE] @ericonomic (\ud83d\udc4d25 \ud83d\udd041) Happy Hyperliquid TVL ATH ( | whale_monitor: Orderbook 65% bid-weighted (bullish) | oi_funding: OI -7.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udfe2 $HYPE] @ericonomic (\ud83d\udc4d25 \ud83d\udd041) Happy Hyperliquid TVL ATH ( | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI -98.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -113,11 +119,11 @@
         "weight": 1.68
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udca5 $HYPE] @blitzywins (\ud83d\udc4d2 \ud83d\udd040) Obvious exploit on Hyperliquid, glad they got them \u2014 building HL data product [score: 2.",
-        "weight": 1.37
+        "source": "oi_funding",
+        "signal": "OI -98.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-22T12:40:09.359474+00:00"
+    "timestamp": "2026-08-22T12:45:09.930375+00:00"
   }
 }
