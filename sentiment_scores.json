@@ -1,18 +1,23 @@
 {
   "BTC": {
-    "score": -0.28,
-    "confidence": 0.7,
+    "score": -0.76,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
       "polymarket"
     ],
     "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \ud83d\udcca [$BTC] @AgentRobinhood (\ud83d\udc4d1) $22.6M BTC short liquidation c | whale_monitor: Orderbook 65% bid-weighted (bullish) | polymarket: P $1.60 in August: 47.9% (+41.3pp, expiry) - SOL above $100 ",
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \ud83d\udcca [$BTC] @AgentRobinhood (\ud83d\udc4d1) $22.6M BTC short liquidation c | whale_monitor: Orderbook 26% bid (ask-heavy, bearish) | polymarket: P $1.60 in August: 47.9% (+41.3pp, expiry) - SOL above $100 ",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 26% bid (ask-heavy, bearish)",
+        "weight": 0.96
+      },
       {
         "source": "x_scanner",
         "signal": "\ud83d\udcca [$BTC] @AgentRobinhood (\ud83d\udc4d1) $22.6M BTC short liquidation cluster packed between 80,752-81,536 [1.5]",
@@ -22,18 +27,13 @@
         "source": "polymarket",
         "signal": "P $1.60 in August: 47.9% (+41.3pp, expiry) - SOL above $100 on Aug 22: 5.8% (likely expired/implied low)  **Bottom line:",
         "weight": 0.78
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\ud83d\udcca [$BTC] @octodamusai CME OI +13.4% vs flat Binance \u2014 institutional size building [2.5]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-22T03:30:11.386888+00:00"
+    "timestamp": "2026-08-22T03:35:11.676283+00:00"
   },
   "ETH": {
-    "score": -0.0,
-    "confidence": 0.6,
+    "score": -0.39,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -41,10 +41,10 @@
       "oi_funding"
     ],
     "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 2,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u26a1 [$ETH] @Insider6900 \"The pump will be glorious. People sti | whale_monitor: Orderbook 69% bid-weighted (bullish) | polymarket: 41.3pp, expiry) - SOL above $100 on Aug 22: 5.8% (likely exp",
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u26a1 [$ETH] @Insider6900 \"The pump will be glorious. People sti | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | polymarket: 41.3pp, expiry) - SOL above $100 on Aug 22: 5.8% (likely exp",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -62,47 +62,33 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-22T03:30:11.386906+00:00"
+    "timestamp": "2026-08-22T03:35:11.676301+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "whale_monitor"
-    ],
-    "signal_count": 1,
+    "score": 0.0,
+    "confidence": 0.0,
+    "sources": [],
+    "signal_count": 0,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 65% bid-weighted (bullish)",
-    "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 65% bid-weighted (bullish)",
-        "weight": 0.6
-      }
-    ],
-    "timestamp": "2026-08-22T03:30:11.386915+00:00"
+    "narrative": "No active signals",
+    "key_signals": [],
+    "timestamp": "2026-08-22T03:35:11.676303+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 8,
+    "signal_count": 7,
     "convergence": true,
-    "convergence_strength": 3,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \ud83d\udd25 [$HYPE] @_stevenhl (\ud83d\udc4d41 \ud83d\udd045) HYPE new ATHs above $80. Trump | whale_monitor: Orderbook 96% bid-weighted (bullish) | oi_funding: OI +7.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \ud83d\udd25 [$HYPE] @_stevenhl (\ud83d\udc4d41 \ud83d\udd045) HYPE new ATHs above $80. Trump | oi_funding: OI +7.0% 1h, funding 0.0013%",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 96% bid-weighted (bullish)",
-        "weight": 1.84
-      },
       {
         "source": "oi_funding",
         "signal": "OI +7.0% 1h, funding 0.0013%",
@@ -112,8 +98,13 @@
         "source": "x_scanner",
         "signal": "\ud83d\udd25 [$HYPE] @_stevenhl (\ud83d\udc4d41 \ud83d\udd045) HYPE new ATHs above $80. Trump CFTC working to bring Hyperliquid back to US [1.9]",
         "weight": 0.8
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\ud83d\udd25 [$HYPE] @elliotrades (\ud83d\udc4d71 \ud83d\udd047) $HYPE AND $ZEC ARE IN PRICE DISCOVERY [3.0]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-22T03:30:11.386928+00:00"
+    "timestamp": "2026-08-22T03:35:11.676316+00:00"
   }
 }
