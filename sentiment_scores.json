@@ -1,17 +1,23 @@
 {
   "BTC": {
-    "score": -0.4,
-    "confidence": 0.6,
+    "score": 0.09,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $BTC] @CacheTrading (\ud83d\udc4d6 \ud83d\udd041) $192m limit longs waiting 7 | whale_monitor: Orderbook 23% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @CacheTrading (\ud83d\udc4d6 \ud83d\udd041) $192m limit longs waiting 7 | whale_monitor: Orderbook 23% bid (ask-heavy, bearish) | oi_funding: OI +48.0% 1h, funding 0.0014%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +48.0% 1h, funding 0.0014%",
+        "weight": 1.44
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 23% bid (ask-heavy, bearish)",
@@ -21,28 +27,29 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $BTC] @CacheTrading (\ud83d\udc4d6 \ud83d\udd041) $192m limit longs waiting 75-76k range. Massive buy wall [1.9]",
         "weight": 0.8
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @Anarchoeconomy (\ud83d\udc4d4) Short liquidation zones: $78,548 \u2192 ~$2.59B in shorts [1.6]",
-        "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-22T14:55:30.521366+00:00"
+    "timestamp": "2026-08-22T15:00:31.324495+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": -0.1,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH] @danmcspirit \u2014 As ETH goes so goes LINEA. Looking f | whale_monitor: Orderbook 63% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH] @danmcspirit \u2014 As ETH goes so goes LINEA. Looking f | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI -67.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -67.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$ETH] @danmcspirit \u2014 As ETH goes so goes LINEA. Looking for upgrades to re-rate [2.5]",
@@ -54,21 +61,27 @@
         "weight": 0.52
       }
     ],
-    "timestamp": "2026-08-22T14:55:30.521384+00:00"
+    "timestamp": "2026-08-22T15:00:31.324511+00:00"
   },
   "SOL": {
     "score": -1.0,
-    "confidence": 0.74,
+    "confidence": 1.0,
     "sources": [
       "whale_monitor",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | polymarket: *BTC:** Consolidating ~$82.5K. $85K Aug target at 82.5%. Qui",
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 20% bid (ask-heavy, bearish) | polymarket: *BTC:** Consolidating ~$82.5K. $85K Aug target at 82.5%. Qui | oi_funding: OI -20.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -20.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 20% bid (ask-heavy, bearish)",
@@ -80,20 +93,26 @@
         "weight": 0.96
       }
     ],
-    "timestamp": "2026-08-22T14:55:30.521397+00:00"
+    "timestamp": "2026-08-22T15:00:31.324524+00:00"
   },
   "HYPE": {
-    "score": 0.24,
-    "confidence": 0.3,
+    "score": -0.27,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$HYPE] @shiva__pandit_ \u2014 Prop firms on HL: ~$70K exploit ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE] @shiva__pandit_ \u2014 Prop firms on HL: ~$70K exploit  | oi_funding: OI -67.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -67.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @shiva__pandit_ \u2014 Prop firms on HL: ~$70K exploit payouts in 48h, firms tightening [\u26a0\ufe0f]",
@@ -103,13 +122,8 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcb0 $HYPE] @aixbt_agent (\ud83d\udc4d8) TradeXYZ custody: HL doesn't count as burned. Only Assistance Fund HYPE = burned [1.8]",
         "weight": 0.65
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @HypeDojo \u2014 Whale long $6.365M HYPE at 3x leverage [1.5]",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-22T14:55:30.521405+00:00"
+    "timestamp": "2026-08-22T15:00:31.324533+00:00"
   }
 }
