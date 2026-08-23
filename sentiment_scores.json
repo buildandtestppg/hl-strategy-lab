@@ -1,16 +1,16 @@
 {
   "BTC": {
-    "score": -0.46,
+    "score": -0.48,
     "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @fiatarchive (\ud83d\udc4d2 \ud83d\udd040) $BTC \u2014 What a rip. Mid $64k  | whale_monitor: Orderbook 18% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @fiatarchive (\ud83d\udc4d2 \ud83d\udd040) $BTC \u2014 What a rip. Mid $64k  | oi_funding: OI -38.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -23,64 +23,78 @@
         "weight": 1.62
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 18% bid (ask-heavy, bearish)",
-        "weight": 1.28
+        "source": "oi_funding",
+        "signal": "OI -38.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-23T08:00:00.986496+00:00"
+    "timestamp": "2026-08-23T08:05:01.263738+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.06,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CkarenOsta870 (\ud83d\udc4d0 \ud83d\udd040) MASSIVE: ETFs bought nearl",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CkarenOsta870 (\ud83d\udc4d0 \ud83d\udd040) MASSIVE: ETFs bought nearl | oi_funding: OI -28.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @CkarenOsta870 (\ud83d\udc4d0 \ud83d\udd040) MASSIVE: ETFs bought nearly $700 million worth of $ETH this week. Largest buying since",
         "weight": 1.62
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -28.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-23T08:00:00.986509+00:00"
+    "timestamp": "2026-08-23T08:05:01.263753+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.04,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 22% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 83% bid-weighted (bullish) | oi_funding: OI -82.0% 1h",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI -82.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 22% bid (ask-heavy, bearish)",
-        "weight": 1.12
+        "signal": "Orderbook 83% bid-weighted (bullish)",
+        "weight": 1.32
       }
     ],
-    "timestamp": "2026-08-23T08:00:00.986517+00:00"
+    "timestamp": "2026-08-23T08:05:01.263761+00:00"
   },
   "HYPE": {
-    "score": 0.44,
-    "confidence": 0.3,
+    "score": 0.31,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @vodkamq (\ud83d\udc4d0 \ud83d\udd040) GM CT \u2014 The possibility of US a",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @vodkamq (\ud83d\udc4d0 \ud83d\udd040) GM CT \u2014 The possibility of US a | whale_monitor: Orderbook 86% bid-weighted (bullish) | oi_funding: OI -12.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -88,16 +102,16 @@
         "weight": 2.0
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @gem_detecter (\ud83d\udc4d116 \ud83d\udd040) guess who just called generation bottom on $EGG (HYPER)? the first real runner on Hy",
-        "weight": 1.37
+        "source": "whale_monitor",
+        "signal": "Orderbook 86% bid-weighted (bullish)",
+        "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @HuaHua_BTC (\ud83d\udc4d6 \ud83d\udd040) HYPE has a whale who isn't just dumping directly recently. They're using TWAP to sell sl",
-        "weight": 1.3
+        "source": "oi_funding",
+        "signal": "OI -12.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-23T08:00:00.986525+00:00"
+    "timestamp": "2026-08-23T08:05:01.263773+00:00"
   }
 }
