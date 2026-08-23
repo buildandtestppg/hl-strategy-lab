@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.91,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 6,
+    "signal_count": 7,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca BTC] @Cointelegraph (\ud83d\udc4d44 \ud83d\udd049) BULLISH: El Salvador conti | whale_monitor: Orderbook 65% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca BTC] @Cointelegraph (\ud83d\udc4d44 \ud83d\udd049) BULLISH: El Salvador conti | whale_monitor: Orderbook 83% bid-weighted (bullish) | oi_funding: OI -8.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -23,14 +24,34 @@
         "weight": 4.06
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca BTC] @langtusg0308 (\ud83d\udc4d4 \ud83d\udd042) Every time $BTC touches this key line, a new bull market followed. Still bullish on $BTC",
-        "weight": 1.28
+        "source": "oi_funding",
+        "signal": "OI -8.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-23T01:40:04.073271+00:00"
+    "timestamp": "2026-08-23T01:45:04.767110+00:00"
   },
   "ETH": {
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -73.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -73.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-23T01:45:04.767122+00:00"
+  },
+  "SOL": {
     "score": 1.0,
     "confidence": 0.74,
     "sources": [
@@ -41,54 +62,33 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +18.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI +32.0% 1h, funding 0.0034%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +18.0% 1h, funding 0.0013%",
+        "signal": "OI +32.0% 1h, funding 0.0034%",
         "weight": 1.44
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 60% bid-weighted (bullish)",
-        "weight": 0.4
+        "signal": "Orderbook 80% bid-weighted (bullish)",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-08-23T01:40:04.073288+00:00"
-  },
-  "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0034%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0034%",
-        "weight": 0.9
-      }
-    ],
-    "timestamp": "2026-08-23T01:40:04.073295+00:00"
+    "timestamp": "2026-08-23T01:45:04.767131+00:00"
   },
   "HYPE": {
-    "score": 0.41,
-    "confidence": 0.84,
+    "score": 0.6,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
-      "oi_funding"
+      "whale_monitor"
     ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca HYPE] @AlphaIntelMedia (\ud83d\udc4d2 \ud83d\udd042) $HYPE surged over 20% ne | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI -14.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca HYPE] @AlphaIntelMedia (\ud83d\udc4d2 \ud83d\udd042) $HYPE surged over 20% ne | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -96,16 +96,11 @@
         "weight": 2.24
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -14.0% 1h",
-        "weight": 1.44
-      },
-      {
         "source": "whale_monitor",
-        "signal": "Orderbook 70% bid-weighted (bullish)",
-        "weight": 0.8
+        "signal": "Orderbook 36% bid (ask-heavy, bearish)",
+        "weight": 0.56
       }
     ],
-    "timestamp": "2026-08-23T01:40:04.073304+00:00"
+    "timestamp": "2026-08-23T01:45:04.767139+00:00"
   }
 }
