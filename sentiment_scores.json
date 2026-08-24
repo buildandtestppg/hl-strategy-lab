@@ -1,15 +1,16 @@
 {
   "BTC": {
-    "score": 0.3,
-    "confidence": 0.3,
+    "score": 0.39,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 6,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a1 $BTC] @cryptorover (\ud83d\udc4d27 \ud83d\udd042) Whale made $20M in 7 days f",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $BTC] @cryptorover (\ud83d\udc4d27 \ud83d\udd042) Whale made $20M in 7 days f | whale_monitor: Orderbook 70% bid-weighted (bullish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -27,20 +28,20 @@
         "weight": 2.4
       }
     ],
-    "timestamp": "2026-08-24T10:40:51.924053+00:00"
+    "timestamp": "2026-08-24T10:45:52.071663+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.59,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd25 $ETH] @whale_alert (\ud83d\udc4d15 \ud83d\udd041) 59,484 $ETH ($146M) transfe | whale_monitor: Orderbook 65% bid-weighted (bullish)",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $ETH] @whale_alert (\ud83d\udc4d15 \ud83d\udd041) 59,484 $ETH ($146M) transfe | oi_funding: OI -39.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -53,25 +54,26 @@
         "weight": 2.47
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 65% bid-weighted (bullish)",
-        "weight": 0.6
+        "source": "oi_funding",
+        "signal": "OI -39.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-24T10:40:51.924073+00:00"
+    "timestamp": "2026-08-24T10:45:52.071677+00:00"
   },
   "SOL": {
-    "score": 0.79,
-    "confidence": 0.74,
+    "score": 0.63,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
+    "signal_count": 6,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $SOL] @0xnora_web3 (\ud83d\udc4d1 \ud83d\udd040) $POTSEM looking interesting  | whale_monitor: Orderbook 96% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\u26a1 $SOL] @0xnora_web3 (\ud83d\udc4d1 \ud83d\udd040) $POTSEM looking interesting  | whale_monitor: Orderbook 25% bid (ask-heavy, bearish) | oi_funding: OI +263.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -89,20 +91,21 @@
         "weight": 1.95
       }
     ],
-    "timestamp": "2026-08-24T10:40:51.924085+00:00"
+    "timestamp": "2026-08-24T10:45:52.071689+00:00"
   },
   "HYPE": {
-    "score": 0.71,
-    "confidence": 0.5,
+    "score": 0.43,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @SolanaFloor (\ud83d\udc4d18 \ud83d\udd040) Pumpfun has surpassed Hype | whale_monitor: Orderbook 29% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd25 $HYPE] @SolanaFloor (\ud83d\udc4d18 \ud83d\udd040) Pumpfun has surpassed Hype | whale_monitor: Orderbook 19% bid (ask-heavy, bearish) | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -116,10 +119,10 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 29% bid (ask-heavy, bearish)",
-        "weight": 0.84
+        "signal": "Orderbook 19% bid (ask-heavy, bearish)",
+        "weight": 1.24
       }
     ],
-    "timestamp": "2026-08-24T10:40:51.924093+00:00"
+    "timestamp": "2026-08-24T10:45:52.071698+00:00"
   }
 }
