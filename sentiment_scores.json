@@ -1,45 +1,48 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.76,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @SkyFlame_x $1.05M | $BTC @ $78,921 \u2014 WHALE BUY [",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @SkyFlame_x $1.05M | $BTC @ $78,921 \u2014 WHALE BUY [ | whale_monitor: Orderbook 18% bid (ask-heavy, bearish) | oi_funding: OI +56.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +56.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $BTC] @SkyFlame_x $1.05M | $BTC @ $78,921 \u2014 WHALE BUY [score: 1.5]",
         "weight": 1.42
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $BTC] @lanayangcrypto $BTC $64K\u2192$80K in one week. $3.5B leverage wiped, $1.9B ETF inflows [score: 1.5]",
-        "weight": 1.2
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $BTC] @WhaleFactor (\ud83d\udc4d4 \ud83d\udd041) BTC ETF 1D +4,284 BTC (+$336M) | 7D +$2.08B [score: 1.8]",
-        "weight": 1.17
+        "source": "whale_monitor",
+        "signal": "Orderbook 18% bid (ask-heavy, bearish)",
+        "weight": 1.28
       }
     ],
-    "timestamp": "2026-08-26T06:00:12.660182+00:00"
+    "timestamp": "2026-08-26T06:05:13.684460+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.59,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Victornguyen10x (\ud83d\udc4d29) Justin Sun withdraws 5000 ",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Victornguyen10x (\ud83d\udc4d29) Justin Sun withdraws 5000  | oi_funding: OI -41.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -57,31 +60,41 @@
         "weight": 1.49
       }
     ],
-    "timestamp": "2026-08-26T06:00:12.660193+00:00"
+    "timestamp": "2026-08-26T06:05:13.684478+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-26T06:00:12.660195+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "x_scanner"
+      "oi_funding"
     ],
-    "signal_count": 11,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Crypt0_DeFi $HYPE fresh ATH above $83, trading",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -13.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -13.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-26T06:05:13.684486+00:00"
+  },
+  "HYPE": {
+    "score": 0.7,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 13,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Crypt0_DeFi $HYPE fresh ATH above $83, trading | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | oi_funding: OI -29.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -89,16 +102,16 @@
         "weight": 2.0
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\u26a0\ufe0f $HYPE] @HypedLaunches $HYPE ATH above $83, price discovery \u2014 $100 next? [score: 2.0]",
-        "weight": 1.3
+        "source": "oi_funding",
+        "signal": "OI -29.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Btcofmemecoins1 (\ud83d\udc4d5 \ud83d\udd042) Murad right \u2014 stop trading, start holding. 4chan token +280% [score: 1.9]",
-        "weight": 1.23
+        "signal": "\u2022 [\u26a0\ufe0f $HYPE] @HypedLaunches $HYPE ATH above $83, price discovery \u2014 $100 next? [score: 2.0]",
+        "weight": 1.3
       }
     ],
-    "timestamp": "2026-08-26T06:00:12.660205+00:00"
+    "timestamp": "2026-08-26T06:05:13.684500+00:00"
   }
 }
