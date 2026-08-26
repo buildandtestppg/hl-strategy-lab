@@ -1,20 +1,20 @@
 {
   "BTC": {
-    "score": 0.74,
-    "confidence": 0.74,
+    "score": -0.13,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Don_Cassava $BTC weekly: open 62,876 \u2192 close 77, | oi_funding: OI +104.0% 1h, funding 0.0013%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Don_Cassava $BTC weekly: open 62,876 \u2192 close 77, | oi_funding: OI -43.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +104.0% 1h, funding 0.0013%",
+        "signal": "OI -43.0% 1h",
         "weight": 1.44
       },
       {
@@ -28,24 +28,24 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-26T14:40:31.783106+00:00"
+    "timestamp": "2026-08-26T14:45:32.565867+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": -0.38,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH] @WhaleFactor (\ud83d\udc4d4 \ud83d\udd041) BitMine accumulated another 20 | oi_funding: OI +9.0% 1h, funding 0.0013%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @WhaleFactor (\ud83d\udc4d4 \ud83d\udd041) BitMine accumulated another 20 | oi_funding: OI -87.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +9.0% 1h, funding 0.0013%",
+        "signal": "OI -87.0% 1h",
         "weight": 1.44
       },
       {
@@ -54,31 +54,37 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-26T14:40:31.783124+00:00"
+    "timestamp": "2026-08-26T14:45:32.565881+00:00"
   },
   "SOL": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 37% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 7% bid (ask-heavy, bearish) | oi_funding: OI -78.0% 1h",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 37% bid (ask-heavy, bearish)",
-        "weight": 0.52
+        "signal": "Orderbook 7% bid (ask-heavy, bearish)",
+        "weight": 1.72
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -78.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-26T14:40:31.783132+00:00"
+    "timestamp": "2026-08-26T14:45:32.565891+00:00"
   },
   "HYPE": {
-    "score": 0.22,
-    "confidence": 0.84,
+    "score": -1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -86,13 +92,13 @@
     ],
     "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE] @jina_coin Hyperliquid spot ETF: $7.5M net inflow, | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI +51.0% 1h, funding 0.0013%",
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [$HYPE] @jina_coin Hyperliquid spot ETF: $7.5M net inflow, | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | oi_funding: OI -95.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +51.0% 1h, funding 0.0013%",
+        "signal": "OI -95.0% 1h",
         "weight": 1.44
       },
       {
@@ -101,11 +107,11 @@
         "weight": 0.8
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 67% bid-weighted (bullish)",
-        "weight": 0.68
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $HYPE] @mdrafi34 (\ud83d\udc4d5) APT ~$0.62, crowd long-heavy but HL traders ~60% short. Liquidation data interesting. [1.9]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-26T14:40:31.783143+00:00"
+    "timestamp": "2026-08-26T14:45:32.565902+00:00"
   }
 }
