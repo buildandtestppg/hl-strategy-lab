@@ -1,23 +1,34 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": 0.17,
+    "confidence": 0.5,
     "sources": [
+      "x_scanner",
       "whale_monitor"
     ],
-    "signal_count": 1,
+    "signal_count": 5,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 20% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca $BTC] @cryptorover (\ud83d\udc4d62 \ud83d\udd0411) This whale made $7M in pro | whale_monitor: Orderbook 20% bid (ask-heavy, bearish)",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 20% bid (ask-heavy, bearish)",
-        "weight": 1.2
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $BTC] @cryptorover (\ud83d\udc4d62 \ud83d\udd0411) This whale made $7M in profits this week. Added another $47.19M to his $BTC long, now ",
+        "weight": 3.72
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $BTC] @whale_alert (\ud83d\udc4d12 \ud83d\udd041) 671 $BTC ($53.2M) transferred from Coinbase Institutional to unknown wallet. [score: 4.",
+        "weight": 2.94
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $BTC] @GordonGekko (\ud83d\udc4d76 \ud83d\udd0418) $BTC bear market is over. Congrats to those who bought at $60K. Those who didn't \u2014 sti",
+        "weight": 2.93
       }
     ],
-    "timestamp": "2026-08-27T15:05:27.833934+00:00"
+    "timestamp": "2026-08-27T15:10:28.750453+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -37,41 +48,53 @@
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-27T15:05:27.833946+00:00"
+    "timestamp": "2026-08-27T15:10:28.750465+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -370.0% 1h",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -370.0% 1h",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-08-27T15:05:27.833953+00:00"
-  },
-  "HYPE": {
-    "score": -0.04,
+    "score": 0.25,
     "confidence": 0.5,
     "sources": [
-      "whale_monitor",
+      "x_scanner",
       "oi_funding"
     ],
     "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 11% bid (ask-heavy, bearish) | oi_funding: OI +22.0% 1h, funding 0.0013%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @Junior_crypto_0 (\ud83d\udc4d22 \ud83d\udd040) Tested Sibylens early a | oi_funding: OI -370.0% 1h",
     "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\u26a1 $SOL] @Junior_crypto_0 (\ud83d\udc4d22 \ud83d\udd040) Tested Sibylens early access \u2014 smooth interface for narrative market trading on $SO",
+        "weight": 2.42
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -370.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-27T15:10:28.750474+00:00"
+  },
+  "HYPE": {
+    "score": 0.58,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udd28 $HYPE] @sonucrypto6 (\ud83d\udc4d1 \ud83d\udd040) Entropy live on Hyperliquid | whale_monitor: Orderbook 11% bid (ask-heavy, bearish) | oi_funding: OI +22.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udd28 $HYPE] @sonucrypto6 (\ud83d\udc4d1 \ud83d\udd040) Entropy live on Hyperliquid. $14M funding, $40M $HYPE staked. Backed by Ribbit Capital ",
+        "weight": 2.33
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 11% bid (ask-heavy, bearish)",
@@ -83,6 +106,6 @@
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-27T15:05:27.833962+00:00"
+    "timestamp": "2026-08-27T15:10:28.750486+00:00"
   }
 }
