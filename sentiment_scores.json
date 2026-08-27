@@ -1,15 +1,17 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.17,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc0b $BTC] $55.4M whale 12x long \u2014 massive conviction bet wi",
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udc0b $BTC] $55.4M whale 12x long \u2014 massive conviction bet wi | whale_monitor: Orderbook 25% bid (ask-heavy, bearish) | oi_funding: OI -51.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -17,56 +19,82 @@
         "weight": 2.79
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udc0b $BTC] @cryptorover (\ud83d\udc4d50 \ud83d\udcac19) $55M BTC whale long with 12x leverage",
-        "weight": 0.65
+        "source": "oi_funding",
+        "signal": "OI -51.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 25% bid (ask-heavy, bearish)",
+        "weight": 1.0
       }
     ],
-    "timestamp": "2026-08-27T12:20:48.191041+00:00"
+    "timestamp": "2026-08-27T12:25:48.684051+00:00"
   },
   "ETH": {
+    "score": 0.83,
+    "confidence": 0.84,
+    "sources": [
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @XrpUdate (\ud83d\udc4d6 \ud83d\udd043) ETF INFLOWS AUG. 26: $BTC +$232 | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI +26.0% 1h, funding 0.0009%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +26.0% 1h, funding 0.0009%",
+        "weight": 1.44
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb0 $ETH] @XrpUdate (\ud83d\udc4d6 \ud83d\udd043) ETF INFLOWS AUG. 26: $BTC +$232M, $ETH +$192M, $XRP +$28M, $SOL +$9M. ALL GREEN. [score: 2.",
+        "weight": 1.3
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
+        "weight": 0.44
+      }
+    ],
+    "timestamp": "2026-08-27T12:25:48.684067+00:00"
+  },
+  "SOL": {
     "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "x_scanner"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @XrpUdate (\ud83d\udc4d6 \ud83d\udd043) ETF INFLOWS AUG. 26: $BTC +$232",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +200.0% 1h, funding 0.0013%",
     "key_signals": [
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcb0 $ETH] @XrpUdate (\ud83d\udc4d6 \ud83d\udd043) ETF INFLOWS AUG. 26: $BTC +$232M, $ETH +$192M, $XRP +$28M, $SOL +$9M. ALL GREEN. [score: 2.",
-        "weight": 1.3
+        "source": "oi_funding",
+        "signal": "OI +200.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-27T12:20:48.191059+00:00"
-  },
-  "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-27T12:20:48.191061+00:00"
+    "timestamp": "2026-08-27T12:25:48.684075+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $HYPE] @PumpfunEco (\ud83d\udc4d65 \ud83d\udd0413) NEW: Pumpfun flips Hyperli",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $HYPE] @PumpfunEco (\ud83d\udc4d65 \ud83d\udd0413) NEW: Pumpfun flips Hyperli | oi_funding: OI +23.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -84,6 +112,6 @@
         "weight": 1.89
       }
     ],
-    "timestamp": "2026-08-27T12:20:48.191071+00:00"
+    "timestamp": "2026-08-27T12:25:48.684084+00:00"
   }
 }
