@@ -1,23 +1,29 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.18,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "news_agent"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 67% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 67% bid-weighted (bullish) | news_agent: es to deliver:** - \ud83d\udd34 CRITICAL: Avici Solana card exploit (cl",
     "key_signals": [
+      {
+        "source": "news_agent",
+        "signal": "es to deliver:** - \ud83d\udd34 CRITICAL: Avici Solana card exploit (classifier + keywords) \u2192 SOL - \ud83d\udfe2 NOTABLE (keyword bump): US M2",
+        "weight": 0.98
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 67% bid-weighted (bullish)",
         "weight": 0.68
       }
     ],
-    "timestamp": "2026-08-28T21:35:20.332851+00:00"
+    "timestamp": "2026-08-28T21:40:21.184606+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -37,27 +43,38 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-08-28T21:35:20.332863+00:00"
+    "timestamp": "2026-08-28T21:40:21.184620+00:00"
   },
   "SOL": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -11.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: )  <:news:1289398800664916010> **Crypto News Brief** \u2014 21:37 | oi_funding: OI -11.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
         "signal": "OI -11.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": ")  <:news:1289398800664916010> **Crypto News Brief** \u2014 21:37 UTC  \ud83d\udd34 **BREAKING** \u2022 Avici confirms full refunds for users",
+        "weight": 1.2
+      },
+      {
+        "source": "news_agent",
+        "signal": "egitimate macro news. Let me compose the Discord message:  **Articles to deliver:** - \ud83d\udd34 CRITICAL: Avici Solana card expl",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-28T21:35:20.332871+00:00"
+    "timestamp": "2026-08-28T21:40:21.184633+00:00"
   },
   "HYPE": {
     "score": 0.57,
@@ -88,6 +105,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-28T21:35:20.332881+00:00"
+    "timestamp": "2026-08-28T21:40:21.184644+00:00"
   }
 }
