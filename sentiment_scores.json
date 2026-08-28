@@ -1,15 +1,17 @@
 {
   "BTC": {
-    "score": -0.57,
-    "confidence": 0.3,
+    "score": -0.44,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @ashleytheduke Bitcoin trapped in range \u2014 bearish",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @ashleytheduke Bitcoin trapped in range \u2014 bearish | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -22,12 +24,12 @@
         "weight": 1.2
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @xellwp 80K $BTC \u2014 strong ETF inflows, SOL leading, Jackson Hole today, August doesn't end quietly [score: 1.",
-        "weight": 0.98
+        "source": "whale_monitor",
+        "signal": "Orderbook 76% bid-weighted (bullish)",
+        "weight": 1.04
       }
     ],
-    "timestamp": "2026-08-28T07:40:46.339038+00:00"
+    "timestamp": "2026-08-28T07:45:46.651307+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -52,32 +54,41 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-28T07:40:46.339053+00:00"
+    "timestamp": "2026-08-28T07:45:46.651324+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-28T07:40:46.339055+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +10.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +10.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-28T07:45:46.651334+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 6,
+    "signal_count": 7,
     "convergence": true,
-    "convergence_strength": 2,
+    "convergence_strength": 3,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @HyperliquidNews (\ud83d\udc4d21 \ud83d\udcac2) $HYPE ETFs recorded $2 | whale_monitor: Orderbook 81% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @HyperliquidNews (\ud83d\udc4d21 \ud83d\udcac2) $HYPE ETFs recorded $2 | whale_monitor: Orderbook 86% bid-weighted (bullish) | oi_funding: OI +12.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -85,16 +96,16 @@
         "weight": 1.49
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @ninjanewsx (\ud83d\udc4d14 \ud83d\udcac4) ETF entry series: BTC +$242M, ETH +$235M net inflows [score: 2.2]",
-        "weight": 1.43
+        "source": "whale_monitor",
+        "signal": "Orderbook 86% bid-weighted (bullish)",
+        "weight": 1.44
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Cryptocratico HL's largest long whale re-enters ETH \u2014 $26.83M USDC deposited through 3 txs [score: 1.5]",
-        "weight": 1.42
+        "source": "oi_funding",
+        "signal": "OI +12.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-28T07:40:46.339068+00:00"
+    "timestamp": "2026-08-28T07:45:46.651346+00:00"
   }
 }
