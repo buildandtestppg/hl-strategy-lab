@@ -1,7 +1,7 @@
 {
   "BTC": {
-    "score": -0.23,
-    "confidence": 0.84,
+    "score": -0.78,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -9,50 +9,56 @@
     ],
     "signal_count": 5,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d14 \ud83d\udd043) 647 BTC ($51.7M) Coinbase I | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI +5.0% 1h, funding 0.0011%",
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d14 \ud83d\udd043) 647 BTC ($51.7M) Coinbase I | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | oi_funding: OI -35.0% 1h",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 24% bid (ask-heavy, bearish)",
-        "weight": 1.04
-      },
-      {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0011%",
-        "weight": 0.9
+        "signal": "OI -35.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d14 \ud83d\udd043) 647 BTC ($51.7M) Coinbase Institutional \u2192 unknown wallet [4.9]",
         "weight": 0.65
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcb8 $BTC] @web3jiucai111 (\ud83d\udc4d118 \ud83d\udd042) $BTC $ETH $BTR \u2014 Chinese yuan is hard; even if you short it won't go down [2.2]",
+        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-28T05:00:34.133984+00:00"
+    "timestamp": "2026-08-28T05:05:34.605966+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.38,
+    "confidence": 0.5,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
+        "signal": "OI -5.0% 1h",
         "weight": 0.9
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 60% bid-weighted (bullish)",
+        "weight": 0.4
       }
     ],
-    "timestamp": "2026-08-28T05:00:34.134002+00:00"
+    "timestamp": "2026-08-28T05:05:34.605981+00:00"
   },
   "SOL": {
-    "score": 0.16,
+    "score": 0.38,
     "confidence": 0.5,
     "sources": [
       "x_scanner",
@@ -62,12 +68,12 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: Partial scan (4/7 topics, timed out on $SOL). $51.7M BTC ins | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: Partial scan (4/7 topics, timed out on $SOL). $51.7M BTC ins | oi_funding: OI +8.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
-        "weight": 0.9
+        "signal": "OI +8.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
@@ -75,38 +81,37 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-28T05:00:34.134012+00:00"
+    "timestamp": "2026-08-28T05:05:34.605989+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
+    "signal_count": 3,
     "convergence": true,
-    "convergence_strength": 3,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc5 $HYPE] @ElvisAC6 AQAv2 buybacks + $1.2B $HYPE unlock TO | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI +10.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc5 $HYPE] @ElvisAC6 AQAv2 buybacks + $1.2B $HYPE unlock TO | oi_funding: OI +18.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +10.0% 1h, funding 0.0013%",
+        "signal": "OI +18.0% 1h, funding 0.0013%",
         "weight": 1.44
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 75% bid-weighted (bullish)",
-        "weight": 1.0
       },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc5 $HYPE] @ElvisAC6 AQAv2 buybacks + $1.2B $HYPE unlock TOMORROW (Aug 29). Schwab \u2192 SOL. Ripple \u2192 Axelar [2.0]",
         "weight": 0.8
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$HYPE] $1.2B token unlock TOMORROW (Aug 29) + AQAv2 buybacks \u2014 expect volatility",
+        "weight": 0.8
       }
     ],
-    "timestamp": "2026-08-28T05:00:34.134022+00:00"
+    "timestamp": "2026-08-28T05:05:34.605998+00:00"
   }
 }
