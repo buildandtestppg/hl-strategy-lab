@@ -1,15 +1,17 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.93,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc8e $BTC] @lookonchain (\ud83d\udc4d110 \ud83d\udd0421) MetaPlanet deposited 3,00",
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $BTC] @lookonchain (\ud83d\udc4d110 \ud83d\udd0421) MetaPlanet deposited 3,00 | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI -23.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -27,31 +29,40 @@
         "weight": 2.93
       }
     ],
-    "timestamp": "2026-08-29T04:00:19.717249+00:00"
+    "timestamp": "2026-08-29T04:05:20.837663+00:00"
   },
   "ETH": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-29T04:00:19.717258+00:00"
-  },
-  "SOL": {
-    "score": 0.4,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "x_scanner"
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc8e $SOL] @lookonchain (\ud83d\udc4d47 \ud83d\udd044) Whales buying $SOL! 281K SO",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -8.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -8.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-08-29T04:05:20.837676+00:00"
+  },
+  "SOL": {
+    "score": 0.09,
+    "confidence": 0.5,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc8e $SOL] @lookonchain (\ud83d\udc4d47 \ud83d\udd044) Whales buying $SOL! 281K SO | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -62,23 +73,33 @@
         "source": "x_scanner",
         "signal": "\u2022 [$SOL] @iamrahulinc AVICI Platform loses $1.02M \u2014 10K SOL drained, swapped to USDC, bridged to 418 ETH [score: 2.0]",
         "weight": 1.3
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-08-29T04:00:19.717274+00:00"
+    "timestamp": "2026-08-29T04:05:20.837685+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.22,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE] @EmberCN (\ud83d\udc4d4) HL's biggest long whale opened $170M | whale_monitor: Orderbook 75% bid-weighted (bullish)",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE] @EmberCN (\ud83d\udc4d4) HL's biggest long whale opened $170M | oi_funding: OI -36.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -36.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @EmberCN (\ud83d\udc4d4) HL's biggest long whale opened $170M in BTC+ETH longs via multiple addresses \u2014 1K BTC + 38K ETH ",
@@ -88,13 +109,8 @@
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE] @dong_fz (\ud83d\udc4d2 \ud83d\udd041) CEX/DEX becoming outdated classification \u2014 Hyperliquid Perps\u2192L1 vs Backpack path; both conver",
         "weight": 1.1
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 75% bid-weighted (bullish)",
-        "weight": 1.0
       }
     ],
-    "timestamp": "2026-08-29T04:00:19.717287+00:00"
+    "timestamp": "2026-08-29T04:05:20.837692+00:00"
   }
 }
