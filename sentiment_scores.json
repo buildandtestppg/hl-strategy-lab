@@ -1,31 +1,51 @@
 {
   "BTC": {
-    "score": 0.03,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "whale_monitor",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 78% bid-weighted (bullish) | oi_funding: OI +13.0% 1h, funding 0.0007%",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 69% bid-weighted (bullish)",
-        "weight": 0.76
+        "source": "oi_funding",
+        "signal": "OI +13.0% 1h, funding 0.0007%",
+        "weight": 1.44
       },
       {
+        "source": "whale_monitor",
+        "signal": "Orderbook 78% bid-weighted (bullish)",
+        "weight": 1.12
+      }
+    ],
+    "timestamp": "2026-08-29T01:45:42.399177+00:00"
+  },
+  "ETH": {
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
         "source": "oi_funding",
-        "signal": "OI -4.0% 1h",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
         "weight": 0.72
       }
     ],
-    "timestamp": "2026-08-29T01:40:42.025321+00:00"
+    "timestamp": "2026-08-29T01:45:42.399190+00:00"
   },
-  "ETH": {
+  "SOL": {
     "score": -1.0,
     "confidence": 0.3,
     "sources": [
@@ -35,30 +55,18 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -19.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -5.0% 1h",
-        "weight": 0.9
+        "signal": "OI -19.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-29T01:40:42.025374+00:00"
-  },
-  "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-29T01:40:42.025385+00:00"
+    "timestamp": "2026-08-29T01:45:42.399197+00:00"
   },
   "HYPE": {
-    "score": -0.72,
+    "score": 0.67,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -69,24 +77,24 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: Solana memecoin noise dominates this cycle (37/50 signals, m | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -16.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: Solana memecoin noise dominates this cycle (37/50 signals, m | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI +24.0% 1h, funding 0.0010%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -16.0% 1h",
+        "signal": "OI +24.0% 1h, funding 0.0010%",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 75% bid-weighted (bullish)",
+        "weight": 1.0
       },
       {
         "source": "x_scanner",
         "signal": "Solana memecoin noise dominates this cycle (37/50 signals, mostly low-quality shills). Two legit builder signals: Grokst",
         "weight": 0.65
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 62% bid-weighted (bullish)",
-        "weight": 0.48
       }
     ],
-    "timestamp": "2026-08-29T01:40:42.025408+00:00"
+    "timestamp": "2026-08-29T01:45:42.399208+00:00"
   }
 }
