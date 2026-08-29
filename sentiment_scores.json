@@ -1,21 +1,22 @@
 {
   "BTC": {
-    "score": 0.31,
-    "confidence": 0.7,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 Whale] @trackerxHQ $55M $BTC whale doubling down 12x lo | polymarket: (most notable signal): \u2022 No change: **54.5%** (+5.0pp) \u2022 25b | oi_funding: OI -11.0% 1h",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 4,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 4-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 Whale] @trackerxHQ $55M $BTC whale doubling down 12x lo | whale_monitor: Orderbook 64% bid-weighted (bullish) | polymarket: (most notable signal): \u2022 No change: **54.5%** (+5.0pp) \u2022 25b",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -11.0% 1h",
+        "signal": "OI +25.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -29,27 +30,21 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-29T22:00:10.194085+00:00"
+    "timestamp": "2026-08-29T22:05:11.401414+00:00"
   },
   "ETH": {
-    "score": -0.47,
-    "confidence": 0.7,
+    "score": 0.01,
+    "confidence": 0.6,
     "sources": [
       "x_scanner",
-      "polymarket",
-      "oi_funding"
+      "polymarket"
     ],
-    "signal_count": 4,
+    "signal_count": 3,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH Staking] @cryptothedoggy (\ud83d\udc4d1) $ETH exit queue hit 0  | polymarket: hike \u2014 +5-6pp shift in 24h.  **BTC August Targets**: All sub | oi_funding: OI -13.0% 1h",
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH Staking] @cryptothedoggy (\ud83d\udc4d1) $ETH exit queue hit 0  | polymarket: hike \u2014 +5-6pp shift in 24h.  **BTC August Targets**: All sub",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -13.0% 1h",
-        "weight": 1.44
-      },
       {
         "source": "polymarket",
         "signal": "hike \u2014 +5-6pp shift in 24h.  **BTC August Targets**: All sub-$85K targets effectively dead (<6%). $82.5K reach at 5.9%. ",
@@ -59,26 +54,31 @@
         "source": "polymarket",
         "signal": "t 5.9%. No August breakout priced.  **ETH August Targets**: Heavy mechanical expiry repricing \u2014 $2.4K dip at 35% (-39pp)",
         "weight": 0.78
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$ETH Staking] @cryptothedoggy (\ud83d\udc4d1) $ETH exit queue hit 0 \u2014 no one unstaking even after 70% pump [score: 0.03]",
+        "weight": 0.02
       }
     ],
-    "timestamp": "2026-08-29T22:00:10.194100+00:00"
+    "timestamp": "2026-08-29T22:05:11.401431+00:00"
   },
   "SOL": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": 0.3,
+    "confidence": 0.5,
     "sources": [
       "polymarket",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: t priced.  **ETH August Targets**: Heavy mechanical expiry r | oi_funding: OI -43.0% 1h",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: t priced.  **ETH August Targets**: Heavy mechanical expiry r | oi_funding: OI +81.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -43.0% 1h",
+        "signal": "OI +81.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -87,37 +87,38 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-29T22:00:10.194109+00:00"
+    "timestamp": "2026-08-29T22:05:11.401440+00:00"
   },
   "HYPE": {
-    "score": 0.53,
-    "confidence": 0.5,
+    "score": 0.59,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$HYPE Whale] @DegenterminalTv Top HL trader up $2M open P | whale_monitor: Orderbook 39% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$HYPE Whale] @DegenterminalTv Top HL trader up $2M open P | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | oi_funding: OI +20.0% 1h, funding 0.0009%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +20.0% 1h, funding 0.0009%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [$HYPE Whale] @DegenterminalTv Top HL trader up $2M open PnL, biggest bet $16M HYPE long [score: 1.5]",
         "weight": 0.98
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [$HYPE NFT] @I4NFTS (\ud83d\udc4d14 \ud83d\udd041 \ud83d\udcac3) Rare opportunity to buy $HYPE before large players catch on [score: 0.7]",
-        "weight": 0.45
-      },
-      {
         "source": "whale_monitor",
-        "signal": "Orderbook 39% bid (ask-heavy, bearish)",
-        "weight": 0.44
+        "signal": "Orderbook 27% bid (ask-heavy, bearish)",
+        "weight": 0.92
       }
     ],
-    "timestamp": "2026-08-29T22:00:10.194116+00:00"
+    "timestamp": "2026-08-29T22:05:11.401450+00:00"
   }
 }
