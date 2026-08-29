@@ -1,15 +1,17 @@
 {
   "BTC": {
-    "score": -0.72,
-    "confidence": 0.3,
+    "score": -0.36,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$BTC] @WhaleInsider (\ud83d\udc4d52 \ud83d\udd0415) BlackRock clients sell $33.",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$BTC] @WhaleInsider (\ud83d\udc4d52 \ud83d\udd0415) BlackRock clients sell $33. | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI +25.0% 1h, funding 0.0012%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -22,14 +24,60 @@
         "weight": 2.08
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @WhaleFactor (\ud83d\udc4d7 \ud83d\udd042) Institutions invested $580M in crypto ETFs, Warsh triggered crash 24h later. BTC $242M, ",
-        "weight": 1.37
+        "source": "oi_funding",
+        "signal": "OI +25.0% 1h, funding 0.0012%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-29T09:40:19.120421+00:00"
+    "timestamp": "2026-08-29T09:45:19.884445+00:00"
   },
   "ETH": {
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @MikybullCrypto (\ud83d\udc4d30 \ud83d\udd044) $ETH ready for a mega br | oi_funding: OI +4.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $ETH] @MikybullCrypto (\ud83d\udc4d30 \ud83d\udd044) $ETH ready for a mega breakout in history \u2014 target $12k [score: 1.6]",
+        "weight": 1.28
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +4.0% 1h, funding 0.0013%",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-08-29T09:45:19.884459+00:00"
+  },
+  "SOL": {
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 0,
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -4.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -4.0% 1h",
+        "weight": 0.72
+      }
+    ],
+    "timestamp": "2026-08-29T09:45:19.884466+00:00"
+  },
+  "HYPE": {
     "score": 1.0,
     "confidence": 0.3,
     "sources": [
@@ -39,52 +87,14 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @MikybullCrypto (\ud83d\udc4d30 \ud83d\udd044) $ETH ready for a mega br",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $ETH] @MikybullCrypto (\ud83d\udc4d30 \ud83d\udd044) $ETH ready for a mega breakout in history \u2014 target $12k [score: 1.6]",
-        "weight": 1.28
-      }
-    ],
-    "timestamp": "2026-08-29T09:40:19.120434+00:00"
-  },
-  "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-29T09:40:19.120436+00:00"
-  },
-  "HYPE": {
-    "score": 1.0,
-    "confidence": 0.74,
-    "sources": [
-      "x_scanner",
-      "whale_monitor"
-    ],
-    "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: Heavy ETF flow divergence dominates: $567M net inflow Thursd | whale_monitor: Orderbook 64% bid-weighted (bullish)",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: Heavy ETF flow divergence dominates: $567M net inflow Thursd",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "Heavy ETF flow divergence dominates: $567M net inflow Thursday ($242M BTC, $223M ETH) but BlackRock clients simultaneous",
         "weight": 0.8
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 64% bid-weighted (bullish)",
-        "weight": 0.56
       }
     ],
-    "timestamp": "2026-08-29T09:40:19.120447+00:00"
+    "timestamp": "2026-08-29T09:45:19.884472+00:00"
   }
 }
