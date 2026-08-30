@@ -1,46 +1,58 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.2,
+    "confidence": 0.5,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 94% bid-weighted (bullish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 74% bid-weighted (bullish) | oi_funding: OI -20.0% 1h",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI -20.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 94% bid-weighted (bullish)",
-        "weight": 1.76
+        "signal": "Orderbook 74% bid-weighted (bullish)",
+        "weight": 0.96
       }
     ],
-    "timestamp": "2026-08-30T14:20:23.984285+00:00"
+    "timestamp": "2026-08-30T14:25:24.333147+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcca $ETH] @TedPillows (\ud83d\udc4d130 \ud83d\udd042) Longs aggressively entering",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $ETH] @TedPillows (\ud83d\udc4d130 \ud83d\udd042) Longs aggressively entering | oi_funding: OI +25.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcca $ETH] @TedPillows (\ud83d\udc4d130 \ud83d\udd042) Longs aggressively entering here for $ETH. Either they know something, or a big flush i",
         "weight": 1.69
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +25.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-30T14:20:23.984301+00:00"
+    "timestamp": "2026-08-30T14:25:24.333167+00:00"
   },
   "SOL": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -49,27 +61,29 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -18.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
-        "weight": 0.9
+        "signal": "OI -18.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-30T14:20:23.984309+00:00"
+    "timestamp": "2026-08-30T14:25:24.333175+00:00"
   },
   "HYPE": {
-    "score": 0.69,
-    "confidence": 0.3,
+    "score": 0.46,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Michelleki45zd $HYPE from $21.76 = +$28.4K pro",
+    "signal_count": 7,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @Michelleki45zd $HYPE from $21.76 = +$28.4K pro | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -34.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -77,16 +91,16 @@
         "weight": 1.62
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @MSBIntel (\ud83d\udc4d2 \ud83d\udd042) Protocols earning most fees (30d): Tether $478M, Circle $191M, PumpSwap $82M (+58.7%), Hy",
-        "weight": 1.36
+        "source": "oi_funding",
+        "signal": "OI -34.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udc94 $HYPE] @itsmiroko Buybacks only work if team's still building. $HYPE bought 21% back, $PUMP 41%. Ones that rugged b",
-        "weight": 1.2
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @MSBIntel (\ud83d\udc4d2 \ud83d\udd042) Protocols earning most fees (30d): Tether $478M, Circle $191M, PumpSwap $82M (+58.7%), Hy",
+        "weight": 1.36
       }
     ],
-    "timestamp": "2026-08-30T14:20:23.984328+00:00"
+    "timestamp": "2026-08-30T14:25:24.333189+00:00"
   }
 }
