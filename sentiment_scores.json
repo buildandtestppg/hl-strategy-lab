@@ -1,17 +1,16 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.48,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @Imdelo_3 (\ud83d\udc4d1) Taking higher-beta $ZEC route ins | whale_monitor: Orderbook 84% bid-weighted (bullish) | oi_funding: OI +6.0% 1h, funding 0.0005%",
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @Imdelo_3 (\ud83d\udc4d1) Taking higher-beta $ZEC route ins | oi_funding: OI -110.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -19,9 +18,9 @@
         "weight": 1.64
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 84% bid-weighted (bullish)",
-        "weight": 1.36
+        "source": "oi_funding",
+        "signal": "OI -110.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
@@ -29,27 +28,33 @@
         "weight": 1.24
       }
     ],
-    "timestamp": "2026-08-30T01:20:44.441372+00:00"
+    "timestamp": "2026-08-30T01:25:44.868971+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -0.19,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @TheCryptoNoir TVL is lagging vanity metric \u2014 re",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @TheCryptoNoir TVL is lagging vanity metric \u2014 re | oi_funding: OI -13.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -13.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @TheCryptoNoir TVL is lagging vanity metric \u2014 real velocity pooling in Base, retail churn on SOL [score: 1.5",
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-30T01:20:44.441388+00:00"
+    "timestamp": "2026-08-30T01:25:44.868984+00:00"
   },
   "SOL": {
     "score": -1.0,
@@ -62,8 +67,13 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $SOL] @vicgerardo_ $1.1M Avici exploit \u2014 old contract  | oi_funding: OI -6.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $SOL] @vicgerardo_ $1.1M Avici exploit \u2014 old contract  | oi_funding: OI -55.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -55.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a0\ufe0f $SOL] @vicgerardo_ $1.1M Avici exploit \u2014 old contract drained card funds, 1,685 accounts, AVICI -49% [score: 1.5]",
@@ -73,28 +83,28 @@
         "source": "x_scanner",
         "signal": "\u2022 [$SOL] @vicgerardo_ \u26a0\ufe0f Avici $1.1M exploit on Solana \u2014 1,685 accounts affected, self-custody wallets safe [score: 1.5]",
         "weight": 1.2
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI -6.0% 1h",
-        "weight": 1.08
       }
     ],
-    "timestamp": "2026-08-30T01:20:44.441400+00:00"
+    "timestamp": "2026-08-30T01:25:44.868996+00:00"
   },
   "HYPE": {
-    "score": 0.63,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Imdelo_3 $HYPE targeting $120 \u2014 Trump putting i | oi_funding: OI -5.0% 1h",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @Imdelo_3 $HYPE targeting $120 \u2014 Trump putting i | oi_funding: OI +11.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +11.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Imdelo_3 $HYPE targeting $120 \u2014 Trump putting it on the radar, compliant U.S. pathway potential [score: 1.5",
@@ -104,13 +114,8 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @tukeysol (\ud83d\udc4d3 \ud83d\udd041) $STONK holder progression live: Starter \u2192 Core \u2192 Pro \u2192 Elite \u2192 Whale [score: 1.77]",
         "weight": 1.15
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @legion_genesis Expecting range before metrics improve or exchange listings (Robinhood, HL) [score: 1.5]",
-        "weight": 0.98
       }
     ],
-    "timestamp": "2026-08-30T01:20:44.441412+00:00"
+    "timestamp": "2026-08-30T01:25:44.869007+00:00"
   }
 }
