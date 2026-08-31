@@ -1,16 +1,23 @@
 {
   "BTC": {
-    "score": 0.0,
-    "confidence": 0.3,
+    "score": -0.45,
+    "confidence": 0.94,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udd25 $BTC] @evanngobrol (\ud83d\udc4d96 \ud83d\udd0450) Timeline exhaustion take \u2014",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd25 $BTC] @evanngobrol (\ud83d\udc4d96 \ud83d\udd0450) Timeline exhaustion take \u2014 | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | oi_funding: OI -8.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -8.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd25 $BTC] @evanngobrol (\ud83d\udc4d96 \ud83d\udd0450) Timeline exhaustion take \u2014 zoom out, breathe, the market cycles will reward patience [",
@@ -20,46 +27,61 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udca5 $BTC] @SYaseenbaba786 (\ud83d\udc4d0) Major DeFi exploit on Flow EVM: More Markets drained ~$15.5M WFLOW from lending reserve ",
         "weight": 0.8
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udd14 $BTC] @whale_alert (\ud83d\udc4d5 \ud83d\udd041) 1,172 $BTC ($92,031,877 USD) transferred from unknown wallet to Coinbase Institutional [",
-        "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-31T16:00:39.318628+00:00"
+    "timestamp": "2026-08-31T16:05:39.961417+00:00"
   },
   "ETH": {
-    "score": -1.0,
+    "score": -0.79,
+    "confidence": 0.84,
+    "sources": [
+      "whale_monitor",
+      "polymarket",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | polymarket: year.  **Crypto price targets** (all August expiry \u2014 mechani | oi_funding: OI -73.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -73.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "polymarket",
+        "signal": "year.  **Crypto price targets** (all August expiry \u2014 mechanical repricing, not sentiment): \u2022 BTC above $76K Aug 31: **96",
+        "weight": 0.96
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 61% bid-weighted (bullish)",
+        "weight": 0.44
+      }
+    ],
+    "timestamp": "2026-08-31T16:05:39.961435+00:00"
+  },
+  "SOL": {
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "polymarket"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: year.  **Crypto price targets** (all August expiry \u2014 mechani",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +36.0% 1h, funding 0.0013%",
     "key_signals": [
       {
-        "source": "polymarket",
-        "signal": "year.  **Crypto price targets** (all August expiry \u2014 mechanical repricing, not sentiment): \u2022 BTC above $76K Aug 31: **96",
-        "weight": 0.96
+        "source": "oi_funding",
+        "signal": "OI +36.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-31T16:00:39.318640+00:00"
-  },
-  "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-08-31T16:00:39.318642+00:00"
+    "timestamp": "2026-08-31T16:05:39.961444+00:00"
   },
   "HYPE": {
     "score": 1.0,
@@ -89,6 +111,6 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-08-31T16:00:39.318652+00:00"
+    "timestamp": "2026-08-31T16:05:39.961451+00:00"
   }
 }
