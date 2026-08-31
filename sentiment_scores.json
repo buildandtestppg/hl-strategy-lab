@@ -1,55 +1,68 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.6,
+    "score": 0.92,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "whale_monitor",
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @Garreett_G (\ud83d\udc4d57 \ud83d\udd0410) BTC below weekly MA50, Supe | polymarket: -7pp, $664K vol) \u2022 \"Hike by Sept\" at **52%** (+7.5pp) \u2192 Mark",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca $BTC] @whale_alert (\ud83d\udc4d13 \ud83d\udd042) 799 BTC ($62.4M) transferre | whale_monitor: Orderbook 76% bid-weighted (bullish) | polymarket: -7pp, $664K vol) \u2022 \"Hike by Sept\" at **52%** (+7.5pp) \u2192 Mark",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc9 $BTC] @Garreett_G (\ud83d\udc4d57 \ud83d\udd0410) BTC below weekly MA50, Supertrend bearish \u2014 needs reclaim [score: 3.1]",
-        "weight": 2.48
+        "signal": "\u2022 [\ud83d\udcca $BTC] @whale_alert (\ud83d\udc4d13 \ud83d\udd042) 799 BTC ($62.4M) transferred from unknown wallet to Coinbase Institutional [score: 4.8]",
+        "weight": 3.12
       },
       {
-        "source": "polymarket",
-        "signal": "-7pp, $664K vol) \u2022 \"Hike by Sept\" at **52%** (+7.5pp) \u2192 Market aggressively pricing in a September hike overnight. Bigge",
-        "weight": 0.96
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcca $BTC] @whale_alert (\ud83d\udc4d8 \ud83d\udd041) 800 BTC ($62.4M) transferred from Coinbase Institutional to unknown wallet [score: 4.7]",
+        "weight": 3.06
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +44.0% 1h, funding 0.0013%",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-31T06:20:03.878284+00:00"
+    "timestamp": "2026-08-31T06:25:04.290047+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.6,
+    "score": -0.42,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @TheMoonShow Tectonic/Cronos $75M drain exploit,  | polymarket: ignal this week.  **BTC** \u2014 Comfortably above $76K (93.8% on",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [$ETH] @Abcoinexchange Cronos halted after Tectonic exploi | polymarket: ignal this week.  **BTC** \u2014 Comfortably above $76K (93.8% on | oi_funding: OI +31.0% 1h, funding 0.0013%",
     "key_signals": [
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc9 $ETH] @TheMoonShow Tectonic/Cronos $75M drain exploit, network halted mid-move [score: 2.1]",
-        "weight": 1.99
+        "source": "oi_funding",
+        "signal": "OI +31.0% 1h, funding 0.0013%",
+        "weight": 1.44
       },
       {
-        "source": "polymarket",
-        "signal": "ignal this week.  **BTC** \u2014 Comfortably above $76K (93.8% on Aug 31). $80K this month fading (22%, -8.5pp). No crash fea",
-        "weight": 0.96
+        "source": "x_scanner",
+        "signal": "\u2022 [$ETH] @Abcoinexchange Cronos halted after Tectonic exploit \u2014 users urged to avoid protocol [score: 2.0]",
+        "weight": 1.3
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [$ETH] @Tradallion Price itself became the attack surface \u2014 attacker inflated collateral, borrowed, drained [score: 2.",
+        "weight": 1.3
       }
     ],
-    "timestamp": "2026-08-31T06:20:03.878304+00:00"
+    "timestamp": "2026-08-31T06:25:04.290066+00:00"
   },
   "SOL": {
     "score": -1.0,
@@ -69,36 +82,38 @@
         "weight": 1.14
       }
     ],
-    "timestamp": "2026-08-31T06:20:03.878312+00:00"
+    "timestamp": "2026-08-31T06:25:04.290074+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.77,
+    "confidence": 0.84,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @TheBlocktoApp (\ud83d\udc4d53 \ud83d\udd041) Record $640M token buyba",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @CryptoFinbase Crypto projects spent record $64 | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @TheBlocktoApp (\ud83d\udc4d53 \ud83d\udd041) Record $640M token buybacks YTD \u2014 $HYPE + $PUMP = ~90% per FT [score: 2.8]",
-        "weight": 2.8
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @CryptoFinbase Crypto projects spent record $640M on token buybacks per Allium Labs / FT [score: 2.5]",
+        "weight": 2.38
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [$HYPE buyback alpha] @TheBlocktoApp \u2014 $640M buybacks YTD, HYPE+PUMP behind 90% per FT [score: 2.8]",
-        "weight": 2.66
+        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @HypedLaunches Hyperliquid 24H fees: $1.91M (+167.58%). Hourly fees briefly pushed ~$300K [score: 2.5]",
+        "weight": 2.0
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Seven_Nguyen666 (\ud83d\udc4d27) PONS exploding on Robinhood Chain \u2014 $1M/24h rev, 10x bottom, HL perps live [score: 2.",
-        "weight": 1.56
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @0xsamarai (\ud83d\udc4d23) Arc mainnet launching Sep 16 \u2014 memecoin trading day 1 for architect via fomo app [score: 2",
+        "weight": 1.84
       }
     ],
-    "timestamp": "2026-08-31T06:20:03.878319+00:00"
+    "timestamp": "2026-08-31T06:25:04.290085+00:00"
   }
 }
