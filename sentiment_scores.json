@@ -1,16 +1,16 @@
 {
   "BTC": {
     "score": 1.0,
-    "confidence": 0.6,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
-      "news_agent"
+      "oi_funding"
     ],
-    "signal_count": 8,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d11 \ud83d\udd044) 696 BTC ($53.9M) transferre | news_agent: <https://cryptobriefing.com/solana-etfs-record-inflows-2026/",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d11 \ud83d\udd044) 696 BTC ($53.9M) transferre | oi_funding: OI +69.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -28,46 +28,52 @@
         "weight": 2.79
       }
     ],
-    "timestamp": "2026-08-31T12:55:24.916698+00:00"
+    "timestamp": "2026-08-31T13:00:25.932019+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 62% bid-weighted (bullish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI +26.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +26.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 62% bid-weighted (bullish)",
         "weight": 0.48
       }
     ],
-    "timestamp": "2026-08-31T12:55:24.916713+00:00"
+    "timestamp": "2026-08-31T13:00:25.932035+00:00"
   },
   "SOL": {
-    "score": -0.06,
+    "score": -0.88,
     "confidence": 0.84,
     "sources": [
       "whale_monitor",
-      "news_agent",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
     "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | news_agent: \ud83d\udfe1 **HIGH IMPACT** \u2022 **US spot Solana ETFs see record $153M i | polymarket: Aug 31: 82.9% (\u22122.1pp) - Above $2,400 Aug 31: 97.6% - Dip to",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | polymarket: Aug 31: 82.9% (\u22122.1pp) - Above $2,400 Aug 31: 97.6% - Dip to | oi_funding: OI -230.0% 1h",
     "key_signals": [
       {
-        "source": "news_agent",
-        "signal": "\ud83d\udfe1 **HIGH IMPACT** \u2022 **US spot Solana ETFs see record $153M in net inflows during strongest week of 2026** `SOL`   <https",
-        "weight": 0.98
+        "source": "oi_funding",
+        "signal": "OI -230.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "polymarket",
@@ -80,20 +86,21 @@
         "weight": 0.78
       }
     ],
-    "timestamp": "2026-08-31T12:55:24.916728+00:00"
+    "timestamp": "2026-08-31T13:00:25.932047+00:00"
   },
   "HYPE": {
-    "score": 0.88,
-    "confidence": 0.5,
+    "score": 0.67,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcf0 $HYPE] @Cointelegraph (\ud83d\udc4d38 \ud83d\udd046) JUST IN: Crypto groups s | whale_monitor: Orderbook 33% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcf0 $HYPE] @Cointelegraph (\ud83d\udc4d38 \ud83d\udd046) JUST IN: Crypto groups s | whale_monitor: Orderbook 33% bid (ask-heavy, bearish) | oi_funding: OI -129.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -106,11 +113,11 @@
         "weight": 5.42
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 33% bid (ask-heavy, bearish)",
-        "weight": 0.68
+        "source": "oi_funding",
+        "signal": "OI -129.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-08-31T12:55:24.916741+00:00"
+    "timestamp": "2026-08-31T13:00:25.932058+00:00"
   }
 }
