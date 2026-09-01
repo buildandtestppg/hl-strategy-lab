@@ -1,34 +1,49 @@
 {
-  "last_update": "2026-09-01T19:50:22.033843+00:00",
+  "last_update": "2026-09-01T19:55:22.887639+00:00",
   "portfolio": {
-    "value": 4515.44,
-    "capital": 4515.6,
+    "value": 4513.29,
+    "capital": 4514.1,
     "initial": 5000.0,
-    "pnl": -484.56,
-    "pnl_pct": -9.69,
-    "open_positions": 1
+    "pnl": -486.71,
+    "pnl_pct": -9.73,
+    "open_positions": 2
   },
   "prices": {
-    "BTC": 77277.5,
-    "ETH": 2416.45,
-    "SOL": 99.8745,
-    "HYPE": 82.1245
+    "BTC": 77227.5,
+    "ETH": 2415.05,
+    "SOL": 99.9275,
+    "HYPE": 82.6485
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 99.8615,
-      "current_price": 99.8745,
+      "current_price": 99.9275,
       "size": 12.281319533318362,
-      "unrealized_pnl": -0.16,
-      "unrealized_pnl_pct": -0.01,
+      "unrealized_pnl": -0.81,
+      "unrealized_pnl_pct": -0.07,
       "stop_loss": 103.53925,
       "take_profit": 92.506,
       "strategy": "stochastic",
       "entry_time": "2026-09-01T19:21:59.218179+00:00",
-      "duration_hours": 0.5,
-      "funding_rate": 0.00019,
-      "unrealized_funding": -0.0011
+      "duration_hours": 0.6,
+      "funding_rate": 0.00015,
+      "unrealized_funding": -0.001
+    },
+    "ETH": {
+      "direction": "SHORT",
+      "entry_price": 2415.05,
+      "current_price": 2415.05,
+      "size": 0.6543169007008565,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "stop_loss": 2484.05,
+      "take_profit": 2277.05,
+      "strategy": "stochastic",
+      "entry_time": "2026-09-01T19:55:24.253363+00:00",
+      "duration_hours": 0.0,
+      "funding_rate": 0.00125,
+      "unrealized_funding": -0.0
     }
   },
   "stats": {
@@ -42,7 +57,9 @@
     "worst_trade": -50.62,
     "total_realized_pnl": -209.7
   },
-  "actions": [],
+  "actions": [
+    "\ud83d\udfe2 OPENED SHORT ETH @ $2415.0500 | Size: 0.6543 | SL: $2484.0500 | TP: $2277.0500 | Strategy: stochastic | Sentiment-driven SHORT (score -1.00, conf 0.7, momentum confirmed)"
+  ],
   "closed_trades": [
     {
       "pair": "HYPE",
@@ -962,11 +979,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-05T00:30:58.494271+00:00",
-      "v": 4610.58,
-      "p": -7.79
-    },
     {
       "t": "2026-08-05T00:35:59.165358+00:00",
       "v": 4621.38,
@@ -1961,6 +1973,11 @@
       "t": "2026-09-01T19:50:22.033843+00:00",
       "v": 4515.44,
       "p": -9.69
+    },
+    {
+      "t": "2026-09-01T19:55:22.887639+00:00",
+      "v": 4513.29,
+      "p": -9.73
     }
   ],
   "ai_history": [
@@ -2023,23 +2040,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.52,
+      "score": 0.02,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 4,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @traderhc \u2014 SPY+TLT selling off = duration liquid | whale_monitor: Orderbook 77% bid-weighted (bullish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca Liquidations] @gen_hula $BTC liquidation heatmap: heavy | whale_monitor: Orderbook 77% bid-weighted (bullish)",
       "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $BTC] @traderhc \u2014 SPY+TLT selling off = duration liquidation, not crypto-specific. BTC at $77,192 tracked QQQ lower",
-          "weight": 1.42
-        },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 77% bid-weighted (bullish)",
@@ -2047,42 +2059,37 @@
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udc0b $BTC] @Altcoinchaserhq \u2014 Smart Money: Top 7D Whale $BTC SHORT $63,397. Acai 73% WR whale shorts $63.4K. [score: 1.6",
+          "signal": "\u2022 [\ud83d\udcca Liquidations] @gen_hula $BTC liquidation heatmap: heavy leverage above $80K\u2013$81.5K, biggest upside pool $83K\u2013$84.5K",
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-09-01T19:50:21.942106+00:00"
+      "timestamp": "2026-09-01T19:55:22.803795+00:00"
     },
     "ETH": {
-      "score": -0.66,
+      "score": -1.0,
       "confidence": 0.74,
       "sources": [
         "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udf0b $ETH] @CryptoTweets (\ud83d\udc4d37 \ud83d\udd046) JUST IN: BTC below $77K, E | oi_funding: OI -5.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udf0d Geopolitical] @CryptoAtlas3 (\ud83d\udc4d3 \ud83d\udd041) JUST IN: Bitcoin fa | oi_funding: OI -5.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udf0b $ETH] @CryptoTweets (\ud83d\udc4d37 \ud83d\udd046) JUST IN: BTC below $77K, ETH below $2,400 as US and Iran exchange strikes. $100M liqui",
-          "weight": 2.27
+          "signal": "\u2022 [\ud83c\udf0d Geopolitical] @CryptoAtlas3 (\ud83d\udc4d3 \ud83d\udd041) JUST IN: Bitcoin falls under $77,000 and $ETH falls under $2,400 as US and Iran",
+          "weight": 1.1
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $ETH] @MaxCrypto (\ud83d\udc4d53 \ud83d\udd044) BTC below $77K, ETH below $2,400. $70M longs liquidated in 60 min. [score: 2.5]",
-          "weight": 1.62
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc9 $ETH] @MookieNFT (\ud83d\udc4d47 \ud83d\udcac8) BTC drops below $77K. ETH below $2,400 after US struck Iran. $120M liquidated. [score: 2.",
-          "weight": 1.6
+          "source": "oi_funding",
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
         }
       ],
-      "timestamp": "2026-09-01T19:50:21.942125+00:00"
+      "timestamp": "2026-09-01T19:55:22.803813+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -2102,38 +2109,33 @@
           "weight": 0.72
         }
       ],
-      "timestamp": "2026-09-01T19:50:21.942132+00:00"
+      "timestamp": "2026-09-01T19:55:22.803821+00:00"
     },
     "HYPE": {
-      "score": -0.68,
-      "confidence": 0.74,
+      "score": 0.44,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udc2c $HYPE] @CW8900 (\ud83d\udc4d5) Hyperliquid whales' short positions | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcf1 cbAssets] @wagmiAlexander (\ud83d\udc4d47 \ud83d\udd044) Big launch on Base + | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udc2c $HYPE] @CW8900 (\ud83d\udc4d5) Hyperliquid whales' short positions have decreased after the decline. [score: 1.7]",
-          "weight": 1.1
+          "signal": "\u2022 [\ud83d\udcf1 cbAssets] @wagmiAlexander (\ud83d\udc4d47 \ud83d\udd044) Big launch on Base + AerodromeFi \u2014 trade cbAssets $HYPE, $ZEC, $BTC, $ETH, $XRP,",
+          "weight": 1.43
         },
         {
           "source": "whale_monitor",
           "signal": "Orderbook 36% bid (ask-heavy, bearish)",
           "weight": 0.56
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [$HYPE] @scottmelker (\ud83d\udc4d9 \ud83d\udcac7) Ran Neuner: \"Big daddy is Hyperliquid\" \u2014 market giving $81B valuation because they buy ba",
-          "weight": 0.42
         }
       ],
-      "timestamp": "2026-09-01T19:50:21.942141+00:00"
+      "timestamp": "2026-09-01T19:55:22.803828+00:00"
     }
   },
   "config": {
