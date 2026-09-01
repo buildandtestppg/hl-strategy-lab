@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-09-02T04:00:25.825197+08:00",
-  "exported_at_utc": "2026-09-01T20:00:25.825199+00:00",
+  "exported_at": "2026-09-02T04:10:27.884471+08:00",
+  "exported_at_utc": "2026-09-01T20:10:27.884474+00:00",
   "portfolio": {
     "value": 4514.095984295631,
     "initial": 5000.0,
@@ -379,16 +379,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-08-05T00:40:59.552555+00:00",
-      "v": 4608.55,
-      "p": -7.83
-    },
-    {
-      "t": "2026-08-05T00:46:00.244872+00:00",
-      "v": 4605.21,
-      "p": -7.9
-    },
     {
       "t": "2026-08-05T00:47:03.710471+00:00",
       "v": 4604.58,
@@ -1378,27 +1368,37 @@
       "t": "2026-09-01T20:00:23.965928+00:00",
       "v": 4509.16,
       "p": -9.82
+    },
+    {
+      "t": "2026-09-01T20:05:24.743583+00:00",
+      "v": 4509.3,
+      "p": -9.81
+    },
+    {
+      "t": "2026-09-01T20:10:25.803862+00:00",
+      "v": 4513.69,
+      "p": -9.73
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": 0.02,
+      "score": 0.16,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca Liquidations] @gen_hula $BTC liquidation heatmap: heavy | whale_monitor: Orderbook 77% bid-weighted (bullish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca Liquidations] @gen_hula $BTC liquidation heatmap: heavy | oi_funding: OI +15.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 77% bid-weighted (bullish)",
-          "weight": 1.08
+          "source": "oi_funding",
+          "signal": "OI +15.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
@@ -1406,10 +1406,48 @@
           "weight": 1.04
         }
       ],
-      "timestamp": "2026-09-01T20:00:23.878571+00:00"
+      "timestamp": "2026-09-01T20:10:25.711431+00:00"
     },
     "ETH": {
-      "score": -1.0,
+      "score": 0.13,
+      "confidence": 0.5,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udf0d Geopolitical] @CryptoAtlas3 (\ud83d\udc4d3 \ud83d\udd041) JUST IN: Bitcoin fa | oi_funding: OI +57.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +57.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udf0d Geopolitical] @CryptoAtlas3 (\ud83d\udc4d3 \ud83d\udd041) JUST IN: Bitcoin falls under $77,000 and $ETH falls under $2,400 as US and Iran",
+          "weight": 1.1
+        }
+      ],
+      "timestamp": "2026-09-01T20:10:25.711447+00:00"
+    },
+    "SOL": {
+      "score": 0.0,
+      "confidence": 0.0,
+      "sources": [],
+      "signal_count": 0,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "No active signals",
+      "key_signals": [],
+      "timestamp": "2026-09-01T20:10:25.711449+00:00"
+    },
+    "HYPE": {
+      "score": 1.0,
       "confidence": 0.74,
       "sources": [
         "x_scanner",
@@ -1419,66 +1457,20 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udf0d Geopolitical] @CryptoAtlas3 (\ud83d\udc4d3 \ud83d\udd041) JUST IN: Bitcoin fa | oi_funding: OI -5.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcf1 cbAssets] @wagmiAlexander (\ud83d\udc4d47 \ud83d\udd044) Big launch on Base + | oi_funding: OI +136.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udf0d Geopolitical] @CryptoAtlas3 (\ud83d\udc4d3 \ud83d\udd041) JUST IN: Bitcoin falls under $77,000 and $ETH falls under $2,400 as US and Iran",
-          "weight": 1.1
+          "source": "oi_funding",
+          "signal": "OI +136.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
-        {
-          "source": "oi_funding",
-          "signal": "OI -5.0% 1h",
-          "weight": 0.9
-        }
-      ],
-      "timestamp": "2026-09-01T20:00:23.878586+00:00"
-    },
-    "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -4.0% 1h",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -4.0% 1h",
-          "weight": 0.72
-        }
-      ],
-      "timestamp": "2026-09-01T20:00:23.878593+00:00"
-    },
-    "HYPE": {
-      "score": 0.44,
-      "confidence": 0.5,
-      "sources": [
-        "x_scanner",
-        "whale_monitor"
-      ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcf1 cbAssets] @wagmiAlexander (\ud83d\udc4d47 \ud83d\udd044) Big launch on Base + | whale_monitor: Orderbook 36% bid (ask-heavy, bearish)",
-      "key_signals": [
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcf1 cbAssets] @wagmiAlexander (\ud83d\udc4d47 \ud83d\udd044) Big launch on Base + AerodromeFi \u2014 trade cbAssets $HYPE, $ZEC, $BTC, $ETH, $XRP,",
           "weight": 1.43
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 36% bid (ask-heavy, bearish)",
-          "weight": 0.56
         }
       ],
-      "timestamp": "2026-09-01T20:00:23.878599+00:00"
+      "timestamp": "2026-09-01T20:10:25.711460+00:00"
     }
   },
   "pair_strategies": {
@@ -1668,149 +1660,149 @@
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
-        "text": "**Run Time:** 2026-09-02 03:44:05",
+        "text": "**Run Time:** 2026-09-02 04:02:04",
         "sentiment": 0,
-        "time": "2026-09-02 03:44"
+        "time": "2026-09-02 04:02"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1788291845.362667"
+        "time": "1788292924.921148"
       }
     ],
     "news_agent": [
       {
         "text": "**Job ID:** 8bd6a73fc440",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
-        "text": "**Run Time:** 2026-09-02 03:53:08",
+        "text": "**Run Time:** 2026-09-02 04:07:33",
         "sentiment": 0,
-        "time": "2026-09-02 03:53"
+        "time": "2026-09-02 04:07"
       },
       {
         "text": "**Schedule:** 7,22,37,52 * * * *",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "Run the news agent script and format breaking news as a Discord message (delivery is handled automatically).",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "**DB FACTS (DO NOT investigate \u2014 these are verified):**",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "- DB path: /Users/mojoai/.hermes/swarm/data/agents.db",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "- Table: crypto_news",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "- Columns: id, title, url, source, published_at, category, impact_rating, affected_tokens, summary, fetched_at, last_reported_at",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "- Date filter: use fetched_at (format: \"2026-04-18 14:52:30\") with SQLite datetime('now','-N minutes')",
@@ -1820,80 +1812,80 @@
       {
         "text": "- The script now does blanket mark-as-reported automatically \u2014 just verify 0 remaining",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "- by_impact in JSON is IN-MEMORY only \u2014 always query DB for actual unreported articles",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "- Ignore empty DBs at ~/.hermes/hermes-agent/news*.db and ~/.hermes/scripts/news*.db \u2014 they're red herrings",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "- notable_keywords dual-pass is REQUIRED \u2014 the classifier misses ~90% of important articles",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "1. **Run scan:** `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/news_agent.py 2>&1`",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "2. **Parse the JSON output** from the script (last JSON block in output).",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "3. **Query DB for unreported articles (DO NOT skip this \u2014 by_impact JSON is misleading):**",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 -c \"",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       },
       {
         "text": "import sqlite3, json, html",
         "sentiment": 0,
-        "time": "1788292388.1914873"
+        "time": "1788293253.0889711"
       }
     ],
-    "generated": "2026-09-01T20:00:23.896296Z"
+    "generated": "2026-09-01T20:10:25.731949Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "03:55",
-      "age_minutes": 5,
+      "age_minutes": 15,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "03:44",
-      "age_minutes": 16,
+      "last_run": "04:02",
+      "age_minutes": 8,
       "status": "fresh"
     },
     "news_agent": {
-      "last_run": "03:53",
-      "age_minutes": 7,
+      "last_run": "04:07",
+      "age_minutes": 3,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "03:04",
-      "age_minutes": 56,
+      "age_minutes": 66,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "03:45",
-      "age_minutes": 15,
+      "last_run": "04:00",
+      "age_minutes": 10,
       "status": "fresh"
     }
   },
@@ -2315,10 +2307,10 @@
     }
   },
   "prices": {
-    "BTC": 77309.5,
-    "ETH": 2419.35,
-    "SOL": 100.035,
-    "HYPE": 82.7985
+    "BTC": 77273.5,
+    "ETH": 2414.75,
+    "SOL": 99.9105,
+    "HYPE": 82.3795
   },
   "actions": [],
   "ai_history": [
