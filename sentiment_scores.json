@@ -1,42 +1,48 @@
 {
   "BTC": {
-    "score": -1.0,
-    "confidence": 0.74,
+    "score": -0.8,
+    "confidence": 0.84,
     "sources": [
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | oi_funding: OI -28.0% 1h",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 60% bid-weighted (bullish) | news_agent: **\ud83d\udfe1 HIGH**  \ud83d\udcb0 **Bitcoin holds steady at $76K despite $1B in  | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -28.0% 1h",
-        "weight": 1.44
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
+      },
+      {
+        "source": "news_agent",
+        "signal": "**\ud83d\udfe1 HIGH**  \ud83d\udcb0 **Bitcoin holds steady at $76K despite $1B in net selling** `BTC` \u2014 ETF outflows heavy but price resilient",
+        "weight": 0.98
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 40% bid (ask-heavy, bearish)",
+        "signal": "Orderbook 60% bid-weighted (bullish)",
         "weight": 0.4
       }
     ],
-    "timestamp": "2026-09-01T11:20:36.403691+00:00"
+    "timestamp": "2026-09-01T11:25:36.626941+00:00"
   },
   "ETH": {
-    "score": 0.72,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.74,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 6,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @alifkhan0 (\ud83d\udc4d4) BitMine reportedly bought another | oi_funding: OI -26.0% 1h",
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $ETH] @alifkhan0 (\ud83d\udc4d4) BitMine reportedly bought another | oi_funding: OI +5.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -54,7 +60,7 @@
         "weight": 1.49
       }
     ],
-    "timestamp": "2026-09-01T11:20:36.403710+00:00"
+    "timestamp": "2026-09-01T11:25:36.626961+00:00"
   },
   "SOL": {
     "score": -1.0,
@@ -66,19 +72,19 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -106.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -106.0% 1h",
-        "weight": 1.44
+        "signal": "OI -5.0% 1h",
+        "weight": 0.9
       }
     ],
-    "timestamp": "2026-09-01T11:20:36.403717+00:00"
+    "timestamp": "2026-09-01T11:25:36.626969+00:00"
   },
   "HYPE": {
-    "score": 0.07,
-    "confidence": 0.84,
+    "score": 0.5,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -86,9 +92,9 @@
     ],
     "signal_count": 7,
     "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Tom_Degen68 (\ud83d\udc4d14) Crypto projects spent $638M b | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI -49.0% 1h",
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcb0 $HYPE] @Tom_Degen68 (\ud83d\udc4d14) Crypto projects spent $638M b | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI +20.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -97,7 +103,7 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -49.0% 1h",
+        "signal": "OI +20.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -106,6 +112,6 @@
         "weight": 1.3
       }
     ],
-    "timestamp": "2026-09-01T11:20:36.403729+00:00"
+    "timestamp": "2026-09-01T11:25:36.626980+00:00"
   }
 }
