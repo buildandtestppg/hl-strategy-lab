@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-09-01T22:40:53.533410+00:00",
+  "last_update": "2026-09-01T22:45:54.342793+00:00",
   "portfolio": {
-    "value": 4524.62,
+    "value": 4520.72,
     "capital": 4514.1,
     "initial": 5000.0,
-    "pnl": -475.38,
-    "pnl_pct": -9.51,
+    "pnl": -479.28,
+    "pnl_pct": -9.59,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 77083.5,
-    "ETH": 2407.05,
-    "SOL": 99.4335,
-    "HYPE": 82.1425
+    "BTC": 77200.5,
+    "ETH": 2410.45,
+    "SOL": 99.5705,
+    "HYPE": 82.2185
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 99.8615,
-      "current_price": 99.4335,
+      "current_price": 99.5705,
       "size": 12.281319533318362,
-      "unrealized_pnl": 5.24,
-      "unrealized_pnl_pct": 0.43,
+      "unrealized_pnl": 3.56,
+      "unrealized_pnl_pct": 0.29,
       "stop_loss": 103.53925,
       "take_profit": 92.506,
       "strategy": "stochastic",
       "entry_time": "2026-09-01T19:21:59.218179+00:00",
-      "duration_hours": 3.3,
-      "funding_rate": -0.000436,
-      "unrealized_funding": 0.0177
+      "duration_hours": 3.4,
+      "funding_rate": -0.000338,
+      "unrealized_funding": 0.0141
     },
     "ETH": {
       "direction": "SHORT",
       "entry_price": 2415.05,
-      "current_price": 2407.05,
+      "current_price": 2410.45,
       "size": 0.6543169007008565,
-      "unrealized_pnl": 5.29,
-      "unrealized_pnl_pct": 0.33,
+      "unrealized_pnl": 3.07,
+      "unrealized_pnl_pct": 0.19,
       "stop_loss": 2484.05,
       "take_profit": 2277.05,
       "strategy": "stochastic",
       "entry_time": "2026-09-01T19:55:24.253363+00:00",
       "duration_hours": 2.8,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0543
+      "unrealized_funding": -0.056
     }
   },
   "stats": {
@@ -977,11 +977,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-05T03:15:21.024815+00:00",
-      "v": 4620.43,
-      "p": -7.59
-    },
     {
       "t": "2026-08-05T03:20:21.801788+00:00",
       "v": 4606.34,
@@ -1976,6 +1971,11 @@
       "t": "2026-09-01T22:40:53.533410+00:00",
       "v": 4524.62,
       "p": -9.51
+    },
+    {
+      "t": "2026-09-01T22:45:54.342793+00:00",
+      "v": 4520.72,
+      "p": -9.59
     }
   ],
   "ai_history": [
@@ -2038,44 +2038,49 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.16,
-      "confidence": 0.5,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "whale_monitor",
         "oi_funding"
       ],
       "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI +26.0% 1h, funding 0.0013%",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 83% bid-weighted (bullish) | oi_funding: OI +12.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +26.0% 1h, funding 0.0013%",
+          "signal": "OI +12.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 24% bid (ask-heavy, bearish)",
-          "weight": 1.04
+          "signal": "Orderbook 83% bid-weighted (bullish)",
+          "weight": 1.32
         }
       ],
-      "timestamp": "2026-09-01T22:40:53.426857+00:00"
+      "timestamp": "2026-09-01T22:45:54.252112+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.15,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
         "oi_funding"
       ],
       "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udfe3 $ETH] @kabarbitcoin (\ud83d\udc4d0 \ud83d\udd040) ETH ETF inflow streak hits  | oi_funding: OI +4.0% 1h, funding 0.0013%",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udfe3 $ETH] @kabarbitcoin (\ud83d\udc4d0 \ud83d\udd040) ETH ETF inflow streak hits  | oi_funding: OI -33.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -33.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udfe3 $ETH] @kabarbitcoin (\ud83d\udc4d0 \ud83d\udd040) ETH ETF inflow streak hits 11 days \u2014 price stuck, risking drop to $1,900 [score: 1.5]",
@@ -2085,43 +2090,52 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udfe3 $ETH] @assetfeel (\ud83d\udc4d0 \ud83d\udd040) $ETH sentiment 8.0/10 with +2.0 increase \u2014 growing buyer confidence [score: 1.5]",
           "weight": 0.98
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0013%",
-          "weight": 0.72
         }
       ],
-      "timestamp": "2026-09-01T22:40:53.426875+00:00"
+      "timestamp": "2026-09-01T22:45:54.252128+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -0.03,
+      "confidence": 0.5,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-01T22:40:53.426877+00:00"
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 84% bid-weighted (bullish) | oi_funding: OI -27.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -27.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 84% bid-weighted (bullish)",
+          "weight": 1.36
+        }
+      ],
+      "timestamp": "2026-09-01T22:45:54.252137+00:00"
     },
     "HYPE": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.22,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
         "oi_funding"
       ],
       "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @HederaKimchi (\ud83d\udc4d0 \ud83d\udd040) US Crypto ETF Vol 9/1: $XR | oi_funding: OI +9.0% 1h, funding 0.0013%",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @HederaKimchi (\ud83d\udc4d0 \ud83d\udd040) US Crypto ETF Vol 9/1: $XR | oi_funding: OI -25.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +9.0% 1h, funding 0.0013%",
+          "signal": "OI -25.0% 1h",
           "weight": 1.44
         },
         {
@@ -2135,7 +2149,7 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-09-01T22:40:53.426888+00:00"
+      "timestamp": "2026-09-01T22:45:54.252145+00:00"
     }
   },
   "config": {
