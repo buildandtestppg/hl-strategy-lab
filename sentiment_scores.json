@@ -1,17 +1,18 @@
 {
   "BTC": {
-    "score": 0.53,
-    "confidence": 0.84,
+    "score": 0.23,
+    "confidence": 0.6,
     "sources": [
       "x_scanner",
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d14 \ud83d\udd041) 670 $BTC ($51.9M) transferr | whale_monitor: Orderbook 69% bid-weighted (bullish) | oi_funding: OI -22.0% 1h",
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 2,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc0b $BTC] @whale_alert (\ud83d\udc4d14 \ud83d\udd041) 670 $BTC ($51.9M) transferr | whale_monitor: Orderbook 69% bid-weighted (bullish) | news_agent: crypto/macro-relevant, 1 noise (football story \u2014 skipped). N",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -24,32 +25,38 @@
         "weight": 1.44
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 69% bid-weighted (bullish)",
-        "weight": 0.76
+        "source": "news_agent",
+        "signal": "crypto/macro-relevant, 1 noise (football story \u2014 skipped). Nothing critical/high, all rated low \u2014 compact notable-only d",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-09-02T21:35:13.669457+00:00"
+    "timestamp": "2026-09-02T21:40:13.997844+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.54,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "news_agent"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc0b $ETH] @lookonchain (\ud83d\udc4d320 \ud83d\udd0436) Mysterious whale deposite",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc0b $ETH] @lookonchain (\ud83d\udc4d320 \ud83d\udd0436) Mysterious whale deposite | news_agent: o/macro-relevant, 1 noise (football story \u2014 skipped). Nothin",
     "key_signals": [
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udc0b $ETH] @lookonchain (\ud83d\udc4d320 \ud83d\udd0436) Mysterious whale deposited 103,252 $ETH ($253M) to exchanges in 3 days; still holds 6",
         "weight": 3.25
+      },
+      {
+        "source": "news_agent",
+        "signal": "o/macro-relevant, 1 noise (football story \u2014 skipped). Nothing critical/high, all rated low \u2014 compact notable-only delive",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-09-02T21:35:13.669471+00:00"
+    "timestamp": "2026-09-02T21:40:13.997863+00:00"
   },
   "SOL": {
     "score": -1.0,
@@ -75,7 +82,7 @@
         "weight": 0.88
       }
     ],
-    "timestamp": "2026-09-02T21:35:13.669482+00:00"
+    "timestamp": "2026-09-02T21:40:13.997875+00:00"
   },
   "HYPE": {
     "score": 1.0,
@@ -105,6 +112,6 @@
         "weight": 1.28
       }
     ],
-    "timestamp": "2026-09-02T21:35:13.669489+00:00"
+    "timestamp": "2026-09-02T21:40:13.997884+00:00"
   }
 }
