@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-09-02T22:40:46.186028+08:00",
-  "exported_at_utc": "2026-09-02T14:40:46.186031+00:00",
+  "exported_at": "2026-09-02T22:50:47.960853+08:00",
+  "exported_at_utc": "2026-09-02T14:50:47.960855+00:00",
   "portfolio": {
     "value": 4527.90805687803,
     "initial": 5000.0,
@@ -367,21 +367,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-09-01T22:15:48.976087+00:00",
-      "v": 4515.2,
-      "p": -9.7
-    },
-    {
-      "t": "2026-09-01T22:20:49.782385+00:00",
-      "v": 4516.79,
-      "p": -9.66
-    },
-    {
-      "t": "2026-09-01T22:25:50.813975+00:00",
-      "v": 4521.08,
-      "p": -9.58
-    },
     {
       "t": "2026-09-01T22:30:51.830020+00:00",
       "v": 4526.53,
@@ -1366,6 +1351,21 @@
       "t": "2026-09-02T14:35:42.855743+00:00",
       "v": 4512.26,
       "p": -9.75
+    },
+    {
+      "t": "2026-09-02T14:40:43.967994+00:00",
+      "v": 4510.34,
+      "p": -9.79
+    },
+    {
+      "t": "2026-09-02T14:45:44.731630+00:00",
+      "v": 4507.44,
+      "p": -9.85
+    },
+    {
+      "t": "2026-09-02T14:50:45.548264+00:00",
+      "v": 4510.25,
+      "p": -9.8
     }
   ],
   "reset_count": 1,
@@ -1382,64 +1382,58 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 74% bid-weighted (bullish) | news_agent: g)*  \ud83c\udff7\ufe0f Sector watch: regulation (SEC), geopolitics (Iran sa | oi_funding: OI +104.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 75% bid-weighted (bullish) | news_agent: g)*  \ud83c\udff7\ufe0f Sector watch: regulation (SEC), geopolitics (Iran sa | oi_funding: OI +48.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +104.0% 1h, funding 0.0013%",
+          "signal": "OI +48.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 75% bid-weighted (bullish)",
+          "weight": 1.0
         },
         {
           "source": "news_agent",
           "signal": "g)*  \ud83c\udff7\ufe0f Sector watch: regulation (SEC), geopolitics (Iran sanctions), oil, AI/macro. No token-specific tickers tagged th",
           "weight": 0.98
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 74% bid-weighted (bullish)",
-          "weight": 0.96
         }
       ],
-      "timestamp": "2026-09-02T14:40:43.875136+00:00"
+      "timestamp": "2026-09-02T14:50:45.455665+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": -1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI +91.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -97.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +91.0% 1h, funding 0.0013%",
+          "signal": "OI -97.0% 1h",
           "weight": 1.44
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 61% bid-weighted (bullish)",
-          "weight": 0.44
         }
       ],
-      "timestamp": "2026-09-02T14:40:43.875151+00:00"
+      "timestamp": "2026-09-02T14:50:45.455679+00:00"
     },
     "SOL": {
-      "score": 0.37,
-      "confidence": 0.74,
+      "score": -0.26,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
         "oi_funding"
       ],
       "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @solana (\ud83d\udc4d0 \ud83d\udd010) @ordrtrade [score: 2.5] | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @solana (\ud83d\udc4d0 \ud83d\udd010) @ordrtrade [score: 2.5] | oi_funding: OI -16.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1447,21 +1441,21 @@
           "weight": 1.62
         },
         {
+          "source": "oi_funding",
+          "signal": "OI -16.0% 1h",
+          "weight": 1.44
+        },
+        {
           "source": "x_scanner",
           "signal": "\u2022 [\u26a0\ufe0f $SOL] @WhereIsMonique (\ud83d\udc4d0 \ud83d\udd010) People calling Solana dead are paid insiders moving liquidity, claims comeback immin",
           "weight": 1.3
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0013%",
-          "weight": 0.9
         }
       ],
-      "timestamp": "2026-09-02T14:40:43.875161+00:00"
+      "timestamp": "2026-09-02T14:50:45.455690+00:00"
     },
     "HYPE": {
-      "score": 0.02,
-      "confidence": 0.6,
+      "score": -0.51,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
         "whale_monitor",
@@ -1469,10 +1463,10 @@
         "oi_funding"
       ],
       "signal_count": 8,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 2,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udee0 $HYPE] @BobeApp (\ud83d\udc4d0 \ud83d\udd010) Abraxas, Fasanara and Wintermut | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: \ud83c\udff7\ufe0f Sector watch: regulation (SEC), geopolitics (Iran sanctio",
+      "convergence": true,
+      "convergence_strength": 4,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 4-source bearish convergence | x_scanner: \u2022 [\ud83d\udee0 $HYPE] @BobeApp (\ud83d\udc4d0 \ud83d\udd010) Abraxas, Fasanara and Wintermut | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | news_agent: \ud83c\udff7\ufe0f Sector watch: regulation (SEC), geopolitics (Iran sanctio",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1486,11 +1480,11 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +52.0% 1h, funding 0.0013%",
+          "signal": "OI -55.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-02T14:40:43.875173+00:00"
+      "timestamp": "2026-09-02T14:50:45.455704+00:00"
     }
   },
   "pair_strategies": {
@@ -1680,102 +1674,102 @@
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
-        "text": "**Run Time:** 2026-09-02 22:24:54",
+        "text": "**Run Time:** 2026-09-02 22:44:36",
         "sentiment": 0,
-        "time": "2026-09-02 22:24"
+        "time": "2026-09-02 22:44"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1788359094.8567336"
+        "time": "1788360276.3435535"
       }
     ],
     "news_agent": [
@@ -1880,32 +1874,32 @@
         "time": "1788360030.3731391"
       }
     ],
-    "generated": "2026-09-02T14:40:43.899589Z"
+    "generated": "2026-09-02T14:50:45.478027Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "22:29",
-      "age_minutes": 12,
+      "age_minutes": 22,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "22:24",
-      "age_minutes": 16,
+      "last_run": "22:44",
+      "age_minutes": 6,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "22:40",
-      "age_minutes": 0,
+      "age_minutes": 10,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "21:04",
-      "age_minutes": 96,
+      "age_minutes": 106,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "22:31",
-      "age_minutes": 9,
+      "last_run": "22:46",
+      "age_minutes": 4,
       "status": "fresh"
     }
   },
@@ -2332,10 +2326,10 @@
     }
   },
   "prices": {
-    "BTC": 77182.5,
-    "ETH": 2397.75,
-    "SOL": 99.0815,
-    "HYPE": 81.3005
+    "BTC": 77208.5,
+    "ETH": 2400.45,
+    "SOL": 99.2165,
+    "HYPE": 81.1695
   },
   "actions": [],
   "ai_history": [
