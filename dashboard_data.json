@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-02T04:25:23.641852+00:00",
+  "last_update": "2026-09-02T04:30:24.057315+00:00",
   "portfolio": {
     "value": 4529.3,
     "capital": 4529.3,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 77399.5,
+    "BTC": 77416.5,
     "ETH": 2412.65,
-    "SOL": 99.8885,
-    "HYPE": 82.8955
+    "SOL": 99.8875,
+    "HYPE": 82.9145
   },
   "positions": {},
   "stats": {
@@ -953,11 +953,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-08-05T09:00:10.219179+00:00",
-      "v": 4609.93,
-      "p": -7.8
-    },
     {
       "t": "2026-08-05T09:05:10.997743+00:00",
       "v": 4609.93,
@@ -1952,6 +1947,11 @@
       "t": "2026-09-02T04:25:23.641852+00:00",
       "v": 4529.3,
       "p": -9.41
+    },
+    {
+      "t": "2026-09-02T04:30:24.057315+00:00",
+      "v": 4529.3,
+      "p": -9.41
     }
   ],
   "ai_history": [
@@ -2015,83 +2015,107 @@
   "sentiment": {
     "BTC": {
       "score": -1.0,
+      "confidence": 1.0,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $BTC] @lookonchain (\ud83d\udc4d185 \ud83d\udd0418) James Wynn flipped short\u2192 | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -12.0% 1h",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc9 $BTC] @lookonchain (\ud83d\udc4d185 \ud83d\udd0418) James Wynn flipped short\u2192long $BTC, entire 1.86 $BTC ($147K) long liquidated! [score:",
+          "weight": 2.8
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc9 $BTC] @SmCrypto_bro (\ud83d\udc4d0 \ud83d\udd040) Nearly $8B in short positions could be liquidated if BTC/ETH move up [score: 2.5]",
+          "weight": 2.38
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -12.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-02T04:30:23.964617+00:00"
+    },
+    "ETH": {
+      "score": 1.0,
       "confidence": 0.74,
       "sources": [
-        "whale_monitor",
+        "x_scanner",
         "oi_funding"
       ],
       "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -12.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udc0b $ETH] @lookonchain (\ud83d\udc4d200 \ud83d\udd0425) Whale deposited 103,252 $ | oi_funding: OI +113.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI -12.0% 1h",
-          "weight": 1.44
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udc0b $ETH] @lookonchain (\ud83d\udc4d200 \ud83d\udd0425) Whale deposited 103,252 $ETH ($253M) to exchanges over 3 days, still holds 64,603 ($1",
+          "weight": 3.25
         },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 30% bid (ask-heavy, bearish)",
-          "weight": 0.8
-        }
-      ],
-      "timestamp": "2026-09-02T04:25:23.557290+00:00"
-    },
-    "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +113.0% 1h, funding 0.0013%",
-      "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI +113.0% 1h, funding 0.0013%",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-02T04:25:23.557305+00:00"
+      "timestamp": "2026-09-02T04:30:23.964632+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.22,
+      "confidence": 0.5,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -79.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @Sofiia272 (\ud83d\udc4d0 \ud83d\udd040) SK Hynix token just hit the c | oi_funding: OI -79.0% 1h",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @Sofiia272 (\ud83d\udc4d0 \ud83d\udd040) SK Hynix token just hit the chain \u2014 brand new, freshly deployed, raw early [score: 3.5]",
+          "weight": 2.27
+        },
         {
           "source": "oi_funding",
           "signal": "OI -79.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-02T04:25:23.557312+00:00"
+      "timestamp": "2026-09-02T04:30:23.964641+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 0.74,
+      "confidence": 1.0,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udc0b $HYPE] @zippy257 (\ud83d\udc4d7 \ud83d\udd041) Unknown HYPE whale still accum | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI +5.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udc0b $HYPE] @zippy257 (\ud83d\udc4d7 \ud83d\udd041) Unknown HYPE whale still accumulating \u2014 141,442 $HYPE (~$11.88M). No small buys [score: 2.",
+          "weight": 1.43
+        },
         {
           "source": "oi_funding",
           "signal": "OI +5.0% 1h, funding 0.0013%",
@@ -2103,7 +2127,7 @@
           "weight": 0.52
         }
       ],
-      "timestamp": "2026-09-02T04:25:23.557321+00:00"
+      "timestamp": "2026-09-02T04:30:23.964649+00:00"
     }
   },
   "config": {
