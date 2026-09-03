@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-09-03T11:45:08.435379+00:00",
+  "last_update": "2026-09-03T11:50:09.320595+00:00",
   "portfolio": {
-    "value": 4503.27,
+    "value": 4502.07,
     "capital": 4497.7,
     "initial": 5000.0,
-    "pnl": -496.73,
-    "pnl_pct": -9.93,
+    "pnl": -497.93,
+    "pnl_pct": -9.96,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 77924.5,
-    "ETH": 2409.85,
-    "SOL": 100.885,
-    "HYPE": 82.0525
+    "BTC": 77868.5,
+    "ETH": 2407.05,
+    "SOL": 100.795,
+    "HYPE": 82.0575
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 100.455,
-      "current_price": 100.885,
+      "current_price": 100.795,
       "size": 13.251746937955259,
-      "unrealized_pnl": 5.56,
-      "unrealized_pnl_pct": 0.42,
+      "unrealized_pnl": 4.37,
+      "unrealized_pnl_pct": 0.33,
       "stop_loss": 97.06,
       "take_profit": 107.245,
       "strategy": "stochastic",
       "entry_time": "2026-09-03T03:40:36.411457+00:00",
-      "duration_hours": 8.1,
+      "duration_hours": 8.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.135
+      "unrealized_funding": 0.1362
     }
   },
   "stats": {
@@ -969,11 +969,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-02T20:10:07.379520+00:00",
-      "v": 4498.92,
-      "p": -10.02
-    },
     {
       "t": "2026-09-02T20:15:07.694156+00:00",
       "v": 4497.17,
@@ -1968,6 +1963,11 @@
       "t": "2026-09-03T11:45:08.435379+00:00",
       "v": 4503.27,
       "p": -9.93
+    },
+    {
+      "t": "2026-09-03T11:50:09.320595+00:00",
+      "v": 4502.07,
+      "p": -9.96
     }
   ],
   "ai_history": [
@@ -2030,17 +2030,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.26,
-      "confidence": 0.5,
+      "score": 0.07,
+      "confidence": 0.84,
       "sources": [
+        "whale_monitor",
         "news_agent",
         "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: (UK retail regains access; FCA lifted 4-yr ban) \u2022 **Glassnod | oi_funding: OI +23.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 84% bid-weighted (bullish) | news_agent: (UK retail regains access; FCA lifted 4-yr ban) \u2022 **Glassnod | oi_funding: OI +23.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "news_agent",
@@ -2053,12 +2054,12 @@
           "weight": 1.44
         },
         {
-          "source": "news_agent",
-          "signal": "**Hargreaves Lansdown to offer crypto ETNs after UK ban lift** \u2014 Crypto Briefing `BTC` (UK retail regains access; FCA li",
-          "weight": 0.98
+          "source": "whale_monitor",
+          "signal": "Orderbook 84% bid-weighted (bullish)",
+          "weight": 1.36
         }
       ],
-      "timestamp": "2026-09-03T11:45:08.348173+00:00"
+      "timestamp": "2026-09-03T11:50:09.230999+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2078,7 +2079,7 @@
           "weight": 0.72
         }
       ],
-      "timestamp": "2026-09-03T11:45:08.348190+00:00"
+      "timestamp": "2026-09-03T11:50:09.231015+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -2098,20 +2099,20 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-03T11:45:08.348199+00:00"
+      "timestamp": "2026-09-03T11:50:09.231023+00:00"
     },
     "HYPE": {
-      "score": 0.54,
-      "confidence": 0.5,
+      "score": 0.96,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
       "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 ETH] @lookonchain (\ud83d\udc4d275 \ud83d\udd0121) The whale who held 2.93M $ | whale_monitor: Orderbook 17% bid (ask-heavy, bearish)",
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 ETH] @lookonchain (\ud83d\udc4d275 \ud83d\udd0121) The whale who held 2.93M $ | whale_monitor: Orderbook 69% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2125,11 +2126,11 @@
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 17% bid (ask-heavy, bearish)",
-          "weight": 1.32
+          "signal": "Orderbook 69% bid-weighted (bullish)",
+          "weight": 0.76
         }
       ],
-      "timestamp": "2026-09-03T11:45:08.348212+00:00"
+      "timestamp": "2026-09-03T11:50:09.231035+00:00"
     }
   },
   "config": {
