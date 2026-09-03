@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-03T11:55:10.147375+00:00",
+  "last_update": "2026-09-03T12:00:11.928072+00:00",
   "portfolio": {
     "value": 4501.67,
     "capital": 4497.7,
@@ -9,10 +9,10 @@
     "open_positions": 1
   },
   "prices": {
-    "BTC": 77865.5,
-    "ETH": 2406.05,
+    "BTC": 77909.5,
+    "ETH": 2406.95,
     "SOL": 100.765,
-    "HYPE": 82.0305
+    "HYPE": 82.0895
   },
   "positions": {
     "SOL": {
@@ -26,9 +26,9 @@
       "take_profit": 107.245,
       "strategy": "stochastic",
       "entry_time": "2026-09-03T03:40:36.411457+00:00",
-      "duration_hours": 8.2,
+      "duration_hours": 8.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1376
+      "unrealized_funding": 0.139
     }
   },
   "stats": {
@@ -969,11 +969,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-02T20:20:08.123984+00:00",
-      "v": 4494.07,
-      "p": -10.12
-    },
     {
       "t": "2026-09-02T20:25:08.474278+00:00",
       "v": 4502.27,
@@ -1968,6 +1963,11 @@
       "t": "2026-09-03T11:55:10.147375+00:00",
       "v": 4501.67,
       "p": -9.97
+    },
+    {
+      "t": "2026-09-03T12:00:11.928072+00:00",
+      "v": 4501.67,
+      "p": -9.97
     }
   ],
   "ai_history": [
@@ -2059,27 +2059,33 @@
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-09-03T11:55:10.054559+00:00"
+      "timestamp": "2026-09-03T12:00:11.846636+00:00"
     },
     "ETH": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.64,
+      "confidence": 0.5,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -4.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @lookonchain (\ud83d\udc4d152 \ud83d\udd0415) A $CASHCAT whale swapped  | oi_funding: OI -4.0% 1h",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @lookonchain (\ud83d\udc4d152 \ud83d\udd0415) A $CASHCAT whale swapped 5.43M $CASHCAT ($1.4M) for 4M $AI ($1.22M) [score: 5.0]",
+          "weight": 3.25
+        },
         {
           "source": "oi_funding",
           "signal": "OI -4.0% 1h",
           "weight": 0.72
         }
       ],
-      "timestamp": "2026-09-03T11:55:10.054580+00:00"
+      "timestamp": "2026-09-03T12:00:11.846648+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -2099,10 +2105,10 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-03T11:55:10.054591+00:00"
+      "timestamp": "2026-09-03T12:00:11.846654+00:00"
     },
     "HYPE": {
-      "score": 0.96,
+      "score": 1.0,
       "confidence": 0.74,
       "sources": [
         "x_scanner",
@@ -2112,25 +2118,25 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 ETH] @lookonchain (\ud83d\udc4d275 \ud83d\udd0121) The whale who held 2.93M $ | whale_monitor: Orderbook 69% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @lookonchain (\ud83d\udc4d149 \ud83d\udd048) Whales keep buying $HYPE  | whale_monitor: Orderbook 69% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 ETH] @lookonchain (\ud83d\udc4d275 \ud83d\udd0121) The whale who held 2.93M $HYPE ($163.37M) sold the remaining 969,595\u2026 [score: 6.0]",
-          "weight": 3.9
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @lookonchain (\ud83d\udc4d149 \ud83d\udd048) Whales keep buying $HYPE \u2014 mysterious 0x6436 bought another 430,224 $HYPE ($35.1M) to",
+          "weight": 3.6
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 HYPE] @TedPillows (\ud83d\udc4d72 \ud83d\udd013) A whale bought $30,000,000 in $HYPE today. Smart money continues to\u2026 [score: 4.2]",
-          "weight": 2.73
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @OnchainLens (\ud83d\udc4d8 \ud83d\udd043) Whale accumulates ~$70.6M $HYPE \u2014 824K $HYPE pulled from Coinbase within 17 hours [scor",
+          "weight": 1.68
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 69% bid-weighted (bullish)",
-          "weight": 0.76
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udf0a $HYPE] @WuBlockchain (\ud83d\udc4d8 \ud83d\udd043) Corroborated: Hyperliquid to add OPTIONAL permissioned markets to HIP-3 in a future ne",
+          "weight": 1.43
         }
       ],
-      "timestamp": "2026-09-03T11:55:10.054608+00:00"
+      "timestamp": "2026-09-03T12:00:11.846663+00:00"
     }
   },
   "config": {
