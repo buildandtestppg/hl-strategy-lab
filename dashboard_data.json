@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-09-03T02:05:28.186491+00:00",
+  "last_update": "2026-09-03T02:10:28.407289+00:00",
   "portfolio": {
-    "value": 4493.83,
+    "value": 4495.01,
     "capital": 4495.09,
     "initial": 5000.0,
-    "pnl": -506.17,
-    "pnl_pct": -10.12,
+    "pnl": -504.99,
+    "pnl_pct": -10.1,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 77263.5,
-    "ETH": 2383.65,
-    "SOL": 100.005,
-    "HYPE": 81.5375
+    "BTC": 77292.5,
+    "ETH": 2384.95,
+    "SOL": 100.135,
+    "HYPE": 81.6235
   },
   "positions": {
     "HYPE": {
       "direction": "LONG",
       "entry_price": 81.6395,
-      "current_price": 81.5375,
+      "current_price": 81.6235,
       "size": 14.163101295595428,
-      "unrealized_pnl": -1.26,
-      "unrealized_pnl_pct": -0.11,
+      "unrealized_pnl": -0.08,
+      "unrealized_pnl_pct": -0.01,
       "stop_loss": 78.457,
       "take_profit": 88.0045,
       "strategy": "macd",
       "entry_time": "2026-09-02T19:00:03.171441+00:00",
-      "duration_hours": 7.1,
-      "funding_rate": -0.002258,
-      "unrealized_funding": -0.1849
+      "duration_hours": 7.2,
+      "funding_rate": -0.001761,
+      "unrealized_funding": -0.146
     }
   },
   "stats": {
@@ -969,11 +969,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-02T10:05:41.153512+00:00",
-      "v": 4529.3,
-      "p": -9.41
-    },
     {
       "t": "2026-09-02T10:10:41.469201+00:00",
       "v": 4529.3,
@@ -1968,6 +1963,11 @@
       "t": "2026-09-03T02:05:28.186491+00:00",
       "v": 4493.83,
       "p": -10.12
+    },
+    {
+      "t": "2026-09-03T02:10:28.407289+00:00",
+      "v": 4495.01,
+      "p": -10.1
     }
   ],
   "ai_history": [
@@ -2030,17 +2030,18 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.48,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @BTC_NewsBot (\ud83d\udc4d0 \ud83d\udd040) BTC $77,372 (+0.16% 24h / \u22121 | whale_monitor: Orderbook 80% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @BTC_NewsBot (\ud83d\udc4d0 \ud83d\udd040) BTC $77,372 (+0.16% 24h / \u22121 | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI -5.0% 1h",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -2051,33 +2052,54 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $BTC] @BTC_NewsBot (\ud83d\udc4d0 \ud83d\udd040) BTC $77,372 (+0.16% 24h / \u22121.69% 7d), range $76.3k\u2013$77.7k [score: 1.5]",
           "weight": 0.98
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
         }
       ],
-      "timestamp": "2026-09-03T02:05:28.097356+00:00"
+      "timestamp": "2026-09-03T02:10:28.320832+00:00"
     },
     "ETH": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-03T02:05:28.097362+00:00"
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -12.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -12.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-03T02:10:28.320844+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-03T02:05:28.097364+00:00"
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +25.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +25.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-03T02:10:28.320850+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -2108,7 +2130,7 @@
           "weight": 1.36
         }
       ],
-      "timestamp": "2026-09-03T02:05:28.097386+00:00"
+      "timestamp": "2026-09-03T02:10:28.320860+00:00"
     }
   },
   "config": {
