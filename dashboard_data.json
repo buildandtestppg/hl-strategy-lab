@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-09-03T05:20:42.768051+00:00",
+  "last_update": "2026-09-03T05:25:43.087761+00:00",
   "portfolio": {
-    "value": 4494.36,
+    "value": 4490.07,
     "capital": 4497.7,
     "initial": 5000.0,
-    "pnl": -505.64,
-    "pnl_pct": -10.11,
+    "pnl": -509.93,
+    "pnl_pct": -10.2,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 77403.5,
-    "ETH": 2392.35,
-    "SOL": 100.205,
-    "HYPE": 81.8095
+    "BTC": 77229.5,
+    "ETH": 2383.85,
+    "SOL": 99.8815,
+    "HYPE": 81.6655
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 100.455,
-      "current_price": 100.205,
+      "current_price": 99.8815,
       "size": 13.251746937955259,
-      "unrealized_pnl": -3.34,
-      "unrealized_pnl_pct": -0.25,
+      "unrealized_pnl": -7.63,
+      "unrealized_pnl_pct": -0.57,
       "stop_loss": 97.06,
       "take_profit": 107.245,
       "strategy": "stochastic",
       "entry_time": "2026-09-03T03:40:36.411457+00:00",
-      "duration_hours": 1.7,
+      "duration_hours": 1.8,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0277
+      "unrealized_funding": 0.029
     }
   },
   "stats": {
@@ -969,11 +969,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-02T13:45:33.085760+00:00",
-      "v": 4509.14,
-      "p": -9.82
-    },
     {
       "t": "2026-09-02T13:50:34.098525+00:00",
       "v": 4513.44,
@@ -1968,6 +1963,11 @@
       "t": "2026-09-03T05:20:42.768051+00:00",
       "v": 4494.36,
       "p": -10.11
+    },
+    {
+      "t": "2026-09-03T05:25:43.087761+00:00",
+      "v": 4490.07,
+      "p": -10.2
     }
   ],
   "ai_history": [
@@ -2030,90 +2030,102 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.19,
-      "confidence": 0.5,
+      "score": 0.27,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcca Market] @Headmetax (\ud83d\udc4d31) September starts under pressur | whale_monitor: Orderbook 92% bid-weighted (bullish) | oi_funding: OI -54.0% 1h",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 92% bid-weighted (bullish)",
+          "weight": 1.68
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -54.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcca Market] @Headmetax (\ud83d\udc4d31) September starts under pressure after August rally: $BTC ~$77K fighting $80K, $ETH ~$2.4K,",
+          "weight": 0.65
+        }
+      ],
+      "timestamp": "2026-09-03T05:25:43.007248+00:00"
+    },
+    "ETH": {
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -78.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -78.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-03T05:25:43.007260+00:00"
+    },
+    "SOL": {
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -81.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -81.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-03T05:25:43.007266+00:00"
+    },
+    "HYPE": {
+      "score": 0.1,
+      "confidence": 0.5,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcca Market] @Headmetax (\ud83d\udc4d31) September starts under pressur | whale_monitor: Orderbook 39% bid (ask-heavy, bearish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 94% bid-weighted (bullish) | oi_funding: OI -92.0% 1h",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcca Market] @Headmetax (\ud83d\udc4d31) September starts under pressure after August rally: $BTC ~$77K fighting $80K, $ETH ~$2.4K,",
-          "weight": 0.65
+          "source": "whale_monitor",
+          "signal": "Orderbook 94% bid-weighted (bullish)",
+          "weight": 1.76
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 39% bid (ask-heavy, bearish)",
-          "weight": 0.44
-        }
-      ],
-      "timestamp": "2026-09-03T05:20:42.682206+00:00"
-    },
-    "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +51.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
           "source": "oi_funding",
-          "signal": "OI +51.0% 1h, funding 0.0013%",
+          "signal": "OI -92.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-03T05:20:42.682218+00:00"
-    },
-    "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +91.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +91.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-09-03T05:20:42.682225+00:00"
-    },
-    "HYPE": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "whale_monitor"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 72% bid-weighted (bullish)",
-      "key_signals": [
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 72% bid-weighted (bullish)",
-          "weight": 0.88
-        }
-      ],
-      "timestamp": "2026-09-03T05:20:42.682230+00:00"
+      "timestamp": "2026-09-03T05:25:43.007274+00:00"
     }
   },
   "config": {
