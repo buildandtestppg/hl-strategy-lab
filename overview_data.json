@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-09-04T00:40:04.738974+08:00",
-  "exported_at_utc": "2026-09-03T16:40:04.738977+00:00",
+  "exported_at": "2026-09-04T00:50:06.735376+08:00",
+  "exported_at_utc": "2026-09-03T16:50:06.735378+00:00",
   "portfolio": {
     "value": 4523.141558126378,
     "initial": 5000.0,
@@ -367,16 +367,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-09-03T01:10:24.332340+00:00",
-      "v": 4495.2,
-      "p": -10.1
-    },
-    {
-      "t": "2026-09-03T01:15:24.444478+00:00",
-      "v": 4496.08,
-      "p": -10.08
-    },
     {
       "t": "2026-09-03T01:20:24.920507+00:00",
       "v": 4496.32,
@@ -1366,29 +1356,39 @@
       "t": "2026-09-03T16:40:02.811032+00:00",
       "v": 4527.95,
       "p": -9.44
+    },
+    {
+      "t": "2026-09-03T16:45:03.530935+00:00",
+      "v": 4530.66,
+      "p": -9.39
+    },
+    {
+      "t": "2026-09-03T16:50:04.517513+00:00",
+      "v": 4531.44,
+      "p": -9.37
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -1.0,
+      "score": 1.0,
       "confidence": 0.3,
       "sources": [
-        "oi_funding"
+        "whale_monitor"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -207.0% 1h",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 75% bid-weighted (bullish)",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI -207.0% 1h",
-          "weight": 1.44
+          "source": "whale_monitor",
+          "signal": "Orderbook 75% bid-weighted (bullish)",
+          "weight": 1.0
         }
       ],
-      "timestamp": "2026-09-03T16:40:02.703934+00:00"
+      "timestamp": "2026-09-03T16:50:04.425251+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -1401,12 +1401,12 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: t): \u2022 Above $76K today: 99.4% \u2192 spot >$76K \u2022 Above $80K toda | oi_funding: OI -82.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | polymarket: t): \u2022 Above $76K today: 99.4% \u2192 spot >$76K \u2022 Above $80K toda | oi_funding: OI -5.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -82.0% 1h",
-          "weight": 1.44
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
         },
         {
           "source": "polymarket",
@@ -1414,10 +1414,10 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-09-03T16:40:02.703959+00:00"
+      "timestamp": "2026-09-03T16:50:04.425270+00:00"
     },
     "SOL": {
-      "score": 0.22,
+      "score": 0.52,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
@@ -1427,13 +1427,8 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @tokens (bullish) Solana = 97% of onchain tokeniz | oi_funding: OI -29.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @tokens (bullish) Solana = 97% of onchain tokeniz | oi_funding: OI -4.0% 1h",
       "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -29.0% 1h",
-          "weight": 1.44
-        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $SOL] @tokens (bullish) Solana = 97% of onchain tokenized-equity volume in H1 (7% a year ago); 22.5% of global stab",
@@ -1443,23 +1438,27 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $SOL] @DrazeLab (\ud83d\udc4d0 \ud83d\udd010) Solana ETF pulled $25M daily net inflows [score: 1.5]",
           "weight": 0.98
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -4.0% 1h",
+          "weight": 0.72
         }
       ],
-      "timestamp": "2026-09-03T16:40:02.703973+00:00"
+      "timestamp": "2026-09-03T16:50:04.425282+00:00"
     },
     "HYPE": {
-      "score": 0.38,
-      "confidence": 0.84,
+      "score": -0.0,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 6,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 5,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udfe2 $HYPE] @adidogCEO (bullish) Top-3 deflationary tokens t | whale_monitor: Orderbook 37% bid (ask-heavy, bearish) | oi_funding: OI +127.0% 1h, funding 0.0013%",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udfe2 $HYPE] @adidogCEO (bullish) Top-3 deflationary tokens t | oi_funding: OI -7.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1467,17 +1466,17 @@
           "weight": 1.62
         },
         {
-          "source": "oi_funding",
-          "signal": "OI +127.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
-        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @ZecStatsorg (\ud83d\udc4d0 \ud83d\udd010) Every ZEC perp whale on Hyperliquid, tracked live [score: 2.0]",
           "weight": 1.3
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -7.0% 1h",
+          "weight": 1.26
         }
       ],
-      "timestamp": "2026-09-03T16:40:02.703986+00:00"
+      "timestamp": "2026-09-03T16:50:04.425293+00:00"
     }
   },
   "pair_strategies": {
@@ -1667,102 +1666,102 @@
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
-        "text": "**Run Time:** 2026-09-04 00:24:56",
+        "text": "**Run Time:** 2026-09-04 00:45:18",
         "sentiment": 0,
-        "time": "2026-09-04 00:24"
+        "time": "2026-09-04 00:45"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1788452696.9387627"
+        "time": "1788453918.7571843"
       }
     ],
     "news_agent": [
@@ -1867,32 +1866,32 @@
         "time": "1788453526.5600307"
       }
     ],
-    "generated": "2026-09-03T16:40:02.732358Z"
+    "generated": "2026-09-03T16:50:04.447158Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "00:27",
-      "age_minutes": 13,
+      "age_minutes": 23,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "00:24",
-      "age_minutes": 15,
+      "last_run": "00:45",
+      "age_minutes": 5,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "00:38",
-      "age_minutes": 1,
+      "age_minutes": 11,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "21:06",
-      "age_minutes": 213,
+      "age_minutes": 223,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "00:30",
-      "age_minutes": 9,
+      "last_run": "00:45",
+      "age_minutes": 4,
       "status": "fresh"
     }
   },
@@ -2319,10 +2318,10 @@
     }
   },
   "prices": {
-    "BTC": 80813.5,
-    "ETH": 2492.75,
-    "SOL": 104.255,
-    "HYPE": 83.6145
+    "BTC": 80976.5,
+    "ETH": 2494.75,
+    "SOL": 104.535,
+    "HYPE": 83.9895
   },
   "actions": [],
   "ai_history": [
