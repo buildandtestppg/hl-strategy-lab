@@ -1,7 +1,7 @@
 {
   "BTC": {
-    "score": -0.21,
-    "confidence": 0.6,
+    "score": -0.87,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -9,14 +9,14 @@
       "oi_funding"
     ],
     "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 2,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: * [HOT $BTC] @InTheAssembly (\u70b9\u8d5e 65 / \u8f6c\u53d1 8) $BTC \ud83d\udcc8\ud83d\udcc8\ud83d\udcc8 [\u5f97\u5206\uff1a2.7] | whale_monitor: Orderbook 25% bid (ask-heavy, bearish) | news_agent: \ud83d\udcf0 **Breaking Crypto News** \u2014 Sep 3, 15:52 UTC  \ud83d\udd34 **Breaking*",
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: * [HOT $BTC] @InTheAssembly (\u70b9\u8d5e 65 / \u8f6c\u53d1 8) $BTC \ud83d\udcc8\ud83d\udcc8\ud83d\udcc8 [\u5f97\u5206\uff1a2.7] | whale_monitor: Orderbook 25% bid (ask-heavy, bearish) | news_agent: \ud83d\udcf0 **Breaking Crypto News** \u2014 Sep 3, 15:52 UTC  \ud83d\udd34 **Breaking*",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +155.0% 1h, funding 0.0013%",
+        "signal": "OI -57.0% 1h",
         "weight": 1.44
       },
       {
@@ -30,21 +30,27 @@
         "weight": 1.0
       }
     ],
-    "timestamp": "2026-09-03T16:00:01.710888+00:00"
+    "timestamp": "2026-09-03T16:05:02.158881+00:00"
   },
   "ETH": {
-    "score": -0.09,
-    "confidence": 0.5,
+    "score": 0.52,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "polymarket"
+      "polymarket",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: * [HOT $ETH] @whale_alert (\u70b9\u8d5e 16 / \u8f6c\u53d1 1) \ud83d\udea8\ud83d\udea8\ud83d\udea8 21,129 $ETH (51 | polymarket: t): \u2022 Above $76K today: 99.4% \u2192 spot >$76K \u2022 Above $80K toda",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: * [HOT $ETH] @whale_alert (\u70b9\u8d5e 16 / \u8f6c\u53d1 1) \ud83d\udea8\ud83d\udea8\ud83d\udea8 21,129 $ETH (51 | polymarket: t): \u2022 Above $76K today: 99.4% \u2192 spot >$76K \u2022 Above $80K toda | oi_funding: OI +19.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +19.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
       {
         "source": "polymarket",
         "signal": "t): \u2022 Above $76K today: 99.4% \u2192 spot >$76K \u2022 Above $80K today: only 7% (+4.5pp) \u2014 upside capped \u2022 Dip to $45K by year-en",
@@ -56,10 +62,10 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-09-03T16:00:01.710902+00:00"
+    "timestamp": "2026-09-03T16:05:02.158899+00:00"
   },
   "SOL": {
-    "score": -1.0,
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -68,40 +74,34 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -10.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +48.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -10.0% 1h",
+        "signal": "OI +48.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-03T16:00:01.710911+00:00"
+    "timestamp": "2026-09-03T16:05:02.158908+00:00"
   },
   "HYPE": {
-    "score": -0.38,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 2,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: * [HOT $HYPE] @cryptic__Lab (\u70b9\u8d5e 3 / \u8f6c\u53d1 0) \ud83d\ude80 Bitbase \u76ee\u524d\u6709\u4e00\u4e9b\u975e\u5e38\u771f | oi_funding: OI -104.0% 1h",
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: * [HOT $HYPE] @cryptic__Lab (\u70b9\u8d5e 3 / \u8f6c\u53d1 0) \ud83d\ude80 Bitbase \u76ee\u524d\u6709\u4e00\u4e9b\u975e\u5e38\u771f",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -104.0% 1h",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "* [HOT $HYPE] @cryptic__Lab (\u70b9\u8d5e 3 / \u8f6c\u53d1 0) \ud83d\ude80 Bitbase \u76ee\u524d\u6709\u4e00\u4e9b\u975e\u5e38\u771f\u5b9e\u7684 $HYPE \ud83d\udc40 Bitbase \u6b63\u5728\u8fd0\u884c\u5176\u516b\u6708 Blast \u6d3b\u52a8\u2026\u2026 [\u5f97\u5206\uff1a1.6]",
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-09-03T16:00:01.710919+00:00"
+    "timestamp": "2026-09-03T16:05:02.158914+00:00"
   }
 }
