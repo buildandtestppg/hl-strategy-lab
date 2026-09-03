@@ -1,17 +1,23 @@
 {
   "BTC": {
-    "score": -0.38,
-    "confidence": 0.6,
+    "score": -0.02,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "news_agent"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcf0 $BTC] @luge517 (\ud83d\udc4d5 \ud83d\udd040) Let me talk about the secondary  | whale_monitor: Orderbook 21% bid (ask-heavy, bearish)",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcf0 $BTC] @luge517 (\ud83d\udc4d5 \ud83d\udd040) Let me talk about the secondary  | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | news_agent: ent read-through for AI-linked tokens  **Standard Chartered ",
     "key_signals": [
+      {
+        "source": "news_agent",
+        "signal": "ent read-through for AI-linked tokens  **Standard Chartered launches institutional spot crypto trading in UAE** \u2192 Instit",
+        "weight": 1.2
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcf0 $BTC] @luge517 (\ud83d\udc4d5 \ud83d\udd040) Let me talk about the secondary market. Seeing everyone shouting about\u2026 [score: 1.8]",
@@ -21,34 +27,35 @@
         "source": "whale_monitor",
         "signal": "Orderbook 21% bid (ask-heavy, bearish)",
         "weight": 1.16
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcca $BTC] @ChartsBtc (\ud83d\udc4d2 \ud83d\udd041) Today's high $78,131, with the latest ATH at $126,272. It has been 332\u2026 [score: 1.6]",
-        "weight": 1.04
       }
     ],
-    "timestamp": "2026-09-03T09:55:49.283301+00:00"
+    "timestamp": "2026-09-03T10:00:49.757600+00:00"
   },
   "ETH": {
-    "score": -1.0,
-    "confidence": 0.3,
+    "score": -0.09,
+    "confidence": 0.5,
     "sources": [
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -24.0% 1h",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: ead-through for AI-linked tokens  **Standard Chartered launc | oi_funding: OI -24.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
         "signal": "OI -24.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "ead-through for AI-linked tokens  **Standard Chartered launches institutional spot crypto trading in UAE** \u2192 Institution",
+        "weight": 1.2
       }
     ],
-    "timestamp": "2026-09-03T09:55:49.283317+00:00"
+    "timestamp": "2026-09-03T10:00:49.757614+00:00"
   },
   "SOL": {
     "score": -0.11,
@@ -79,7 +86,7 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-09-03T09:55:49.283331+00:00"
+    "timestamp": "2026-09-03T10:00:49.757624+00:00"
   },
   "HYPE": {
     "score": 0.23,
@@ -111,6 +118,6 @@
         "weight": 1.3
       }
     ],
-    "timestamp": "2026-09-03T09:55:49.283349+00:00"
+    "timestamp": "2026-09-03T10:00:49.757637+00:00"
   }
 }
