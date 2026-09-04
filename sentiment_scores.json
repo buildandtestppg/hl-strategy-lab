@@ -1,17 +1,23 @@
 {
   "BTC": {
-    "score": 0.47,
-    "confidence": 0.5,
+    "score": 0.39,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @seth_fin (\ud83d\udc4d10 \ud83d\udd012) $BTC  OPEN INTEREST PUMPING  8 | whale_monitor: Orderbook 28% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @seth_fin (\ud83d\udc4d10 \ud83d\udd012) $BTC  OPEN INTEREST PUMPING  8 | whale_monitor: Orderbook 61% bid-weighted (bullish) | oi_funding: OI -20.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -20.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $BTC] @seth_fin (\ud83d\udc4d10 \ud83d\udd012) $BTC  OPEN INTEREST PUMPING  82K sell algos are still holding [score: 2.1]",
@@ -21,27 +27,21 @@
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $BTC] @_0xEdward_ (\ud83d\udc4d5 \ud83d\udd010) @BarrySilbert  goes against the current, and the truth is that time ha\u2026 [score: 1.7]",
         "weight": 1.1
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 28% bid (ask-heavy, bearish)",
-        "weight": 0.88
       }
     ],
-    "timestamp": "2026-09-04T00:00:35.384338+00:00"
+    "timestamp": "2026-09-04T00:05:36.467548+00:00"
   },
   "ETH": {
     "score": 1.0,
-    "confidence": 0.74,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 4,
-    "convergence": true,
-    "convergence_strength": 2,
+    "signal_count": 3,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @DylanTeil (\ud83d\udc4d79 \ud83d\udd0110) if i had to hold one untouch | oi_funding: OI +11.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @DylanTeil (\ud83d\udc4d79 \ud83d\udd0110) if i had to hold one untouch",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -54,42 +54,36 @@
         "weight": 1.49
       },
       {
-        "source": "oi_funding",
-        "signal": "OI +11.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $ETH] @CJ900X (\ud83d\udc4d41 \ud83d\udd014) Watching this 4hr imbalance on  $ETH  here  IF, it is closed through A\u2026 [score: 1.7]",
+        "weight": 1.1
       }
     ],
-    "timestamp": "2026-09-04T00:00:35.384361+00:00"
+    "timestamp": "2026-09-04T00:05:36.467561+00:00"
   },
   "SOL": {
-    "score": -0.05,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 0.3,
     "sources": [
-      "x_scanner",
-      "oi_funding"
+      "x_scanner"
     ],
-    "signal_count": 2,
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\u26a1 $SOL] @chang_defi (\ud83d\udc4d0 \ud83d\udd010) Solana has lost.    To come b | oi_funding: OI -8.0% 1h",
+    "contradictions": 0,
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\u26a1 $SOL] @chang_defi (\ud83d\udc4d0 \ud83d\udd010) Solana has lost.    To come b",
     "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI -8.0% 1h",
-        "weight": 1.44
-      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\u26a1 $SOL] @chang_defi (\ud83d\udc4d0 \ud83d\udd010) Solana has lost.    To come back, It can do absolutely nothing.    Acc\u2026 [score: 2.0]",
         "weight": 1.3
       }
     ],
-    "timestamp": "2026-09-04T00:00:35.384374+00:00"
+    "timestamp": "2026-09-04T00:05:36.467568+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 1.0,
+    "score": 0.18,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -97,9 +91,9 @@
     ],
     "signal_count": 4,
     "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @_stevenhl (\ud83d\udc4d91 \ud83d\udd0113) Coinbase x Hyperliquid code | whale_monitor: Orderbook 70% bid-weighted (bullish) | oi_funding: OI +59.0% 1h, funding 0.0013%",
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @_stevenhl (\ud83d\udc4d91 \ud83d\udd0113) Coinbase x Hyperliquid code | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | oi_funding: OI -29.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -113,10 +107,10 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +59.0% 1h, funding 0.0013%",
+        "signal": "OI -29.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-04T00:00:35.384384+00:00"
+    "timestamp": "2026-09-04T00:05:36.467579+00:00"
   }
 }
