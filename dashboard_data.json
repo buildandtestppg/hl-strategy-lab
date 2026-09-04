@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-04T08:20:08.922027+00:00",
+  "last_update": "2026-09-04T08:25:09.854861+00:00",
   "portfolio": {
     "value": 4552.0,
     "capital": 4549.47,
@@ -9,10 +9,10 @@
     "open_positions": 1
   },
   "prices": {
-    "BTC": 80852.5,
+    "BTC": 80895.5,
     "ETH": 2514.95,
-    "SOL": 103.865,
-    "HYPE": 86.0435
+    "SOL": 103.805,
+    "HYPE": 86.1175
   },
   "positions": {
     "ETH": {
@@ -20,7 +20,7 @@
       "entry_price": 2510.35,
       "current_price": 2514.95,
       "size": 0.5696636159150547,
-      "unrealized_pnl": 2.53,
+      "unrealized_pnl": 2.52,
       "unrealized_pnl_pct": 0.18,
       "stop_loss": 2430.3,
       "take_profit": 2670.45,
@@ -28,7 +28,7 @@
       "entry_time": "2026-09-04T03:05:11.861422+00:00",
       "duration_hours": 5.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.094
+      "unrealized_funding": 0.0955
     }
   },
   "stats": {
@@ -969,11 +969,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-03T14:53:26.043233+00:00",
-      "v": 4527.45,
-      "p": -9.45
-    },
     {
       "t": "2026-09-03T14:55:44.269451+00:00",
       "v": 4529.28,
@@ -1968,6 +1963,11 @@
       "t": "2026-09-04T08:20:08.922027+00:00",
       "v": 4552.0,
       "p": -8.96
+    },
+    {
+      "t": "2026-09-04T08:25:09.854861+00:00",
+      "v": 4552.0,
+      "p": -8.96
     }
   ],
   "ai_history": [
@@ -2030,18 +2030,19 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.76,
-      "confidence": 0.84,
+      "score": 0.39,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @TheBitGuard (\ud83d\udc4d0 \ud83d\udd040) Markets are holding their b | polymarket: meeting\" **58.5%** (+11pp, $1.81M 24h vol) \u2022 \"Hike by Septem | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "signal_count": 5,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @TheBitGuard (\ud83d\udc4d0 \ud83d\udd040) Markets are holding their b | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | polymarket: meeting\" **58.5%** (+11pp, $1.81M 24h vol) \u2022 \"Hike by Septem",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2049,30 +2050,31 @@
           "weight": 2.0
         },
         {
-          "source": "x_scanner",
-          "signal": "**\ud83d\udcca Cross-Platform Summary:** Macro on hold ahead of today's US August jobs report, but ETF flows stayed green ($BTC +$7",
-          "weight": 0.95
+          "source": "oi_funding",
+          "signal": "OI +88.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
-          "source": "oi_funding",
-          "signal": "OI +5.0% 1h, funding 0.0013%",
-          "weight": 0.9
+          "source": "whale_monitor",
+          "signal": "Orderbook 21% bid (ask-heavy, bearish)",
+          "weight": 1.16
         }
       ],
-      "timestamp": "2026-09-04T08:20:08.830013+00:00"
+      "timestamp": "2026-09-04T08:25:09.770532+00:00"
     },
     "ETH": {
-      "score": 0.73,
-      "confidence": 0.5,
+      "score": 0.89,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Cryptic_Web3 (\ud83d\udc4d65 \ud83d\udd040) \ud83c\udde6\ud83c\uddea LATEST: @StanChart laun | polymarket: : \"above $80K Sep 4\" 72.5% (expiry-day knife-edge, spot sitt",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Cryptic_Web3 (\ud83d\udc4d65 \ud83d\udd040) \ud83c\udde6\ud83c\uddea LATEST: @StanChart laun | polymarket: : \"above $80K Sep 4\" 72.5% (expiry-day knife-edge, spot sitt | oi_funding: OI +67.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2080,49 +2082,69 @@
           "weight": 3.61
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $ETH] @cryptocupra (\ud83d\udc4d23 \ud83d\udd049) WE BROKE OUT. $ETH IS READY TO GO PARABOLIC. THIS IS THE SIGNAL I' [score: 1.9]",
-          "weight": 1.23
+          "source": "oi_funding",
+          "signal": "OI +67.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $ETH] @DeepWhale (\ud83d\udc4d5 \ud83d\udd042) \ud83d\udcca ETF FLOWS | 03 September 2026 \ud83d\udfe2 ETF $BTC : +730.87 M$ \ud83d\udfe2 ETF $ETH [score: 1.9]",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @cryptocupra (\ud83d\udc4d23 \ud83d\udd049) WE BROKE OUT. $ETH IS READY TO GO PARABOLIC. THIS IS THE SIGNAL I' [score: 1.9]",
           "weight": 1.23
         }
       ],
-      "timestamp": "2026-09-04T08:20:08.830031+00:00"
+      "timestamp": "2026-09-04T08:25:09.770552+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-04T08:20:08.830033+00:00"
-    },
-    "HYPE": {
       "score": 1.0,
       "confidence": 0.3,
       "sources": [
-        "x_scanner"
+        "oi_funding"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @WardogNGG (\ud83d\udc4d7 \ud83d\udd040) Good morning bros, $HYPE reac",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +37.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +37.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-04T08:25:09.770559+00:00"
+    },
+    "HYPE": {
+      "score": 0.22,
+      "confidence": 0.84,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @WardogNGG (\ud83d\udc4d7 \ud83d\udd040) Good morning bros, $HYPE reac | whale_monitor: Orderbook 67% bid-weighted (bullish) | oi_funding: OI -26.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @WardogNGG (\ud83d\udc4d7 \ud83d\udd040) Good morning bros, $HYPE reached at an ATH yesterday road to 100 is [score: 1.8]",
           "weight": 1.44
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -26.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 67% bid-weighted (bullish)",
+          "weight": 0.68
         }
       ],
-      "timestamp": "2026-09-04T08:20:08.830040+00:00"
+      "timestamp": "2026-09-04T08:25:09.770568+00:00"
     }
   },
   "config": {
