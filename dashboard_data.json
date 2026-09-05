@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-05T10:20:56.925077+00:00",
+  "last_update": "2026-09-05T10:25:57.554796+00:00",
   "portfolio": {
     "value": 4506.27,
     "capital": 4506.27,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 79585.5,
+    "BTC": 79617.5,
     "ETH": 2455.75,
-    "SOL": 102.385,
-    "HYPE": 84.6625
+    "SOL": 102.435,
+    "HYPE": 84.7375
   },
   "positions": {},
   "stats": {
@@ -953,11 +953,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-04T18:35:03.037216+00:00",
-      "v": 4510.65,
-      "p": -9.79
-    },
     {
       "t": "2026-09-04T18:40:03.949232+00:00",
       "v": 4510.65,
@@ -1952,6 +1947,11 @@
       "t": "2026-09-05T10:20:56.925077+00:00",
       "v": 4506.27,
       "p": -9.87
+    },
+    {
+      "t": "2026-09-05T10:25:57.554796+00:00",
+      "v": 4506.27,
+      "p": -9.87
     }
   ],
   "ai_history": [
@@ -2014,17 +2014,17 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.83,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 8,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Crypto__Haris (\ud83d\udc4d60 \ud83d\udd0415) \ud83d\udea8 BITCOIN JUST CONFIRMED | whale_monitor: Orderbook 62% bid-weighted (bullish)",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Crypto__Haris (\ud83d\udc4d60 \ud83d\udd0415) \ud83d\udea8 BITCOIN JUST CONFIRMED | oi_funding: OI -12.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2042,19 +2042,21 @@
           "weight": 2.41
         }
       ],
-      "timestamp": "2026-09-05T10:20:56.723904+00:00"
+      "timestamp": "2026-09-05T10:25:57.469063+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.46,
+      "confidence": 0.84,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CryptoPatel (\ud83d\udc4d101 \ud83d\udd047) $ETH Long-Term Journey Is ",
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CryptoPatel (\ud83d\udc4d101 \ud83d\udd047) $ETH Long-Term Journey Is  | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | oi_funding: OI -11.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2065,34 +2067,48 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $ETH] @Imprintcentre (\ud83d\udc4d0 \ud83d\udd040) 9/3/2026 Daily Recap: Laser eyes time! \ud83d\udd25 - $ETH & XRP all pushing high [score: 2.5]",
           "weight": 2.0
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -11.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-05T10:20:56.723917+00:00"
+      "timestamp": "2026-09-05T10:25:57.469083+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-05T10:20:56.723919+00:00"
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -18.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -18.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-05T10:25:57.469091+00:00"
     },
     "HYPE": {
-      "score": 0.7,
-      "confidence": 0.5,
+      "score": 0.61,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @whale_alert (\ud83d\udc4d13 \ud83d\udd042) \ud83d\udea8 \ud83d\udea8 300,000 $HYPE (25,192, | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @whale_alert (\ud83d\udc4d13 \ud83d\udd042) \ud83d\udea8 \ud83d\udea8 300,000 $HYPE (25,192, | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -26.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2110,7 +2126,7 @@
           "weight": 1.62
         }
       ],
-      "timestamp": "2026-09-05T10:20:56.723928+00:00"
+      "timestamp": "2026-09-05T10:25:57.469101+00:00"
     }
   },
   "config": {
