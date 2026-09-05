@@ -1,15 +1,16 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.63,
+    "confidence": 0.5,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "whale_monitor"
     ],
-    "signal_count": 3,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @BattleTicker (\ud83d\udc4d0 \ud83d\udd040) \ud83d\udcca\ud83d\udd25 Crypto Volume Report To",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @BattleTicker (\ud83d\udc4d0 \ud83d\udd040) \ud83d\udcca\ud83d\udd25 Crypto Volume Report To | whale_monitor: Orderbook 14% bid (ask-heavy, bearish)",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -27,7 +28,7 @@
         "weight": 1.76
       }
     ],
-    "timestamp": "2026-09-05T21:40:04.895823+00:00"
+    "timestamp": "2026-09-05T21:45:06.279787+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -39,18 +40,18 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +19.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +12.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +19.0% 1h, funding 0.0013%",
+        "signal": "OI +12.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-05T21:40:04.895843+00:00"
+    "timestamp": "2026-09-05T21:45:06.279800+00:00"
   },
   "SOL": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -59,28 +60,29 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +79.0% 1h, funding 0.0008%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -16.0% 1h",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +79.0% 1h, funding 0.0008%",
+        "signal": "OI -16.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-05T21:40:04.895854+00:00"
+    "timestamp": "2026-09-05T21:45:06.279808+00:00"
   },
   "HYPE": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.96,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 6,
+    "signal_count": 7,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @wallstreetbets (\ud83d\udc4d155 \ud83d\udd042) hyperliquid. [score: 2 | oi_funding: OI +45.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @wallstreetbets (\ud83d\udc4d155 \ud83d\udd042) hyperliquid. [score: 2 | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI +32.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -94,10 +96,10 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI +45.0% 1h, funding 0.0013%",
+        "signal": "OI +32.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-05T21:40:04.895874+00:00"
+    "timestamp": "2026-09-05T21:45:06.279825+00:00"
   }
 }
