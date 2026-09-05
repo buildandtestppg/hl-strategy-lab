@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-05T14:35:43.142018+00:00",
+  "last_update": "2026-09-05T14:40:43.999181+00:00",
   "portfolio": {
     "value": 4506.27,
     "capital": 4506.27,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 79707.5,
-    "ETH": 2457.25,
-    "SOL": 102.865,
-    "HYPE": 85.1445
+    "BTC": 79698.5,
+    "ETH": 2457.35,
+    "SOL": 102.845,
+    "HYPE": 85.1805
   },
   "positions": {},
   "stats": {
@@ -953,11 +953,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-04T22:45:49.191186+00:00",
-      "v": 4508.29,
-      "p": -9.83
-    },
     {
       "t": "2026-09-04T22:50:50.023793+00:00",
       "v": 4507.91,
@@ -1952,6 +1947,11 @@
       "t": "2026-09-05T14:35:43.142018+00:00",
       "v": 4506.27,
       "p": -9.87
+    },
+    {
+      "t": "2026-09-05T14:40:43.999181+00:00",
+      "v": 4506.27,
+      "p": -9.87
     }
   ],
   "ai_history": [
@@ -2014,17 +2014,23 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.29,
-      "confidence": 0.3,
+      "score": 0.65,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Hyperbotai $39.8M BTC long survived NFP liq wave",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Hyperbotai $39.8M BTC long survived NFP liq wave | oi_funding: OI +19.0% 1h, funding 0.0009%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +19.0% 1h, funding 0.0009%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $BTC] @Hyperbotai $39.8M BTC long survived NFP liq wave ($13.15M in 15 min) [2.5]",
@@ -2034,14 +2040,9 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udc0b $BTC] @decilizer Whales borrowed through the 2026 bear vs selling \u2014 collateral share 57.8%\u219230.5% [2.5]",
           "weight": 0.8
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @KillaXBT (\ud83d\udc4d39) BTC bottom formation complete \u2014 awaiting higher low [1.8]",
-          "weight": 0.65
         }
       ],
-      "timestamp": "2026-09-05T14:35:42.989751+00:00"
+      "timestamp": "2026-09-05T14:40:43.817600+00:00"
     },
     "ETH": {
       "score": 0.0,
@@ -2053,20 +2054,26 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-09-05T14:35:42.989757+00:00"
+      "timestamp": "2026-09-05T14:40:43.817620+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @SatoshiOwl $memestonk consolidating after ~$4M v",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @SatoshiOwl $memestonk consolidating after ~$4M v | oi_funding: OI +25.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +25.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $SOL] @SatoshiOwl $memestonk consolidating after ~$4M volume from fresh launch [3.3]",
@@ -2078,19 +2085,27 @@
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-09-05T14:35:42.989770+00:00"
+      "timestamp": "2026-09-05T14:40:43.817661+00:00"
     },
     "HYPE": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "whale_monitor"
+      ],
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-05T14:35:42.989772+00:00"
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 32% bid (ask-heavy, bearish)",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 32% bid (ask-heavy, bearish)",
+          "weight": 0.72
+        }
+      ],
+      "timestamp": "2026-09-05T14:40:43.817673+00:00"
     }
   },
   "config": {
