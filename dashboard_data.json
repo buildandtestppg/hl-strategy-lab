@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-05T13:05:27.045917+00:00",
+  "last_update": "2026-09-05T13:10:27.872548+00:00",
   "portfolio": {
     "value": 4506.27,
     "capital": 4506.27,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 79676.5,
-    "ETH": 2460.25,
-    "SOL": 103.235,
-    "HYPE": 85.2545
+    "BTC": 79629.5,
+    "ETH": 2457.95,
+    "SOL": 103.035,
+    "HYPE": 85.147
   },
   "positions": {},
   "stats": {
@@ -26,7 +26,9 @@
     "worst_trade": -50.62,
     "total_realized_pnl": -202.97
   },
-  "actions": [],
+  "actions": [
+    "\u23f8\ufe0f HYPE entry SKIPPED \u2014 unlock blackout window active"
+  ],
   "closed_trades": [
     {
       "pair": "SOL",
@@ -953,11 +955,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-04T21:15:33.006584+00:00",
-      "v": 4510.65,
-      "p": -9.79
-    },
     {
       "t": "2026-09-04T21:20:33.678894+00:00",
       "v": 4510.65,
@@ -1952,6 +1949,11 @@
       "t": "2026-09-05T13:05:27.045917+00:00",
       "v": 4506.27,
       "p": -9.87
+    },
+    {
+      "t": "2026-09-05T13:10:27.872548+00:00",
+      "v": 4506.27,
+      "p": -9.87
     }
   ],
   "ai_history": [
@@ -2014,17 +2016,17 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.73,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
       "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @BattleTicker (\ud83d\udc4d1 \ud83d\udd010) \ud83d\udea8\ud83d\udcca Top Crypto Volume Repor | whale_monitor: Orderbook 68% bid-weighted (bullish)",
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @BattleTicker (\ud83d\udc4d1 \ud83d\udd010) \ud83d\udea8\ud83d\udcca Top Crypto Volume Repor | whale_monitor: Orderbook 37% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2038,23 +2040,24 @@
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 68% bid-weighted (bullish)",
-          "weight": 0.72
+          "signal": "Orderbook 37% bid (ask-heavy, bearish)",
+          "weight": 0.52
         }
       ],
-      "timestamp": "2026-09-05T13:05:26.849602+00:00"
+      "timestamp": "2026-09-05T13:10:27.685477+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @TedPillows (\ud83d\udc4d163 \ud83d\udd0117) $ETH Treasury companies ar",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @TedPillows (\ud83d\udc4d163 \ud83d\udd0117) $ETH Treasury companies ar | oi_funding: OI +45.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2072,39 +2075,59 @@
           "weight": 2.08
         }
       ],
-      "timestamp": "2026-09-05T13:05:26.849617+00:00"
+      "timestamp": "2026-09-05T13:10:27.685501+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-05T13:05:26.849619+00:00"
-    },
-    "HYPE": {
       "score": 1.0,
       "confidence": 0.3,
       "sources": [
-        "x_scanner"
+        "oi_funding"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @GrayWa (\ud83d\udc4d0 \ud83d\udd010) Early Hyperliquid vibes with il",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +90.0% 1h, funding 0.0007%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +90.0% 1h, funding 0.0007%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-05T13:10:27.685509+00:00"
+    },
+    "HYPE": {
+      "score": 1.0,
+      "confidence": 1.0,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @GrayWa (\ud83d\udc4d0 \ud83d\udd010) Early Hyperliquid vibes with il | whale_monitor: Orderbook 76% bid-weighted (bullish) | oi_funding: OI +91.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +91.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @GrayWa (\ud83d\udc4d0 \ud83d\udd010) Early Hyperliquid vibes with iliensic announcing all eco integrations [score: 2.0]",
           "weight": 1.3
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 76% bid-weighted (bullish)",
+          "weight": 1.04
         }
       ],
-      "timestamp": "2026-09-05T13:05:26.849626+00:00"
+      "timestamp": "2026-09-05T13:10:27.685520+00:00"
     }
   },
   "config": {
