@@ -1,20 +1,36 @@
 {
-  "last_update": "2026-09-05T16:00:58.889583+00:00",
+  "last_update": "2026-09-05T16:05:59.790178+00:00",
   "portfolio": {
-    "value": 4506.27,
-    "capital": 4506.27,
+    "value": 4503.3,
+    "capital": 4503.3,
     "initial": 5000.0,
-    "pnl": -493.73,
-    "pnl_pct": -9.87,
-    "open_positions": 0
+    "pnl": -496.7,
+    "pnl_pct": -9.93,
+    "open_positions": 1
   },
   "prices": {
-    "BTC": 79771.5,
-    "ETH": 2459.05,
-    "SOL": 102.865,
-    "HYPE": 85.4025
+    "BTC": 79776.5,
+    "ETH": 2460.05,
+    "SOL": 102.935,
+    "HYPE": 85.4385
   },
-  "positions": {},
+  "positions": {
+    "SOL": {
+      "direction": "LONG",
+      "entry_price": 102.935,
+      "current_price": 102.935,
+      "size": 30.447789565782788,
+      "unrealized_pnl": -0.0,
+      "unrealized_pnl_pct": -0.0,
+      "stop_loss": 101.455,
+      "take_profit": 105.895,
+      "strategy": "stochastic",
+      "entry_time": "2026-09-05T16:06:32.082013+00:00",
+      "duration_hours": 0.0,
+      "funding_rate": 0.00125,
+      "unrealized_funding": 0.0
+    }
+  },
   "stats": {
     "total_trades": 157,
     "wins": 69,
@@ -26,7 +42,9 @@
     "worst_trade": -50.62,
     "total_realized_pnl": -202.97
   },
-  "actions": [],
+  "actions": [
+    "\ud83d\udfe2 OPENED LONG SOL @ $102.9350 | Size: 30.4478 | SL: $101.4550 | TP: $105.8950 | Strategy: stochastic | regime: bull (ER=0.31) | Stochastic bullish cross %K 74.7 > %D 67.7 | sentiment: sentiment aligned (+1.00), conf boosted [convergence x2] | fee_impact: 0.94 (conf 0.85\u21920.80) | lesson_adj: +0.06"
+  ],
   "closed_trades": [
     {
       "pair": "SOL",
@@ -953,11 +971,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-05T00:10:05.384773+00:00",
-      "v": 4510.14,
-      "p": -9.8
-    },
     {
       "t": "2026-09-05T00:15:06.363042+00:00",
       "v": 4509.76,
@@ -1952,6 +1965,11 @@
       "t": "2026-09-05T16:00:58.889583+00:00",
       "v": 4506.27,
       "p": -9.87
+    },
+    {
+      "t": "2026-09-05T16:05:59.790178+00:00",
+      "v": 4503.3,
+      "p": -9.93
     }
   ],
   "ai_history": [
@@ -2037,19 +2055,20 @@
           "weight": 0.76
         }
       ],
-      "timestamp": "2026-09-05T16:00:58.693576+00:00"
+      "timestamp": "2026-09-05T16:05:59.589137+00:00"
     },
     "ETH": {
-      "score": 0.13,
-      "confidence": 0.3,
+      "score": 0.27,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$ETH] @TedPillows (\ud83d\udc4d164 \ud83d\udd0422) sell wall at $2,540. Ethereu",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$ETH] @TedPillows (\ud83d\udc4d164 \ud83d\udd0422) sell wall at $2,540. Ethereu | oi_funding: OI +4.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2067,27 +2086,33 @@
           "weight": 1.17
         }
       ],
-      "timestamp": "2026-09-05T16:00:58.693593+00:00"
+      "timestamp": "2026-09-05T16:05:59.589154+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [$SOL] @CryptoCurb (\ud83d\udc4d8 \ud83d\udd042) I think Solana is going to pump",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [$SOL] @CryptoCurb (\ud83d\udc4d8 \ud83d\udd042) I think Solana is going to pump | oi_funding: OI +4.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
           "signal": "\u2022 [$SOL] @CryptoCurb (\ud83d\udc4d8 \ud83d\udd042) I think Solana is going to pump more violently than we've ever seen before [score: 3.0]",
           "weight": 1.95
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI +4.0% 1h, funding 0.0013%",
+          "weight": 0.72
         }
       ],
-      "timestamp": "2026-09-05T16:00:58.693600+00:00"
+      "timestamp": "2026-09-05T16:05:59.589164+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -2107,7 +2132,7 @@
           "weight": 1.12
         }
       ],
-      "timestamp": "2026-09-05T16:00:58.693606+00:00"
+      "timestamp": "2026-09-05T16:05:59.589170+00:00"
     }
   },
   "config": {
