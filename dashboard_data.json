@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-06T04:20:15.841387+00:00",
+  "last_update": "2026-09-06T04:25:16.761765+00:00",
   "portfolio": {
     "value": 4524.47,
     "capital": 4524.47,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 79904.5,
-    "ETH": 2504.55,
-    "SOL": 105.675,
-    "HYPE": 86.1015
+    "BTC": 79900.5,
+    "ETH": 2500.55,
+    "SOL": 105.845,
+    "HYPE": 86.1005
   },
   "positions": {},
   "stats": {
@@ -953,11 +953,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-05T12:40:23.010971+00:00",
-      "v": 4506.27,
-      "p": -9.87
-    },
     {
       "t": "2026-09-05T12:45:23.704293+00:00",
       "v": 4506.27,
@@ -1952,6 +1947,11 @@
       "t": "2026-09-06T04:20:15.841387+00:00",
       "v": 4524.47,
       "p": -9.51
+    },
+    {
+      "t": "2026-09-06T04:25:16.761765+00:00",
+      "v": 4524.47,
+      "p": -9.51
     }
   ],
   "ai_history": [
@@ -2014,67 +2014,55 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.59,
-      "confidence": 1.0,
+      "score": 0.34,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $BTC] @somerealthought (\ud83d\udc4d3 \ud83d\udd040) $ETH already made a hig | whale_monitor: Orderbook 31% bid (ask-heavy, bearish) | oi_funding: OI -14.0% 1h",
+      "signal_count": 3,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: - [$BTC] @trobberdob (0L/0RT) Gold Cross about to happen in  | oi_funding: OI -4.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\u26a0\ufe0f $BTC] @somerealthought (\ud83d\udc4d3 \ud83d\udd040) $ETH already made a higher high while $BTC still struggles with its May high. Then ",
-          "weight": 1.68
+          "signal": "- [$BTC] @trobberdob (0L/0RT) Gold Cross about to happen in the Bitcoin chart today. Bullish \ud83d\ude80 $BTC [q1.5]",
+          "weight": 0.8
         },
+        {
+          "source": "oi_funding",
+          "signal": "OI -4.0% 1h",
+          "weight": 0.72
+        },
+        {
+          "source": "x_scanner",
+          "signal": "- [$BTC] @TheCurrencyA (0L/0RT) \ud83d\ude80 Bitwise's Matt Hougan foresees Bitcoin's fair value hitting $224K! H [q1.5]",
+          "weight": 0.65
+        }
+      ],
+      "timestamp": "2026-09-06T04:25:16.678276+00:00"
+    },
+    "ETH": {
+      "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -14.0% 1h",
+      "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -14.0% 1h",
           "weight": 1.44
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @mystayor (\ud83d\udc4d34 \ud83d\udd044) You thought the Robin Hood chain runners was huge \u2014 wait till Solana traders trade stock m",
-          "weight": 1.23
         }
       ],
-      "timestamp": "2026-09-06T04:20:15.747975+00:00"
-    },
-    "ETH": {
-      "score": -0.54,
-      "confidence": 0.74,
-      "sources": [
-        "x_scanner",
-        "oi_funding"
-      ],
-      "signal_count": 4,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\u26a0\ufe0f $ETH] @CoreNews_2 (\ud83d\udc4d33 \ud83d\udd047) $Pi just climbed to the top | oi_funding: OI -28.0% 1h",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -28.0% 1h",
-          "weight": 1.44
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\u26a0\ufe0f $ETH] @CoreNews_2 (\ud83d\udc4d33 \ud83d\udd047) $Pi just climbed to the top of OKX's trending list \u2014 ahead of $BTC, $ETH, $BNB, $SOL, U",
-          "weight": 1.37
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $ETH] @ANCrypto_ (\ud83d\udc4d4 \ud83d\udd040) Recovering after Friday's jobs shock: $BTC $79.9K (+0.4%), $ETH $2.50K (+2.0%) \u2014 catalysts",
-          "weight": 1.23
-        }
-      ],
-      "timestamp": "2026-09-06T04:20:15.747992+00:00"
+      "timestamp": "2026-09-06T04:25:16.678289+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -2086,47 +2074,47 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -31.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -13.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -31.0% 1h",
+          "signal": "OI -13.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-06T04:20:15.748000+00:00"
+      "timestamp": "2026-09-06T04:25:16.678296+00:00"
     },
     "HYPE": {
-      "score": 0.5,
+      "score": -0.11,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @zippy257 (\ud83d\udc4d23 \ud83d\udd044) A whale just pulled 174,800 $ | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI -9.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: - [$HYPE] @POIZERR (21L/7RT) Low key, the lack of infrastruc | whale_monitor: Orderbook 23% bid (ask-heavy, bearish) | oi_funding: OI +31.0% 1h, funding 0.0013%",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @zippy257 (\ud83d\udc4d23 \ud83d\udd044) A whale just pulled 174,800 $HYPE (~$15M) from Bybit. An hour later, the entire bag moved",
-          "weight": 1.95
+          "source": "oi_funding",
+          "signal": "OI +31.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 23% bid (ask-heavy, bearish)",
+          "weight": 1.08
         },
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @NineEligible (\ud83d\udc4d11 \ud83d\udd040) Whale 0x6750 bought 174,826 $HYPE (worth $15.01M) 8h ago and has staked the entire am",
-          "weight": 1.92
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @hoppytoshi (\ud83d\udc4d4 \ud83d\udd040) JUST IN: $ASTER ~$0.80, $2.16B mcap, ~$390M 24H vol \u2014 #2 perp DEX by volume, behind $HYP",
-          "weight": 1.76
+          "signal": "- [$HYPE] @POIZERR (21L/7RT) Low key, the lack of infrastructure around FOMO security is one of the [q1.7]",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-09-06T04:20:15.748010+00:00"
+      "timestamp": "2026-09-06T04:25:16.678308+00:00"
     }
   },
   "config": {
