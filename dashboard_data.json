@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-06T20:20:16.628234+00:00",
+  "last_update": "2026-09-06T20:25:20.159754+00:00",
   "portfolio": {
     "value": 4492.05,
     "capital": 4492.05,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 79815.5,
-    "ETH": 2492.75,
-    "SOL": 105.465,
-    "HYPE": 87.275
+    "BTC": 79893.5,
+    "ETH": 2495.95,
+    "SOL": 105.625,
+    "HYPE": 87.417
   },
   "positions": {},
   "stats": {
@@ -953,11 +953,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-06T04:45:20.627398+00:00",
-      "v": 4524.47,
-      "p": -9.51
-    },
     {
       "t": "2026-09-06T04:50:21.594922+00:00",
       "v": 4524.47,
@@ -1952,6 +1947,11 @@
       "t": "2026-09-06T20:20:16.628234+00:00",
       "v": 4492.05,
       "p": -10.16
+    },
+    {
+      "t": "2026-09-06T20:25:20.159754+00:00",
+      "v": 4492.05,
+      "p": -10.16
     }
   ],
   "ai_history": [
@@ -2014,18 +2014,19 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.51,
-      "confidence": 0.84,
+      "score": 0.65,
+      "confidence": 0.6,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "news_agent",
         "oi_funding"
       ],
-      "signal_count": 12,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @scottmelker (\ud83d\udc4d25 \ud83d\udd015) US spot $BTC ETFs just prin | news_agent: \ud83d\udd34 **Breaking**  **White hat hacker drains ~4,200 BTC from Li | oi_funding: OI +6.0% 1h, funding 0.0013%",
+      "signal_count": 11,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 2,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @scottmelker (\ud83d\udc4d25 \ud83d\udd015) US spot $BTC ETFs just prin | whale_monitor: Orderbook 80% bid-weighted (bullish) | news_agent: : **769 new articles** from 8 feeds (CoinDesk, Decrypt, Bank",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2038,25 +2039,26 @@
           "weight": 1.62
         },
         {
-          "source": "news_agent",
-          "signal": "\ud83d\udd34 **Breaking**  **White hat hacker drains ~4,200 BTC from Liquid Network \u2014 worth $320M** Federated sidechain security mo",
-          "weight": 1.5
+          "source": "oi_funding",
+          "signal": "OI -8.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-06T20:20:16.543127+00:00"
+      "timestamp": "2026-09-06T20:25:20.071601+00:00"
     },
     "ETH": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": 0.85,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 5,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @AlmalikTV_1738 (\ud83d\udc4d2 \ud83d\udd010) BREAKING: This whale just | oi_funding: OI +5.0% 1h, funding 0.0013%",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @AlmalikTV_1738 (\ud83d\udc4d2 \ud83d\udd010) BREAKING: This whale just | news_agent: Desk, Decrypt, Bankless, Blockworks, Crypto Briefing, TheDef | oi_funding: OI +9.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2069,46 +2071,51 @@
           "weight": 1.56
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $ETH] @Crux_of_Crypto (\ud83d\udc4d8 \ud83d\udd014) \ud83d\udea8 @CryptoArchieYT was an #Ethereum critic for YEARS\u2026 Now he says your portf [score: 1",
-          "weight": 0.98
+          "source": "oi_funding",
+          "signal": "OI +9.0% 1h, funding 0.0013%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-06T20:20:16.543145+00:00"
+      "timestamp": "2026-09-06T20:25:20.071623+00:00"
     },
     "SOL": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.04,
+      "confidence": 0.5,
       "sources": [
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -6.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: cles** from 8 feeds (CoinDesk, Decrypt, Bankless, Blockworks | oi_funding: OI +5.0% 1h, funding 0.0013%",
       "key_signals": [
         {
+          "source": "news_agent",
+          "signal": "cles** from 8 feeds (CoinDesk, Decrypt, Bankless, Blockworks, Crypto Briefing, TheDefiant, Ethereum Blog, GitHub) \u00b7 30.4",
+          "weight": 0.98
+        },
+        {
           "source": "oi_funding",
-          "signal": "OI -6.0% 1h",
-          "weight": 1.08
+          "signal": "OI +5.0% 1h, funding 0.0013%",
+          "weight": 0.9
         }
       ],
-      "timestamp": "2026-09-06T20:20:16.543153+00:00"
+      "timestamp": "2026-09-06T20:25:20.071634+00:00"
     },
     "HYPE": {
-      "score": 0.59,
-      "confidence": 0.84,
+      "score": 0.82,
+      "confidence": 0.5,
       "sources": [
         "x_scanner",
-        "whale_monitor",
-        "oi_funding"
+        "news_agent"
       ],
-      "signal_count": 10,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 9,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @troxhl (\ud83d\udc4d17 \ud83d\udd014) Remember @WhiteWhaleLabs ? >Lar | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI -11.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @troxhl (\ud83d\udc4d17 \ud83d\udd014) Remember @WhiteWhaleLabs ? >Lar | news_agent: eds (CoinDesk, Decrypt, Bankless, Blockworks, Crypto Briefin",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2121,12 +2128,12 @@
           "weight": 1.6
         },
         {
-          "source": "oi_funding",
-          "signal": "OI -11.0% 1h",
-          "weight": 1.44
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @Fjbill77 (\ud83d\udc4d0 \ud83d\udd010) The only asset that kept up to its hype is ironically $HYPE \ud83d\udcb0\ud83d\udc47 Think Chicag [score: 2.0]",
+          "weight": 1.3
         }
       ],
-      "timestamp": "2026-09-06T20:20:16.543165+00:00"
+      "timestamp": "2026-09-06T20:25:20.071648+00:00"
     }
   },
   "config": {
