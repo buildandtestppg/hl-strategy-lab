@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-09-06T17:05:40.151762+00:00",
+  "last_update": "2026-09-06T17:10:41.016843+00:00",
   "portfolio": {
-    "value": 4491.83,
+    "value": 4488.28,
     "capital": 4500.71,
     "initial": 5000.0,
-    "pnl": -508.17,
-    "pnl_pct": -10.16,
+    "pnl": -511.72,
+    "pnl_pct": -10.23,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 79619.5,
-    "ETH": 2483.75,
-    "SOL": 105.855,
-    "HYPE": 87.8465
+    "BTC": 79561.5,
+    "ETH": 2483.05,
+    "SOL": 105.585,
+    "HYPE": 87.6505
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 106.525,
-      "current_price": 105.855,
+      "current_price": 105.585,
       "size": 13.126849262896675,
-      "unrealized_pnl": -8.89,
-      "unrealized_pnl_pct": -0.64,
+      "unrealized_pnl": -12.43,
+      "unrealized_pnl_pct": -0.89,
       "stop_loss": 103.0775,
       "take_profit": 113.42,
       "strategy": "stochastic",
       "entry_time": "2026-09-06T11:50:59.436187+00:00",
-      "duration_hours": 5.2,
+      "duration_hours": 5.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0912
+      "unrealized_funding": 0.0924
     }
   },
   "stats": {
@@ -969,11 +969,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-06T01:30:44.653916+00:00",
-      "v": 4524.47,
-      "p": -9.51
-    },
     {
       "t": "2026-09-06T01:35:46.192126+00:00",
       "v": 4524.47,
@@ -1968,6 +1963,11 @@
       "t": "2026-09-06T17:05:40.151762+00:00",
       "v": 4491.83,
       "p": -10.16
+    },
+    {
+      "t": "2026-09-06T17:10:41.016843+00:00",
+      "v": 4488.28,
+      "p": -10.23
     }
   ],
   "ai_history": [
@@ -2030,16 +2030,17 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.78,
+      "confidence": 0.5,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "whale_monitor"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @WatcherGuru (\ud83d\udc4d369 \ud83d\udd0479) \"This is still the best B",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @WatcherGuru (\ud83d\udc4d369 \ud83d\udd0479) \"This is still the best B | whale_monitor: Orderbook 31% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2050,45 +2051,68 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $BTC] @DiscoverCrypto (\ud83d\udc4d76 \ud83d\udd043) Willy Woo: last $BTC/stocks decoupling this extreme was 2015, prelude to 2017 bull [",
           "weight": 2.16
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 31% bid (ask-heavy, bearish)",
+          "weight": 0.76
         }
       ],
-      "timestamp": "2026-09-06T17:05:40.006212+00:00"
+      "timestamp": "2026-09-06T17:10:40.847481+00:00"
     },
     "ETH": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-06T17:05:40.006217+00:00"
-    },
-    "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-06T17:05:40.006219+00:00"
-    },
-    "HYPE": {
       "score": 1.0,
       "confidence": 0.3,
       "sources": [
-        "x_scanner"
+        "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @jchervinsky (\ud83d\udc4d31 \ud83d\udd042) \"Doing my life's work at @",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +81.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +81.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-06T17:10:40.847496+00:00"
+    },
+    "SOL": {
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +25.0% 1h, funding 0.0013%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +25.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-06T17:10:40.847503+00:00"
+    },
+    "HYPE": {
+      "score": 0.46,
+      "confidence": 0.84,
+      "sources": [
+        "x_scanner",
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udc8e $HYPE] @jchervinsky (\ud83d\udc4d31 \ud83d\udd042) \"Doing my life's work at @ | whale_monitor: Orderbook 32% bid (ask-heavy, bearish) | oi_funding: OI -44.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2106,7 +2130,7 @@
           "weight": 1.62
         }
       ],
-      "timestamp": "2026-09-06T17:05:40.006233+00:00"
+      "timestamp": "2026-09-06T17:10:40.847517+00:00"
     }
   },
   "config": {
