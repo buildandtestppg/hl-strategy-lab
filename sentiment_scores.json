@@ -1,16 +1,18 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.6,
+    "score": 0.78,
+    "confidence": 0.9,
     "sources": [
       "x_scanner",
-      "news_agent"
+      "whale_monitor",
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @CoinDesk (\ud83d\udc4d24 \ud83d\udd043) $BTC showing a stronger hard-a | news_agent: overy** \u27f6 AI sentiment tailwind for tech/semi exposure _(Cry",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @CoinDesk (\ud83d\udc4d24 \ud83d\udd043) $BTC showing a stronger hard-a | whale_monitor: Orderbook 60% bid-weighted (bullish) | news_agent: overy** \u27f6 AI sentiment tailwind for tech/semi exposure _(Cry",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -23,15 +25,15 @@
         "weight": 1.89
       },
       {
-        "source": "news_agent",
-        "signal": "overy** \u27f6 AI sentiment tailwind for tech/semi exposure _(Crypto Briefing)_  \ud83d\udcca Scan: 769 articles ingested \u2022 2 new since ",
-        "weight": 0.98
+        "source": "oi_funding",
+        "signal": "OI -7.0% 1h",
+        "weight": 1.26
       }
     ],
-    "timestamp": "2026-09-07T12:00:16.737353+00:00"
+    "timestamp": "2026-09-07T12:05:13.995034+00:00"
   },
   "ETH": {
-    "score": 1.0,
+    "score": -1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -40,50 +42,55 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -9.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -9.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-09-07T12:05:13.995055+00:00"
+  },
+  "SOL": {
+    "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "news_agent",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | news_agent: AI sentiment tailwind for tech/semi exposure _(Crypto Briefi | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "news_agent",
+        "signal": "AI sentiment tailwind for tech/semi exposure _(Crypto Briefing)_  \ud83d\udcca Scan: 769 articles ingested \u2022 2 new since last deliv",
+        "weight": 1.2
+      },
       {
         "source": "oi_funding",
         "signal": "OI +5.0% 1h, funding 0.0013%",
         "weight": 0.9
       }
     ],
-    "timestamp": "2026-09-07T12:00:16.737365+00:00"
-  },
-  "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "news_agent"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (news_agent) | news_agent: AI sentiment tailwind for tech/semi exposure _(Crypto Briefi",
-    "key_signals": [
-      {
-        "source": "news_agent",
-        "signal": "AI sentiment tailwind for tech/semi exposure _(Crypto Briefing)_  \ud83d\udcca Scan: 769 articles ingested \u2022 2 new since last deliv",
-        "weight": 1.2
-      }
-    ],
-    "timestamp": "2026-09-07T12:00:16.737373+00:00"
+    "timestamp": "2026-09-07T12:05:13.995070+00:00"
   },
   "HYPE": {
-    "score": 0.48,
-    "confidence": 0.9,
+    "score": 0.36,
+    "confidence": 0.7,
     "sources": [
       "x_scanner",
-      "whale_monitor",
       "news_agent",
       "oi_funding"
     ],
-    "signal_count": 7,
-    "convergence": true,
-    "convergence_strength": 3,
+    "signal_count": 6,
+    "convergence": false,
+    "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udc0b $HYPE] @lookonchain (\ud83d\udc4d29 \ud83d\udd045) New wallet 0x434b deposite | whale_monitor: Orderbook 86% bid-weighted (bullish) | news_agent: iment tailwind for tech/semi exposure _(Crypto Briefing)_  \ud83d\udcca",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udc0b $HYPE] @lookonchain (\ud83d\udc4d29 \ud83d\udd045) New wallet 0x434b deposite | news_agent: iment tailwind for tech/semi exposure _(Crypto Briefing)_  \ud83d\udcca | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -101,6 +108,6 @@
         "weight": 1.62
       }
     ],
-    "timestamp": "2026-09-07T12:00:16.737390+00:00"
+    "timestamp": "2026-09-07T12:05:13.995087+00:00"
   }
 }
