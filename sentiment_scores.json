@@ -1,21 +1,27 @@
 {
   "BTC": {
-    "score": -0.08,
-    "confidence": 0.5,
+    "score": -0.72,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Umairorkz (\ud83d\udc4d11 \ud83d\udd042) $BTC $BITCOIN More than 8 mil | whale_monitor: Orderbook 31% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @Umairorkz (\ud83d\udc4d11 \ud83d\udd042) $BTC $BITCOIN More than 8 mil | whale_monitor: Orderbook 16% bid (ask-heavy, bearish) | oi_funding: OI -19.0% 1h",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI -19.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "whale_monitor",
-        "signal": "Orderbook 31% bid (ask-heavy, bearish)",
-        "weight": 0.76
+        "signal": "Orderbook 16% bid (ask-heavy, bearish)",
+        "weight": 1.36
       },
       {
         "source": "x_scanner",
@@ -23,7 +29,7 @@
         "weight": 0.65
       }
     ],
-    "timestamp": "2026-09-08T01:40:45.758413+00:00"
+    "timestamp": "2026-09-08T01:45:47.970348+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -36,11 +42,11 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CastilloTrading (\ud83d\udc4d53 \ud83d\udd042) $HYPE is still bullish. | oi_funding: OI +38.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @CastilloTrading (\ud83d\udc4d53 \ud83d\udd042) $HYPE is still bullish. | oi_funding: OI +15.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +38.0% 1h, funding 0.0013%",
+        "signal": "OI +15.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -49,44 +55,37 @@
         "weight": 0.8
       }
     ],
-    "timestamp": "2026-09-08T01:40:45.758443+00:00"
+    "timestamp": "2026-09-08T01:45:47.970365+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
+    "score": 0.0,
+    "confidence": 0.0,
+    "sources": [],
+    "signal_count": 0,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +8.0% 1h, funding 0.0009%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +8.0% 1h, funding 0.0009%",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-09-08T01:40:45.758455+00:00"
+    "narrative": "No active signals",
+    "key_signals": [],
+    "timestamp": "2026-09-08T01:45:47.970367+00:00"
   },
   "HYPE": {
-    "score": 0.34,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 5,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @ChainCatcher_ (\ud83d\udc4d0 \ud83d\udd040) Crypto Projects' Token Bu | oi_funding: OI -9.0% 1h",
+    "signal_count": 6,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @ChainCatcher_ (\ud83d\udc4d0 \ud83d\udd040) Crypto Projects' Token Bu | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +39.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -9.0% 1h",
+        "signal": "OI +39.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
@@ -95,11 +94,11 @@
         "weight": 0.95
       },
       {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @Hyperliquid_Top (\ud83d\udc4d0 \ud83d\udd040) Major financial giants are putting their weight behind Hyperliquid. UB [2.5]",
-        "weight": 0.65
+        "source": "whale_monitor",
+        "signal": "Orderbook 71% bid-weighted (bullish)",
+        "weight": 0.84
       }
     ],
-    "timestamp": "2026-09-08T01:40:45.758470+00:00"
+    "timestamp": "2026-09-08T01:45:47.970381+00:00"
   }
 }
