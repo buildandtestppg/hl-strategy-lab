@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.2,
-    "confidence": 0.5,
+    "score": 0.48,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @cryptojack4u (\ud83d\udc4d5 \ud83d\udd041) $CAKE / $BTC breakout done  | oi_funding: OI -113.0% 1h",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @cryptojack4u (\ud83d\udc4d5 \ud83d\udd041) $CAKE / $BTC breakout done  | whale_monitor: Orderbook 83% bid-weighted (bullish) | oi_funding: OI -60.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -19,11 +20,16 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -113.0% 1h",
+        "signal": "OI -60.0% 1h",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 83% bid-weighted (bullish)",
+        "weight": 1.32
       }
     ],
-    "timestamp": "2026-09-08T10:20:21.156664+00:00"
+    "timestamp": "2026-09-08T10:25:21.266416+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -54,32 +60,41 @@
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-08T10:20:21.156688+00:00"
+    "timestamp": "2026-09-08T10:25:21.266439+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": 1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-09-08T10:20:21.156691+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +22.0% 1h, funding 0.0005%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +22.0% 1h, funding 0.0005%",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-09-08T10:25:21.266450+00:00"
   },
   "HYPE": {
-    "score": 0.47,
-    "confidence": 0.5,
+    "score": 1.0,
+    "confidence": 1.0,
     "sources": [
       "x_scanner",
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 4,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @zheyu115 (\ud83d\udc4d15 \ud83d\udd041) Just checked out the TopNod p | oi_funding: OI -9.0% 1h",
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 3,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @zheyu115 (\ud83d\udc4d15 \ud83d\udd041) Just checked out the TopNod p | whale_monitor: Orderbook 73% bid-weighted (bullish) | oi_funding: OI +28.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -93,10 +108,10 @@
       },
       {
         "source": "oi_funding",
-        "signal": "OI -9.0% 1h",
+        "signal": "OI +28.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-08T10:20:21.156705+00:00"
+    "timestamp": "2026-09-08T10:25:21.266466+00:00"
   }
 }
