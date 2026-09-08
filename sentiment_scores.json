@@ -1,41 +1,9 @@
 {
   "BTC": {
-    "score": 0.65,
+    "score": 0.37,
     "confidence": 0.94,
     "sources": [
-      "x_scanner",
-      "news_agent",
-      "oi_funding"
-    ],
-    "signal_count": 7,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\ude80 $BTC] @KillaXBT (\ud83d\udc4d162 \ud83d\udd048) \"Everyone is bullish\"? Then w | news_agent: Mine adds 28,086 ETH**, treasury nears 5% of supply \u2014 `ETH`  | oi_funding: OI +144.0% 1h, funding 0.0013%",
-    "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\ude80 $BTC] @KillaXBT (\ud83d\udc4d162 \ud83d\udd048) \"Everyone is bullish\"? Then why does $BTC still have significant supply sitting at an unr",
-        "weight": 2.4
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI +144.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\ude80 $BTC] @Wealthmanager (\ud83d\udc4d26 \ud83d\udd048) $BTC just tapped the liquidity zone \u2014 watching for a reversal higher [score: 1.9]",
-        "weight": 1.23
-      }
-    ],
-    "timestamp": "2026-09-08T16:20:28.459847+00:00"
-  },
-  "ETH": {
-    "score": 0.47,
-    "confidence": 0.94,
-    "sources": [
-      "x_scanner",
+      "whale_monitor",
       "news_agent",
       "oi_funding"
     ],
@@ -43,17 +11,49 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\ude80 $ETH] @VoidOnChain (\ud83d\udc4d8) $ETH daily inverted H&S forming | news_agent: *983 articles scanned \u00b7 15 new since last delivery*  \ud83d\udfe2 **Not | oi_funding: OI +61.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 61% bid-weighted (bullish) | news_agent: Mine adds 28,086 ETH**, treasury nears 5% of supply \u2014 `ETH`  | oi_funding: OI +55.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI +61.0% 1h, funding 0.0013%",
+        "signal": "OI +55.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
+        "source": "news_agent",
+        "signal": "Mine adds 28,086 ETH**, treasury nears 5% of supply \u2014 `ETH` \u2022 **Robinhood takes equity stake in Crypto.com**, taps it to",
+        "weight": 0.98
+      },
+      {
+        "source": "news_agent",
+        "signal": "obinhood takes equity stake in Crypto.com**, taps it to power prediction markets \u2022 **BTC options**: ATM IV at 37%, smile",
+        "weight": 0.98
+      }
+    ],
+    "timestamp": "2026-09-08T16:25:30.763508+00:00"
+  },
+  "ETH": {
+    "score": 0.53,
+    "confidence": 0.7,
+    "sources": [
+      "x_scanner",
+      "news_agent",
+      "oi_funding"
+    ],
+    "signal_count": 7,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @lookonchain (\ud83d\udc4d392 \ud83d\udd0438) Whales are buying $SOL !  | news_agent: *983 articles scanned \u00b7 15 new since last delivery*  \ud83d\udfe2 **Not | oi_funding: OI -5.0% 1h",
+    "key_signals": [
+      {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\ude80 $ETH] @VoidOnChain (\ud83d\udc4d8) $ETH daily inverted H&S forming \u2014 one leg down confirms the move [score: 1.9]",
-        "weight": 1.23
+        "signal": "\u2022 [\ud83d\udcc8 $ETH] @lookonchain (\ud83d\udc4d392 \ud83d\udd0438) Whales are buying $SOL ! Whale HURDw has bought a total of 285,503 $SO\u2026 [score: 5.0]",
+        "weight": 4.0
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $ETH] @lookonchain (\ud83d\udc4d407 \ud83d\udd0458) Garrett Jin ( @GarrettBullish ), the largest on-chain $ZEC short, seem\u2026 [score: 5.0]",
+        "weight": 3.25
       },
       {
         "source": "news_agent",
@@ -61,57 +61,63 @@
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-09-08T16:20:28.459877+00:00"
+    "timestamp": "2026-09-08T16:25:30.763540+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.16,
+    "confidence": 0.5,
     "sources": [
+      "x_scanner",
       "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +76.0% 1h, funding 0.0003%",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @CryptoEconomyEN (\ud83d\udc4d0 \ud83d\udd040) \ud83c\udfe6 Optimism is making a  | oi_funding: OI -62.0% 1h",
     "key_signals": [
       {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @CryptoEconomyEN (\ud83d\udc4d0 \ud83d\udd040) \ud83c\udfe6 Optimism is making a bigger push for institutional stablecoins and t\u2026 [score: 2.5",
+        "weight": 2.0
+      },
+      {
         "source": "oi_funding",
-        "signal": "OI +76.0% 1h, funding 0.0003%",
+        "signal": "OI -62.0% 1h",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-08T16:20:28.459890+00:00"
+    "timestamp": "2026-09-08T16:25:30.763554+00:00"
   },
   "HYPE": {
-    "score": 0.81,
-    "confidence": 0.74,
+    "score": 0.25,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "oi_funding"
     ],
-    "signal_count": 8,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\ude80 $HYPE] @loshmi (\ud83d\udc4d157 \ud83d\udd0416) Entire Solana Foundation behi | whale_monitor: Orderbook 61% bid-weighted (bullish)",
+    "signal_count": 5,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @HyperliquidX (\ud83d\udc4d28 \ud83d\udd042) By community request, $US | oi_funding: OI -30.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\ude80 $HYPE] @loshmi (\ud83d\udc4d157 \ud83d\udd0416) Entire Solana Foundation behind $STONK \u2014 on track for another $1M revenue today; companie",
-        "weight": 3.25
+        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @HyperliquidX (\ud83d\udc4d28 \ud83d\udd042) By community request, $USELESS perps have been listed with up to 3x le\u2026 [score: 4.0]",
+        "weight": 2.6
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\ude80 $HYPE] @kian_hl (\ud83d\udc4d224 \ud83d\udd0444) Robinhood \u2192 meme-paired stocks, Solana \u2192 memes paired with anything\u2026 \"fragments of a muc",
-        "weight": 2.02
+        "signal": "\u2022 [\u26a1 $HYPE] @SimplyBitcoin (\ud83d\udc4d4 \ud83d\udd041) WHITE HATS KEPT $47M FROM LIQUID NETWORK - Exploit drained nearly all \u2026 [score: 3.2]",
+        "weight": 2.08
       },
       {
         "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\ude80 $HYPE] @satyaXBT (\ud83d\udc4d30 \ud83d\udd045) Volume is all over the place \u2014 listing multichain tools worth using (FOMO et al) [score: ",
-        "weight": 1.95
+        "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @GoodCryptoApp (\ud83d\udc4d1 \ud83d\udd040) Wall Street is building infrastructure around Hyperliquid. Fast Two NA\u2026 [score: 2.5]",
+        "weight": 1.62
       }
     ],
-    "timestamp": "2026-09-08T16:20:28.459908+00:00"
+    "timestamp": "2026-09-08T16:25:30.763568+00:00"
   }
 }
