@@ -1,16 +1,17 @@
 {
   "BTC": {
-    "score": 0.88,
-    "confidence": 0.5,
+    "score": 0.89,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 8,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 9,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @DavidMorganXBT (\ud83d\udc4d6 \ud83d\udd040) \ud83d\udea8 Interesting Bitcoin on- | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @DavidMorganXBT (\ud83d\udc4d6 \ud83d\udd040) \ud83d\udea8 Interesting Bitcoin on- | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -6.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -28,58 +29,67 @@
         "weight": 1.2
       }
     ],
-    "timestamp": "2026-09-08T21:40:24.776269+00:00"
+    "timestamp": "2026-09-08T21:45:27.340688+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": -0.03,
+    "confidence": 0.5,
     "sources": [
       "x_scanner",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Bitcoinmeraklsi (\ud83d\udc4d56 \ud83d\udd042) #Ethereum Current outlo | oi_funding: OI +5.0% 1h, funding 0.0013%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @Bitcoinmeraklsi (\ud83d\udc4d56 \ud83d\udd042) #Ethereum Current outlo | oi_funding: OI -18.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -18.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udcc8 $ETH] @Bitcoinmeraklsi (\ud83d\udc4d56 \ud83d\udd042) #Ethereum Current outlook. $ETH continues to hold above the 2381$ supp [score: 2.1]",
         "weight": 1.37
-      },
-      {
-        "source": "oi_funding",
-        "signal": "OI +5.0% 1h, funding 0.0013%",
-        "weight": 0.9
       }
     ],
-    "timestamp": "2026-09-08T21:40:24.776286+00:00"
+    "timestamp": "2026-09-08T21:45:27.340703+00:00"
   },
   "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
+    "score": -1.0,
+    "confidence": 0.3,
+    "sources": [
+      "oi_funding"
+    ],
+    "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-09-08T21:40:24.776288+00:00"
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -22.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -22.0% 1h",
+        "weight": 1.44
+      }
+    ],
+    "timestamp": "2026-09-08T21:45:27.340711+00:00"
   },
   "HYPE": {
-    "score": 0.39,
-    "confidence": 0.5,
+    "score": 0.6,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 4,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @inkonchain (\ud83d\udc4d98 \ud83d\udd0416) Hyperliquid. [score: 3.5] | whale_monitor: Orderbook 12% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @inkonchain (\ud83d\udc4d98 \ud83d\udd0416) Hyperliquid. [score: 3.5] | whale_monitor: Orderbook 78% bid-weighted (bullish) | oi_funding: OI -8.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -87,9 +97,9 @@
         "weight": 2.27
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 12% bid (ask-heavy, bearish)",
-        "weight": 1.52
+        "source": "oi_funding",
+        "signal": "OI -8.0% 1h",
+        "weight": 1.44
       },
       {
         "source": "x_scanner",
@@ -97,6 +107,6 @@
         "weight": 1.17
       }
     ],
-    "timestamp": "2026-09-08T21:40:24.776297+00:00"
+    "timestamp": "2026-09-08T21:45:27.340722+00:00"
   }
 }
