@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-09-08T20:45:18.758816+00:00",
+  "last_update": "2026-09-08T20:50:16.477492+00:00",
   "portfolio": {
-    "value": 4423.3,
+    "value": 4423.59,
     "capital": 4419.07,
     "initial": 5000.0,
-    "pnl": -576.7,
+    "pnl": -576.41,
     "pnl_pct": -11.53,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 78460.5,
-    "ETH": 2482.75,
-    "SOL": 103.175,
-    "HYPE": 84.3595
+    "BTC": 78492.5,
+    "ETH": 2483.85,
+    "SOL": 103.165,
+    "HYPE": 84.2765
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 2481.65,
-      "current_price": 2482.75,
+      "current_price": 2483.85,
       "size": 0.8255556807187948,
-      "unrealized_pnl": 0.2,
-      "unrealized_pnl_pct": 0.01,
+      "unrealized_pnl": 1.1,
+      "unrealized_pnl_pct": 0.05,
       "stop_loss": 2427.925,
       "take_profit": 2589.1,
       "strategy": "stochastic",
       "entry_time": "2026-09-07T17:05:20.963691+00:00",
-      "duration_hours": 27.7,
+      "duration_hours": 27.8,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.7089
+      "unrealized_funding": 0.7113
     },
     "HYPE": {
       "direction": "LONG",
       "entry_price": 83.8105,
-      "current_price": 84.3595,
+      "current_price": 84.2765,
       "size": 7.349600238731484,
-      "unrealized_pnl": 4.02,
-      "unrealized_pnl_pct": 0.65,
+      "unrealized_pnl": 3.41,
+      "unrealized_pnl_pct": 0.55,
       "stop_loss": 80.79725,
       "take_profit": 89.837,
       "strategy": "macd",
       "entry_time": "2026-09-08T16:10:33.989698+00:00",
-      "duration_hours": 4.6,
-      "funding_rate": 0.00047,
-      "unrealized_funding": 0.0134
+      "duration_hours": 4.7,
+      "funding_rate": 0.000518,
+      "unrealized_funding": 0.015
     }
   },
   "stats": {
@@ -984,11 +984,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-08T05:00:22.845704+00:00",
-      "v": 4427.05,
-      "p": -11.46
-    },
     {
       "t": "2026-09-08T05:05:26.651764+00:00",
       "v": 4427.5,
@@ -1983,6 +1978,11 @@
       "t": "2026-09-08T20:45:18.758816+00:00",
       "v": 4423.3,
       "p": -11.53
+    },
+    {
+      "t": "2026-09-08T20:50:16.477492+00:00",
+      "v": 4423.59,
+      "p": -11.53
     }
   ],
   "ai_history": [
@@ -2057,19 +2057,24 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.12,
+      "score": -0.01,
       "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor",
-        "news_agent"
+        "news_agent",
+        "oi_funding"
       ],
       "signal_count": 6,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @HurdleRatePod (\ud83d\udc4d20 \ud83d\udd015) Matt Cole says the right | whale_monitor: Orderbook 35% bid (ask-heavy, bearish) | news_agent: market-cap skepticism aside, a landmark AI-sector listing wi",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @HurdleRatePod (\ud83d\udc4d20 \ud83d\udd015) Matt Cole says the right | news_agent: market-cap skepticism aside, a landmark AI-sector listing wi | oi_funding: OI -18.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -18.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $BTC] @HurdleRatePod (\ud83d\udc4d20 \ud83d\udd015) Matt Cole says the right mentality for Strive $ASST and the broader Bi [score: 2.0]",
@@ -2079,74 +2084,81 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $BTC] @MarketCycle (\ud83d\udc4d0 \ud83d\udd010) @llama With Strategy's return to buying lasting just one week, is ther [score: 1.6]",
           "weight": 1.28
-        },
-        {
-          "source": "news_agent",
-          "signal": "market-cap skepticism aside, a landmark AI-sector listing with spillover read-through for crypto AI tokens  \ud83d\udcca Scan: 771 ",
-          "weight": 1.2
         }
       ],
-      "timestamp": "2026-09-08T20:45:18.635318+00:00"
+      "timestamp": "2026-09-08T20:50:16.344024+00:00"
     },
     "ETH": {
-      "score": -0.36,
+      "score": 0.09,
       "confidence": 0.5,
       "sources": [
-        "whale_monitor",
-        "news_agent"
+        "news_agent",
+        "oi_funding"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 64% bid-weighted (bullish) | news_agent: IPO** \u2014 market-cap skepticism aside, a landmark AI-sector li",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: IPO** \u2014 market-cap skepticism aside, a landmark AI-sector li | oi_funding: OI +10.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +10.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "news_agent",
           "signal": "IPO** \u2014 market-cap skepticism aside, a landmark AI-sector listing with spillover read-through for crypto AI tokens  \ud83d\udcca Sc",
           "weight": 1.2
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 64% bid-weighted (bullish)",
-          "weight": 0.56
         }
       ],
-      "timestamp": "2026-09-08T20:45:18.635341+00:00"
+      "timestamp": "2026-09-08T20:50:16.344043+00:00"
     },
     "SOL": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "news_agent"
+        "news_agent",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (news_agent) | news_agent: ap skepticism aside, a landmark AI-sector listing with spill",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: ap skepticism aside, a landmark AI-sector listing with spill | oi_funding: OI -22.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -22.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "news_agent",
           "signal": "ap skepticism aside, a landmark AI-sector listing with spillover read-through for crypto AI tokens  \ud83d\udcca Scan: 771 new arti",
           "weight": 1.2
         }
       ],
-      "timestamp": "2026-09-08T20:45:18.635350+00:00"
+      "timestamp": "2026-09-08T20:50:16.344059+00:00"
     },
     "HYPE": {
-      "score": 0.84,
-      "confidence": 0.74,
+      "score": 0.87,
+      "confidence": 1.0,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 8,
+      "signal_count": 9,
       "convergence": true,
-      "convergence_strength": 2,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @PerpWatchAI (\ud83d\udc4d0 \ud83d\udd010) \u26a0\ufe0f LIQUIDATION WATCH The $3 | whale_monitor: Orderbook 76% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @PerpWatchAI (\ud83d\udc4d0 \ud83d\udd010) \u26a0\ufe0f LIQUIDATION WATCH The $3 | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI +35.0% 1h, funding 0.0006%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +35.0% 1h, funding 0.0006%",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @PerpWatchAI (\ud83d\udc4d0 \ud83d\udd010) \u26a0\ufe0f LIQUIDATION WATCH The $3.24M BTC SHORT (40x) we tracked is 1.2% fro [score: 1.5]",
@@ -2156,14 +2168,9 @@
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @HypeETFFLows (\ud83d\udc4d0 \ud83d\udd010) \ud83d\udcca HYPE ETFs \u00b7 midday volume (Sep 8) ~$41.0M traded so far today \ud83d\udd25 Alre [score: 1.5]",
           "weight": 1.2
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @defaiscope (\ud83d\udc4d0 \ud83d\udd010) ETFs buyers also believe in the hyperliquid gospel Good to know [score: 1.5]",
-          "weight": 1.2
         }
       ],
-      "timestamp": "2026-09-08T20:45:18.635365+00:00"
+      "timestamp": "2026-09-08T20:50:16.344076+00:00"
     }
   },
   "config": {
