@@ -1,6 +1,6 @@
 {
  "BTC": {
-  "strategy": "macd",
+  "strategy": "vwap",
   "params": {}
  },
  "ETH": {
@@ -82,6 +82,10 @@
    {
     "timestamp": "2026-09-08T00:08:58.394487+00:00",
     "note": "Sep 8 ops override: ETH stochastic->vwap, SOL trend->emacross. Basis: honest 90d replay under LIVE semantics (honest_grid_v2, B1-fixed) + split-sample stability. ETH/vwap +$142 n=30 (STABLE+ H1/H2); ETH/stochastic -$174 n=48 (UNSTABLE). SOL/emacross +$267 w/ v3 exits n=55 t=+1.35 (STABLE+); SOL/trend took 1 trade in 90d (parked). Backups: archives/strategy_config_pre_sep8_reassignment.json. Old fleet leaderboard (SL/TP-only backtester) is invalid for ranking \u2014 exit model does not exist live."
+   },
+   {
+    "timestamp": "2026-09-08T00:16:50.982981+00:00",
+    "note": "Sep 8 ops override #2: BTC macd->vwap. Basis: FIXED backtester (live exit model + conf 0.65 + cooldown 8h + touch-based stops = conservative bound) ranks BTC/vwap +$69 n=18 wr 72% pf 1.32 vs macd -$172 n=77. macd flips positive only under close-based stop model (replay), not robust to stop semantics. Backup: archives/strategy_config_pre_sep8_reassignment.json"
    }
   ]
  }

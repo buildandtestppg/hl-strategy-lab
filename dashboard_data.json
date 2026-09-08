@@ -1,64 +1,64 @@
 {
-  "last_update": "2026-09-08T00:15:28.527497+00:00",
+  "last_update": "2026-09-08T00:20:28.596383+00:00",
   "portfolio": {
-    "value": 4435.29,
+    "value": 4436.77,
     "capital": 4455.77,
     "initial": 5000.0,
-    "pnl": -564.71,
-    "pnl_pct": -11.29,
+    "pnl": -563.23,
+    "pnl_pct": -11.26,
     "open_positions": 3
   },
   "prices": {
-    "BTC": 78996.5,
-    "ETH": 2486.35,
-    "SOL": 103.605,
-    "HYPE": 85.0605
+    "BTC": 79011.5,
+    "ETH": 2485.95,
+    "SOL": 103.655,
+    "HYPE": 84.9105
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 105.675,
-      "current_price": 103.605,
+      "current_price": 103.655,
       "size": 12.33392483682736,
-      "unrealized_pnl": -25.52,
-      "unrealized_pnl_pct": -1.96,
+      "unrealized_pnl": -24.9,
+      "unrealized_pnl_pct": -1.91,
       "stop_loss": 102.045,
       "take_profit": 112.935,
       "strategy": "stochastic",
       "entry_time": "2026-09-07T03:00:43.889316+00:00",
-      "duration_hours": 21.2,
-      "funding_rate": -2.8e-05,
-      "unrealized_funding": -0.0075
+      "duration_hours": 21.3,
+      "funding_rate": -4.5e-05,
+      "unrealized_funding": -0.0124
     },
     "ETH": {
       "direction": "LONG",
       "entry_price": 2481.65,
-      "current_price": 2486.35,
+      "current_price": 2485.95,
       "size": 0.8255556807187948,
-      "unrealized_pnl": 3.7,
-      "unrealized_pnl_pct": 0.18,
+      "unrealized_pnl": 3.36,
+      "unrealized_pnl_pct": 0.16,
       "stop_loss": 2427.925,
       "take_profit": 2589.1,
       "strategy": "stochastic",
       "entry_time": "2026-09-07T17:05:20.963691+00:00",
-      "duration_hours": 7.2,
+      "duration_hours": 7.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.184
+      "unrealized_funding": 0.1861
     },
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 85.2295,
-      "current_price": 85.0605,
+      "current_price": 84.9105,
       "size": 7.936223778789665,
-      "unrealized_pnl": 1.34,
-      "unrealized_pnl_pct": 0.2,
+      "unrealized_pnl": 2.54,
+      "unrealized_pnl_pct": 0.37,
       "stop_loss": 88.0275,
       "take_profit": 79.6335,
       "strategy": "macd",
       "entry_time": "2026-09-07T23:55:42.648396+00:00",
-      "duration_hours": 0.3,
+      "duration_hours": 0.4,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0028
+      "unrealized_funding": -0.0035
     }
   },
   "stats": {
@@ -926,7 +926,7 @@
     }
   ],
   "pair_strategies": {
-    "BTC": "macd",
+    "BTC": "vwap",
     "ETH": "vwap",
     "SOL": "emacross",
     "HYPE": "macd"
@@ -999,16 +999,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-07T08:40:35.923202+00:00",
-      "v": 4446.66,
-      "p": -11.07
-    },
-    {
-      "t": "2026-09-07T08:45:35.854595+00:00",
-      "v": 4447.61,
-      "p": -11.05
-    },
     {
       "t": "2026-09-07T08:50:37.608408+00:00",
       "v": 4447.25,
@@ -1998,6 +1988,16 @@
       "t": "2026-09-08T00:15:28.527497+00:00",
       "v": 4435.29,
       "p": -11.29
+    },
+    {
+      "t": "2026-09-08T00:17:23.838886+00:00",
+      "v": 4436.97,
+      "p": -11.26
+    },
+    {
+      "t": "2026-09-08T00:20:28.596383+00:00",
+      "v": 4436.77,
+      "p": -11.26
     }
   ],
   "ai_history": [
@@ -2064,54 +2064,74 @@
     {
       "timestamp": "2026-09-08T00:08:58.394487+00:00",
       "note": "Sep 8 ops override: ETH stochastic->vwap, SOL trend->emacross. Basis: honest 90d replay under LIVE semantics (honest_grid_v2, B1-fixed) + split-sample stability. ETH/vwap +$142 n=30 (STABLE+ H1/H2); ETH/stochastic -$174 n=48 (UNSTABLE). SOL/emacross +$267 w/ v3 exits n=55 t=+1.35 (STABLE+); SOL/trend took 1 trade in 90d (parked). Backups: archives/strategy_config_pre_sep8_reassignment.json. Old fleet leaderboard (SL/TP-only backtester) is invalid for ranking \u2014 exit model does not exist live."
+    },
+    {
+      "timestamp": "2026-09-08T00:16:50.982981+00:00",
+      "note": "Sep 8 ops override #2: BTC macd->vwap. Basis: FIXED backtester (live exit model + conf 0.65 + cooldown 8h + touch-based stops = conservative bound) ranks BTC/vwap +$69 n=18 wr 72% pf 1.32 vs macd -$172 n=77. macd flips positive only under close-based stop model (replay), not robust to stop semantics. Backup: archives/strategy_config_pre_sep8_reassignment.json"
     }
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.48,
+      "score": 0.14,
       "confidence": 0.5,
       "sources": [
         "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 2,
+      "signal_count": 4,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC/$HYPE] @xxxbeanie (\ud83d\udc4d4 \ud83d\udd040) monday check: $BTC $78.9 | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @TheParseeHP (\ud83d\udc4d0 \ud83d\udd040) Tracked Hyperliquid traders: | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC/$HYPE] @xxxbeanie (\ud83d\udc4d4 \ud83d\udd040) monday check: $BTC $78.9K, funding neutral. $HYPE $800M unlock hits ATH near $90 ins",
-          "weight": 1.36
+          "signal": "\u2022 [\ud83d\udcc8 $BTC] @TheParseeHP (\ud83d\udc4d0 \ud83d\udd040) Tracked Hyperliquid traders: $425M volume, 59% win rate, top winner +$81k on PUMP longs.",
+          "weight": 1.42
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 38% bid (ask-heavy, bearish)",
-          "weight": 0.48
+          "source": "x_scanner",
+          "signal": "\u2022 [\u26a0\ufe0f $BTC] @TheCurrencyA (\ud83d\udc4d1 \ud83d\udd041) \ud83d\udea8 Over 3,400 BTC have been recovered after a successful negotiation with White Hats! B",
+          "weight": 1.37
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $BTC] @adaplusplus (\ud83d\udc4d0 \ud83d\udd040) $BTC: ~$79.0k, down ~1.6%. Rejected near $80.5k and slipped back under $80k. Last week's",
+          "weight": 1.04
         }
       ],
-      "timestamp": "2026-09-08T00:15:28.444679+00:00"
+      "timestamp": "2026-09-08T00:20:28.503501+00:00"
     },
     "ETH": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.35,
+      "confidence": 0.5,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 3,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -10.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @Peter_CT93 (\ud83d\udc4d0 \ud83d\udd040) Positioning on $ETH is build | oi_funding: OI -10.0% 1h",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $ETH] @Peter_CT93 (\ud83d\udc4d0 \ud83d\udd040) Positioning on $ETH is building, but the volume tells a different story. Fresh ignition ",
+          "weight": 1.62
+        },
         {
           "source": "oi_funding",
           "signal": "OI -10.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @astronomer_zero (\ud83d\udc4d49 \ud83d\udd041) We don't need \"scenarios\". No trade can ever accomodate for \"scenarios\" As soon as ",
+          "weight": 1.37
         }
       ],
-      "timestamp": "2026-09-08T00:15:28.444692+00:00"
+      "timestamp": "2026-09-08T00:20:28.503516+00:00"
     },
     "SOL": {
       "score": 0.0,
@@ -2123,19 +2143,32 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-09-08T00:15:28.444694+00:00"
+      "timestamp": "2026-09-08T00:20:28.503518+00:00"
     },
     "HYPE": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "x_scanner"
+      ],
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-08T00:15:28.444696+00:00"
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @XSeyvion (\ud83d\udc4d0 \ud83d\udd040) $HYPE Tokenized stocks are pul",
+      "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @XSeyvion (\ud83d\udc4d0 \ud83d\udd040) $HYPE Tokenized stocks are pulling real trading activity on chain, and Robinhood Chain is ",
+          "weight": 1.62
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @coinphoton_vi (\ud83d\udc4d0 \ud83d\udd040) Social trading platform Fomo hit $1.76M revenue Friday, beating Pump.fun (~$1.1M) per",
+          "weight": 1.2
+        }
+      ],
+      "timestamp": "2026-09-08T00:20:28.503527+00:00"
     }
   },
   "config": {
