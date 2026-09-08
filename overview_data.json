@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-09-08T08:29:10.454090+08:00",
-  "exported_at_utc": "2026-09-08T00:29:10.454093+00:00",
+  "exported_at": "2026-09-08T08:30:32.640784+08:00",
+  "exported_at_utc": "2026-09-08T00:30:32.640787+00:00",
   "portfolio": {
     "value": 4455.773450498974,
     "initial": 5000.0,
@@ -1404,18 +1404,24 @@
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": 0.14,
-      "confidence": 0.5,
+      "score": -0.16,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 4,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 5,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @TheParseeHP (\ud83d\udc4d0 \ud83d\udd040) Tracked Hyperliquid traders: | whale_monitor: Orderbook 38% bid (ask-heavy, bearish)",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @TheParseeHP (\ud83d\udc4d0 \ud83d\udd040) Tracked Hyperliquid traders: | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | oi_funding: OI -69.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -69.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $BTC] @TheParseeHP (\ud83d\udc4d0 \ud83d\udd040) Tracked Hyperliquid traders: $425M volume, 59% win rate, top winner +$81k on PUMP longs.",
@@ -1425,14 +1431,9 @@
           "source": "x_scanner",
           "signal": "\u2022 [\u26a0\ufe0f $BTC] @TheCurrencyA (\ud83d\udc4d1 \ud83d\udd041) \ud83d\udea8 Over 3,400 BTC have been recovered after a successful negotiation with White Hats! B",
           "weight": 1.37
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @adaplusplus (\ud83d\udc4d0 \ud83d\udd040) $BTC: ~$79.0k, down ~1.6%. Rejected near $80.5k and slipped back under $80k. Last week's",
-          "weight": 1.04
         }
       ],
-      "timestamp": "2026-09-08T00:29:09.064401+00:00"
+      "timestamp": "2026-09-08T00:30:32.592192+00:00"
     },
     "ETH": {
       "score": 0.35,
@@ -1445,7 +1446,7 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @Peter_CT93 (\ud83d\udc4d0 \ud83d\udd040) Positioning on $ETH is build | oi_funding: OI -10.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $ETH] @Peter_CT93 (\ud83d\udc4d0 \ud83d\udd040) Positioning on $ETH is build | oi_funding: OI -38.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1454,7 +1455,7 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI -10.0% 1h",
+          "signal": "OI -38.0% 1h",
           "weight": 1.44
         },
         {
@@ -1463,31 +1464,40 @@
           "weight": 1.37
         }
       ],
-      "timestamp": "2026-09-08T00:29:09.064421+00:00"
+      "timestamp": "2026-09-08T00:30:32.592209+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-08T00:29:09.064424+00:00"
-    },
-    "HYPE": {
-      "score": 1.0,
+      "score": -1.0,
       "confidence": 0.3,
       "sources": [
-        "x_scanner"
+        "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @XSeyvion (\ud83d\udc4d0 \ud83d\udd040) $HYPE Tokenized stocks are pul",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -27.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -27.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-08T00:30:32.592217+00:00"
+    },
+    "HYPE": {
+      "score": 0.32,
+      "confidence": 0.5,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 3,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @XSeyvion (\ud83d\udc4d0 \ud83d\udd040) $HYPE Tokenized stocks are pul | oi_funding: OI -53.0% 1h",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -1495,12 +1505,17 @@
           "weight": 1.62
         },
         {
+          "source": "oi_funding",
+          "signal": "OI -53.0% 1h",
+          "weight": 1.44
+        },
+        {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc8 $HYPE] @coinphoton_vi (\ud83d\udc4d0 \ud83d\udd040) Social trading platform Fomo hit $1.76M revenue Friday, beating Pump.fun (~$1.1M) per",
           "weight": 1.2
         }
       ],
-      "timestamp": "2026-09-08T00:29:09.064434+00:00"
+      "timestamp": "2026-09-08T00:30:32.592225+00:00"
     }
   },
   "pair_strategies": {
@@ -1902,33 +1917,33 @@
         "time": "1788826122.9952154"
       }
     ],
-    "generated": "2026-09-08T00:25:31.625439Z"
+    "generated": "2026-09-08T00:30:30.806807Z"
   },
   "scanner_status": {
     "x_scanner": {
       "last_run": "08:19",
-      "age_minutes": 9,
+      "age_minutes": 11,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "08:02",
-      "age_minutes": 27,
+      "age_minutes": 28,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "08:08",
-      "age_minutes": 20,
+      "age_minutes": 22,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "03:04",
-      "age_minutes": 325,
+      "age_minutes": 326,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "08:00",
-      "age_minutes": 28,
-      "status": "stale"
+      "last_run": "08:29",
+      "age_minutes": 1,
+      "status": "fresh"
     }
   },
   "harness": {
@@ -2130,33 +2145,33 @@
           "pair": "BTC",
           "verdict": "swap",
           "confidence": 0.95,
-          "reason": "The 'trend' strategy offers a massive performance lift (67.12 vs 6.25) and a robust Sharpe ratio of 2.89.",
+          "reason": "The 'trend' strategy offers a substantial performance advantage (Score 67.12) and superior risk-adjusted returns (Sharpe 2.89) over the current assignment.",
           "risk": "low"
         },
         {
           "pair": "ETH",
           "verdict": "swap",
           "confidence": 0.98,
-          "reason": "'Trend' is significantly superior (68.0 vs 6.49) and provides the highest Sharpe ratio (3.59) across all analyzed pairs.",
+          "reason": "The 'trend' strategy is the clear leader, demonstrating the highest score (68.0) and best Sharpe ratio (3.59) among all alternatives.",
           "risk": "low"
         },
         {
           "pair": "SOL",
           "verdict": "swap",
           "confidence": 0.9,
-          "reason": "'Trend' provides the best performance lift (65.84) and maintains a high Sharpe ratio (2.73), significantly beating the current 'emacross' score.",
+          "reason": "The 'trend' strategy significantly outperforms the current assignment (Score 65.84) while maintaining a strong Sharpe ratio (2.73).",
           "risk": "low"
         },
         {
           "pair": "HYPE",
           "verdict": "swap",
           "confidence": 0.92,
-          "reason": "The current 'macd' strategy has a negative Sharpe (-0.39); switching to 'trend' offers a substantial improvement (55.11 score, 1.83 Sharpe).",
+          "reason": "The 'trend' strategy provides a massive improvement in score (55.11) and a much healthier Sharpe ratio (1.83) compared to the current MACD assignment.",
           "risk": "medium"
         }
       ],
       "overall_regime": "trending",
-      "top_concern": "The universal outperformance of 'trend' suggests high reliance on momentum; a sudden shift to a choppy regime could expose the entire portfolio to systematic risk."
+      "top_concern": "The current portfolio is systematically under-leveraged in trend-following strategies, missing out on optimal performance across all major assets."
     },
     "advisor_risk": {
       "risk_level": "medium",
@@ -2164,11 +2179,11 @@
       "direction_bias": "long",
       "allocation_issue": "over-concentrated",
       "recommendations": [
-        "Reduce correlation risk by considering a partial hedge on the ETH/SOL pair (e.g., adding a BTC short or reducing the size of the largest long position) to balance the directional exposure.",
-        "Review the stop-loss spacing, particularly for HYPE and SOL. The current stops are relatively tight and may lead to premature liquidation due to normal market volatility (whipsaws). Consider widening the stops slightly or implementing a trailing stop mechanism.",
-        "Since there is unallocated capital remaining (assuming the $0.00 cash figure is an error and capital remains), allocate a portion of this cash to diversify the portfolio into a less correlated asset class or sector."
+        "Reduce the size of the long positions (SOL and ETH) to mitigate high correlation risk. Consider reducing the combined exposure by 20-30% to free up capital for dry powder.",
+        "Implement a partial hedge or reduce the directional bias by scaling down the largest long position (ETH) until market volatility subsides, or by increasing the size of the short position (HYPE) to balance the book.",
+        "Re-evaluate the confidence scores for SOL and ETH. Since both are driven by 'stochastic' signals, a single market regime shift could invalidate both entries simultaneously."
       ],
-      "stop_assessment": "The stop-loss spacing is mixed; the HYPE stop is extremely tight, while the SOL stop is also aggressive, increasing the risk of being stopped out by minor volatility."
+      "stop_assessment": "The stop-loss spacing is generally acceptable, but the primary risk lies not in the spacing itself, but in the correlated nature of the underlying assets."
     }
   },
   "eval_leaderboard": [
