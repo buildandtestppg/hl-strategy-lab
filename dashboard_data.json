@@ -1,64 +1,64 @@
 {
-  "last_update": "2026-09-08T00:05:28.547694+00:00",
+  "last_update": "2026-09-08T00:10:27.809334+00:00",
   "portfolio": {
-    "value": 4436.28,
+    "value": 4435.37,
     "capital": 4455.77,
     "initial": 5000.0,
-    "pnl": -563.72,
-    "pnl_pct": -11.27,
+    "pnl": -564.63,
+    "pnl_pct": -11.29,
     "open_positions": 3
   },
   "prices": {
-    "BTC": 79014.5,
-    "ETH": 2487.75,
-    "SOL": 103.695,
-    "HYPE": 85.2125
+    "BTC": 78991.5,
+    "ETH": 2486.25,
+    "SOL": 103.635,
+    "HYPE": 85.0835
   },
   "positions": {
     "SOL": {
       "direction": "LONG",
       "entry_price": 105.675,
-      "current_price": 103.695,
+      "current_price": 103.635,
       "size": 12.33392483682736,
-      "unrealized_pnl": -24.48,
-      "unrealized_pnl_pct": -1.88,
+      "unrealized_pnl": -25.18,
+      "unrealized_pnl_pct": -1.93,
       "stop_loss": 102.045,
       "take_profit": 112.935,
       "strategy": "stochastic",
       "entry_time": "2026-09-07T03:00:43.889316+00:00",
-      "duration_hours": 21.1,
-      "funding_rate": 0.000229,
-      "unrealized_funding": 0.0619
+      "duration_hours": 21.2,
+      "funding_rate": 6.3e-05,
+      "unrealized_funding": 0.0169
     },
     "ETH": {
       "direction": "LONG",
       "entry_price": 2481.65,
-      "current_price": 2487.75,
+      "current_price": 2486.25,
       "size": 0.8255556807187948,
-      "unrealized_pnl": 4.86,
-      "unrealized_pnl_pct": 0.24,
+      "unrealized_pnl": 3.62,
+      "unrealized_pnl_pct": 0.18,
       "stop_loss": 2427.925,
       "take_profit": 2589.1,
       "strategy": "stochastic",
       "entry_time": "2026-09-07T17:05:20.963691+00:00",
-      "duration_hours": 7.0,
+      "duration_hours": 7.1,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1798
+      "unrealized_funding": 0.1818
     },
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 85.2295,
-      "current_price": 85.2125,
+      "current_price": 85.0835,
       "size": 7.936223778789665,
-      "unrealized_pnl": 0.14,
-      "unrealized_pnl_pct": 0.02,
+      "unrealized_pnl": 1.16,
+      "unrealized_pnl_pct": 0.17,
       "stop_loss": 88.0275,
       "take_profit": 79.6335,
       "strategy": "macd",
       "entry_time": "2026-09-07T23:55:42.648396+00:00",
       "duration_hours": 0.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0014
+      "unrealized_funding": -0.0021
     }
   },
   "stats": {
@@ -927,8 +927,8 @@
   ],
   "pair_strategies": {
     "BTC": "macd",
-    "ETH": "stochastic",
-    "SOL": "trend",
+    "ETH": "vwap",
+    "SOL": "emacross",
     "HYPE": "macd"
   },
   "strategy_stats": {
@@ -999,11 +999,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-07T08:30:34.115427+00:00",
-      "v": 4445.2,
-      "p": -11.1
-    },
     {
       "t": "2026-09-07T08:35:34.824972+00:00",
       "v": 4446.24,
@@ -1998,6 +1993,11 @@
       "t": "2026-09-08T00:05:28.547694+00:00",
       "v": 4436.28,
       "p": -11.27
+    },
+    {
+      "t": "2026-09-08T00:10:27.809334+00:00",
+      "v": 4435.37,
+      "p": -11.29
     }
   ],
   "ai_history": [
@@ -2060,6 +2060,10 @@
     {
       "timestamp": "2026-09-07T08:04:30.560932+00:00",
       "note": "SOL: stochastic\u2192trend (OPS OVERRIDE Sep 7: live 30d stochastic -$94.73/n=8, evaluator ranks trend 47.6 vs stoch 24.2, PF 1.59 vs 1.06; promotion was blocked only by MIN_PROMOTION_TRADES 21<30. Live corroboration accepted as sample evidence. Paper account only.)"
+    },
+    {
+      "timestamp": "2026-09-08T00:08:58.394487+00:00",
+      "note": "Sep 8 ops override: ETH stochastic->vwap, SOL trend->emacross. Basis: honest 90d replay under LIVE semantics (honest_grid_v2, B1-fixed) + split-sample stability. ETH/vwap +$142 n=30 (STABLE+ H1/H2); ETH/stochastic -$174 n=48 (UNSTABLE). SOL/emacross +$267 w/ v3 exits n=55 t=+1.35 (STABLE+); SOL/trend took 1 trade in 90d (parked). Backups: archives/strategy_config_pre_sep8_reassignment.json. Old fleet leaderboard (SL/TP-only backtester) is invalid for ranking \u2014 exit model does not exist live."
     }
   ],
   "sentiment": {
@@ -2087,7 +2091,7 @@
           "weight": 0.48
         }
       ],
-      "timestamp": "2026-09-08T00:05:28.454803+00:00"
+      "timestamp": "2026-09-08T00:10:27.720504+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2107,7 +2111,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-08T00:05:28.454824+00:00"
+      "timestamp": "2026-09-08T00:10:27.720522+00:00"
     },
     "SOL": {
       "score": 0.0,
@@ -2119,7 +2123,7 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-09-08T00:05:28.454828+00:00"
+      "timestamp": "2026-09-08T00:10:27.720525+00:00"
     },
     "HYPE": {
       "score": 0.0,
@@ -2131,7 +2135,7 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-09-08T00:05:28.454830+00:00"
+      "timestamp": "2026-09-08T00:10:27.720527+00:00"
     }
   },
   "config": {
