@@ -1,92 +1,118 @@
 {
   "BTC": {
-    "score": 0.16,
-    "confidence": 0.5,
+    "score": 0.58,
+    "confidence": 0.6,
     "sources": [
+      "x_scanner",
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 7,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | oi_funding: OI +10.0% 1h, funding 0.0013%",
+    "contradictions": 2,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @whale_alert (\ud83d\udc4d15 \ud83d\udd040) \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 2,797 $BT | whale_monitor: Orderbook 24% bid (ask-heavy, bearish) | news_agent: \ud83d\udfe2 **Notable (keyword pass \u2014 classifier missed these)**  \u2022 **",
     "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $BTC] @whale_alert (\ud83d\udc4d15 \ud83d\udd040) \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 \ud83d\udea8 2,797 $BTC (220,707,092 USD) transferred from unknow [score: 4.7]",
+        "weight": 3.06
+      },
       {
         "source": "oi_funding",
         "signal": "OI +10.0% 1h, funding 0.0013%",
         "weight": 1.44
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 24% bid (ask-heavy, bearish)",
-        "weight": 1.04
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $BTC] @FINANCIERNEWS (\ud83d\udc4d4 \ud83d\udd041) \ud83d\udc0b WHALE ALERT: Grayscale sold $65.5M of Bitcoin \ud83d\udd3b Grayscale (GBTC) -$6 [score: 1.8]",
+        "weight": 1.17
       }
     ],
-    "timestamp": "2026-09-09T04:55:45.853376+00:00"
+    "timestamp": "2026-09-09T05:00:45.568253+00:00"
   },
   "ETH": {
     "score": 1.0,
+    "confidence": 0.74,
+    "sources": [
+      "x_scanner",
+      "oi_funding"
+    ],
+    "signal_count": 5,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7 $ETH] @BitunixOfficial (\ud83d\udc4d3 \ud83d\udd041) Open interest shows wher | oi_funding: OI +8.0% 1h, funding 0.0013%",
+    "key_signals": [
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7 $ETH] @BitunixOfficial (\ud83d\udc4d3 \ud83d\udd041) Open interest shows where trader participation is building. Through Au [score: 2.7]",
+        "weight": 1.76
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +8.0% 1h, funding 0.0013%",
+        "weight": 1.44
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7 $ETH] @ThiagoEhr (\ud83d\udc4d12 \ud83d\udd042) HTX's September Proof of Reserves is here. The latest Merkle Tree upda [score: 1.6]",
+        "weight": 1.04
+      }
+    ],
+    "timestamp": "2026-09-09T05:00:45.568271+00:00"
+  },
+  "SOL": {
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
-      "oi_funding"
+      "x_scanner"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +8.0% 1h, funding 0.0013%",
+    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7 $SOL] @Digglabs (\ud83d\udc4d0 \ud83d\udd040) Kyle, we're building a similar ",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI +8.0% 1h, funding 0.0013%",
-        "weight": 1.44
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83c\udfd7 $SOL] @Digglabs (\ud83d\udc4d0 \ud83d\udd040) Kyle, we're building a similar consumer loop for AI training data, but [score: 2.5]",
+        "weight": 1.62
       }
     ],
-    "timestamp": "2026-09-09T04:55:45.853393+00:00"
-  },
-  "SOL": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-09-09T04:55:45.853396+00:00"
+    "timestamp": "2026-09-09T05:00:45.568280+00:00"
   },
   "HYPE": {
-    "score": 0.88,
+    "score": 0.37,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 9,
+    "signal_count": 4,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @CryptoPatel (\ud83d\udc4d81 \ud83d\udd016) Crypto Projects Have Spent | whale_monitor: Orderbook 6% bid (ask-heavy, bearish) | oi_funding: OI +28.0% 1h, funding 0.0005%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @iiam_Akshay (\ud83d\udc4d1 \ud83d\udd040) \ud83d\udea8 ON-CHAIN DERIVATIVES ARE  | whale_monitor: Orderbook 6% bid (ask-heavy, bearish) | oi_funding: OI +28.0% 1h, funding 0.0005%",
     "key_signals": [
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @CryptoPatel (\ud83d\udc4d81 \ud83d\udd016) Crypto Projects Have Spent A Massive $638M On Token Buybacks In 2026, Up From $545M [s",
-        "weight": 3.61
-      },
-      {
-        "source": "x_scanner",
-        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @zippy257 (\ud83d\udc4d5 \ud83d\udd010) Fresh wallet dropped $11.9M into Hyperliquid and went straight for a massive $BTC bet: [sc",
-        "weight": 1.95
-      },
       {
         "source": "whale_monitor",
         "signal": "Orderbook 6% bid (ask-heavy, bearish)",
         "weight": 1.76
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI +28.0% 1h, funding 0.0005%",
+        "weight": 1.44
+      },
+      {
+        "source": "x_scanner",
+        "signal": "\u2022 [\ud83d\udcc8 $HYPE] @iiam_Akshay (\ud83d\udc4d1 \ud83d\udd040) \ud83d\udea8 ON-CHAIN DERIVATIVES ARE GETTING SERIOUS $HYPE is at the center of t [score: 1.6]",
+        "weight": 1.04
       }
     ],
-    "timestamp": "2026-09-09T04:55:45.853419+00:00"
+    "timestamp": "2026-09-09T05:00:45.568291+00:00"
   }
 }
