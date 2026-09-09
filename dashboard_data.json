@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-09-09T01:20:05.536480+00:00",
+  "last_update": "2026-09-09T01:25:07.310967+00:00",
   "portfolio": {
-    "value": 4437.42,
+    "value": 4438.86,
     "capital": 4419.07,
     "initial": 5000.0,
-    "pnl": -562.58,
-    "pnl_pct": -11.25,
+    "pnl": -561.14,
+    "pnl_pct": -11.22,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 78617.5,
-    "ETH": 2489.55,
-    "SOL": 103.405,
-    "HYPE": 85.5355
+    "BTC": 78656.5,
+    "ETH": 2491.35,
+    "SOL": 103.385,
+    "HYPE": 85.5265
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 2481.65,
-      "current_price": 2489.55,
+      "current_price": 2491.35,
       "size": 0.8255556807187948,
-      "unrealized_pnl": 5.69,
-      "unrealized_pnl_pct": 0.28,
+      "unrealized_pnl": 7.18,
+      "unrealized_pnl_pct": 0.35,
       "stop_loss": 2427.925,
       "take_profit": 2589.1,
       "strategy": "stochastic",
       "entry_time": "2026-09-07T17:05:20.963691+00:00",
-      "duration_hours": 32.2,
+      "duration_hours": 32.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.8285
+      "unrealized_funding": 0.8313
     },
     "HYPE": {
       "direction": "LONG",
       "entry_price": 83.8105,
-      "current_price": 85.5355,
+      "current_price": 85.5265,
       "size": 7.349600238731484,
-      "unrealized_pnl": 12.65,
+      "unrealized_pnl": 12.6,
       "unrealized_pnl_pct": 2.05,
       "stop_loss": 80.79725,
       "take_profit": 89.837,
       "strategy": "macd",
       "entry_time": "2026-09-08T16:10:33.989698+00:00",
       "duration_hours": 9.2,
-      "funding_rate": 0.000473,
-      "unrealized_funding": 0.0273
+      "funding_rate": 0.000137,
+      "unrealized_funding": 0.008
     }
   },
   "stats": {
@@ -984,11 +984,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-08T09:35:17.073246+00:00",
-      "v": 4444.92,
-      "p": -11.1
-    },
     {
       "t": "2026-09-08T09:40:15.910262+00:00",
       "v": 4448.57,
@@ -1983,6 +1978,11 @@
       "t": "2026-09-09T01:20:05.536480+00:00",
       "v": 4437.42,
       "p": -11.25
+    },
+    {
+      "t": "2026-09-09T01:25:07.310967+00:00",
+      "v": 4438.86,
+      "p": -11.22
     }
   ],
   "ai_history": [
@@ -2058,36 +2058,41 @@
   "sentiment": {
     "BTC": {
       "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +44.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +44.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-09-09T01:20:05.447293+00:00"
-    },
-    "ETH": {
-      "score": 1.0,
       "confidence": 0.74,
       "sources": [
-        "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 4,
+      "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @3heeeeee (\ud83d\udc4d1) ETH 1h: trend intact but volume 0. | oi_funding: OI +35.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 82% bid-weighted (bullish) | oi_funding: OI +70.0% 1h, funding 0.0012%",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +70.0% 1h, funding 0.0012%",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 82% bid-weighted (bullish)",
+          "weight": 1.28
+        }
+      ],
+      "timestamp": "2026-09-09T01:25:07.219718+00:00"
+    },
+    "ETH": {
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "x_scanner"
+      ],
+      "signal_count": 3,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @3heeeeee (\ud83d\udc4d1) ETH 1h: trend intact but volume 0.",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2100,12 +2105,12 @@
           "weight": 1.69
         },
         {
-          "source": "oi_funding",
-          "signal": "OI +35.0% 1h, funding 0.0013%",
-          "weight": 1.44
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $ETH] @CastilloTrading (\ud83d\udc4d82) ETH holding up extremely well vs BTC \u2014 ETHBTC outperformance moment coming [score: 2.2",
+          "weight": 1.43
         }
       ],
-      "timestamp": "2026-09-09T01:20:05.447321+00:00"
+      "timestamp": "2026-09-09T01:25:07.219740+00:00"
     },
     "SOL": {
       "score": 1.0,
@@ -2117,29 +2122,28 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +27.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +8.0% 1h, funding 0.0004%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +27.0% 1h, funding 0.0013%",
+          "signal": "OI +8.0% 1h, funding 0.0004%",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-09T01:20:05.447333+00:00"
+      "timestamp": "2026-09-09T01:25:07.219751+00:00"
     },
     "HYPE": {
-      "score": 0.86,
-      "confidence": 0.84,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "x_scanner",
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 5,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 1,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @obliiviiscariis (\ud83d\udc4d0) Daily CCIP analytics: cbB | whale_monitor: Orderbook 25% bid (ask-heavy, bearish) | oi_funding: OI +19.0% 1h, funding 0.0011%",
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @obliiviiscariis (\ud83d\udc4d0) Daily CCIP analytics: cbB | oi_funding: OI +8.0% 1h, funding 0.0005%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2153,11 +2157,11 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +19.0% 1h, funding 0.0011%",
+          "signal": "OI +8.0% 1h, funding 0.0005%",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-09T01:20:05.447351+00:00"
+      "timestamp": "2026-09-09T01:25:07.219767+00:00"
     }
   },
   "config": {
