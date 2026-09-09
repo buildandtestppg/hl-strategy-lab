@@ -1,64 +1,64 @@
 {
-  "last_update": "2026-09-09T13:20:15.621235+00:00",
+  "last_update": "2026-09-09T13:25:17.465456+00:00",
   "portfolio": {
-    "value": 4464.95,
+    "value": 4467.98,
     "capital": 4428.16,
     "initial": 5000.0,
-    "pnl": -535.05,
-    "pnl_pct": -10.7,
+    "pnl": -532.02,
+    "pnl_pct": -10.64,
     "open_positions": 3
   },
   "prices": {
-    "BTC": 79480.5,
-    "ETH": 2512.25,
-    "SOL": 104.405,
-    "HYPE": 86.5505
+    "BTC": 79528.5,
+    "ETH": 2513.75,
+    "SOL": 104.485,
+    "HYPE": 86.6705
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 2481.65,
-      "current_price": 2512.25,
+      "current_price": 2513.75,
       "size": 0.8255556807187948,
-      "unrealized_pnl": 24.11,
-      "unrealized_pnl_pct": 1.18,
+      "unrealized_pnl": 25.35,
+      "unrealized_pnl_pct": 1.24,
       "stop_loss": 2427.925,
       "take_profit": 2589.1,
       "strategy": "stochastic",
       "entry_time": "2026-09-07T17:05:20.963691+00:00",
       "duration_hours": 44.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": 1.1472
+      "unrealized_funding": 1.1501
     },
     "HYPE": {
       "direction": "LONG",
       "entry_price": 83.8105,
-      "current_price": 86.5505,
+      "current_price": 86.6705,
       "size": 3.674800119365742,
-      "unrealized_pnl": 9.98,
-      "unrealized_pnl_pct": 3.24,
+      "unrealized_pnl": 10.43,
+      "unrealized_pnl_pct": 3.38,
       "stop_loss": 85.6395,
       "take_profit": 89.837,
       "strategy": "macd",
       "entry_time": "2026-09-08T16:10:33.989698+00:00",
       "duration_hours": 21.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0841
+      "unrealized_funding": 0.0846
     },
     "SOL": {
       "direction": "LONG",
       "entry_price": 104.235,
-      "current_price": 104.405,
+      "current_price": 104.485,
       "size": 16.767579153222908,
-      "unrealized_pnl": 2.69,
-      "unrealized_pnl_pct": 0.15,
+      "unrealized_pnl": 4.04,
+      "unrealized_pnl_pct": 0.23,
       "stop_loss": 101.5775,
       "take_profit": 109.55,
       "strategy": "emacross",
       "entry_time": "2026-09-09T05:00:55.940222+00:00",
-      "duration_hours": 8.3,
-      "funding_rate": 0.001106,
-      "unrealized_funding": 0.1612
+      "duration_hours": 8.4,
+      "funding_rate": 0.001022,
+      "unrealized_funding": 0.1506
     }
   },
   "stats": {
@@ -999,11 +999,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-08T21:45:25.755082+00:00",
-      "v": 4422.78,
-      "p": -11.54
-    },
     {
       "t": "2026-09-08T21:50:26.616909+00:00",
       "v": 4422.21,
@@ -1998,6 +1993,11 @@
       "t": "2026-09-09T13:20:15.621235+00:00",
       "v": 4464.95,
       "p": -10.7
+    },
+    {
+      "t": "2026-09-09T13:25:17.465456+00:00",
+      "v": 4467.98,
+      "p": -10.64
     }
   ],
   "ai_history": [
@@ -2072,18 +2072,24 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": -0.3,
+      "confidence": 0.84,
       "sources": [
         "x_scanner",
-        "whale_monitor"
+        "whale_monitor",
+        "oi_funding"
       ],
-      "signal_count": 2,
+      "signal_count": 3,
       "convergence": true,
       "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @heisChapman (\ud83d\udc4d8 \ud83d\udd040) The award for the biggest f | whale_monitor: Orderbook 81% bid-weighted (bullish)",
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @heisChapman (\ud83d\udc4d8 \ud83d\udd040) The award for the biggest f | whale_monitor: Orderbook 28% bid (ask-heavy, bearish) | oi_funding: OI -50.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -50.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83c\udfd7\ufe0f $BTC] @heisChapman (\ud83d\udc4d8 \ud83d\udd040) The award for the biggest failed celebrity token has to go to $LAPTOP  [score: 2.1]",
@@ -2091,11 +2097,11 @@
         },
         {
           "source": "whale_monitor",
-          "signal": "Orderbook 81% bid-weighted (bullish)",
-          "weight": 1.24
+          "signal": "Orderbook 28% bid (ask-heavy, bearish)",
+          "weight": 0.88
         }
       ],
-      "timestamp": "2026-09-09T13:20:15.533908+00:00"
+      "timestamp": "2026-09-09T13:25:17.380340+00:00"
     },
     "ETH": {
       "score": 1.0,
@@ -2108,7 +2114,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @DylanTeil (\ud83d\udc4d61 \ud83d\udd0410) aight congratz we survived t | oi_funding: OI +9.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $ETH] @DylanTeil (\ud83d\udc4d61 \ud83d\udd0410) aight congratz we survived t | oi_funding: OI +11.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "x_scanner",
@@ -2126,7 +2132,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-09T13:20:15.533927+00:00"
+      "timestamp": "2026-09-09T13:25:17.380360+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -2138,15 +2144,15 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -6.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -25.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -6.0% 1h",
-          "weight": 1.08
+          "signal": "OI -25.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-09T13:20:15.533936+00:00"
+      "timestamp": "2026-09-09T13:25:17.380370+00:00"
     },
     "HYPE": {
       "score": 0.44,
@@ -2159,11 +2165,11 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @cryptoleon (\ud83d\udc4d42 \ud83d\udd042) BREAKING: $LAPTOP sits at a | oi_funding: OI -9.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @cryptoleon (\ud83d\udc4d42 \ud83d\udd042) BREAKING: $LAPTOP sits at a | oi_funding: OI -26.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -9.0% 1h",
+          "signal": "OI -26.0% 1h",
           "weight": 1.44
         },
         {
@@ -2177,7 +2183,7 @@
           "weight": 1.28
         }
       ],
-      "timestamp": "2026-09-09T13:20:15.533946+00:00"
+      "timestamp": "2026-09-09T13:25:17.380380+00:00"
     }
   },
   "config": {
