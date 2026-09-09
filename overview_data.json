@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-09-09T12:00:38.080630+08:00",
-  "exported_at_utc": "2026-09-09T04:00:38.080633+00:00",
+  "exported_at": "2026-09-09T12:30:42.470333+08:00",
+  "exported_at_utc": "2026-09-09T04:30:42.470335+00:00",
   "portfolio": {
     "value": 4419.074962987922,
     "initial": 5000.0,
@@ -385,41 +385,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-09-08T12:10:39.582712+00:00",
-      "v": 4421.62,
-      "p": -11.57
-    },
-    {
-      "t": "2026-09-08T12:15:41.207965+00:00",
-      "v": 4415.79,
-      "p": -11.68
-    },
-    {
-      "t": "2026-09-08T12:20:41.416696+00:00",
-      "v": 4421.12,
-      "p": -11.58
-    },
-    {
-      "t": "2026-09-08T12:25:46.388883+00:00",
-      "v": 4422.58,
-      "p": -11.55
-    },
-    {
-      "t": "2026-09-08T12:30:43.110518+00:00",
-      "v": 4422.16,
-      "p": -11.56
-    },
-    {
-      "t": "2026-09-08T12:35:47.982182+00:00",
-      "v": 4424.2,
-      "p": -11.52
-    },
-    {
-      "t": "2026-09-08T12:40:45.685296+00:00",
-      "v": 4423.5,
-      "p": -11.53
-    },
     {
       "t": "2026-09-08T12:45:46.758162+00:00",
       "v": 4425.03,
@@ -1384,35 +1349,64 @@
       "t": "2026-09-09T03:55:36.441815+00:00",
       "v": 4432.82,
       "p": -11.34
+    },
+    {
+      "t": "2026-09-09T04:00:33.935319+00:00",
+      "v": 4434.93,
+      "p": -11.3
+    },
+    {
+      "t": "2026-09-09T04:05:36.252379+00:00",
+      "v": 4447.83,
+      "p": -11.04
+    },
+    {
+      "t": "2026-09-09T04:10:36.513827+00:00",
+      "v": 4440.9,
+      "p": -11.18
+    },
+    {
+      "t": "2026-09-09T04:15:36.358950+00:00",
+      "v": 4442.32,
+      "p": -11.15
+    },
+    {
+      "t": "2026-09-09T04:20:41.520346+00:00",
+      "v": 4440.9,
+      "p": -11.18
+    },
+    {
+      "t": "2026-09-09T04:25:39.699608+00:00",
+      "v": 4445.7,
+      "p": -11.09
+    },
+    {
+      "t": "2026-09-09T04:26:48.386780+00:00",
+      "v": 4444.47,
+      "p": -11.11
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": -0.09,
-      "confidence": 0.5,
+      "score": -1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
-        "oi_funding"
+        "whale_monitor"
       ],
-      "signal_count": 2,
+      "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 80% bid-weighted (bullish) | oi_funding: OI -17.0% 1h",
+      "contradictions": 0,
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 29% bid (ask-heavy, bearish)",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI -17.0% 1h",
-          "weight": 1.44
-        },
-        {
           "source": "whale_monitor",
-          "signal": "Orderbook 80% bid-weighted (bullish)",
-          "weight": 1.2
+          "signal": "Orderbook 29% bid (ask-heavy, bearish)",
+          "weight": 0.84
         }
       ],
-      "timestamp": "2026-09-09T04:00:36.973723+00:00"
+      "timestamp": "2026-09-09T04:30:40.473182+00:00"
     },
     "ETH": {
       "score": 0.0,
@@ -1424,58 +1418,50 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-09-09T04:00:36.973727+00:00"
+      "timestamp": "2026-09-09T04:30:40.473190+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "x_scanner"
-      ],
-      "signal_count": 1,
+      "score": 0.0,
+      "confidence": 0.0,
+      "sources": [],
+      "signal_count": 0,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc8 $SOL] @lookonchain (\ud83d\udc4d15 \ud83d\udd044) A whale (4Hw4QR) withdrew 1",
+      "narrative": "No active signals",
+      "key_signals": [],
+      "timestamp": "2026-09-09T04:30:40.473192+00:00"
+    },
+    "HYPE": {
+      "score": 1.0,
+      "confidence": 0.74,
+      "sources": [
+        "x_scanner",
+        "whale_monitor"
+      ],
+      "signal_count": 8,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @CryptoPatel (\ud83d\udc4d81 \ud83d\udd016) Crypto Projects Have Spent | whale_monitor: Orderbook 83% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $SOL] @lookonchain (\ud83d\udc4d15 \ud83d\udd044) A whale (4Hw4QR) withdrew 16,976 $SOL ($1.76M) from #Binance, then bou [score: 2.4]",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @CryptoPatel (\ud83d\udc4d81 \ud83d\udd016) Crypto Projects Have Spent A Massive $638M On Token Buybacks In 2026, Up From $545M [s",
+          "weight": 3.61
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @zippy257 (\ud83d\udc4d5 \ud83d\udd010) Fresh wallet dropped $11.9M into Hyperliquid and went straight for a massive $BTC bet: [sc",
+          "weight": 1.95
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\u26a1 $HYPE] @jinbiBTC (\ud83d\udc4d42 \ud83d\udd010) ETH round-trip drawdown post-mortem: staring at the K-line till fingers went stiff, [scor",
           "weight": 1.56
         }
       ],
-      "timestamp": "2026-09-09T04:00:36.973737+00:00"
-    },
-    "HYPE": {
-      "score": 0.44,
-      "confidence": 0.5,
-      "sources": [
-        "x_scanner",
-        "oi_funding"
-      ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $HYPE] @mr_alguaci (\ud83d\udc4d0 \ud83d\udd041) Kraken just launched kHYPE\u2014 | oi_funding: OI -20.0% 1h",
-      "key_signals": [
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @mr_alguaci (\ud83d\udc4d0 \ud83d\udd041) Kraken just launched kHYPE\u2014wrapped HYPE backed 1:1 by real HYPE in Kra [score: 2.6]",
-          "weight": 2.08
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $HYPE] @slash_trade_bot (\ud83d\udc4d0 \ud83d\udd040) \u2022 Flat funding across every HL coin is the anomaly \u2014 this isn't inacti [score: 2.5",
-          "weight": 1.62
-        },
-        {
-          "source": "oi_funding",
-          "signal": "OI -20.0% 1h",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-09-09T04:00:36.973748+00:00"
+      "timestamp": "2026-09-09T04:30:40.473221+00:00"
     }
   },
   "pair_strategies": {
@@ -1575,251 +1561,251 @@
       {
         "text": "**Job ID:** 43ba1d393c5a",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
-        "text": "**Run Time:** 2026-09-09 11:55:34",
+        "text": "**Run Time:** 2026-09-09 12:23:39",
         "sentiment": 0,
-        "time": "2026-09-09 11:55"
+        "time": "2026-09-09 12:23"
       },
       {
         "text": "**Schedule:** 5,35 * * * *",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "[SYSTEM: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just produc",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "You are the Crypto Scanner Agent. Run BOTH the X scanner and Reddit scanner, then report results to Discord.",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "You MUST use a subagent to run Reddit scanner in parallel with X scanner. This saves ~5-9 minutes per cycle.",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "Spawn the Reddit subagent BEFORE starting x_scanner.py so they run in parallel:",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "delegate_task(",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "goal=\"Run the Reddit crypto scanner and write results to a temp file\",",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "context=\"Run this command: cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/reddit_scanner.py 2>&1. Wait for it to complete (may take 5-9 min)",
         "sentiment": -0.3,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "toolsets=[\"terminal\", \"file\"],",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "max_iterations=15",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": ")",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "Run the X scanner normally:",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/x_scanner.py 2>&1",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "Parse the JSON output as usual.",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       },
       {
         "text": "After x_scanner.py finishes:",
         "sentiment": 0,
-        "time": "1788926134.636028"
+        "time": "1788927819.5785234"
       }
     ],
     "whale_monitor": [
       {
         "text": "**Job ID:** 66a98cf277aa",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
-        "text": "**Run Time:** 2026-09-09 11:44:32",
+        "text": "**Run Time:** 2026-09-09 12:03:48",
         "sentiment": 0,
-        "time": "2026-09-09 11:44"
+        "time": "2026-09-09 12:03"
       },
       {
         "text": "**Schedule:** */20 * * * *",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "You are the Whale Monitor Dispatcher. Run the Hyperliquid whale monitor and deliver results to Discord.",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "1. Run: `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/whale_monitor.py 2>&1`",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "2. Parse the JSON output and format for Discord.",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "3. **Wiki Write (MANDATORY):** Append results to the daily whale digest:",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "echo '<the JSON output>' > /tmp/whale_latest.json",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/wiki_writer.py --scan /tmp/whale_latest.json --source whale_monitor 2>&1",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "Also write a clean markdown summary to `~/wiki/queries/whale-activity.md` \u2014 APPEND to existing content (do NOT overwrite). Use `>>` or write a new section at the top. Include timestamp, OI snapshot, o",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "4. **Formatting rules:**",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "- If alerts fired: show them prominently with emoji headers",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "- ALWAYS include the tracked coin table (price, OI, 1h change, orderbook imbalance, funding)",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "- Show orderbook as: \ud83d\udcca for bid-heavy, \ud83d\udcc9 for ask-heavy, \u2696\ufe0f for balanced",
         "sentiment": 0.0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "- Show funding extremes if any (from all 229 HL perps)",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "- Show large trades if any (>$50K)",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       },
       {
         "text": "- Show whale position changes if any",
         "sentiment": 0,
-        "time": "1788925472.1821704"
+        "time": "1788926628.1440434"
       }
     ],
     "news_agent": [
       {
         "text": "**Job ID:** 8bd6a73fc440",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
-        "text": "**Run Time:** 2026-09-09 11:55:39",
+        "text": "**Run Time:** 2026-09-09 12:10:31",
         "sentiment": 0,
-        "time": "2026-09-09 11:55"
+        "time": "2026-09-09 12:10"
       },
       {
         "text": "**Schedule:** 7,22,37,52 * * * *",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "Run the news agent script and format breaking news as a Discord message (delivery is handled automatically).",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "**DB FACTS (DO NOT investigate \u2014 these are verified):**",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "- DB path: /Users/mojoai/.hermes/swarm/data/agents.db",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "- Table: crypto_news",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "- Columns: id, title, url, source, published_at, category, impact_rating, affected_tokens, summary, fetched_at, last_reported_at",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "- Date filter: use fetched_at (format: \"2026-04-18 14:52:30\") with SQLite datetime('now','-N minutes')",
@@ -1829,81 +1815,81 @@
       {
         "text": "- The script now does blanket mark-as-reported automatically \u2014 just verify 0 remaining",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "- by_impact in JSON is IN-MEMORY only \u2014 always query DB for actual unreported articles",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "- Ignore empty DBs at ~/.hermes/hermes-agent/news*.db and ~/.hermes/scripts/news*.db \u2014 they're red herrings",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "- notable_keywords dual-pass is REQUIRED \u2014 the classifier misses ~90% of important articles",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "1. **Run scan:** `cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/news_agent.py 2>&1`",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "2. **Parse the JSON output** from the script (last JSON block in output).",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "3. **Query DB for unreported articles (DO NOT skip this \u2014 by_impact JSON is misleading):**",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 -c \"",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       },
       {
         "text": "import sqlite3, json, html",
         "sentiment": 0,
-        "time": "1788926139.3759522"
+        "time": "1788927031.3818336"
       }
     ],
-    "generated": "2026-09-09T04:00:33.872567Z"
+    "generated": "2026-09-09T04:30:38.367859Z"
   },
   "scanner_status": {
     "x_scanner": {
-      "last_run": "11:55",
-      "age_minutes": 5,
+      "last_run": "12:23",
+      "age_minutes": 7,
       "status": "fresh"
     },
     "whale_monitor": {
-      "last_run": "11:44",
-      "age_minutes": 16,
+      "last_run": "12:03",
+      "age_minutes": 27,
       "status": "fresh"
     },
     "news_agent": {
-      "last_run": "11:55",
-      "age_minutes": 5,
+      "last_run": "12:10",
+      "age_minutes": 20,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "09:04",
-      "age_minutes": 176,
+      "age_minutes": 206,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "11:46",
-      "age_minutes": 15,
-      "status": "fresh"
+      "last_run": "12:00",
+      "age_minutes": 30,
+      "status": "stale"
     }
   },
   "harness": {
@@ -1915,7 +1901,7 @@
         "win_rate": 100.0,
         "sharpe": 3.59,
         "pnl_pct": 4.23,
-        "buy_hold": 48.52,
+        "buy_hold": 49.06,
         "profit_factor": 0,
         "max_drawdown": 0.0,
         "total_trades": 4
@@ -1927,7 +1913,7 @@
         "win_rate": 100.0,
         "sharpe": 2.89,
         "pnl_pct": 1.81,
-        "buy_hold": 22.6,
+        "buy_hold": 23.21,
         "profit_factor": 0,
         "max_drawdown": 0.0,
         "total_trades": 2
@@ -1939,7 +1925,7 @@
         "win_rate": 100.0,
         "sharpe": 2.73,
         "pnl_pct": 2.86,
-        "buy_hold": 51.58,
+        "buy_hold": 52.55,
         "profit_factor": 0,
         "max_drawdown": 0.0,
         "total_trades": 2
@@ -1951,7 +1937,7 @@
         "win_rate": 85.7,
         "sharpe": 1.83,
         "pnl_pct": 2.55,
-        "buy_hold": 42.93,
+        "buy_hold": 42.36,
         "profit_factor": 2.2,
         "max_drawdown": 2.09,
         "total_trades": 7
@@ -1959,26 +1945,26 @@
       {
         "pair": "SOL",
         "strategy": "breakout",
-        "score": 53.9,
-        "win_rate": 74.4,
-        "sharpe": 2.85,
-        "pnl_pct": 16.68,
-        "buy_hold": 51.58,
-        "profit_factor": 1.47,
-        "max_drawdown": 8.66,
-        "total_trades": 78
+        "score": 48.55,
+        "win_rate": 73.4,
+        "sharpe": 2.35,
+        "pnl_pct": 13.76,
+        "buy_hold": 52.55,
+        "profit_factor": 1.37,
+        "max_drawdown": 9.85,
+        "total_trades": 79
       },
       {
         "pair": "SOL",
         "strategy": "emacross",
-        "score": 48.94,
-        "win_rate": 66.7,
-        "sharpe": 2.21,
-        "pnl_pct": 10.16,
-        "buy_hold": 51.58,
-        "profit_factor": 1.34,
+        "score": 48.44,
+        "win_rate": 65.7,
+        "sharpe": 2.16,
+        "pnl_pct": 9.92,
+        "buy_hold": 52.55,
+        "profit_factor": 1.33,
         "max_drawdown": 3.81,
-        "total_trades": 66
+        "total_trades": 67
       },
       {
         "pair": "HYPE",
@@ -1986,8 +1972,8 @@
         "score": 25.52,
         "win_rate": 61.6,
         "sharpe": 0.19,
-        "pnl_pct": 0.31,
-        "buy_hold": 42.93,
+        "pnl_pct": 0.33,
+        "buy_hold": 42.36,
         "profit_factor": 1.01,
         "max_drawdown": 17.0,
         "total_trades": 86
@@ -1999,7 +1985,7 @@
         "win_rate": 66.7,
         "sharpe": -0.03,
         "pnl_pct": -0.08,
-        "buy_hold": 48.52,
+        "buy_hold": 49.06,
         "profit_factor": 0.96,
         "max_drawdown": 2.15,
         "total_trades": 3
@@ -2007,11 +1993,11 @@
       {
         "pair": "HYPE",
         "strategy": "vwap",
-        "score": 7.87,
+        "score": 7.85,
         "win_rate": 65.9,
-        "sharpe": 0.08,
-        "pnl_pct": -0.34,
-        "buy_hold": 42.93,
+        "sharpe": 0.07,
+        "pnl_pct": -0.38,
+        "buy_hold": 42.36,
         "profit_factor": 0.99,
         "max_drawdown": 11.02,
         "total_trades": 82
@@ -2023,7 +2009,7 @@
         "win_rate": 62.9,
         "sharpe": -0.54,
         "pnl_pct": -3.02,
-        "buy_hold": 48.52,
+        "buy_hold": 49.06,
         "profit_factor": 0.89,
         "max_drawdown": 10.73,
         "total_trades": 35
@@ -2037,66 +2023,66 @@
         "Aligned sentiment boosts confidence: sig=Signal.LONG, conf=0.4, note=sentiment skipped (only 0 sources, need 2)",
         "Contradicting sentiment blocks LONG: sig=Signal.LONG, note=sentiment skipped (only 0 sources, need 2)"
       ],
-      "ran_at": "2026-09-09T02:58:05.267683+00:00"
+      "ran_at": "2026-09-09T04:24:06.580216+00:00"
     },
     "audit_recent": [
       {
-        "ts": "2026-09-09T03:01:56.562743+00:00",
-        "epoch": 1788922916.562753,
+        "ts": "2026-09-09T04:27:01.782275+00:00",
+        "epoch": 1788928021.782283,
         "type": "cycle_summary",
-        "cycle_id": "2026-09-09T03:01:31.855677+00:00",
+        "cycle_id": "2026-09-09T04:26:48.386780+00:00",
         "actions": [],
         "positions_count": 2,
-        "portfolio_value": 4439.3,
-        "pnl": -560.7
+        "portfolio_value": 4444.47,
+        "pnl": -555.53
       },
       {
-        "ts": "2026-09-09T03:01:56.549734+00:00",
-        "epoch": 1788922916.549738,
+        "ts": "2026-09-09T04:27:01.771489+00:00",
+        "epoch": 1788928021.771494,
         "pair": "HYPE",
         "signal": "LONG",
         "confidence": 0,
         "reason": "Already in position",
         "gate": "BLOCKED_ALREADY_OPEN",
         "action": "held",
-        "price": 85.5365,
-        "cycle_id": "20260909030156"
+        "price": 85.6465,
+        "cycle_id": "20260909042701"
       },
       {
-        "ts": "2026-09-09T03:01:56.549459+00:00",
-        "epoch": 1788922916.5494678,
+        "ts": "2026-09-09T04:27:01.771315+00:00",
+        "epoch": 1788928021.771322,
         "pair": "SOL",
         "signal": "FLAT",
         "confidence": 0,
-        "reason": "EMA no cross (spread -0.02) \u2014 staying flat",
+        "reason": "EMA no cross (spread -0.04) \u2014 staying flat",
         "gate": "SKIPPED_FLAT",
         "action": "evaluated",
-        "price": 103.315,
-        "cycle_id": "20260909030156"
+        "price": 103.855,
+        "cycle_id": "20260909042701"
       },
       {
-        "ts": "2026-09-09T03:01:56.546362+00:00",
-        "epoch": 1788922916.546367,
+        "ts": "2026-09-09T04:27:01.768542+00:00",
+        "epoch": 1788928021.768546,
         "pair": "ETH",
         "signal": "LONG",
         "confidence": 0,
         "reason": "Already in position",
         "gate": "BLOCKED_ALREADY_OPEN",
         "action": "held",
-        "price": 2491.65,
-        "cycle_id": "20260909030156"
+        "price": 2497.15,
+        "cycle_id": "20260909042701"
       },
       {
-        "ts": "2026-09-09T03:01:56.545954+00:00",
-        "epoch": 1788922916.545965,
+        "ts": "2026-09-09T04:27:01.768126+00:00",
+        "epoch": 1788928021.7681391,
         "pair": "BTC",
         "signal": "FLAT",
         "confidence": 0,
         "reason": "Pruned: BTC pruned: 29% WR over 7 trades (PnL $-1.57)",
         "gate": "BLOCKED_PRUNED",
         "action": "evaluated",
-        "price": 78670.5,
-        "cycle_id": "20260909030156"
+        "price": 78871.5,
+        "cycle_id": "20260909042701"
       }
     ],
     "advisor_regime": {
@@ -2105,44 +2091,44 @@
           "pair": "BTC",
           "verdict": "swap",
           "confidence": 0.95,
-          "reason": "The 'trend' strategy significantly outperforms the current setup, boasting a high score (67.12) and excellent Sharpe (2.89).",
-          "risk": "low"
+          "reason": "The current 'vwap' strategy has a negative Sharpe (-0.6), while 'trend' offers a vastly superior score (67.12) and Sharpe (2.89).",
+          "risk": "medium"
         },
         {
           "pair": "ETH",
           "verdict": "swap",
-          "confidence": 0.98,
-          "reason": "The 'trend' strategy is superior, offering the highest Sharpe ratio (3.59) and the highest score among all pairs.",
-          "risk": "low"
+          "confidence": 0.95,
+          "reason": "The current 'vwap' strategy is weak (Sharpe: -0.54); 'trend' is the clear leader with the highest score (68.0) and best Sharpe (3.59).",
+          "risk": "medium"
         },
         {
           "pair": "SOL",
           "verdict": "swap",
-          "confidence": 0.9,
-          "reason": "The 'trend' strategy provides a clear performance edge (Score 65.84) and strong risk-adjusted returns (Sharpe 2.73).",
+          "confidence": 0.85,
+          "reason": "Although 'emacross' is decent, 'trend' offers a significant lift in both score (65.84 vs 48.44) and Sharpe (2.73 vs 2.16).",
           "risk": "low"
         },
         {
           "pair": "HYPE",
           "verdict": "swap",
-          "confidence": 0.85,
-          "reason": "The 'trend' strategy shows a substantial improvement in score (55.01 vs 25.52) and risk profile (Sharpe 1.83).",
+          "confidence": 0.9,
+          "reason": "The current 'macd' strategy is significantly underperforming the 'trend' alternative (Score 25.52 vs 55.01; Sharpe 0.19 vs 1.83).",
           "risk": "medium"
         }
       ],
       "overall_regime": "trending",
-      "top_concern": "All pairs show a consistent and strong preference for 'trend' strategies, indicating a systemic under-allocation to momentum models across the portfolio."
+      "top_concern": "All pairs show a systemic preference for momentum strategies, indicating that the current portfolio assignments are generally suboptimal and require a full 'trend' shift."
     },
     "advisor_risk": {
       "risk_level": "medium",
-      "correlation_risk": "medium",
+      "correlation_risk": "low",
       "direction_bias": "long",
       "allocation_issue": "under-utilized",
       "recommendations": [
-        "Define a clear portfolio risk budget (e.g., maximum acceptable loss across both positions) to manage the combined directional exposure.",
-        "Since $0.00 cash remains, consider setting a clear profit-taking target for the overall portfolio or allocating a portion of the initial capital to a stablecoin reserve to increase liquidity and reaction time."
+        "Consider deploying a portion of the remaining cash ($2335.29) into a third, uncorrelated asset (e.g., BTC or SOL) to improve portfolio diversification and increase overall exposure.",
+        "Review the stop-loss levels, particularly for ETH, as they appear relatively tight and may be susceptible to whipsaw during normal crypto volatility. Consider widening the stop or implementing a trailing stop mechanism."
       ],
-      "stop_assessment": "The stop-loss levels are moderately tight, suggesting a conviction in the current trend, but they leave little room for significant immediate volatility spikes."
+      "stop_assessment": "The stop-loss levels are set at specific points, but they may be too tight given the inherent volatility of the crypto market, increasing the risk of premature liquidation."
     }
   },
   "eval_leaderboard": [
@@ -2152,7 +2138,7 @@
       "strategy_label": "Trend",
       "score": 68.0,
       "total_pnl_pct": 4.23,
-      "buy_hold_pct": 48.52,
+      "buy_hold_pct": 49.06,
       "beats_hold": false,
       "sharpe": 3.59,
       "profit_factor": null,
@@ -2166,7 +2152,7 @@
       "strategy_label": "Trend",
       "score": 67.12,
       "total_pnl_pct": 1.81,
-      "buy_hold_pct": 22.6,
+      "buy_hold_pct": 23.21,
       "beats_hold": false,
       "sharpe": 2.89,
       "profit_factor": null,
@@ -2180,7 +2166,7 @@
       "strategy_label": "Trend",
       "score": 65.84,
       "total_pnl_pct": 2.86,
-      "buy_hold_pct": 51.58,
+      "buy_hold_pct": 52.55,
       "beats_hold": false,
       "sharpe": 2.73,
       "profit_factor": null,
@@ -2194,7 +2180,7 @@
       "strategy_label": "Trend",
       "score": 55.01,
       "total_pnl_pct": 2.55,
-      "buy_hold_pct": 42.93,
+      "buy_hold_pct": 42.36,
       "beats_hold": false,
       "sharpe": 1.83,
       "profit_factor": 2.2,
@@ -2206,37 +2192,37 @@
       "pair": "SOL",
       "strategy": "breakout",
       "strategy_label": "Breakout",
-      "score": 53.9,
-      "total_pnl_pct": 16.68,
-      "buy_hold_pct": 51.58,
+      "score": 48.55,
+      "total_pnl_pct": 13.76,
+      "buy_hold_pct": 52.55,
       "beats_hold": false,
-      "sharpe": 2.85,
-      "profit_factor": 1.47,
-      "win_rate": 74.4,
-      "max_drawdown": 8.66,
-      "total_trades": 78
+      "sharpe": 2.35,
+      "profit_factor": 1.37,
+      "win_rate": 73.4,
+      "max_drawdown": 9.85,
+      "total_trades": 79
     },
     {
       "pair": "SOL",
       "strategy": "emacross",
       "strategy_label": "EMACross",
-      "score": 48.94,
-      "total_pnl_pct": 10.16,
-      "buy_hold_pct": 51.58,
+      "score": 48.44,
+      "total_pnl_pct": 9.92,
+      "buy_hold_pct": 52.55,
       "beats_hold": false,
-      "sharpe": 2.21,
-      "profit_factor": 1.34,
-      "win_rate": 66.7,
+      "sharpe": 2.16,
+      "profit_factor": 1.33,
+      "win_rate": 65.7,
       "max_drawdown": 3.81,
-      "total_trades": 66
+      "total_trades": 67
     },
     {
       "pair": "HYPE",
       "strategy": "macd",
       "strategy_label": "MACD",
       "score": 25.52,
-      "total_pnl_pct": 0.31,
-      "buy_hold_pct": 42.93,
+      "total_pnl_pct": 0.33,
+      "buy_hold_pct": 42.36,
       "beats_hold": false,
       "sharpe": 0.19,
       "profit_factor": 1.01,
@@ -2250,7 +2236,7 @@
       "strategy_label": "RSI",
       "score": 8.31,
       "total_pnl_pct": -0.08,
-      "buy_hold_pct": 48.52,
+      "buy_hold_pct": 49.06,
       "beats_hold": false,
       "sharpe": -0.03,
       "profit_factor": 0.96,
@@ -2262,11 +2248,11 @@
       "pair": "HYPE",
       "strategy": "vwap",
       "strategy_label": "VWAP",
-      "score": 7.87,
-      "total_pnl_pct": -0.34,
-      "buy_hold_pct": 42.93,
+      "score": 7.85,
+      "total_pnl_pct": -0.38,
+      "buy_hold_pct": 42.36,
       "beats_hold": false,
-      "sharpe": 0.08,
+      "sharpe": 0.07,
       "profit_factor": 0.99,
       "win_rate": 65.9,
       "max_drawdown": 11.02,
@@ -2278,7 +2264,7 @@
       "strategy_label": "VWAP",
       "score": 6.11,
       "total_pnl_pct": -3.02,
-      "buy_hold_pct": 48.52,
+      "buy_hold_pct": 49.06,
       "beats_hold": false,
       "sharpe": -0.54,
       "profit_factor": 0.89,
@@ -2329,10 +2315,10 @@
     }
   },
   "prices": {
-    "BTC": 78606.5,
-    "ETH": 2487.75,
-    "SOL": 103.195,
-    "HYPE": 85.1175
+    "BTC": 78871.5,
+    "ETH": 2497.15,
+    "SOL": 103.855,
+    "HYPE": 85.6465
   },
   "actions": [],
   "ai_history": [
