@@ -1,7 +1,7 @@
 {
   "BTC": {
-    "score": 0.36,
-    "confidence": 1.0,
+    "score": 0.09,
+    "confidence": 0.84,
     "sources": [
       "x_scanner",
       "whale_monitor",
@@ -9,9 +9,9 @@
     ],
     "signal_count": 9,
     "convergence": true,
-    "convergence_strength": 3,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83d\udea8 ETH] @BladeDefi (\ud83d\udc4d5 \ud83d\udd041) \ud83d\udea8BREAKING: \"TRUMP INSIDER\" WITH | whale_monitor: Orderbook 82% bid-weighted (bullish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udea8 ETH] @BladeDefi (\ud83d\udc4d5 \ud83d\udd041) \ud83d\udea8BREAKING: \"TRUMP INSIDER\" WITH | whale_monitor: Orderbook 82% bid-weighted (bullish) | oi_funding: OI -86.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -24,35 +24,41 @@
         "weight": 1.49
       },
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 82% bid-weighted (bullish)",
-        "weight": 1.28
+        "source": "oi_funding",
+        "signal": "OI -86.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-10T10:00:06.262875+00:00"
+    "timestamp": "2026-09-10T10:05:03.806012+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "x_scanner"
+      "x_scanner",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udd25 ETH] @CoinAnk (\ud83d\udc4d8 \ud83d\udd042) CoinAnk $ETH Liquidation Heatmap ",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd25 ETH] @CoinAnk (\ud83d\udc4d8 \ud83d\udd042) CoinAnk $ETH Liquidation Heatmap  | oi_funding: OI -52.0% 1h",
     "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -52.0% 1h",
+        "weight": 1.44
+      },
       {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd25 ETH] @CoinAnk (\ud83d\udc4d8 \ud83d\udd042) CoinAnk $ETH Liquidation Heatmap ETH is boxed between two high-intensity liquidity bands. The",
         "weight": 1.43
       }
     ],
-    "timestamp": "2026-09-10T10:00:06.262888+00:00"
+    "timestamp": "2026-09-10T10:05:03.806038+00:00"
   },
   "SOL": {
-    "score": -1.0,
+    "score": 1.0,
     "confidence": 0.3,
     "sources": [
       "oi_funding"
@@ -61,18 +67,18 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -40.0% 1h",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +25.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
-        "signal": "OI -40.0% 1h",
+        "signal": "OI +25.0% 1h, funding 0.0013%",
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-10T10:00:06.262896+00:00"
+    "timestamp": "2026-09-10T10:05:03.806052+00:00"
   },
   "HYPE": {
-    "score": 0.23,
+    "score": 0.35,
     "confidence": 0.84,
     "sources": [
       "x_scanner",
@@ -83,7 +89,7 @@
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd25 DePIN] @lookonchain (\ud83d\udc4d213 \ud83d\udd0417) Whale 0x8e48 bought anot | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI -47.0% 1h",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udd25 DePIN] @lookonchain (\ud83d\udc4d213 \ud83d\udd0417) Whale 0x8e48 bought anot | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "x_scanner",
@@ -91,16 +97,16 @@
         "weight": 3.25
       },
       {
-        "source": "oi_funding",
-        "signal": "OI -47.0% 1h",
-        "weight": 1.44
-      },
-      {
         "source": "x_scanner",
         "signal": "\u2022 [\ud83d\udd25 HYPE] @JackS65557 (\ud83d\udc4d0 \ud83d\udd040) That whale is seriously committed to $HYPE \ud83d\udc40 [score: 1.5]",
         "weight": 0.98
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 29% bid (ask-heavy, bearish)",
+        "weight": 0.84
       }
     ],
-    "timestamp": "2026-09-10T10:00:06.262909+00:00"
+    "timestamp": "2026-09-10T10:05:03.806073+00:00"
   }
 }
