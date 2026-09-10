@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-10T20:50:04.731203+00:00",
+  "last_update": "2026-09-10T20:55:04.521368+00:00",
   "portfolio": {
     "value": 4326.96,
     "capital": 4329.84,
@@ -9,10 +9,10 @@
     "open_positions": 1
   },
   "prices": {
-    "BTC": 77224.5,
+    "BTC": 77272.5,
     "ETH": 2462.15,
-    "SOL": 99.9965,
-    "HYPE": 80.3895
+    "SOL": 100.075,
+    "HYPE": 80.4915
   },
   "positions": {
     "ETH": {
@@ -26,9 +26,9 @@
       "take_profit": 2593.95,
       "strategy": "vwap",
       "entry_time": "2026-09-10T19:26:01.391402+00:00",
-      "duration_hours": 1.4,
+      "duration_hours": 1.5,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0293
+      "unrealized_funding": 0.031
     }
   },
   "stats": {
@@ -976,11 +976,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-10T05:10:08.782131+00:00",
-      "v": 4404.91,
-      "p": -11.9
-    },
     {
       "t": "2026-09-10T05:15:09.402332+00:00",
       "v": 4411.71,
@@ -1975,6 +1970,11 @@
       "t": "2026-09-10T20:50:04.731203+00:00",
       "v": 4326.96,
       "p": -13.46
+    },
+    {
+      "t": "2026-09-10T20:55:04.521368+00:00",
+      "v": 4326.96,
+      "p": -13.46
     }
   ],
   "ai_history": [
@@ -2049,76 +2049,102 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-10T20:50:04.643084+00:00"
-    },
-    "ETH": {
       "score": -1.0,
       "confidence": 0.3,
       "sources": [
-        "oi_funding"
+        "news_agent"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -33.0% 1h",
+      "narrative": "Single-source signal (news_agent) | news_agent: \u2014 major fintech rails converging onchain  \ud83d\udcca *Scan: 772 artic",
+      "key_signals": [
+        {
+          "source": "news_agent",
+          "signal": "\u2014 major fintech rails converging onchain  \ud83d\udcca *Scan: 772 articles indexed across Crypto Briefing, Bankless, TheDefiant, De",
+          "weight": 0.98
+        }
+      ],
+      "timestamp": "2026-09-10T20:55:04.433441+00:00"
+    },
+    "ETH": {
+      "score": -1.0,
+      "confidence": 0.74,
+      "sources": [
+        "news_agent",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: rails converging onchain  \ud83d\udcca *Scan: 772 articles indexed acro | oi_funding: OI -33.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -33.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "news_agent",
+          "signal": "rails converging onchain  \ud83d\udcca *Scan: 772 articles indexed across Crypto Briefing, Bankless, TheDefiant, Decrypt, CoinDesk ",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-09-10T20:50:04.643111+00:00"
+      "timestamp": "2026-09-10T20:55:04.433464+00:00"
     },
     "SOL": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -49.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: fintech rails converging onchain  \ud83d\udcca *Scan: 772 articles inde | oi_funding: OI -49.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -49.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "news_agent",
+          "signal": "fintech rails converging onchain  \ud83d\udcca *Scan: 772 articles indexed across Crypto Briefing, Bankless, TheDefiant, Decrypt, C",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-09-10T20:50:04.643123+00:00"
+      "timestamp": "2026-09-10T20:55:04.433477+00:00"
     },
     "HYPE": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -39.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: nverging onchain  \ud83d\udcca *Scan: 772 articles indexed across Crypt | oi_funding: OI -39.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -39.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "news_agent",
+          "signal": "nverging onchain  \ud83d\udcca *Scan: 772 articles indexed across Crypto Briefing, Bankless, TheDefiant, Decrypt, CoinDesk \u00b7 token ",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-09-10T20:50:04.643131+00:00"
+      "timestamp": "2026-09-10T20:55:04.433486+00:00"
     }
   },
   "config": {
