@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-09-10T13:10:36.905941+00:00",
+  "last_update": "2026-09-10T13:15:37.958609+00:00",
   "portfolio": {
-    "value": 4342.69,
+    "value": 4338.05,
     "capital": 4392.19,
     "initial": 5000.0,
-    "pnl": -657.31,
-    "pnl_pct": -13.15,
+    "pnl": -661.95,
+    "pnl_pct": -13.24,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 76978.5,
-    "ETH": 2418.05,
-    "SOL": 99.297,
-    "HYPE": 81.1555
+    "BTC": 76779.5,
+    "ETH": 2409.35,
+    "SOL": 99.0745,
+    "HYPE": 80.8825
   },
   "positions": {
     "HYPE": {
       "direction": "LONG",
       "entry_price": 84.0325,
-      "current_price": 81.1555,
+      "current_price": 80.8825,
       "size": 4.699364740617696,
-      "unrealized_pnl": -13.57,
-      "unrealized_pnl_pct": -3.44,
+      "unrealized_pnl": -14.85,
+      "unrealized_pnl_pct": -3.76,
       "stop_loss": 79.3435,
       "take_profit": 93.4105,
       "strategy": "macd",
       "entry_time": "2026-09-10T03:00:55.809348+00:00",
       "duration_hours": 10.2,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0485
+      "unrealized_funding": 0.0487
     },
     "SOL": {
       "direction": "LONG",
       "entry_price": 101.705,
-      "current_price": 99.297,
+      "current_price": 99.0745,
       "size": 14.985135065606071,
-      "unrealized_pnl": -35.93,
-      "unrealized_pnl_pct": -2.36,
+      "unrealized_pnl": -39.29,
+      "unrealized_pnl_pct": -2.58,
       "stop_loss": 98.765,
       "take_profit": 107.585,
       "strategy": "emacross",
       "entry_time": "2026-09-10T06:45:32.589087+00:00",
-      "duration_hours": 6.4,
-      "funding_rate": -0.001652,
-      "unrealized_funding": -0.1579
+      "duration_hours": 6.5,
+      "funding_rate": -0.001348,
+      "unrealized_funding": -0.1302
     }
   },
   "stats": {
@@ -991,11 +991,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-09T21:33:49.372206+00:00",
-      "v": 4401.13,
-      "p": -11.98
-    },
     {
       "t": "2026-09-09T21:35:47.026482+00:00",
       "v": 4399.26,
@@ -1990,6 +1985,11 @@
       "t": "2026-09-10T13:10:36.905941+00:00",
       "v": 4342.69,
       "p": -13.15
+    },
+    {
+      "t": "2026-09-10T13:15:37.958609+00:00",
+      "v": 4338.05,
+      "p": -13.24
     }
   ],
   "ai_history": [
@@ -2064,86 +2064,115 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": 0.8,
+      "confidence": 0.9,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "news_agent",
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @eternalartemis1 (\ud83d\udc4d0 \ud83d\udd040) Nasdaq's $100M into Kra",
+      "signal_count": 6,
+      "convergence": true,
+      "convergence_strength": 3,
+      "contradictions": 1,
+      "narrative": "\ud83d\udcc8 3-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $BTC] @eternalartemis1 (\ud83d\udc4d0 \ud83d\udd040) Nasdaq's $100M into Kra | news_agent: antum attack resource estimate by 50% (20-fold benchmark cut | polymarket: ing: **63.5%** (+10pp/24h, +11pp/1h) \u2022 No change: 35.5% (\u22129p",
       "key_signals": [
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $BTC] @eternalartemis1 (\ud83d\udc4d0 \ud83d\udd040) Nasdaq's $100M into Kraken is a structural signal \u2014 legacy exchanges now funding cr",
-          "weight": 0.65
+          "source": "oi_funding",
+          "signal": "OI +26.0% 1h, funding 0.0013%",
+          "weight": 1.44
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83c\udfd7\ufe0f $BTC] @SentinelBTC214 (\ud83d\udc4d0 \ud83d\udd040) $BTC back below 3D EMA200 (~$79.2K) after earlier reclaim; 3D close ~$78.3K [2.5]",
-          "weight": 0.65
+          "source": "news_agent",
+          "signal": "antum attack resource estimate by 50% (20-fold benchmark cut) `BTC, ETH` \u2022 Coinbase CEO: BTC $400K by 2030 still a 'reas",
+          "weight": 0.98
         },
         {
-          "source": "x_scanner",
-          "signal": "\u2022 [\ud83d\udcc8 $BTC] @EmergingCrypto (\ud83d\udc4d2 \ud83d\udd041) Coinbase CEO Armstrong: $BTC could realistically reach $400K by 2030 [1.6]",
-          "weight": 0.65
+          "source": "polymarket",
+          "signal": "ing: **63.5%** (+10pp/24h, +11pp/1h) \u2022 No change: 35.5% (\u22129pp) | Cuts: ~0.5% \u2022 \"No cuts in 2026\": 93% \u2014 hawkish repricin",
+          "weight": 0.78
         }
       ],
-      "timestamp": "2026-09-10T13:10:36.776378+00:00"
+      "timestamp": "2026-09-10T13:15:37.844973+00:00"
     },
     "ETH": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 1.0,
       "sources": [
-        "x_scanner"
+        "x_scanner",
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @Saif_Trades (\ud83d\udc4d5 \ud83d\udd040) $ETH dumped exactly from cal",
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | x_scanner: \u2022 [\ud83d\udcc9 $ETH] @Saif_Trades (\ud83d\udc4d5 \ud83d\udd040) $ETH dumped exactly from cal | polymarket: e  \u20bf **BTC** (~$74\u201376K, softening) \u2022 >$76K Sep 10: 88% (\u22127.4 | oi_funding: OI -33.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -33.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "polymarket",
+          "signal": "e  \u20bf **BTC** (~$74\u201376K, softening) \u2022 >$76K Sep 10: 88% (\u22127.4pp) | >$80K: 1% (\u221239pp, expiry) \u2022 Dip to $55K in Sept: 1.2% ",
+          "weight": 0.96
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcc9 $ETH] @Saif_Trades (\ud83d\udc4d5 \ud83d\udd040) $ETH dumped exactly from called levels; LTF bounce possible but $2,400 POI still in play",
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-09-10T13:10:36.776396+00:00"
+      "timestamp": "2026-09-10T13:15:37.844992+00:00"
     },
     "SOL": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-10T13:10:36.776398+00:00"
-    },
-    "HYPE": {
       "score": -1.0,
       "confidence": 0.3,
       "sources": [
-        "x_scanner"
+        "oi_funding"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (x_scanner) | x_scanner: \u2022 [\ud83d\udcac $HYPE] @kvnqobi (\ud83d\udc4d19 \ud83d\udd042) $820M $HYPE unlock hit Sept 6 ",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -15.0% 1h",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -15.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-10T13:15:37.845000+00:00"
+    },
+    "HYPE": {
+      "score": -1.0,
+      "confidence": 0.74,
+      "sources": [
+        "x_scanner",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u2022 [\ud83d\udcac $HYPE] @kvnqobi (\ud83d\udc4d19 \ud83d\udd042) $820M $HYPE unlock hit Sept 6  | oi_funding: OI -31.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -31.0% 1h",
+          "weight": 1.44
+        },
         {
           "source": "x_scanner",
           "signal": "\u2022 [\ud83d\udcac $HYPE] @kvnqobi (\ud83d\udc4d19 \ud83d\udd042) $820M $HYPE unlock hit Sept 6 \u2014 everyone expected dump pressure; reaction was muted [1.8]",
           "weight": 0.65
         }
       ],
-      "timestamp": "2026-09-10T13:10:36.776408+00:00"
+      "timestamp": "2026-09-10T13:15:37.845008+00:00"
     }
   },
   "config": {
