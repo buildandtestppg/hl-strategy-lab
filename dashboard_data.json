@@ -1,20 +1,36 @@
 {
-  "last_update": "2026-09-10T19:20:45.663763+00:00",
+  "last_update": "2026-09-10T19:25:46.748077+00:00",
   "portfolio": {
-    "value": 4331.43,
-    "capital": 4331.43,
+    "value": 4329.84,
+    "capital": 4329.84,
     "initial": 5000.0,
-    "pnl": -668.57,
-    "pnl_pct": -13.37,
-    "open_positions": 0
+    "pnl": -670.16,
+    "pnl_pct": -13.4,
+    "open_positions": 1
   },
   "prices": {
-    "BTC": 77120.5,
-    "ETH": 2463.65,
-    "SOL": 99.7255,
-    "HYPE": 80.2405
+    "BTC": 77221.5,
+    "ETH": 2466.35,
+    "SOL": 99.9815,
+    "HYPE": 80.3235
   },
-  "positions": {},
+  "positions": {
+    "ETH": {
+      "direction": "LONG",
+      "entry_price": 2466.35,
+      "current_price": 2466.35,
+      "size": 0.6789072545245798,
+      "unrealized_pnl": -0.0,
+      "unrealized_pnl_pct": -0.0,
+      "stop_loss": 2402.55,
+      "take_profit": 2593.95,
+      "strategy": "vwap",
+      "entry_time": "2026-09-10T19:26:01.391402+00:00",
+      "duration_hours": 0.0,
+      "funding_rate": 0.00125,
+      "unrealized_funding": 0.0
+    }
+  },
   "stats": {
     "total_trades": 171,
     "wins": 74,
@@ -26,7 +42,10 @@
     "worst_trade": -50.62,
     "total_realized_pnl": -355.89
   },
-  "actions": [],
+  "actions": [
+    "\ud83e\udde0 ETH: TA signal SHORT blocked by sentiment overlay",
+    "\ud83d\udfe2 OPENED LONG ETH @ $2466.3500 | Size: 0.6789 | SL: $2402.5500 | TP: $2593.9500 | Strategy: vwap | Sentiment-driven LONG (score +1.00, conf 0.7, momentum confirmed)"
+  ],
   "closed_trades": [
     {
       "pair": "HYPE",
@@ -960,11 +979,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-10T03:40:52.729206+00:00",
-      "v": 4405.3,
-      "p": -11.89
-    },
     {
       "t": "2026-09-10T03:45:55.331756+00:00",
       "v": 4406.85,
@@ -1959,6 +1973,11 @@
       "t": "2026-09-10T19:20:45.663763+00:00",
       "v": 4331.43,
       "p": -13.37
+    },
+    {
+      "t": "2026-09-10T19:25:46.748077+00:00",
+      "v": 4329.84,
+      "p": -13.4
     }
   ],
   "ai_history": [
@@ -2033,75 +2052,82 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": -0.22,
-      "confidence": 0.6,
+      "score": 1.0,
+      "confidence": 0.74,
       "sources": [
         "news_agent",
         "oi_funding"
       ],
-      "signal_count": 5,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (news_agent) | news_agent: \u2022 Liquid Sidechain Paused After 3,998 BTC Leaves Federation  | oi_funding: OI -55.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | news_agent: Lead Bank partnership <https://cryptobriefing.com/nubank-us- | oi_funding: OI +44.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -55.0% 1h",
+          "signal": "OI +44.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
           "source": "news_agent",
-          "signal": "\u2022 Liquid Sidechain Paused After 3,998 BTC Leaves Federation Wallet `BTC` _(TheDefiant)_ \u2022 Liquid Attacker Broadcasts Ret",
-          "weight": 1.2
-        },
-        {
-          "source": "news_agent",
-          "signal": "plan could end the legal headaches of holding tokenized securities _(CoinDesk)_  \ud83d\udfe2 **Notable** \u2022 Bitcoin Retakes $80,000",
+          "signal": "Lead Bank partnership <https://cryptobriefing.com/nubank-us-launch-lead-bank-partnership/>  _Scan: 772 new articles inde",
           "weight": 0.98
         }
       ],
-      "timestamp": "2026-09-10T19:20:45.572337+00:00"
+      "timestamp": "2026-09-10T19:25:46.658936+00:00"
     },
     "ETH": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +11.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | news_agent: rtnership <https://cryptobriefing.com/nubank-us-launch-lead- | oi_funding: OI +6.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +11.0% 1h, funding 0.0013%",
-          "weight": 1.44
+          "signal": "OI +6.0% 1h, funding 0.0013%",
+          "weight": 1.08
+        },
+        {
+          "source": "news_agent",
+          "signal": "rtnership <https://cryptobriefing.com/nubank-us-launch-lead-bank-partnership/>  _Scan: 772 new articles indexed in 34.6s",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-09-10T19:20:45.572356+00:00"
+      "timestamp": "2026-09-10T19:25:46.658956+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
+      "score": -0.19,
+      "confidence": 0.5,
       "sources": [
+        "news_agent",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +59.0% 1h, funding 0.0002%",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: k partnership <https://cryptobriefing.com/nubank-us-launch-l | oi_funding: OI -19.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +59.0% 1h, funding 0.0002%",
+          "signal": "OI -19.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "news_agent",
+          "signal": "k partnership <https://cryptobriefing.com/nubank-us-launch-lead-bank-partnership/>  _Scan: 772 new articles indexed in 3",
+          "weight": 0.98
         }
       ],
-      "timestamp": "2026-09-10T19:20:45.572365+00:00"
+      "timestamp": "2026-09-10T19:25:46.658967+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -2114,11 +2140,11 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | news_agent: t)_ \u2022 Robinhood Chain's DEX volume surpasses $100B as activi",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | news_agent: rship <https://cryptobriefing.com/nubank-us-launch-lead-bank",
       "key_signals": [
         {
           "source": "news_agent",
-          "signal": "t)_ \u2022 Robinhood Chain's DEX volume surpasses $100B as activity accelerates _(Crypto Briefing)_ \u2022 Hyperliquid Gets Pumpfu",
+          "signal": "rship <https://cryptobriefing.com/nubank-us-launch-lead-bank-partnership/>  _Scan: 772 new articles indexed in 34.6s \u2022 T",
           "weight": 0.98
         },
         {
@@ -2127,7 +2153,7 @@
           "weight": 0.48
         }
       ],
-      "timestamp": "2026-09-10T19:20:45.572378+00:00"
+      "timestamp": "2026-09-10T19:25:46.658978+00:00"
     }
   },
   "config": {
