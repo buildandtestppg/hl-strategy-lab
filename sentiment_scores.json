@@ -1,17 +1,18 @@
 {
   "BTC": {
-    "score": 0.07,
-    "confidence": 0.84,
+    "score": 0.31,
+    "confidence": 0.6,
     "sources": [
       "whale_monitor",
+      "news_agent",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 3,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 1,
-    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | polymarket: ing: **63.5%** (+10pp/24h, +11pp/1h) \u2022 No change: 35.5% (\u22129p | oi_funding: OI +51.0% 1h, funding 0.0013%",
+    "signal_count": 4,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 2,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 38% bid (ask-heavy, bearish) | news_agent: Wall Street sees divided Congress** as likeliest midterm out | polymarket: ing: **63.5%** (+10pp/24h, +11pp/1h) \u2022 No change: 35.5% (\u22129p",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -19,50 +20,57 @@
         "weight": 1.44
       },
       {
+        "source": "news_agent",
+        "signal": "Wall Street sees divided Congress** as likeliest midterm outcome \u2014 relief-rally base case; regulation risk on a sweep \u2022 ",
+        "weight": 0.98
+      },
+      {
         "source": "polymarket",
         "signal": "ing: **63.5%** (+10pp/24h, +11pp/1h) \u2022 No change: 35.5% (\u22129pp) | Cuts: ~0.5% \u2022 \"No cuts in 2026\": 93% \u2014 hawkish repricin",
         "weight": 0.78
-      },
-      {
-        "source": "whale_monitor",
-        "signal": "Orderbook 38% bid (ask-heavy, bearish)",
-        "weight": 0.48
       }
     ],
-    "timestamp": "2026-09-10T16:55:21.715563+00:00"
+    "timestamp": "2026-09-10T17:00:19.969154+00:00"
   },
   "ETH": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.6,
     "sources": [
+      "news_agent",
       "polymarket"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (polymarket) | polymarket: e  \u20bf **BTC** (~$74\u201376K, softening) \u2022 >$76K Sep 10: 88% (\u22127.4",
+    "narrative": "Single-source signal (news_agent) | news_agent: ran/Red Sea escalation chain is the story of this cycle. 772 | polymarket: e  \u20bf **BTC** (~$74\u201376K, softening) \u2022 >$76K Sep 10: 88% (\u22127.4",
     "key_signals": [
+      {
+        "source": "news_agent",
+        "signal": "ran/Red Sea escalation chain is the story of this cycle. 772 articles scanned (CoinDesk, Decrypt, Bankless, Blockworks, ",
+        "weight": 0.98
+      },
       {
         "source": "polymarket",
         "signal": "e  \u20bf **BTC** (~$74\u201376K, softening) \u2022 >$76K Sep 10: 88% (\u22127.4pp) | >$80K: 1% (\u221239pp, expiry) \u2022 Dip to $55K in Sept: 1.2% ",
         "weight": 0.96
       }
     ],
-    "timestamp": "2026-09-10T16:55:21.715582+00:00"
+    "timestamp": "2026-09-10T17:00:19.969169+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.49,
+    "confidence": 0.84,
     "sources": [
       "whale_monitor",
+      "news_agent",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI +109.0% 1h, funding 0.0000%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 75% bid-weighted (bullish) | news_agent: Red Sea escalation chain is the story of this cycle. 772 art | oi_funding: OI +109.0% 1h, funding 0.0000%",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -73,9 +81,14 @@
         "source": "whale_monitor",
         "signal": "Orderbook 75% bid-weighted (bullish)",
         "weight": 1.0
+      },
+      {
+        "source": "news_agent",
+        "signal": "Red Sea escalation chain is the story of this cycle. 772 articles scanned (CoinDesk, Decrypt, Bankless, Blockworks, The ",
+        "weight": 0.98
       }
     ],
-    "timestamp": "2026-09-10T16:55:21.715596+00:00"
+    "timestamp": "2026-09-10T17:00:19.969179+00:00"
   },
   "HYPE": {
     "score": -1.0,
@@ -95,6 +108,6 @@
         "weight": 0.76
       }
     ],
-    "timestamp": "2026-09-10T16:55:21.715604+00:00"
+    "timestamp": "2026-09-10T17:00:19.969185+00:00"
   }
 }
