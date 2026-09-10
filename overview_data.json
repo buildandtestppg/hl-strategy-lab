@@ -1,6 +1,6 @@
 {
-  "exported_at": "2026-09-10T15:10:37.297603+08:00",
-  "exported_at_utc": "2026-09-10T07:10:37.297605+00:00",
+  "exported_at": "2026-09-10T15:20:39.983714+08:00",
+  "exported_at_utc": "2026-09-10T07:20:39.983716+00:00",
   "portfolio": {
     "value": 4411.020129113361,
     "initial": 5000.0,
@@ -400,16 +400,6 @@
     }
   ],
   "equity_curve": [
-    {
-      "t": "2026-09-09T15:25:40.450881+00:00",
-      "v": 4390.18,
-      "p": -12.2
-    },
-    {
-      "t": "2026-09-09T15:30:39.352983+00:00",
-      "v": 4405.42,
-      "p": -11.89
-    },
     {
       "t": "2026-09-09T15:35:42.431745+00:00",
       "v": 4417.5,
@@ -1399,35 +1389,51 @@
       "t": "2026-09-10T07:05:31.416555+00:00",
       "v": 4397.25,
       "p": -12.05
+    },
+    {
+      "t": "2026-09-10T07:10:31.768462+00:00",
+      "v": 4398.34,
+      "p": -12.03
+    },
+    {
+      "t": "2026-09-10T07:15:32.154804+00:00",
+      "v": 4396.6,
+      "p": -12.07
     }
   ],
   "reset_count": 1,
   "sentiment": {
     "BTC": {
-      "score": 0.38,
-      "confidence": 0.5,
+      "score": 0.82,
+      "confidence": 0.84,
       "sources": [
+        "x_scanner",
         "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI +83.0% 1h, funding 0.0006%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83d\udcc8 $BTC] @EylemCulculoglu (\ud83d\udc4d19 \ud83d\udd011) Good morning everyone $ | whale_monitor: Orderbook 34% bid (ask-heavy, bearish) | oi_funding: OI +83.0% 1h, funding 0.0006%",
       "key_signals": [
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $BTC] @EylemCulculoglu (\ud83d\udc4d19 \ud83d\udd011) Good morning everyone $btc #liqheat liquidation support: 77738 [score: 2.5]",
+          "weight": 1.62
+        },
         {
           "source": "oi_funding",
           "signal": "OI +83.0% 1h, funding 0.0006%",
           "weight": 1.44
         },
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 34% bid (ask-heavy, bearish)",
-          "weight": 0.64
+          "source": "x_scanner",
+          "signal": "Recovered window from scan #6191 (prior cycle died before reporting). HYPE whales keep accumulating \u2014 one added $9.9M at",
+          "weight": 0.8
         }
       ],
-      "timestamp": "2026-09-10T07:10:31.677260+00:00"
+      "timestamp": "2026-09-10T07:20:33.847632+00:00"
     },
     "ETH": {
       "score": 0.5,
@@ -1453,47 +1459,69 @@
           "weight": 0.48
         }
       ],
-      "timestamp": "2026-09-10T07:10:31.677282+00:00"
+      "timestamp": "2026-09-10T07:20:33.847653+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 4,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +20.0% 1h, funding 0.0004%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u2022 [\ud83c\udfd7\ufe0f $SOL] @otc_labs (\ud83d\udc4d110 \ud83d\udd0136) V2 Custom reward pairs are  | oi_funding: OI +20.0% 1h, funding 0.0004%",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI +20.0% 1h, funding 0.0004%",
-          "weight": 1.44
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @otc_labs (\ud83d\udc4d110 \ud83d\udd0136) V2 Custom reward pairs are now live! Launch Pumpfun tokens paired with [score: 4.5]",
+          "weight": 4.27
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @Alexa2263451440 (\ud83d\udc4d0 \ud83d\udd010) Robinhood Chain is making serious noise. $4M TVL at launch \u2192 $1.4B by  [score: 2.5]",
+          "weight": 2.0
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83c\udfd7\ufe0f $SOL] @MetriqueAI (\ud83d\udc4d1 \ud83d\udd010) The @solana ecosystem has emerged as the only remaining on-chain hotsp [score: 2.5]",
+          "weight": 1.62
         }
       ],
-      "timestamp": "2026-09-10T07:10:31.677293+00:00"
+      "timestamp": "2026-09-10T07:20:33.847670+00:00"
     },
     "HYPE": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": 0.57,
+      "confidence": 0.5,
       "sources": [
+        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 4,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -11.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \u2022 [\ud83d\udcc8 $HYPE] @EyeOnChain (\ud83d\udc4d1 \ud83d\udd010) $159M Into HYPE\u2026 And This Wh | oi_funding: OI -11.0% 1h",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI -11.0% 1h",
-          "weight": 1.44
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @EyeOnChain (\ud83d\udc4d1 \ud83d\udd010) $159M Into HYPE\u2026 And This Whale Is Still Buying. This whale clearly is [score: 2.5]",
+          "weight": 2.0
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @OnchainLens (\ud83d\udc4d9 \ud83d\udd013) HYPE TRADER OPENS $2.1M LONG A trader with +$9.29M lifetime PnL opened [score: 2.2]",
+          "weight": 1.76
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u2022 [\ud83d\udcc8 $HYPE] @ChauPhu999 (\ud83d\udc4d9 \ud83d\udd010) HL whale all-in leverage: <24h wallet bought 500 $BTC (~$39M) in minut [score: 2.3]",
+          "weight": 1.49
         }
       ],
-      "timestamp": "2026-09-10T07:10:31.677303+00:00"
+      "timestamp": "2026-09-10T07:20:33.847682+00:00"
     }
   },
   "pair_strategies": {
@@ -1593,102 +1621,102 @@
       {
         "text": "**Job ID:** 43ba1d393c5a",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
-        "text": "**Run Time:** 2026-09-10 14:53:44",
+        "text": "**Run Time:** 2026-09-10 15:12:51",
         "sentiment": 0,
-        "time": "2026-09-10 14:53"
+        "time": "2026-09-10 15:12"
       },
       {
         "text": "**Schedule:** 5,35 * * * *",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "[IMPORTANT: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just pro",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "[SYSTEM: You are running as a scheduled cron job. DELIVERY: Your final response will be automatically delivered to the user \u2014 do NOT use send_message or try to deliver the output yourself. Just produc",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "You are the Crypto Scanner Agent. Run BOTH the X scanner and Reddit scanner, then report results to Discord.",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "You MUST use a subagent to run Reddit scanner in parallel with X scanner. This saves ~5-9 minutes per cycle.",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "Spawn the Reddit subagent BEFORE starting x_scanner.py so they run in parallel:",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "delegate_task(",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "goal=\"Run the Reddit crypto scanner and write results to a temp file\",",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "context=\"Run this command: cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/reddit_scanner.py 2>&1. Wait for it to complete (may take 5-9 min)",
         "sentiment": -0.3,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "toolsets=[\"terminal\", \"file\"],",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "max_iterations=15",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": ")",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "Run the X scanner normally:",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "```bash",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "cd /Users/mojoai/.hermes/hermes-agent && source venv/bin/activate && python3 /Users/mojoai/.hermes/scripts/x_scanner.py 2>&1",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "```",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "Parse the JSON output as usual.",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       },
       {
         "text": "After x_scanner.py finishes:",
         "sentiment": 0,
-        "time": "1789023224.9147515"
+        "time": "1789024371.9512556"
       }
     ],
     "whale_monitor": [
@@ -1895,32 +1923,32 @@
         "time": "1789024158.589838"
       }
     ],
-    "generated": "2026-09-10T07:10:31.705378Z"
+    "generated": "2026-09-10T07:20:33.871733Z"
   },
   "scanner_status": {
     "x_scanner": {
-      "last_run": "14:53",
-      "age_minutes": 17,
+      "last_run": "15:12",
+      "age_minutes": 8,
       "status": "fresh"
     },
     "whale_monitor": {
       "last_run": "15:04",
-      "age_minutes": 6,
+      "age_minutes": 17,
       "status": "fresh"
     },
     "news_agent": {
       "last_run": "15:09",
-      "age_minutes": 1,
+      "age_minutes": 11,
       "status": "fresh"
     },
     "polymarket": {
       "last_run": "15:04",
-      "age_minutes": 6,
+      "age_minutes": 16,
       "status": "fresh"
     },
     "synthesizer": {
-      "last_run": "15:01",
-      "age_minutes": 10,
+      "last_run": "15:16",
+      "age_minutes": 4,
       "status": "fresh"
     }
   },
@@ -2347,10 +2375,10 @@
     }
   },
   "prices": {
-    "BTC": 78164.5,
-    "ETH": 2473.15,
-    "SOL": 101.535,
-    "HYPE": 83.4285
+    "BTC": 78169.5,
+    "ETH": 2474.15,
+    "SOL": 101.545,
+    "HYPE": 83.1335
   },
   "actions": [],
   "ai_history": [
