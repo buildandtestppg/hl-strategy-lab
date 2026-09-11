@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-09-11T18:35:11.419593+00:00",
+  "last_update": "2026-09-11T18:40:12.319316+00:00",
   "portfolio": {
-    "value": 4213.66,
+    "value": 4214.34,
     "capital": 4252.57,
     "initial": 5000.0,
-    "pnl": -786.34,
-    "pnl_pct": -15.73,
+    "pnl": -785.66,
+    "pnl_pct": -15.71,
     "open_positions": 1
   },
   "prices": {
-    "BTC": 77209.5,
-    "ETH": 2544.25,
-    "SOL": 101.35,
-    "HYPE": 80.6605
+    "BTC": 77207.5,
+    "ETH": 2545.85,
+    "SOL": 101.435,
+    "HYPE": 80.6325
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 2634.65,
-      "current_price": 2544.25,
+      "current_price": 2545.85,
       "size": 0.4303129339533589,
-      "unrealized_pnl": -38.91,
-      "unrealized_pnl_pct": -3.43,
+      "unrealized_pnl": -38.23,
+      "unrealized_pnl_pct": -3.37,
       "stop_loss": 2535.8,
       "take_profit": 2832.35,
       "strategy": "vwap",
       "entry_time": "2026-09-11T14:00:23.198223+00:00",
-      "duration_hours": 4.6,
-      "funding_rate": 0.000211,
-      "unrealized_funding": 0.0106
+      "duration_hours": 4.7,
+      "funding_rate": 0.000272,
+      "unrealized_funding": 0.0139
     }
   },
   "stats": {
@@ -983,11 +983,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-11T03:05:16.994877+00:00",
-      "v": 4314.31,
-      "p": -13.71
-    },
     {
       "t": "2026-09-11T03:06:28.004914+00:00",
       "v": 4313.4,
@@ -1982,6 +1977,11 @@
       "t": "2026-09-11T18:35:11.419593+00:00",
       "v": 4213.66,
       "p": -15.73
+    },
+    {
+      "t": "2026-09-11T18:40:12.319316+00:00",
+      "v": 4214.34,
+      "p": -15.71
     }
   ],
   "ai_history": [
@@ -2073,20 +2073,21 @@
           "weight": 0.72
         }
       ],
-      "timestamp": "2026-09-11T18:35:11.330530+00:00"
+      "timestamp": "2026-09-11T18:40:12.237736+00:00"
     },
     "ETH": {
-      "score": -0.16,
-      "confidence": 0.5,
+      "score": -0.52,
+      "confidence": 0.75,
       "sources": [
+        "news_agent",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | polymarket: \u039e **ETH**: above $2,500 today = 58.5% (+44.5pp) \u2014 strong ral | oi_funding: OI -6.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: eployed Equilibra AMM (adaptive fees, auto-repeg) on Robinho | polymarket: \u039e **ETH**: above $2,500 today = 58.5% (+44.5pp) \u2014 strong ral | oi_funding: OI -6.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -2094,12 +2095,17 @@
           "weight": 1.08
         },
         {
+          "source": "news_agent",
+          "signal": "eployed Equilibra AMM (adaptive fees, auto-repeg) on Robinhood Chain; ANON tripled just a day after setting an ATL \u2014 The",
+          "weight": 0.98
+        },
+        {
           "source": "polymarket",
           "signal": "\u039e **ETH**: above $2,500 today = 58.5% (+44.5pp) \u2014 strong rally; $2,700 only 1.9%. Dip to $2,300 this week: 2.7%",
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-09-11T18:35:11.330552+00:00"
+      "timestamp": "2026-09-11T18:40:12.237754+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -2119,33 +2125,27 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-11T18:35:11.330562+00:00"
+      "timestamp": "2026-09-11T18:40:12.237761+00:00"
     },
     "HYPE": {
       "score": -1.0,
-      "confidence": 0.74,
+      "confidence": 0.3,
       "sources": [
-        "x_scanner",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | x_scanner: \u274c **X Scanner:** Login dead. All 7 topics ($HYPE, $BTC, $ETH | oi_funding: OI -12.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -12.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -12.0% 1h",
           "weight": 1.44
-        },
-        {
-          "source": "x_scanner",
-          "signal": "\u274c **X Scanner:** Login dead. All 7 topics ($HYPE, $BTC, $ETH, $TAO, $SOL, AI-Agents, DePIN) redirected to x.com onboardi",
-          "weight": 0.8
         }
       ],
-      "timestamp": "2026-09-11T18:35:11.330576+00:00"
+      "timestamp": "2026-09-11T18:40:12.237766+00:00"
     }
   },
   "config": {
