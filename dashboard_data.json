@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-11T21:00:39.771662+00:00",
+  "last_update": "2026-09-11T21:05:40.750757+00:00",
   "portfolio": {
     "value": 4208.98,
     "capital": 4208.98,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 77288.5,
-    "ETH": 2529.95,
-    "SOL": 102.495,
-    "HYPE": 80.5425
+    "BTC": 77306.5,
+    "ETH": 2530.25,
+    "SOL": 102.455,
+    "HYPE": 80.509
   },
   "positions": {},
   "stats": {
@@ -967,11 +967,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-11T05:30:44.422582+00:00",
-      "v": 4309.37,
-      "p": -13.81
-    },
     {
       "t": "2026-09-11T05:34:16.468441+00:00",
       "v": 4310.21,
@@ -1966,6 +1961,11 @@
       "t": "2026-09-11T21:00:39.771662+00:00",
       "v": 4208.98,
       "p": -15.82
+    },
+    {
+      "t": "2026-09-11T21:05:40.750757+00:00",
+      "v": 4208.98,
+      "p": -15.82
     }
   ],
   "ai_history": [
@@ -2040,26 +2040,52 @@
   ],
   "sentiment": {
     "BTC": {
+      "score": -1.0,
+      "confidence": 0.74,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
+      "contradictions": 0,
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 39% bid (ask-heavy, bearish) | oi_funding: OI -49.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -49.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 39% bid (ask-heavy, bearish)",
+          "weight": 0.44
+        }
+      ],
+      "timestamp": "2026-09-11T21:05:40.661745+00:00"
+    },
+    "ETH": {
       "score": 1.0,
       "confidence": 0.3,
       "sources": [
-        "whale_monitor"
+        "oi_funding"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 64% bid-weighted (bullish)",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +9.0% 1h, funding 0.0004%",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 64% bid-weighted (bullish)",
-          "weight": 0.56
+          "source": "oi_funding",
+          "signal": "OI +9.0% 1h, funding 0.0004%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-11T21:00:39.690120+00:00"
+      "timestamp": "2026-09-11T21:05:40.661762+00:00"
     },
-    "ETH": {
+    "SOL": {
       "score": -1.0,
       "confidence": 0.3,
       "sources": [
@@ -2069,47 +2095,41 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -35.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -88.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -35.0% 1h",
+          "signal": "OI -88.0% 1h",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-11T21:00:39.690131+00:00"
-    },
-    "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +22.0% 1h, funding 0.0013%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +22.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-09-11T21:00:39.690137+00:00"
+      "timestamp": "2026-09-11T21:05:40.661772+00:00"
     },
     "HYPE": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -0.57,
+      "confidence": 0.5,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-11T21:00:39.690139+00:00"
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -43.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -43.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 60% bid-weighted (bullish)",
+          "weight": 0.4
+        }
+      ],
+      "timestamp": "2026-09-11T21:05:40.661783+00:00"
     }
   },
   "config": {
