@@ -1,64 +1,64 @@
 {
-  "last_update": "2026-09-11T04:45:34.339703+00:00",
+  "last_update": "2026-09-11T04:50:37.149500+00:00",
   "portfolio": {
-    "value": 4309.9,
+    "value": 4310.86,
     "capital": 4327.78,
     "initial": 5000.0,
-    "pnl": -690.1,
-    "pnl_pct": -13.8,
+    "pnl": -689.14,
+    "pnl_pct": -13.78,
     "open_positions": 3
   },
   "prices": {
-    "BTC": 77089.5,
-    "ETH": 2456.45,
-    "SOL": 99.7165,
-    "HYPE": 79.3895
+    "BTC": 77094.5,
+    "ETH": 2456.75,
+    "SOL": 99.6495,
+    "HYPE": 79.4555
   },
   "positions": {
     "ETH": {
       "direction": "LONG",
       "entry_price": 2466.35,
-      "current_price": 2456.45,
+      "current_price": 2456.75,
       "size": 0.6789072545245798,
-      "unrealized_pnl": -6.92,
-      "unrealized_pnl_pct": -0.41,
+      "unrealized_pnl": -6.71,
+      "unrealized_pnl_pct": -0.4,
       "stop_loss": 2402.55,
       "take_profit": 2593.95,
       "strategy": "vwap",
       "entry_time": "2026-09-10T19:26:01.391402+00:00",
-      "duration_hours": 9.3,
+      "duration_hours": 9.4,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.1945
+      "unrealized_funding": 0.1963
     },
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 78.5205,
-      "current_price": 79.3895,
+      "current_price": 79.4555,
       "size": 5.849127860248671,
-      "unrealized_pnl": -5.07,
-      "unrealized_pnl_pct": -1.1,
+      "unrealized_pnl": -5.46,
+      "unrealized_pnl_pct": -1.19,
       "stop_loss": 82.209,
       "take_profit": 71.1435,
       "strategy": "macd",
       "entry_time": "2026-09-11T03:05:26.063917+00:00",
-      "duration_hours": 1.7,
-      "funding_rate": 0.001245,
-      "unrealized_funding": -0.0097
+      "duration_hours": 1.8,
+      "funding_rate": 0.001105,
+      "unrealized_funding": -0.009
     },
     "SOL": {
       "direction": "SHORT",
       "entry_price": 99.3725,
-      "current_price": 99.7165,
+      "current_price": 99.6495,
       "size": 17.134195539054918,
-      "unrealized_pnl": -5.9,
-      "unrealized_pnl_pct": -0.35,
+      "unrealized_pnl": -4.75,
+      "unrealized_pnl_pct": -0.28,
       "stop_loss": 101.8915,
       "take_profit": 94.3345,
       "strategy": "emacross",
       "entry_time": "2026-09-11T04:05:37.507641+00:00",
-      "duration_hours": 0.7,
-      "funding_rate": -0.000135,
-      "unrealized_funding": 0.0015
+      "duration_hours": 0.8,
+      "funding_rate": -2e-06,
+      "unrealized_funding": 0.0
     }
   },
   "stats": {
@@ -1006,11 +1006,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-10T13:10:36.905941+00:00",
-      "v": 4342.69,
-      "p": -13.15
-    },
     {
       "t": "2026-09-10T13:15:37.958609+00:00",
       "v": 4338.05,
@@ -2005,6 +2000,11 @@
       "t": "2026-09-11T04:45:34.339703+00:00",
       "v": 4309.9,
       "p": -13.8
+    },
+    {
+      "t": "2026-09-11T04:50:37.149500+00:00",
+      "v": 4310.86,
+      "p": -13.78
     }
   ],
   "ai_history": [
@@ -2088,7 +2088,7 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-09-11T04:45:34.250878+00:00"
+      "timestamp": "2026-09-11T04:50:37.044201+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2108,7 +2108,7 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-11T04:45:34.250903+00:00"
+      "timestamp": "2026-09-11T04:50:37.044220+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -2134,27 +2134,33 @@
           "weight": 0.96
         }
       ],
-      "timestamp": "2026-09-11T04:45:34.250924+00:00"
+      "timestamp": "2026-09-11T04:50:37.044236+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "x_scanner",
         "whale_monitor"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 72% bid-weighted (bullish)",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \u274c **X Scanner:** Session expired on all 7 topics ($HYPE, $BT | whale_monitor: Orderbook 72% bid-weighted (bullish)",
       "key_signals": [
         {
           "source": "whale_monitor",
           "signal": "Orderbook 72% bid-weighted (bullish)",
           "weight": 0.88
+        },
+        {
+          "source": "x_scanner",
+          "signal": "\u274c **X Scanner:** Session expired on all 7 topics ($HYPE, $BTC, $ETH, $TAO, $SOL, AI-Agents, DePIN) \u2014 every search redire",
+          "weight": 0.65
         }
       ],
-      "timestamp": "2026-09-11T04:45:34.250938+00:00"
+      "timestamp": "2026-09-11T04:50:37.044247+00:00"
     }
   },
   "config": {
