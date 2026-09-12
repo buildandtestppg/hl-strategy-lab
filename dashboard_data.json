@@ -1,34 +1,34 @@
 {
-  "last_update": "2026-09-12T08:40:51.148723+00:00",
+  "last_update": "2026-09-12T08:45:52.217695+00:00",
   "portfolio": {
-    "value": 4211.35,
+    "value": 4210.99,
     "capital": 4208.68,
     "initial": 5000.0,
-    "pnl": -788.65,
-    "pnl_pct": -15.77,
+    "pnl": -789.01,
+    "pnl_pct": -15.78,
     "open_positions": 1
   },
   "prices": {
     "BTC": 77288.5,
-    "ETH": 2529.75,
-    "SOL": 101.635,
-    "HYPE": 79.2275
+    "ETH": 2532.65,
+    "SOL": 101.725,
+    "HYPE": 79.3185
   },
   "positions": {
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 79.8865,
-      "current_price": 79.2275,
+      "current_price": 79.3185,
       "size": 3.99126060580114,
-      "unrealized_pnl": 2.67,
-      "unrealized_pnl_pct": 0.84,
+      "unrealized_pnl": 2.31,
+      "unrealized_pnl_pct": 0.72,
       "stop_loss": 85.15925,
       "take_profit": 69.341,
       "strategy": "macd",
       "entry_time": "2026-09-11T22:05:53.028548+00:00",
-      "duration_hours": 10.6,
+      "duration_hours": 10.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.0418
+      "unrealized_funding": -0.0422
     }
   },
   "stats": {
@@ -983,11 +983,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-11T17:10:55.685475+00:00",
-      "v": 4226.14,
-      "p": -15.48
-    },
     {
       "t": "2026-09-11T17:15:56.098784+00:00",
       "v": 4225.15,
@@ -1982,6 +1977,11 @@
       "t": "2026-09-12T08:40:51.148723+00:00",
       "v": 4211.35,
       "p": -15.77
+    },
+    {
+      "t": "2026-09-12T08:45:52.217695+00:00",
+      "v": 4210.99,
+      "p": -15.78
     }
   ],
   "ai_history": [
@@ -2059,21 +2059,21 @@
       "score": -1.0,
       "confidence": 0.3,
       "sources": [
-        "oi_funding"
+        "whale_monitor"
       ],
       "signal_count": 1,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -41.0% 1h",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 40% bid (ask-heavy, bearish)",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI -41.0% 1h",
-          "weight": 1.44
+          "source": "whale_monitor",
+          "signal": "Orderbook 40% bid (ask-heavy, bearish)",
+          "weight": 0.4
         }
       ],
-      "timestamp": "2026-09-12T08:40:51.065069+00:00"
+      "timestamp": "2026-09-12T08:45:52.128167+00:00"
     },
     "ETH": {
       "score": 0.0,
@@ -2085,47 +2085,45 @@
       "contradictions": 0,
       "narrative": "No active signals",
       "key_signals": [],
-      "timestamp": "2026-09-12T08:40:51.065072+00:00"
+      "timestamp": "2026-09-12T08:45:52.128172+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.3,
-      "sources": [
-        "oi_funding"
-      ],
-      "signal_count": 1,
+      "score": 0.0,
+      "confidence": 0.0,
+      "sources": [],
+      "signal_count": 0,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +20.0% 1h, funding 0.0000%",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI +20.0% 1h, funding 0.0000%",
-          "weight": 1.44
-        }
-      ],
-      "timestamp": "2026-09-12T08:40:51.065081+00:00"
+      "narrative": "No active signals",
+      "key_signals": [],
+      "timestamp": "2026-09-12T08:45:52.128175+00:00"
     },
     "HYPE": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +38.0% 1h, funding 0.0013%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 75% bid-weighted (bullish) | oi_funding: OI +33.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +38.0% 1h, funding 0.0013%",
+          "signal": "OI +33.0% 1h, funding 0.0013%",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 75% bid-weighted (bullish)",
+          "weight": 1.0
         }
       ],
-      "timestamp": "2026-09-12T08:40:51.065087+00:00"
+      "timestamp": "2026-09-12T08:45:52.128195+00:00"
     }
   },
   "config": {
