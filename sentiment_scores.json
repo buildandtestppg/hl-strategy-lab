@@ -1,65 +1,31 @@
 {
   "BTC": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 12% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 13% bid (ask-heavy, bearish) | oi_funding: OI -12.0% 1h",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 12% bid (ask-heavy, bearish)",
-        "weight": 1.52
+        "signal": "Orderbook 13% bid (ask-heavy, bearish)",
+        "weight": 1.48
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -12.0% 1h",
+        "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-13T13:20:15.610184+00:00"
+    "timestamp": "2026-09-13T13:25:16.541937+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +16.0% 1h, funding 0.0013%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +16.0% 1h, funding 0.0013%",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-09-13T13:20:15.610195+00:00"
-  },
-  "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
-    "sources": [
-      "oi_funding"
-    ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +11.0% 1h, funding 0.0004%",
-    "key_signals": [
-      {
-        "source": "oi_funding",
-        "signal": "OI +11.0% 1h, funding 0.0004%",
-        "weight": 1.44
-      }
-    ],
-    "timestamp": "2026-09-13T13:20:15.610201+00:00"
-  },
-  "HYPE": {
     "score": 0.0,
     "confidence": 0.0,
     "sources": [],
@@ -69,6 +35,58 @@
     "contradictions": 0,
     "narrative": "No active signals",
     "key_signals": [],
-    "timestamp": "2026-09-13T13:20:15.610202+00:00"
+    "timestamp": "2026-09-13T13:25:16.541943+00:00"
+  },
+  "SOL": {
+    "score": 0.22,
+    "confidence": 0.5,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 27% bid (ask-heavy, bearish) | oi_funding: OI +12.0% 1h, funding 0.0009%",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI +12.0% 1h, funding 0.0009%",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 27% bid (ask-heavy, bearish)",
+        "weight": 0.92
+      }
+    ],
+    "timestamp": "2026-09-13T13:25:16.541961+00:00"
+  },
+  "HYPE": {
+    "score": -1.0,
+    "confidence": 0.74,
+    "sources": [
+      "whale_monitor",
+      "oi_funding"
+    ],
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 0,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -43.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -43.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 30% bid (ask-heavy, bearish)",
+        "weight": 0.8
+      }
+    ],
+    "timestamp": "2026-09-13T13:25:16.541975+00:00"
   }
 }
