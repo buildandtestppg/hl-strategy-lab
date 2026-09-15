@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-09-15T14:35:37.558042+00:00",
+  "last_update": "2026-09-15T14:40:38.463197+00:00",
   "portfolio": {
-    "value": 4186.17,
+    "value": 4192.47,
     "capital": 4176.12,
     "initial": 5000.0,
-    "pnl": -813.83,
-    "pnl_pct": -16.28,
+    "pnl": -807.53,
+    "pnl_pct": -16.15,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 76059.5,
-    "ETH": 2429.0,
-    "SOL": 99.6975,
-    "HYPE": 77.5695
+    "BTC": 75728.5,
+    "ETH": 2410.65,
+    "SOL": 99.0305,
+    "HYPE": 77.1125
   },
   "positions": {
     "SOL": {
       "direction": "SHORT",
       "entry_price": 101.365,
-      "current_price": 99.6975,
+      "current_price": 99.0305,
       "size": 15.523547452735658,
-      "unrealized_pnl": 26.05,
-      "unrealized_pnl_pct": 1.66,
+      "unrealized_pnl": 36.4,
+      "unrealized_pnl_pct": 2.31,
       "stop_loss": 104.0525,
       "take_profit": 95.99,
       "strategy": "emacross",
       "entry_time": "2026-09-15T06:01:02.315340+00:00",
-      "duration_hours": 8.6,
-      "funding_rate": 0.00125,
-      "unrealized_funding": -0.1659
+      "duration_hours": 8.7,
+      "funding_rate": 0.00121,
+      "unrealized_funding": -0.1612
     },
     "HYPE": {
       "direction": "LONG",
       "entry_price": 79.3705,
-      "current_price": 77.5695,
+      "current_price": 77.1125,
       "size": 8.8650321929717,
-      "unrealized_pnl": -16.0,
-      "unrealized_pnl_pct": -2.27,
+      "unrealized_pnl": -20.05,
+      "unrealized_pnl_pct": -2.85,
       "stop_loss": 77.0185,
       "take_profit": 84.0745,
       "strategy": "macd",
       "entry_time": "2026-09-15T11:00:57.733571+00:00",
-      "duration_hours": 3.6,
+      "duration_hours": 3.7,
       "funding_rate": 0.00125,
-      "unrealized_funding": 0.0308
+      "unrealized_funding": 0.0313
     }
   },
   "stats": {
@@ -998,11 +998,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-14T23:05:38.303877+00:00",
-      "v": 4169.76,
-      "p": -16.6
-    },
     {
       "t": "2026-09-14T23:10:39.329587+00:00",
       "v": 4170.47,
@@ -1997,6 +1992,11 @@
       "t": "2026-09-15T14:35:37.558042+00:00",
       "v": 4186.17,
       "p": -16.28
+    },
+    {
+      "t": "2026-09-15T14:40:38.463197+00:00",
+      "v": 4192.47,
+      "p": -16.15
     }
   ],
   "ai_history": [
@@ -2075,15 +2075,14 @@
       "confidence": 0.85,
       "sources": [
         "whale_monitor",
-        "news_agent",
         "polymarket",
         "oi_funding"
       ],
-      "signal_count": 6,
+      "signal_count": 3,
       "convergence": true,
-      "convergence_strength": 4,
+      "convergence_strength": 3,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 4-source bearish convergence | whale_monitor: Orderbook 3% bid (ask-heavy, bearish) | news_agent: 12-month test, online/in-store/P2P \u2022 **Trump** commits to re | polymarket: \ud83d\udcc9 **BTC** slipped through $78K \u2192 mid-$76Ks (expiring Sep-15 ",
+      "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 3% bid (ask-heavy, bearish) | polymarket: \ud83d\udcc9 **BTC** slipped through $78K \u2192 mid-$76Ks (expiring Sep-15  | oi_funding: OI -261.0% 1h",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -2096,12 +2095,12 @@
           "weight": 1.44
         },
         {
-          "source": "news_agent",
-          "signal": "12-month test, online/in-store/P2P \u2022 **Trump** commits to respecting the Fed's rate decision; indices open slightly lowe",
-          "weight": 0.98
+          "source": "polymarket",
+          "signal": "\ud83d\udcc9 **BTC** slipped through $78K \u2192 mid-$76Ks (expiring Sep-15 strike \u221228.5pp). EOY $85K: 63.5% (\u22123pp)",
+          "weight": 0.78
         }
       ],
-      "timestamp": "2026-09-15T14:35:37.463921+00:00"
+      "timestamp": "2026-09-15T14:40:38.377010+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2127,47 +2126,40 @@
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-09-15T14:35:37.463945+00:00"
+      "timestamp": "2026-09-15T14:40:38.377026+00:00"
     },
     "SOL": {
       "score": -1.0,
+      "confidence": 0.3,
+      "sources": [
+        "oi_funding"
+      ],
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 0,
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -36.0% 1h",
+      "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI -36.0% 1h",
+          "weight": 1.44
+        }
+      ],
+      "timestamp": "2026-09-15T14:40:38.377033+00:00"
+    },
+    "HYPE": {
+      "score": -1.0,
       "confidence": 0.74,
       "sources": [
-        "news_agent",
+        "whale_monitor",
         "oi_funding"
       ],
       "signal_count": 2,
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: th test, online/in-store/P2P \u2022 **Trump** commits to respecti | oi_funding: OI -36.0% 1h",
-      "key_signals": [
-        {
-          "source": "oi_funding",
-          "signal": "OI -36.0% 1h",
-          "weight": 1.44
-        },
-        {
-          "source": "news_agent",
-          "signal": "th test, online/in-store/P2P \u2022 **Trump** commits to respecting the Fed's rate decision; indices open slightly lower ahea",
-          "weight": 0.98
-        }
-      ],
-      "timestamp": "2026-09-15T14:35:37.463958+00:00"
-    },
-    "HYPE": {
-      "score": -1.0,
-      "confidence": 0.85,
-      "sources": [
-        "whale_monitor",
-        "news_agent",
-        "oi_funding"
-      ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 3,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 3-source bearish convergence | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | news_agent: e/in-store/P2P \u2022 **Trump** commits to respecting the Fed's r | oi_funding: OI -100.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 30% bid (ask-heavy, bearish) | oi_funding: OI -100.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -2175,17 +2167,12 @@
           "weight": 1.44
         },
         {
-          "source": "news_agent",
-          "signal": "e/in-store/P2P \u2022 **Trump** commits to respecting the Fed's rate decision; indices open slightly lower ahead of tomorrow'",
-          "weight": 0.98
-        },
-        {
           "source": "whale_monitor",
           "signal": "Orderbook 30% bid (ask-heavy, bearish)",
           "weight": 0.8
         }
       ],
-      "timestamp": "2026-09-15T14:35:37.463970+00:00"
+      "timestamp": "2026-09-15T14:40:38.377040+00:00"
     }
   },
   "config": {
