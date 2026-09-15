@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-15T02:20:17.735119+00:00",
+  "last_update": "2026-09-15T02:25:18.458386+00:00",
   "portfolio": {
     "value": 4171.95,
     "capital": 4171.95,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 77899.5,
-    "ETH": 2518.05,
-    "SOL": 102.255,
-    "HYPE": 80.1145
+    "BTC": 77938.5,
+    "ETH": 2517.15,
+    "SOL": 102.275,
+    "HYPE": 80.1195
   },
   "positions": {},
   "stats": {
@@ -967,11 +967,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-14T10:50:20.877626+00:00",
-      "v": 4141.08,
-      "p": -17.18
-    },
     {
       "t": "2026-09-14T10:55:21.759919+00:00",
       "v": 4141.08,
@@ -1966,6 +1961,11 @@
       "t": "2026-09-15T02:20:17.735119+00:00",
       "v": 4171.95,
       "p": -16.56
+    },
+    {
+      "t": "2026-09-15T02:25:18.458386+00:00",
+      "v": 4171.95,
+      "p": -16.56
     }
   ],
   "ai_history": [
@@ -2040,39 +2040,27 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 1.0,
-      "confidence": 0.85,
+      "score": -1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
-        "news_agent",
-        "oi_funding"
+        "whale_monitor"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 3,
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 3-source bullish convergence | whale_monitor: Orderbook 72% bid-weighted (bullish) | news_agent: to speak at Bitcoin Treasuries Conference in NYC** \u2014 signals | oi_funding: OI +8.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 29% bid (ask-heavy, bearish)",
       "key_signals": [
         {
-          "source": "oi_funding",
-          "signal": "OI +8.0% 1h, funding 0.0013%",
-          "weight": 1.44
-        },
-        {
-          "source": "news_agent",
-          "signal": "to speak at Bitcoin Treasuries Conference in NYC** \u2014 signals deepening institutional Bitcoin involvement; may shape corp",
-          "weight": 1.2
-        },
-        {
           "source": "whale_monitor",
-          "signal": "Orderbook 72% bid-weighted (bullish)",
-          "weight": 0.88
+          "signal": "Orderbook 29% bid (ask-heavy, bearish)",
+          "weight": 0.84
         }
       ],
-      "timestamp": "2026-09-15T02:20:17.649686+00:00"
+      "timestamp": "2026-09-15T02:25:18.370043+00:00"
     },
     "ETH": {
-      "score": 1.0,
+      "score": -1.0,
       "confidence": 0.3,
       "sources": [
         "oi_funding"
@@ -2081,15 +2069,15 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI +4.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +4.0% 1h, funding 0.0013%",
-          "weight": 0.72
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
         }
       ],
-      "timestamp": "2026-09-15T02:20:17.649697+00:00"
+      "timestamp": "2026-09-15T02:25:18.370055+00:00"
     },
     "SOL": {
       "score": -1.0,
@@ -2101,41 +2089,47 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -22.0% 1h",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -22.0% 1h",
-          "weight": 1.44
+          "signal": "OI -5.0% 1h",
+          "weight": 0.9
         }
       ],
-      "timestamp": "2026-09-15T02:20:17.649703+00:00"
+      "timestamp": "2026-09-15T02:25:18.370062+00:00"
     },
     "HYPE": {
-      "score": -0.38,
-      "confidence": 0.5,
+      "score": -0.16,
+      "confidence": 0.75,
       "sources": [
         "x_scanner",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 3,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | x_scanner: \ud83d\udd04 **Last success**: X \u2014 before Sep 10 (#6202). Reddit \u2014 part | oi_funding: OI -9.0% 1h",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | x_scanner: \ud83d\udd04 **Last success**: X \u2014 before Sep 10 (#6202). Reddit \u2014 part | whale_monitor: Orderbook 60% bid-weighted (bullish) | oi_funding: OI -10.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI -9.0% 1h",
+          "signal": "OI -10.0% 1h",
           "weight": 1.44
         },
         {
           "source": "x_scanner",
           "signal": "\ud83d\udd04 **Last success**: X \u2014 before Sep 10 (#6202). Reddit \u2014 partial leak-through Sep 12 07:06 SGT (2 posts, both r/CryptoCur",
           "weight": 0.65
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 60% bid-weighted (bullish)",
+          "weight": 0.4
         }
       ],
-      "timestamp": "2026-09-15T02:20:17.649711+00:00"
+      "timestamp": "2026-09-15T02:25:18.370074+00:00"
     }
   },
   "config": {
