@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-15T20:35:46.351263+00:00",
+  "last_update": "2026-09-15T20:40:47.554473+00:00",
   "portfolio": {
     "value": 4187.63,
     "capital": 4187.63,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 75661.5,
-    "ETH": 2398.25,
-    "SOL": 96.7845,
-    "HYPE": 76.6245
+    "BTC": 75806.5,
+    "ETH": 2403.95,
+    "SOL": 97.0435,
+    "HYPE": 76.836
   },
   "positions": {},
   "stats": {
@@ -967,11 +967,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-15T05:00:48.224530+00:00",
-      "v": 4171.95,
-      "p": -16.56
-    },
     {
       "t": "2026-09-15T05:05:49.797541+00:00",
       "v": 4171.95,
@@ -1966,6 +1961,11 @@
       "t": "2026-09-15T20:35:46.351263+00:00",
       "v": 4187.63,
       "p": -16.25
+    },
+    {
+      "t": "2026-09-15T20:40:47.554473+00:00",
+      "v": 4187.63,
+      "p": -16.25
     }
   ],
   "ai_history": [
@@ -2040,17 +2040,17 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.46,
+      "score": -0.44,
       "confidence": 0.5,
       "sources": [
-        "news_agent",
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 5,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | news_agent: \ud83d\udfe2 **Notable \u2014 crypto news scan** (Sep 16, 03:52 SGT)  \u2022 **Or | oi_funding: OI -162.0% 1h",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 64% bid-weighted (bullish) | oi_funding: OI -162.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
@@ -2058,17 +2058,12 @@
           "weight": 1.44
         },
         {
-          "source": "news_agent",
-          "signal": "\ud83d\udfe2 **Notable \u2014 crypto news scan** (Sep 16, 03:52 SGT)  \u2022 **OranjeBTC launches world's first Bitcoin-backed digital credit",
-          "weight": 0.98
-        },
-        {
-          "source": "news_agent",
-          "signal": "*Notable \u2014 crypto news scan** (Sep 16, 03:52 SGT)  \u2022 **OranjeBTC launches world's first Bitcoin-backed digital credit ET",
-          "weight": 0.98
+          "source": "whale_monitor",
+          "signal": "Orderbook 64% bid-weighted (bullish)",
+          "weight": 0.56
         }
       ],
-      "timestamp": "2026-09-15T20:35:46.191157+00:00"
+      "timestamp": "2026-09-15T20:40:47.075267+00:00"
     },
     "ETH": {
       "score": -1.0,
@@ -2088,47 +2083,59 @@
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-15T20:35:46.191183+00:00"
+      "timestamp": "2026-09-15T20:40:47.075335+00:00"
     },
     "SOL": {
       "score": -1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -132.0% 1h",
+      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 29% bid (ask-heavy, bearish) | oi_funding: OI -132.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -132.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 29% bid (ask-heavy, bearish)",
+          "weight": 0.84
         }
       ],
-      "timestamp": "2026-09-15T20:35:46.191191+00:00"
+      "timestamp": "2026-09-15T20:40:47.075406+00:00"
     },
     "HYPE": {
-      "score": -1.0,
-      "confidence": 0.3,
+      "score": -0.5,
+      "confidence": 0.5,
       "sources": [
+        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 1,
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
-      "contradictions": 0,
-      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -98.0% 1h",
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI -98.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
           "signal": "OI -98.0% 1h",
           "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 62% bid-weighted (bullish)",
+          "weight": 0.48
         }
       ],
-      "timestamp": "2026-09-15T20:35:46.191197+00:00"
+      "timestamp": "2026-09-15T20:40:47.075521+00:00"
     }
   },
   "config": {
