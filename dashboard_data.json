@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-18T13:40:27.641890+00:00",
+  "last_update": "2026-09-18T13:45:28.842755+00:00",
   "portfolio": {
     "value": 4229.25,
     "capital": 4229.25,
@@ -9,10 +9,10 @@
     "open_positions": 0
   },
   "prices": {
-    "BTC": 78993.5,
-    "ETH": 2531.25,
-    "SOL": 107.855,
-    "HYPE": 91.658
+    "BTC": 79253.5,
+    "ETH": 2534.65,
+    "SOL": 107.595,
+    "HYPE": 91.3345
   },
   "positions": {},
   "stats": {
@@ -26,9 +26,7 @@
     "worst_trade": -50.62,
     "total_realized_pnl": -433.98
   },
-  "actions": [
-    "\u274c CLOSED SHORT ETH @ $2520.3000 | P&L: $-43.44 (-2.8%) | Reason: stop_loss"
-  ],
+  "actions": [],
   "closed_trades": [
     {
       "pair": "ETH",
@@ -969,11 +967,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-17T22:10:22.355963+00:00",
-      "v": 4242.6,
-      "p": -15.15
-    },
     {
       "t": "2026-09-17T22:15:23.204145+00:00",
       "v": 4243.23,
@@ -1968,6 +1961,11 @@
       "t": "2026-09-18T13:40:27.641890+00:00",
       "v": 4229.25,
       "p": -15.41
+    },
+    {
+      "t": "2026-09-18T13:45:28.842755+00:00",
+      "v": 4229.25,
+      "p": -15.41
     }
   ],
   "ai_history": [
@@ -2052,7 +2050,7 @@
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0xcf3f419d doubled BTC SHORT (77.4 \u2192 156.7, | oi_funding: OI +147.0% 1h, funding 0.0013%",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0xcf3f419d doubled BTC SHORT (77.4 \u2192 156.7, | oi_funding: OI +309.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -2061,7 +2059,7 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +147.0% 1h, funding 0.0013%",
+          "signal": "OI +309.0% 1h, funding 0.0013%",
           "weight": 1.44
         },
         {
@@ -2070,20 +2068,20 @@
           "weight": 0.52
         }
       ],
-      "timestamp": "2026-09-18T13:40:27.493952+00:00"
+      "timestamp": "2026-09-18T13:45:28.723643+00:00"
     },
     "ETH": {
-      "score": -0.34,
+      "score": -0.16,
       "confidence": 0.5,
       "sources": [
         "whale_monitor",
-        "news_agent"
+        "oi_funding"
       ],
       "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 1,
-      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0x7b7f72a2 flipped ETH SHORT\u2192LONG (12.25 \u2192 42.00, | news_agent: \ud83d\udfe2 **Notable**  \u2022 **ETH** \u2014 Ethereum Institutional backs Ethl",
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0x7b7f72a2 flipped ETH SHORT\u2192LONG (12.25 \u2192 42.00, | oi_funding: OI +166.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -2091,32 +2089,38 @@
           "weight": 2.0
         },
         {
-          "source": "news_agent",
-          "signal": "\ud83d\udfe2 **Notable**  \u2022 **ETH** \u2014 Ethereum Institutional backs Ethlabs' proposal to reduce block times (EIP-8198) \u2014 institution",
-          "weight": 0.98
+          "source": "oi_funding",
+          "signal": "OI +166.0% 1h, funding 0.0013%",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-18T13:40:27.493968+00:00"
+      "timestamp": "2026-09-18T13:45:28.723665+00:00"
     },
     "SOL": {
       "score": 1.0,
-      "confidence": 0.3,
+      "confidence": 0.74,
       "sources": [
-        "polymarket"
+        "polymarket",
+        "oi_funding"
       ],
-      "signal_count": 1,
-      "convergence": false,
-      "convergence_strength": 0,
+      "signal_count": 2,
+      "convergence": true,
+      "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "Single-source signal (polymarket) | polymarket: \u25ce **SOL** >$110, dip-probabilities deflating (\u221218pp on $90-d",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | polymarket: \u25ce **SOL** >$110, dip-probabilities deflating (\u221218pp on $90-d | oi_funding: OI +234.0% 1h, funding 0.0013%",
       "key_signals": [
+        {
+          "source": "oi_funding",
+          "signal": "OI +234.0% 1h, funding 0.0013%",
+          "weight": 1.44
+        },
         {
           "source": "polymarket",
           "signal": "\u25ce **SOL** >$110, dip-probabilities deflating (\u221218pp on $90-dip) \u2014 quietly bullish.",
           "weight": 0.78
         }
       ],
-      "timestamp": "2026-09-18T13:40:27.493976+00:00"
+      "timestamp": "2026-09-18T13:45:28.723681+00:00"
     },
     "HYPE": {
       "score": 1.0,
@@ -2129,7 +2133,7 @@
       "convergence": true,
       "convergence_strength": 2,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: \ud83d\udc0b 0x34fb5ec7 flipped HYPE LONG\u2192SHORT (89 \u2192 1,150, | oi_funding: OI +47.0% 1h, funding 0.0025%",
+      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: \ud83d\udc0b 0x34fb5ec7 flipped HYPE LONG\u2192SHORT (89 \u2192 1,150, | oi_funding: OI +9.0% 1h, funding 0.0013%",
       "key_signals": [
         {
           "source": "whale_monitor",
@@ -2143,11 +2147,11 @@
         },
         {
           "source": "oi_funding",
-          "signal": "OI +47.0% 1h, funding 0.0025%",
+          "signal": "OI +9.0% 1h, funding 0.0013%",
           "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-18T13:40:27.493987+00:00"
+      "timestamp": "2026-09-18T13:45:28.723694+00:00"
     }
   },
   "config": {
