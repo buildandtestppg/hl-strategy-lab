@@ -1,16 +1,16 @@
 {
   "BTC": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.11,
+    "confidence": 0.5,
     "sources": [
       "whale_monitor",
       "oi_funding"
     ],
     "signal_count": 2,
-    "convergence": true,
-    "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 71% bid-weighted (bullish) | oi_funding: OI +20.0% 1h, funding 0.0013%",
+    "convergence": false,
+    "convergence_strength": 0,
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 21% bid (ask-heavy, bearish) | oi_funding: OI +20.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -19,11 +19,11 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 71% bid-weighted (bullish)",
-        "weight": 0.84
+        "signal": "Orderbook 21% bid (ask-heavy, bearish)",
+        "weight": 1.16
       }
     ],
-    "timestamp": "2026-09-18T18:45:26.560717+00:00"
+    "timestamp": "2026-09-18T18:50:28.028918+00:00"
   },
   "ETH": {
     "score": 1.0,
@@ -32,12 +32,17 @@
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 63% bid-weighted (bullish) | oi_funding: OI +15.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: \ud83d\udc0b 0x7b7f72a2 ETH LONG 20.5\u2192295.9 | oi_funding: OI +15.0% 1h, funding 0.0013%",
     "key_signals": [
+      {
+        "source": "whale_monitor",
+        "signal": "\ud83d\udc0b 0x7b7f72a2 ETH LONG 20.5\u2192295.9",
+        "weight": 2.0
+      },
       {
         "source": "oi_funding",
         "signal": "OI +15.0% 1h, funding 0.0013%",
@@ -45,24 +50,25 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 63% bid-weighted (bullish)",
-        "weight": 0.52
+        "signal": "Orderbook 61% bid-weighted (bullish)",
+        "weight": 0.44
       }
     ],
-    "timestamp": "2026-09-18T18:45:26.560736+00:00"
+    "timestamp": "2026-09-18T18:50:28.028940+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.74,
+    "score": 0.8,
+    "confidence": 0.75,
     "sources": [
+      "whale_monitor",
       "polymarket",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 3,
     "convergence": true,
     "convergence_strength": 2,
-    "contradictions": 0,
-    "narrative": "\ud83d\udcc8 2-source bullish convergence | polymarket: \u25ce **SOL** >$110, dip-probabilities deflating (\u221218pp on $90-d | oi_funding: OI +23.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 40% bid (ask-heavy, bearish) | polymarket: \u25ce **SOL** >$110, dip-probabilities deflating (\u221218pp on $90-d | oi_funding: OI +23.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
@@ -73,34 +79,44 @@
         "source": "polymarket",
         "signal": "\u25ce **SOL** >$110, dip-probabilities deflating (\u221218pp on $90-dip) \u2014 quietly bullish.",
         "weight": 0.78
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 40% bid (ask-heavy, bearish)",
+        "weight": 0.4
       }
     ],
-    "timestamp": "2026-09-18T18:45:26.560748+00:00"
+    "timestamp": "2026-09-18T18:50:28.028956+00:00"
   },
   "HYPE": {
-    "score": -0.33,
+    "score": 0.22,
     "confidence": 0.5,
     "sources": [
       "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 2,
+    "signal_count": 4,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: Orderbook 66% bid-weighted (bullish) | oi_funding: OI -7.0% 1h",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0x7b7f72a2 XRP LONG 482\u21921,826 (+279%) \u00b7 HYPE LONG 805\u21921,88 | oi_funding: OI -7.0% 1h",
     "key_signals": [
       {
-        "source": "oi_funding",
-        "signal": "OI -7.0% 1h",
-        "weight": 1.26
+        "source": "whale_monitor",
+        "signal": "\ud83d\udc0b 0x7b7f72a2 XRP LONG 482\u21921,826 (+279%) \u00b7 HYPE LONG 805\u21921,887 (+134%)",
+        "weight": 2.0
       },
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 66% bid-weighted (bullish)",
-        "weight": 0.64
+        "signal": "\ud83d\udc0b 0x39475d17 HYPE LONG 66\u2192299 (+350%)",
+        "weight": 2.0
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 18% bid (ask-heavy, bearish)",
+        "weight": 1.28
       }
     ],
-    "timestamp": "2026-09-18T18:45:26.560758+00:00"
+    "timestamp": "2026-09-18T18:50:28.028968+00:00"
   }
 }
