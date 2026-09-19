@@ -1,49 +1,49 @@
 {
-  "last_update": "2026-09-19T17:20:55.987625+00:00",
+  "last_update": "2026-09-19T17:25:56.698503+00:00",
   "portfolio": {
-    "value": 4236.44,
+    "value": 4241.08,
     "capital": 4261.01,
     "initial": 5000.0,
-    "pnl": -763.56,
-    "pnl_pct": -15.27,
+    "pnl": -758.92,
+    "pnl_pct": -15.18,
     "open_positions": 2
   },
   "prices": {
-    "BTC": 81681.5,
-    "ETH": 2653.65,
-    "SOL": 111.925,
-    "HYPE": 92.6815
+    "BTC": 81601.5,
+    "ETH": 2647.85,
+    "SOL": 111.725,
+    "HYPE": 92.2665
   },
   "positions": {
     "HYPE": {
       "direction": "SHORT",
       "entry_price": 90.8765,
-      "current_price": 92.6815,
+      "current_price": 92.2665,
       "size": 4.783151558711601,
-      "unrealized_pnl": -8.5,
-      "unrealized_pnl_pct": -1.96,
+      "unrealized_pnl": -6.51,
+      "unrealized_pnl_pct": -1.5,
       "stop_loss": 95.32525,
       "take_profit": 81.979,
       "strategy": "macd",
       "entry_time": "2026-09-18T17:00:08.322051+00:00",
-      "duration_hours": 24.3,
+      "duration_hours": 24.4,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.1349
+      "unrealized_funding": -0.1348
     },
     "ETH": {
       "direction": "SHORT",
       "entry_price": 2618.05,
-      "current_price": 2653.65,
+      "current_price": 2647.85,
       "size": 0.4592294345162358,
-      "unrealized_pnl": -16.07,
-      "unrealized_pnl_pct": -1.34,
+      "unrealized_pnl": -13.41,
+      "unrealized_pnl_pct": -1.12,
       "stop_loss": 2710.825,
       "take_profit": 2432.5,
       "strategy": "vwap",
       "entry_time": "2026-09-18T23:10:20.061223+00:00",
-      "duration_hours": 18.2,
+      "duration_hours": 18.3,
       "funding_rate": 0.00125,
-      "unrealized_funding": -0.2769
+      "unrealized_funding": -0.2776
     }
   },
   "stats": {
@@ -998,11 +998,6 @@
     }
   },
   "equity_curve": [
-    {
-      "t": "2026-09-19T01:45:50.676909+00:00",
-      "v": 4260.47,
-      "p": -14.79
-    },
     {
       "t": "2026-09-19T01:50:51.713628+00:00",
       "v": 4258.6,
@@ -1997,6 +1992,11 @@
       "t": "2026-09-19T17:20:55.987625+00:00",
       "v": 4236.44,
       "p": -15.27
+    },
+    {
+      "t": "2026-09-19T17:25:56.698503+00:00",
+      "v": 4241.08,
+      "p": -15.18
     }
   ],
   "ai_history": [
@@ -2071,99 +2071,100 @@
   ],
   "sentiment": {
     "BTC": {
-      "score": 0.0,
-      "confidence": 0.0,
-      "sources": [],
-      "signal_count": 0,
+      "score": -0.09,
+      "confidence": 0.5,
+      "sources": [
+        "whale_monitor",
+        "oi_funding"
+      ],
+      "signal_count": 4,
+      "convergence": false,
+      "convergence_strength": 0,
+      "contradictions": 1,
+      "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0x7b7f72a2 loaded BTC LONG 0.44 \u2192 10.95 (+2383%) | oi_funding: OI -9.0% 1h",
+      "key_signals": [
+        {
+          "source": "whale_monitor",
+          "signal": "\ud83d\udc0b 0x7b7f72a2 loaded BTC LONG 0.44 \u2192 10.95 (+2383%)",
+          "weight": 2.0
+        },
+        {
+          "source": "oi_funding",
+          "signal": "OI -9.0% 1h",
+          "weight": 1.44
+        },
+        {
+          "source": "whale_monitor",
+          "signal": "Orderbook 37% bid (ask-heavy, bearish)",
+          "weight": 0.52
+        }
+      ],
+      "timestamp": "2026-09-19T17:25:56.609779+00:00"
+    },
+    "ETH": {
+      "score": 1.0,
+      "confidence": 0.3,
+      "sources": [
+        "whale_monitor"
+      ],
+      "signal_count": 2,
       "convergence": false,
       "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "No active signals",
-      "key_signals": [],
-      "timestamp": "2026-09-19T17:20:55.904088+00:00"
-    },
-    "ETH": {
-      "score": -1.0,
-      "confidence": 0.74,
-      "sources": [
-        "whale_monitor",
-        "news_agent"
-      ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
-      "contradictions": 0,
-      "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: \ud83d\udc0b 0x7b7f72a2...fedee2 flipped ETH SHORT\u2192LONG (8.6 \u2192 14.2, | news_agent: ps://cryptobriefing.com/consumer-sectors-record-low-sp500/> ",
+      "narrative": "Single-source signal (whale_monitor) | whale_monitor: \ud83d\udc0b 0x7b7f72a2 loaded ETH LONG 14.3 \u2192 96.2 (+575%)",
       "key_signals": [
         {
           "source": "whale_monitor",
-          "signal": "\ud83d\udc0b 0x7b7f72a2...fedee2 flipped ETH SHORT\u2192LONG (8.6 \u2192 14.2,",
-          "weight": 1.3
+          "signal": "\ud83d\udc0b 0x7b7f72a2 loaded ETH LONG 14.3 \u2192 96.2 (+575%)",
+          "weight": 2.0
         },
         {
-          "source": "news_agent",
-          "signal": "ps://cryptobriefing.com/consumer-sectors-record-low-sp500/>  --- \ud83d\udd0e Scan: 959 articles ingested (CoinDesk, Decrypt, Bankl",
-          "weight": 1.2
+          "source": "whale_monitor",
+          "signal": "Orderbook 63% bid-weighted (bullish)",
+          "weight": 0.52
         }
       ],
-      "timestamp": "2026-09-19T17:20:55.904111+00:00"
+      "timestamp": "2026-09-19T17:25:56.609796+00:00"
     },
     "SOL": {
-      "score": 1.0,
-      "confidence": 0.74,
+      "score": -1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 2,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 62% bid-weighted (bullish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -8.0% 1h",
       "key_signals": [
         {
           "source": "oi_funding",
-          "signal": "OI +6.0% 1h, funding 0.0013%",
-          "weight": 1.08
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "Orderbook 62% bid-weighted (bullish)",
-          "weight": 0.48
+          "signal": "OI -8.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-19T17:20:55.904123+00:00"
+      "timestamp": "2026-09-19T17:25:56.609806+00:00"
     },
     "HYPE": {
-      "score": 0.87,
-      "confidence": 0.74,
+      "score": -1.0,
+      "confidence": 0.3,
       "sources": [
-        "whale_monitor",
         "oi_funding"
       ],
-      "signal_count": 3,
-      "convergence": true,
-      "convergence_strength": 2,
+      "signal_count": 1,
+      "convergence": false,
+      "convergence_strength": 0,
       "contradictions": 0,
-      "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: Orderbook 92% bid-weighted (bullish) | oi_funding: OI +6.0% 1h, funding 0.0013%",
+      "narrative": "Single-source signal (oi_funding) | oi_funding: OI -86.0% 1h",
       "key_signals": [
         {
-          "source": "whale_monitor",
-          "signal": "Orderbook 92% bid-weighted (bullish)",
-          "weight": 1.68
-        },
-        {
           "source": "oi_funding",
-          "signal": "OI +6.0% 1h, funding 0.0013%",
-          "weight": 1.08
-        },
-        {
-          "source": "whale_monitor",
-          "signal": "\ud83d\udc0b 0x7b7f72a2...fedee2 flipped HYPE SHORT\u2192LONG (60.3 \u2192 71.9,",
-          "weight": 0.38
+          "signal": "OI -86.0% 1h",
+          "weight": 1.44
         }
       ],
-      "timestamp": "2026-09-19T17:20:55.904132+00:00"
+      "timestamp": "2026-09-19T17:25:56.609813+00:00"
     }
   },
   "config": {
