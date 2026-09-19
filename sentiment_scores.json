@@ -1,74 +1,106 @@
 {
   "BTC": {
     "score": -1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
-      "whale_monitor"
+      "whale_monitor",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 29% bid (ask-heavy, bearish)",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: \ud83d\udc0b 0xcf3f...f95f doubled BTC SHORT 3.97\u21929.21 (+132%) | oi_funding: OI -4.0% 1h",
     "key_signals": [
       {
         "source": "whale_monitor",
-        "signal": "Orderbook 29% bid (ask-heavy, bearish)",
-        "weight": 0.84
+        "signal": "\ud83d\udc0b 0xcf3f...f95f doubled BTC SHORT 3.97\u21929.21 (+132%)",
+        "weight": 2.0
+      },
+      {
+        "source": "oi_funding",
+        "signal": "OI -4.0% 1h",
+        "weight": 0.72
       }
     ],
-    "timestamp": "2026-09-19T13:25:08.148377+00:00"
+    "timestamp": "2026-09-19T13:30:08.971549+00:00"
   },
   "ETH": {
     "score": -1.0,
     "confidence": 0.3,
     "sources": [
-      "whale_monitor"
+      "oi_funding"
     ],
     "signal_count": 1,
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 0,
-    "narrative": "Single-source signal (whale_monitor) | whale_monitor: Orderbook 19% bid (ask-heavy, bearish)",
+    "narrative": "Single-source signal (oi_funding) | oi_funding: OI -5.0% 1h",
     "key_signals": [
       {
-        "source": "whale_monitor",
-        "signal": "Orderbook 19% bid (ask-heavy, bearish)",
-        "weight": 1.24
+        "source": "oi_funding",
+        "signal": "OI -5.0% 1h",
+        "weight": 0.9
       }
     ],
-    "timestamp": "2026-09-19T13:25:08.148392+00:00"
+    "timestamp": "2026-09-19T13:30:08.971563+00:00"
   },
   "SOL": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": -1.0,
+    "confidence": 0.74,
     "sources": [
-      "news_agent"
+      "news_agent",
+      "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (news_agent) | news_agent: uel-prices-higher-amid-supply-disruptions/ \u2022 **Solana block ",
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | news_agent: \ud83d\udfe2 **Notable**  \u2022 **Solana cuts block times 17% \u2192 250 millise | oi_funding: OI -26.0% 1h",
     "key_signals": [
       {
+        "source": "oi_funding",
+        "signal": "OI -26.0% 1h",
+        "weight": 1.44
+      },
+      {
         "source": "news_agent",
-        "signal": "uel-prices-higher-amid-supply-disruptions/ \u2022 **Solana block times fall 17%** in latest speed upgrade \u2014 extra speed goes ",
+        "signal": "\ud83d\udfe2 **Notable**  \u2022 **Solana cuts block times 17% \u2192 250 milliseconds** \u2014 faster data freshness for real-time apps [SOL] \u2022 *",
         "weight": 0.98
       }
     ],
-    "timestamp": "2026-09-19T13:25:08.148401+00:00"
+    "timestamp": "2026-09-19T13:30:08.971574+00:00"
   },
   "HYPE": {
-    "score": 0.0,
-    "confidence": 0.0,
-    "sources": [],
-    "signal_count": 0,
-    "convergence": false,
-    "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "No active signals",
-    "key_signals": [],
-    "timestamp": "2026-09-19T13:25:08.148403+00:00"
+    "score": -0.69,
+    "confidence": 0.75,
+    "sources": [
+      "whale_monitor",
+      "news_agent",
+      "oi_funding"
+    ],
+    "signal_count": 3,
+    "convergence": true,
+    "convergence_strength": 2,
+    "contradictions": 1,
+    "narrative": "\ud83d\udcc9 2-source bearish convergence | whale_monitor: Orderbook 65% bid-weighted (bullish) | news_agent: 0 milliseconds** \u2014 faster data freshness for real-time apps  | oi_funding: OI -12.0% 1h",
+    "key_signals": [
+      {
+        "source": "oi_funding",
+        "signal": "OI -12.0% 1h",
+        "weight": 1.44
+      },
+      {
+        "source": "news_agent",
+        "signal": "0 milliseconds** \u2014 faster data freshness for real-time apps [SOL] \u2022 **Hyperliquid logs $3M daily revenue** as top onchai",
+        "weight": 0.98
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 65% bid-weighted (bullish)",
+        "weight": 0.6
+      }
+    ],
+    "timestamp": "2026-09-19T13:30:08.971584+00:00"
   }
 }
