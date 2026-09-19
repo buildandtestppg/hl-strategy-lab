@@ -1,6 +1,6 @@
 {
   "BTC": {
-    "score": -0.32,
+    "score": 0.3,
     "confidence": 0.5,
     "sources": [
       "whale_monitor",
@@ -10,13 +10,8 @@
     "convergence": false,
     "convergence_strength": 0,
     "contradictions": 1,
-    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b **0x7b7f72a2...fedee2 short press:** BTC SHORT 0.94 \u2192 6.91 | oi_funding: OI +64.0% 1h, funding 0.0013%",
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0xcf3f...20f95f opened/increased BTC SHORT +64% (100.6 \u2192 1 | oi_funding: OI +64.0% 1h, funding 0.0013%",
     "key_signals": [
-      {
-        "source": "whale_monitor",
-        "signal": "\ud83d\udc0b **0x7b7f72a2...fedee2 short press:** BTC SHORT 0.94 \u2192 6.91",
-        "weight": 2.0
-      },
       {
         "source": "oi_funding",
         "signal": "OI +64.0% 1h, funding 0.0013%",
@@ -24,31 +19,42 @@
       },
       {
         "source": "whale_monitor",
-        "signal": "\ud83d\udc0b **0xcf3f419d...20f95f** added BTC SHORT 53.1 \u2192 74.5",
-        "weight": 0.81
+        "signal": "\ud83d\udc0b 0xcf3f...20f95f opened/increased BTC SHORT +64% (100.6 \u2192 164.7",
+        "weight": 1.27
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "Orderbook 73% bid-weighted (bullish)",
+        "weight": 0.92
       }
     ],
-    "timestamp": "2026-09-19T15:45:36.013308+00:00"
+    "timestamp": "2026-09-19T15:50:37.051964+00:00"
   },
   "ETH": {
-    "score": 1.0,
-    "confidence": 0.3,
+    "score": 0.13,
+    "confidence": 0.5,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
+    "signal_count": 2,
     "convergence": false,
     "convergence_strength": 0,
-    "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +11.0% 1h, funding 0.0013%",
+    "contradictions": 1,
+    "narrative": "\u26a0\ufe0f Mixed signals across sources | whale_monitor: \ud83d\udc0b 0x7b7f...fedee2 cut ETH LONG \u221278% (14.4 \u2192 3.1, | oi_funding: OI +11.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
         "signal": "OI +11.0% 1h, funding 0.0013%",
         "weight": 1.44
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "\ud83d\udc0b 0x7b7f...fedee2 cut ETH LONG \u221278% (14.4 \u2192 3.1,",
+        "weight": 1.1
       }
     ],
-    "timestamp": "2026-09-19T15:45:36.013321+00:00"
+    "timestamp": "2026-09-19T15:50:37.051977+00:00"
   },
   "SOL": {
     "score": 1.0,
@@ -68,26 +74,32 @@
         "weight": 1.44
       }
     ],
-    "timestamp": "2026-09-19T15:45:36.013327+00:00"
+    "timestamp": "2026-09-19T15:50:37.051983+00:00"
   },
   "HYPE": {
     "score": 1.0,
-    "confidence": 0.3,
+    "confidence": 0.74,
     "sources": [
+      "whale_monitor",
       "oi_funding"
     ],
-    "signal_count": 1,
-    "convergence": false,
-    "convergence_strength": 0,
+    "signal_count": 2,
+    "convergence": true,
+    "convergence_strength": 2,
     "contradictions": 0,
-    "narrative": "Single-source signal (oi_funding) | oi_funding: OI +6.0% 1h, funding 0.0013%",
+    "narrative": "\ud83d\udcc8 2-source bullish convergence | whale_monitor: \ud83d\udc0b 0x7b7f...fedee2 flipped HYPE SHORT\u2192LONG (620 \u2192 259, | oi_funding: OI +6.0% 1h, funding 0.0013%",
     "key_signals": [
       {
         "source": "oi_funding",
         "signal": "OI +6.0% 1h, funding 0.0013%",
         "weight": 1.08
+      },
+      {
+        "source": "whale_monitor",
+        "signal": "\ud83d\udc0b 0x7b7f...fedee2 flipped HYPE SHORT\u2192LONG (620 \u2192 259,",
+        "weight": 0.82
       }
     ],
-    "timestamp": "2026-09-19T15:45:36.013332+00:00"
+    "timestamp": "2026-09-19T15:50:37.051991+00:00"
   }
 }
